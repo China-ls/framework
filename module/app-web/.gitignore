@@ -1,5 +1,3 @@
-bower_components/*
-
 # Ignore Mac OS desktop services store
 .DS_Store
 

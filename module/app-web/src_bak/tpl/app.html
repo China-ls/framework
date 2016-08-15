@@ -1,0 +1,13 @@
+<div ui-butterbar></div>
+<div class="app-wrapper">
+
+    <div data-ng-include=" 'tpl/blocks/header.html' " class="app-header"></div>
+
+    <!--<div data-ng-include=" 'tpl/blocks/aside.html' " class="app-aside"></div>-->
+    <div class="app-aside scrollable hide-scrollbar" data-ng-include=" 'tpl/blocks/aside.html' "></div>
+
+    <!-- content -->
+    <div class="app-content-wrapper" ui-view></div>
+    <!-- /content -->
+
+</div>

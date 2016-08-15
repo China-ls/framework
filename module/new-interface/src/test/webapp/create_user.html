@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create User</title>
+    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+
+<form id="formAddUser" action="http://localhost:8080/persistent/user" method="PUT">
+    <label for="name">name</label>
+    <input id="name" name="name" type="text"><br>
+    <label for="username">username</label>
+    <input id="username" name="username" type="text"><br>
+    <label for="password">password</label>
+    <input id="password" name="password" type="text">
+
+</form>
+
+<button id="submit">Submit</button>
+
+
+<script type="text/javascript">
+    $(function () {
+        $("#submit").click(function () {
+            $.ajax({
+                url: 'http://localhost:8080/persistent/user',
+                type: 'PUT',
+                beforeSend: function(request) {
+                    request.setRequestHeader("APPKEY", "asdf");
+                },
+                data: $("#formAddUser").serialize(),
+                success: function (status, response) {
+                    console.warn(status);
+                    console.warn(response);
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

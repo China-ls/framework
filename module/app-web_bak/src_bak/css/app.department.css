@@ -1,0 +1,70 @@
+.dpt .dpt-header {
+  font-size: 20px;
+  line-height: 20px;
+  background-color: #ccc;
+  display: block;
+  padding: 10px 0;
+}
+.dpt .box .bd-green {
+  border-color: #009966;
+}
+.dpt .box .bd-blue {
+  border-color: #0066cc;
+}
+.dpt .box .box-header {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+.dpt .box .box-header .title {
+  width: 120px;
+  margin-bottom: 0;
+}
+.dpt .box .box-header .bg-blue {
+  background-color: #0066cc;
+}
+.dpt .box .box-header .bg-green {
+  background-color: #009966;
+}
+.dpt .box .box-header .divider {
+  width: 120px;
+  height: 4px;
+  display: block;
+}
+.dpt .box .box-content {
+  margin: 20px 10px;
+  padding: 10px;
+  border: 1px dashed #ccc;
+}
+.dpt .box .box-content .row {
+  margin: 0;
+}
+.dpt .box .box-content .info {
+  padding: 0 0;
+}
+.dpt .box .box-content .dash-border-right {
+  border-right: 1px dashed #00ee00;
+}
+.dpt .box .box-content .dash-border-bottom {
+  border-bottom: 1px dashed #00ee00;
+}
+.dpt .box .box-content .item {
+  padding: 5px 5px;
+}
+.dpt .box .box-content .title {
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
+  color: #0099CC;
+  text-align: left;
+}
+.dpt .box .box-content .panel {
+  margin-bottom: 0;
+}
+.dpt .box .box-content .tb-border th,
+.dpt .box .box-content .tb-border tr,
+.dpt .box .box-content .tb-border td {
+  border: 1px solid #ccc;
+}
+.dpt .box .box-content .pd5 {
+  padding: 5px;
+}

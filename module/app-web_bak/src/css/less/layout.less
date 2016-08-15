@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  display: block;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.app-header-fixed {
+  padding-top: 50px;
+}
+
+.app {
+  height: auto;
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.app-header {
+  height: @app-header-height;
+}
+
+.app-header-fixed .app-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.app-aside {
+  float: left;
+}
+
+.app-content {
+  height: 100%;
+  &:after {
+    clear: both;
+  }
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+}
+
+.app-content-body {
+  padding-bottom: 50px;
+  float: left;
+  width: 100%;
+}
+
+.app-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1005;
+}
+
+@media (min-width: 768px) {
+  .app-aside, .navbar-header {
+    width: @app-aside-width;
+  }
+
+  .app-aside-fixed {
+    .aside-wrap {
+      position: fixed;
+      overflow: hidden;
+      top: 50px;
+      bottom: 0;
+      left: 0;
+      width: 199px;
+      z-index: 1000;
+
+      .navi-wrap {
+        width: 217px;
+        position: relative;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+      }
+    }
+  }
+
+  .app-content, .app-footer {
+    margin-left: @app-aside-width;
+  }
+}
+

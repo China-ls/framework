@@ -1,0 +1,36 @@
+<div class="app-header-nav">
+    <div class="pull-left">
+        <a ui-sref="app.dashboard">
+            <img src="img/logo.png" width="64">
+            <img src="img/title.png" height="64">
+        </a>
+    </div>
+
+    <div class="pull-left header-navbar hidden-sm hidden-xs">
+        <ul>
+            <li><a href="#"><b>实时数据</b></a></li>
+            <li><a href="#"><b>统计分析</b></a></li>
+            <li><a href="#"><b>资源管理</b></a></li>
+            <li><a href="#"><b>知识与资讯</b></a></li>
+            <li><a href="#"><b>系统管理</b></a></li>
+        </ul>
+    </div>
+
+    <div class="pull-right">
+        <a ng-click="logout()" class="btn btn-logout">
+            退出
+        </a>
+    </div>
+
+</div>
+
+<div class="app-header-sub">
+    <div class="pull-left">
+        <p class="current-menu-title">设备列表</p>
+    </div>
+
+    <div class="pull-right user">
+        <img src="img/i_user.png">
+        <i class="fa fa-user hidden"></i>&nbsp;&nbsp;{{user.name}}
+    </div>
+</div>

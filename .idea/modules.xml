@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/framework.iml" filepath="$PROJECT_DIR$/framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module/new-interface/new-interface.iml" filepath="$PROJECT_DIR$/module/new-interface/new-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module/persistent.object.query/persistent.object.query.iml" filepath="$PROJECT_DIR$/module/persistent.object.query/persistent.object.query.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module/water-app/water-app.iml" filepath="$PROJECT_DIR$/module/water-app/water-app.iml" />
+    </modules>
+  </component>
+</project>

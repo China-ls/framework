@@ -1,0 +1,40 @@
+<div class="dpt dpt-detail" ng-controller="DeviceDetailCtrl">
+
+    <div class="dpt-header text-center cb">{{data.label}}设备详情</div>
+
+    <div class="box">
+        <div class="clearfix box-content">
+            <div class="row">
+                <div class="col-xs-4 col-sm-4 col-lg-4">
+                    <img src="img/item_icon.png" width="160">
+                </div>
+                <div class="col-xs-4 col-sm-4 col-lg-4 info ">
+                    <p class="item dash-border-right dash-border-bottom ">设备名称：<span class="cb">{{device.name}}</span>
+                    </p>
+                    <p class="item dash-border-right dash-border-bottom ">设备编号：<span
+                            class="cb">{{device.internal_id}}</span>
+                    </p>
+                    <p class="item dash-border-right dash-border-bottom ">经度：<span class="cb">{{device.lat}}</span>
+                    </p>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-lg-4 info">
+                    <p class="item dash-border-bottom">设备类型：<span class="cb">{{data.type}}</span></p>
+                    <p class="item dash-border-bottom">投产时间：<span class="cb">{{data.toucan}}</span></p>
+                    <p class="item dash-border-bottom">纬度：<span class="cb">{{device.lon}}</span></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="box">
+        <div class="clearfix box-content">
+            <div class="panel panel-default">
+                <div ng-repeat="item in device.components" class="panel-heading title cb">
+                    组件名称：<span class="cb">{{item.display_name}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

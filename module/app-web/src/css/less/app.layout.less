@@ -48,7 +48,7 @@ body {
 .app-sub-header {
   z-index: 1024;
   border-radius: 0;
-  height:@app-sub-header-height;
+  height: @app-sub-header-height;
 }
 
 .aside-header {
@@ -59,6 +59,7 @@ body {
   background-color: @aside-title-primary;
   color: #000066;
 }
+
 .content-header {
   height: @app-sub-header-height;
   background-color: @content-title-primary;
@@ -207,6 +208,16 @@ body {
   margin: 0;
 }
 
+.navbar-nav {
+  min-height: @app-header-height;
+  > li > a {
+    padding-top: 22px;
+    padding-bottom: 0;
+    font-size: 16px;
+    line-height: 40px;
+  }
+}
+
 .navbar-md {
   min-height: @app-header-md-height;
   .navbar-btn {
@@ -220,7 +231,7 @@ body {
     padding-bottom: 20px;
   }
   .navbar-brand {
-    line-height: 60px;
+    line-height: @app-header-md-height;
   }
 }
 
@@ -248,7 +259,7 @@ body {
     text-decoration: none;
   }
   img {
-    max-height: 50px;
+    max-height: @app-header-height;
     margin-top: -4px;
     vertical-align: middle;
     display: inline;
@@ -442,8 +453,32 @@ body {
         display: block !important;
       }
     }
-
   }
+
+  .navbar-nav {
+    min-height: @app-header-sm-height;
+    > li > a {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  .navbar-brand {
+    line-height: @app-header-sm-height;
+    img {
+      max-height: @app-header-sm-height;
+    }
+  }
+
+  .app-header-fixed {
+    padding-top: @app-header-sm-height + @app-sub-header-height;
+    .app-sub-header {
+      top: @app-header-sm-height;
+    }
+  }
+
 }
 
 // xs
@@ -466,9 +501,15 @@ body {
   }
 
   .navbar-nav {
+    min-height: @app-header-sm-height;
     margin-top: 0;
     margin-bottom: 0;
     > li > a {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      font-size: 14px;
+      line-height: 20px;
+
       box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
       .up {
         top: 0;
@@ -479,7 +520,15 @@ body {
       }
     }
     .open .dropdown-menu {
-      background-color: #fff;
+      //background-color: #fff;
+      background-color: #515151;
+    }
+  }
+
+  .navbar-brand {
+    line-height: @app-header-sm-height;
+    img {
+      max-height: @app-header-sm-height;
     }
   }
 
@@ -489,6 +538,13 @@ body {
     margin-bottom: 0 !important;
     .form-group {
       margin-bottom: 0;
+    }
+  }
+
+  .app-header-fixed {
+    padding-top: @app-header-sm-height + @app-sub-header-height;
+    .app-sub-header {
+      top: @app-header-sm-height;
     }
   }
 }

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 public class VirtualSensorServiceImpl implements VirtualSensorService {
     @Override
     public VirtualSensor getVirtualSensor(String id) {
-        String json = HttpUtils.get("http://localhost:9998/framework/sensor/" + id);
+        String json = HttpUtils.get("http://localhost:8080/framework/sensor/" + id);
         if (StringUtils.isEmpty(json)) {
             return null;
         }

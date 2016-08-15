@@ -1,9 +1,15 @@
 .sub-header-wrap {
-  padding-left: 10px;
+    padding-left: 10px;
 }
+
 .sub-header-wrap .btn-goback {
-  margin-top: 4px;
+    margin-top: 4px;
 }
+
 .sub-header-wrap .sub-title-wrap {
-  line-height: 32px;
+    line-height: 32px;
+}
+
+.content-title {
+    color: #000066;
 }

@@ -2,295 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0fd8f5c7-a893-4232-b550-e52d73eb6f82" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/core_framework_war.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/core_framework_war_exploded.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_websocket_4_2_5_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/src/js/factory/wsFactory.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/util/HttpUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/entity/CallbackType.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/entity/DataFilterDefinetion.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/init/TempInitVIrtualSensorMQTT.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/mqtt/FilterJmsMessageHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/mqtt/TempJmsFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/VirtualSensorDataService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/VirtualSensorDataServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/controller/CallbackController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/controller/TestController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/entity/ServerConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/websocket/SystemWebSocketHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/websocket/WebSocketConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/websocket/WebSocketMessageHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/water-app/src/main/resources/spring/application-websocket.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/factory/wsFactory.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/css/app.subheader.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/css/app.utilities.img.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/css/app.variables.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/css/app.vrbs.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/xsensor.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/module/AbstractModule.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/module/IModule.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/module/flow/AbstractSpringWorkFlow.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/module/flow/AbstractWorkFlow.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/module/flow/ISpringWorkFlow.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/module/flow/IWorkFlow.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/module/flow/WorkFlowManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/new-interface/src/test/java/com/ls/test/component/IComponent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/new-interface/src/test/java/com/ls/test/filter/IFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/new-interface/src/test/java/com/ls/test/filter/IFilterBehavier.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/new-interface/src/test/java/com/ls/test/mongo/EntityTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/new-interface/src/test/java/com/ls/test/mongo/MongoTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/new-interface/src/test/java/com/ls/test/morphia/C.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/new-interface/src/test/java/com/ls/test/morphia/DatastoreTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/new-interface/src/test/java/com/ls/test/morphia/MorphiaTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/new-interface/src/test/java/com/ls/test/morphia/TestMorphia.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/new-interface/src/test/java/com/ls/test/morphia/UserDAOTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/new-interface/src/test/java/com/ls/test/morphia/V.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/new-interface/src/test/java/com/ls/test/morphia/VDAO.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/new-interface/src/test/java/com/ls/test/service/AbstractBsonable.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/new-interface/src/test/java/com/ls/test/service/AndBsonable.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/new-interface/src/test/java/com/ls/test/service/Document.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/new-interface/src/test/java/com/ls/test/service/Filters.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/new-interface/src/test/java/com/ls/test/service/IBsonable.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/new-interface/src/test/java/com/ls/test/service/OperatorBsonable.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/new-interface/src/test/java/com/ls/test/service/SimpleEncodingBsonable.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/new-interface/src/test/java/com/ls/test/service/TestPersistentObjectService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/new-interface/src/test/webapp/create_user.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/fonts/Simple-Line-Icons.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/fonts/Simple-Line-Icons.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/fonts/Simple-Line-Icons.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/fonts/Simple-Line-Icons.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/xsensor.json" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/new-interface.iml" afterPath="$PROJECT_DIR$/module/core-framework/core-framework.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/pom.xml" afterPath="$PROJECT_DIR$/module/core-framework/pom.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/authtoken/ApplicationAuthenticationToken.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/authtoken/ApplicationAuthenticationToken.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/cache/BasicShiroMongoCache.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/cache/BasicShiroMongoCache.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/cache/PasswordRetryMongoCache.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/cache/PasswordRetryMongoCache.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/cache/ShiroAuthInfoCache.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/cache/ShiroAuthInfoCache.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/cache/ShiroGsonMongoCache.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/cache/ShiroGsonMongoCache.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/cache/ShiroMongoCache.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/cache/ShiroMongoCache.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/cache/ShiroMongoCacheManager.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/cache/ShiroMongoCacheManager.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/cache/TextKeyShiroMongoCache.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/cache/TextKeyShiroMongoCache.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/client/AbstractAuthClient.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/client/AbstractAuthClient.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/client/IAuthClient.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/client/IAuthClient.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/client/ShiroAuthClient.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/client/ShiroAuthClient.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/client/entity/AuthRequest.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/client/entity/AuthRequest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/client/entity/AuthResponse.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/client/entity/AuthResponse.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/client/entity/AuthToken.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/client/entity/AuthToken.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/credentials/RetryLimitHashedCredentialsMatcher.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/credentials/RetryLimitHashedCredentialsMatcher.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/dao/IShiroSessionDAO.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/dao/IShiroSessionDAO.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/dao/MongoSessionDAO.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/dao/MongoSessionDAO.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/dao/ShiroMongoDAO.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/dao/ShiroMongoDAO.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/entity/Account.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/entity/Account.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/entity/BasicPermision.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/entity/BasicPermision.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/entity/BasicRole.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/entity/BasicRole.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/entity/IAccount.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/entity/IAccount.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/entity/IPermission.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/entity/IPermission.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/entity/IRole.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/entity/IRole.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/entity/ISingleRoleAccount.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/entity/ISingleRoleAccount.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/entity/ITreeRole.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/entity/ITreeRole.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/entity/TreeRole.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/entity/TreeRole.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/realm/AccountRealm.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/realm/AccountRealm.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/realm/ApplicationRealm.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/realm/ApplicationRealm.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/auth/service/IShiroService.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/auth/service/IShiroService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/core/constant/DbConfig.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/constant/DbConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/core/entity/AbstractEntity.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/entity/AbstractEntity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/core/jms/spring/mqtt/ApolloMQTTConnection.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/jms/spring/mqtt/ApolloMQTTConnection.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/core/jms/spring/mqtt/JmsMessageHandler.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/jms/spring/mqtt/JmsMessageHandler.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/core/jms/spring/mqtt/JmsMessageHandlerAdapter.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/jms/spring/mqtt/JmsMessageHandlerAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/core/jms/spring/mqtt/JmsRouterListener.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/jms/spring/mqtt/JmsRouterListener.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/core/object/IDisable.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/object/IDisable.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/core/object/IDocumentable.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/object/IDocumentable.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/core/object/INameable.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/object/INameable.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/core/object/IObjectIdable.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/object/IObjectIdable.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/core/object/IStringable.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/object/IStringable.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/core/persistent/DatastoreFactoryBean.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/persistent/DatastoreFactoryBean.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/core/persistent/IMongoDAO.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/persistent/IMongoDAO.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/core/persistent/IMorphiaDAO.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/persistent/IMorphiaDAO.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/core/persistent/MongoClientFactoryBean.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/persistent/MongoClientFactoryBean.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/core/persistent/MongoClientOptionsDto.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/persistent/MongoClientOptionsDto.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/core/persistent/MongoDAO.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/persistent/MongoDAO.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/core/persistent/MorphiaDAO.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/persistent/MorphiaDAO.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/core/persistent/MorphiaFactoryBean.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/persistent/MorphiaFactoryBean.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/core/util/DecriptUtil.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/util/DecriptUtil.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/core/util/JsonUtil.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/util/JsonUtil.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/core/util/TimeUtils.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/util/TimeUtils.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/core/web/BasicController.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/web/BasicController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/core/web/BasicRestController.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/web/BasicRestController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/core/web/IController.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/web/IController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/core/web/IRestController.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/web/IRestController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/core/web/entity/Response.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/web/entity/Response.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/entity/Account.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/entity/Account.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/entity/Action.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/entity/Action.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/entity/Application.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/entity/Application.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/entity/Component.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/entity/Component.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/entity/EntityConst.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/entity/EntityConst.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/entity/FieldDefinition.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/entity/FieldDefinition.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/entity/PersistentObject.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/entity/PersistentObject.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/entity/PersistentRole.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/entity/PersistentRole.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/entity/PersistentRoleOperation.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/entity/PersistentRoleOperation.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/entity/PersistentRoleOperationGsonAdapter.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/entity/PersistentRoleOperationGsonAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/entity/PersistentUser.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/entity/PersistentUser.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/entity/PersistentUserRole.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/entity/PersistentUserRole.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/entity/VirtualSensor.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/entity/VirtualSensor.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/filter/AbstractBsonFilterChain.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/filter/AbstractBsonFilterChain.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/filter/BsonFilterFactory.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/filter/BsonFilterFactory.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/filter/IBsonFilter.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/filter/IBsonFilter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/filter/IBsonFilterChain.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/filter/IBsonFilterChain.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/filter/SimpleBsonFilterChain.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/filter/SimpleBsonFilterChain.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/filter/dto/Operator.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/filter/dto/Operator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/filter/obj/AbstractFilter.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/filter/obj/AbstractFilter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/filter/obj/EqFilter.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/filter/obj/EqFilter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/filter/obj/LessThanFilter.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/filter/obj/LessThanFilter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/filter/obj/LessThanOrEqFilter.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/filter/obj/LessThanOrEqFilter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/init/InitDatabase.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/init/InitDatabase.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/persistent/AccountDAO.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/persistent/AccountDAO.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/persistent/ApplicationDAO.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/persistent/ApplicationDAO.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/persistent/PersistentObjectDAO.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/persistent/PersistentObjectDAO.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/persistent/VirtualSensorDAO.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/persistent/VirtualSensorDAO.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/persistent/impl/AccountDAOImpl.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/persistent/impl/AccountDAOImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/persistent/impl/ApplicationDAOImpl.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/persistent/impl/ApplicationDAOImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/persistent/impl/PersistentObjectDAOImpl.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/persistent/impl/PersistentObjectDAOImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/persistent/impl/VirtualSensorDAOImpl.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/persistent/impl/VirtualSensorDAOImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/router/CorsConfigurerAdapter.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/CorsConfigurerAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/router/IProtocolAdapter.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/IProtocolAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/router/IPushable.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/IPushable.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/router/ITcpProtocolAdapter.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/ITcpProtocolAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/router/adapter/RestAdapter.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/adapter/RestAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/router/adapter/WebSocketAdapter.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/adapter/WebSocketAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/router/controller/LoginController.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/LoginController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/router/controller/ObjectController.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/ObjectController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/router/controller/PersistentUserController.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/PersistentUserController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/router/controller/RouterBasicRestController.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/RouterBasicRestController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/router/controller/TempController.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/TempController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/router/controller/TestController.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/TestController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/router/controller/VirtualSensorController.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/VirtualSensorController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/router/entity/LoginResponse.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/entity/LoginResponse.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/router/entity/ResponseCode.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/entity/ResponseCode.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/AccountAuthService.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/AccountAuthService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/AccountService.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/AccountService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/ApplicationService.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/ApplicationService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/BeanService.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/BeanService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/MqService.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/MqService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/MqttService.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/MqttService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/PersistentObjectService.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/PersistentObjectService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/PersistentRoleService.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/PersistentRoleService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/PersistentUserRoleService.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/PersistentUserRoleService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/PersistentUserService.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/PersistentUserService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/VirtualSensorComponentService.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/VirtualSensorComponentService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/VirtualSensorService.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/VirtualSensorService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/codec/IPasswordCodec.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/codec/IPasswordCodec.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/exception/ApplcationNotExsistException.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/exception/ApplcationNotExsistException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/exception/EntityExsistException.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/exception/EntityExsistException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/exception/EntityNotExsistException.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/exception/EntityNotExsistException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/exception/InvalidDataException.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/exception/InvalidDataException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/exception/ServiceException.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/exception/ServiceException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/impl/AccountAuthServiceImpl.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/AccountAuthServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/impl/AccountServiceImpl.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/AccountServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/impl/ApplicationServiceImpl.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/ApplicationServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/impl/BeanServiceImpl.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/BeanServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/impl/MqttServiceImpl.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/MqttServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/impl/PersistentObjectServiceImpl.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/PersistentObjectServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/impl/PersistentUserServiceImpl.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/PersistentUserServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/impl/TestMqService.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/TestMqService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/impl/VirtualSensorServiceImpl.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/VirtualSensorServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/persistent/FilterOperation.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/persistent/FilterOperation.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/persistent/Filters.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/persistent/Filters.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/persistent/Filters_bak.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/persistent/Filters_bak.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/persistent/obj/BasicEntityConvert.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/persistent/obj/BasicEntityConvert.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/java/com/infinite/framework/service/persistent/obj/IDataConverter.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/persistent/obj/IDataConverter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/resources/ehcache.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/ehcache.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/resources/infinite.cer" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/infinite.cer" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/resources/infinite.kys" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/infinite.kys" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/resources/jetty-https.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/jetty-https.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/resources/jetty-ssl.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/jetty-ssl.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/resources/jetty.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/jetty.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/resources/logback.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/logback.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/resources/shiro-realm.ini" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/shiro-realm.ini" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/resources/spring/application-context.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-context.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/resources/spring/application-core-component.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-core-component.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/resources/spring/application-dao.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-dao.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/resources/spring/application-jms.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-jms.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/resources/spring/application-schedule.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-schedule.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/resources/spring/application-service.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-service.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/resources/spring/application-shiro.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-shiro.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/resources/spring/dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/dispatcher-servlet.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/resources/spring/morphia-spring.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/morphia-spring.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/resources/spring/prop/mongo.properties" afterPath="$PROJECT_DIR$/module/water-app/src/main/resources/spring/prop/server.properties" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/resources/spring/prop/mongo_name.properties" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/prop/mongo_name.properties" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/resources/xdepartment.json" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/xdepartment.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/resources/xsensor.json" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/xsensor.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/new-interface/src/test/resources/application-test.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-thread-pool.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/persistent.object.query/persistent.object.query.iml" afterPath="$PROJECT_DIR$/module/bson.filter/bson.filter.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/persistent.object.query/pom.xml" afterPath="$PROJECT_DIR$/module/bson.filter/pom.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/persistent.object.query/src/main/java/com/infinite/framework/persistent/obj/QueryFilters.java" afterPath="$PROJECT_DIR$/module/bson.filter/src/main/java/com/infinite/framework/bson/filter/QueryFilters.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/persistent.object.query/src/main/java/com/infinite/framework/persistent/obj/SearchTextOptions.java" afterPath="$PROJECT_DIR$/module/bson.filter/src/main/java/com/infinite/framework/bson/filter/SearchTextOptions.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/persistent.object.query/src/main/java/com/infinite/framework/persistent/obj/Type.java" afterPath="$PROJECT_DIR$/module/bson.filter/src/main/java/com/infinite/framework/bson/filter/Type.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/persistent.object.query/src/main/java/com/infinite/framework/persistent/obj/geojson/Geo.java" afterPath="$PROJECT_DIR$/module/bson.filter/src/main/java/com/infinite/framework/bson/filter/geojson/Geo.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/persistent.object.query/src/main/java/com/infinite/framework/persistent/obj/geojson/GeoCollection.java" afterPath="$PROJECT_DIR$/module/bson.filter/src/main/java/com/infinite/framework/bson/filter/geojson/GeoCollection.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/persistent.object.query/src/main/java/com/infinite/framework/persistent/obj/geojson/GeoCoordinateReferenceSystemType.java" afterPath="$PROJECT_DIR$/module/bson.filter/src/main/java/com/infinite/framework/bson/filter/geojson/GeoCoordinateReferenceSystemType.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/persistent.object.query/src/main/java/com/infinite/framework/persistent/obj/geojson/GeoJsonType.java" afterPath="$PROJECT_DIR$/module/bson.filter/src/main/java/com/infinite/framework/bson/filter/geojson/GeoJsonType.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/persistent.object.query/src/main/java/com/infinite/framework/persistent/obj/geojson/GeoLineString.java" afterPath="$PROJECT_DIR$/module/bson.filter/src/main/java/com/infinite/framework/bson/filter/geojson/GeoLineString.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/persistent.object.query/src/main/java/com/infinite/framework/persistent/obj/geojson/GeoMultiLineString.java" afterPath="$PROJECT_DIR$/module/bson.filter/src/main/java/com/infinite/framework/bson/filter/geojson/GeoMultiLineString.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/persistent.object.query/src/main/java/com/infinite/framework/persistent/obj/geojson/GeoMultiPoint.java" afterPath="$PROJECT_DIR$/module/bson.filter/src/main/java/com/infinite/framework/bson/filter/geojson/GeoMultiPoint.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/persistent.object.query/src/main/java/com/infinite/framework/persistent/obj/geojson/GeoMultiPolygon.java" afterPath="$PROJECT_DIR$/module/bson.filter/src/main/java/com/infinite/framework/bson/filter/geojson/GeoMultiPolygon.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/persistent.object.query/src/main/java/com/infinite/framework/persistent/obj/geojson/GeoNamedCoordinateReferenceSystem.java" afterPath="$PROJECT_DIR$/module/bson.filter/src/main/java/com/infinite/framework/bson/filter/geojson/GeoNamedCoordinateReferenceSystem.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/persistent.object.query/src/main/java/com/infinite/framework/persistent/obj/geojson/GeoPoint.java" afterPath="$PROJECT_DIR$/module/bson.filter/src/main/java/com/infinite/framework/bson/filter/geojson/GeoPoint.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/persistent.object.query/src/main/java/com/infinite/framework/persistent/obj/geojson/GeoPolygon.java" afterPath="$PROJECT_DIR$/module/bson.filter/src/main/java/com/infinite/framework/bson/filter/geojson/GeoPolygon.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/persistent.object.query/src/main/java/com/infinite/framework/persistent/obj/geojson/GeoPolygonCoordinates.java" afterPath="$PROJECT_DIR$/module/bson.filter/src/main/java/com/infinite/framework/bson/filter/geojson/GeoPolygonCoordinates.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/persistent.object.query/src/main/java/com/infinite/framework/persistent/obj/geojson/GeoPosition.java" afterPath="$PROJECT_DIR$/module/bson.filter/src/main/java/com/infinite/framework/bson/filter/geojson/GeoPosition.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/water-app/src/main/resources/spring/prop/mongo.properties" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/prop/mongo.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/fonts/sourcesanspro/sourcesanspro-bold.woff" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/fonts/sourcesanspro/sourcesanspro-bold.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/fonts/sourcesanspro/sourcesanspro-light.woff" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/fonts/sourcesanspro/sourcesanspro-light.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/fonts/sourcesanspro/sourcesanspro.woff" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/fonts/sourcesanspro/sourcesanspro.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/new_interface_war.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/new_interface_war.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/new_interface_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/new_interface_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/water_app_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/water_app_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/grunt/concat.js" afterPath="$PROJECT_DIR$/module/app-web/grunt/concat.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/css/app.css" afterPath="$PROJECT_DIR$/module/app-web/src/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/css/less/app.reset.less" afterPath="$PROJECT_DIR$/module/app-web/src/css/less/app.reset.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/index.html" afterPath="$PROJECT_DIR$/module/app-web/src/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/app.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/config.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/dashbord.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/dashbord.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-detail.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-detail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/main.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_dashboard.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_device_detail.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_device_detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/blocks/header.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/blocks/header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src_bak/js/main.js" afterPath="$PROJECT_DIR$/module/app-web/src_bak/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/pom.xml" afterPath="$PROJECT_DIR$/module/water-app/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/controller/SensorController.java" afterPath="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/controller/SensorController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/core/entity/BasicEntity.java" afterPath="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/core/entity/BasicEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/entity/VirtualSensor.java" afterPath="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/entity/VirtualSensor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/service/VirtualSensorService.java" afterPath="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/service/VirtualSensorService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/service/impl/VirtualSensorServiceImpl.java" afterPath="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/service/impl/VirtualSensorServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/resources/spring/application-core-component.xml" afterPath="$PROJECT_DIR$/module/water-app/src/main/resources/spring/application-core-component.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/resources/xdepartment.json" afterPath="$PROJECT_DIR$/module/water-app/src/main/resources/xdepartment.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/resources/xsensor.json" afterPath="$PROJECT_DIR$/module/water-app/src/main/resources/xsensor.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/pages/index.jsp" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/pages/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/pages/tpl/app.html" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/pages/tpl/app.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/pages/tpl/app_dashboard.html" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/pages/tpl/app_dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/pages/tpl/app_device_detail.html" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/pages/tpl/app_device_detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/pages/tpl/blocks/common_sub_header.html" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/pages/tpl/blocks/common_sub_header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/pages/tpl/blocks/header.html" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/pages/tpl/blocks/header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/css/app.min.css" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/css/app.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/app.js" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/app.min.js" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/app.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/app.src.js" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/app.src.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/config.js" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/controllers/dashbord.js" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/controllers/dashbord.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/controllers/device-detail.js" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/controllers/device-detail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/main.js" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/water-app.iml" afterPath="$PROJECT_DIR$/module/water-app/water-app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="framework.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1752,7 +1464,7 @@
       <workItem from="1471226903632" duration="150000" />
       <workItem from="1471227911845" duration="11247000" />
       <workItem from="1471254421614" duration="96000" />
-      <workItem from="1471308792038" duration="28867000" />
+      <workItem from="1471308792038" duration="28904000" />
     </task>
     <task id="LOCAL-00001" summary="app-web html small edit.">
       <created>1471254507746</created>
@@ -1761,7 +1473,14 @@
       <option name="project" value="LOCAL" />
       <updated>1471254507746</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="version 0.0.1 commit">
+      <created>1471339501332</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1471339501332</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1788,7 +1507,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40477000" />
+    <option name="totallyTimeSpent" value="40514000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="26" width="1366" height="716" extended-state="0" />
@@ -1859,7 +1578,8 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="app-web html small edit." />
-    <option name="LAST_COMMIT_MESSAGE" value="app-web html small edit." />
+    <MESSAGE value="version 0.0.1 commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 0.0.1 commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -4,7 +4,7 @@
     <entry_points version="2.0" />
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
-    <file type="web" url="file://$PROJECT_DIR$/module/new-interface" />
+    <file type="web" url="file://$PROJECT_DIR$/module/core-framework" />
     <file type="web" url="file://$PROJECT_DIR$/module/water-app" />
   </component>
   <component name="MavenProjectsManager">

@@ -2,9 +2,6 @@ package com.infinite.water.entity;
 
 import java.util.List;
 
-/**
- * Created by xinhong on 16/8/14.
- */
 public class VirtualSensor {
 
     /**
@@ -28,7 +25,28 @@ public class VirtualSensor {
     private double lon;
     private String name;
     private int offline_report;
-    private String uuid;
+    private String id;
+
+
+    private double negtive_totoal;
+    private double positive_total;
+
+    public double getNegtive_totoal() {
+        return negtive_totoal;
+    }
+
+    public void setNegtive_totoal(double negtive_totoal) {
+        this.negtive_totoal = negtive_totoal;
+    }
+
+    public double getPositive_total() {
+        return positive_total;
+    }
+
+    public void setPositive_total(double positive_total) {
+        this.positive_total = positive_total;
+    }
+
     /**
      * actions : [{"channel_id":"%2%","operation":"take_photo","param":"%3%","sensor_id":"%1%"}]
      * fieldDefinitions : [{"name":"image","type":"image_data"},{"name":"time","type":"isodate"}]
@@ -103,12 +121,12 @@ public class VirtualSensor {
         this.offline_report = offline_report;
     }
 
-    public String getUuid() {
-        return uuid;
+    public String getId() {
+        return id;
     }
 
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public List<Components> getComponents() {

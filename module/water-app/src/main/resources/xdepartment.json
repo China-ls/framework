@@ -83,11 +83,28 @@
         {
           "address": "",
           "contact": "",
-          "devices": null,
           "icon": "green_flag.png",
           "id": "3002",
           "name": "秀洲区",
           "sub_departments": null,
+          "devices": [
+            {
+              "name": "麦加一号站",
+              "uuid": "59ec0ac4-2182-4960-9166-3ce62738ef99"
+            },
+            {
+              "name": "麦加二号站",
+              "uuid": "59ec0ac4-2182-4960-9199-3ce62738ef99"
+            },
+            {
+              "name": "麦加三号站",
+              "uuid": "59ec0ac4-2182-4960-9188-3ce62738ef99"
+            },
+            {
+              "name": "麦加四号站",
+              "uuid": "59ec0ac4-2182-4960-9177-3ce62738ef99"
+            }
+          ],
           "telephone": "",
           "uuid": "596e2e81-740c-4945-a481-129dc7909995"
         },
@@ -105,16 +122,7 @@
         {
           "address": "",
           "contact": "",
-          "devices": [
-            {
-              "name": "魏塘工业园1号",
-              "uuid": "23423da9-b682-4566-8794-9169f484be5e"
-            },
-            {
-              "name": "魏塘工业园",
-              "uuid": "e5f518e7-50f5-4761-896e-e1c1a7086000"
-            }
-          ],
+          "devices": null,
           "icon": "green_flag.png",
           "id": "3004",
           "name": "海盐县",

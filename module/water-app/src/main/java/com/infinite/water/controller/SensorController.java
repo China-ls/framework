@@ -39,4 +39,20 @@ public class SensorController extends AbstractController {
         return response;
     }
 
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
+    @ResponseBody
+    public RestResponse getAllSensor() {
+        RestResponse response = new RestResponse();
+        try {
+            response.setCode("0000");
+            response.setMessage("success");
+            response.setData(virtualSensorService.getAllVirtualSensor());
+        } catch (Throwable e) {
+            log.debug("read xdepartment.json error: {}", e.getCause());
+            response.setCode("0001");
+            response.setMessage("fail");
+        }
+        return response;
+    }
+
 }

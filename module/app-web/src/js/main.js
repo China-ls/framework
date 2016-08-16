@@ -3,8 +3,8 @@
 /* Controllers */
 
 angular.module('app')
-    .controller('AppCtrl', ['$scope', '$translate', '$localStorage', '$window', 'NETCONST',
-        function ($scope, $translate, $localStorage, $window, NETCONST) {
+    .controller('AppCtrl', ['$scope', '$translate', '$localStorage', '$window', 'NETCONST', '$websocket', 'toaster',
+        function ($scope, $translate, $localStorage, $window, NETCONST, $websocket, toaster) {
             NETCONST.CTX = angular.element("#__ctx").val();
 
             // add 'ie' classes to html
@@ -86,4 +86,30 @@ angular.module('app')
             $scope.$on("EMIT_DEVICE_TREE_CLICK", function (event, data) {
                 $scope.$broadcast("BROADCAST_DEVICE_TREE_CLICK", data);
             });
-        }]);
+
+            var wsUrl = NETCONST.CTX.replace("http://", "ws://") + "/ws";
+            try {
+                $scope.ws = $websocket(wsUrl, {
+                    reconnectIfNotNormalClose: true
+                });
+            } catch (e){
+                $scope.ws = $websocket("ws://120.55.165.5:9998/app/ws", {
+                    reconnectIfNotNormalClose: true
+                });
+            }
+            $scope.ws.onMessage(function (message) {
+                try {
+                    $scope.$broadcast("WS_MESSAGE", JSON.parse(message.data));
+                    console.warn(message);
+                } catch (e) {
+                }
+            });
+            $scope.wsSend = function (data) {
+                $scope.ws.send(data);
+            };
+
+            $scope.Toast = function (type, title, text) {
+                toaster.pop(type, title, text);
+            };
+        }]
+    );

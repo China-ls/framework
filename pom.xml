@@ -8,9 +8,9 @@
     <artifactId>framework</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>module/new-interface</module>
+        <module>module/bson.filter</module>
+        <module>module/core-framework</module>
         <module>module/water-app</module>
-        <module>module/persistent.object.query</module>
     </modules>
     <packaging>pom</packaging>
 

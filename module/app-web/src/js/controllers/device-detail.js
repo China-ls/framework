@@ -10,10 +10,11 @@ app.controller('DeviceDetailCtrl', ['$scope', '$stateParams', '$state', '$http',
 
         $http.get(NETCONST.CTX + NETCONST.SENSOR_BY_ID + $stateParams.id).then(function (response) {
             $scope.device = response.data.data;
-            if ($scope.device.status === 'NORMAL') {
+            // if ($scope.device.status === 'NORMAL') {
                 $scope.device.dsplay_status = "正常";
-            }
-            console.warn($scope.device);
+                $scope.device.instant = "0";
+            // }
+            // console.warn($scope.device);
             $scope.app.subHeader.contentTitle = $scope.device.name + '设备详情';
         }, function (response) {
 
@@ -55,6 +56,23 @@ app.controller('DeviceDetailCtrl', ['$scope', '$stateParams', '$state', '$http',
             {time: ' ', name: ' ', tel: ' ', content: ' '},
             {time: ' ', name: ' ', tel: ' ', content: ' '}
         ];
+
+        $scope.$on("WS_MESSAGE", function (event, data) {
+            // console.warn(data);
+            if (data.comp_id === '2') {
+                $scope.device.instant = data.instant;
+                $scope.device.positive_total = data.positive_total;
+            // } else if (data.comp_id === '4') {
+            //     $scope.device.image = data.image;
+            }
+        });
+
+        $scope.takepick = function () {
+            $scope.wsSend('{"channel_id" : "4","operation" : "take_photo","param" : 1,"sensor_id" : "59ec0ac4-2182-4960-9166-3ce62738ef99"}');
+            $scope.Toast('success', '提示', '拍照成功!');
+        };
+
+
 
     }]
 );

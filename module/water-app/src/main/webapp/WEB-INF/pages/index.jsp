@@ -1,6 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<% String absCtx = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort(); %>
+<%--<c:set var="ctx" value="${pageContext.request.contextPath}"/>--%>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
+
 
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD LEVEL1//EN">
 <!DOCTYPE html>
@@ -14,7 +17,10 @@
     <link rel="stylesheet" href="${ctx}/css/app.min.css" type="text/css"/>
 </head>
 <body ng-controller="AppCtrl">
-<input type="hidden" id="__ctx" value="${ctx}" />
+<input type="hidden" id="__ctx" value="${ctx}"/>
+<!-- toaster directive -->
+<toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+<!-- / toaster directive -->
 
 <div class="app" id="app"
      ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asideFixed, 'app-aside-folded':app.settings.asideFolded, 'app-aside-hide': app.settings.asideHide, 'app-aside-dock':app.settings.asideDock, 'container':app.settings.container}"

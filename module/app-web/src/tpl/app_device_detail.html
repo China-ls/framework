@@ -11,7 +11,7 @@
             <div class="col-md-9">
                 <div class="row">
                     <div class="col-xs-5 col-md-4">
-                        <img src="img/item_icon.png" width="160">
+                        <img src="img/{{device.id}}.jpg" class="img-full" style="max-width: 140px;margin: 0 auto;">
                     </div>
                     <div class="col-xs-7 col-md-8">
                         <div class="row">
@@ -19,11 +19,13 @@
                                 <p class="item dash-border-right dash-border-bottom ">设备名称：<span class="cb">{{device.name}}</span></p>
                                 <p class="item dash-border-right dash-border-bottom ">设备编号：<span class="cb">{{device.internal_id}}</span></p>
                                 <p class="item dash-border-right dash-border-bottom ">经度：<span class="cb">{{device.lat}}</span></p>
-                                <p class="item dash-border-bottom">纬度：<span class="cb">{{device.lon}}</span></p>
                             </div>
                             <div class="col-md-6">
                                 <p class="item dash-border-bottom">设备状态：<span class="cb">{{device.dsplay_status}}</span></p>
+                                <p class="item dash-border-bottom">瞬时流量：<span class="cb">{{device.instant}} L/H</span></p>
+                                <p class="item dash-border-bottom">累计流量：<span class="cb">{{device.positive_total}} 立方米</span></p>
                                 <p class="item dash-border-bottom">设备描述：<span class="cb">{{device.desc}}</span></p>
+                                <p class="item dash-border-bottom">纬度：<span class="cb">{{device.lon}}</span></p>
                             </div>
                         </div>
                     </div>
@@ -68,22 +70,22 @@
                 <div class="text-center text-md">
                     <span class="pos-rlt t5"><i class="sprite sprite-u564"></i></span>
                     <span class="m-l-xs">电量计</span>
-                    <span class="m-l-md wrapper-xs padder-sm b-a bg-white-only inline" style="min-width: 106px;">256.2立方米</span>
+                    <span class="m-l-md wrapper-xs padder-sm b-a bg-white-only inline" style="min-width: 190px;">2630.28度</span>
                 </div>
                 <div class="text-center text-md">
                     <span class="pos-rlt t5"><i class="sprite sprite-u570"></i></span>
                     <span class="m-l-xs">水量计</span>
-                    <span class="m-l-md wrapper-xs padder-sm b-a bg-white-only inline" style="min-width: 106px;">256.2立方米</span>
+                    <span class="m-l-md wrapper-xs padder-sm b-a bg-white-only inline" style="min-width: 190px;">{{device.positive_total}} 立方米</span>
                 </div>
-                <div class="text-center text-md">
+                <div class="hide text-center text-md">
                     <span class="pos-rlt t5"><i class="sprite sprite-u709"></i></span>
                     <span class="m-l-xs">摄像头</span>
-                    <span class="m-l-md wrapper-xs padder-sm b-a bg-white-only inline" style="min-width: 106px;">正常</span>
+                    <span class="m-l-md wrapper-xs padder-sm b-a bg-white-only inline" style="min-width: 190px;">正常</span>
                 </div>
-                <div class="text-center text-md">
+                <div class="hide text-center text-md">
                     <span class="pos-rlt t5"><i class="sprite sprite-u719"></i></span>
                     <span class="m-l-xs">考勤机</span>
-                    <span class="m-l-md wrapper-xs padder-sm b-a bg-white-only inline" style="min-width: 106px;">正常</span>
+                    <span class="m-l-md wrapper-xs padder-sm b-a bg-white-only inline" style="min-width: 190px;">正常</span>
                 </div>
             </div>
             <div class="col-md-6 b-l-d b-dark no-border-sm no-border-xs">
@@ -100,6 +102,7 @@
                                    'sprite-u719' : (comp.type == 'cardreader_sensor'),
                                    'sprite-u628' : (comp.type == 'onboard_controller')
                                    }"
+                                   style="width: 32px;display: inline-block;"
                                 ></i>
                             </span>
                             <span class="m-l-xs inline w-xxs m-r-xs">{{comp.name}}</span>
@@ -110,7 +113,8 @@
                                         <input type="checkbox" checked>
                                         <i></i>
                                     </label>
-                                    <button class="btn btn-success btn-xs m-r-xs"
+                                    <button ng-click="takepick()"
+                                            class="btn btn-success btn-xs m-r-xs"
                                             ng-if="action.operation === 'take_photo'">拍照</button>
                                 </span>
                             </span>
@@ -296,8 +300,8 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col-xs-6 col-sm-6 col-lg-6">
-                    <img class="img-full" src="img/item_icon.png" >
+                <div class="col-xs-6 col-sm-6 col-lg-6 wrapper-lg">
+                    <img class="img-full" src="img/{{device.id}}.jpg" >
                 </div>
             </div>
         </div>

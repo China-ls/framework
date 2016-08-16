@@ -16,7 +16,7 @@
 <!-- / navbar header -->
 
 <!-- navbar collapse -->
-<div class="collapse pos-rlt navbar-collapse box-shadow {{app.settings.navbarCollapseColor}}">
+<div class="collapse pos-rlt navbar-collapse box-shadow {{app.settings.navbarCollapseColor}}  padder-md no-padder-xs">
     <!-- buttons -->
     <div class="hide nav navbar-nav hidden-xs">
         <a href class="btn no-shadow navbar-btn" ng-click="app.settings.asideFolded = !app.settings.asideFolded">
@@ -139,18 +139,36 @@
         <li class="dropdown" dropdown>
             <a href class="dropdown-toggle" dropdown-toggle>
                 <i class="fa fa-fw fa-plus visible-xs-inline-block"></i>
-                <span>实时数据</span> <span class="caret"></span>
+                <span class="text-white">实时数据</span> <span class="caret text-white"></span>
             </a>
             <ul class="dropdown-menu" role="menu">
                 <li><a ui-sref="app.device">设备数据</a></li>
                 <li><a href="#">巡检数据</a></li>
             </ul>
         </li>
+        <li class="dropdown" dropdown>
+            <a href class="dropdown-toggle" dropdown-toggle>
+                <i class="fa fa-fw fa-plus visible-xs-inline-block"></i>
+                <span class="text-white">统计分析</span> <span class="caret text-white"></span>
+            </a>
+        </li>
+        <li class="dropdown" dropdown>
+            <a href class="dropdown-toggle" dropdown-toggle>
+                <i class="fa fa-fw fa-plus visible-xs-inline-block"></i>
+                <span class="text-white">资源管理</span> <span class="caret text-white"></span>
+            </a>
+        </li>
+        <li class="dropdown" dropdown>
+            <a href class="dropdown-toggle" dropdown-toggle>
+                <i class="fa fa-fw fa-plus visible-xs-inline-block"></i>
+                <span class="text-white">系统管理</span> <span class="caret text-white"></span>
+            </a>
+        </li>
     </ul>
     <!-- / link and dropdown -->
 
     <!-- search form -->
-    <form class="hide navbar-form navbar-form-sm navbar-left shift" ui-shift="prependTo" target=".navbar-collapse"
+    <!--<form class="hide navbar-form navbar-form-sm navbar-left shift" ui-shift="prependTo" target=".navbar-collapse"
           role="search" ng-controller="TypeaheadDemoCtrl">
         <div class="form-group">
             <div class="input-group">
@@ -162,7 +180,7 @@
               </span>
             </div>
         </div>
-    </form>
+    </form>-->
     <!-- / search form -->
 
     <!-- nabar right -->
@@ -180,11 +198,11 @@
             <!-- / dropdown -->
         </li>
         <li class="hidden-xs">
-            <a ui-fullscreen class="hidden-sm" ></a>
+            <a ui-fullscreen class="hidden-sm text-white" ></a>
         </li>
 
-        <li class="hidden-xs">
-            <a class="hidden-sm" >退出</a>
+        <li class="hidden-sm">
+            <a class="hidden-sm text-white" >退出</a>
         </li>
 
         <li class="hide dropdown" dropdown>

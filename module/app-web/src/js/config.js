@@ -7,6 +7,7 @@ var app =
                 CTX: '',
                 DEPARTMENT: '/dpt',
                 SENSOR_BY_ID: '/sensor/',
+                SENSORS: '/sensor/all',
             })
             .config(['$httpProvider', 'NETCONST', function ($httpProvider, NETCONST) {
                 $httpProvider.defaults.headers.common['APPKEY'] = NETCONST.APPKEY;

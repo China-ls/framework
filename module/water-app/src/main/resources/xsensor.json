@@ -3,122 +3,7 @@
     "app_id": "aidiman/xgsn/yinfantech",
     "components": [
       {
-        "action": [
-          {
-            "channel_id": "%2%",
-            "operation": "take_photo",
-            "param": "%3%",
-            "sensor_id": "%1%"
-          }
-        ],
-        "field": [
-          {
-            "name": "image",
-            "type": "image_data"
-          },
-          {
-            "name": "time",
-            "type": "isodate"
-          }
-        ],
-        "component": "camera_controller",
-        "display_name": "摄像机",
-        "id": "1"
-      },
-      {
-        "component": "electricmeter_sensor",
-        "display_name": "电表",
-        "field": [
-          {
-            "name": "power",
-            "type": "float",
-            "unit": "kWH"
-          },
-          {
-            "name": "voltageA",
-            "type": "float",
-            "unit": "V"
-          },
-          {
-            "name": "voltageB",
-            "type": "float",
-            "unit": "V"
-          },
-          {
-            "name": "voltageC",
-            "type": "float",
-            "unit": "V"
-          },
-          {
-            "name": "currentA",
-            "type": "float",
-            "unit": "A"
-          },
-          {
-            "name": "currentB",
-            "type": "float",
-            "unit": "A"
-          },
-          {
-            "name": "currentC",
-            "type": "float",
-            "unit": "A"
-          },
-          {
-            "name": "time",
-            "type": "isodate"
-          }
-        ],
-        "id": "2"
-      },
-      {
-        "component": "flowmeter_sensor",
-        "display_name": "流量计",
-        "field": [
-          {
-            "name": "instant",
-            "type": "float",
-            "unit": "m3/s"
-          },
-          {
-            "name": "positive_total",
-            "type": "float",
-            "unit": "m3"
-          },
-          {
-            "name": "negtive_totoal",
-            "type": "float",
-            "unit": "m3"
-          },
-          {
-            "name": "time",
-            "type": "isodate"
-          }
-        ],
-        "id": "3"
-      },
-      {
-        "cardreader_sensor": {
-          "field": [
-            {
-              "name": "card_id",
-              "type": "int"
-            },
-            {
-              "name": "time",
-              "type": "isodate"
-            }
-          ]
-        },
-        "component": "cardreader_sensor",
-        "display_name": "读卡器",
-        "id": "4"
-      },
-      {
-        "component": "onboard_controller",
-        "display_name": "扬升泵",
-        "id": "5:1",
-        "action": [
+        "actions": [
           {
             "channel_id": "%2%",
             "operation": "switch",
@@ -126,25 +11,16 @@
             "sensor_id": "%1%"
           }
         ],
-        "field": [
+        "id": "1",
+        "type": "plc_controller",
+        "name": "PLC",
+        "fieldDefinitions": [
           {
             "name": "status",
             "type": "boolean"
           },
           {
-            "name": "time",
-            "type": "isodate"
-          }
-        ],
-        "ref_channel": "6:1"
-      },
-      {
-        "component": "status_sensor",
-        "display_name": "扬升泵状态",
-        "id": "6:1",
-        "field": [
-          {
-            "name": "status",
+            "name": "onoff",
             "type": "boolean"
           },
           {
@@ -152,93 +28,17 @@
             "type": "isodate"
           }
         ]
-      }
-    ],
-    "desc": "浙江省嘉兴市嘉善县魏塘工业园区振华路58号 测试设备1号",
-    "idle_report": 600,
-    "internal_id": 2100122001222,
-    "lat": 30.280000000000001,
-    "lon": 120.12,
-    "name": "魏塘工业园1号",
-    "offline_report": 300,
-    "uuid": "23423da9-b682-4566-8794-9169f484be5e"
-  },
-  {
-    "app_id": "aidiman/xgsn/yinfantech",
-    "components": [
-      {
-        "action": [
-          {
-            "channel_id": "%2%",
-            "operation": "take_photo",
-            "param": "%3%",
-            "sensor_id": "%1%"
-          }
-        ],
-        "field": [
-          {
-            "name": "image",
-            "type": "image_data"
-          },
-          {
-            "name": "time",
-            "type": "isodate"
-          }
-        ],
-        "component": "camera_controller",
-        "display_name": "摄像机",
-        "id": "1"
       },
       {
-        "component": "electricmeter_sensor",
-        "display_name": "电表",
-        "field": [
+        "actions": [],
+        "id": "2",
+        "type": "flowmeter_sensor",
+        "name": "流量计",
+        "fieldDefinitions": [
           {
-            "name": "power",
-            "type": "float",
-            "unit": "kWH"
+            "name": "status",
+            "type": "boolean"
           },
-          {
-            "name": "voltageA",
-            "type": "float",
-            "unit": "V"
-          },
-          {
-            "name": "voltageB",
-            "type": "float",
-            "unit": "V"
-          },
-          {
-            "name": "voltageC",
-            "type": "float",
-            "unit": "V"
-          },
-          {
-            "name": "currentA",
-            "type": "float",
-            "unit": "A"
-          },
-          {
-            "name": "currentB",
-            "type": "float",
-            "unit": "A"
-          },
-          {
-            "name": "currentC",
-            "type": "float",
-            "unit": "A"
-          },
-          {
-            "name": "time",
-            "type": "isodate"
-          }
-        ],
-        "id": "2"
-      },
-      {
-        "component": "flowmeter_sensor",
-        "display_name": "流量计",
-        "field": [
           {
             "name": "instant",
             "type": "float",
@@ -258,11 +58,18 @@
             "name": "time",
             "type": "isodate"
           }
-        ],
-        "id": "3"
+        ]
       },
       {
-        "field": [
+        "actions": [],
+        "id": "3",
+        "type": "cardreader_sensor",
+        "name": "读卡器",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
           {
             "name": "card_id",
             "type": "int"
@@ -271,24 +78,136 @@
             "name": "time",
             "type": "isodate"
           }
-        ],
-        "component": "cardreader_sensor",
-        "display_name": "读卡器",
-        "id": "4"
+        ]
       },
       {
-        "component": "onboard_controller",
-        "display_name": "风机",
-        "id": "5:1",
-        "action": [
+        "actions": [
           {
             "channel_id": "%2%",
-            "operation": "switch",
+            "operation": "take_photo",
             "param": "%3%",
             "sensor_id": "%1%"
           }
         ],
-        "field": [
+        "id": "4",
+        "type": "camera_controller",
+        "name": "摄像机",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "image",
+            "type": "image_data"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [],
+        "id": "5",
+        "type": "electricmeter_sensor",
+        "name": "电量计",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "power",
+            "type": "float",
+            "unit": "kWH"
+          },
+          {
+            "name": "voltageA",
+            "type": "float",
+            "unit": "V"
+          },
+          {
+            "name": "voltageB",
+            "type": "float",
+            "unit": "V"
+          },
+          {
+            "name": "voltageC",
+            "type": "float",
+            "unit": "V"
+          },
+          {
+            "name": "currentA",
+            "type": "float",
+            "unit": "A"
+          },
+          {
+            "name": "currentB",
+            "type": "float",
+            "unit": "A"
+          },
+          {
+            "name": "currentC",
+            "type": "float",
+            "unit": "A"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [],
+        "id": "6",
+        "type": "analog_sensor",
+        "name": "模拟",
+        "fieldDefinitions": [
+          {
+            "name": "value0",
+            "type": "double"
+          },
+          {
+            "name": "value1",
+            "type": "double"
+          },
+          {
+            "name": "value2",
+            "type": "double"
+          },
+          {
+            "name": "value3",
+            "type": "double"
+          },
+          {
+            "name": "value4",
+            "type": "double"
+          },
+          {
+            "name": "value5",
+            "type": "double"
+          },
+          {
+            "name": "value6",
+            "type": "double"
+          },
+          {
+            "name": "value7",
+            "type": "double"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [],
+        "id": "7",
+        "type": "status_sensor",
+        "name": "数字",
+        "fieldDefinitions": [
           {
             "name": "status",
             "type": "boolean"
@@ -298,15 +217,1046 @@
             "type": "isodate"
           }
         ]
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "id": "8",
+        "type": "onboard_controller",
+        "name": "开关",
+        "fieldDefinitions": [
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
       }
     ],
-    "desc": "浙江省嘉兴市嘉善县魏塘工业园区振华路58号--2号测试",
+    "desc": "秀洲区油车港镇麦加一号",
     "idle_report": 600,
-    "internal_id": 0,
-    "lat": 30.280000000000001,
+    "internal_id": 866104025159735,
+    "lat": 30.28,
     "lon": 120.12,
-    "name": "魏塘工业园2号",
+    "name": "麦加一号站",
     "offline_report": 300,
-    "uuid": "e5f518e7-50f5-4761-896e-e1c1a7086000"
+    "uuid": "59ec0ac4-2182-4960-9166-3ce62738ef99"
+  },
+  {
+    "app_id": "aidiman/xgsn/yinfantech",
+    "components": [
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "id": "1",
+        "type": "plc_controller",
+        "name": "PLC",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [],
+        "id": "2",
+        "type": "flowmeter_sensor",
+        "name": "流量计",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "instant",
+            "type": "float",
+            "unit": "m3/s"
+          },
+          {
+            "name": "positive_total",
+            "type": "float",
+            "unit": "m3"
+          },
+          {
+            "name": "negtive_totoal",
+            "type": "float",
+            "unit": "m3"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [],
+        "id": "3",
+        "type": "cardreader_sensor",
+        "name": "读卡器",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "card_id",
+            "type": "int"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "take_photo",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "id": "4",
+        "type": "camera_controller",
+        "name": "摄像机",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "image",
+            "type": "image_data"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [],
+        "id": "5",
+        "type": "electricmeter_sensor",
+        "name": "电量计",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "power",
+            "type": "float",
+            "unit": "kWH"
+          },
+          {
+            "name": "voltageA",
+            "type": "float",
+            "unit": "V"
+          },
+          {
+            "name": "voltageB",
+            "type": "float",
+            "unit": "V"
+          },
+          {
+            "name": "voltageC",
+            "type": "float",
+            "unit": "V"
+          },
+          {
+            "name": "currentA",
+            "type": "float",
+            "unit": "A"
+          },
+          {
+            "name": "currentB",
+            "type": "float",
+            "unit": "A"
+          },
+          {
+            "name": "currentC",
+            "type": "float",
+            "unit": "A"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [],
+        "id": "6",
+        "type": "analog_sensor",
+        "name": "模拟",
+        "fieldDefinitions": [
+          {
+            "name": "value0",
+            "type": "double"
+          },
+          {
+            "name": "value1",
+            "type": "double"
+          },
+          {
+            "name": "value2",
+            "type": "double"
+          },
+          {
+            "name": "value3",
+            "type": "double"
+          },
+          {
+            "name": "value4",
+            "type": "double"
+          },
+          {
+            "name": "value5",
+            "type": "double"
+          },
+          {
+            "name": "value6",
+            "type": "double"
+          },
+          {
+            "name": "value7",
+            "type": "double"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [],
+        "id": "7",
+        "type": "status_sensor",
+        "name": "数字",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "id": "8",
+        "type": "onboard_controller",
+        "name": "开关",
+        "fieldDefinitions": [
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      }
+    ],
+    "desc": "秀洲区油车港镇麦加二号",
+    "idle_report": 600,
+    "internal_id": 866104025159736,
+    "lat": 30.28,
+    "lon": 120.12,
+    "name": "麦加二号站",
+    "offline_report": 300,
+    "uuid": "59ec0ac4-2182-4960-9199-3ce62738ef99"
+  },
+  {
+    "app_id": "aidiman/xgsn/yinfantech",
+    "components": [
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "id": "1",
+        "type": "plc_controller",
+        "name": "PLC",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [],
+        "id": "2",
+        "type": "flowmeter_sensor",
+        "name": "流量计",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "instant",
+            "type": "float",
+            "unit": "m3/s"
+          },
+          {
+            "name": "positive_total",
+            "type": "float",
+            "unit": "m3"
+          },
+          {
+            "name": "negtive_totoal",
+            "type": "float",
+            "unit": "m3"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [],
+        "id": "3",
+        "type": "cardreader_sensor",
+        "name": "读卡器",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "card_id",
+            "type": "int"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "take_photo",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "id": "4",
+        "type": "camera_controller",
+        "name": "摄像机",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "image",
+            "type": "image_data"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [],
+        "id": "5",
+        "type": "electricmeter_sensor",
+        "name": "电量计",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "power",
+            "type": "float",
+            "unit": "kWH"
+          },
+          {
+            "name": "voltageA",
+            "type": "float",
+            "unit": "V"
+          },
+          {
+            "name": "voltageB",
+            "type": "float",
+            "unit": "V"
+          },
+          {
+            "name": "voltageC",
+            "type": "float",
+            "unit": "V"
+          },
+          {
+            "name": "currentA",
+            "type": "float",
+            "unit": "A"
+          },
+          {
+            "name": "currentB",
+            "type": "float",
+            "unit": "A"
+          },
+          {
+            "name": "currentC",
+            "type": "float",
+            "unit": "A"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [],
+        "id": "6",
+        "type": "analog_sensor",
+        "name": "模拟",
+        "fieldDefinitions": [
+          {
+            "name": "value0",
+            "type": "double"
+          },
+          {
+            "name": "value1",
+            "type": "double"
+          },
+          {
+            "name": "value2",
+            "type": "double"
+          },
+          {
+            "name": "value3",
+            "type": "double"
+          },
+          {
+            "name": "value4",
+            "type": "double"
+          },
+          {
+            "name": "value5",
+            "type": "double"
+          },
+          {
+            "name": "value6",
+            "type": "double"
+          },
+          {
+            "name": "value7",
+            "type": "double"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [],
+        "id": "7",
+        "type": "status_sensor",
+        "name": "数字",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "id": "8",
+        "type": "onboard_controller",
+        "name": "开关",
+        "fieldDefinitions": [
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      }
+    ],
+    "desc": "秀洲区油车港镇麦加三号",
+    "idle_report": 600,
+    "internal_id": 866104025159737,
+    "lat": 30.28,
+    "lon": 120.12,
+    "name": "麦加三号站",
+    "offline_report": 300,
+    "uuid": "59ec0ac4-2182-4960-9188-3ce62738ef99"
+  },
+  {
+    "app_id": "aidiman/xgsn/yinfantech",
+    "components": [
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "id": "1",
+        "type": "plc_controller",
+        "name": "PLC",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [],
+        "id": "2",
+        "type": "flowmeter_sensor",
+        "name": "流量计",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "instant",
+            "type": "float",
+            "unit": "m3/s"
+          },
+          {
+            "name": "positive_total",
+            "type": "float",
+            "unit": "m3"
+          },
+          {
+            "name": "negtive_totoal",
+            "type": "float",
+            "unit": "m3"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [],
+        "id": "3",
+        "type": "cardreader_sensor",
+        "name": "读卡器",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "card_id",
+            "type": "int"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "take_photo",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "id": "4",
+        "type": "camera_controller",
+        "name": "摄像机",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "image",
+            "type": "image_data"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [],
+        "id": "5",
+        "type": "electricmeter_sensor",
+        "name": "电量计",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "power",
+            "type": "float",
+            "unit": "kWH"
+          },
+          {
+            "name": "voltageA",
+            "type": "float",
+            "unit": "V"
+          },
+          {
+            "name": "voltageB",
+            "type": "float",
+            "unit": "V"
+          },
+          {
+            "name": "voltageC",
+            "type": "float",
+            "unit": "V"
+          },
+          {
+            "name": "currentA",
+            "type": "float",
+            "unit": "A"
+          },
+          {
+            "name": "currentB",
+            "type": "float",
+            "unit": "A"
+          },
+          {
+            "name": "currentC",
+            "type": "float",
+            "unit": "A"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [],
+        "id": "6",
+        "type": "analog_sensor",
+        "name": "模拟",
+        "fieldDefinitions": [
+          {
+            "name": "value0",
+            "type": "double"
+          },
+          {
+            "name": "value1",
+            "type": "double"
+          },
+          {
+            "name": "value2",
+            "type": "double"
+          },
+          {
+            "name": "value3",
+            "type": "double"
+          },
+          {
+            "name": "value4",
+            "type": "double"
+          },
+          {
+            "name": "value5",
+            "type": "double"
+          },
+          {
+            "name": "value6",
+            "type": "double"
+          },
+          {
+            "name": "value7",
+            "type": "double"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [],
+        "id": "7",
+        "type": "status_sensor",
+        "name": "数字",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "id": "8",
+        "type": "onboard_controller",
+        "name": "开关",
+        "fieldDefinitions": [
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      }
+    ],
+    "desc": "秀洲区油车港镇麦加四号站",
+    "idle_report": 600,
+    "internal_id": 866104025159738,
+    "lat": 30.28,
+    "lon": 120.12,
+    "name": "麦加四号站",
+    "offline_report": 300,
+    "uuid": "59ec0ac4-2182-4960-9177-3ce62738ef99"
+  },
+  {
+    "app_id": "aidiman/xgsn/yinfantech",
+    "components": [
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "id": "1",
+        "type": "plc_controller",
+        "name": "PLC",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [],
+        "id": "2",
+        "type": "flowmeter_sensor",
+        "name": "流量计",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "instant",
+            "type": "float",
+            "unit": "m3/s"
+          },
+          {
+            "name": "positive_total",
+            "type": "float",
+            "unit": "m3"
+          },
+          {
+            "name": "negtive_totoal",
+            "type": "float",
+            "unit": "m3"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [],
+        "id": "3",
+        "type": "cardreader_sensor",
+        "name": "读卡器",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "card_id",
+            "type": "int"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "take_photo",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "id": "4",
+        "type": "camera_controller",
+        "name": "摄像机",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "image",
+            "type": "image_data"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [],
+        "id": "5",
+        "type": "electricmeter_sensor",
+        "name": "电量计",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "power",
+            "type": "float",
+            "unit": "kWH"
+          },
+          {
+            "name": "voltageA",
+            "type": "float",
+            "unit": "V"
+          },
+          {
+            "name": "voltageB",
+            "type": "float",
+            "unit": "V"
+          },
+          {
+            "name": "voltageC",
+            "type": "float",
+            "unit": "V"
+          },
+          {
+            "name": "currentA",
+            "type": "float",
+            "unit": "A"
+          },
+          {
+            "name": "currentB",
+            "type": "float",
+            "unit": "A"
+          },
+          {
+            "name": "currentC",
+            "type": "float",
+            "unit": "A"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [],
+        "id": "6",
+        "type": "analog_sensor",
+        "name": "模拟",
+        "fieldDefinitions": [
+          {
+            "name": "value0",
+            "type": "double"
+          },
+          {
+            "name": "value1",
+            "type": "double"
+          },
+          {
+            "name": "value2",
+            "type": "double"
+          },
+          {
+            "name": "value3",
+            "type": "double"
+          },
+          {
+            "name": "value4",
+            "type": "double"
+          },
+          {
+            "name": "value5",
+            "type": "double"
+          },
+          {
+            "name": "value6",
+            "type": "double"
+          },
+          {
+            "name": "value7",
+            "type": "double"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [],
+        "id": "7",
+        "type": "status_sensor",
+        "name": "数字",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "id": "8:2",
+        "type": "onboard_controller",
+        "name": "开关",
+        "fieldDefinitions": [
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ]
+      }
+    ],
+    "desc": "上海银帆一号",
+    "idle_report": 600,
+    "internal_id": 866104025289045,
+    "lat": 30.28,
+    "lon": 120.12,
+    "name": "上海银帆",
+    "offline_report": 300,
+    "uuid": "b60705d3-a754-4232-858f-4894380be910"
   }
 ]

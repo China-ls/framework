@@ -22,12 +22,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="bson.filter" />
+        <module name="core-framework" />
         <module name="new-interface" />
         <module name="persistent.object.query" />
         <module name="water-app" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="bson.filter" target="1.5" />
+      <module name="core-framework" target="1.6" />
       <module name="framework" target="1.5" />
       <module name="new-interface" target="1.6" />
       <module name="persistent.object.query" target="1.5" />

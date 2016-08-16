@@ -74,8 +74,8 @@ app.controller('AsideDeviceCtrl', ['$scope', '$http', '$localStorage', '$state',
 );
 
 
-app.controller('DashbordCtrl', ['$scope', '$http', '$localStorage',
-    function ($scope, $http, $localStorage) {
+app.controller('DashbordCtrl', ['$scope', '$http', '$localStorage', 'NETCONST',
+    function ($scope, $http, $localStorage, NETCONST) {
         $scope.overlays = [];
         $scope.offlineOpts = {retryInterval: 5000};
         $scope.mapOptions = {
@@ -108,6 +108,30 @@ app.controller('DashbordCtrl', ['$scope', '$http', '$localStorage',
         $scope.$on("BROADCAST_DEVICE_TREE_CLICK", function (event, data) {
             // console.warn(data);
             $scope.app.subHeader.contentTitle = data.label;
+        });
+
+        $http.get(NETCONST.CTX + NETCONST.SENSORS).then(function (response) {
+            $scope.virtualSensors = response.data.data;
+            // console.warn($scope.virtualSensors);
+        });
+
+        $scope.showInMap = function (id) {
+            // console.warn(id);
+            $scope.Toast("success", "提示", "地图定位成功.");
+        };
+
+        $scope.$on("WS_MESSAGE", function (event, data) {
+            // console.warn(data);
+            angular.forEach($scope.virtualSensors, function (item) {
+                if (item.id === data.uuid) {
+                    if (data.comp_id === '2') {
+                        item.instant = data.instant;
+                        item.positive_total = data.positive_total;
+                    // } else if (data.comp_id === '4') {
+                    //     item.image = data.image;
+                    }
+                }
+            });
         });
 
     }])

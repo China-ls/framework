@@ -5,7 +5,9 @@
     <div class="app-container">
         <div class="row">
             <div class="col-md-6 col-lg-6 map-wrapper">
-                <div id="map_canvas" style="min-height:300px; height: 100%;margin-top: 3px;" ui-baidu-map="myMap"
+                <div id="map_canvas"
+                     class="wrapper-xs b b-b"
+                     style="min-height:300px; height: 100%;margin-top: 3px;" ui-baidu-map="myMap"
                      ui-event="{'map-click': 'onMapClick($event, $params)', 'map-loaded': 'onMapLoaded($event, $params)'}"
                      ui-options="mapOptions">
                 </div>
@@ -31,7 +33,7 @@
 
                 <div class="row"
                      style="padding: 5px 5px 10px 5px;margin: 5px 5px 10px 5px;border-bottom: 1px dashed #00A000;">
-                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 no-padder-xs no-padder-sm">
                         <div class="center-block dirty-water-item" style="padding: 10px 10px 0;max-width: 120px;">
                             <div class="text-center"
                                  style="background-color: #dfdfdf;border: 1px solid #ccc;border-top: 10px solid #00aa00;">
@@ -41,16 +43,13 @@
                                           style="height: 30px;line-height: 30px;display: block;font-size: 16px;color: #FFF;">1</span>
                                 </div>
                                 <div class="card-block" style="padding-bottom: 5px;">
-                                    <div class="card-text" style="font-size: 23px;color: #f40;margin-top: -7px;">28.5吨
-                                    </div>
-                                    <div class="card-text" style="font-size: 14px;margin-top: -3px;color: #3c510c;">
-                                        张家庄站
-                                    </div>
+                                    <div class="card-text" style="font-size: 23px;color: #f40;margin-top: -7px;">64.5吨</div>
+                                    <div class="card-text" style="font-size: 14px;margin-top: -3px;color: #3c510c;">麦加三号站</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 no-padder-xs no-padder-sm">
                         <div class="center-block dirty-water-item" style="padding: 10px 10px 0;max-width: 120px;">
                             <div class="text-center"
                                  style="background-color: #dfdfdf;border: 1px solid #ccc;border-top: 10px solid #00aa00;">
@@ -60,16 +59,16 @@
                                           style="height: 30px;line-height: 30px;display: block;font-size: 16px;color: #FFF;">2</span>
                                 </div>
                                 <div class="card-block" style="padding-bottom: 5px;">
-                                    <div class="card-text" style="font-size: 23px;color: #f40;margin-top: -7px;">28.5吨
+                                    <div class="card-text" style="font-size: 23px;color: #f40;margin-top: -7px;">43.4吨
                                     </div>
                                     <div class="card-text" style="font-size: 14px;margin-top: -3px;color: #3c510c;">
-                                        张家庄站
+                                        麦加四号站
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 no-padder-xs no-padder-sm">
                         <div class="center-block dirty-water-item" style="padding: 10px 10px 0;max-width: 120px;">
                             <div class="text-center"
                                  style="background-color: #dfdfdf;border: 1px solid #ccc;border-top: 10px solid #00aa00;">
@@ -79,10 +78,10 @@
                                           style="height: 30px;line-height: 30px;display: block;font-size: 16px;color: #FFF;">3</span>
                                 </div>
                                 <div class="card-block" style="padding-bottom: 5px;">
-                                    <div class="card-text" style="font-size: 23px;color: #f40;margin-top: -7px;">28.5吨
+                                    <div class="card-text" style="font-size: 23px;color: #f40;margin-top: -7px;">43.15吨
                                     </div>
                                     <div class="card-text" style="font-size: 14px;margin-top: -3px;color: #3c510c;">
-                                        张家庄站
+                                        麦加一号站
                                     </div>
                                 </div>
                             </div>
@@ -156,439 +155,39 @@
 
         <div class="data-content">
             <!-- list item -->
-            <div class="data-item-wrapper">
+            <div ng-repeat="device in virtualSensors" class="data-item-wrapper">
                 <div class="row">
                     <div class="col-sm-6 col-md-6 col-lg-6">
                         <div class="row">
                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <img src="img/item_icon.png" width="120">
+                                <img src="img/{{device.id}}.jpg" class="img-full" style="max-width: 140px;">
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property" style="color: #f40;">嘉善县丰庄镇张家庄站</p>
-                                <p class="data-property">负责人：张大磊</p>
-                                <p class="data-property">电话：13768904587</p>
+                                <p class="data-property" style="color: #f40;">设备名称：<span class="cb">{{device.name}}</span></p>
+                                <p class="data-property">设备编号：<span class="cb">{{device.internal_id}}</span></p>
+                                <p class="data-property">设备状态：<span class="cb">正常</span></p>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-6 col-lg-6">
                         <div class="row">
                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property">今日用电量： <span class="text-primary">2.43度</span></p>
                                 <p class="data-property">今日处水量： <span class="text-primary">1.4吨</span></p>
-                                <p class="data-property">今 日 水 质： <span class="text-primary">达标</span></p>
+                                <p class="data-property">经度：<span class="cb">{{device.lat}}</span></p>
+                                <p class="data-property">纬度：<span class="cb">{{device.lon}}</span></p>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property">今日巡检：<span class="text-primary">未巡检</span></p>
-                                <p class="data-property">视频监控：<span class="text-primary">正常</span></p>
-                                <p class="data-property">远程控制：<span class="text-primary">正常</span></p>
+                                <p class="data-property">瞬时流量：<span class="cb">{{device.instant}} L/秒</span></p>
+                                <p class="data-property">累计流量：<span class="cb">{{device.positive_total}} 立方米</span></p>
+                                <p class="data-property">设备描述：<span class="cb">{{device.desc}}</span></p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-offset-7 col-sm-offset-9">
-                        <a ui-sref="app.device.detail({id:itemid})" class="btn btn-success btn-xs">&nbsp;&nbsp;详情&nbsp;&nbsp;</a>
-                        <button class="btn btn-success btn-xs">地图定位</button>
-                    </div>
-                </div>
-            </div>
-            <!-- list item -->
-
-            <!-- list item -->
-            <div class="data-item-wrapper">
-                <div class="row">
-                    <div class="col-sm-6 col-md-6 col-lg-6">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <img src="img/item_icon.png" width="120">
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property" style="color: #f40;">嘉善县丰庄镇张家庄站</p>
-                                <p class="data-property">负责人：张大磊</p>
-                                <p class="data-property">电话：13768904587</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-6">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property">今日用电量： <span class="text-primary">2.43度</span></p>
-                                <p class="data-property">今日处水量： <span class="text-primary">1.4吨</span></p>
-                                <p class="data-property">今 日 水 质： <span class="text-primary">达标</span></p>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property">今日巡检：<span class="text-primary">未巡检</span></p>
-                                <p class="data-property">视频监控：<span class="text-primary">正常</span></p>
-                                <p class="data-property">远程控制：<span class="text-primary">正常</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-offset-7 col-sm-offset-9">
-                        <button class="btn btn-success btn-xs">&nbsp;&nbsp;详情&nbsp;&nbsp;</button>
-                        <button class="btn btn-success btn-xs">地图定位</button>
-
-                    </div>
-                </div>
-            </div>
-            <!-- list item -->
-
-            <!-- list item -->
-            <div class="data-item-wrapper">
-                <div class="row">
-                    <div class="col-sm-6 col-md-6 col-lg-6">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <img src="img/item_icon.png" width="120">
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property" style="color: #f40;">嘉善县丰庄镇张家庄站</p>
-                                <p class="data-property">负责人：张大磊</p>
-                                <p class="data-property">电话：13768904587</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-6">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property">今日用电量： <span class="text-primary">2.43度</span></p>
-                                <p class="data-property">今日处水量： <span class="text-primary">1.4吨</span></p>
-                                <p class="data-property">今 日 水 质： <span class="text-primary">达标</span></p>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property">今日巡检：<span class="text-primary">未巡检</span></p>
-                                <p class="data-property">视频监控：<span class="text-primary">正常</span></p>
-                                <p class="data-property">远程控制：<span class="text-primary">正常</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-offset-7 col-sm-offset-9">
-                        <button class="btn btn-success btn-xs">&nbsp;&nbsp;详情&nbsp;&nbsp;</button>
-                        <button class="btn btn-success btn-xs">地图定位</button>
-
-                    </div>
-                </div>
-            </div>
-            <!-- list item -->
-
-            <!-- list item -->
-            <div class="data-item-wrapper">
-                <div class="row">
-                    <div class="col-sm-6 col-md-6 col-lg-6">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <img src="img/item_icon.png" width="120">
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property" style="color: #f40;">嘉善县丰庄镇张家庄站</p>
-                                <p class="data-property">负责人：张大磊</p>
-                                <p class="data-property">电话：13768904587</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-6">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property">今日用电量： <span class="text-primary">2.43度</span></p>
-                                <p class="data-property">今日处水量： <span class="text-primary">1.4吨</span></p>
-                                <p class="data-property">今 日 水 质： <span class="text-primary">达标</span></p>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property">今日巡检：<span class="text-primary">未巡检</span></p>
-                                <p class="data-property">视频监控：<span class="text-primary">正常</span></p>
-                                <p class="data-property">远程控制：<span class="text-primary">正常</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-offset-7 col-sm-offset-9">
-                        <button class="btn btn-success btn-xs">&nbsp;&nbsp;详情&nbsp;&nbsp;</button>
-                        <button class="btn btn-success btn-xs">地图定位</button>
-
-                    </div>
-                </div>
-            </div>
-            <!-- list item -->
-
-            <!-- list item -->
-            <div class="data-item-wrapper">
-                <div class="row">
-                    <div class="col-sm-6 col-md-6 col-lg-6">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <img src="img/item_icon.png" width="120">
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property" style="color: #f40;">嘉善县丰庄镇张家庄站</p>
-                                <p class="data-property">负责人：张大磊</p>
-                                <p class="data-property">电话：13768904587</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-6">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property">今日用电量： <span class="text-primary">2.43度</span></p>
-                                <p class="data-property">今日处水量： <span class="text-primary">1.4吨</span></p>
-                                <p class="data-property">今 日 水 质： <span class="text-primary">达标</span></p>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property">今日巡检：<span class="text-primary">未巡检</span></p>
-                                <p class="data-property">视频监控：<span class="text-primary">正常</span></p>
-                                <p class="data-property">远程控制：<span class="text-primary">正常</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-offset-7 col-sm-offset-9">
-                        <button class="btn btn-success btn-xs">&nbsp;&nbsp;详情&nbsp;&nbsp;</button>
-                        <button class="btn btn-success btn-xs">地图定位</button>
-
-                    </div>
-                </div>
-            </div>
-            <!-- list item -->
-
-            <!-- list item -->
-            <div class="data-item-wrapper">
-                <div class="row">
-                    <div class="col-sm-6 col-md-6 col-lg-6">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <img src="img/item_icon.png" width="120">
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property" style="color: #f40;">嘉善县丰庄镇张家庄站</p>
-                                <p class="data-property">负责人：张大磊</p>
-                                <p class="data-property">电话：13768904587</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-6">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property">今日用电量： <span class="text-primary">2.43度</span></p>
-                                <p class="data-property">今日处水量： <span class="text-primary">1.4吨</span></p>
-                                <p class="data-property">今 日 水 质： <span class="text-primary">达标</span></p>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property">今日巡检：<span class="text-primary">未巡检</span></p>
-                                <p class="data-property">视频监控：<span class="text-primary">正常</span></p>
-                                <p class="data-property">远程控制：<span class="text-primary">正常</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-offset-7 col-sm-offset-9">
-                        <button class="btn btn-success btn-xs">&nbsp;&nbsp;详情&nbsp;&nbsp;</button>
-                        <button class="btn btn-success btn-xs">地图定位</button>
-
-                    </div>
-                </div>
-            </div>
-            <!-- list item -->
-
-            <!-- list item -->
-            <div class="data-item-wrapper">
-                <div class="row">
-                    <div class="col-sm-6 col-md-6 col-lg-6">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <img src="img/item_icon.png" width="120">
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property" style="color: #f40;">嘉善县丰庄镇张家庄站</p>
-                                <p class="data-property">负责人：张大磊</p>
-                                <p class="data-property">电话：13768904587</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-6">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property">今日用电量： <span class="text-primary">2.43度</span></p>
-                                <p class="data-property">今日处水量： <span class="text-primary">1.4吨</span></p>
-                                <p class="data-property">今 日 水 质： <span class="text-primary">达标</span></p>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property">今日巡检：<span class="text-primary">未巡检</span></p>
-                                <p class="data-property">视频监控：<span class="text-primary">正常</span></p>
-                                <p class="data-property">远程控制：<span class="text-primary">正常</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-offset-7 col-sm-offset-9">
-                        <button class="btn btn-success btn-xs">&nbsp;&nbsp;详情&nbsp;&nbsp;</button>
-                        <button class="btn btn-success btn-xs">地图定位</button>
-
-                    </div>
-                </div>
-            </div>
-            <!-- list item -->
-
-            <!-- list item -->
-            <div class="data-item-wrapper">
-                <div class="row">
-                    <div class="col-sm-6 col-md-6 col-lg-6">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <img src="img/item_icon.png" width="120">
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property" style="color: #f40;">嘉善县丰庄镇张家庄站</p>
-                                <p class="data-property">负责人：张大磊</p>
-                                <p class="data-property">电话：13768904587</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-6">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property">今日用电量： <span class="text-primary">2.43度</span></p>
-                                <p class="data-property">今日处水量： <span class="text-primary">1.4吨</span></p>
-                                <p class="data-property">今 日 水 质： <span class="text-primary">达标</span></p>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property">今日巡检：<span class="text-primary">未巡检</span></p>
-                                <p class="data-property">视频监控：<span class="text-primary">正常</span></p>
-                                <p class="data-property">远程控制：<span class="text-primary">正常</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-offset-7 col-sm-offset-9">
-                        <button class="btn btn-success btn-xs">&nbsp;&nbsp;详情&nbsp;&nbsp;</button>
-                        <button class="btn btn-success btn-xs">地图定位</button>
-
-                    </div>
-                </div>
-            </div>
-            <!-- list item -->
-
-            <!-- list item -->
-            <div class="data-item-wrapper">
-                <div class="row">
-                    <div class="col-sm-6 col-md-6 col-lg-6">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <img src="img/item_icon.png" width="120">
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property" style="color: #f40;">嘉善县丰庄镇张家庄站</p>
-                                <p class="data-property">负责人：张大磊</p>
-                                <p class="data-property">电话：13768904587</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-6">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property">今日用电量： <span class="text-primary">2.43度</span></p>
-                                <p class="data-property">今日处水量： <span class="text-primary">1.4吨</span></p>
-                                <p class="data-property">今 日 水 质： <span class="text-primary">达标</span></p>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property">今日巡检：<span class="text-primary">未巡检</span></p>
-                                <p class="data-property">视频监控：<span class="text-primary">正常</span></p>
-                                <p class="data-property">远程控制：<span class="text-primary">正常</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-offset-7 col-sm-offset-9">
-                        <button class="btn btn-success btn-xs">&nbsp;&nbsp;详情&nbsp;&nbsp;</button>
-                        <button class="btn btn-success btn-xs">地图定位</button>
-
-                    </div>
-                </div>
-            </div>
-            <!-- list item -->
-
-            <!-- list item -->
-            <div class="data-item-wrapper">
-                <div class="row">
-                    <div class="col-sm-6 col-md-6 col-lg-6">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <img src="img/item_icon.png" width="120">
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property" style="color: #f40;">嘉善县丰庄镇张家庄站</p>
-                                <p class="data-property">负责人：张大磊</p>
-                                <p class="data-property">电话：13768904587</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-6">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property">今日用电量： <span class="text-primary">2.43度</span></p>
-                                <p class="data-property">今日处水量： <span class="text-primary">1.4吨</span></p>
-                                <p class="data-property">今 日 水 质： <span class="text-primary">达标</span></p>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property">今日巡检：<span class="text-primary">未巡检</span></p>
-                                <p class="data-property">视频监控：<span class="text-primary">正常</span></p>
-                                <p class="data-property">远程控制：<span class="text-primary">正常</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-offset-7 col-sm-offset-9">
-                        <button class="btn btn-success btn-xs">&nbsp;&nbsp;详情&nbsp;&nbsp;</button>
-                        <button class="btn btn-success btn-xs">地图定位</button>
-
-                    </div>
-                </div>
-            </div>
-            <!-- list item -->
-
-            <!-- list item -->
-            <div class="data-item-wrapper">
-                <div class="row">
-                    <div class="col-sm-6 col-md-6 col-lg-6">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <img src="img/item_icon.png" width="120">
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property" style="color: #f40;">嘉善县丰庄镇张家庄站</p>
-                                <p class="data-property">负责人：张大磊</p>
-                                <p class="data-property">电话：13768904587</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-6">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property">今日用电量： <span class="text-primary">2.43度</span></p>
-                                <p class="data-property">今日处水量： <span class="text-primary">1.4吨</span></p>
-                                <p class="data-property">今 日 水 质： <span class="text-primary">达标</span></p>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property">今日巡检：<span class="text-primary">未巡检</span></p>
-                                <p class="data-property">视频监控：<span class="text-primary">正常</span></p>
-                                <p class="data-property">远程控制：<span class="text-primary">正常</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-offset-7 col-sm-offset-9">
-                        <button class="btn btn-success btn-xs">&nbsp;&nbsp;详情&nbsp;&nbsp;</button>
-                        <button class="btn btn-success btn-xs">地图定位</button>
-
+                        <a ui-sref="app.device.detail({id:device.id})" class="btn btn-success btn-xs w-xs">&nbsp;&nbsp;详情&nbsp;&nbsp;</a>
+                        <button class="btn btn-success btn-xs w-xs" ng-click="showInMap(device.id)">地图定位</button>
                     </div>
                 </div>
             </div>

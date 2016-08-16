@@ -28,6 +28,7 @@ module.exports = {
             'bower_components/highcharts-ng/dist/highcharts-ng.js',
             'bower_components/angular-bootstrap-nav-tree/dist/abn_tree_directive.js',
             'bower_components/angularjs-toaster/toaster.js',
+            'bower_components/angular-websocket/dist/angular-websocket.js',
 
             'src/js/*.js',
             'src/js/directives/*.js',

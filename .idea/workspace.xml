@@ -2,362 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0fd8f5c7-a893-4232-b550-e52d73eb6f82" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/fonts/FontAwesome.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/fonts/fontawesome-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/fonts/fontawesome-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/fonts/fontawesome-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/fonts/sourcesanspro/sourcesanspro-bold.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/fonts/sourcesanspro/sourcesanspro-light.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/fonts/sourcesanspro/sourcesanspro.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/59ec0ac4-2182-4960-9166-3ce62738ef99.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/59ec0ac4-2182-4960-9177-3ce62738ef99.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/59ec0ac4-2182-4960-9188-3ce62738ef99.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/59ec0ac4-2182-4960-9199-3ce62738ef99.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/a0.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/a1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/a10.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/a2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/a3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/a4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/a5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/a6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/a7.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/a8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/a9.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b0.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b10.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b11.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b12.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b13.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b14.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b15.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b16.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b17.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b18.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b19.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b20.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b60705d3-a754-4232-858f-4894380be910.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b7.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b9.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/bg_b1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/c0.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/c1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/c2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/c3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/c4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/c5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/c6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/c7.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/c8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/c9.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/i_user.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/item_icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/map.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/p0.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/title.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/v3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/v5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/src/img/v3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/src/img/v5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/img/v3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/img/v5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_paho_org_eclipse_paho_client_mqttv3_1_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_javax_jms_3_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_16.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_integration_spring_integration_core_4_3_1_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_integration_spring_integration_mqtt_4_3_1_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_retry_spring_retry_1_1_2_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_1_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_1_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_1_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_1_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jms_4_3_1_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_4_3_1_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_3_1_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_3_1_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_1_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_1_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/css/app.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/fonts/fontawesome-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/calendar/calendar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/contact/contact.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/contact/contacts.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/mail/mail-service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/mail/mail.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/mail/mails.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/map/baidu/baidumap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/map/baidu/load-baidu-maps.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/map/baidu/ui-baidu-map.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/map/load-google-maps.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/map/map.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/map/ui-map.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/music/ctrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/music/theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/music/videogular.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/note/note.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/note/notes.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/todo/todo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/weather/angular-skycons.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/weather/ctrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/weather/skycons.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/config.lazyload.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/config.router.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/chart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/dashbord.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/device-detail.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/editor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/file-upload.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/form.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/grid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/imgcrop.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/largeLoad.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/scroll.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/select.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/signin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/signup.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/slider.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/tab.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/table.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/toaster.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/tree.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/uigrid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/upload.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/vectormap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/xeditable.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/directives/setnganimate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/directives/ui-butterbar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/directives/ui-focus.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/directives/ui-fullscreen.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/directives/ui-jq.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/directives/ui-module.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/directives/ui-nav.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/directives/ui-scroll.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/directives/ui-shift.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/directives/ui-toggleclass.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/factory/appkeyInterceptor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/factory/wsFactory.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/filters/fromNow.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/services/ui-load.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/l10n/de_DE.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/l10n/en.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/l10n/it_IT.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/l10n/zh_CN.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/app.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/app_calendar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/app_dashboard.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/app_dashboard_v1.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/app_dashboard_v2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/app_device.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/app_device_detail.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/apps_contact.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/apps_note.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/apps_todo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/apps_weather.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/blank.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/blocks/aside.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/blocks/aside.music.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/blocks/aside.right.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/blocks/aside_device.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/blocks/common_sub_header.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/blocks/header.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/blocks/header.music.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/blocks/header_bak.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/blocks/nav.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/blocks/page_footer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/blocks/settings.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/blocks/sub_header.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/docs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/form_editor.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/form_elements.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/form_fileupload.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/form_imagecrop.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/form_select.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/form_slider.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/form_validation.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/form_wizard.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/form_xeditable.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/layout.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/layout_app.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/layout_footer_fullwidth.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/layout_footer_mobile.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/layout_fullwidth.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/layout_mobile.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/mail.detail.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/mail.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/mail.list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/mail.new.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/modal.form.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/modal.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/music.detail.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/music.genres.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/music.home.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/music.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/music.mtv.detail.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/music.mtv.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/music.player.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/music.playlist.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/page_404.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/page_forgotpwd.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/page_invoice.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/page_lockme.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/page_post.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/page_price.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/page_profile.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/page_search.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/page_signin.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/page_signup.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/table_datatable.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/table_editable.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/table_footable.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/table_grid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/table_smart.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/table_static.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/table_uigrid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/ui_bootstrap.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/ui_buttons.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/ui_chart.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/ui_googlemap.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/ui_grid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/ui_icons.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/ui_jvectormap.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/ui_portlet.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/ui_scroll.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/ui_sortable.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/ui_timeline.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/ui_toaster.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/ui_tree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/ui_widgets.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-socket-io/.bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-socket-io/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-socket-io/.travis.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-socket-io/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-socket-io/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-socket-io/gulpfile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-socket-io/karma.conf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-socket-io/mock/socket-io.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-socket-io/npm-install.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-socket-io/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-socket-io/socket.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-socket-io/socket.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-socket-io/socket.min.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-socket-io/socket.spec.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/nprogress/.bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/nprogress/History.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/nprogress/License.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/nprogress/Notes.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/nprogress/Readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/nprogress/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/nprogress/component.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/nprogress/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/nprogress/nprogress.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/nprogress/nprogress.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/nprogress/support/extras.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/nprogress/support/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/interceptor/MethodMonitorInterceptor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/prop/mongo.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/water-app/src/main/resources/prop/server.properties" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_fusesource_hawtdispatch_hawtdispatch_1_9.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_fusesource_hawtdispatch_hawtdispatch_transport_1_9.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_fusesource_mqtt_client_mqtt_client_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/jms/spring/mqtt/ApolloMQTTConnection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/mqtt/FilterJmsMessageHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/mqtt/TempJmsFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/CorsConfigurerAdapter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/adapter/RestAdapter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/adapter/WebSocketAdapter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/MqService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/TestMqService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/morphia-spring.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/prop/mongo.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/water-app/src/main/resources/spring/prop/server.properties" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_2_5_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_1_RELEASE.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/init/TempInitVIrtualSensorMQTT.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/init/TempInitVirtualSensorMQTT.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/prop/mongo_name.properties" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/prop/jms.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/img/59ec0ac4-2182-4960-9166-3ce62738ef99.jpg" afterPath="$PROJECT_DIR$/module/app-web/src/img/59ec0ac4-2182-4960-9166-3ce62738ef99.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/img/59ec0ac4-2182-4960-9177-3ce62738ef99.jpg" afterPath="$PROJECT_DIR$/module/app-web/src/img/59ec0ac4-2182-4960-9177-3ce62738ef99.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/img/b60705d3-a754-4232-858f-4894380be910.jpg" afterPath="$PROJECT_DIR$/module/app-web/src/img/b60705d3-a754-4232-858f-4894380be910.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/img/59ec0ac4-2182-4960-9166-3ce62738ef99.jpg" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/img/59ec0ac4-2182-4960-9166-3ce62738ef99.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/img/59ec0ac4-2182-4960-9177-3ce62738ef99.jpg" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/img/59ec0ac4-2182-4960-9177-3ce62738ef99.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/img/b60705d3-a754-4232-858f-4894380be910.jpg" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/img/b60705d3-a754-4232-858f-4894380be910.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/core_framework_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/core_framework_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/IProtocolAdapter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/IPushable.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/ITcpProtocolAdapter.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework.iml" afterPath="$PROJECT_DIR$/framework.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/bower.json" afterPath="$PROJECT_DIR$/module/app-web/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/index.html" afterPath="$PROJECT_DIR$/module/app-web/src/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/config.lazyload.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/config.lazyload.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/config.router.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/config.router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/dashbord.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/dashbord.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-detail.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-detail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/factory/wsFactory.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/factory/wsFactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/main.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_dashboard.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_device_detail.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_device_detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/bson.filter/bson.filter.iml" afterPath="$PROJECT_DIR$/module/bson.filter/bson.filter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/core-framework.iml" afterPath="$PROJECT_DIR$/module/core-framework/core-framework.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/pom.xml" afterPath="$PROJECT_DIR$/module/core-framework/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/jms/spring/mqtt/JmsMessageHandler.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/jms/spring/mqtt/JmsMessageHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/jms/spring/mqtt/JmsMessageHandlerAdapter.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/jms/spring/mqtt/JmsMessageHandlerAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/jms/spring/mqtt/JmsRouterListener.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/jms/spring/mqtt/JmsRouterListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/entity/VirtualSensor.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/entity/VirtualSensor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/PersistentUserController.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/PersistentUserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/TestController.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/TestController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/VirtualSensorController.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/VirtualSensorController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/entity/LoginResponse.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/entity/LoginResponse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/MqttService.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/MqttService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/MqttServiceImpl.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/MqttServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/VirtualSensorDataServiceImpl.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/VirtualSensorDataServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/resources/logback.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/logback.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-context.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-context.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-core-component.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-core-component.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-dao.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-dao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-jms.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-jms.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-service.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-service.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-shiro.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-shiro.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/dispatcher-servlet.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/resources/xsensor.json" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/xsensor.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/pom.xml" afterPath="$PROJECT_DIR$/module/water-app/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/core/http/HttpClientCaller.java" afterPath="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/core/http/HttpClientCaller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/entity/VirtualSensor.java" afterPath="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/entity/VirtualSensor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/websocket/SystemWebSocketHandler.java" afterPath="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/websocket/SystemWebSocketHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/resources/logback.xml" afterPath="$PROJECT_DIR$/module/water-app/src/main/resources/logback.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/resources/spring/application-core-component.xml" afterPath="$PROJECT_DIR$/module/water-app/src/main/resources/spring/application-core-component.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/resources/xdepartment.json" afterPath="$PROJECT_DIR$/module/water-app/src/main/resources/xdepartment.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/resources/xsensor.json" afterPath="$PROJECT_DIR$/module/water-app/src/main/resources/xsensor.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/pages/tpl/app_dashboard.html" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/pages/tpl/app_dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/pages/tpl/app_device_detail.html" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/pages/tpl/app_device_detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/app.min.js" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/app.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/app.src.js" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/app.src.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/config.lazyload.js" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/config.lazyload.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/config.router.js" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/config.router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/controllers/dashbord.js" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/controllers/dashbord.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/controllers/device-detail.js" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/controllers/device-detail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/main.js" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/entity/ResponseCode.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/entity/ResponseCode.java" />
     </list>
     <ignored path="framework.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -385,7 +35,20 @@
     <favorites_list name="framework" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="PersistentUserController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/PersistentUserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+              <folding>
+                <element signature="docComment;class#PersistentUserController#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -405,7 +68,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/entity/EntityConst.java" />
         <option value="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/prop/mongo_name.properties" />
         <option value="$PROJECT_DIR$/module/core-framework/src/test/java/com/ls/test/morphia/TestMorphia.java" />
         <option value="$PROJECT_DIR$/module/core-framework/src/test/java/com/ls/test/morphia/MorphiaTest.java" />
@@ -451,11 +113,12 @@
         <option value="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/core/http/HttpClientCaller.java" />
         <option value="$PROJECT_DIR$/module/core-framework/pom.xml" />
         <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/VirtualSensorController.java" />
-        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/PersistentUserController.java" />
         <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/interceptor.java" />
         <option value="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/dispatcher-servlet.xml" />
         <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/interceptor/MethodMonitorInterceptor.java" />
         <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/entity/LoginResponse.java" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/entity/ResponseCode.java" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/PersistentUserController.java" />
       </list>
     </option>
   </component>
@@ -535,158 +198,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="module" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="module" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core-framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="module" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core-framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="module" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core-framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="module" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core-framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="module" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core-framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="router" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1853,7 +1364,7 @@
       <workItem from="1471481039413" duration="72000" />
       <workItem from="1471496604038" duration="4094000" />
       <workItem from="1471575841940" duration="8706000" />
-      <workItem from="1471594712561" duration="3720000" />
+      <workItem from="1471594712561" duration="4596000" />
     </task>
     <task id="LOCAL-00001" summary="app-web html small edit.">
       <created>1471254507746</created>
@@ -1876,7 +1387,14 @@
       <option name="project" value="LOCAL" />
       <updated>1471339549402</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="version 0.0.1 commit small edit">
+      <created>1471598451115</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1471598451115</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1903,7 +1421,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75360000" />
+    <option name="totallyTimeSpent" value="76236000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="26" width="1366" height="716" extended-state="0" />
@@ -2007,7 +1525,8 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="app-web html small edit." />
     <MESSAGE value="version 0.0.1 commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 0.0.1 commit" />
+    <MESSAGE value="version 0.0.1 commit small edit" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 0.0.1 commit small edit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2026,8 +1545,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/TestMqService.java" />
-    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/MqService.java" />
     <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/MqttServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-32">
@@ -2060,6 +1577,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
           <caret line="154" column="27" selection-start-line="154" selection-start-column="24" selection-end-line="154" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
       <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
@@ -2078,6 +1596,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2132,6 +1651,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2173,6 +1693,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2336,14 +1857,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/PersistentUserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.1.RELEASE/spring-web-4.3.1.RELEASE-sources.jar!/org/springframework/web/bind/annotation/ControllerAdvice.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -2376,14 +1889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/IProtocolAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/adapter/RestAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -2408,19 +1913,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/entity/ResponseCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/interceptor/MethodMonitorInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-189">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/IProtocolAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/entity/ResponseCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/PersistentUserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/PersistentUserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+          <folding>
+            <element signature="docComment;class#PersistentUserController#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

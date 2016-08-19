@@ -11,9 +11,13 @@ import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletRequest;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author by hx on 16-7-4.
@@ -28,8 +32,11 @@ public class PersistentUserController extends BasicRestController {
 
     @RequestMapping(value = "", method = RequestMethod.PUT)
     @ResponseBody
-    public Response create(@RequestHeader("APPKEY") String appkey, @ModelAttribute PersistentUser user, HttpServletRequest request) {
+    public Response create(@RequestHeader("APPKEY") String appkey, @ModelAttribute PersistentUser user) {
         Response response = null;
+        if (log.isDebugEnabled()) {
+            log.debug("create persistent user", appkey, user);
+        }
         try {
             if (null == user || StringUtils.isEmpty(user.getUsername()) || StringUtils.isEmpty(user.getPassword())) {
                 response = makeResponse(ResponseCode.PARAM_EMPTY);

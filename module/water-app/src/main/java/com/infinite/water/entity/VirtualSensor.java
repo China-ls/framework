@@ -6,12 +6,12 @@ public class VirtualSensor {
 
     /**
      * app_id : aidiman/xgsn/yinfantech
-     * components : [{"actions":[{"channel_id":"%2%","operation":"take_photo","param":"%3%","sensor_id":"%1%"}],"fieldDefinitions":[{"name":"image","type":"image_data"},{"name":"time","type":"isodate"}],"type":"camera_controller","name":"摄像机","id":"1"},{"type":"electricmeter_sensor","name":"电表","fieldDefinitions":[{"name":"power","type":"float","unit":"kWH"},{"name":"voltageA","type":"float","unit":"V"},{"name":"voltageB","type":"float","unit":"V"},{"name":"voltageC","type":"float","unit":"V"},{"name":"currentA","type":"float","unit":"A"},{"name":"currentB","type":"float","unit":"A"},{"name":"currentC","type":"float","unit":"A"},{"name":"time","type":"isodate"}],"id":"2"},{"type":"flowmeter_sensor","name":"流量计","fieldDefinitions":[{"name":"instant","type":"float","unit":"m3/s"},{"name":"positive_total","type":"float","unit":"m3"},{"name":"negtive_totoal","type":"float","unit":"m3"},{"name":"time","type":"isodate"}],"id":"3"},{"fieldDefinitions":[{"name":"card_id","type":"int"},{"name":"time","type":"isodate"}],"type":"cardreader_sensor","name":"读卡器","id":"4"},{"type":"onboard_controller","name":"扬升泵","id":"5:1","actions":[{"channel_id":"%2%","operation":"switch","param":"%3%","sensor_id":"%1%"}],"fieldDefinitions":[{"name":"status","type":"boolean"},{"name":"time","type":"isodate"}],"ref_channel":"6:1"},{"type":"status_sensor","name":"扬升泵状态","id":"6:1","fieldDefinitions":[{"name":"status","type":"boolean"},{"name":"time","type":"isodate"}]}]
+     * components : [{"actions":[{"channel_id":"%2%","operation":"take_photo","param":"%3%","sensor_id":"%1%"}],"fieldDefinitions":[{"name":"image","type":"image_data"},{"name":"time","type":"isodate"}],"type":"camera_controller","name":"摄像机","id":"1"},{"type":"electricmeter_sensor","name":"电表","fieldDefinitions":[{"name":"power","type":"float","unit":"kWH"},{"name":"voltageA","type":"float","unit":"V"},{"name":"voltageB","type":"float","unit":"V"},{"name":"voltageC","type":"float","unit":"V"},{"name":"currentA","type":"float","unit":"A"},{"name":"currentB","type":"float","unit":"A"},{"name":"currentC","type":"float","unit":"A"},{"name":"time","type":"isodate"}],"id":"2"},{"type":"flowmeter_sensor","name":"流量计","fieldDefinitions":[{"name":"instant","type":"float","unit":"m3/s"},{"name":"positive_total","type":"float","unit":"m3"},{"name":"instant","type":"float","unit":"m3"},{"name":"time","type":"isodate"}],"id":"3"},{"fieldDefinitions":[{"name":"card_id","type":"int"},{"name":"time","type":"isodate"}],"type":"cardreader_sensor","name":"读卡器","id":"4"},{"type":"onboard_controller","name":"扬升泵","id":"5:1","actions":[{"channel_id":"%2%","operation":"switch","param":"%3%","sensor_id":"%1%"}],"fieldDefinitions":[{"name":"status","type":"boolean"},{"name":"time","type":"isodate"}],"ref_channel":"6:1"},{"type":"status_sensor","name":"扬升泵状态","id":"6:1","fieldDefinitions":[{"name":"status","type":"boolean"},{"name":"time","type":"isodate"}]}]
      * desc : 浙江省嘉兴市嘉善县魏塘工业园区振华路58号 测试设备1号
      * idle_report : 600
      * internal_id : 2100122001222
-     * lat : 30.28
-     * lon : 120.12
+     * latitude : 30.28
+     * longitude : 120.12
      * name : 魏塘工业园1号
      * offline_report : 300
      * uuid : 23423da9-b682-4566-8794-9169f484be5e
@@ -21,22 +21,22 @@ public class VirtualSensor {
     private String desc;
     private int idle_report;
     private long internal_id;
-    private double lat;
-    private double lon;
+    private double latitude;
+    private double longitude;
     private String name;
     private int offline_report;
     private String id;
 
 
-    private double negtive_totoal;
+    private double instant;
     private double positive_total;
 
-    public double getNegtive_totoal() {
-        return negtive_totoal;
+    public double getInstant() {
+        return instant;
     }
 
-    public void setNegtive_totoal(double negtive_totoal) {
-        this.negtive_totoal = negtive_totoal;
+    public void setInstant(double instant) {
+        this.instant = instant;
     }
 
     public double getPositive_total() {
@@ -89,20 +89,20 @@ public class VirtualSensor {
         this.internal_id = internal_id;
     }
 
-    public double getLat() {
-        return lat;
+    public double getLatitude() {
+        return latitude;
     }
 
-    public void setLat(double lat) {
-        this.lat = lat;
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
     }
 
-    public double getLon() {
-        return lon;
+    public double getLongitude() {
+        return longitude;
     }
 
-    public void setLon(double lon) {
-        this.lon = lon;
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 
     public String getName() {

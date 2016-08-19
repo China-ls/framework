@@ -3,7 +3,7 @@ package com.infinite.framework.router.entity;
 import com.infinite.framework.core.entity.AbstractEntity;
 
 /**
- * Created by hx on 16-7-6.
+ * @author by hx on 16-7-6.
  */
 public class LoginResponse extends AbstractEntity {
     private String username;

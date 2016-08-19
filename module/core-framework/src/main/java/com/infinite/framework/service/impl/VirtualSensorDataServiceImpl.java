@@ -1,6 +1,8 @@
 package com.infinite.framework.service.impl;
 
+import com.google.gson.reflect.TypeToken;
 import com.infinite.framework.core.persistent.IMongoDAO;
+import com.infinite.framework.core.util.JsonUtil;
 import com.infinite.framework.service.VirtualSensorDataService;
 import org.bson.Document;
 import org.slf4j.Logger;
@@ -26,9 +28,12 @@ public class VirtualSensorDataServiceImpl implements VirtualSensorDataService {
 
     @Override
     public void save(String data) {
-        Document document = Document.parse(data);
-        document.append("sensor_id", document.get("uuid"));
-        document.remove("uuid");
-        mongoDAO.insertOne(dbname, collectionName, document);
+        Document[] documents = JsonUtil.fromJson(data, new TypeToken<Document[]>(){}.getType());
+        for (Document document : documents) {
+//            Document document = Document.parse(data);
+            document.append("sensor_id", document.get("uuid"));
+            document.remove("uuid");
+            mongoDAO.insertOne(dbname, collectionName, document);
+        }
     }
 }

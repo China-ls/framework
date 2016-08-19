@@ -9,13 +9,18 @@ angular.module('app')
             function ($rootScope, $state, $stateParams) {
                 $rootScope.$state = $state;
                 $rootScope.$stateParams = $stateParams;
+                $rootScope.$on('$stateChangeStart', function (event) {
+                    NProgress.start();
+                });
+                $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState) {
+                    NProgress.done();
+                });
             }
         ]
     )
     .config(
         ['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
             function ($stateProvider, $urlRouterProvider, JQ_CONFIG) {
-
                 $urlRouterProvider
                     .otherwise('/app/device');
                 $stateProvider
@@ -26,6 +31,7 @@ angular.module('app')
                     })
                     .state('app.device', {
                         url: '/device',
+                        cache: false,
                         views: {
                             'subContentTitle': {
                                 templateUrl: 'tpl/blocks/common_sub_header.html',
@@ -89,14 +95,14 @@ angular.module('app')
                     })
                     .state('app.ui.buttons', {
                         url: '/buttons',
-                        views:{
-                            'contentView@app' : {templateUrl: 'tpl/ui_buttons.html'}
+                        views: {
+                            'contentView@app': {templateUrl: 'tpl/ui_buttons.html'}
                         }
                     })
                     .state('app.ui.icons', {
                         url: '/icons',
-                        views:{
-                            'contentView@app' : {templateUrl: 'tpl/ui_icons.html'}
+                        views: {
+                            'contentView@app': {templateUrl: 'tpl/ui_icons.html'}
                         }
                     })
                     .state('app.ui.grid', {
@@ -109,8 +115,8 @@ angular.module('app')
                     })
                     .state('app.ui.bootstrap', {
                         url: '/bootstrap',
-                        views:{
-                            'contentView@app' : {templateUrl: 'tpl/ui_bootstrap.html'}
+                        views: {
+                            'contentView@app': {templateUrl: 'tpl/ui_bootstrap.html'}
                         }
                     })
                     .state('app.ui.sortable', {

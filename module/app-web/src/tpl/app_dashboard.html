@@ -160,33 +160,36 @@
                     <div class="col-sm-6 col-md-6 col-lg-6">
                         <div class="row">
                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <img src="img/{{device.id}}.jpg" class="img-full" style="max-width: 140px;">
+                                <img src="img/{{device.id}}.jpg" class="img-full" style="    max-width: 220px;max-height: 220px;">
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property" style="color: #f40;">设备名称：<span class="cb">{{device.name}}</span></p>
+                                <p class="data-property"><span>设备名称：</span><span style="color: #f40;">{{device.name}}</span></p>
                                 <p class="data-property">设备编号：<span class="cb">{{device.internal_id}}</span></p>
                                 <p class="data-property">设备状态：<span class="cb">正常</span></p>
+                                <p class="data-property">设备描述：<span class="cb">{{device.desc}}</span></p>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-6 col-lg-6">
                         <div class="row">
                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property">今日处水量： <span class="text-primary">1.4吨</span></p>
-                                <p class="data-property">经度：<span class="cb">{{device.lat}}</span></p>
-                                <p class="data-property">纬度：<span class="cb">{{device.lon}}</span></p>
+                                <p class="data-property" style="margin-top: 40px;"> </p>
+                                <p class="data-property">今日处水量： <span class="text-primary">{{device.csl}} 吨</span></p>
+                                <p class="data-property">经度：<span class="cb">{{device.latitude}}</span></p>
+                                <p class="data-property">纬度：<span class="cb">{{device.longitude}}</span></p>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property">瞬时流量：<span class="cb">{{device.instant}} L/秒</span></p>
+                                <p class="data-property" style="margin-top: 40px;"> </p>
+                                <p class="data-property">瞬时流量：<span class="cb">{{device.instant}} L/H</span></p>
                                 <p class="data-property">累计流量：<span class="cb">{{device.positive_total}} 立方米</span></p>
-                                <p class="data-property">设备描述：<span class="cb">{{device.desc}}</span></p>
+                                <p class="data-property">更新时间：<span class="cb">{{device.updateTime}}</span></p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-offset-7 col-sm-offset-9">
-                        <a ui-sref="app.device.detail({id:device.id})" class="btn btn-success btn-xs w-xs">&nbsp;&nbsp;详情&nbsp;&nbsp;</a>
+                        <a ui-sref=".detail({id:device.id})" class="btn btn-success btn-xs w-xs">&nbsp;&nbsp;详情&nbsp;&nbsp;</a>
                         <button class="btn btn-success btn-xs w-xs" ng-click="showInMap(device.id)">地图定位</button>
                     </div>
                 </div>

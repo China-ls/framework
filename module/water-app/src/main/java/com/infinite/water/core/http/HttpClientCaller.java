@@ -34,17 +34,4 @@ public class HttpClientCaller implements IHttpCaller<Object> {
         }
     }
 
-    public static void main(String[] args) throws IOException {
-        getAsync("http://222.73.85.26:19089/gateway?wsdl", new HttpActionAdapter() {
-            public void onResponse(InputStream is) throws Throwable {
-                int len = -1;
-                byte[] buffer = new byte[2048];
-                while ( (len = is.read(buffer)) > 0 ) {
-                    System.out.println( new String(buffer, 0, len) );
-                }
-            }
-        });
-
-    }
-
 }

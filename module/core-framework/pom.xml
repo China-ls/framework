@@ -18,7 +18,7 @@
         <maven.compiler.target>1.6</maven.compiler.target>
         <maven.compiler.compilerVersion>1.6</maven.compiler.compilerVersion>
 
-        <spring.version>4.2.5.RELEASE</spring.version>
+        <spring.version>4.3.1.RELEASE</spring.version>
         <shiro.version>1.2.4</shiro.version>
         <mongodb.version>1</mongodb.version>
     </properties>
@@ -53,6 +53,24 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>Eclipse Paho Repo</id>
+            <url>https://repo.eclipse.org/content/repositories/paho-releases/</url>
+        </repository>
+        <repository>
+            <id>spring-releases</id>
+            <url>https://repo.spring.io/libs-release</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-releases</id>
+            <url>https://repo.spring.io/libs-release</url>
+        </pluginRepository>
+    </pluginRepositories>
 
     <dependencies>
         <dependency>
@@ -123,6 +141,22 @@
             <artifactId>spring-jms</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.integration</groupId>
+            <artifactId>spring-integration-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.integration</groupId>
+            <artifactId>spring-integration-mqtt</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.paho</groupId>
+            <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+            <version>1.1.0</version>
+        </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
@@ -159,6 +193,11 @@
             <groupId>org.logback-extensions</groupId>
             <artifactId>logback-ext-spring</artifactId>
             <version>0.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>1.7.16</version>
         </dependency>
 
 
@@ -224,39 +263,11 @@
             <version>2.6.6</version>
         </dependency>
 
-        <!-- mqtt -->
         <dependency>
-            <groupId>org.fusesource.mqtt-client</groupId>
-            <artifactId>mqtt-client</artifactId>
-            <version>1.0</version>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.jms</artifactId>
+            <version>3.0.1</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.apache.activemq</groupId>
-            <artifactId>activemq-client</artifactId>
-            <version>5.13.3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.fusesource.hawtbuf</groupId>
-            <artifactId>hawtbuf</artifactId>
-            <version>1.11</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.geronimo.specs</groupId>
-            <artifactId>geronimo-jms_1.1_spec</artifactId>
-            <version>1.1.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.geronimo.specs</groupId>
-            <artifactId>geronimo-j2ee-management_1.1_spec</artifactId>
-            <version>1.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.activemq</groupId>
-            <artifactId>activemq-openwire-legacy</artifactId>
-            <version>5.13.3</version>
-        </dependency>
-
 
         <dependency>
             <groupId>com.infinite</groupId>

@@ -1,9 +1,6 @@
 package com.infinite.framework.service;
 
-import com.infinite.framework.core.jms.spring.mqtt.JmsMessageHandler;
-
-import javax.jms.Destination;
-import java.io.Serializable;
+import org.springframework.messaging.MessageHandler;
 
 /**
  * @author by hx on 16-7-25.
@@ -11,14 +8,10 @@ import java.io.Serializable;
  */
 public interface MqttService {
 
-    public void createConsumer(Destination destination, JmsMessageHandler handler);
+    public void createConsumer(String destination, MessageHandler handler);
 
-    public void removeConsumer(Destination destination);
+    public void removeConsumer(String destination);
 
-    public void sendTextMessage(Destination destination, String message);
-
-    public void sendObjectMessage(Destination destination, final Serializable message);
-
-    public void convertAndSend(Destination destination, final Object message);
+    public void sendTextMessage(String destination, String message);
 
 }

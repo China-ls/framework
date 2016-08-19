@@ -67,7 +67,7 @@ app.controller('AsideDeviceCtrl', ['$scope', '$http', '$localStorage', '$state',
             } else if (branch.type === 'device') {
                 $scope.app.cache.selectParentBranch = $scope.tree.get_parent_branch(branch);
                 // console.warn($scope.tree.get_parent_branch(branch));
-                $state.go("app.device.detail", {id: branch.uuid}, {inherit: false});
+                $state.go("app.device.detail", {id: branch.uuid});
             }
         };
     }]
@@ -80,8 +80,8 @@ app.controller('DashbordCtrl', ['$scope', '$http', '$localStorage', 'NETCONST',
         $scope.offlineOpts = {retryInterval: 5000};
         $scope.mapOptions = {
             center: {
-                longitude: 121.60398,
-                latitude: 31.214385
+                longitude: 120.95281,
+                latitude: 30.883874
             },
             zoom: 17,
             city: 'ShangHai',
@@ -94,11 +94,9 @@ app.controller('DashbordCtrl', ['$scope', '$http', '$localStorage', 'NETCONST',
             console.warn('clickmap');
         };
         $scope.onMapLoaded = function ($event, $params) {
-            console.warn($scope.myMap);
-            console.warn('onMapLoaded');
+            // $scope.app.cache.dashboardMap = $scope.myMap;
+            $scope.addMarkers();
         };
-
-        $scope.itemid = "abc123";
 
         if ($scope.app.cache.selectParentBranch) {
             $scope.app.subHeader.goBackHide = true;
@@ -106,33 +104,93 @@ app.controller('DashbordCtrl', ['$scope', '$http', '$localStorage', 'NETCONST',
         }
 
         $scope.$on("BROADCAST_DEVICE_TREE_CLICK", function (event, data) {
-            // console.warn(data);
-            $scope.app.subHeader.contentTitle = data.label;
+            $scope.addMarkers();
         });
+
+        $scope.init = function () {
+            $scope.shouldAddAllSensorsToMap = true;
+            // if(!$scope.myMap) {
+            //     $scope.myMap = $scope.app.cache.dashboardMap;
+            // }
+            // $scope.addMarkers();
+        };
+
+        $scope.addMarkers = function () {
+            if(!$scope.shouldAddAllSensorsToMap) {
+                return;
+            }
+            if(!$scope.virtualSensors) {
+                $scope.virtualSensors = $scope.app.cache.virtualSensors;
+            }
+            if (!$scope.virtualSensors || $scope.virtualSensors.length <= 0) {
+                return;
+            }
+            $scope.myMap.clearOverlays();
+            for (var i = 0; i < $scope.virtualSensors.length; i++) {
+                var item = $scope.virtualSensors[i];
+                var point = new BMap.Point(item.longitude, item.latitude);
+                var marker = new BMap.Marker(point);
+                $scope.myMap.addOverlay(marker);
+                $scope.myMap.panTo(point);
+            }
+            $scope.shouldAddAllSensorsToMap = true;
+        };
 
         $http.get(NETCONST.CTX + NETCONST.SENSORS).then(function (response) {
             $scope.virtualSensors = response.data.data;
+            for( var i = 0; i < $scope.virtualSensors.length; i ++) {
+                $scope.virtualSensors[i].csl = 12 + parseInt(Math.random() * 100) / 100.0;
+            }
+            $scope.app.cache.virtualSensors = $scope.virtualSensors;
+            $scope.addMarkers();
             // console.warn($scope.virtualSensors);
         });
 
         $scope.showInMap = function (id) {
-            // console.warn(id);
+            var item = null;
+            for (var i = 0; i < $scope.virtualSensors.length; i++) {
+                if( id === $scope.virtualSensors[i].id ) {
+                    item = $scope.virtualSensors[i];
+                    break;
+                }
+            }
+            if (null != item) {
+                $scope.myMap.clearOverlays();
+                var point = new BMap.Point(item.longitude, item.latitude);
+                var marker = new BMap.Marker(point);
+                $scope.myMap.addOverlay(marker);
+                $scope.myMap.panTo(point);
+                // $scope.myMap.addMaprker();
+            }
+            $scope.shouldAddAllSensorsToMap = true;
             $scope.Toast("success", "提示", "地图定位成功.");
         };
 
         $scope.$on("WS_MESSAGE", function (event, data) {
             // console.warn(data);
-            angular.forEach($scope.virtualSensors, function (item) {
-                if (item.id === data.uuid) {
-                    if (data.comp_id === '2') {
-                        item.instant = data.instant;
-                        item.positive_total = data.positive_total;
-                    // } else if (data.comp_id === '4') {
-                    //     item.image = data.image;
+            var temp = {};
+            try {
+                angular.forEach(data, function (device) {
+                    if (device.comp_id === '2') {
+                        temp[device.uuid] = {
+                            instant: device.instant,
+                            positive_total: device.positive_total
+                        };
                     }
+                });
+            } catch (e) {
+            }
+            var timestamp = new Date();
+            var timeFormatText = $scope.formatDate(timestamp, "yyyy年MM月dd日HH:mm:ss");
+            for (var i = 0; i < $scope.virtualSensors.length; i++) {
+                var item = $scope.virtualSensors[i];
+                try {
+                    $scope.virtualSensors[i].instant = temp[item.id].instant;
+                    $scope.virtualSensors[i].positive_total = temp[item.id].positive_total;
+                } catch (e) {
                 }
-            });
+                $scope.virtualSensors[i].updateTime = timeFormatText;
+            }
         });
-
     }])
 ;

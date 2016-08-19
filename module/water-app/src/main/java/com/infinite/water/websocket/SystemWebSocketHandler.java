@@ -2,6 +2,7 @@ package com.infinite.water.websocket;
 
 import com.infinite.water.core.util.HttpUtils;
 import com.infinite.water.entity.ServerConfig;
+import org.apache.commons.lang.StringUtils;
 import org.apache.http.message.BasicNameValuePair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +15,6 @@ import org.springframework.web.socket.WebSocketSession;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * @author by hx on 16-8-16.
@@ -38,10 +38,16 @@ public class SystemWebSocketHandler implements WebSocketHandler , WebSocketMessa
     public void handleMessage(WebSocketSession session, WebSocketMessage<?> message) throws Exception {
         System.out.println("handleMessage" + message.toString());
         log.debug("handleMessage" + message.toString());
-        HttpUtils.post(serverConfig.getServerUrl() + "/test/jms/send",
-                new BasicNameValuePair("destination", "yinfantech/xgsn/jiaxing/control"),
-                new BasicNameValuePair("message", ((TextMessage) message).getPayload()));
-        session.sendMessage(new TextMessage(new Date() + ""));
+        String text = ((TextMessage) message).getPayload();
+        if (!StringUtils.equals(text, "heartbeat")) {
+            try {
+                HttpUtils.post(serverConfig.getServerUrl() + "/test/jms/send",
+                        new BasicNameValuePair("destination", "yinfantech.xgsn.jiaxing.control"),
+                        new BasicNameValuePair("message", text));
+            } catch (Exception e) {
+                log.error("error call back jms controller", e);
+            }
+        }
     }
 
     @Override
@@ -72,11 +78,9 @@ public class SystemWebSocketHandler implements WebSocketHandler , WebSocketMessa
         log.debug("will send message to ws users");
         for (WebSocketSession user : users) {
             try {
-                if (user.isOpen()) {
-                    user.sendMessage(message);
-                }
+                user.sendMessage(message);
             } catch (IOException e) {
-                e.printStackTrace();
+                log.error("send error.", e);
             }
         }
         log.debug("finish send message to ws users");

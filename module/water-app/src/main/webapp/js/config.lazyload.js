@@ -54,8 +54,8 @@ angular.module('app')
     .config(['$ocLazyLoadProvider', function ($ocLazyLoadProvider) {
         // We configure ocLazyLoad to use the lib script.js as the async loader
         $ocLazyLoadProvider.config({
-            debug: true,
-            events: true,
+            debug: false,
+            events: false,
             modules: [
                 {
                     name: 'ngGrid',

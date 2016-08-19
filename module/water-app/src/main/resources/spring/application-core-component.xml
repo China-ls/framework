@@ -11,7 +11,7 @@
        http://www.springframework.org/schema/util
        http://www.springframework.org/schema/util/spring-util.xsd">
 
-    <util:properties id="server" location="classpath:spring/prop/server.properties"/>
+    <util:properties id="server" location="classpath:prop/server.properties"/>
 
     <bean id="serverConfig" class="com.infinite.water.entity.ServerConfig" />
 

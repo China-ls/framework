@@ -1,50 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:int="http://www.springframework.org/schema/integration"
+       xmlns:task="http://www.springframework.org/schema/task"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-						http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
-						http://www.springframework.org/schema/mvc
-						http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
-						http://www.springframework.org/schema/context
-						http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.2.xsd
+           http://www.springframework.org/schema/integration
+           http://www.springframework.org/schema/integration/spring-integration.xsd
+           http://www.springframework.org/schema/task
+           http://www.springframework.org/schema/task/spring-task.xsd">
 
-    <!-- 真正可以产生Connection的ConnectionFactory，由对应的 JMS服务厂商提供-->
-    <bean id="targetConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
-        <property name="brokerURL" value="tcp://180.168.34.254:61613"/>
-        <property name="userName" value="admin" />
-        <property name="password" value="password" />
-        <property name="clientID" value="framework" />
+    <context:property-placeholder location="classpath:/prop/jms.properties" ignore-unresolvable="true"/>
+
+    <bean id="clientFactory" class="org.springframework.integration.mqtt.core.DefaultMqttPahoClientFactory">
+        <property name="userName" value="${jms.user}"/>
+        <property name="password" value="${jms.pass}"/>
     </bean>
 
-    <!-- Spring用于管理真正的ConnectionFactory的ConnectionFactory -->
-    <bean id="connectionFactory" class="org.springframework.jms.connection.CachingConnectionFactory">
-        <!-- 目标ConnectionFactory对应真实的可以产生JMS Connection的ConnectionFactory -->
-        <property name="targetConnectionFactory" ref="targetConnectionFactory"/>
-        <property name="reconnectOnException" value="true"/>
+    <task:executor id="jmsExecutor" pool-size="${jms.pool.size}" queue-capacity="${jms.pool.queue.capacity}"/>
+
+    <bean id="jmsChannel" class="org.springframework.integration.channel.PublishSubscribeChannel" >
+        <constructor-arg index="0" ref="jmsExecutor" />
     </bean>
 
-    <!-- Spring提供的JMS工具类，它可以进行消息发送、接收等 -->
-    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
-        <!-- 这个connectionFactory对应的是我们定义的Spring提供的那个ConnectionFactory对象 -->
-        <property name="connectionFactory" ref="connectionFactory"/>
+    <bean id="jmsAdapter" class="org.springframework.integration.mqtt.inbound.MqttPahoMessageDrivenChannelAdapter">
+        <constructor-arg index="0" value="${jms.url}" type="java.lang.String"/>
+        <constructor-arg index="1" value="core-subscriber" type="java.lang.String"/>
+        <constructor-arg index="2" ref="clientFactory" type="org.springframework.integration.mqtt.core.MqttPahoClientFactory"/>
+        <constructor-arg index="3" value="" type="java.lang.String[]"/>
+        <property name="errorChannel" ref="errorChannel" />
+        <property name="outputChannel" ref="jmsChannel" />
+        <property name="autoStartup" value="true" />
+        <property name="recoveryInterval" value="${jms.recovery.interval}" />
+        <property name="qos" value="${jms.qos}" />
     </bean>
 
-    <!--这个是队列目的地，点对点的-->
-    <bean id="queueDestination" class="org.apache.activemq.command.ActiveMQQueue">
-        <constructor-arg>
-            <value>queue</value>
-        </constructor-arg>
-    </bean>
-    <!--这个是主题目的地，一对多的-->
-    <bean id="topicDestination" class="org.apache.activemq.command.ActiveMQTopic">
-        <constructor-arg value="topic"/>
-    </bean>
+    <int:exception-type-router input-channel="errorChannel">
+        <int:mapping exception-type="java.net.ConnectException" channel="invalidChannel" />
+    </int:exception-type-router>
 
-    <!-- 消息监听器 -->
+    <bean id="errorChannel" class="org.springframework.integration.channel.DirectChannel"/>
+
     <bean id="jmsRouterListener" class="com.infinite.framework.core.jms.spring.mqtt.JmsRouterListener"/>
-
-    <bean id="filterJmsMessageHandler" class="com.infinite.framework.mqtt.FilterJmsMessageHandler" />
 
 </beans>

@@ -37,15 +37,15 @@ public class VirtualSensor extends AbstractEntity {
     private HashMap<String, Object> fields = new HashMap<String, Object>(0);
 
     /*TODO TEMP*/
-    private double negtive_totoal;
+    private double instant;
     private double positive_total;
 
-    public double getNegtive_totoal() {
-        return negtive_totoal;
+    public double getInstant() {
+        return instant;
     }
 
-    public void setNegtive_totoal(double negtive_totoal) {
-        this.negtive_totoal = negtive_totoal;
+    public void setInstant(double instant) {
+        this.instant = instant;
     }
 
     public double getPositive_total() {

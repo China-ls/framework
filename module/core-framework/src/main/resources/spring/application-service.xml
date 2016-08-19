@@ -19,8 +19,7 @@
 		http://www.springframework.org/schema/lang
 		http://www.springframework.org/schema/lang/spring-lang.xsd">
 
-    <util:properties id="dbConfig" location="classpath:spring/prop/mongo_name.properties"/>
-
+    <util:properties id="dbConfig" location="classpath:prop/mongo.properties"/>
 
     <!-- ******************************************************************** -->
     <!-- Scan for service layer annotated beans -->

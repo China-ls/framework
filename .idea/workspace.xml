@@ -2,7 +2,362 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0fd8f5c7-a893-4232-b550-e52d73eb6f82" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/fonts/FontAwesome.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/fonts/fontawesome-webfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/fonts/fontawesome-webfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/fonts/fontawesome-webfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/fonts/glyphicons-halflings-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/fonts/glyphicons-halflings-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/fonts/sourcesanspro/sourcesanspro-bold.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/fonts/sourcesanspro/sourcesanspro-light.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/fonts/sourcesanspro/sourcesanspro.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/59ec0ac4-2182-4960-9166-3ce62738ef99.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/59ec0ac4-2182-4960-9177-3ce62738ef99.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/59ec0ac4-2182-4960-9188-3ce62738ef99.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/59ec0ac4-2182-4960-9199-3ce62738ef99.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/a0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/a1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/a10.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/a2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/a3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/a4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/a5.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/a6.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/a7.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/a8.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/a9.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b10.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b11.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b12.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b13.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b15.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b16.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b18.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b19.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b20.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b5.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b6.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b60705d3-a754-4232-858f-4894380be910.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b7.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b8.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/b9.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/bg_b1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/c0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/c1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/c2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/c3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/c4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/c5.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/c6.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/c7.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/c8.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/c9.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/i_user.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/item_icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/map.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/p0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/title.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/v3" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/img/v5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/src/img/v3" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/src/img/v5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/img/v3" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/img/v5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_paho_org_eclipse_paho_client_mqttv3_1_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_javax_jms_3_0_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_16.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_integration_spring_integration_core_4_3_1_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_integration_spring_integration_mqtt_4_3_1_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_retry_spring_retry_1_1_2_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_1_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_1_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_1_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_1_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jms_4_3_1_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_4_3_1_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_3_1_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_3_1_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_1_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_1_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/css/app.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/fonts/fontawesome-webfont.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/fonts/glyphicons-halflings-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app.src.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/calendar/calendar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/contact/contact.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/contact/contacts.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/mail/mail-service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/mail/mail.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/mail/mails.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/map/baidu/baidumap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/map/baidu/load-baidu-maps.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/map/baidu/ui-baidu-map.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/map/load-google-maps.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/map/map.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/map/ui-map.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/music/ctrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/music/theme.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/music/videogular.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/note/note.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/note/notes.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/todo/todo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/weather/angular-skycons.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/weather/ctrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/app/weather/skycons.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/config.lazyload.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/config.router.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/chart.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/dashbord.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/device-detail.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/editor.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/file-upload.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/form.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/grid.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/imgcrop.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/largeLoad.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/scroll.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/select.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/signin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/signup.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/slider.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/tab.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/table.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/toaster.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/tree.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/uigrid.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/upload.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/vectormap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/controllers/xeditable.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/directives/setnganimate.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/directives/ui-butterbar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/directives/ui-focus.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/directives/ui-fullscreen.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/directives/ui-jq.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/directives/ui-module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/directives/ui-nav.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/directives/ui-scroll.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/directives/ui-shift.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/directives/ui-toggleclass.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/factory/appkeyInterceptor.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/factory/wsFactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/filters/fromNow.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/js/services/ui-load.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/l10n/de_DE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/l10n/en.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/l10n/it_IT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/l10n/zh_CN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/app.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/app_calendar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/app_dashboard.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/app_dashboard_v1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/app_dashboard_v2.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/app_device.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/app_device_detail.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/apps_contact.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/apps_note.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/apps_todo.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/apps_weather.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/blank.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/blocks/aside.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/blocks/aside.music.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/blocks/aside.right.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/blocks/aside_device.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/blocks/common_sub_header.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/blocks/header.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/blocks/header.music.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/blocks/header_bak.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/blocks/nav.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/blocks/page_footer.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/blocks/settings.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/blocks/sub_header.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/docs.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/form_editor.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/form_elements.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/form_fileupload.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/form_imagecrop.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/form_select.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/form_slider.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/form_validation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/form_wizard.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/form_xeditable.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/layout.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/layout_app.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/layout_footer_fullwidth.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/layout_footer_mobile.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/layout_fullwidth.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/layout_mobile.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/mail.detail.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/mail.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/mail.list.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/mail.new.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/modal.form.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/modal.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/music.detail.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/music.genres.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/music.home.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/music.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/music.mtv.detail.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/music.mtv.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/music.player.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/music.playlist.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/page_404.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/page_forgotpwd.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/page_invoice.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/page_lockme.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/page_post.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/page_price.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/page_profile.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/page_search.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/page_signin.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/page_signup.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/table_datatable.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/table_editable.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/table_footable.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/table_grid.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/table_smart.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/table_static.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/table_uigrid.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/ui_bootstrap.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/ui_buttons.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/ui_chart.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/ui_googlemap.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/ui_grid.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/ui_icons.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/ui_jvectormap.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/ui_portlet.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/ui_scroll.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/ui_sortable.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/ui_timeline.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/ui_toaster.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/ui_tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/angular/tpl/ui_widgets.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-socket-io/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-socket-io/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-socket-io/.travis.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-socket-io/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-socket-io/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-socket-io/gulpfile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-socket-io/karma.conf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-socket-io/mock/socket-io.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-socket-io/npm-install.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-socket-io/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-socket-io/socket.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-socket-io/socket.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-socket-io/socket.min.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-socket-io/socket.spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/nprogress/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/nprogress/History.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/nprogress/License.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/nprogress/Notes.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/nprogress/Readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/nprogress/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/nprogress/component.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/nprogress/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/nprogress/nprogress.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/nprogress/nprogress.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/nprogress/support/extras.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/bower_components/nprogress/support/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/interceptor/MethodMonitorInterceptor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/prop/mongo.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/water-app/src/main/resources/prop/server.properties" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_fusesource_hawtdispatch_hawtdispatch_1_9.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_fusesource_hawtdispatch_hawtdispatch_transport_1_9.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_fusesource_mqtt_client_mqtt_client_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/jms/spring/mqtt/ApolloMQTTConnection.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/mqtt/FilterJmsMessageHandler.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/mqtt/TempJmsFilter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/CorsConfigurerAdapter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/adapter/RestAdapter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/adapter/WebSocketAdapter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/MqService.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/TestMqService.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/morphia-spring.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/prop/mongo.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/water-app/src/main/resources/spring/prop/server.properties" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_2_5_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_1_RELEASE.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/init/TempInitVIrtualSensorMQTT.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/init/TempInitVirtualSensorMQTT.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/prop/mongo_name.properties" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/prop/jms.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/img/59ec0ac4-2182-4960-9166-3ce62738ef99.jpg" afterPath="$PROJECT_DIR$/module/app-web/src/img/59ec0ac4-2182-4960-9166-3ce62738ef99.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/img/59ec0ac4-2182-4960-9177-3ce62738ef99.jpg" afterPath="$PROJECT_DIR$/module/app-web/src/img/59ec0ac4-2182-4960-9177-3ce62738ef99.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/img/b60705d3-a754-4232-858f-4894380be910.jpg" afterPath="$PROJECT_DIR$/module/app-web/src/img/b60705d3-a754-4232-858f-4894380be910.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/img/59ec0ac4-2182-4960-9166-3ce62738ef99.jpg" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/img/59ec0ac4-2182-4960-9166-3ce62738ef99.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/img/59ec0ac4-2182-4960-9177-3ce62738ef99.jpg" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/img/59ec0ac4-2182-4960-9177-3ce62738ef99.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/img/b60705d3-a754-4232-858f-4894380be910.jpg" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/img/b60705d3-a754-4232-858f-4894380be910.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/core_framework_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/core_framework_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework.iml" afterPath="$PROJECT_DIR$/framework.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/bower.json" afterPath="$PROJECT_DIR$/module/app-web/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/index.html" afterPath="$PROJECT_DIR$/module/app-web/src/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/config.lazyload.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/config.lazyload.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/config.router.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/config.router.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/dashbord.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/dashbord.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-detail.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-detail.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/factory/wsFactory.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/factory/wsFactory.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/main.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_dashboard.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_device_detail.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_device_detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/bson.filter/bson.filter.iml" afterPath="$PROJECT_DIR$/module/bson.filter/bson.filter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/core-framework.iml" afterPath="$PROJECT_DIR$/module/core-framework/core-framework.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/pom.xml" afterPath="$PROJECT_DIR$/module/core-framework/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/jms/spring/mqtt/JmsMessageHandler.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/jms/spring/mqtt/JmsMessageHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/jms/spring/mqtt/JmsMessageHandlerAdapter.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/jms/spring/mqtt/JmsMessageHandlerAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/jms/spring/mqtt/JmsRouterListener.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/jms/spring/mqtt/JmsRouterListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/entity/VirtualSensor.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/entity/VirtualSensor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/PersistentUserController.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/PersistentUserController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/TestController.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/TestController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/VirtualSensorController.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/VirtualSensorController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/entity/LoginResponse.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/entity/LoginResponse.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/MqttService.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/MqttService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/MqttServiceImpl.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/MqttServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/VirtualSensorDataServiceImpl.java" afterPath="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/VirtualSensorDataServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/resources/logback.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/logback.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-context.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-context.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-core-component.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-core-component.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-dao.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-dao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-jms.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-jms.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-service.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-service.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-shiro.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-shiro.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/dispatcher-servlet.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/src/main/resources/xsensor.json" afterPath="$PROJECT_DIR$/module/core-framework/src/main/resources/xsensor.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/pom.xml" afterPath="$PROJECT_DIR$/module/water-app/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/core/http/HttpClientCaller.java" afterPath="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/core/http/HttpClientCaller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/entity/VirtualSensor.java" afterPath="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/entity/VirtualSensor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/websocket/SystemWebSocketHandler.java" afterPath="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/websocket/SystemWebSocketHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/resources/logback.xml" afterPath="$PROJECT_DIR$/module/water-app/src/main/resources/logback.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/resources/spring/application-core-component.xml" afterPath="$PROJECT_DIR$/module/water-app/src/main/resources/spring/application-core-component.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/resources/xdepartment.json" afterPath="$PROJECT_DIR$/module/water-app/src/main/resources/xdepartment.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/resources/xsensor.json" afterPath="$PROJECT_DIR$/module/water-app/src/main/resources/xsensor.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/pages/tpl/app_dashboard.html" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/pages/tpl/app_dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/pages/tpl/app_device_detail.html" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/pages/tpl/app_device_detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/app.min.js" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/app.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/app.src.js" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/app.src.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/config.lazyload.js" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/config.lazyload.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/config.router.js" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/config.router.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/controllers/dashbord.js" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/controllers/dashbord.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/controllers/device-detail.js" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/controllers/device-detail.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/main.js" afterPath="$PROJECT_DIR$/module/water-app/src/main/webapp/js/main.js" />
     </list>
     <ignored path="framework.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -21,6 +376,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" flattened_view="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -29,61 +385,7 @@
     <favorites_list name="framework" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/pages/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TempJmsFilter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/mqtt/TempJmsFilter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application-jms.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-jms.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="24" column="60" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="logback.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/water-app/src/main/resources/logback.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="39" column="37" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SystemWebSocketHandler.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/websocket/SystemWebSocketHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-              <folding>
-                <element signature="docComment;class#SystemWebSocketHandler#0" expanded="false" />
-                <element signature="e#939#957#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -103,57 +405,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/entity/CallBackType.java" />
-        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/filter/obj/AbstractFilter.java" />
-        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/filter/SimpleBsonFilterChain.java" />
-        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/entity/DataFilterDefinetion.java" />
-        <option value="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-thread-pool.xml" />
-        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/entity/Component.java" />
-        <option value="$PROJECT_DIR$/module/core-framework/pom.xml" />
-        <option value="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-core-component.xml" />
-        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/TempController.java" />
-        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/util/HttpUtils.java" />
-        <option value="$PROJECT_DIR$/module/water-app/pom.xml" />
-        <option value="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/websocket.java" />
-        <option value="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/websocket/WebSocketConfig.java" />
-        <option value="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/controller/CallbackController.java" />
-        <option value="$PROJECT_DIR$/module/water-app/src/main/resources/spring/application-websocket.xml" />
-        <option value="$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/websocket/WebSocketMessageHandler.java" />
-        <option value="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/controller/TestController.java" />
-        <option value="$PROJECT_DIR$/module/water-app/src/main/resources/xsensor.json" />
-        <option value="$PROJECT_DIR$/module/water-app/src/main/resources/xdepartment.json" />
-        <option value="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/controller/SensorController.java" />
-        <option value="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/service/VirtualSensorService.java" />
-        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/VirtualSensorService.java" />
-        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/VirtualSensorServiceImpl.java" />
-        <option value="$PROJECT_DIR$/module/core-framework/src/main/resources/xsensor.json" />
-        <option value="$PROJECT_DIR$/module/water-app/src/main/webapp/css/app.login.css" />
-        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/TestController.java" />
-        <option value="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/entity/ServerConfig.java" />
-        <option value="$PROJECT_DIR$/module/water-app/src/main/resources/spring/application-core-component.xml" />
-        <option value="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/service/impl/VirtualSensorServiceImpl.java" />
-        <option value="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/websocket/SystemWebSocketHandler.java" />
-        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/init/TempInitVIrtualSensorMQTT.java" />
-        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/VirtualSensorDataService.java" />
         <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/entity/EntityConst.java" />
         <option value="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/prop/mongo_name.properties" />
-        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/mqtt/FilterJmsMessageHandler.java" />
-        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/VirtualSensorDataServiceImpl.java" />
-        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/entity/VirtualSensor.java" />
-        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/VirtualSensorController.java" />
         <option value="$PROJECT_DIR$/module/core-framework/src/test/java/com/ls/test/morphia/TestMorphia.java" />
         <option value="$PROJECT_DIR$/module/core-framework/src/test/java/com/ls/test/morphia/MorphiaTest.java" />
         <option value="$PROJECT_DIR$/module/core-framework/src/test/java/com/ls/test/morphia/DatastoreTest.java" />
         <option value="$PROJECT_DIR$/module/core-framework/src/test/java/com/ls/test/morphia/UserDAOTest.java" />
         <option value="$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/pages/tpl/app_device_detail.html" />
-        <option value="$PROJECT_DIR$/module/water-app/src/main/resources/spring/prop/server.properties" />
         <option value="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/core/entity/BasicEntity.java" />
-        <option value="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/entity/VirtualSensor.java" />
-        <option value="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-jms.xml" />
-        <option value="$PROJECT_DIR$/module/water-app/src/main/webapp/js/app.min.js" />
         <option value="$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/pages/index.jsp" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/mqtt/SimpleJmsTextMessage.java" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/VirtualSensorDataServiceImpl.java" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/resources/xsensor.json" />
+        <option value="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/entity/VirtualSensor.java" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/entity/VirtualSensor.java" />
+        <option value="$PROJECT_DIR$/module/water-app/src/main/resources/xdepartment.json" />
+        <option value="$PROJECT_DIR$/module/water-app/src/main/resources/xsensor.json" />
+        <option value="$PROJECT_DIR$/module/water-app/src/main/resources/logback.xml" />
         <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/mqtt/TempJmsFilter.java" />
+        <option value="$PROJECT_DIR$/module/water-app/pom.xml" />
+        <option value="$PROJECT_DIR$/module/water-app/src/main/resources/spring/prop/server.properties" />
+        <option value="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/websocket/SystemWebSocketHandler.java" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/mqtt/FilterJmsMessageHandler.java" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/mqtt/JmsMQTTListener.java" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/mqtt/JmsMQTT.java" />
+        <option value="$PROJECT_DIR$/module/water-app/src/main/webapp/js/app.min.js" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/jms/spring/mqtt/JmsMessageHandler.java" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/jms/spring/mqtt/JmsMessageHandlerAdapter.java" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/jms/spring/mqtt/JmsRouterListener.java" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/MqttService.java" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/MqttServiceImpl.java" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/init/TempInitVIrtualSensorMQTT.java" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-core-component.xml" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/TestController.java" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-shiro.xml" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/resources/logback.xml" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/resources/prop/mongo_name.properties" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/resources/prop/mongo.properties" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/resources/prop/jms.properties" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-context.xml" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-jms.xml" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-dao.xml" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-service.xml" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/init/TempInitVirtualSensorMQTT.java" />
+        <option value="$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/core/http/HttpClientCaller.java" />
+        <option value="$PROJECT_DIR$/module/core-framework/pom.xml" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/VirtualSensorController.java" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/PersistentUserController.java" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/interceptor.java" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/resources/spring/dispatcher-servlet.xml" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/interceptor/MethodMonitorInterceptor.java" />
+        <option value="$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/entity/LoginResponse.java" />
       </list>
     </option>
   </component>
@@ -177,6 +479,9 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState />
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/module/app-web/node_modules" />
   </component>
   <component name="PhpServers">
     <servers />
@@ -212,6 +517,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -243,8 +551,22 @@
               <option name="myItemId" value="module" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="water-app" />
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core-framework" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -262,7 +584,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="water-app" />
+              <option name="myItemId" value="core-framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core-framework" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -288,7 +632,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="water-app" />
+              <option name="myItemId" value="core-framework" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -304,11 +648,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="water" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="websocket" />
+              <option name="myItemId" value="framework" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -326,7 +666,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="water-app" />
+              <option name="myItemId" value="core-framework" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -342,29 +682,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="water" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="framework" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="module" />
+              <option name="myItemId" value="router" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -380,22 +707,45 @@
     <property name="ignore_missing_gitignore" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.infinite.framework.mqtt" />
       <recent name="com.infinite.framework.service.impl" />
       <recent name="com.infinite.framework.service" />
       <recent name="com.infinite.water.controller" />
       <recent name="com.infinite.framework.core.util" />
-      <recent name="com.infinite.framework.mqtt" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/module/core-framework/src/main/resources/prop" />
+      <recent name="$PROJECT_DIR$/module/core-framework/src/main/resources/spring" />
+      <recent name="$PROJECT_DIR$/module/water-app/target/water-app-1.0-SNAPSHOT/js" />
       <recent name="$PROJECT_DIR$/module/water-app/src/main/webapp/js" />
-      <recent name="$PROJECT_DIR$/module/water-app/src/main/webapp/css" />
-      <recent name="$PROJECT_DIR$/module/water-app/target/classes" />
-      <recent name="$PROJECT_DIR$/module/core-framework/src/main/resources" />
-      <recent name="$PROJECT_DIR$/module/water-app/src/main/resources/spring" />
+      <recent name="$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/pages/tpl" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.app jetty:run">
+  <component name="RunManager" selected="Maven.Core jetty:run">
+    <configuration default="false" name="SystemWebSocketHandler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.infinite.water.websocket.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.infinite.water.websocket.SystemWebSocketHandler" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="water-app" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="false" name="TestMorphia.testGetDefinition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -449,26 +799,6 @@
       <method />
     </configuration>
     <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/framework/app-web/src/index.html">
-      <method />
-    </configuration>
-    <configuration default="false" name="SystemWebSocketHandler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.infinite.water.websocket.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="com.infinite.water.websocket.SystemWebSocketHandler" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="water-app" />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
@@ -867,6 +1197,36 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -962,6 +1322,21 @@
       <method />
     </configuration>
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
+      <method />
+    </configuration>
+    <configuration default="true" type="uTestRunConfiguration" factoryName="utest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
       <method />
     </configuration>
     <configuration default="false" name="Jetty Local" type="JettyConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="Jetty 9.3.10.v20160621" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8">
@@ -1392,6 +1767,7 @@
             </option>
             <option name="goals">
               <list>
+                <option value="clean" />
                 <option value="jetty:run" />
               </list>
             </option>
@@ -1433,10 +1809,10 @@
       <item index="0" class="java.lang.String" itemvalue="Jetty Server.Jetty Local" />
       <item index="1" class="java.lang.String" itemvalue="Maven.Core jetty:run" />
       <item index="2" class="java.lang.String" itemvalue="Maven.app jetty:run" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.TestMorphia.testGetDefinition" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.TestMorphia.getDefinition" />
-      <item index="5" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
-      <item index="6" class="java.lang.String" itemvalue="Application.SystemWebSocketHandler" />
+      <item index="3" class="java.lang.String" itemvalue="Application.SystemWebSocketHandler" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.TestMorphia.testGetDefinition" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.TestMorphia.getDefinition" />
+      <item index="6" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
     </list>
     <recent_temporary>
       <list size="4">
@@ -1446,6 +1822,11 @@
         <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -1464,7 +1845,15 @@
       <workItem from="1471226903632" duration="150000" />
       <workItem from="1471227911845" duration="11247000" />
       <workItem from="1471254421614" duration="96000" />
-      <workItem from="1471308792038" duration="28904000" />
+      <workItem from="1471308792038" duration="28992000" />
+      <workItem from="1471344711218" duration="379000" />
+      <workItem from="1471345288156" duration="11409000" />
+      <workItem from="1471358902856" duration="864000" />
+      <workItem from="1471395140357" duration="5514000" />
+      <workItem from="1471481039413" duration="72000" />
+      <workItem from="1471496604038" duration="4094000" />
+      <workItem from="1471575841940" duration="8706000" />
+      <workItem from="1471594712561" duration="3720000" />
     </task>
     <task id="LOCAL-00001" summary="app-web html small edit.">
       <created>1471254507746</created>
@@ -1480,7 +1869,14 @@
       <option name="project" value="LOCAL" />
       <updated>1471339501332</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="version 0.0.1 commit">
+      <created>1471339549402</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1471339549402</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1507,7 +1903,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40514000" />
+    <option name="totallyTimeSpent" value="75360000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="26" width="1366" height="716" extended-state="0" />
@@ -1515,35 +1911,67 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293919" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881355" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881355" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40778342" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.48730963" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46192893" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282572" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32142857" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30851063" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40338984" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40270728" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4864407" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4856176" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="CodotaView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282572" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881355" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881355" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="CodotaView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4856176" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282572" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48730963" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46192893" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282572" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30851063" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40270728" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -1589,7 +2017,7 @@
           <line>11</line>
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="2" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1598,437 +2026,401 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/module/water-app/src/main/resources/spring/application-websocket.xml">
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/TestMqService.java" />
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/MqService.java" />
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/MqttServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/websocket/WebSocketMessageHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="40" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/water-app/src/main/resources/xdepartment.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="128" column="26" selection-start-line="128" selection-start-column="26" selection-end-line="128" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/controller/SensorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="48" column="55" selection-start-line="48" selection-start-column="55" selection-end-line="48" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/service/VirtualSensorService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+        <state relative-caret-position="-32">
+          <caret line="33" column="62" selection-start-line="33" selection-start-column="62" selection-end-line="33" selection-end-column="62" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="e#1621#1629#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/water-app/src/main/webapp/css/app.login.css">
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/core/jms/spring/mqtt/JmsRouterListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+        <state relative-caret-position="356">
+          <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
           <folding>
-            <element signature="e#210489#211238#2" expanded="false" />
-            <element signature="e#211295#215180#2" expanded="false" />
-            <element signature="e#215238#216027#2" expanded="false" />
-            <element signature="e#216087#216576#2" expanded="false" />
-            <element signature="e#216636#217353#2" expanded="false" />
+            <element signature="e#600#624#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/TempController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+        <state relative-caret-position="271">
+          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/module/water-app/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="154" column="27" selection-start-line="154" selection-start-column="24" selection-end-line="154" selection-end-column="27" />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/resources/logback.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/resources/prop/mongo.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.2.2/mongo-java-driver-3.2.2-sources.jar!/com/mongodb/WriteConcern.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="166" column="57" selection-start-line="166" selection-start-column="57" selection-end-line="166" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/resources/spring/morphia-spring.xml" />
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/resources/spring/_application-jms.xml" />
     <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/TestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="80" column="40" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="40" />
+        <state relative-caret-position="189">
+          <caret line="53" column="50" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-core-component.xml">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.3.1.RELEASE/spring-context-4.3.1.RELEASE.jar!/org/springframework/context/config/spring-context-3.2.xsd">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+        <state relative-caret-position="187">
+          <caret line="88" column="45" selection-start-line="88" selection-start-column="45" selection-end-line="88" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.3.1.RELEASE/spring-beans-4.3.1.RELEASE.jar!/org/springframework/beans/factory/xml/spring-beans-4.3.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="835" column="4" selection-start-line="835" selection-start-column="4" selection-end-line="835" selection-end-column="4" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.3.1.RELEASE/spring-beans-4.3.1.RELEASE.jar!/org/springframework/beans/factory/config/PropertyPlaceholderConfigurer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-378">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-context.xml">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/resources/prop/mongo.properties">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-shiro.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="134" column="19" selection-start-line="134" selection-start-column="19" selection-end-line="134" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-thread-pool.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-service.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="21" column="91" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/water-app/src/main/resources/spring/application-core-component.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/service/impl/VirtualSensorServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="26" column="77" selection-start-line="26" selection-start-column="77" selection-end-line="26" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/persistent/impl/PersistentObjectDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/VirtualSensorService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/resources/ehcache.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/entity/EntityConst.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="32" column="60" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/persistent/impl/VirtualSensorDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/VirtualSensorDataService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="41" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/PersistentObjectServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="30" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/mqtt/FilterJmsMessageHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="23" column="37" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/VirtualSensorDataServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="31" column="61" selection-start-line="31" selection-start-column="61" selection-end-line="31" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/impl/VirtualSensorServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
-          <folding>
-            <element signature="e#873#874#0" expanded="true" />
-            <element signature="e#925#926#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/VirtualSensorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/core-framework/src/test/java/com/ls/test/morphia/TestMorphia.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="32" column="15" selection-start-line="0" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/core-framework/src/test/java/com/ls/test/morphia/MorphiaTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="11" column="15" selection-start-line="0" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/core-framework/src/test/java/com/ls/test/morphia/DatastoreTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="12" column="15" selection-start-line="0" selection-start-column="0" selection-end-line="296" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/core-framework/src/test/java/com/ls/test/morphia/UserDAOTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="15" selection-start-line="0" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/pages/tpl/app_device_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="72" column="119" selection-start-line="72" selection-start-column="119" selection-end-line="72" selection-end-column="119" />
-          <folding>
-            <marker date="1471338262238" expanded="true" signature="5130:5554" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/water-app/src/main/resources/spring/prop/server.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/water-app/src/main/resources/xsensor.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="490" column="27" selection-start-line="490" selection-start-column="27" selection-end-line="490" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/entity/VirtualSensor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="56" column="5" selection-start-line="39" selection-start-column="4" selection-end-line="56" selection-end-column="5" />
-          <folding>
-            <element signature="e#1443#1444#0" expanded="true" />
-            <element signature="e#1480#1481#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/entity/ServerConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/entity/VirtualSensor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#2493#2494#0" expanded="true" />
-            <element signature="e#2545#2546#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/core/entity/BasicEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="50" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/resources/spring/prop/mongo_name.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/resources/spring/prop/mongo.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+        <state relative-caret-position="176">
+          <caret line="19" column="67" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-dao.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="87" column="88" selection-start-line="87" selection-start-column="88" selection-end-line="87" selection-end-column="88" />
-          <folding />
+        <state relative-caret-position="155">
+          <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
+          <folding>
+            <element signature="n#value#0;n#array#0;n#property#3;n#bean#1;n#beans#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/water-app/src/main/webapp/js/config.router.js">
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/resources/prop/jms.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/water-app/src/main/webapp/js/config.lazyload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2949">
-          <caret line="9" column="24" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/water-app/src/main/webapp/js/xsensor.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/init/TempInitVIrtualSensorMQTT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/resources/xsensor.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="256" column="7" selection-start-line="256" selection-start-column="7" selection-end-line="256" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/water-app/src/main/webapp/js/app.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="19" column="9358" selection-start-line="19" selection-start-column="9353" selection-end-line="19" selection-end-column="9358" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/water-app/src/main/webapp/WEB-INF/pages/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/mqtt/TempJmsFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="126">
+          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-jms.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="24" column="60" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
-          <folding />
+        <state relative-caret-position="126">
+          <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
+          <folding>
+            <element signature="e#1171#1184#0" expanded="false" />
+            <element signature="e#1227#1240#0" expanded="false" />
+            <element signature="e#1302#1320#0" expanded="false" />
+            <element signature="e#1336#1364#0" expanded="false" />
+            <element signature="e#1694#1706#0" expanded="false" />
+            <element signature="e#2238#2264#0" expanded="false" />
+            <element signature="e#2303#2315#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/controller/RouteController.java">
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/init/InitDatabase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="32" column="53" selection-start-line="32" selection-start-column="53" selection-end-line="32" selection-end-column="53" />
+        <state relative-caret-position="185">
+          <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/controller/TestController.java">
+    <entry file="file://$PROJECT_DIR$/module/core-framework/target/classes/spring/application-jms.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+        <state relative-caret-position="126">
+          <caret line="15" column="71" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="71" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/water-app/src/main/resources/logback.xml">
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/service/MqttService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$MAVEN_REPOSITORY$/org/mongodb/mongodb-driver/3.2.2/mongodb-driver-3.2.2.pom">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="37" column="35" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/bson.filter/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongodb-driver-core/3.2.2/mongodb-driver-core-3.2.2-sources.jar!/com/mongodb/client/model/Filters.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/bson.filter/src/main/java/com/infinite/framework/bson/filter/QueryFilters.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/resources/spring/application-core-component.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
-          <caret line="39" column="37" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+          <caret line="12" column="53" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/websocket/SystemWebSocketHandler.java">
+    <entry file="file://$PROJECT_DIR$/module/water-app/src/main/java/com/infinite/water/core/http/HttpClientCaller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        <state relative-caret-position="105">
+          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/init/TempInitVirtualSensorMQTT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/core-framework/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.1.RELEASE/spring-web-4.3.1.RELEASE.jar!/org/springframework/web/bind/annotation/ModelAttribute.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1">
+          <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
           <folding>
-            <element signature="docComment;class#SystemWebSocketHandler#0" expanded="false" />
-            <element signature="e#939#957#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.1.RELEASE/spring-web-4.3.1.RELEASE-sources.jar!/org/springframework/web/bind/annotation/ModelAttribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-105">
+          <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/ObjectController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/RouterBasicRestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/VirtualSensorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="34" column="65" selection-start-line="34" selection-start-column="65" selection-end-line="34" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/interceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/controller/PersistentUserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.1.RELEASE/spring-web-4.3.1.RELEASE-sources.jar!/org/springframework/web/bind/annotation/ControllerAdvice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/integration/spring-integration-core/4.3.1.RELEASE/spring-integration-core-4.3.1.RELEASE.jar!/org/springframework/integration/config/GlobalChannelInterceptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/resources/spring/dispatcher-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="63" column="26" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/CorsConfigurerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/IProtocolAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/adapter/RestAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="54" selection-start-line="7" selection-start-column="54" selection-end-line="7" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/adapter/WebSocketAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/entity/LoginResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/entity/ResponseCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/core-framework/src/main/java/com/infinite/framework/router/interceptor/MethodMonitorInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2086,7 +2478,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Spring|water-app</last-edited>
+          <last-edited>Spring|core-framework</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

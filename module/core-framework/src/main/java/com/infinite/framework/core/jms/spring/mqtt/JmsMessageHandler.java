@@ -1,19 +1,12 @@
 package com.infinite.framework.core.jms.spring.mqtt;
 
-import javax.jms.*;
+import org.springframework.messaging.MessageHandler;
 
 /**
  * @author by hx on 16-7-26.
  */
-public interface JmsMessageHandler {
+public interface JmsMessageHandler extends MessageHandler {
 
-    void handlerTextMessage(TextMessage message) throws JMSException;
+    boolean supportDestination(String destination);
 
-    void handlerObjectMessage(ObjectMessage message) throws JMSException;
-
-    void handlerBytesMessage(BytesMessage message) throws JMSException;
-
-    void handlerStreamMessage(StreamMessage message) throws JMSException;
-
-    void handlerMapMessage(MapMessage message) throws JMSException;
 }

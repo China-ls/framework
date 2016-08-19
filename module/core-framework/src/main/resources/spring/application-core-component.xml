@@ -14,6 +14,7 @@
     <!--</bean>-->
 
     <bean id="initDatabaase" class="com.infinite.framework.init.InitDatabase" />
-    <bean id="initVIrtualSensorMQTT" class="com.infinite.framework.init.TempInitVIrtualSensorMQTT" />
+
+    <bean id="initVirtualSensorMQTT" class="com.infinite.framework.init.TempInitVirtualSensorMQTT" />
 
 </beans>

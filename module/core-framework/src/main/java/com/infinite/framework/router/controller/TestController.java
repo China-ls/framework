@@ -1,25 +1,21 @@
 package com.infinite.framework.router.controller;
 
-import com.infinite.framework.core.jms.spring.mqtt.JmsMessageHandlerAdapter;
 import com.infinite.framework.core.web.BasicRestController;
 import com.infinite.framework.entity.VirtualSensor;
 import com.infinite.framework.service.VirtualSensorService;
 import com.infinite.framework.service.impl.MqttServiceImpl;
-import org.apache.activemq.command.ActiveMQTopic;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.messaging.Message;
+import org.springframework.messaging.MessageHandler;
+import org.springframework.messaging.MessagingException;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.jms.Destination;
-import javax.jms.JMSException;
-import javax.jms.TextMessage;
 
 /**
  * @author by hx on 16-7-4.
@@ -31,9 +27,6 @@ public class TestController extends BasicRestController {
 
     @Autowired
     private MqttServiceImpl mqttService;
-    @Autowired
-    @Qualifier("topicDestination")
-    private Destination destination;
 
     @Autowired
     private VirtualSensorService sensorService;
@@ -49,10 +42,10 @@ public class TestController extends BasicRestController {
     @ResponseBody
     public String listenTopic(@PathVariable("destination") String destination) {
         log.debug("listen topci : {}", destination);
-        mqttService.createConsumer(new ActiveMQTopic(destination), new JmsMessageHandlerAdapter() {
+        mqttService.createConsumer(destination, new MessageHandler() {
             @Override
-            public void handlerTextMessage(TextMessage message) throws JMSException {
-                log.debug("recv text: {}", message.getText());
+            public void handleMessage(Message<?> message) throws MessagingException {
+                log.debug("recv text: {}", message);
             }
         });
         return "listen";
@@ -62,7 +55,7 @@ public class TestController extends BasicRestController {
     @ResponseBody
     public String unlistenTopic(@PathVariable("destination") String destination) {
         log.debug("unlisten topci : {}", destination);
-        mqttService.removeConsumer(new ActiveMQTopic(destination));
+        mqttService.removeConsumer(destination);
         return "unlisten";
     }
 
@@ -70,7 +63,7 @@ public class TestController extends BasicRestController {
     @ResponseBody
     public String sendToTopic() {
         for (int i = 0; i < 2; i++) {
-            mqttService.sendTextMessage(destination, "你好，生产者！这是消息：" + (i + 1));
+            mqttService.sendTextMessage("test", "你好，生产者！这是消息：" + (i + 1));
         }
         return "success";
     }
@@ -80,7 +73,7 @@ public class TestController extends BasicRestController {
     public String sendToTopicDM(
             @ModelAttribute("destination") String destination,
             @ModelAttribute("message") String message) {
-        mqttService.sendTextMessage(new ActiveMQTopic(destination), message);
+        mqttService.sendTextMessage(destination, message);
         return "success";
     }
 

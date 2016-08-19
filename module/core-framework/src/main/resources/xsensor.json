@@ -13,7 +13,7 @@
         ],
         "id": "1",
         "type": "plc_controller",
-        "name": "PLC",
+        "name": "风机",
         "fieldDefinitions": [
           {
             "name": "status",
@@ -229,7 +229,7 @@
         ],
         "id": "8",
         "type": "onboard_controller",
-        "name": "开关",
+        "name": "备用风机",
         "fieldDefinitions": [
           {
             "name": "onoff",
@@ -242,12 +242,12 @@
         ]
       }
     ],
-    "desc": "秀洲区油车港镇麦加一号",
+    "desc": "秀洲区油车港镇麦家一号",
     "idle_report": 600,
     "internal_id": 866104025159735,
-    "lat": 30.28,
-    "lon": 120.12,
-    "name": "麦加一号站",
+    "latitude": 30.847898,
+    "longitude": 120.793601,
+    "name": "麦家一号站",
     "offline_report": 300,
     "id": "59ec0ac4-2182-4960-9166-3ce62738ef99"
   },
@@ -265,7 +265,7 @@
         ],
         "id": "1",
         "type": "plc_controller",
-        "name": "PLC",
+        "name": "风机",
         "fieldDefinitions": [
           {
             "name": "status",
@@ -481,7 +481,7 @@
         ],
         "id": "8",
         "type": "onboard_controller",
-        "name": "开关",
+        "name": "备用风机",
         "fieldDefinitions": [
           {
             "name": "onoff",
@@ -494,12 +494,12 @@
         ]
       }
     ],
-    "desc": "秀洲区油车港镇麦加二号",
+    "desc": "秀洲区油车港镇麦家二号",
     "idle_report": 600,
     "internal_id": 866104025159736,
-    "lat": 30.28,
-    "lon": 120.12,
-    "name": "麦加二号站",
+    "latitude": 30.848057,
+    "longitude": 120.796632,
+    "name": "麦家二号站",
     "offline_report": 300,
     "id": "59ec0ac4-2182-4960-9199-3ce62738ef99"
   },
@@ -517,7 +517,7 @@
         ],
         "id": "1",
         "type": "plc_controller",
-        "name": "PLC",
+        "name": "风机",
         "fieldDefinitions": [
           {
             "name": "status",
@@ -733,7 +733,7 @@
         ],
         "id": "8",
         "type": "onboard_controller",
-        "name": "开关",
+        "name": "备用风机",
         "fieldDefinitions": [
           {
             "name": "onoff",
@@ -746,12 +746,12 @@
         ]
       }
     ],
-    "desc": "秀洲区油车港镇麦加三号",
+    "desc": "秀洲区油车港镇麦家三号",
     "idle_report": 600,
     "internal_id": 866104025159737,
-    "lat": 30.28,
-    "lon": 120.12,
-    "name": "麦加三号站",
+    "latitude": 30.846592,
+    "longitude": 120.795981,
+    "name": "麦家三号站",
     "offline_report": 300,
     "id": "59ec0ac4-2182-4960-9188-3ce62738ef99"
   },
@@ -769,7 +769,7 @@
         ],
         "id": "1",
         "type": "plc_controller",
-        "name": "PLC",
+        "name": "风机",
         "fieldDefinitions": [
           {
             "name": "status",
@@ -985,7 +985,7 @@
         ],
         "id": "8",
         "type": "onboard_controller",
-        "name": "开关",
+        "name": "备用风机",
         "fieldDefinitions": [
           {
             "name": "onoff",
@@ -998,12 +998,12 @@
         ]
       }
     ],
-    "desc": "秀洲区油车港镇麦加四号站",
+    "desc": "秀洲区油车港镇麦家四号站",
     "idle_report": 600,
     "internal_id": 866104025159738,
-    "lat": 30.28,
-    "lon": 120.12,
-    "name": "麦加四号站",
+    "latitude": 30.84143,
+    "longitude": 120.796933,
+    "name": "麦家四号站",
     "offline_report": 300,
     "id": "59ec0ac4-2182-4960-9177-3ce62738ef99"
   },
@@ -1021,7 +1021,7 @@
         ],
         "id": "1",
         "type": "plc_controller",
-        "name": "PLC",
+        "name": "风机",
         "fieldDefinitions": [
           {
             "name": "status",
@@ -1237,7 +1237,7 @@
         ],
         "id": "8:2",
         "type": "onboard_controller",
-        "name": "开关",
+        "name": "备用风机",
         "fieldDefinitions": [
           {
             "name": "onoff",
@@ -1253,8 +1253,8 @@
     "desc": "上海银帆一号",
     "idle_report": 600,
     "internal_id": 866104025289045,
-    "lat": 30.28,
-    "lon": 120.12,
+    "latitude": 30.28,
+    "longitude": 120.12,
     "name": "上海银帆",
     "offline_report": 300,
     "id": "b60705d3-a754-4232-858f-4894380be910"

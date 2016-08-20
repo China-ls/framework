@@ -1,6 +1,7 @@
 package com.infinite.framework.bson.filter;
 
 import com.infinite.framework.bson.filter.geojson.Geo;
+import com.mongodb.MongoClient;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.TextSearchOptions;
 import com.mongodb.client.model.geojson.Geometry;
@@ -330,11 +331,11 @@ public class QueryFilters {
     }
 
     public String toJson() {
-        return ((BsonDocument) bson).toJson();
+        return bson.toBsonDocument(BsonDocument.class, MongoClient.getDefaultCodecRegistry()).toJson();
     }
 
-
-    public static void main(String[] args) {
+    public Bson getBson() {
+        return bson;
     }
 
 }

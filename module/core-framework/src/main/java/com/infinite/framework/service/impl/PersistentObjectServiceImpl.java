@@ -6,8 +6,10 @@ import com.infinite.framework.service.exception.InvalidDataException;
 import com.infinite.framework.service.persistent.obj.BasicEntityConvert;
 import com.infinite.framework.service.persistent.obj.IDataConverter;
 import com.mongodb.client.model.Filters;
+import com.mongodb.client.result.DeleteResult;
 import org.bson.BsonInvalidOperationException;
 import org.bson.Document;
+import org.bson.conversions.Bson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,9 @@ import org.springframework.stereotype.Service;
 @Service("PersistentObjectService")
 public class PersistentObjectServiceImpl implements PersistentObjectService {
     private static final Logger log = LoggerFactory.getLogger(PersistentObjectService.class);
+
+    private String appkeyPrefix = "__appkey__";
+    private String namespacePrefix = "__namespace__";
 
     @Autowired
     private PersistentObjectDAO persistentObjectDAO;
@@ -43,12 +48,14 @@ public class PersistentObjectServiceImpl implements PersistentObjectService {
     }
 
     @Override
-    public void put(String appkey, String namespace, String data) throws InvalidDataException {
+    public void put(String appkey, String namespace, Document data) throws InvalidDataException {
         log.error("start put object into [{}, {}]", dbname, collectionName);
 
         try {
-            Document document = dataConverter.convert(appkey, namespace, data);
-            persistentObjectDAO.insertOne(dbname, collectionName, document);
+//            String sha1 = DecriptUtil.SHA1(data);
+            data.put(appkeyPrefix, appkey);
+            data.put(namespacePrefix, namespace);
+            persistentObjectDAO.insertOne(dbname, collectionName, data);
         } catch (BsonInvalidOperationException e) {
             if (log.isErrorEnabled()) {
                 log.error("put object into persistent error, data is not JSON formart.=={}==", data);
@@ -58,21 +65,27 @@ public class PersistentObjectServiceImpl implements PersistentObjectService {
     }
 
     @Override
-    public Document get(String appkey, String namespace, String query) {
+    public Document get(String appkey, String namespace, Bson filter) {
         try {
-            return persistentObjectDAO.findFirst(dbname, collectionName, Document.parse(query));
+            return persistentObjectDAO.findFirst(
+                    dbname, collectionName,
+                    Filters.and(filter,
+                            Filters.eq(namespacePrefix, namespace),
+                            Filters.eq(appkeyPrefix, appkey)));
         } catch (BsonInvalidOperationException e) {
             if (log.isErrorEnabled()) {
-                log.error("get error. Query:{}", query);
+                log.error("get error. Query:{}", filter);
             }
             throw new InvalidDataException(e);
         }
     }
 
     @Override
-    public int remove(String appkey, String namespace, String filter) {
-        persistentObjectDAO.deleteMany(dbname, collectionName, Filters.and(
-        ));
-        return 0;
+    public long remove(String appkey, String namespace, Bson filter) {
+        DeleteResult result = persistentObjectDAO.deleteMany(dbname, collectionName,
+                Filters.and(filter,
+                        Filters.eq(namespacePrefix, namespace),
+                        Filters.eq(appkeyPrefix, appkey)));
+        return result.getDeletedCount();
     }
 }

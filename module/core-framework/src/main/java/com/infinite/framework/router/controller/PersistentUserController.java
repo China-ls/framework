@@ -12,13 +12,7 @@ import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import static org.apache.shiro.web.filter.mgt.DefaultFilter.user;
 
@@ -43,7 +37,7 @@ public class PersistentUserController extends BasicRestController {
             } else if (null == user || StringUtils.isEmpty(user.getUsername()) || StringUtils.isEmpty(user.getPassword())) {
                 response = makeResponse(ResponseCode.PARAM_EMPTY);
             } else {
-                response = makeResponse(ResponseCode.SUCCESS, persistentUserService.save(appkey, user));
+                response = makeResponse(ResponseCode.SUCCESS, persistentUserService.saveOrUpdate(appkey, user));
             }
         } catch (InvalidDataException e) {
             response = makeResponse(ResponseCode.PARAM_EMPTY);
@@ -51,6 +45,9 @@ public class PersistentUserController extends BasicRestController {
             response = makeResponse(ResponseCode.PARAM_EMPTY);
         } catch (Throwable e) {
             response = makeResponse(ResponseCode.SYSTEM_ERROR);
+            if (log.isErrorEnabled()) {
+                log.error("put persistent user error!", e);
+            }
         }
         if (log.isDebugEnabled()) {
             log.debug("[appkey:{}, user:{}, response:{}]", appkey, user, response);
@@ -76,6 +73,9 @@ public class PersistentUserController extends BasicRestController {
             response = makeResponse(ResponseCode.PARAM_EMPTY);
         } catch (Throwable e) {
             response = makeResponse(ResponseCode.SYSTEM_ERROR);
+            if (log.isErrorEnabled()) {
+                log.error("get persistent user error!", e);
+            }
         }
         if (log.isDebugEnabled()) {
             log.debug("[appkey:{}, id:{}, response:{}]", appkey, user, response);
@@ -93,7 +93,7 @@ public class PersistentUserController extends BasicRestController {
             } else if (null == user || StringUtils.isEmpty(user.getId())) {
                 response = makeResponse(ResponseCode.PARAM_EMPTY);
             } else {
-                response = makeResponse(ResponseCode.SUCCESS, persistentUserService.save(appkey, user));
+                response = makeResponse(ResponseCode.SUCCESS, persistentUserService.saveOrUpdate(appkey, user));
             }
         } catch (InvalidDataException e) {
             response = makeResponse(ResponseCode.PARAM_EMPTY);

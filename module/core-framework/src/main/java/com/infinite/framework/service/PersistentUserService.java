@@ -14,8 +14,14 @@ public interface PersistentUserService {
 
     public List<PersistentUser> find(String appkey, String... ids);
 
-    public PersistentUser save(String appkey, PersistentUser user);
+    /**
+     * 新增/修改  用户信息
+     * @param appkey
+     * @param user
+     * @return
+     */
+    public PersistentUser saveOrUpdate(String appkey, PersistentUser user);
 
-    public int delete(String appkey, String... ids);
+    public long delete(String appkey, String... ids);
 
 }

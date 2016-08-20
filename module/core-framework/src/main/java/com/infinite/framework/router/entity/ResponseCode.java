@@ -5,6 +5,7 @@ public enum ResponseCode {
     SUCCESS("0", "成功"),
     SYSTEM_ERROR("1", "系统错误"),
     PARAM_EMPTY("2", "参数异常"),
+    APPKEY_EMPTY("3", "APPKEY IS EMPTY"),
     AUTH_ACCOUNT_USERNAME_EMPTY("100", "认证失败，请输入用户名。"),
     AUTH_ACCOUNT_PASSORD_EMPTY("101", "认证失败，请输入密码。"),
     AUTH_ACCOUNT_ERROR("102", "认证失败，用户信息有误。"),

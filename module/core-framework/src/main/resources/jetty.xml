@@ -23,7 +23,7 @@
 <!-- Consult the javadoc of o.e.j.server.Server for all              -->
 <!-- configuration that may be set here.                             -->
 <!-- =============================================================== -->
-<Configure id="Server" class="org.eclipse.jetty.server.Server">
+<Configure sensor_id="Server" class="org.eclipse.jetty.server.Server">
 
     <!-- =========================================================== -->
     <!-- Configure the Server Thread Pool.                           -->
@@ -43,7 +43,7 @@
     <!-- for all configuration that may be set here.                 -->
     <!-- =========================================================== -->
     <!-- uncomment to change type of threadpool
-    <Arg name="threadpool"><New id="threadpool" class="org.eclipse.jetty.util.thread.QueuedThreadPool"/></Arg>
+    <Arg name="threadpool"><New sensor_id="threadpool" class="org.eclipse.jetty.util.thread.QueuedThreadPool"/></Arg>
     -->
     <Get name="ThreadPool">
       <Set name="minThreads" type="int"><Property name="jetty.threadPool.minThreads" deprecated="threads.min" default="10"/></Set>
@@ -76,7 +76,7 @@
     <!-- Consult the javadoc of o.e.j.server.HttpConfiguration       -->
     <!-- for all configuration that may be set here.                 -->
     <!-- =========================================================== -->
-    <New id="httpConfig" class="org.eclipse.jetty.server.HttpConfiguration">
+    <New sensor_id="httpConfig" class="org.eclipse.jetty.server.HttpConfiguration">
       <Set name="secureScheme"><Property name="jetty.httpConfig.secureScheme" default="https" /></Set>
       <Set name="securePort"><Property name="jetty.httpConfig.securePort" deprecated="jetty.secure.port" default="8443" /></Set>
       <Set name="outputBufferSize"><Property name="jetty.httpConfig.outputBufferSize" deprecated="jetty.output.buffer.size" default="32768" /></Set>
@@ -104,14 +104,14 @@
     <!-- RequestLogHandler after the default handler                 -->
     <!-- =========================================================== -->
     <Set name="handler">
-      <New id="Handlers" class="org.eclipse.jetty.server.handler.HandlerCollection">
+      <New sensor_id="Handlers" class="org.eclipse.jetty.server.handler.HandlerCollection">
         <Set name="handlers">
          <Array type="org.eclipse.jetty.server.Handler">
            <Item>
-             <New id="Contexts" class="org.eclipse.jetty.server.handler.ContextHandlerCollection"/>
+             <New sensor_id="Contexts" class="org.eclipse.jetty.server.handler.ContextHandlerCollection"/>
            </Item>
            <Item>
-             <New id="DefaultHandler" class="org.eclipse.jetty.server.handler.DefaultHandler"/>
+             <New sensor_id="DefaultHandler" class="org.eclipse.jetty.server.handler.DefaultHandler"/>
            </Item>
          </Array>
         </Set>

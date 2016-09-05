@@ -15,8 +15,6 @@ angular.module('app', [
     'ui.jq',
     'oc.lazyLoad',
     'pascalprecht.translate',
-    'angularBootstrapNavTree',
-    "highcharts-ng",
     "toaster",
     "ngWebSocket"
 ]);

@@ -12,6 +12,6 @@ public class VirtualSensorDAOImpl extends MorphiaDAO<VirtualSensor, String> impl
 
     @Override
     public VirtualSensor findById(String id) {
-        return findOne("id", id);
+        return findOne("sensor_id", id);
     }
 }

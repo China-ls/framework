@@ -6,7 +6,7 @@
 <!-- This configuration must be used in conjunction with jetty.xml -->
 <!-- and jetty-ssl.xml.                                            -->
 <!-- ============================================================= -->
-<Configure id="sslConnector" class="org.eclipse.jetty.server.ServerConnector">
+<Configure sensor_id="sslConnector" class="org.eclipse.jetty.server.ServerConnector">
 
   <Call name="addIfAbsentConnectionFactory">
     <Arg>

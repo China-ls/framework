@@ -55,8 +55,8 @@
 		var choiceContainer = $("#choices");
 		$.each(datasets, function(key, val) {
 			choiceContainer.append("<br/><input type='checkbox' name='" + key +
-				"' checked='checked' id='id" + key + "'></input>" +
-				"<label for='id" + key + "'>"
+				"' checked='checked' sensor_id='sensor_id" + key + "'></input>" +
+				"<label for='sensor_id" + key + "'>"
 				+ val.label + "</label>");
 		});
 
@@ -96,15 +96,15 @@
 </head>
 <body>
 
-	<div id="header">
+	<div sensor_id="header">
 		<h2>Toggling Series</h2>
 	</div>
 
-	<div id="content">
+	<div sensor_id="content">
 
 		<div class="demo-container">
-			<div id="placeholder" class="demo-placeholder" style="float:left; width:675px;"></div>
-			<p id="choices" style="float:right; width:135px;"></p>
+			<div sensor_id="placeholder" class="demo-placeholder" style="float:left; width:675px;"></div>
+			<p sensor_id="choices" style="float:right; width:135px;"></p>
 		</div>
 
 		<p>This example shows military budgets for various countries in constant (2005) million US dollars (source: <a href="http://www.sipri.org/">SIPRI</a>).</p>
@@ -113,7 +113,7 @@
 
 	</div>
 
-	<div id="footer">
+	<div sensor_id="footer">
 		Copyright &copy; 2007 - 2014 IOLA and Ole Laursen
 	</div>
 

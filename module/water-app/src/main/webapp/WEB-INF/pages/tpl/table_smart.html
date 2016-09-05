@@ -107,7 +107,7 @@
         <div class="panel-body">
             <form>
                 <label for="predicate">selected predicate:</label>
-                <select class="form-control" id="predicate" ng-model="selectedPredicate"
+                <select class="form-control" sensor_id="predicate" ng-model="selectedPredicate"
                         ng-options="predicate for predicate in predicates"></select>
             </form>
         </div>
@@ -151,7 +151,7 @@
         <div class="panel-body">
             <form>
                 <label>items by page</label>
-                <input class="input-sm form-control" name="items" id="items" type="number" ng-model="itemsByPage">
+                <input class="input-sm form-control" name="items" sensor_id="items" type="number" ng-model="itemsByPage">
             </form>
         </div>
         <table st-table="rowCollectionPage" class="table table-striped">

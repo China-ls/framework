@@ -34,9 +34,9 @@
 			<li><a href="#docs">Docs</a></li>
 		</ul>
 		<div class="tab-content">
-			<div class="tab-pane active" id="demo">
+			<div class="tab-pane active" sensor_id="demo">
                 <p><a href="#" class="get_data">Load more data via ajax</a></p>
-<table id="modality" class="table table-hover footable">
+<table sensor_id="modality" class="table table-hover footable">
 <thead>
 <tr>
 <th width="40%">Modality</th>
@@ -47,7 +47,7 @@
 <tbody></tbody>
 </table>
 			</div>
-			<div class="tab-pane" id="docs">
+			<div class="tab-pane" sensor_id="docs">
                 <h4>Refresh After Populating By Ajax</h4>
                 <p>You can easily tell Footable to redraw by triggering the <code>footable_redraw</code> event on the table:
                     <pre>$(&#39;.get_data&#39;).click(function() {
@@ -67,8 +67,8 @@
           url: '/some/api',
           dataType: 'json',
           responseText: [ 
-            {"id" : 30, "name" : "Corrida"}, 
-            {"id" : 31, "name" : "Mountain Bike"} 
+            {"sensor_id" : 30, "name" : "Corrida"},
+            {"sensor_id" : 31, "name" : "Mountain Bike"}
           ]
         });
 
@@ -84,7 +84,7 @@
                     $.each(result, function(idx, obj) {
                         var row = '<tr>';
                         $.each(obj, function(key, value) {
-                            if (key != 'id') {
+                            if (key != 'sensor_id') {
                                 row += '<td>' + value + '</td>';
                             }
                         });

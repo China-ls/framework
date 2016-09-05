@@ -32,7 +32,7 @@
 			<li><a href="#docs">Docs</a></li>
 		</ul>
 		<div class="tab-content">
-			<div class="tab-pane active" id="demo">
+			<div class="tab-pane active" sensor_id="demo">
                 Sort by
                 <a href="#sort" class="sort-column" data-index="0">ID</a> |
                 <a href="#sort" class="sort-column" data-index="1">First</a> |
@@ -145,7 +145,7 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="tab-pane" id="setup">
+			<div class="tab-pane" sensor_id="setup">
                 <p>
                     Check out the <a href="getting-started.htm#setup">getting started</a> demo to see how to setup FooTable.
                 </p>
@@ -163,11 +163,11 @@
 			</div>
 			
 
-			<div class="tab-pane" id="docs">
+			<div class="tab-pane" sensor_id="docs">
                 <h4>Bookmarkable</h4>
                 <p>The bookmarkable add-on maintains state in the URI fragment (hash) as user actions modify the view of a table, and reads state from the URI fragment when initializing. This allows a user to save a URL to a specific view of the table.</p>
 		<p>The bookmark tracks which rows are expanded, and if you are using the sorting, filtering, or pagination plug-ins, also tracks those features. In this demo, sorting is enabled. See the showcase demo for another example.</p>
-		<p>If your footable has an id, it will be included in the parameters in the bookmark -- so if you have more than one footable on a page, they can be tracked separately.</p>
+		<p>If your footable has an sensor_id, it will be included in the parameters in the bookmark -- so if you have more than one footable on a page, they can be tracked separately.</p>
 		<p>Note that bookmarking is disabled by default, so you must include this in the configuration you pass to the footable function to get bookmarks: </p>
 		<pre>bookmarkable: { enabled: true }</pre>
 

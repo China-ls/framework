@@ -7,6 +7,4 @@ import org.springframework.messaging.MessageHandler;
  */
 public interface JmsMessageHandler extends MessageHandler {
 
-    boolean supportDestination(String destination);
-
 }

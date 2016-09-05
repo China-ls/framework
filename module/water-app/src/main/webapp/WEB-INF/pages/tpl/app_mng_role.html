@@ -1,0 +1,49 @@
+<div ng-init="init()">
+
+    <div class="panel">
+        <div class="panel-heading b-b b-success wrapper-xs">
+
+            <div class="row">
+                <div class="col-sm-2">
+                    <h5 class="m-xxs l-h-2x">
+                        <span class="text-primary">站点列表</span>
+                    </h5>
+                </div>
+                <div class="col-sm-10">
+                    <div class="pull-right">
+                        <button class="btn btn-info btn-sm w-xs" ng-click="addNode()">增加子节点</button>
+                        <button class="btn btn-info btn-sm w-xs" ng-click="addRouter()">增加人员</button>
+                        <button class="btn btn-success btn-sm w-xs" ng-click="edit()">编辑</button>
+                        <button class="btn btn-danger btn-sm w-xs" ng-click="delete()">删除</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix panel-body">
+            <table st-table="rowCollectionBasic" class="table table-bordered table-striped tb-border">
+                <thead>
+                <tr>
+                    <th>巡检人</th>
+                    <th>巡检站点</th>
+                    <th>巡检时间</th>
+                    <th>停留时长</th>
+                    <th>巡检内容</th>
+                    <th>考勤状态</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="success" ng-repeat="row in routeList" st-select-row="row"
+                    ng-click="imageListItemSelect($index)">
+                    <td><a href>{{row.time}}</a></td>
+                    <td><a href>{{row._id}}</a></td>
+                    <td><a href>{{row._id}}</a></td>
+                    <td><a href>{{row._id}}</a></td>
+                    <td><a href>{{row._id}}</a></td>
+                    <td><a href>{{row._id}}</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

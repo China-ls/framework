@@ -1,34 +1,30 @@
 package com.infinite.framework.init;
 
+import com.infinite.framework.core.initializing.Initializing;
+import com.infinite.framework.mq.MqttMessageHandler;
 import com.infinite.framework.service.MqttService;
+import com.infinite.framework.service.VirtualSensorDataService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.messaging.Message;
-import org.springframework.messaging.MessageHandler;
-import org.springframework.messaging.MessagingException;
 
-public class TempInitVirtualSensorMQTT implements InitializingBean {
+public class TempInitVirtualSensorMQTT implements Initializing {
     private static Logger log = LoggerFactory.getLogger(TempInitVirtualSensorMQTT.class);
 
     @Autowired
     private MqttService mqttService;
+    @Autowired
+    private VirtualSensorDataService virtualSensorDataService;
 
     @Override
-    public void afterPropertiesSet() throws Exception {
+    public void initializing() throws Exception {
         if (log.isDebugEnabled()) {
-            log.debug("start init database");
+            log.debug("start init jms");
         }
         long start = System.currentTimeMillis();
 
         try {
-            mqttService.createConsumer("test", new MessageHandler() {
-                @Override
-                public void handleMessage(Message<?> message) throws MessagingException {
-                    System.out.println("---from test : " + message);
-                }
-            });
+            mqttService.createConsumer("yinfantech/xgsn/jiaxing/data", new MqttMessageHandler(virtualSensorDataService));
         } catch (Throwable e) {
             if (log.isErrorEnabled()) {
                 log.error("error init mqtt", e);
@@ -38,7 +34,7 @@ public class TempInitVirtualSensorMQTT implements InitializingBean {
         long end = System.currentTimeMillis();
         long cost = end - start;
         if (log.isDebugEnabled()) {
-            log.debug("finish init database, cose : {} millseconds", cost);
+            log.debug("finish init jms, cose : {} millseconds", cost);
         }
     }
 }

@@ -4,6 +4,7 @@ import com.infinite.framework.core.web.BasicRestController;
 import com.infinite.framework.entity.VirtualSensor;
 import com.infinite.framework.service.VirtualSensorService;
 import com.infinite.framework.service.impl.MqttServiceImpl;
+import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -73,6 +74,8 @@ public class TestController extends BasicRestController {
     public String sendToTopicDM(
             @ModelAttribute("destination") String destination,
             @ModelAttribute("message") String message) {
+        destination = StringUtils.isEmpty(destination) ? "yinfantech/xgsn/jiaxing/control" : destination;
+        message = StringUtils.isEmpty(message) ? "yinfantech/xgsn/jiaxing/control" : message;
         mqttService.sendTextMessage(destination, message);
         return "success";
     }

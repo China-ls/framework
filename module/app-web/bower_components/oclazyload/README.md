@@ -92,18 +92,18 @@ $ocLazyLoad.load([
 
 If you want to load templates, the template file should be an html (or htm) file with regular [script templates](https://docs.angularjs.org/api/ng/directive/script). It looks like this:
 ```html
-<script type="text/ng-template" id="/tpl.html">
+<script type="text/ng-template" sensor_id="/tpl.html">
   Content of the template.
 </script>
 ```
 
 You can put more than one template script in your template file, just make sure to use different ids:
 ```html
-<script type="text/ng-template" id="/tpl1.html">
+<script type="text/ng-template" sensor_id="/tpl1.html">
   Content of the first template.
 </script>
 
-<script type="text/ng-template" id="/tpl2.html">
+<script type="text/ng-template" sensor_id="/tpl2.html">
   Content of the second template.
 </script>
 ```

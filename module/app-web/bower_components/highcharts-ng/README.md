@@ -55,7 +55,7 @@ highchartsNG.ready(function(){
 
 Make a chart!
 
-```<highchart id="chart1" config="chartConfig"></highchart>```
+```<highchart sensor_id="chart1" config="chartConfig"></highchart>```
 
 __Warning__: The `chartConfig` object is _slightly different_ than the default highcharts config object. ( _Please see the FAQ below for details_ )
 
@@ -269,7 +269,7 @@ Version 0.0.2
 Version 0.0.1 (not compatible with current version)
 ----------------
 
-`<highchart id="chart1" series="chart.series" title="chart.title" options="chart.options"></highchart>`
+`<highchart sensor_id="chart1" series="chart.series" title="chart.title" options="chart.options"></highchart>`
 
 See an example here: [http://jsfiddle.net/pablojim/46rhz/](http://jsfiddle.net/pablojim/46rhz/)
 

@@ -54,7 +54,7 @@ public class Response extends AbstractEntity {
 
     @Override
     public String toString() {
-        return "AuthResponse{" +
+        return "Response{" +
                 "code='" + code + '\'' +
                 ", message='" + message + '\'' +
                 ", obj=" + obj +

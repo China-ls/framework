@@ -3,7 +3,6 @@ package com.infinite.water.websocket;
 import com.infinite.water.core.util.HttpUtils;
 import com.infinite.water.entity.ServerConfig;
 import org.apache.commons.lang.StringUtils;
-import org.apache.http.message.BasicNameValuePair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,8 +41,8 @@ public class SystemWebSocketHandler implements WebSocketHandler , WebSocketMessa
         if (!StringUtils.equals(text, "heartbeat")) {
             try {
                 HttpUtils.post(serverConfig.getServerUrl() + "/test/jms/send",
-                        new BasicNameValuePair("destination", "yinfantech.xgsn.jiaxing.control"),
-                        new BasicNameValuePair("message", text));
+//                        new HttpUtils.Pair("destination", "yinfantech/xgsn/jiaxing/control"),
+                        new HttpUtils.Pair("message", text));
             } catch (Exception e) {
                 log.error("error call back jms controller", e);
             }

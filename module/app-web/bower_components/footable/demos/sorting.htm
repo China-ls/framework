@@ -31,7 +31,7 @@
 			<li><a href="#docs">Docs</a></li>
 		</ul>
 		<div class="tab-content">
-			<div class="tab-pane active" id="demo">
+			<div class="tab-pane active" sensor_id="demo">
                 Sort by
                 <a href="#sort" class="sort-column" data-index="0">ID</a> |
                 <a href="#sort" class="sort-column" data-index="1">First</a> |
@@ -144,7 +144,7 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="tab-pane" id="setup">
+			<div class="tab-pane" sensor_id="setup">
                 <p>
                     Check out the <a href="getting-started.htm#setup">getting started</a> demo to see how to setup FooTable.
                 </p>
@@ -152,7 +152,7 @@
                 <p>You simply need to include the sorting add-on javascript file to make your table sortable:</p>
                 <pre>&lt;script src=&quot;path_to_your_js/footable.sort.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</pre>
 			</div>
-			<div class="tab-pane" id="docs">
+			<div class="tab-pane" sensor_id="docs">
                 <h4>Sorting</h4>
                 <p>Sorting of columns is done using FooTable's built-in parsers, which are defined in the default options. The parsers first look at the <code>data-value</code> attribute of a cell, and if there is no data-value attribute, then the .text() of the cell is used. Sorting is done using text-comparisons.</p>
                 <h4>Sorting Numeric Data</h4>

@@ -1,7 +1,7 @@
 package com.infinite.water.controller;
 
-import com.infinite.water.controller.resp.RestResponse;
-import com.infinite.water.core.controller.AbstractController;
+import com.infinite.water.controller.resp.ResponseCode;
+import com.infinite.water.core.controller.response.RestResponse;
 import com.infinite.water.core.util.IoUtils;
 import com.infinite.water.core.util.JsonUtil;
 import com.infinite.water.entity.Department;
@@ -21,7 +21,7 @@ import java.io.IOException;
  */
 @RequestMapping("/u")
 @Controller("UserController")
-public class UserController extends AbstractController {
+public class UserController extends ResponseCodeController {
     private static Logger log = LoggerFactory.getLogger(UserController.class);
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -39,21 +39,16 @@ public class UserController extends AbstractController {
     @ResponseBody
     public RestResponse department() {
         org.springframework.core.io.Resource resource = new ClassPathResource("xdepartment.json");
-        RestResponse response = new RestResponse();
+        RestResponse response = null;
         try {
             String text = IoUtils.read(resource.getInputStream());
-            response.setData(JsonUtil.fromJson(text, Department.class));
-            response.setCode("0000");
-            response.setMessage("success");
+            response = makeRestResponse(ResponseCode.SUCCESS, JsonUtil.fromJson(text, Department.class));
         } catch (IOException e) {
             log.debug("read xdepartment.json error: {}", e.getCause());
-            response.setCode("0001");
-            response.setMessage("fail");
+            response = makeRestResponse(ResponseCode.SYSTEM_ERROR);
         }
         return response;
     }
-
-
 
 
 }

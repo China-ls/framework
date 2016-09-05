@@ -4,16 +4,9 @@
     <!--</div>-->
     <div class="app-container">
         <div class="row">
-            <div class="col-md-6 col-lg-6 map-wrapper">
-                <div id="map_canvas"
-                     class="wrapper-xs b b-b"
-                     style="min-height:300px; height: 100%;margin-top: 3px;" ui-baidu-map="myMap"
-                     ui-event="{'map-click': 'onMapClick($event, $params)', 'map-loaded': 'onMapLoaded($event, $params)'}"
-                     ui-options="mapOptions">
-                </div>
-            </div>
 
-            <div class="col-md-6 col-lg-6" style="padding-top: 10px;">
+            <!-- 排行榜 -->
+            <div class="col-lg-6 padder-sm-v pull-in m-l-sm no-m-sm no-m-xs">
 
                 <div class="sub-title">
                     <div class="title-wrapper"
@@ -21,7 +14,8 @@
                         <span class="title"
                               style="font-family: '黑体 Oblique', '黑体 Regular', '黑体';font-weight: 400;font-style: oblique;margin-right: 20px;">污水处理排行榜</span>
                         <div class="btn-group btn-group-xs">
-                            <label class="btn btn-danger ng-pristine ng-untouched ng-valid" ng-model="radioModel"
+                            <label class="btn btn-danger ng-pristine ng-untouched ng-valid"
+                                   ng-model="radioModel"
                                    btn-radio="'周'">周</label>
                             <label class="btn btn-danger ng-pristine ng-untouched ng-valid" ng-model="radioModel"
                                    btn-radio="'月'">月</label>
@@ -31,20 +25,18 @@
                     </div>
                 </div>
 
-                <div class="row"
-                     style="padding: 5px 5px 10px 5px;margin: 5px 5px 10px 5px;border-bottom: 1px dashed #00A000;">
+                <div class="row" style="padding: 5px 5px 10px 5px;margin: 5px 5px 10px 5px;border-bottom: 1px dashed #00A000;">
                     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 no-padder-xs no-padder-sm">
                         <div class="center-block dirty-water-item" style="padding: 10px 10px 0;max-width: 120px;">
-                            <div class="text-center"
-                                 style="background-color: #dfdfdf;border: 1px solid #ccc;border-top: 10px solid #00aa00;">
-                                <div class="index-wrapper"
-                                     style="width: 30px;height: 30px;border-radius: 15px;background-color: #00A000;margin-left: -20px;margin-top: -20px;">
-                                    <span class="index"
-                                          style="height: 30px;line-height: 30px;display: block;font-size: 16px;color: #FFF;">1</span>
+                            <div class="text-center bg-light-gray-only b b-gray b-10-t" style="border-top-color: #00aa00">
+                                <div class="t-index-wrapper">
+                                    <span class="index">1</span>
                                 </div>
-                                <div class="card-block" style="padding-bottom: 5px;">
-                                    <div class="card-text" style="font-size: 23px;color: #f40;margin-top: -7px;">64.5吨</div>
-                                    <div class="card-text" style="font-size: 14px;margin-top: -3px;color: #3c510c;">麦加三号站</div>
+                                <div class="padder-5-b">
+                                    <div class="index-total text-danger">64.5吨</div>
+                                    <div class="index-name">
+                                        麦加三号站
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -117,6 +109,26 @@
                 <!--告警通知 -->
 
             </div>
+            <!-- 排行榜 -->
+
+
+            <!-- 地图信息 -->
+            <div class="col-lg-6 map-wrapper">
+                <div id="map_canvas"
+                     class="wrapper-sm m-r b b-a b-gray no-m-sm no-m-xs"
+                     style="min-height:265px;margin-top: 17px; margin-bottom: 5px;"
+                     ui-baidu-map="myMap"
+                     ui-event="{'map-click': 'onMapClick($event, $params)', 'map-loaded': 'onMapLoaded($event, $params)'}"
+                     ui-options="mapOptions">
+                </div>
+
+                <!-- modal -->
+                <script type="text/ng-template" id="mapModalContent.html">
+                    <div ng-include="'tpl/map_modal.html'"></div>
+                </script>
+                <!-- /modal -->
+            </div>
+            <!-- 地图信息 -->
 
         </div>
 
@@ -157,40 +169,47 @@
             <!-- list item -->
             <div ng-repeat="device in virtualSensors" class="data-item-wrapper">
                 <div class="row">
-                    <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="col-lg-6">
                         <div class="row">
                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <img src="img/{{device.id}}.jpg" class="img-full" style="    max-width: 220px;max-height: 220px;">
+                                <img src="img/{{device.sensor.sensor_id}}.jpg" class="img-full">
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property"><span>设备名称：</span><span style="color: #f40;">{{device.name}}</span></p>
-                                <p class="data-property">设备编号：<span class="cb">{{device.internal_id}}</span></p>
-                                <p class="data-property">设备状态：<span class="cb">正常</span></p>
-                                <p class="data-property">设备描述：<span class="cb">{{device.desc}}</span></p>
+                                <p class="data-property"><span>设备名称：</span><span style="color: #f40;">{{device.sensor.name}}</span>
+                                </p>
+                                <p class="data-property">设备编号：<span class="cb">{{device.sensor.internal_id}}</span></p>
+                                <p class="data-property">站点类型：<span class="cb">{{device.sensor.station_type}}</span></p>
+                                <p class="data-property">设备描述：<span class="cb">{{device.sensor.desc}}</span></p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class=" col-lg-6">
                         <div class="row">
                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property" style="margin-top: 40px;"> </p>
-                                <p class="data-property">今日处水量： <span class="text-primary">{{device.csl}} 吨</span></p>
-                                <p class="data-property">经度：<span class="cb">{{device.latitude}}</span></p>
-                                <p class="data-property">纬度：<span class="cb">{{device.longitude}}</span></p>
+                                <p class="data-property" style="margin-top: 40px;"></p>
+                                <p class="data-property">今日处水量： <span
+                                        class="text-primary">{{device.sensor.csl}} 吨</span></p>
+                                <p class="data-property">设备状态：<span class="cb">正常</span></p>
+                                <p class="data-property">经度：<span class="cb">{{device.sensor.latitude}}</span></p>
+                                <p class="data-property">纬度：<span class="cb">{{device.sensor.longitude}}</span></p>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property" style="margin-top: 40px;"> </p>
-                                <p class="data-property">瞬时流量：<span class="cb">{{device.instant}} L/H</span></p>
-                                <p class="data-property">累计流量：<span class="cb">{{device.positive_total}} 立方米</span></p>
-                                <p class="data-property">更新时间：<span class="cb">{{device.updateTime}}</span></p>
+                                <p class="data-property" style="margin-top: 40px;"></p>
+                                <p class="data-property">瞬时流量：<span class="cb">{{device.sensor.flowmeter_data.instant}} L/H</span>
+                                </p>
+                                <p class="data-property">累计流量：<span class="cb">{{device.sensor.flowmeter_data.positive_total}} 立方米</span>
+                                </p>
+                                <p class="data-property">更新时间：<span
+                                        class="cb">{{device.sensor.flowmeter_data.time}}</span></p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-offset-7 col-sm-offset-9">
-                        <a ui-sref="app.device.detail({id:device.id})" class="btn btn-success btn-xs w-xs">&nbsp;&nbsp;详情&nbsp;&nbsp;</a>
-                        <button class="btn btn-success btn-xs w-xs" ng-click="showInMap(device.id)">地图定位</button>
+                        <a ui-sref=".tab.map({id:device.sensor.sensor_id})" class="btn btn-success btn-xs w-xs">&nbsp;&nbsp;详情&nbsp;&nbsp;</a>
+                        <button class="btn btn-success btn-xs w-xs" ng-click="showInMap(device.sensor.sensor_id)">地图定位
+                        </button>
                     </div>
                 </div>
             </div>

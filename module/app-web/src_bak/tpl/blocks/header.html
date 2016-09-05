@@ -1,36 +1,81 @@
-<div class="app-header-nav">
-    <div class="pull-left">
-        <a ui-sref="app.dashboard">
-            <img src="img/logo.png" width="64">
-            <img src="img/title.png" height="64">
+<!-- navbar header -->
+<div class="navbar-header {{app.settings.navbarHeaderColor}}">
+    <button class="pull-right visible-xs dk" ui-toggle-class="show" data-target=".navbar-collapse">
+        <i class="glyphicon glyphicon-cog"></i>
+    </button>
+    <button class="pull-right visible-xs header-toggle-aside" ui-toggle-class="off-screen,off-screen-sub-header" data-target=".app-aside,.app-sub-header" ui-scroll-to="app">
+        <i class="glyphicon glyphicon-align-justify"></i>
+    </button>
+    <!-- brand -->
+    <a href="#/" class="navbar-brand text-lt">
+        <img class="hidden-xs" src="img/logo.png" alt=".">
+        <img class="hidden-folded" src="img/title.png" alt=".">
+    </a>
+    <!-- / brand -->
+</div>
+<!-- / navbar header -->
+
+<!-- navbar collapse -->
+<div class="collapse pos-rlt navbar-collapse box-shadow {{app.settings.navbarCollapseColor}}  padder-md no-padder-xs">
+    <!-- buttons -->
+    <div class="hide nav navbar-nav hidden-xs">
+        <a href class="btn no-shadow navbar-btn" ng-click="app.settings.asideFolded = !app.settings.asideFolded">
+            <i class="fa {{app.settings.asideFolded ? 'fa-indent' : 'fa-dedent'}} fa-fw"></i>
+        </a>
+        <a href class="btn no-shadow navbar-btn" ui-toggle-class="show" target="#aside-user">
+            <i class="icon-user fa-fw"></i>
         </a>
     </div>
+    <!-- / buttons -->
 
-    <div class="pull-left header-navbar hidden-sm hidden-xs">
-        <ul>
-            <li><a href="#"><b>实时数据</b></a></li>
-            <li><a href="#"><b>统计分析</b></a></li>
-            <li><a href="#"><b>资源管理</b></a></li>
-            <li><a href="#"><b>知识与资讯</b></a></li>
-            <li><a href="#"><b>系统管理</b></a></li>
-        </ul>
-    </div>
+    <!-- link and dropdown -->
+    <ul class="nav navbar-nav hidden-sm">
+        <li class="dropdown" dropdown>
+            <a href class="dropdown-toggle" dropdown-toggle>
+                <i class="fa fa-fw fa-plus visible-xs-inline-block"></i>
+                <span class="text-white">实时数据</span> <span class="caret text-white"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <li><a ui-sref="app.device">设备数据</a></li>
+                <li><a ui-sref="app.route">巡检数据</a></li>
+            </ul>
+        </li>
+        <li class="dropdown" dropdown>
+            <a href class="dropdown-toggle" dropdown-toggle>
+                <i class="fa fa-fw fa-plus visible-xs-inline-block"></i>
+                <span class="text-white">统计分析</span> <span class="caret text-white"></span>
+            </a>
+        </li>
+        <li class="dropdown" dropdown>
+            <a href class="dropdown-toggle" dropdown-toggle>
+                <i class="fa fa-fw fa-plus visible-xs-inline-block"></i>
+                <span class="text-white">资源管理</span> <span class="caret text-white"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <li><a ui-sref="app.mngdevice">站点管理</a></li>
+                <li><a ui-sref="app.mngroute">人员管理</a></li>
+                <!--<li><a ui-sref="app.mngrole">权限管理</a></li>-->
+            </ul>
+        </li>
+        <li class="dropdown" dropdown>
+            <a href class="dropdown-toggle">
+                <i class="fa fa-fw fa-plus visible-xs-inline-block"></i>
+                <span class="text-white">系统管理</span>
+            </a>
+        </li>
+    </ul>
+    <!-- / link and dropdown -->
 
-    <div class="pull-right">
-        <a ng-click="logout()" class="btn btn-logout">
-            退出
-        </a>
-    </div>
+    <!-- nabar right -->
+    <ul class="nav navbar-nav navbar-right">
+        <li class="hidden-xs">
+            <a ui-fullscreen class="hidden-sm text-white" ></a>
+        </li>
 
+        <li class="hidden-sm">
+            <a class="hidden-sm text-white" >退出</a>
+        </li>
+    </ul>
+    <!-- / navbar right -->
 </div>
-
-<div class="app-header-sub">
-    <div class="pull-left">
-        <p class="current-menu-title">设备列表</p>
-    </div>
-
-    <div class="pull-right user">
-        <img src="img/i_user.png">
-        <i class="fa fa-user hidden"></i>&nbsp;&nbsp;{{user.name}}
-    </div>
-</div>
+<!-- / navbar collapse -->

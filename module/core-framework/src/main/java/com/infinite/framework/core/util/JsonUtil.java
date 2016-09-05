@@ -1,8 +1,11 @@
 package com.infinite.framework.core.util;
 
 import com.google.gson.*;
+import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import org.bson.BsonDateTime;
+import org.bson.types.ObjectId;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -19,6 +22,37 @@ public abstract class JsonUtil {
 
     static {
         simpleGson = new GsonBuilder()
+                .registerTypeAdapter(new TypeToken<BsonDateTime>() {}.getType(), new TypeAdapter<BsonDateTime>() {
+                    @Override
+                    public void write(JsonWriter out, BsonDateTime value) throws IOException {
+                        out.value(value.getValue());
+                    }
+
+                    @Override
+                    public BsonDateTime read(JsonReader in) throws IOException {
+                        return new BsonDateTime(in.nextLong());
+                    }
+                })
+                .registerTypeAdapter(new TypeToken<ObjectId>() {
+                }.getType(), new TypeAdapter<ObjectId>() {
+                    @Override
+                    public void write(JsonWriter out, ObjectId value) throws IOException {
+                        if (null == value) {
+                            out.nullValue();
+                        } else {
+                            out.value(value.toHexString());
+                        }
+                    }
+
+                    @Override
+                    public ObjectId read(JsonReader in) throws IOException {
+                        String hexString = in.nextString();
+                        if (null == hexString) {
+                            return null;
+                        }
+                        return new ObjectId(hexString);
+                    }
+                })
                 .setDateFormat(DateFormat.LONG)
                 .create();
     }

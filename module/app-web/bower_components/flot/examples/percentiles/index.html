@@ -18,18 +18,18 @@
 
 		var dataset = [
 			{ label: "Female mean", data: females["mean"], lines: { show: true }, color: "rgb(255,50,50)" },
-			{ id: "f15%", data: females["15%"], lines: { show: true, lineWidth: 0, fill: false }, color: "rgb(255,50,50)" },
-			{ id: "f25%", data: females["25%"], lines: { show: true, lineWidth: 0, fill: 0.2 }, color: "rgb(255,50,50)", fillBetween: "f15%" },
-			{ id: "f50%", data: females["50%"], lines: { show: true, lineWidth: 0.5, fill: 0.4, shadowSize: 0 }, color: "rgb(255,50,50)", fillBetween: "f25%" },
-			{ id: "f75%", data: females["75%"], lines: { show: true, lineWidth: 0, fill: 0.4 }, color: "rgb(255,50,50)", fillBetween: "f50%" },
-			{ id: "f85%", data: females["85%"], lines: { show: true, lineWidth: 0, fill: 0.2 }, color: "rgb(255,50,50)", fillBetween: "f75%" },
+			{ sensor_id: "f15%", data: females["15%"], lines: { show: true, lineWidth: 0, fill: false }, color: "rgb(255,50,50)" },
+			{ sensor_id: "f25%", data: females["25%"], lines: { show: true, lineWidth: 0, fill: 0.2 }, color: "rgb(255,50,50)", fillBetween: "f15%" },
+			{ sensor_id: "f50%", data: females["50%"], lines: { show: true, lineWidth: 0.5, fill: 0.4, shadowSize: 0 }, color: "rgb(255,50,50)", fillBetween: "f25%" },
+			{ sensor_id: "f75%", data: females["75%"], lines: { show: true, lineWidth: 0, fill: 0.4 }, color: "rgb(255,50,50)", fillBetween: "f50%" },
+			{ sensor_id: "f85%", data: females["85%"], lines: { show: true, lineWidth: 0, fill: 0.2 }, color: "rgb(255,50,50)", fillBetween: "f75%" },
 
 			{ label: "Male mean", data: males["mean"], lines: { show: true }, color: "rgb(50,50,255)" },
-			{ id: "m15%", data: males["15%"], lines: { show: true, lineWidth: 0, fill: false }, color: "rgb(50,50,255)" },
-			{ id: "m25%", data: males["25%"], lines: { show: true, lineWidth: 0, fill: 0.2 }, color: "rgb(50,50,255)", fillBetween: "m15%" },
-			{ id: "m50%", data: males["50%"], lines: { show: true, lineWidth: 0.5, fill: 0.4, shadowSize: 0 }, color: "rgb(50,50,255)", fillBetween: "m25%" },
-			{ id: "m75%", data: males["75%"], lines: { show: true, lineWidth: 0, fill: 0.4 }, color: "rgb(50,50,255)", fillBetween: "m50%" },
-			{ id: "m85%", data: males["85%"], lines: { show: true, lineWidth: 0, fill: 0.2 }, color: "rgb(50,50,255)", fillBetween: "m75%" }
+			{ sensor_id: "m15%", data: males["15%"], lines: { show: true, lineWidth: 0, fill: false }, color: "rgb(50,50,255)" },
+			{ sensor_id: "m25%", data: males["25%"], lines: { show: true, lineWidth: 0, fill: 0.2 }, color: "rgb(50,50,255)", fillBetween: "m15%" },
+			{ sensor_id: "m50%", data: males["50%"], lines: { show: true, lineWidth: 0.5, fill: 0.4, shadowSize: 0 }, color: "rgb(50,50,255)", fillBetween: "m25%" },
+			{ sensor_id: "m75%", data: males["75%"], lines: { show: true, lineWidth: 0, fill: 0.4 }, color: "rgb(50,50,255)", fillBetween: "m50%" },
+			{ sensor_id: "m85%", data: males["85%"], lines: { show: true, lineWidth: 0, fill: 0.2 }, color: "rgb(50,50,255)", fillBetween: "m75%" }
 		];
 
 		$.plot($("#placeholder"), dataset, {
@@ -55,14 +55,14 @@
 </head>
 <body>
 
-	<div id="header">
+	<div sensor_id="header">
 		<h2>Percentiles</h2>
 	</div>
 
-	<div id="content">
+	<div sensor_id="content">
 
 		<div class="demo-container">
-			<div id="placeholder" class="demo-placeholder"></div>
+			<div sensor_id="placeholder" class="demo-placeholder"></div>
 		</div>
 
 		<p>Height in centimeters of individuals from the US (2003-2006) as function of age in years (source: <a href="http://www.cdc.gov/nchs/data/nhsr/nhsr010.pdf">CDC</a>). The 15%-85%, 25%-75% and 50% percentiles are indicated.</p>
@@ -71,7 +71,7 @@
 
 	</div>
 
-	<div id="footer">
+	<div sensor_id="footer">
 		Copyright &copy; 2007 - 2014 IOLA and Ole Laursen
 	</div>
 

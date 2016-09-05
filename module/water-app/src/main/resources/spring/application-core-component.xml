@@ -15,5 +15,15 @@
 
     <bean id="serverConfig" class="com.infinite.water.entity.ServerConfig" />
 
+    <bean id="init" class="com.infinite.water.core.initializing.LineInitializingBean">
+        <property name="throwWhenError" value="true" />
+        <property name="initializingBeens">
+            <list>
+                <bean class="com.infinite.water.init.InitHttpHeaderByAppkey" />
+                <bean class="com.infinite.water.init.InitOrgnization" />
+            </list>
+        </property>
+    </bean>
+
 
 </beans>

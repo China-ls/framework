@@ -1,7 +1,7 @@
 package com.infinite.water.controller;
 
-import com.infinite.water.controller.resp.RestResponse;
-import com.infinite.water.core.controller.AbstractController;
+import com.infinite.water.controller.resp.ResponseCode;
+import com.infinite.water.core.controller.response.RestResponse;
 import com.infinite.water.service.DepartmentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @RequestMapping("/dpt")
 @Controller("DepartmentController")
-public class DepartmentController extends AbstractController {
+public class DepartmentController extends ResponseCodeController {
     private static Logger log = LoggerFactory.getLogger(DepartmentController.class);
 
     @Autowired
@@ -25,15 +25,25 @@ public class DepartmentController extends AbstractController {
     @RequestMapping(value = "", method = RequestMethod.GET)
     @ResponseBody
     public RestResponse department() {
-        RestResponse response = new RestResponse();
+        RestResponse response = null;
         try {
-            response.setData(departmentService.getDepartment());
-            response.setCode("0000");
-            response.setMessage("success");
+            response = makeRestResponse(ResponseCode.SUCCESS, departmentService.getDepartment());
         } catch (Throwable e) {
             log.debug("read xdepartment.json error: {}", e.getCause());
-            response.setCode("0001");
-            response.setMessage("fail");
+            response = makeRestResponse(ResponseCode.SYSTEM_ERROR);
+        }
+        return response;
+    }
+
+    @RequestMapping(value = "/route", method = RequestMethod.GET)
+    @ResponseBody
+    public RestResponse departmentRoute() {
+        RestResponse response = null;
+        try {
+            response = makeRestResponse(ResponseCode.SUCCESS, departmentService.getDepartmentRoute());
+        } catch (Throwable e) {
+            log.debug("read xdepartment.json error: {}", e.getCause());
+            response = makeRestResponse(ResponseCode.SYSTEM_ERROR);
         }
         return response;
     }

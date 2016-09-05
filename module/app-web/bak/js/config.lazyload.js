@@ -8,7 +8,7 @@ angular.module('app')
  */
     .constant('JQ_CONFIG', {
             easyPieChart: ['../bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.js'],
-            sparkline: ['../bower_components/jquery.sparkline/dist/jquery.sparkline.js'],
+            sparkline: [/*'../bower_components/jquery.sparkline/dist/jquery.sparkline.js'*/],
             plot: ['../bower_components/flot/jquery.flot.js',
                 '../bower_components/flot/jquery.flot.pie.js',
                 '../bower_components/flot/jquery.flot.resize.js'/*,
@@ -62,16 +62,16 @@ angular.module('app')
                     name: 'ngGrid',
                     files: [
                         '../bower_components/ng-grid/build/ng-grid.min.js',
-                        '../bower_components/ng-grid/ng-grid.min.css',
-                        '../bower_components/ng-grid/ng-grid.bootstrap.css'
+                        '../bower_components/ng-grid/ng-grid.min.css'/*,
+                        '../bower_components/ng-grid/ng-grid.bootstrap.css'*/
                     ]
                 },
                 {
                     name: 'ui.grid',
                     files: [
                         '../bower_components/angular-ui-grid/ui-grid.min.js',
-                        '../bower_components/angular-ui-grid/ui-grid.min.css',
-                        '../bower_components/angular-ui-grid/ui-grid.bootstrap.css'
+                        '../bower_components/angular-ui-grid/ui-grid.min.css'/*,
+                        '../bower_components/angular-ui-grid/ui-grid.bootstrap.css'*/
                     ]
                 },
                 {

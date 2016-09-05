@@ -37,12 +37,12 @@
                                     <div class="form-group">
                                         <label class="sr-only" for="form-username">用户名</label>
                                         <input type="text" name="form-username" placeholder="用户名..."
-                                               class="form-username form-control" id="form-username">
+                                               class="form-username form-control" id="form-username" value="admin">
                                     </div>
                                     <div class="form-group">
                                         <label class="sr-only" for="form-password">密码</label>
                                         <input type="password" id="form-password" name="form-password"
-                                               class="form-password form-control" placeholder="密码...">
+                                               class="form-password form-control" placeholder="密码..." value="password">
                                     </div>
                                     <button type="submit" class="btn">登录</button>
                                 </form>

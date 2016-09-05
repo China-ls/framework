@@ -33,7 +33,8 @@
                 //doesn't work as E for unknown reason
                 link: function (scope, elm, attrs) {
                     var opts = angular.extend({}, options, scope.$eval(attrs.uiOptions));
-                    var map = new window.BMap.Map(elm[0]);
+                    var enableMapClick = (typeof opts.enableMapClick === 'undefined') ? true : opts.enableMapClick;
+                    var map = new window.BMap.Map(elm[0], {enableMapClick: enableMapClick});
                     var point = new BMap.Point(opts.center.longitude, opts.center.latitude); // 创建点坐标
                     map.centerAndZoom(point, opts.zoom);
                     map.enableScrollWheelZoom();

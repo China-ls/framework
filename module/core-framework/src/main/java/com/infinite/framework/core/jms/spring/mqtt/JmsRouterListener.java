@@ -17,6 +17,8 @@ public class JmsRouterListener extends JmsMessageHandlerAdapter {
 
     private static HashMap<String, MessageHandler> handlerMap = new HashMap<String, MessageHandler>(0);
 
+    private boolean enableDebug = true;
+
     public static HashMap<String, MessageHandler> getHandlerMap() {
         return handlerMap;
     }
@@ -39,15 +41,18 @@ public class JmsRouterListener extends JmsMessageHandlerAdapter {
         }
     }
 
-    @Override
-    public boolean supportDestination(String destination) {
-        return true;
+    public void setEnableDebug(boolean enableDebug) {
+        this.enableDebug = enableDebug;
+    }
+
+    public boolean isEnableDebug() {
+        return enableDebug;
     }
 
     @Override
     public void handleMessage(Message<?> message) throws MessagingException {
         try {
-            if (log.isDebugEnabled()) {
+            if (isEnableDebug() && log.isDebugEnabled()) {
                 log.debug("recieve message:{}", message);
             }
             String destination = (String) message.getHeaders().get("mqtt_topic");
@@ -56,11 +61,11 @@ public class JmsRouterListener extends JmsMessageHandlerAdapter {
                 if (log.isDebugEnabled()) {
                     log.debug("no mapped handler for destination:{}", destination);
                 }
-                return;
+            } else {
+                handler.handleMessage(message);
             }
-            handler.handleMessage(message);
         } catch (Throwable e) {
-            if (log.isErrorEnabled()){
+            if (isEnableDebug() && log.isErrorEnabled()){
                 log.error("error handler message: {}", message, e);
             }
         }

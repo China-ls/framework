@@ -1,7 +1,7 @@
 package com.infinite.framework.service;
 
 import com.infinite.framework.entity.Application;
-import com.infinite.framework.service.exception.ApplcationNotExsistException;
+import com.infinite.framework.service.exception.ApplicationNotExsistException;
 
 /**
  * @author by hx on 16-7-25.
@@ -9,7 +9,7 @@ import com.infinite.framework.service.exception.ApplcationNotExsistException;
  */
 public interface ApplicationService {
 
-    public boolean applicationExsist(String appkey) throws ApplcationNotExsistException;
+    public boolean applicationExsist(String appkey) throws ApplicationNotExsistException;
 
     public Application createApplication(String name);
 

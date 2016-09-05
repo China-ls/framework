@@ -1,0 +1,40 @@
+<!--视频监控-->
+<div class="padder-sm m-b-md">
+    <div class="panel panel-default">
+        <div class="row pd5">
+            <!-- 网络请求动画 -->
+            <div cg-busy="{promise:loadDataPromise,message:'数据加载中...'}"></div>
+            <!-- 网络请求动画 -->
+            <div class="col-sm-4 col-lg-4">
+                <table st-table="rowCollectionBasic" class="table table-bordered table-striped tb-border">
+                    <thead>
+                    <tr>
+                        <th>采集时间</th>
+                        <th>照片编号</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="success" ng-repeat="row in imageList"
+                        st-select-row="row"
+                        ng-click="imageListItemSelect($index)">
+                        <td><a href>{{row.time}}</a></td>
+                        <td><a href>{{row.image_id}}</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-8 col-lg-8 wrapper-lg">
+                <!-- carousel -->
+                <div class="panel b-a" set-ng-animate="false">
+                    <carousel interval="imageListSlideInterval">
+                        <slide ng-repeat="row in imageList" active="row.active">
+                            <img ng-src="{{imageUrl + row._id}}" class="img-full">
+                        </slide>
+                    </carousel>
+                </div>
+                <!-- / carousel -->
+            </div>
+        </div>
+    </div>
+</div>
+<!--视频监控-->

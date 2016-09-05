@@ -54,7 +54,7 @@ $(function () {
 
     // Activate the sliders
     $('#sliders input').on('input change', function () {
-        chart.options.chart.options3d[this.id] = this.value;
+        chart.options.chart.options3d[this.sensor_id] = this.value;
         showValues();
         chart.redraw(false);
     });
@@ -68,20 +68,20 @@ $(function () {
 <script src="http://cdn.hcharts.cn/highcharts/highcharts-3d.js"></script>
 <script src="http://cdn.hcharts.cn/highcharts/modules/exporting.js"></script>
 
-<div id="container"></div>
-<div id="sliders">
+<div sensor_id="container"></div>
+<div sensor_id="sliders">
     <table>
         <tr>
         	<td>Alpha Angle</td>
-        	<td><input id="alpha" type="range" min="0" max="45" value="15"/> <span id="alpha-value" class="value"></span></td>
+        	<td><input sensor_id="alpha" type="range" min="0" max="45" value="15"/> <span sensor_id="alpha-value" class="value"></span></td>
         </tr>
         <tr>
         	<td>Beta Angle</td>
-        	<td><input id="beta" type="range" min="-45" max="45" value="15"/> <span id="beta-value" class="value"></span></td>
+        	<td><input sensor_id="beta" type="range" min="-45" max="45" value="15"/> <span sensor_id="beta-value" class="value"></span></td>
         </tr>
         <tr>
         	<td>Depth</td>
-        	<td><input id="depth" type="range" min="20" max="100" value="50"/> <span id="depth-value" class="value"></span></td>
+        	<td><input sensor_id="depth" type="range" min="20" max="100" value="50"/> <span sensor_id="depth-value" class="value"></span></td>
         </tr>
     </table>
 </div>

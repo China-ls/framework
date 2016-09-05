@@ -28,7 +28,7 @@
 
     <bean id="jmsAdapter" class="org.springframework.integration.mqtt.inbound.MqttPahoMessageDrivenChannelAdapter">
         <constructor-arg index="0" value="${jms.url}" type="java.lang.String"/>
-        <constructor-arg index="1" value="core-subscriber" type="java.lang.String"/>
+        <constructor-arg index="1" value="${jms.client_id}" type="java.lang.String"/>
         <constructor-arg index="2" ref="clientFactory" type="org.springframework.integration.mqtt.core.MqttPahoClientFactory"/>
         <constructor-arg index="3" value="" type="java.lang.String[]"/>
         <property name="errorChannel" ref="errorChannel" />
@@ -36,6 +36,12 @@
         <property name="autoStartup" value="true" />
         <property name="recoveryInterval" value="${jms.recovery.interval}" />
         <property name="qos" value="${jms.qos}" />
+    </bean>
+
+    <bean id="jmsPublisher" class="org.springframework.integration.mqtt.outbound.MqttPahoMessageHandler">
+        <constructor-arg index="0" value="${jms.url}" type="java.lang.String"/>
+        <constructor-arg index="1" value="${jms.client_id_publisher}" type="java.lang.String"/>
+        <constructor-arg index="2" ref="clientFactory" type="org.springframework.integration.mqtt.core.MqttPahoClientFactory"/>
     </bean>
 
     <int:exception-type-router input-channel="errorChannel">

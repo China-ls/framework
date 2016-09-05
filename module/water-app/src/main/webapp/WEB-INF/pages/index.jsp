@@ -4,7 +4,6 @@
 <%--<c:set var="ctx" value="${pageContext.request.contextPath}"/>--%>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 
-
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD LEVEL1//EN">
 <!DOCTYPE html>
 <html lang="en" data-ng-app="app">
@@ -14,7 +13,7 @@
     <meta name="description" content=""/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-    <link rel="stylesheet" href="${ctx}/css/app.min.css" type="text/css"/>
+    <link rel="stylesheet" href="${ctx}/css/app.201609020845.css" type="text/css"/>
 </head>
 <body ng-controller="AppCtrl">
 <input type="hidden" id="__ctx" value="${ctx}"/>
@@ -27,7 +26,7 @@
      ui-view>
 </div>
 <!-- jQuery -->
-<script src="${ctx}/js/app.min.js"></script>
+<script src="${ctx}/js/app.201609020845.js"></script>
 <!-- Lazy loading -->
 </body>
 </html>

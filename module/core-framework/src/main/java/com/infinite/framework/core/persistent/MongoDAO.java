@@ -3,12 +3,14 @@ package com.infinite.framework.core.persistent;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoNamespace;
 import com.mongodb.ReadPreference;
+import com.mongodb.bulk.BulkWriteResult;
 import com.mongodb.client.*;
 import com.mongodb.client.model.*;
 import com.mongodb.client.result.DeleteResult;
 import com.mongodb.client.result.UpdateResult;
 import org.bson.Document;
 import org.bson.conversions.Bson;
+import org.mongodb.morphia.Datastore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,9 +23,19 @@ public class MongoDAO implements IMongoDAO {
     private static Logger logger = LoggerFactory.getLogger(MongoDAO.class);
 
     protected MongoClient mongo;
+    protected Datastore datastore;
 
     public MongoClient getMongo() {
         return mongo;
+    }
+
+    @Override
+    public Datastore getDatastore() {
+        return datastore;
+    }
+
+    public void setDatastore(Datastore datastore) {
+        this.datastore = datastore;
     }
 
     public void setMongo(MongoClient mongo) {
@@ -135,7 +147,7 @@ public class MongoDAO implements IMongoDAO {
     }
 
     public Document findFirst(MongoCollection<Document> collection, Bson filter) {
-        return collection.find(filter).first();
+        return collection.find(filter).limit(1).first();
     }
 
     public Document findOneAndDelete(String databaseName, String collectionName, Bson filter) {
@@ -402,28 +414,37 @@ public class MongoDAO implements IMongoDAO {
         runCommand(getDatabase(databaseName), command, readPreference);
     }
 
-    public void aggregate(String databaseName, String collectionName, List<? extends Bson> pipeline) {
-        aggregate(getDatabase(databaseName), collectionName, pipeline);
+    public AggregateIterable<Document> aggregate(String databaseName, String collectionName, List<? extends Bson> pipeline) {
+        return aggregate(getDatabase(databaseName), collectionName, pipeline);
     }
 
-    public void aggregate(MongoDatabase database, String collectionName, List<? extends Bson> pipeline) {
-        getCollection(database, collectionName).aggregate(pipeline);
+    public AggregateIterable<Document> aggregate(MongoDatabase database, String collectionName, List<? extends Bson> pipeline) {
+        return aggregate(getCollection(database, collectionName), pipeline);
     }
 
-    public void mapReduce(MongoDatabase database, String collectionName, String mapFunction, String reduceFunction) {
-        getCollection(database, collectionName).mapReduce(mapFunction, reduceFunction);
+    public AggregateIterable<Document> aggregate(MongoCollection<Document> mongoCollection, List<? extends Bson> pipeline) {
+        return mongoCollection.aggregate(pipeline);
     }
 
-    public void mapReduce(String databaseName, String collectionName, String mapFunction, String reduceFunction) {
-        mapReduce(getDatabase(databaseName), collectionName, mapFunction, reduceFunction);
+    public MapReduceIterable<Document> mapReduce(MongoDatabase database, String collectionName, String mapFunction, String reduceFunction) {
+        return mapReduce(getCollection(database, collectionName), mapFunction, reduceFunction);
     }
 
-    public void bulkWrite(String databaseName, String collectionName, List<? extends WriteModel<? extends Document>> requests) {
-        bulkWrite(getDatabase(databaseName), collectionName, requests);
+    public MapReduceIterable<Document> mapReduce(String databaseName, String collectionName, String mapFunction, String reduceFunction) {
+        return mapReduce(getDatabase(databaseName), collectionName, mapFunction, reduceFunction);
     }
 
-    public void bulkWrite(MongoDatabase database, String collectionName, List<? extends WriteModel<? extends Document>> requests) {
-        getCollection(database, collectionName).bulkWrite(requests);
+    @Override
+    public MapReduceIterable<Document> mapReduce(MongoCollection<Document> mongoCollection, String mapFunction, String reduceFunction) {
+        return mongoCollection.mapReduce(mapFunction, reduceFunction);
+    }
+
+    public BulkWriteResult bulkWrite(String databaseName, String collectionName, List<? extends WriteModel<? extends Document>> requests) {
+        return bulkWrite(getDatabase(databaseName), collectionName, requests);
+    }
+
+    public BulkWriteResult bulkWrite(MongoDatabase database, String collectionName, List<? extends WriteModel<? extends Document>> requests) {
+        return getCollection(database, collectionName).bulkWrite(requests);
     }
 
     public long count(MongoDatabase database, String collectionName) {
@@ -440,6 +461,11 @@ public class MongoDAO implements IMongoDAO {
 
     public long count(MongoDatabase database, String collectionName, Bson filter) {
         return getCollection(database, collectionName).count(filter);
+    }
+
+    @Override
+    public long count(MongoCollection<Document> mongoCollection, Bson filter) {
+        return mongoCollection.count(filter);
     }
 
     public long count(MongoDatabase database, String collectionName, Bson filter, CountOptions options) {

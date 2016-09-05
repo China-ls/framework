@@ -1,6 +1,6 @@
 {
-  "name": "bootstrap angular admin webapp",
-  "version": "2.0.1",
+  "name": "waterapp",
+  "version": "0.0.1",
   "description": "Admin web application template with Bootstrap 3 and AngularJS.",
   "scripts": {
     "start": "node node_modules/http-server/bin/http-server -o"
@@ -36,6 +36,7 @@
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-bower-install-simple": "^0.9.3",
+    "grunt-bower-task": "^0.4.0",
     "grunt-bump": "0.0.15",
     "grunt-changelog": "^0.2.2",
     "grunt-contrib-clean": "^0.6.0",

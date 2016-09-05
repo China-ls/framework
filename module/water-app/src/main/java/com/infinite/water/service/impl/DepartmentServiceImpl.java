@@ -32,4 +32,23 @@ public class DepartmentServiceImpl implements DepartmentService {
         }
         return JsonUtil.fromJson(json, Department.class);
     }
+
+    @Override
+    public Department getDepartmentRoute() {
+        String json = null;
+        InputStream is = null;
+        try {
+            Resource resource = new ClassPathResource("xdepartment_route.json");
+            is = resource.getInputStream();
+            json = IOUtils.toString(is);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            IOUtils.closeQuietly(is);
+        }
+        if (StringUtils.isEmpty(json)) {
+            return null;
+        }
+        return JsonUtil.fromJson(json, Department.class);
+    }
 }

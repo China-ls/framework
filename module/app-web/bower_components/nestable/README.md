@@ -19,19 +19,19 @@ Write your nested HTML lists like so:
 
     <div class="dd">
         <ol class="dd-list">
-            <li class="dd-item" data-id="1">
+            <li class="dd-item" data-sensor_id="1">
                 <div class="dd-handle">Item 1</div>
             </li>
-            <li class="dd-item" data-id="2">
+            <li class="dd-item" data-sensor_id="2">
                 <div class="dd-handle">Item 2</div>
             </li>
-            <li class="dd-item" data-id="3">
+            <li class="dd-item" data-sensor_id="3">
                 <div class="dd-handle">Item 3</div>
                 <ol class="dd-list">
-                    <li class="dd-item" data-id="4">
+                    <li class="dd-item" data-sensor_id="4">
                         <div class="dd-handle">Item 4</div>
                     </li>
-                    <li class="dd-item" data-id="5">
+                    <li class="dd-item" data-sensor_id="5">
                         <div class="dd-handle">Item 5</div>
                     </li>
                 </ol>
@@ -59,7 +59,7 @@ You can get a serialised object with all `data-*` attributes for each item.
 
 The serialised JSON for the example above would be:
 
-    [{"id":1},{"id":2},{"id":3,"children":[{"id":4},{"id":5}]}]
+    [{"sensor_id":1},{"sensor_id":2},{"sensor_id":3,"children":[{"sensor_id":4},{"sensor_id":5}]}]
 
 ### Configuration
 

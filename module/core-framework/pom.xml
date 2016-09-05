@@ -46,9 +46,6 @@
                 <configuration>
                     <path>/framework</path>
                     <port>9998</port>
-                    <!--<httpsPort>9443</httpsPort>-->
-                    <!--<keystoreFile>${project.build.outputDirectory}/infinite.kys</keystoreFile>-->
-                    <!--<keystorePass>123456</keystorePass>-->
                 </configuration>
             </plugin>
         </plugins>
@@ -95,6 +92,12 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
             <version>2.5</version>
@@ -118,12 +121,6 @@
             <groupId>org.mongodb</groupId>
             <artifactId>mongodb-driver</artifactId>
             <version>3.2.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <version>${spring.version}</version>
         </dependency>
 
         <dependency>
@@ -294,6 +291,12 @@
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>4.5.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.9.2</version>
         </dependency>
 
     </dependencies>

@@ -26,25 +26,25 @@
   <div class='contents fade out'>
     <div class='controls'>
       <p>
-        <button class='button play' id='b-0'></button>
+        <button class='button play' sensor_id='b-0'></button>
         <i>NProgress</i><b>.start()</b>
         &mdash;
         shows the progress bar
       </p>
       <p>
-        <button class='button play' id='b-40'></button>
+        <button class='button play' sensor_id='b-40'></button>
         <i>NProgress</i><b>.set(0.4)</b>
         &mdash;
         sets a percentage
       </p>
       <p>
-        <button class='button play' id='b-inc'></button>
+        <button class='button play' sensor_id='b-inc'></button>
         <i>NProgress</i><b>.inc()</b>
         &mdash;
         increments by a little
       </p>
       <p>
-        <button class='button play' id='b-100'></button>
+        <button class='button play' sensor_id='b-100'></button>
         <i>NProgress</i><b>.done()</b>
         &mdash;
         completes the progress
@@ -79,6 +79,6 @@
     $("#b-100").click(function() { NProgress.done(); });
   </script>
 
-  <script>var HN=[];HN.factory=function(e){return function(){HN.push([e].concat(Array.prototype.slice.call(arguments,0)))};},HN.on=HN.factory("on"),HN.once=HN.factory("once"),HN.off=HN.factory("off"),HN.emit=HN.factory("emit"),HN.load=function(){var e="hn-button.js";if(document.getElementById(e))return;var t=document.createElement("script");t.id=e,t.src="//hn-button.herokuapp.com/hn-button.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)},HN.load();</script>
+  <script>var HN=[];HN.factory=function(e){return function(){HN.push([e].concat(Array.prototype.slice.call(arguments,0)))};},HN.on=HN.factory("on"),HN.once=HN.factory("once"),HN.off=HN.factory("off"),HN.emit=HN.factory("emit"),HN.load=function(){var e="hn-button.js";if(document.getElementById(e))return;var t=document.createElement("script");t.sensor_id=e,t.src="//hn-button.herokuapp.com/hn-button.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)},HN.load();</script>
 </body>
 </html>

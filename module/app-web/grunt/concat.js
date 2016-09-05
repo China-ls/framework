@@ -3,6 +3,7 @@ module.exports = {
         src: [
             'bower_components/jquery/dist/jquery.min.js',
 
+            'bower_components/nprogress/nprogress.js',
             'bower_components/angular/angular.js',
 
             'bower_components/angular-animate/angular-animate.js',
@@ -23,18 +24,23 @@ module.exports = {
             'bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
             'bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js',
             'bower_components/angular-translate-storage-local/angular-translate-storage-local.js',
-            'bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.js',
-            'bower_components/Highcharts-4.2.5/js/highcharts.js',
-            'bower_components/highcharts-ng/dist/highcharts-ng.js',
-            'bower_components/angular-bootstrap-nav-tree/dist/abn_tree_directive.js',
-            'bower_components/angularjs-toaster/toaster.js',
-            'bower_components/angular-websocket/dist/angular-websocket.js',
 
-            'src/js/*.js',
+            'bower_components/nprogress/nprogress.js',
+            'bower_components/angular-websocket/dist/angular-websocket.js',
+            'bower_components/angularjs-toaster/toaster.min.js',
+
+
+            'src/js/app.js',
+            'src/js/config.js',
+            'src/js/config.lazyload.js',
+            'src/js/config.router.js',
+            'src/js/main.js',
+            'src/js/app/map/baidu/load-baidu-maps.js',
+            'src/js/app/map/baidu/ui-baidu-map.js',
             'src/js/directives/*.js',
             'src/js/services/*.js',
             'src/js/filters/*.js',
-            'src/js/controllers/bootstrap.js'
+            'src/js/controllers/*.js'
         ],
         dest: 'angular/js/app.src.js'
     },

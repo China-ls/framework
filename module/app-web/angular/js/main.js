@@ -15,7 +15,7 @@ angular.module('app')
             // config
             $scope.app = {
                 name: 'Angulr',
-                version: '0.0.1',
+                version: '1.0.0',
                 // for chart colors
                 color: {
                     primary: '#7266ba',
@@ -87,8 +87,8 @@ angular.module('app')
                 $scope.$broadcast("BROADCAST_DEVICE_TREE_CLICK", data);
             });
 
-            var wsUrl = NETCONST.CTX.replace("http://", "ws://") + "/ws";
             try {
+                var wsUrl = NETCONST.CTX.replace("http://", "ws://") + "/ws";
                 $scope.ws = $websocket(wsUrl, {
                     reconnectIfNotNormalClose: true
                 });
@@ -103,7 +103,6 @@ angular.module('app')
                 try {
                     var data = JSON.parse(message.data);
                     $scope.$broadcast("WS_MESSAGE", data);
-                    console.warn(data);
                 } catch (e) {
                 }
             });
@@ -117,10 +116,10 @@ angular.module('app')
             };
 
             $interval(function () {
-                if (new Date().getTime() - $scope.wsSendCount > 10000) {
+                if (new Date().getTime() - $scope.wsSendCount >= 15000) {
                     $scope.wsSend('heartbeat');
                 }
-            }, 1000);
+            }, 10000);
 
             $scope.formatDate = function (date, formatStr) {
                 var str = formatStr;
@@ -146,5 +145,10 @@ angular.module('app')
                 str = str.replace(/s|S/g, date.getSeconds());
                 return str;
             };
+
+            $scope.$on('bc.event.win.resize', function (event, data) {
+                console.warn("on win resize");
+                console.warn(data);
+            });
         }]
     );

@@ -17,9 +17,25 @@
     <mvc:annotation-driven>
         <mvc:message-converters>
             <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
-            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="objectMapper" ref="objectMapper"/>
+            </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
+
+    <bean id="objectMapper" class="org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean">
+        <property name="serializers">
+            <list>
+                <bean class="com.infinite.framework.router.json.serializer.ObjectIdSerializer" />
+            </list>
+        </property>
+        <property name="deserializers">
+            <list>
+                <bean class="com.infinite.framework.router.json.deserializer.ObjectIdDeserializer" />
+            </list>
+        </property>
+    </bean>
+
 
     <!-- Allows for mapping the DispatcherServlet to "/" by forwarding static resource requests to the container's default Servlet -->
     <mvc:default-servlet-handler/>

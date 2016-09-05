@@ -17,9 +17,24 @@
     <mvc:annotation-driven>
         <mvc:message-converters>
             <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
-            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="objectMapper" ref="objectMapper"/>
+            </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
+
+    <bean id="objectMapper" class="org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean">
+        <property name="serializers">
+            <list>
+                <bean class="com.infinite.water.controller.json.serializer.ObjectIdSerializer"/>
+            </list>
+        </property>
+        <property name="deserializers">
+            <list>
+                <bean class="com.infinite.water.controller.json.deserializer.ObjectIdDeserializer"/>
+            </list>
+        </property>
+    </bean>
 
     <!-- Allows for mapping the DispatcherServlet to "/" by forwarding static resource requests to the container's default Servlet -->
     <mvc:default-servlet-handler/>
@@ -59,6 +74,7 @@
     <mvc:resources mapping="/js/**" location="/js/" cache-period="31556926"/>
     <mvc:resources mapping="/css/**" location="/css/" cache-period="31556926"/>
     <mvc:resources mapping="/fonts/**" location="/fonts/" cache-period="31556926"/>
+    <mvc:resources mapping="/lib/**" location="/lib/" cache-period="31556926"/>
 
     <mvc:cors>
         <mvc:mapping path="/**"

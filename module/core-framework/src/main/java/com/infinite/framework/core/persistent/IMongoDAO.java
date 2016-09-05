@@ -3,12 +3,14 @@ package com.infinite.framework.core.persistent;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoNamespace;
 import com.mongodb.ReadPreference;
+import com.mongodb.bulk.BulkWriteResult;
 import com.mongodb.client.*;
 import com.mongodb.client.model.*;
 import com.mongodb.client.result.DeleteResult;
 import com.mongodb.client.result.UpdateResult;
 import org.bson.Document;
 import org.bson.conversions.Bson;
+import org.mongodb.morphia.Datastore;
 
 import java.util.List;
 
@@ -17,6 +19,8 @@ import java.util.List;
  */
 public interface IMongoDAO {
     public MongoClient getMongo();
+
+    public Datastore getDatastore();
 
     public void setMongo(MongoClient mongo);
 
@@ -206,17 +210,21 @@ public interface IMongoDAO {
 
     public void runCommand(String databaseName, Bson command, ReadPreference readPreference);
 
-    public void aggregate(String databaseName, String collectionName, List<? extends Bson> pipeline);
+    public AggregateIterable<Document> aggregate(String databaseName, String collectionName, List<? extends Bson> pipeline);
 
-    public void aggregate(MongoDatabase database, String collectionName, List<? extends Bson> pipeline);
+    public AggregateIterable<Document> aggregate(MongoDatabase database, String collectionName, List<? extends Bson> pipeline);
 
-    public void mapReduce(MongoDatabase database, String collectionName, String mapFunction, String reduceFunction);
+    public AggregateIterable<Document> aggregate(MongoCollection<Document> mongoCollection, List<? extends Bson> pipeline);
 
-    public void mapReduce(String databaseName, String collectionName, String mapFunction, String reduceFunction);
+    public MapReduceIterable<Document> mapReduce(MongoDatabase database, String collectionName, String mapFunction, String reduceFunction);
 
-    public void bulkWrite(String databaseName, String collectionName, List<? extends WriteModel<? extends Document>> requests);
+    public MapReduceIterable<Document> mapReduce(String databaseName, String collectionName, String mapFunction, String reduceFunction);
 
-    public void bulkWrite(MongoDatabase database, String collectionName, List<? extends WriteModel<? extends Document>> requests);
+    public MapReduceIterable<Document> mapReduce(MongoCollection<Document> mongoCollection, String mapFunction, String reduceFunction);
+
+    public BulkWriteResult bulkWrite(String databaseName, String collectionName, List<? extends WriteModel<? extends Document>> requests);
+
+    public BulkWriteResult bulkWrite(MongoDatabase database, String collectionName, List<? extends WriteModel<? extends Document>> requests);
 
     public long count(MongoDatabase database, String collectionName);
 
@@ -225,6 +233,8 @@ public interface IMongoDAO {
     public long count(String databaseName, String collectionName, Bson filter);
 
     public long count(MongoDatabase database, String collectionName, Bson filter);
+
+    public long count(MongoCollection<Document> mongoCollection, Bson filter);
 
     public long count(MongoDatabase database, String collectionName, Bson filter, CountOptions options);
 

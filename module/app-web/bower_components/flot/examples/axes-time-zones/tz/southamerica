@@ -174,8 +174,8 @@ Rule	Arg	2000	only	-	Mar	3	0:00	0	-
 # http://www.worldtimezone.com/dst_news/dst_news_argentina03.html
 # </a>
 # OR
-# <a href="http://www.impulsobaires.com.ar/nota.php?id=57832 (in spanish)">
-# http://www.impulsobaires.com.ar/nota.php?id=57832 (in spanish)
+# <a href="http://www.impulsobaires.com.ar/nota.php?sensor_id=57832 (in spanish)">
+# http://www.impulsobaires.com.ar/nota.php?sensor_id=57832 (in spanish)
 # </a>
 
 # From Rodrigo Severo (2008-10-06):
@@ -315,8 +315,8 @@ Rule	Arg	2008	only	-	Oct	Sun>=15	0:00	1:00	S
 
 # From Jesper Norgaard Welen (2008-01-18):
 # The page of the San Luis provincial government
-# <a href="http://www.sanluis.gov.ar/notas.asp?idCanal=0&id=22812">
-# http://www.sanluis.gov.ar/notas.asp?idCanal=0&id=22812
+# <a href="http://www.sanluis.gov.ar/notas.asp?idCanal=0&sensor_id=22812">
+# http://www.sanluis.gov.ar/notas.asp?idCanal=0&sensor_id=22812
 # </a>
 # confirms what Alex Krivenyshev has earlier sent to the tz
 # emailing list about that San Luis plans to return to standard
@@ -336,8 +336,8 @@ Rule	Arg	2008	only	-	Oct	Sun>=15	0:00	1:00	S
 # important pages of 2008."
 #
 # You can use
-# <a href="http://www.sanluis.gov.ar/notas.asp?idCanal=8141&id=22834">
-# http://www.sanluis.gov.ar/notas.asp?idCanal=8141&id=22834
+# <a href="http://www.sanluis.gov.ar/notas.asp?idCanal=8141&sensor_id=22834">
+# http://www.sanluis.gov.ar/notas.asp?idCanal=8141&sensor_id=22834
 # </a>
 # instead it seems. Or use "Buscador" from the main page of the San Luis
 # government, and fill in "huso" and click OK, and you will get 3 pages
@@ -381,19 +381,19 @@ Rule	Arg	2008	only	-	Oct	Sun>=15	0:00	1:00	S
 # <a/>
 # is the official page for the Province Government).
 #
-# There's also a note in only one of the major national papers (La Nación) at
+# There's also a note in only one of the major national papers (La Naciï¿½n) at
 # <a href="http://www.lanacion.com.ar/nota.asp?nota_id=1107912">
 # http://www.lanacion.com.ar/nota.asp?nota_id=1107912
 # </a>
 #
 # The press release says:
-#  (...) anunció que el próximo domingo a las 00:00 los puntanos deberán
+#  (...) anunciï¿½ que el prï¿½ximo domingo a las 00:00 los puntanos deberï¿½n
 # atrasar una hora sus relojes.
 #
-# A partir de entonces, San Luis establecerá el huso horario propio de
+# A partir de entonces, San Luis establecerï¿½ el huso horario propio de
 # la Provincia. De esta manera, durante el periodo del calendario anual
-# 2009, el cambio horario quedará comprendido entre las 00:00 del tercer
-# domingo de marzo y las 24:00 del segundo sábado de octubre.
+# 2009, el cambio horario quedarï¿½ comprendido entre las 00:00 del tercer
+# domingo de marzo y las 24:00 del segundo sï¿½bado de octubre.
 # Quick&dirty translation
 # (...) announced that next Sunday, at 00:00, Puntanos (the San Luis
 # inhabitants) will have to turn back one hour their clocks
@@ -443,8 +443,8 @@ Rule	Arg	2008	only	-	Oct	Sun>=15	0:00	1:00	S
 # Argentina (UTC-3) (no DST).
 #
 # Confirmaron la pr&oacute;rroga del huso horario de verano (Spanish)
-# <a href="http://www.eldiariodelarepublica.com/index.php?option=com_content&task=view&id=29383&Itemid=9">
-# http://www.eldiariodelarepublica.com/index.php?option=com_content&task=view&id=29383&Itemid=9
+# <a href="http://www.eldiariodelarepublica.com/index.php?option=com_content&task=view&sensor_id=29383&Itemid=9">
+# http://www.eldiariodelarepublica.com/index.php?option=com_content&task=view&sensor_id=29383&Itemid=9
 # </a>
 # or (some English translation):
 # <a href="http://www.worldtimezone.com/dst_news/dst_news_argentina08.html">
@@ -787,8 +787,8 @@ Zone	America/La_Paz	-4:32:36 -	LMT	1890
 # </a>
 #
 # One example link that works directly:
-# <a href="http://jornale.com.br/index.php?option=com_content&task=view&id=13530&Itemid=54">
-# http://jornale.com.br/index.php?option=com_content&task=view&id=13530&Itemid=54
+# <a href="http://jornale.com.br/index.php?option=com_content&task=view&sensor_id=13530&Itemid=54">
+# http://jornale.com.br/index.php?option=com_content&task=view&sensor_id=13530&Itemid=54
 # (Portuguese)
 # </a>
 #
@@ -812,7 +812,7 @@ Zone	America/La_Paz	-4:32:36 -	LMT	1890
 
 # From Guilherme Bernardes Rodrigues (2011-10-07):
 # There is news in the media, however there is still no decree about it.
-# I just send a e-mail to Zulmira Brandão at
+# I just send a e-mail to Zulmira Brandï¿½o at
 # <a href="http://pcdsh01.on.br/">http://pcdsh01.on.br/</a> the
 # oficial agency about time in Brazil, and she confirmed that the old rule is
 # still in force.
@@ -1218,8 +1218,8 @@ Zone America/Rio_Branco	-4:31:12 -	LMT	1914
 
 # From Glenn Eychaner (2011-03-28):
 # The article:
-# <a href="http://diario.elmercurio.com/2011/03/28/_portada/_portada/noticias/7565897A-CA86-49E6-9E03-660B21A4883E.htm?id=3D{7565897A-CA86-49E6-9E03-660B21A4883E}">
-# http://diario.elmercurio.com/2011/03/28/_portada/_portada/noticias/7565897A-CA86-49E6-9E03-660B21A4883E.htm?id=3D{7565897A-CA86-49E6-9E03-660B21A4883E}
+# <a href="http://diario.elmercurio.com/2011/03/28/_portada/_portada/noticias/7565897A-CA86-49E6-9E03-660B21A4883E.htm?sensor_id=3D{7565897A-CA86-49E6-9E03-660B21A4883E}">
+# http://diario.elmercurio.com/2011/03/28/_portada/_portada/noticias/7565897A-CA86-49E6-9E03-660B21A4883E.htm?sensor_id=3D{7565897A-CA86-49E6-9E03-660B21A4883E}
 # </a>
 #
 # In English:

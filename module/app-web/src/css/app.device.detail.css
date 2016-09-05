@@ -1,0 +1,6 @@
+#deviceSubMenuWrapper .nav-tabs > li {
+  margin-bottom: 0;
+}
+#deviceSubMenuWrapper .nav-tabs > li.active > a {
+  border-bottom-color: #00ee00 !important;
+}

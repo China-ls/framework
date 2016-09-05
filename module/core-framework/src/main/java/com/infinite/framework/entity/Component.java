@@ -16,37 +16,20 @@ import java.util.Collection;
 //@Entity(EntityConst.CollectionName.COMPONENT)
 @Embedded
 public class Component extends AbstractEntity {
-    @Property
-    private String id;
-    @Property
-    private String sensorId;
-    @Property
-    private String name;
-    @Property
-    private String type;
-    @Property
-    private EntityConst.EntityStatus status = EntityConst.EntityStatus.NORMAL;
-    @Embedded
-    private ArrayList<Action> actions = new ArrayList<Action>(0);
-    @Embedded
-    private ArrayList<FieldDefinition> fieldDefinitions = new ArrayList<FieldDefinition>(0);
-    @Embedded
-    private ArrayList<DataFilterDefinetion> dataFilterDefinetions = new ArrayList<DataFilterDefinetion>(0);
+    @Property private String comp_id;
+    @Property private String name;
+    @Property private String type;
+    @Property private EntityConst.EntityStatus status = EntityConst.EntityStatus.NORMAL;
+    @Embedded private ArrayList<Action> actions = new ArrayList<Action>(0);
+    @Embedded private ArrayList<FieldDefinition> fieldDefinitions = new ArrayList<FieldDefinition>(0);
+    @Embedded private ArrayList<DataFilterDefinetion> dataFilterDefinetions = new ArrayList<DataFilterDefinetion>(0);
 
-    public String getId() {
-        return id;
+    public String getComp_id() {
+        return comp_id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getSensorId() {
-        return sensorId;
-    }
-
-    public void setSensorId(String sensorId) {
-        this.sensorId = sensorId;
+    public void setComp_id(String comp_id) {
+        this.comp_id = comp_id;
     }
 
     public String getName() {
@@ -118,8 +101,7 @@ public class Component extends AbstractEntity {
     @Override
     public String toString() {
         return "Component{" +
-                "id='" + id + '\'' +
-                ", sensorId='" + sensorId + '\'' +
+                "comp_id='" + comp_id + '\'' +
                 ", name='" + name + '\'' +
                 ", type='" + type + '\'' +
                 ", status=" + status +

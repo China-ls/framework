@@ -273,11 +273,20 @@ body {
     width: @app-aside-width;
   }
 
+  .app-aside-hide .aside-header {
+    width: @app-aside-hide-width;
+    display: none;
+    visibility: hidden;
+  }
+
   .navbar-collapse,
   .app-content,
   .app-footer,
   .content-header {
     margin-left: @app-aside-width;
+  }
+  .app-aside-hide .content-header {
+    margin-left: @app-aside-hide-width;
   }
 
   .app-aside-right {
@@ -485,6 +494,13 @@ body {
 @media (max-width: 767px) {
   .app-aside {
     float: none;
+  }
+
+  .app-aside-hide {
+    .header-toggle-aside {
+      display: none;
+      visibility: hidden;
+    }
   }
 
   .app-content-full {

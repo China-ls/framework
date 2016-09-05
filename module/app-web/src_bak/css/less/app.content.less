@@ -1,13 +1,19 @@
 .app-container {
-  height: 320px;
 
   .map-wrapper {
-    height: 300px;
+    //height: 300px;
+  }
+
+  .sub-title {
+    .btn-danger.active {
+      background-color: #761c19;
+      border-color: #ac2925;
+    }
   }
 
   .info-wrapper {
-    height: 300px;
-    overflow: hidden;
+    //height: 300px;
+    //overflow: hidden;
     .info-title {
       padding-bottom: 5px;
       border-bottom: 2px solid #00ee00;
@@ -109,7 +115,7 @@
     position: relative;
     background-color: #dfdfdf;
     display: block;
-    height: 40px;
+    height: 34px;
     .data-menu {
       ul {
         list-style: none;
@@ -138,15 +144,17 @@
     .data-filter {
       position: absolute;
       right: 10px;
-      top: 10px;
+      top: 5px;
     }
   }
 
-  .data-item-wrapper {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    .data-content {
-      padding: 10px;
+  .data-content {
+    padding: 10px;
+    .data-item-wrapper {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding: 5px;
+      border: 1px solid #ccc;
 
       .data-property {
         margin: 0 0 20px;

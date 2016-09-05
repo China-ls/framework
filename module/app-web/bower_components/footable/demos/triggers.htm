@@ -39,13 +39,13 @@
 			<li><a href="#docs">Docs</a></li>
 		</ul>
 		<div class="tab-content">
-			<div class="tab-pane active" id="demo">
+			<div class="tab-pane active" sensor_id="demo">
                 <a class="table_trigger" href="#trigger" data-trigger="footable_initialize">footable_initialize</a> |
                 <a class="table_trigger" href="#trigger" data-trigger="footable_resize">footable_resize</a> |
                 <a class="table_trigger" href="#trigger" data-trigger="footable_redraw">footable_redraw</a> |
                 <a title="toggles a random row" class="row_trigger" href="#trigger" data-trigger="footable_toggle_row">footable_toggle_row</a> |
                 <a class="table_trigger" href="#trigger" data-trigger="footable_expand_first_row">footable_expand_first_row</a>
-                <textarea id="console"></textarea>
+                <textarea sensor_id="console"></textarea>
                 <table class="table demo table-bordered" data-filter="#filter" data-page-size="5" data-page-previous-text="prev" data-page-next-text="next">
                     <thead>
                     <tr>
@@ -140,7 +140,7 @@
                     </tbody>
                 </table>
 			</div>
-			<div class="tab-pane" id="docs">
+			<div class="tab-pane" sensor_id="docs">
                 <h3>FooTable Triggers</h3>
                 <p>There are a number of triggers that you can fire:</p>
                 <p><code>footable_initialize</code> - trigger FooTable initialize</p>

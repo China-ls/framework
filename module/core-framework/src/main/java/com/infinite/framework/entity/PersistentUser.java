@@ -3,7 +3,6 @@ package com.infinite.framework.entity;
 import com.google.gson.annotations.SerializedName;
 
 public class PersistentUser {
-    @SerializedName("_id")
     private String id;
     private String name;
     private byte[] icon;

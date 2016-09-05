@@ -2,15 +2,27 @@
 
 var app =
         angular.module('app')
-            .constant('NETCONST', {
+            .constant('APPCONST', {
                 APPKEY: 'abc123',
                 CTX: '',
                 DEPARTMENT: '/dpt',
                 SENSOR_BY_ID: '/sensor/',
                 SENSORS: '/sensor/all',
+                SENSOR_DATA_TODAY: '/sensor/{id}/data/today?comp_type=flowmeter_sensor',
+                SENSOR_DATA_TOTAL_MONTH: '/sensor/{id}/data/month',
+                SENSOR_DATA_IMAGE_LIST: '/sensor/{id}/data/image',
+                SENSOR_DATA_IMAGE: '/sensor/image/',
+                DEPARTMENT_ROUTE: '/dpt/route',
+                EMP_DEPARTMENT_LIST: '/dpt/emp',
+                EMP_DEPARTMENT_ADD: '/dpt/emp/add',
+                EMP_DEPARTMENT_UPDATE: '/dpt/emp/update',
+                EMP_DEPARTMENT_DELETE: '/dpt/emp/{id}',
+                SYSTEM_INFORMATION: '/sys/info',
+
+                APP_LOCAL_STORAGE_MANAGE_EMPLOYEE : 'app_loc_storage_mg_emp',
             })
-            .config(['$httpProvider', 'NETCONST', function ($httpProvider, NETCONST) {
-                $httpProvider.defaults.headers.common['APPKEY'] = NETCONST.APPKEY;
+            .config(['$httpProvider', 'APPCONST', function ($httpProvider, APPCONST) {
+                // $httpProvider.defaults.headers.common['APPKEY'] = NETCONST.APPKEY;
 
                 $httpProvider.defaults.headers.put['Content-Type'] = 'application/x-www-form-urlencoded';
                 $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';

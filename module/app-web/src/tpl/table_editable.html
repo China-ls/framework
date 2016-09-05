@@ -13,7 +13,7 @@
         <tr ng-repeat="user in users">
             <td class="v-middle">
                 <!-- editable username (text with validation) -->
-        <span editable-text="user.name" e-name="name" e-form="rowform" onbeforesave="checkName($data, user.id)"
+        <span editable-text="user.name" e-name="name" e-form="rowform" onbeforesave="checkName($data, user.sensor_id)"
               e-required>
           {{ user.name || 'empty' }}
         </span>
@@ -28,13 +28,13 @@
             <td class="v-middle">
                 <!-- editable group (select-remote) -->
         <span editable-select="user.group" e-name="group" onshow="loadGroups()" e-form="rowform"
-              e-ng-options="g.id as g.text for g in groups">
+              e-ng-options="g.sensor_id as g.text for g in groups">
           {{ showGroup(user) }}
         </span>
             </td>
             <td style="white-space: nowrap">
                 <!-- form -->
-                <form editable-form name="rowform" onbeforesave="saveUser($data, user.id)" ng-show="rowform.$visible"
+                <form editable-form name="rowform" onbeforesave="saveUser($data, user.sensor_id)" ng-show="rowform.$visible"
                       class="form-buttons form-inline" shown="inserted == user">
                     <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-sm btn-info">
                         save
@@ -129,7 +129,7 @@
             <td class="v-middle">
                 <!-- editable group (select-remote) -->
         <span editable-select="user.group" e-name="group" onshow="loadGroups()" e-form="groupform"
-              e-ng-options="g.id as g.text for g in groups">
+              e-ng-options="g.sensor_id as g.text for g in groups">
           {{ showGroup(user) }}
         </span>
             </td>
@@ -150,7 +150,7 @@
             <tr ng-repeat="user in users | filter:filterUser">
                 <td>
                     <!-- editable username (text with validation) -->
-          <span editable-text="user.name" e-form="tableform" onbeforesave="checkName($data, user.id)">
+          <span editable-text="user.name" e-form="tableform" onbeforesave="checkName($data, user.sensor_id)">
             {{ user.name || 'empty' }}
           </span>
                 </td>
@@ -163,12 +163,12 @@
                 <td>
                     <!-- editable group (select-remote) -->
           <span editable-select="user.group" e-form="tableform" onshow="loadGroups()"
-                e-ng-options="g.id as g.text for g in groups">
+                e-ng-options="g.sensor_id as g.text for g in groups">
             {{ showGroup(user) }}
           </span>
                 </td>
                 <td>
-                    <button type="button" ng-show="tableform.$visible" ng-click="removeUser(user.id)"
+                    <button type="button" ng-show="tableform.$visible" ng-click="removeUser(user.sensor_id)"
                             class="btn btn-sm btn-danger pull-right">Del
                     </button>
                 </td>

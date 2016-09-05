@@ -82,7 +82,7 @@ The following code enables to select an image using a file input and crop it. Th
   </script>
 </head>
 <body ng-app="app" ng-controller="Ctrl">
-  <div>Select an image file: <input type="file" id="fileInput" /></div>
+  <div>Select an image file: <input type="file" sensor_id="fileInput" /></div>
   <img-crop image="myImage" result-image="myCroppedImage"></img-crop>
   <div>Cropped Image:</div>
   <div><img src="myCroppedImage" /></div>

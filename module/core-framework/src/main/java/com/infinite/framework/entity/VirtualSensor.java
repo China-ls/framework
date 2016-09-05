@@ -19,7 +19,7 @@ import java.util.Map;
  */
 @Entity(EntityConst.CollectionName.VIRTUALSENSOR)
 public class VirtualSensor extends AbstractEntity {
-    @Id private String id;
+    @Id private String sensor_id;
     @Property private String app_id;
     @Property private String name;
     @Property private String control;
@@ -27,42 +27,25 @@ public class VirtualSensor extends AbstractEntity {
     @Property private String data;
     @Property private String system;
     @Property private String desc;
-    @Property private String idle_report;
-    @Property private String internal_id;
-    @Property private String latitude;
-    @Property private String longitude;
-    @Property private String offline_report;
+    @Property private long idle_report;
+    @Property private long internal_id;
+    @Property private double latitude;
+    @Property private double longitude;
+    @Property private String contact;
+    @Property private String admin;
+    @Property private String address;
+    @Property private String station_type;
+    @Property private long offline_report;
     @Property private EntityConst.EntityStatus status = EntityConst.EntityStatus.NORMAL;
     @Embedded private ArrayList<Component> components = new ArrayList<Component>(0);
     private HashMap<String, Object> fields = new HashMap<String, Object>(0);
 
-    /*TODO TEMP*/
-    private double instant;
-    private double positive_total;
-
-    public double getInstant() {
-        return instant;
+    public String getSensor_id() {
+        return sensor_id;
     }
 
-    public void setInstant(double instant) {
-        this.instant = instant;
-    }
-
-    public double getPositive_total() {
-        return positive_total;
-    }
-
-    public void setPositive_total(double positive_total) {
-        this.positive_total = positive_total;
-    }
-    /*TODO TEMP*/
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+    public void setSensor_id(String sensor_id) {
+        this.sensor_id = sensor_id;
     }
 
     public String getApp_id() {
@@ -129,43 +112,75 @@ public class VirtualSensor extends AbstractEntity {
         this.desc = desc;
     }
 
-    public String getIdle_report() {
+    public long getIdle_report() {
         return idle_report;
     }
 
-    public void setIdle_report(String idle_report) {
+    public void setIdle_report(long idle_report) {
         this.idle_report = idle_report;
     }
 
-    public String getInternal_id() {
+    public long getInternal_id() {
         return internal_id;
     }
 
-    public void setInternal_id(String internal_id) {
+    public void setInternal_id(long internal_id) {
         this.internal_id = internal_id;
     }
 
-    public String getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(String latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 
-    public String getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(String longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
 
-    public String getOffline_report() {
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
+
+    public String getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(String admin) {
+        this.admin = admin;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getStation_type() {
+        return station_type;
+    }
+
+    public void setStation_type(String station_type) {
+        this.station_type = station_type;
+    }
+
+    public long getOffline_report() {
         return offline_report;
     }
 
-    public void setOffline_report(String offline_report) {
+    public void setOffline_report(long offline_report) {
         this.offline_report = offline_report;
     }
 
@@ -218,7 +233,7 @@ public class VirtualSensor extends AbstractEntity {
     @Override
     public String toString() {
         return "VirtualSensor{" +
-                "id='" + id + '\'' +
+                "sensor_id='" + sensor_id + '\'' +
                 ", app_id='" + app_id + '\'' +
                 ", name='" + name + '\'' +
                 ", control='" + control + '\'' +
@@ -226,11 +241,15 @@ public class VirtualSensor extends AbstractEntity {
                 ", data='" + data + '\'' +
                 ", system='" + system + '\'' +
                 ", desc='" + desc + '\'' +
-                ", idle_report='" + idle_report + '\'' +
-                ", internal_id='" + internal_id + '\'' +
-                ", latitude='" + latitude + '\'' +
-                ", longitude='" + longitude + '\'' +
-                ", offline_report='" + offline_report + '\'' +
+                ", idle_report=" + idle_report +
+                ", internal_id=" + internal_id +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", contact='" + contact + '\'' +
+                ", admin='" + admin + '\'' +
+                ", address='" + address + '\'' +
+                ", station_type='" + station_type + '\'' +
+                ", offline_report=" + offline_report +
                 ", status=" + status +
                 ", components=" + components +
                 ", fields=" + fields +

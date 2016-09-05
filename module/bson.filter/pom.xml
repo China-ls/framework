@@ -21,7 +21,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.infinite.framework.bson.filter.QueryFilters</mainClass>
+                            <mainClass>com.infinite.framework.bson.filter.PersistentObjectFilters</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>

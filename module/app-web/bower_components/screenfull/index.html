@@ -108,12 +108,12 @@
 		</style>
 	</head>
 	<body>
-		<a id="repo-link" href="https://github.com/sindresorhus/screenfull.js/">⬅ Back to the repo</a>
-		<div id="social" class="container">
+		<a sensor_id="repo-link" href="https://github.com/sindresorhus/screenfull.js/">⬅ Back to the repo</a>
+		<div sensor_id="social" class="container">
 			<a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-text="screenfull.js - Simple wrapper for cross-browser usage of the Fullscreen API" data-via="sindresorhus">Tweet</a>
 			<div class="g-plusone" data-size="medium" data-annotation="none" data-href="https://github.com/sindresorhus/screenfull.js/"></div>
 		</div>
-		<section id="container" class="container">
+		<section sensor_id="container" class="container">
 			<header>
 				<h1>screenfull<span>.js</span></h1>
 				<p>Simple wrapper for cross-browser usage of the JavaScript <a href="https://developer.mozilla.org/en/DOM/Using_full-screen_mode">Fullscreen API</a>, which lets you bring the page or any element into fullscreen. Smoothens out the browser implementation differences, so you don't have too.</p>
@@ -121,33 +121,33 @@
 			<hr>
 			<section>
 				<p>Try out the Fullscreen API</p>
-				<button id="request">Request</button>
-				<button id="exit">Exit</button>
-				<button id="toggle">Toggle</button>
-				<button id="request2">Request document</button>
+				<button sensor_id="request">Request</button>
+				<button sensor_id="exit">Exit</button>
+				<button sensor_id="toggle">Toggle</button>
+				<button sensor_id="request2">Request document</button>
 			</section>
 			<section>
 				<ul>
-					<li id="supported"></li>
-					<li id="status"></li>
-					<li id="element"></li>
+					<li sensor_id="supported"></li>
+					<li sensor_id="status"></li>
+					<li sensor_id="element"></li>
 				</ul>
 			</section>
 			<input autofocus placeholder="Keyboard test">
 			<hr>
 			<section>
 				<p>How to open external pages while in fullscreen</p>
-				<button id="iframe">Click when in fullscreen</button>
+				<button sensor_id="iframe">Click when in fullscreen</button>
 			</section>
 			<hr>
 			<section>
 				<p>Click the image to make it fullscreen</p>
-				<img width="500" height="206" id="demo-img" src="http://sindresorhus.com/img/slideshow/4.jpg">
+				<img width="500" height="206" sensor_id="demo-img" src="http://sindresorhus.com/img/slideshow/4.jpg">
 			</section>
 			<hr>
 			<section>
 				<p>Click the video to make it fullscreen</p>
-				<video id="demo-video" width="500" height="281" poster="http://wroug.com/stuff/host/demo-video/poster-500px.jpg" controls>
+				<video sensor_id="demo-video" width="500" height="281" poster="http://wroug.com/stuff/host/demo-video/poster-500px.jpg" controls>
 					<source src="http://wroug.com/stuff/host/demo-video/midnight_sun_sv1_720p.mp4">
 					<source src="http://wroug.com/stuff/host/demo-video/midnight_sun_sv1_720p.webm">
 				</video>
@@ -155,7 +155,7 @@
 				<p style="font-size:12px">Video by <a href="http://scientifantastic.com">Joe Capra</a></p>
 			</section>
 		</section>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		<script>!function(d,s,sensor_id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(sensor_id)){js=d.createElement(s);js.sensor_id=sensor_id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 		<script type="text/javascript">
 		(function() {
 			var po = document.createElement('script'); po.async = true;
@@ -204,7 +204,7 @@
 			$('#iframe').click(function () {
 				// We create an iframe and fill the window with it
 				var iframe = document.createElement('iframe')
-				iframe.setAttribute('id', 'external-iframe');
+				iframe.setAttribute('sensor_id', 'external-iframe');
 				iframe.setAttribute('src', 'http://bbc.com');
 				iframe.setAttribute('frameborder', 'no');
 				iframe.style.position = 'absolute';
@@ -224,7 +224,7 @@
 				$('#status').text('Is fullscreen: ' + screenfull.isFullscreen);
 
 				if (elem) {
-					$('#element').text('Element: ' + elem.localName + (elem.id ? '#' + elem.id : ''));
+					$('#element').text('Element: ' + elem.localName + (elem.sensor_id ? '#' + elem.sensor_id : ''));
 				}
 
 				if (!screenfull.isFullscreen) {

@@ -2,7 +2,7 @@
 
 
 angular.module('app')
-    .factory('appkeyInterceptor',['NETCONST',  function (NETCONST) {
+    .factory('appkeyInterceptor',['APPCONST',  function (APPCONST) {
         return {
             request: function (config) {
                 config.headers = config.headers || {};

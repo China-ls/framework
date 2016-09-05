@@ -1,23 +1,23 @@
 module.exports = {
-    less: {
+	less: {
         files: {
-            'src/css/app.css': [
-                'src/css/less/app.less'
-            ]
+          'src/css/app.css': [
+            'src/css/less/app.less'
+          ]
         },
         options: {
-            compile: true
+          compile: true
         }
     },
     angular: {
         files: {
             'angular/css/app.min.css': [
+                'bower_components/nprogress/nprogress.css',
                 'bower_components/bootstrap/dist/css/bootstrap.css',
                 'bower_components/animate.css/animate.css',
                 'bower_components/font-awesome/css/font-awesome.css',
                 'bower_components/simple-line-icons/css/simple-line-icons.css',
-                'bower_components/angular-bootstrap-nav-tree/dist/abn_tree.css',
-                'bower_components/angularjs-toaster/toaster.css',
+                'bower_components/angularjs-toaster/toaster.min.css',
                 'src/css/*.css'
             ]
         },
@@ -32,8 +32,6 @@ module.exports = {
                 'bower_components/animate.css/animate.css',
                 'bower_components/font-awesome/css/font-awesome.css',
                 'bower_components/simple-line-icons/css/simple-line-icons.css',
-                'bower_components/angular-bootstrap-nav-tree/dist/abn_tree.css',
-                'bower_components/angularjs-toaster/toaster.css',
                 'src/css/*.css'
             ]
         },

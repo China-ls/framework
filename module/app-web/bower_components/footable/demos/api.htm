@@ -39,10 +39,10 @@
 			<li><a href="#docs">Docs</a></li>
 		</ul>
 		<div class="tab-content">
-			<div class="tab-pane active" id="demo">
+			<div class="tab-pane active" sensor_id="demo">
                 <a class="table_redraw" href="#call">redraw</a> |
                 <a class="random_row_toggle" href="#call">toggle a random row</a>
-                <textarea id="console"></textarea>
+                <textarea sensor_id="console"></textarea>
                 <table style="width:300px" class="table demo table-bordered" data-filter="#filter" data-page-size="5" data-page-previous-text="prev" data-page-next-text="next">
                     <thead>
                     <tr>
@@ -124,7 +124,7 @@
                     </tbody>
                 </table>
 			</div>
-			<div class="tab-pane" id="docs">
+			<div class="tab-pane" sensor_id="docs">
                 <h3>FooTable API</h3>
                 <p>You can access most of the FooTable functions very easily. First, get the FooTable object from your table, which is stored in the data:</p>
                 <pre>var footable = $(&#39;.footable&#39;).data(&#39;footable&#39;);</pre>

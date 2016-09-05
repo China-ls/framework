@@ -114,7 +114,7 @@ $(function () {
 
         series: [{
             data: [{
-                id: 'hour',
+                sensor_id: 'hour',
                 y: now.hours,
                 dial: {
                     radius: '60%',
@@ -123,14 +123,14 @@ $(function () {
                     rearLength: 0
                 }
             }, {
-                id: 'minute',
+                sensor_id: 'minute',
                 y: now.minutes,
                 dial: {
                     baseLength: '95%',
                     rearLength: 0
                 }
             }, {
-                id: 'second',
+                sensor_id: 'second',
                 y: now.seconds,
                 dial: {
                     radius: '100%',
@@ -197,7 +197,7 @@ Math.easeOutBounce = function (pos) {
 <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
 <script src="http://cdn.hcharts.cn/highcharts/highcharts-more.js"></script>
 
-<div id="container" style="width: 300px; height: 300px; margin: 0 auto"></div>
+<div sensor_id="container" style="width: 300px; height: 300px; margin: 0 auto"></div>
 
 	</body>
 </html>

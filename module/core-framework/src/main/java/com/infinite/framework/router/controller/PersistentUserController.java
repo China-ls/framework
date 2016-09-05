@@ -5,7 +5,7 @@ import com.infinite.framework.core.web.entity.Response;
 import com.infinite.framework.entity.PersistentUser;
 import com.infinite.framework.router.entity.ResponseCode;
 import com.infinite.framework.service.PersistentUserService;
-import com.infinite.framework.service.exception.ApplcationNotExsistException;
+import com.infinite.framework.service.exception.ApplicationNotExsistException;
 import com.infinite.framework.service.exception.InvalidDataException;
 import org.apache.commons.lang.ArrayUtils;
 import org.apache.commons.lang.StringUtils;
@@ -37,11 +37,11 @@ public class PersistentUserController extends BasicRestController {
             } else if (null == user || StringUtils.isEmpty(user.getUsername()) || StringUtils.isEmpty(user.getPassword())) {
                 response = makeResponse(ResponseCode.PARAM_EMPTY);
             } else {
-                response = makeResponse(ResponseCode.SUCCESS, persistentUserService.saveOrUpdate(appkey, user));
+                response = makeResponse(ResponseCode.SUCCESS, persistentUserService.save(appkey, user));
             }
         } catch (InvalidDataException e) {
             response = makeResponse(ResponseCode.PARAM_EMPTY);
-        } catch (ApplcationNotExsistException e) {
+        } catch (ApplicationNotExsistException e) {
             response = makeResponse(ResponseCode.PARAM_EMPTY);
         } catch (Throwable e) {
             response = makeResponse(ResponseCode.SYSTEM_ERROR);
@@ -69,7 +69,7 @@ public class PersistentUserController extends BasicRestController {
             }
         } catch (InvalidDataException e) {
             response = makeResponse(ResponseCode.PARAM_EMPTY);
-        } catch (ApplcationNotExsistException e) {
+        } catch (ApplicationNotExsistException e) {
             response = makeResponse(ResponseCode.PARAM_EMPTY);
         } catch (Throwable e) {
             response = makeResponse(ResponseCode.SYSTEM_ERROR);
@@ -93,11 +93,11 @@ public class PersistentUserController extends BasicRestController {
             } else if (null == user || StringUtils.isEmpty(user.getId())) {
                 response = makeResponse(ResponseCode.PARAM_EMPTY);
             } else {
-                response = makeResponse(ResponseCode.SUCCESS, persistentUserService.saveOrUpdate(appkey, user));
+                response = makeResponse(ResponseCode.SUCCESS, persistentUserService.save(appkey, user));
             }
         } catch (InvalidDataException e) {
             response = makeResponse(ResponseCode.PARAM_EMPTY);
-        } catch (ApplcationNotExsistException e) {
+        } catch (ApplicationNotExsistException e) {
             response = makeResponse(ResponseCode.PARAM_EMPTY);
         } catch (Throwable e) {
             response = makeResponse(ResponseCode.SYSTEM_ERROR);
@@ -122,7 +122,7 @@ public class PersistentUserController extends BasicRestController {
             }
         } catch (InvalidDataException e) {
             response = makeResponse(ResponseCode.PARAM_EMPTY);
-        } catch (ApplcationNotExsistException e) {
+        } catch (ApplicationNotExsistException e) {
             response = makeResponse(ResponseCode.PARAM_EMPTY);
         } catch (Throwable e) {
             response = makeResponse(ResponseCode.SYSTEM_ERROR);

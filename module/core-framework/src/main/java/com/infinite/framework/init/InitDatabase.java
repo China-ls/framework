@@ -1,26 +1,26 @@
 package com.infinite.framework.init;
 
 import com.google.gson.reflect.TypeToken;
+import com.infinite.framework.core.initializing.Initializing;
 import com.infinite.framework.core.util.JsonUtil;
 import com.infinite.framework.entity.VirtualSensor;
 import com.infinite.framework.persistent.VirtualSensorDAO;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;
 import java.io.InputStream;
 
-public class InitDatabase implements InitializingBean {
+public class InitDatabase implements Initializing {
     private static Logger log = LoggerFactory.getLogger(InitDatabase.class);
 
     @Autowired
     private VirtualSensorDAO virtualSensorDAO;
 
     @Override
-    public void afterPropertiesSet() throws Exception {
+    public void initializing() throws Exception {
         if (log.isDebugEnabled()) {
             log.debug("start init database");
         }

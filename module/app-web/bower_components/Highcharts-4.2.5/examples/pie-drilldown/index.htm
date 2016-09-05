@@ -66,7 +66,7 @@ $(function () {
         drilldown: {
             series: [{
                 name: 'Microsoft Internet Explorer',
-                id: 'Microsoft Internet Explorer',
+                sensor_id: 'Microsoft Internet Explorer',
                 data: [
                     ['v11.0', 24.13],
                     ['v8.0', 17.2],
@@ -77,7 +77,7 @@ $(function () {
                 ]
             }, {
                 name: 'Chrome',
-                id: 'Chrome',
+                sensor_id: 'Chrome',
                 data: [
                     ['v40.0', 5],
                     ['v41.0', 4.32],
@@ -96,7 +96,7 @@ $(function () {
                 ]
             }, {
                 name: 'Firefox',
-                id: 'Firefox',
+                sensor_id: 'Firefox',
                 data: [
                     ['v35', 2.76],
                     ['v36', 2.32],
@@ -109,7 +109,7 @@ $(function () {
                 ]
             }, {
                 name: 'Safari',
-                id: 'Safari',
+                sensor_id: 'Safari',
                 data: [
                     ['v8.0', 2.56],
                     ['v7.1', 0.77],
@@ -121,7 +121,7 @@ $(function () {
                 ]
             }, {
                 name: 'Opera',
-                id: 'Opera',
+                sensor_id: 'Opera',
                 data: [
                     ['v12.x', 0.34],
                     ['v28', 0.24],
@@ -139,10 +139,10 @@ $(function () {
 <script src="http://cdn.hcharts.cn/highcharts/modules/data.js"></script>
 <script src="http://cdn.hcharts.cn/highcharts/modules/drilldown.js"></script>
 
-<div id="container" style="min-width: 310px; max-width: 600px; height: 400px; margin: 0 auto"></div>
+<div sensor_id="container" style="min-width: 310px; max-width: 600px; height: 400px; margin: 0 auto"></div>
 
 <!-- Data from www.netmarketshare.com. Select Browsers => Desktop share by version. Download as tsv. -->
-<pre id="tsv" style="display:none">Browser Version    Total Market Share
+<pre sensor_id="tsv" style="display:none">Browser Version    Total Market Share
 Microsoft Internet Explorer 8.0    26.61%
 Microsoft Internet Explorer 9.0    16.96%
 Chrome 18.0    8.01%

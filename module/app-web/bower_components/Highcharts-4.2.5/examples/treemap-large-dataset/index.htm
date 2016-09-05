@@ -909,7 +909,7 @@ $(function () {
         if (data.hasOwnProperty(region)) {
             regionVal = 0;
             regionP = {
-                id: 'id_' + regionI,
+                sensor_id: 'id_' + regionI,
                 name: region,
                 color: Highcharts.getOptions().colors[regionI]
             };
@@ -917,18 +917,18 @@ $(function () {
             for (country in data[region]) {
                 if (data[region].hasOwnProperty(country)) {
                     countryP = {
-                        id: regionP.id + '_' + countryI,
+                        sensor_id: regionP.sensor_id + '_' + countryI,
                         name: country,
-                        parent: regionP.id
+                        parent: regionP.sensor_id
                     };
                     points.push(countryP);
                     causeI = 0;
                     for (cause in data[region][country]) {
                         if (data[region][country].hasOwnProperty(cause)) {
                             causeP = {
-                                id: countryP.id + '_' + causeI,
+                                sensor_id: countryP.sensor_id + '_' + causeI,
                                 name: causeName[cause],
-                                parent: countryP.id,
+                                parent: countryP.sensor_id,
                                 value: Math.round(+data[region][country][cause])
                             };
                             regionVal += causeP.value;
@@ -977,6 +977,6 @@ $(function () {
 <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
 <script src="http://cdn.hcharts.cn/highcharts/modules/heatmap.js"></script>
 <script src="http://cdn.hcharts.cn/highcharts/modules/treemap.js"></script>
-<div id="container"></div>
+<div sensor_id="container"></div>
 	</body>
 </html>

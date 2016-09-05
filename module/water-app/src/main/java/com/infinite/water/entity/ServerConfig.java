@@ -11,6 +11,10 @@ public class ServerConfig {
     private String port;
     @Value("#{server.context}")
     private String context;
+    @Value("#{server.appkey}")
+    private String appkey;
+    @Value("#{server.namespace_employee_department}")
+    private String namespaceEmployeeDepartment;
 
     public String getIp() {
         return ip;
@@ -34,6 +38,22 @@ public class ServerConfig {
 
     public void setContext(String context) {
         this.context = context;
+    }
+
+    public String getAppkey() {
+        return appkey;
+    }
+
+    public void setAppkey(String appkey) {
+        this.appkey = appkey;
+    }
+
+    public String getNamespaceEmployeeDepartment() {
+        return namespaceEmployeeDepartment;
+    }
+
+    public void setNamespaceEmployeeDepartment(String namespaceEmployeeDepartment) {
+        this.namespaceEmployeeDepartment = namespaceEmployeeDepartment;
     }
 
     public String getServerUrl() {

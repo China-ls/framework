@@ -1,0 +1,135 @@
+<div ng-init="init()">
+
+    <div class="app-container">
+        <div class="row">
+
+
+            <!-- 排行榜 -->
+            <div class="col-lg-6 padder-sm-v pull-in m-l-sm">
+                <div class="sub-title btn-group btn-group-xs">
+                    <label class="btn btn-danger ng-pristine ng-untouched ng-valid active padder-xs"
+                           ng-model="routeStarRadio"
+                           btn-radio="'d'">近一天</label>
+                    <label class="btn btn-danger ng-pristine ng-untouched ng-valid padder-xs"
+                           ng-model="routeStarRadio"
+                           btn-radio="'m'">近一月</label>
+                    <label class="btn btn-danger ng-pristine ng-untouched ng-valid padder-xs"
+                           ng-model="routeStarRadio"
+                           btn-radio="'y'">近一年</label>
+                </div>
+
+                <div class="row wrapper-xs m-xs b-b-dashed b-success">
+                    <h4 class="text-primary">巡检之星</h4>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <img src="img/item_icon.png"
+                                 class="img-full"/>
+                        </div>
+                        <div class="col-sm-offset-1 col-sm-7">
+                            <p><span class="inline w-xs">巡检次数：</span> <span class="text-danger text-2x">16 次</span></p>
+                            <p><span class="inline w-xs">姓名：</span> <span class="text-primary-dk">郑思龙</span></p>
+                            <p><span class="inline w-xs">所属单位：</span> <span class="text-primary-dk">嘉善巡检队</span></p>
+                            <p>
+                                <span class="inline w-xs">巡检指数：</span>
+                                <span>
+                                    <rating ng-model="routeStarScore" max="5" readonly="true"
+                                            state-on="'fa fa-star text-warning'"
+                                            state-off="'fa fa-star-o'"></rating>
+                                </span>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!--告警通知 -->
+                <div class="emegency-wrapper">
+                    <div class="bg-warning wrapper-xs w-xs text-center">
+                        <span class="text-danger">告警中心</span>
+                    </div>
+                    <div class="bg-gd wrapper-sm">
+                        <div class="row">
+                            <div class="col-xs-9 col-xs-9 col-sm-9 col-md-9 col-lg-9">10日内嘉善郑倩发巡检0次。2016.07.29</div>
+                            <div class="col-xs-3 col-xs-3 col-sm-3 col-md-3 col-lg-3 text-danger">待处理</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-9 col-xs-9 col-sm-9 col-md-9 col-lg-9">18日内松江赵正武巡检0次。2016.07.28</div>
+                            <div class="col-xs-3 col-xs-3 col-sm-3 col-md-3 col-lg-3 text-warning">处理中</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-9 col-xs-9 col-sm-9 col-md-9 col-lg-9">20日内海盐罗文江巡检0次。2016.07.29</div>
+                            <div class="col-xs-3 col-xs-3 col-sm-3 col-md-3 col-lg-3 text-success">已处理</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-offset-9 col-sm-offset-9 col-md-offset-9 col-lg-offset-9 col-xs-3 col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                <button class="btn btn-info btn-xs">更&nbsp;&nbsp;多</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--告警通知 -->
+
+            </div>
+            <!-- 排行榜 -->
+
+            <!-- 地图 -->
+            <div class="col-lg-6 map-wrapper">
+                <div id="map_canvas"
+                     class="wrapper-sm m-r b b-a b-gray no-m-sm no-m-xs"
+                     style="min-height:350px;margin-top: 17px; margin-bottom: 5px;"
+                     ui-baidu-map="myMap"
+                     ui-event="{'map-click': 'onMapClick($event, $params)', 'map-loaded': 'onMapLoaded($event, $params)'}"
+                     ui-options="mapOptions">
+                </div>
+
+                <!-- modal -->
+                <script type="text/ng-template" id="mapModalContent.html">
+                    <div ng-include="'tpl/map_modal.html'"></div>
+                </script>
+                <!-- /modal -->
+            </div>
+            <!-- 地图 -->
+
+        </div>
+
+    </div>
+
+    <div class="panel">
+        <div class="panel-heading b-b b-success wrapper-xs">
+            <h5 class="text-danger m-xxs">
+                嘉善巡检队巡检员
+                <span class="text-primary">4</span>
+                人，负责站点
+                <span class="text-primary">12</span>
+                个，最近一日巡检
+                <span class="text-primary">8</span>
+                人次
+            </h5>
+        </div>
+
+        <div class="panel-body">
+            <table st-table="rowCollectionBasic" class="table table-bordered table-striped tb-border">
+                <thead>
+                <tr>
+                    <th>巡检人</th>
+                    <th>巡检站点</th>
+                    <th>巡检时间</th>
+                    <th>停留时长</th>
+                    <th>巡检内容</th>
+                    <th>考勤状态</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="success" ng-repeat="row in routeList" st-select-row="row" ng-click="imageListItemSelect($index)">
+                    <td><a href>{{row.time}}</a></td>
+                    <td><a href>{{row._id}}</a></td>
+                    <td><a href>{{row._id}}</a></td>
+                    <td><a href>{{row._id}}</a></td>
+                    <td><a href>{{row._id}}</a></td>
+                    <td><a href>{{row._id}}</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

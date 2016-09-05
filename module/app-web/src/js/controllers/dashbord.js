@@ -11,8 +11,8 @@ app.controller('DeviceHeaderCtrl', ['$scope', '$http', '$localStorage',
     }]
 );
 
-app.controller('AsideDeviceCtrl', ['$scope', '$http', '$localStorage', '$state', 'NETCONST',
-    function ($scope, $http, $localStorage, $state, NETCONST) {
+app.controller('AsideDeviceCtrl', ['$scope', '$http', '$localStorage', '$state', 'APPCONST',
+    function ($scope, $http, $localStorage, $state, APPCONST) {
         $scope.treeData = [];
         $scope.tree = {};
 
@@ -47,7 +47,7 @@ app.controller('AsideDeviceCtrl', ['$scope', '$http', '$localStorage', '$state',
             return data;
         };
 
-        $http.get(NETCONST.CTX + NETCONST.DEPARTMENT).then(function (response) {
+        $http.get(APPCONST.CTX + APPCONST.DEPARTMENT).then(function (response) {
             var data = $scope.analysDepartment(response.data.data, 0);
             $scope.treeData.push(data);
             try {
@@ -67,15 +67,26 @@ app.controller('AsideDeviceCtrl', ['$scope', '$http', '$localStorage', '$state',
             } else if (branch.type === 'device') {
                 $scope.app.cache.selectParentBranch = $scope.tree.get_parent_branch(branch);
                 // console.warn($scope.tree.get_parent_branch(branch));
-                $state.go("app.device.detail", {id: branch.uuid});
+                $state.go("app.device.tab.map", {id: branch.uuid, device: branch});
             }
         };
     }]
 );
 
+app.controller('MapModalInstanceCtrl', ['$scope', '$modalInstance', 'device', function ($scope, $modalInstance, device) {
+    $scope.device = device;
+    $scope.ok = function () {
+        $modalInstance.close($scope.selected.item);
+    };
+    $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
+    };
+}]);
 
-app.controller('DashbordCtrl', ['$scope', '$http', '$localStorage', 'NETCONST',
-    function ($scope, $http, $localStorage, NETCONST) {
+app.controller('DashbordCtrl', ['$scope', '$http', '$localStorage', 'APPCONST', '$modal', '$log', '$anchorScroll',
+    function ($scope, $http, $localStorage, APPCONST, $modal, $log, $anchorScroll) {
+        $scope.app.settings.asideHide = false;
+        $scope.app.subHeader.goBackHide = true;
         $scope.overlays = [];
         $scope.offlineOpts = {retryInterval: 5000};
         $scope.mapOptions = {
@@ -84,22 +95,35 @@ app.controller('DashbordCtrl', ['$scope', '$http', '$localStorage', 'NETCONST',
                 latitude: 30.883874
             },
             zoom: 17,
-            city: 'ShangHai',
+            city: 'JiaShan',
             enableMapClick: false,
             clientHeight: $scope.baidumapeight,
             overlays: $scope.overlays
         };
 
         $scope.onMapClick = function ($event, $params) {
-            console.warn('clickmap');
         };
         $scope.onMapLoaded = function ($event, $params) {
-            // $scope.app.cache.dashboardMap = $scope.myMap;
             $scope.addMarkers();
         };
 
+        $scope.onMarkerClick = function (event) {
+            var modalInstance = $modal.open({
+                templateUrl: 'mapModalContent.html',
+                controller: 'MapModalInstanceCtrl',
+                resolve: {
+                    device: function () {
+                        return event.target.device;
+                    }
+                }
+            });
+            modalInstance.result.then(function (selectedItem) {
+            }, function () {
+                $log.info('Modal dismissed at: ' + new Date());
+            });
+        };
+
         if ($scope.app.cache.selectParentBranch) {
-            $scope.app.subHeader.goBackHide = true;
             $scope.app.subHeader.contentTitle = $scope.app.cache.selectParentBranch.label;
         }
 
@@ -116,30 +140,43 @@ app.controller('DashbordCtrl', ['$scope', '$http', '$localStorage', 'NETCONST',
         };
 
         $scope.addMarkers = function () {
-            if(!$scope.shouldAddAllSensorsToMap) {
+            if (!$scope.shouldAddAllSensorsToMap) {
                 return;
             }
-            if(!$scope.virtualSensors) {
+            if (!$scope.virtualSensors) {
                 $scope.virtualSensors = $scope.app.cache.virtualSensors;
             }
             if (!$scope.virtualSensors || $scope.virtualSensors.length <= 0) {
                 return;
             }
             $scope.myMap.clearOverlays();
-            for (var i = 0; i < $scope.virtualSensors.length; i++) {
-                var item = $scope.virtualSensors[i];
-                var point = new BMap.Point(item.longitude, item.latitude);
-                var marker = new BMap.Marker(point);
-                $scope.myMap.addOverlay(marker);
-                $scope.myMap.panTo(point);
+            if (null != $scope.virtualSensors) {
+                for (var i = 0; i < $scope.virtualSensors.length; i++) {
+                    var item = $scope.virtualSensors[i].sensor;
+                    var point = new BMap.Point(item.longitude, item.latitude);
+                    var marker = new BMap.Marker(point);
+                    marker.device = item;
+                    $scope.myMap.addOverlay(marker);
+                    $scope.myMap.centerAndZoom(point, 13);
+                    marker.addEventListener('click', $scope.onMarkerClick);
+                }
             }
             $scope.shouldAddAllSensorsToMap = true;
         };
 
-        $http.get(NETCONST.CTX + NETCONST.SENSORS).then(function (response) {
+        $http.get(APPCONST.CTX + APPCONST.SENSORS).then(function (response) {
             $scope.virtualSensors = response.data.data;
-            for( var i = 0; i < $scope.virtualSensors.length; i ++) {
-                $scope.virtualSensors[i].csl = 12 + parseInt(Math.random() * 100) / 100.0;
+            if (!$scope.virtualSensors) {
+                return;
+            }
+            for (var i = 0; i < $scope.virtualSensors.length; i++) {
+                $scope.virtualSensors[i].sensor.csl = 12 + parseInt(Math.random() * 100) / 100.0;
+                $scope.virtualSensors[i].data.forEach(function (dateItem) {
+                    if (dateItem.comp_type === 'flowmeter_sensor') {
+                        dateItem.time = $scope.formatDate(new Date(dateItem.time), "yyyy年MM月dd日HH:mm:ss");
+                        $scope.virtualSensors[i].sensor.flowmeter_data = dateItem;
+                    }
+                });
             }
             $scope.app.cache.virtualSensors = $scope.virtualSensors;
             $scope.addMarkers();
@@ -149,8 +186,8 @@ app.controller('DashbordCtrl', ['$scope', '$http', '$localStorage', 'NETCONST',
         $scope.showInMap = function (id) {
             var item = null;
             for (var i = 0; i < $scope.virtualSensors.length; i++) {
-                if( id === $scope.virtualSensors[i].id ) {
-                    item = $scope.virtualSensors[i];
+                if (id === $scope.virtualSensors[i].sensor.sensor_id) {
+                    item = $scope.virtualSensors[i].sensor;
                     break;
                 }
             }
@@ -158,11 +195,13 @@ app.controller('DashbordCtrl', ['$scope', '$http', '$localStorage', 'NETCONST',
                 $scope.myMap.clearOverlays();
                 var point = new BMap.Point(item.longitude, item.latitude);
                 var marker = new BMap.Marker(point);
+                marker.device = item;
                 $scope.myMap.addOverlay(marker);
-                $scope.myMap.panTo(point);
-                // $scope.myMap.addMaprker();
+                $scope.myMap.centerAndZoom(point, 13);
+                marker.addEventListener('click', $scope.onMarkerClick);
             }
             $scope.shouldAddAllSensorsToMap = true;
+            $anchorScroll();
             $scope.Toast("success", "提示", "地图定位成功.");
         };
 
@@ -171,25 +210,29 @@ app.controller('DashbordCtrl', ['$scope', '$http', '$localStorage', 'NETCONST',
             var temp = {};
             try {
                 angular.forEach(data, function (device) {
-                    if (device.comp_id === '2') {
-                        temp[device.uuid] = {
+                    if (device.comp_type === 'flowmeter_sensor') {
+                        temp[device.sensor_id] = {
                             instant: device.instant,
                             positive_total: device.positive_total
                         };
                     }
                 });
             } catch (e) {
+                console.error(e);
+            }
+            if (!$scope.virtualSensors) {
+                return;
             }
             var timestamp = new Date();
             var timeFormatText = $scope.formatDate(timestamp, "yyyy年MM月dd日HH:mm:ss");
             for (var i = 0; i < $scope.virtualSensors.length; i++) {
-                var item = $scope.virtualSensors[i];
+                var item = $scope.virtualSensors[i].sensor;
                 try {
-                    $scope.virtualSensors[i].instant = temp[item.id].instant;
-                    $scope.virtualSensors[i].positive_total = temp[item.id].positive_total;
+                    $scope.virtualSensors[i].sensor.flowmeter_data.instant = temp[item.sensor_id].instant;
+                    $scope.virtualSensors[i].sensor.flowmeter_data.positive_total = temp[item.sensor_id].positive_total;
+                    $scope.virtualSensors[i].sensor.flowmeter_data.time = timeFormatText;
                 } catch (e) {
                 }
-                $scope.virtualSensors[i].updateTime = timeFormatText;
             }
         });
     }])

@@ -1,7 +1,7 @@
 <div class="wrapper-md">
     <div class="panel b-a" ng-controller="MapCtrl">
         <div class="panel-heading">Google Map</div>
-        <div id="map_canvas" style="min-height:400px" ui-map="myMap"
+        <div sensor_id="map_canvas" style="min-height:400px;" ui-map="myMap"
              ui-event="{'map-click': 'addMarker($event, $params)', 'map-zoom_changed': 'setZoomMessage(myMap.getZoom())' }"
              ui-options="mapOptions">
         </div>

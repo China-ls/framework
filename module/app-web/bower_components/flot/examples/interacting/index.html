@@ -41,7 +41,7 @@
 			}
 		});
 
-		$("<div id='tooltip'></div>").css({
+		$("<div sensor_id='tooltip'></div>").css({
 			position: "absolute",
 			display: "none",
 			border: "1px solid #fdd",
@@ -86,31 +86,31 @@
 	</script>
 </head>
 <body>
-	<div id="header">
+	<div sensor_id="header">
 		<h2>Interactivity</h2>
 	</div>
 
-	<div id="content">
+	<div sensor_id="content">
 
 		<div class="demo-container">
-			<div id="placeholder" class="demo-placeholder"></div>
+			<div sensor_id="placeholder" class="demo-placeholder"></div>
 		</div>
 
 		<p>One of the goals of Flot is to support user interactions. Try pointing and clicking on the points.</p>
 
 		<p>
-			<label><input id="enablePosition" type="checkbox" checked="checked"></input>Show mouse position</label>
-			<span id="hoverdata"></span>
-			<span id="clickdata"></span>
+			<label><input sensor_id="enablePosition" type="checkbox" checked="checked"></input>Show mouse position</label>
+			<span sensor_id="hoverdata"></span>
+			<span sensor_id="clickdata"></span>
 		</p>
 
 		<p>A tooltip is easy to build with a bit of jQuery code and the data returned from the plot.</p>
 
-		<p><label><input id="enableTooltip" type="checkbox" checked="checked"></input>Enable tooltip</label></p>
+		<p><label><input sensor_id="enableTooltip" type="checkbox" checked="checked"></input>Enable tooltip</label></p>
 
 	</div>
 
-	<div id="footer">
+	<div sensor_id="footer">
 		Copyright &copy; 2007 - 2014 IOLA and Ole Laursen
 	</div>
 

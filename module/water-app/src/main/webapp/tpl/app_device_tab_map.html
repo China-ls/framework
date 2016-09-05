@@ -1,0 +1,17 @@
+<!-- 网络请求动画 -->
+<div cg-busy="{promise:loadDataPromise,message:'数据加载中...'}"></div>
+<!-- 网络请求动画 -->
+
+<div id="map_canvas"
+     class="wrapper b b-a b-gray m-sm"
+     style="height:400px;"
+     ui-baidu-map="myMap"
+     ui-event="{'map-click': 'onMapClick($event, $params)', 'map-loaded': 'onMapLoaded($event, $params)'}"
+     ui-options="mapOptions">
+</div>
+
+<!-- modal -->
+<script type="text/ng-template" id="mapModalContent.html">
+    <div ng-include="'tpl/map_modal.html'"></div>
+</script>
+<!-- /modal -->

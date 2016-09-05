@@ -25,7 +25,7 @@ app.controller('FormDemoCtrl', ['$scope', function ($scope) {
         {text: 'Third', value: 'Three'}
     ];
 
-    $scope.list_of_string = ['tag1', 'tag2']
+    $scope.list_of_string = ['tag1', 'tag2'];
     $scope.select2Options = {
         'multiple': true,
         'simple_tags': true,

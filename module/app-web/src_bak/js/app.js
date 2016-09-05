@@ -8,7 +8,6 @@ angular.module('app', [
     'ngSanitize',
     'ngTouch',
     'ngStorage',
-    'toaster',
     'ui.router',
     'ui.bootstrap',
     'ui.utils',
@@ -16,7 +15,6 @@ angular.module('app', [
     'ui.jq',
     'oc.lazyLoad',
     'pascalprecht.translate',
-    'angularBootstrapNavTree',
-    "highcharts-ng",
-    'baiduMap'
+    "toaster",
+    "ngWebSocket"
 ]);

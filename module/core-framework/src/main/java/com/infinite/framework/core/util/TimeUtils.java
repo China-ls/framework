@@ -1,5 +1,7 @@
 package com.infinite.framework.core.util;
 
+import org.joda.time.DateTime;
+
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -37,6 +39,14 @@ public abstract class TimeUtils {
             default:
                 return 1;
         }
+    }
+
+    public static long getMinMillsOfDay(String day) {
+        return new DateTime(day).withHourOfDay(0).withMinuteOfHour(0).withSecondOfMinute(0).withMillisOfSecond(0).getMillis();
+    }
+
+    public static long getMaxMillsOfDay(String day) {
+        return new DateTime(day).withHourOfDay(23).withMinuteOfHour(59).withSecondOfMinute(59).withMillisOfSecond(59).getMillis();
     }
 
 }

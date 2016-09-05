@@ -20,7 +20,7 @@ public interface PersistentUserService {
      * @param user
      * @return
      */
-    public PersistentUser saveOrUpdate(String appkey, PersistentUser user);
+    public PersistentUser save(String appkey, PersistentUser user);
 
     public long delete(String appkey, String... ids);
 

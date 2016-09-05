@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.integration.channel.PublishSubscribeChannel;
 import org.springframework.integration.mqtt.inbound.MqttPahoMessageDrivenChannelAdapter;
+import org.springframework.integration.mqtt.outbound.MqttPahoMessageHandler;
 import org.springframework.integration.support.MutableMessage;
 import org.springframework.messaging.MessageHandler;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,9 @@ public class MqttServiceImpl implements MqttService, InitializingBean {
     @Qualifier("jmsAdapter")
     @Autowired
     private MqttPahoMessageDrivenChannelAdapter channelAdapter;
+    @Qualifier("jmsPublisher")
+    @Autowired
+    private MqttPahoMessageHandler mqttPahoMessageHandler;
 
     @Qualifier("jmsChannel")
     @Autowired
@@ -44,7 +48,9 @@ public class MqttServiceImpl implements MqttService, InitializingBean {
     public void sendTextMessage(String destination, final String message) {
         MutableMessage<String> textMessage = new MutableMessage<String>(message);
         textMessage.getHeaders().put("mqtt_topic", destination);
-        messageChannel.send(textMessage);
+        mqttPahoMessageHandler.handleMessage(textMessage);
+//        boolean send = messageChannel.send(textMessage);
+//        System.out.println( "send msg to mq: " + send );
     }
 
     @Override

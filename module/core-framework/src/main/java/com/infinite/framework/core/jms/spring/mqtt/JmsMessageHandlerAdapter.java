@@ -7,10 +7,6 @@ import org.springframework.messaging.MessagingException;
  * @author by hx on 16-7-26.
  */
 public class JmsMessageHandlerAdapter implements JmsMessageHandler {
-    @Override
-    public boolean supportDestination(String destination) {
-        return false;
-    }
 
     @Override
     public void handleMessage(Message<?> message) throws MessagingException {

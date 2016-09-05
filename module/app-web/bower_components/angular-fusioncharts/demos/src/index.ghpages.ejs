@@ -18,7 +18,7 @@
         <script type="text/javascript">
             window.fcDemos = {};
             <% for(var i=0; i<demos.length; i++) { %>
-                window.fcDemos['<%= demos[i].id %>'] =  {
+                window.fcDemos['<%= demos[i].sensor_id %>'] =  {
                     js: <%- demos[i].jsCode %>,
                     html: <%- demos[i].htmlCode %>
                 };
@@ -122,7 +122,7 @@
             <div class="col-md-3">
                 <div class="list-group" role="tablist">
                     <% for(var i=0; i<demos.length; i++) { %>
-                        <a href="#/demos/<%=demos[i].id %>" class="list-group-item">
+                        <a href="#/demos/<%=demos[i].sensor_id %>" class="list-group-item">
                             <h4><%= demos[i].title %></h4>
                             <p><%= demos[i].desc %></p>
                         </a>

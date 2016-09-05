@@ -31,9 +31,9 @@
     <li><a href="#docs">Docs</a></li>
   </ul>
   <div class="tab-content">
-    <div class="tab-pane active" id="demo">
+    <div class="tab-pane active" sensor_id="demo">
       <p>
-        Search: <input id="filter" type="text"/>
+        Search: <input sensor_id="filter" type="text"/>
         Status: <select class="filter-status">
         <option></option>
         <option value="active">Active</option>
@@ -137,7 +137,7 @@
         </tbody>
       </table>
     </div>
-    <div class="tab-pane" id="setup">
+    <div class="tab-pane" sensor_id="setup">
       <p>
         Check out the <a href="getting-started.htm#setup">getting started</a> demo to see how to setup FooTable.
       </p>
@@ -146,7 +146,7 @@
       <p>You simply need to include the sorting add-on javascript file to make your table filterable:</p>
       <pre>&lt;script src=&quot;path_to_your_js/footable.filter.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</pre>
     </div>
-    <div class="tab-pane" id="docs">
+    <div class="tab-pane" sensor_id="docs">
       <h4>Filtering</h4>
 
       <p>Add a text input field to your page, and then tell your FooTable to "watch" it by supplying a data attribute <code>data-filter=#filter</code> on your table element. Where <code>#filter</code>

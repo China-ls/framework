@@ -22,7 +22,7 @@
     </script>
   </head>
   <body>
-    <div id="fb-root"></div>    
+    <div sensor_id="fb-root"></div>
     <div class="jumbotron">
       <div class="container">
         <h1>Bootstrap Tags Input</h1>
@@ -42,11 +42,11 @@
             </li>
             <li>
               <a href="https://twitter.com/share" class="navbar-link twitter-share-button" data-hashtags="bootstraptagsinput">Tweet</a>
-              <script>!function (d, s, id) {
+              <script>!function (d, s, sensor_id) {
                   var js, fjs = d.getElementsByTagName(s)[0];
-                  if (!d.getElementById(id)) {
+                  if (!d.getElementById(sensor_id)) {
                       js = d.createElement(s);
-                      js.id = id;
+                      js.sensor_id = sensor_id;
                       js.src = "//platform.twitter.com/widgets.js";
                       fjs.parentNode.insertBefore(js, fjs);
                   }
@@ -70,7 +70,7 @@
       </div>
     </div>
     <div class="container">
-      <section id="examples">
+      <section sensor_id="examples">
         <div class="page-header">
           <h2>Examples</h2>
         </div>
@@ -88,7 +88,7 @@
                   Show code
                 </a>
               </div>
-              <div id="accordion_example_markup" class="accordion-body collapse">
+              <div sensor_id="accordion_example_markup" class="accordion-body collapse">
                 <div class="accordion-inner highlight">
                   <pre><code data-language="html">&lt;input type=&quot;text&quot; value=&quot;Amsterdam,Washington,Sydney,Beijing,Cairo&quot; data-role=&quot;tagsinput&quot; /&gt;</code></pre>
                 </div>
@@ -119,7 +119,7 @@
                   Show code
                 </a>
               </div>
-              <div id="example_multivalue" class="accordion-body collapse">
+              <div sensor_id="example_multivalue" class="accordion-body collapse">
                 <div class="accordion-inner">
                   <pre><code data-language="html">&lt;select multiple data-role="tagsinput"&gt;
   &lt;option value="Amsterdam"&gt;Amsterdam&lt;/option&gt;
@@ -149,7 +149,7 @@
                   Show code
                 </a>
               </div>
-              <div id="example_typeahead" class="accordion-body collapse">
+              <div sensor_id="example_typeahead" class="accordion-body collapse">
                 <div class="accordion-inner">
                   <pre><code data-language="html">&lt;input type=&quot;text&quot; value=&quot;Amsterdam,Washington&quot; data-role=&quot;tagsinput&quot; /&gt;
 &lt;script&gt;
@@ -185,7 +185,7 @@ $('input').tagsinput({
         <div class="example example_objects_as_tags">
           <h3>Objects as tags</h3>
           <p>
-            Instead of just adding strings as tags, bind objects to your tags. This makes it possible to set id values in your input field's value, instead of just the tag's text.
+            Instead of just adding strings as tags, bind objects to your tags. This makes it possible to set sensor_id values in your input field's value, instead of just the tag's text.
           </p>
           <div class="bs-example">
             <input type="text" />
@@ -197,7 +197,7 @@ $('input').tagsinput({
                   Show code
                 </a>
               </div>
-              <div id="accordion_example_objects_as_tags" class="accordion-body collapse">
+              <div sensor_id="accordion_example_objects_as_tags" class="accordion-body collapse">
                 <div class="accordion-inner">
                   <pre><code data-language="html">&lt;input type=&quot;text&quot; /&gt;
 &lt;script&gt;
@@ -246,7 +246,7 @@ elt.tagsinput('add', { "value": 13, "text": "Cairo"       , "continent": "Africa
                   Show code
                 </a>
               </div>
-              <div id="accordion_example_tagclass" class="accordion-body collapse">
+              <div sensor_id="accordion_example_tagclass" class="accordion-body collapse">
                 <div class="accordion-inner">
                   <pre><code data-language="html">&lt;input type=&quot;text&quot; /&gt;
 &lt;script&gt;
@@ -289,7 +289,7 @@ elt.tagsinput('add', { "value": 13, "text": "Cairo"       , "continent": "Africa
           <table class="table table-bordered table-condensed"><thead><tr><th>statement</th><th>returns</th></tr></thead><tbody><tr><td><code>$("input").val()</code></td><td><pre class="val"><code data-language="javascript"></code></pre></td></tr><tr><td><code>$("input").tagsinput('items')</code></td><td><pre class="items"><code data-language="javascript"></code></pre></td></tr></tbody></table>
         </div>
 
-        <!-- div id="angular" class="example example_angular" ng-app="AngularExample" ng-controller="CityTagsInputController">
+        <!-- div sensor_id="angular" class="example example_angular" ng-app="AngularExample" ng-controller="CityTagsInputController">
           <h3>AngularJS support</h3>
           <p>
             Include <code>bootstrap-tagsinput-angular.js</code> and register the 'bootstrap-tagsinput' in your Angular JS application to use the bootstrap-tagsinput directive.
@@ -310,7 +310,7 @@ elt.tagsinput('add', { "value": 13, "text": "Cairo"       , "continent": "Africa
                   Show code
                 </a>
               </div>
-              <div id="example_angular" class="accordion-body collapse">
+              <div sensor_id="example_angular" class="accordion-body collapse">
                 <div class="accordion-inner">
                   <pre><code data-language="html">&lt;bootstrap-tagsinput
   ng-model="cities"
@@ -366,7 +366,7 @@ angular.module('AngularExample', ['bootstrap-tagsinput'])
         </div>
       </section -->
 
-      <section id="options">
+      <section sensor_id="options">
         <div class="page-header">
           <h2>Options</h2>
         </div>
@@ -397,11 +397,11 @@ angular.module('AngularExample', ['bootstrap-tagsinput'])
               <td>
                 <p>When adding objects as tags, itemValue <em>must</em> be set to the name of the property containing the item's value, or a function returning an item's value.</p>
                 <pre><code data-language="javascript">$('input').tagsinput({
-    itemValue: 'id'
+    itemValue: 'sensor_id'
 });</code></pre>
                 <pre><code data-language="javascript">$('input').tagsinput({
   itemValue: function(item) {
-    return item.id;
+    return item.sensor_id;
   }
 });</code></pre>
               </td>
@@ -522,7 +522,7 @@ angular.module('AngularExample', ['bootstrap-tagsinput'])
         </table>
       </section>
 
-      <section id="methods">
+      <section sensor_id="methods">
         <div class="page-header">
           <h2>Methods</h2>
         </div>
@@ -541,7 +541,7 @@ angular.module('AngularExample', ['bootstrap-tagsinput'])
 
                 <pre><code data-language="javascript">$('input').tagsinput('add', 'some tag');</code></pre>
 
-                <pre><code data-language="javascript">$('input').tagsinput('add', { id: 1, text: 'some tag' });</code></pre>
+                <pre><code data-language="javascript">$('input').tagsinput('add', { sensor_id: 1, text: 'some tag' });</code></pre>
               </td>
             </tr>
             <tr>
@@ -551,7 +551,7 @@ angular.module('AngularExample', ['bootstrap-tagsinput'])
 
                 <pre><code data-language="javascript">$('input').tagsinput('remove', 'some tag');</code></pre>
 
-                <pre><code data-language="javascript">$('input').tagsinput('remove', { id: 1, text: 'some tag' });</code></pre>
+                <pre><code data-language="javascript">$('input').tagsinput('remove', { sensor_id: 1, text: 'some tag' });</code></pre>
               </td>
             </tr>
             <tr>
@@ -599,7 +599,7 @@ angular.module('AngularExample', ['bootstrap-tagsinput'])
         </table>
       </section>
 
-      <section id="methods">
+      <section sensor_id="methods">
         <div class="page-header">
           <h2>Events</h2>
         </div>

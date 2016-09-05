@@ -1,0 +1,203 @@
+<div ng-init="init()">
+
+    <div class="panel">
+        <div class="panel-heading b-b b-success wrapper-xs">
+
+            <div class="row">
+                <div class="col-sm-2">
+                    <h5 class="m-xxs l-h-2x">
+                        <span class="text-primary">人员列表</span>
+                    </h5>
+                </div>
+                <div class="col-sm-10">
+                    <div class="pull-right">
+                        <button class="btn btn-info btn-sm btn-addon w-xs-xs" ng-click="addNode()">
+                            <i class="fa fa-plus hidden-xs"></i>
+                            增加子节点
+                        </button>
+                        <button class="btn btn-info btn-sm btn-addon w-xs-xs" ng-click="addRouter()">
+                            <i class="fa fa-plus hidden-xs"></i>
+                            增加人员
+                        </button>
+                        <button class="btn btn-success btn-sm btn-addon w-xs-xs" ng-click="edit()">
+                            <i class="fa fa-edit hidden-xs"></i>
+                            编辑
+                        </button>
+                        <button class="btn btn-danger btn-sm btn-addon w-xs-xs" ng-click="delete()">
+                            <i class="fa fa-trash-o hidden-xs"></i>
+                            删除
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix panel-body">
+            <table st-table="rowCollectionBasic" class="table table-bordered table-striped tb-border">
+                <thead>
+                <tr>
+                    <th>名称</th>
+                    <th>类型</th>
+                    <th>所辖站点数</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="success" st-select-row="row">
+                    <td>
+                        <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-flag text-danger"></i>
+                        浙江爱迪曼环保科技有限公司
+                    </td>
+                    <td>根节点</td>
+                    <td>56</td>
+                </tr>
+                <tr class="success" st-select-row="row">
+                    <td class="level1">
+                        <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-flag text-warning"></i>
+                        嘉兴市
+                    </td>
+                    <td>一级节点</td>
+                    <td>23</td>
+                </tr>
+
+                <tr class="success" st-select-row="row">
+                    <td class="level2">
+                        <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-flag text-info"></i>
+                        嘉善县
+                    </td>
+                    <td>二级节点</td>
+                    <td>23</td>
+                </tr>
+
+                <tr class="success" st-select-row="row">
+                    <td class="level3">
+                        <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-flag text-success"></i>
+                        西塘镇
+                    </td>
+                    <td>三级节点</td>
+                    <td>4</td>
+                </tr>
+
+                <tr class="success" st-select-row="row">
+                    <td class="level4">
+                        <i class="fa fa-map-marker text-info-dk"></i>
+                        张家村站点
+                    </td>
+                    <td>站点</td>
+                    <td></td>
+                </tr>
+                <tr class="success" st-select-row="row">
+                    <td class="level4">
+                        <i class="fa fa-map-marker text-info-dk"></i>
+                        李庄站点
+                    </td>
+                    <td>站点</td>
+                    <td></td>
+                </tr>
+                <tr class="success" st-select-row="row">
+                    <td class="level4">
+                        <i class="fa fa-map-marker text-info-dk"></i>
+                        文庙站点
+                    </td>
+                    <td>站点</td>
+                    <td></td>
+                </tr>
+
+                <tr class="success" st-select-row="row">
+                    <td class="level3">
+                        <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-flag text-success"></i>
+                        干窑镇
+                    </td>
+                    <td>三级节点</td>
+                    <td>4</td>
+                </tr>
+
+                <tr class="success" st-select-row="row">
+                    <td class="level3">
+                        <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-flag text-success"></i>
+                        陶庄镇
+                    </td>
+                    <td>三级节点</td>
+                    <td>4</td>
+                </tr>
+
+                <tr class="success" st-select-row="row">
+                    <td class="level3">
+                        <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-flag text-success"></i>
+                        天壬镇
+                    </td>
+                    <td>三级节点</td>
+                    <td>4</td>
+                </tr>
+
+                <tr class="success" st-select-row="row">
+                    <td class="level1">
+                        <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-flag text-warning"></i>
+                        杭州市
+                    </td>
+                    <td>一级节点</td>
+                    <td>0</td>
+                </tr>
+                <tr class="success" st-select-row="row">
+                    <td class="level1">
+                        <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-flag text-warning"></i>
+                        湖州市
+                    </td>
+                    <td>一级节点</td>
+                    <td>0</td>
+                </tr>
+                <tr class="success" st-select-row="row">
+                    <td class="level1">
+                        <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-flag text-warning"></i>
+                        宁波市
+                    </td>
+                    <td>一级节点</td>
+                    <td>0</td>
+                </tr>
+                <tr class="success" st-select-row="row">
+                    <td class="level1">
+                        <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-flag text-warning"></i>
+                        绍兴市
+                    </td>
+                    <td>一级节点</td>
+                    <td>0</td>
+                </tr>
+                <tr class="success" st-select-row="row">
+                    <td class="level1">
+                        <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-flag text-warning"></i>
+                        台州市
+                    </td>
+                    <td>一级节点</td>
+                    <td>0</td>
+                </tr>
+                <tr class="success" st-select-row="row">
+                    <td class="level1">
+                        <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-flag text-warning"></i>
+                        温州市
+                    </td>
+                    <td>一级节点</td>
+                    <td>0</td>
+                </tr>
+
+                <!--<tr class="success" ng-repeat="row in routeList" st-select-row="row">-->
+                <!--<td><a href>{{row._id}}</a></td>-->
+                <!--<td><a href>{{row._id}}</a></td>-->
+                <!--<td><a href>{{row._id}}</a></td>-->
+                <!--</tr>-->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

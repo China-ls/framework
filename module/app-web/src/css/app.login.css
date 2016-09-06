@@ -1,0 +1,19 @@
+.app-login-body {
+  background-color: #f2f2f2;
+}
+.app-login {
+  height: 550px;
+  padding-top: 120px;
+}
+.app-login .login-form-title {
+  font-family: '黑体 Bold', '黑体 Regular', '黑体';
+  font-weight: 700;
+  font-style: normal;
+  font-size: 28px;
+  color: #5e5e5e;
+}
+.app-login .powered-by {
+  color: #868686;
+  display: inline-block;
+  padding-top: 10px;
+}

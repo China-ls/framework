@@ -32,4 +32,9 @@ public class InsertOne extends AbstractBulkModel {
     public WriteModel convertToWriteModel() {
         return new InsertOneModel<Bson>(document);
     }
+
+    public AbstractBulkModel appendDocument(Document document) {
+        this.document.putAll(document);
+        return this;
+    }
 }

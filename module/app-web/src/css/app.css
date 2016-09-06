@@ -3478,6 +3478,9 @@ fieldset[disabled] .i-checks input + i:before {
 .bg-gray-only {
   background-color: #ccc;
 }
+.bg-light-gray1-only {
+  background-color: #efefef;
+}
 .bg-light-gray-only {
   background-color: #dfdfdf;
 }
@@ -4787,6 +4790,9 @@ a.text-black:hover {
     background-color: #7266ba;
   }
 }
+#deviceSubMenuWrapper {
+  padding: 0 5px;
+}
 #deviceSubMenuWrapper .nav-tabs > li {
   margin-bottom: 0;
 }
@@ -4825,4 +4831,23 @@ a.text-black:hover {
 }
 .table > tbody > tr .level11 {
   padding-left: 120px;
+}
+.app-login-body {
+  background-color: #f2f2f2;
+}
+.app-login {
+  height: 550px;
+  padding-top: 120px;
+}
+.app-login .login-form-title {
+  font-family: '黑体 Bold', '黑体 Regular', '黑体';
+  font-weight: 700;
+  font-style: normal;
+  font-size: 28px;
+  color: #5e5e5e;
+}
+.app-login .powered-by {
+  color: #868686;
+  display: inline-block;
+  padding-top: 10px;
 }

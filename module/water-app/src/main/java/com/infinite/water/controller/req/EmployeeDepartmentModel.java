@@ -3,14 +3,24 @@ package com.infinite.water.controller.req;
 import com.infinite.water.entity.BasicEntity;
 import com.infinite.water.entity.EmployeeDepartment;
 import org.apache.commons.lang.StringUtils;
+import org.bson.types.ObjectId;
 
 public class EmployeeDepartmentModel extends BasicEntity {
+    private ObjectId id;
     private String name;
     private String contact;
     private String address;
     private String pid;
     private String ppath;
     private int pl;
+
+    public ObjectId getId() {
+        return id;
+    }
+
+    public void setId(ObjectId id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -62,6 +72,7 @@ public class EmployeeDepartmentModel extends BasicEntity {
 
     public EmployeeDepartment convertToEmployeeDepartment() {
         EmployeeDepartment department = new EmployeeDepartment();
+        department.setId(id);
         department.setName(name);
         department.setAddress(address);
         department.setContact(contact);
@@ -77,7 +88,8 @@ public class EmployeeDepartmentModel extends BasicEntity {
     @Override
     public String toString() {
         return "EmployeeDepartmentModel{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", contact='" + contact + '\'' +
                 ", address='" + address + '\'' +
                 ", pid='" + pid + '\'' +

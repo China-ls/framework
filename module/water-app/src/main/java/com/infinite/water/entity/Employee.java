@@ -3,19 +3,19 @@ package com.infinite.water.entity;
 import com.google.gson.annotations.SerializedName;
 import org.bson.types.ObjectId;
 
-import java.sql.Timestamp;
+import java.util.Date;
 
 public class Employee extends BasicEntity {
     @SerializedName("_id")
     private ObjectId id;
     private String name;
-    private String type;
-    private String sex;
+    private int type;
+    private int sex;
     private String departmentId;
-    private Timestamp born;
-    private String contact;
+    private Date birthday;
+    private String phone;
     private String address;
-    private String identityNumber;
+    private String identity;
     private int sort;
 
     public ObjectId getId() {
@@ -34,36 +34,44 @@ public class Employee extends BasicEntity {
         this.name = name;
     }
 
-    public String getType() {
+    public int getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(int type) {
         this.type = type;
     }
 
-    public String getSex() {
+    public int getSex() {
         return sex;
     }
 
-    public void setSex(String sex) {
+    public void setSex(int sex) {
         this.sex = sex;
     }
 
-    public Timestamp getBorn() {
-        return born;
+    public String getDepartmentId() {
+        return departmentId;
     }
 
-    public void setBorn(Timestamp born) {
-        this.born = born;
+    public void setDepartmentId(String departmentId) {
+        this.departmentId = departmentId;
     }
 
-    public String getContact() {
-        return contact;
+    public Date getBirthday() {
+        return birthday;
     }
 
-    public void setContact(String contact) {
-        this.contact = contact;
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getAddress() {
@@ -74,20 +82,12 @@ public class Employee extends BasicEntity {
         this.address = address;
     }
 
-    public String getIdentityNumber() {
-        return identityNumber;
+    public String getIdentity() {
+        return identity;
     }
 
-    public void setIdentityNumber(String identityNumber) {
-        this.identityNumber = identityNumber;
-    }
-
-    public String getDepartmentId() {
-        return departmentId;
-    }
-
-    public void setDepartmentId(String departmentId) {
-        this.departmentId = departmentId;
+    public void setIdentity(String identity) {
+        this.identity = identity;
     }
 
     public int getSort() {
@@ -101,15 +101,15 @@ public class Employee extends BasicEntity {
     @Override
     public String toString() {
         return "Employee{" +
-                "id='" + id + '\'' +
+                "id=" + id +
                 ", name='" + name + '\'' +
-                ", type='" + type + '\'' +
-                ", sex='" + sex + '\'' +
+                ", type=" + type +
+                ", sex=" + sex +
                 ", departmentId='" + departmentId + '\'' +
-                ", born=" + born +
-                ", contact='" + contact + '\'' +
+                ", birthday=" + birthday +
+                ", phone='" + phone + '\'' +
                 ", address='" + address + '\'' +
-                ", identityNumber='" + identityNumber + '\'' +
+                ", identity='" + identity + '\'' +
                 ", sort=" + sort +
                 '}';
     }

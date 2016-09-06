@@ -23,4 +23,8 @@ public class DeleteMany extends AbstractBulkModel {
     public WriteModel convertToWriteModel() {
         return new DeleteManyModel(filter);
     }
+
+    public AbstractBulkModel appendDocument(Document document) {
+        return this;
+    }
 }

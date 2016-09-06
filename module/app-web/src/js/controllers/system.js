@@ -49,7 +49,7 @@ app.controller('SystemInformationCtrl', ['$scope', '$http', '$localStorage', '$m
             }
         };
 
-        $http.get(NETCONST.CTX + NETCONST.SYSTEM_INFORMATION)
+        $http.get(APPCONST.CTX + APPCONST.SYSTEM_INFORMATION)
             .then(function (response) {
                 $scope.sysinfo = response.data;
                 if ($scope.sysinfo) {
@@ -65,7 +65,7 @@ app.controller('SystemInformationCtrl', ['$scope', '$http', '$localStorage', '$m
                     $scope.sysinfo.jvm_metrics.start_time = $scope.formatDate(new Date($scope.sysinfo.jvm_metrics.start_time), 'yyyy年MM月dd日HH:mm:ss');
                     $scope.sysinfo.jvm_metrics.uptime = formatDateDistance($scope.sysinfo.jvm_metrics.uptime);
                 }
-                console.warn($scope.sysinfo);
+                // console.warn($scope.sysinfo);
             }, function (response) {
             });
     }]

@@ -1,11 +1,12 @@
 package com.infinite.water.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.gson.annotations.SerializedName;
 import org.bson.types.ObjectId;
 
 public class EmployeeDepartment extends BasicEntity {
     public static String TYPE_DEPARTMENT = "department";
-    public static String TYPE_EMPLOYEE = "employee_id";
+    public static String TYPE_EMPLOYEE = "employee";
 
     @SerializedName("_id")
     private ObjectId id;
@@ -24,6 +25,7 @@ public class EmployeeDepartment extends BasicEntity {
         return id;
     }
 
+    @JsonIgnore
     public String getIdHexString() {
         return id.toHexString();
     }

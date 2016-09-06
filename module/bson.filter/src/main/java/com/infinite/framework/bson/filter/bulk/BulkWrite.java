@@ -101,6 +101,31 @@ public class BulkWrite {
         return list;
     }
 
+    public List<WriteModel<Document>> getWriteModelsWithAppendDocument(Document documentAppend) {
+        ArrayList<WriteModel<Document>> list = new ArrayList<WriteModel<Document>>();
+        for (Document document : models) {
+            WriteModel model = convertAndAppendDocument(document, documentAppend);
+            if (null != model) {
+                list.add(model);
+            }
+        }
+        return list;
+    }
+
+    public List<WriteModel<Document>> getWriteModelsWithAppendDocuments(List<Document> documentAppends) {
+        ArrayList<WriteModel<Document>> list = new ArrayList<WriteModel<Document>>();
+        int i = 0;
+        for (Document document : models) {
+            Document documentAppend = documentAppends.size() > i ? documentAppends.get(i) : null;
+            WriteModel model = convertAndAppendDocument(document, documentAppend);
+            if (null != model) {
+                list.add(model);
+            }
+            i++;
+        }
+        return list;
+    }
+
     private WriteModel convert(Document document) {
         AbstractBulkModel model = convertToBulkModel(document);
         return null == model ? null : model.convertToWriteModel();
@@ -136,6 +161,11 @@ public class BulkWrite {
     private WriteModel convertAndAppendFilter(Document document, BsonDocument filter) {
         AbstractBulkModel model = convertToBulkModel(document);
         return null == model ? null : model.appendFilter(filter).convertToWriteModel();
+    }
+
+    private WriteModel convertAndAppendDocument(Document document, Document append) {
+        AbstractBulkModel model = convertToBulkModel(document);
+        return null == model ? null : model.appendDocument(append).convertToWriteModel();
     }
 
     public String toJson() {

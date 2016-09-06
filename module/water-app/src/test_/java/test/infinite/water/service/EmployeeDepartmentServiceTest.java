@@ -25,14 +25,14 @@ public class EmployeeDepartmentServiceTest {
     @Test
     public void getAll() throws Exception {
         System.out.println(
-                employeeDepartmentService.getAll()
+                employeeDepartmentService.getAllDepartment()
         );
     }
 
     @Test
     public void getTree() throws Exception {
         System.out.println(
-                employeeDepartmentService.getTreeRoot()
+                employeeDepartmentService.getDepartmentTreeRoot()
         );
     }
 
@@ -45,7 +45,7 @@ public class EmployeeDepartmentServiceTest {
         dpt.setSort(0);
         dpt.setLevel(3);
         System.out.println(
-                employeeDepartmentService.add(dpt)
+                employeeDepartmentService.addDepartment(dpt)
         );
     }
 

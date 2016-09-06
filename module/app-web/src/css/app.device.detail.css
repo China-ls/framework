@@ -1,3 +1,6 @@
+#deviceSubMenuWrapper {
+  padding: 0 5px;
+}
 #deviceSubMenuWrapper .nav-tabs > li {
   margin-bottom: 0;
 }

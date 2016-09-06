@@ -2,11 +2,13 @@
     <div class="row">
         <!-- 人员基本信息 -->
         <div class="col-sm-offset-3 col-sm-6 wrapper">
-            <form class="bs-example form-horizontal ng-pristine ng-valid">
+            <form class="form-horizontal form-validation">
                 <div class="form-group">
-                    <label class="col-lg-2 control-label">员工类型</label>
+                    <label class="col-lg-2 control-label">员工类型：</label>
                     <div class="col-lg-10">
-                        <select name="employeeType" class="form-control m-b">
+                        <select name="type" class="form-control m-b"
+                                ng-model="user.type"
+                                ng-required="true">
                             <option value="1">巡检员</option>
                             <option value="2">核查人员</option>
                             <option value="3">工程人员</option>
@@ -14,60 +16,82 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-lg-2 control-label">姓名</label>
+                    <label class="col-lg-2 control-label">姓名：</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" placeholder="请输入姓名">
+                        <input type="text" class="form-control" placeholder="请输入姓名"
+                               ng-model="user.name"
+                               ng-pattern="/^[\u4E00-\u9FA5]{2,5}(?:·[\u4E00-\u9FA5]{2,5})*$/"
+                               ng-required="true">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-lg-2 control-label">性别</label>
+                    <label class="col-lg-2 control-label">性别：</label>
                     <div class="col-lg-10">
-                        <select name="sex" class="form-control m-b">
+                        <select name="sex" class="form-control m-b"
+                                ng-model="user.sex"
+                                ng-required="true">
                             <option value="1">男</option>
                             <option value="2">女</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-lg-2 control-label">生日</label>
+                    <label class="col-lg-2 control-label">生日：</label>
                     <div class="col-sm-10" >
                         <div class="input-group w-md">
                             <input type="text"
                                    class="form-control"
                                    datepicker-popup="{{format}}"
-                                   ng-model="dt"
+                                   ng-model="user.birthdayTime"
                                    is-open="opened"
                                    datepicker-options="dateOptions"
                                    ng-required="true"
-                                   close-text="Close"/>
+                                   clear-text="清除"
+                                   current-text="今天"
+                                   close-text="关闭"/>
                             <span class="input-group-btn">
-                <button type="button" class="btn btn-default" ng-click="open($event)"><i
-                        class="glyphicon glyphicon-calendar"></i></button>
-              </span>
+                                <button type="button" class="btn btn-default" ng-click="open($event)">
+                                    <i class="glyphicon glyphicon-calendar"></i>
+                                </button>
+                            </span>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-lg-2 control-label">联系方式</label>
+                    <label class="col-lg-2 control-label">联系方式：</label>
                     <div class="col-lg-10">
-                        <input name="contact" type="text" class="form-control" placeholder="请输入联系方式">
+                        <input name="contact" type="text" class="form-control" placeholder="请输入联系方式"
+                               ng-model="user.phone"
+                               ng-pattern="/^1[3|4|5|7|8]\d{9}$/"
+                               ng-required="true">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-lg-2 control-label">住址</label>
+                    <label class="col-lg-2 control-label">住址：</label>
                     <div class="col-lg-10">
-                        <input name="address" type="text" class="form-control" placeholder="请输入住址">
+                        <input name="address" type="text" class="form-control" placeholder="请输入住址"
+                               ng-model="user.address"
+                               ng-required="true">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-lg-2 control-label">身份证号</label>
+                    <label class="col-lg-2 control-label">身份证号：</label>
                     <div class="col-lg-10">
-                        <input name="address" type="text" class="form-control" placeholder="请输入身份证号">
+                        <input name="address" type="text" class="form-control"
+                               placeholder="请输入身份证号"
+                               ng-model="user.identity"
+                               ng-minlength="15"
+                               ng-maxlength="18"
+                               ng-required="true">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
-                        <button type="submit" class="btn btn-sm btn-info">添加</button>
+                        <button type="submit" class="btn btn-sm btn-info col-xs-12"
+                                ng-click="submitform()"
+                                ng-disabled="form.$invalid">
+                            添加
+                        </button>
                     </div>
                 </div>
             </form>

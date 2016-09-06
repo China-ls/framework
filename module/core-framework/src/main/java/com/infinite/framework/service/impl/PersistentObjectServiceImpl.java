@@ -8,14 +8,18 @@ import com.infinite.framework.service.entity.BulkWirteResultModel;
 import com.infinite.framework.service.exception.InvalidDataException;
 import com.infinite.framework.service.persistent.obj.BasicEntityConvert;
 import com.infinite.framework.service.persistent.obj.IDataConverter;
+import com.mongodb.MongoClient;
 import com.mongodb.bulk.BulkWriteResult;
 import com.mongodb.client.FindIterable;
+import com.mongodb.client.model.DeleteManyModel;
+import com.mongodb.client.model.DeleteOneModel;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.Projections;
 import com.mongodb.client.model.Sorts;
 import com.mongodb.client.model.WriteModel;
 import com.mongodb.client.result.DeleteResult;
 import com.mongodb.client.result.UpdateResult;
+import org.bson.BsonDocument;
 import org.bson.BsonInvalidOperationException;
 import org.bson.Document;
 import org.bson.conversions.Bson;
@@ -211,13 +215,73 @@ public class PersistentObjectServiceImpl implements PersistentObjectService {
     }
 
     @Override
-    public BulkWirteResultModel bulk(String appkey, String namespace, String json) {
+    public long deleteOneBulk(String appkey, ArrayList<String> namespace, ArrayList<Document> filters) {
+        applicationService.applicationExsist(appkey);
+        ArrayList<WriteModel<Document>> writeModels = new ArrayList<WriteModel<Document>>();
+        if (namespace.size() == 1) {
+            for (Document filter : filters) {
+                filter.append(appkeyPrefix, appkey);
+                filter.append(namespacePrefix, namespace.get(0));
+                writeModels.add(new DeleteOneModel<Document>(filter));
+            }
+        } else {
+            int i = 0;
+            for (Document filter : filters) {
+                filter.append(appkeyPrefix, appkey);
+                filter.append(namespacePrefix, namespace.get(i));
+                writeModels.add(new DeleteOneModel<Document>(filter));
+                i++;
+            }
+        }
+        BulkWriteResult result = persistentObjectDAO.bulkWrite(dbname, collectionName, writeModels);
+        return result.getDeletedCount();
+    }
+
+    @Override
+    public long deleteManyBulk(String appkey, ArrayList<String> namespace, ArrayList<Document> filters) {
+        applicationService.applicationExsist(appkey);
+        ArrayList<DeleteManyModel<Document>> writeModels = new ArrayList<DeleteManyModel<Document>>();
+        if (namespace.size() == 1) {
+            for (Document filter : filters) {
+                filter.append(appkeyPrefix, appkey);
+                filter.append(namespacePrefix, namespace.get(0));
+                writeModels.add(new DeleteManyModel<Document>(filter));
+            }
+        } else {
+            int i = 0;
+            for (Document filter : filters) {
+                filter.append(appkeyPrefix, appkey);
+                filter.append(namespacePrefix, namespace.get(i));
+                writeModels.add(new DeleteManyModel<Document>(filter));
+                i++;
+            }
+        }
+        log.debug("============================== delete bulk ==============================");
+        for (DeleteManyModel writeModel : writeModels) {
+            log.debug(writeModel.getFilter().toBsonDocument(BsonDocument.class, MongoClient.getDefaultCodecRegistry()).toJson());
+        }
+        log.debug("============================== delete bulk ==============================");
+        BulkWriteResult result = persistentObjectDAO.bulkWrite(dbname, collectionName, writeModels);
+        return result.getDeletedCount();
+    }
+
+    @Override
+    public BulkWirteResultModel bulk(String appkey, ArrayList<String> namespace, String json) {
         applicationService.applicationExsist(appkey);
         BulkWrite write = BulkWrite.fromJson(json);
-        List<WriteModel<Document>> writeModels = write.getWriteModelsWithFilter(Filters.and(
-                Filters.and(Filters.eq(namespacePrefix, namespace),
-                        Filters.eq(appkeyPrefix, appkey)
-                )));
+
+        List<WriteModel<Document>> writeModels = null;
+        if (namespace.size() == 1) {
+            writeModels = write.getWriteModelsWithAppendDocument(
+                    new Document(namespacePrefix, namespace.get(0)).append(appkeyPrefix, appkey)
+            );
+        } else {
+            ArrayList<Document> appendDocuments = new ArrayList<Document>();
+            for (String ns : namespace) {
+                appendDocuments.add(new Document(namespacePrefix, ns).append(appkeyPrefix, appkey));
+            }
+            writeModels = write.getWriteModelsWithAppendDocuments(appendDocuments);
+        }
         BulkWriteResult result = persistentObjectDAO.bulkWrite(dbname, collectionName, writeModels);
         return new BulkWirteResultModel(
                 result.getDeletedCount(),

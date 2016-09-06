@@ -7,6 +7,7 @@ import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -40,5 +41,9 @@ public interface PersistentObjectService {
 
     long delete(String appkey, String namespace, Bson filter);
 
-    BulkWirteResultModel bulk(String appkey, String namespace, String bson);
+    long deleteOneBulk(String appkey, ArrayList<String> namespace, ArrayList<Document> filters);
+
+    long deleteManyBulk(String appkey, ArrayList<String> namespace, ArrayList<Document> filters);
+
+    BulkWirteResultModel bulk(String appkey, ArrayList<String> namespace, String bson);
 }

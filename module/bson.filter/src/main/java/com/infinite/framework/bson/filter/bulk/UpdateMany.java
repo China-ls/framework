@@ -37,4 +37,8 @@ public class UpdateMany extends AbstractBulkModel {
     public WriteModel convertToWriteModel() {
         return new UpdateManyModel(filter, update);
     }
+
+    public AbstractBulkModel appendDocument(Document document) {
+        return this;
+    }
 }

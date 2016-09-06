@@ -1,5 +1,6 @@
 package com.infinite.water.service.impl;
 
+import com.google.gson.JsonArray;
 import com.infinite.framework.bson.filter.PersistentObjectFilters;
 import com.infinite.framework.bson.filter.PersistentObjectUpdates;
 import com.infinite.framework.bson.filter.bulk.BulkWrite;
@@ -11,6 +12,7 @@ import com.infinite.water.entity.ServerConfig;
 import com.infinite.water.entity.net.ListEmployeeDepartmentRequestResult;
 import com.infinite.water.entity.net.ListRequestResult;
 import com.infinite.water.entity.net.NotSureRequestResult;
+import com.infinite.water.entity.net.ObjectRequestResult;
 import com.infinite.water.service.EmployeeDepartmentService;
 import org.apache.commons.lang.StringUtils;
 import org.bson.Document;
@@ -29,7 +31,7 @@ public class EmployeeDepartmentServiceImpl extends AbstractService implements Em
     private ServerConfig serverConfig;
 
     @Override
-    public List<Document> getAll() throws IOException {
+    public List<Document> getAllDepartment() throws IOException {
         ListRequestResult requestResult = toJsonObject(
                 HttpUtils.get(serverConfig.getServerUrl() + "/obj",
                         new HttpUtils.Pair("namespace", serverConfig.getNamespaceEmployeeDepartment()),
@@ -42,7 +44,7 @@ public class EmployeeDepartmentServiceImpl extends AbstractService implements Em
     }
 
     @Override
-    public List<EmployeeDepartment> getTreeRoot() throws IOException {
+    public List<EmployeeDepartment> getDepartmentTreeRoot() throws IOException {
         ListEmployeeDepartmentRequestResult requestResult = toJsonObject(
                 HttpUtils.get(serverConfig.getServerUrl() + "/obj",
                         new HttpUtils.Pair("namespace", serverConfig.getNamespaceEmployeeDepartment())
@@ -85,7 +87,7 @@ public class EmployeeDepartmentServiceImpl extends AbstractService implements Em
     }
 
     @Override
-    public Object add(EmployeeDepartment department) throws IOException {
+    public Object addDepartment(EmployeeDepartment department) throws IOException {
         department.setType(EmployeeDepartment.TYPE_DEPARTMENT);
         NotSureRequestResult requestResult = toJsonObject(
                 HttpUtils.put(serverConfig.getServerUrl() + "/obj",
@@ -97,12 +99,12 @@ public class EmployeeDepartmentServiceImpl extends AbstractService implements Em
     }
 
     @Override
-    public Object update(EmployeeDepartment department) throws IOException {
+    public Object updateDepartment(EmployeeDepartment department) throws IOException {
         if (null == department) {
             return null;
         }
         NotSureRequestResult requestResult = toJsonObject(
-                HttpUtils.put(serverConfig.getServerUrl() + "/obj/{id}/update".replace("{id}", department.getIdHexString()),
+                HttpUtils.put(serverConfig.getServerUrl() + "/obj/{id}/updateDepartment".replace("{id}", department.getIdHexString()),
                         new HttpUtils.Pair("namespace", serverConfig.getNamespaceEmployeeDepartment()),
                         new HttpUtils.Pair("updates", PersistentObjectUpdates.combineToJson(Arrays.asList(
                                 PersistentObjectUpdates.set("address", department.getAddress()),
@@ -118,7 +120,7 @@ public class EmployeeDepartmentServiceImpl extends AbstractService implements Em
     }
 
     @Override
-    public Object deleteById(String id) throws IOException {
+    public Object deleteDepartmentById(String id) throws IOException {
         NotSureRequestResult requestResult = toJsonObject(
                 HttpUtils.delete(serverConfig.getServerUrl() + "/obj/delete",
                         new HttpUtils.Pair("namespace", serverConfig.getNamespaceEmployeeDepartment()),
@@ -134,24 +136,54 @@ public class EmployeeDepartmentServiceImpl extends AbstractService implements Em
     }
 
     @Override
-    public Object addEmployee(EmployeeDepartment department, Employee employee) throws IOException {
+    public Document addEmployee(EmployeeDepartment department, Employee employee) throws IOException {
         ObjectId id = ObjectId.get();
         employee.setId(id);
+        department.setId(null);
         department.setEmployee_id(id.toHexString());
         department.setName(employee.getName());
         department.setType(EmployeeDepartment.TYPE_EMPLOYEE);
-        NotSureRequestResult requestResult = toJsonObject(
-                HttpUtils.delete(serverConfig.getServerUrl() + "/obj/bulk",
-                        new HttpUtils.Pair("namespace", serverConfig.getNamespaceEmployeeDepartment()),
+        ObjectRequestResult requestResult = toJsonObject(
+                HttpUtils.post(serverConfig.getServerUrl() + "/obj/bulk",
+                        new HttpUtils.Pair("namespace", serverConfig.getNamespaceEmployeeDepartment() + "," + serverConfig.getNamespaceEmployee()),
                         new HttpUtils.Pair("bulk",
                                 new BulkWrite()
-                                        .andInsertOne(Document.parse(JsonUtil.toJson(employee)))
                                         .andInsertOne(Document.parse(JsonUtil.toJson(department)))
+                                        .andInsertOne(Document.parse(JsonUtil.toJson(employee)))
                                         .toJson()
                         )
+                ),
+                ObjectRequestResult.class
+        );
+        return getDocumentFromResponse(requestResult);
+    }
+
+    @Override
+    public Object deleteEmployeeById(String id) throws IOException {
+        String jsonFilter = JsonUtil.toJsonObjectArrayString(
+                PersistentObjectFilters.eq("employee_id", id).getBson(),
+                PersistentObjectFilters.eq("_id", id).getBson()
+        );
+        NotSureRequestResult requestResult = toJsonObject(
+                HttpUtils.post(serverConfig.getServerUrl() + "/obj/delete/bulk/many",
+                        new HttpUtils.Pair("namespace", serverConfig.getNamespaceEmployeeDepartment() + "," + serverConfig.getNamespaceEmployee()),
+                        new HttpUtils.Pair("filter", jsonFilter)
                 ),
                 NotSureRequestResult.class
         );
         return getDocumentFromResponse(requestResult);
+    }
+
+    public static void main(String[] args) {
+        String json = JsonUtil.toJsonObjectArrayString(
+                PersistentObjectFilters.eq("_id", "57ce5cda2dbcae624910700d").getBson()
+        );
+        System.out.println(json);
+
+        JsonArray jsonArray = JsonUtil.fromJson(json, JsonArray.class);
+
+        System.out.println(jsonArray.toString());
+
+        System.out.println(PersistentObjectFilters.eq("employee_id", "57ce5cda2dbcae624910700d").toJson());
     }
 }

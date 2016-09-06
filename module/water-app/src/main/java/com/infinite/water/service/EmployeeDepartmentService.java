@@ -9,16 +9,18 @@ import java.util.List;
 
 public interface EmployeeDepartmentService {
 
-    public List<Document> getAll() throws IOException;
+    public List<Document> getAllDepartment() throws IOException;
 
-    public List<EmployeeDepartment> getTreeRoot() throws IOException;
+    public List<EmployeeDepartment> getDepartmentTreeRoot() throws IOException;
 
-    public Object add(EmployeeDepartment department) throws IOException;
+    public Object addDepartment(EmployeeDepartment department) throws IOException;
 
-    public Object update(EmployeeDepartment department) throws IOException;
+    public Object updateDepartment(EmployeeDepartment department) throws IOException;
 
-    public Object deleteById(String id) throws IOException;
+    public Object deleteDepartmentById(String id) throws IOException;
 
-    public Object addEmployee(EmployeeDepartment department, Employee employee) throws IOException;
+    public Document addEmployee(EmployeeDepartment department, Employee employee) throws IOException;
+
+    public Object deleteEmployeeById(String id) throws IOException;
 
 }

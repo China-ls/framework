@@ -67,7 +67,8 @@ app.controller('AsideDeviceCtrl', ['$scope', '$http', '$localStorage', '$state',
             } else if (branch.type === 'device') {
                 $scope.app.cache.selectParentBranch = $scope.tree.get_parent_branch(branch);
                 // console.warn($scope.tree.get_parent_branch(branch));
-                $state.go("app.device.tab.map", {id: branch.uuid, device: branch});
+                $localStorage[APPCONST.APP_LOCAL_STORAGE_SELECT_DEVICE] = {id: branch.uuid, device: branch};
+                $state.go("app.device.tab.info", {id: branch.uuid, device: branch});
             }
         };
     }]

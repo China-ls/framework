@@ -20,5 +20,7 @@ public abstract class AbstractBulkModel {
         return this;
     }
 
+    public abstract AbstractBulkModel appendDocument(Document document);
+
     public abstract WriteModel convertToWriteModel();
 }

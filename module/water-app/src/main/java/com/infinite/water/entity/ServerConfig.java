@@ -15,6 +15,8 @@ public class ServerConfig {
     private String appkey;
     @Value("#{server.namespace_employee_department}")
     private String namespaceEmployeeDepartment;
+    @Value("#{server.namespace_employee}")
+    private String namespaceEmployee;
 
     public String getIp() {
         return ip;
@@ -54,6 +56,14 @@ public class ServerConfig {
 
     public void setNamespaceEmployeeDepartment(String namespaceEmployeeDepartment) {
         this.namespaceEmployeeDepartment = namespaceEmployeeDepartment;
+    }
+
+    public String getNamespaceEmployee() {
+        return namespaceEmployee;
+    }
+
+    public void setNamespaceEmployee(String namespaceEmployee) {
+        this.namespaceEmployee = namespaceEmployee;
     }
 
     public String getServerUrl() {

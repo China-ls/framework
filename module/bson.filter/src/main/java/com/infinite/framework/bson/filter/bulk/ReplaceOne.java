@@ -37,4 +37,9 @@ public class ReplaceOne extends AbstractBulkModel {
     public WriteModel convertToWriteModel() {
         return new ReplaceOneModel(filter, replacement);
     }
+
+    public AbstractBulkModel appendDocument(Document document) {
+        this.replacement.putAll(document);
+        return this;
+    }
 }

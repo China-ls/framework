@@ -37,4 +37,8 @@ public class UpdateOne extends AbstractBulkModel {
     public WriteModel convertToWriteModel() {
         return new UpdateOneModel(filter, update);
     }
+
+    public AbstractBulkModel appendDocument(Document document) {
+        return this;
+    }
 }

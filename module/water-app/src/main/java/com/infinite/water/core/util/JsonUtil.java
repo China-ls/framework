@@ -2,14 +2,19 @@ package com.infinite.water.core.util;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonIOException;
+import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.TypeAdapter;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.mongodb.MongoClient;
 import org.bson.BsonDateTime;
+import org.bson.BsonDocument;
+import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
 
 import java.io.IOException;
@@ -130,5 +135,24 @@ public abstract class JsonUtil {
     public static <T> T fromJson(JsonElement json, Type typeOfT) throws JsonSyntaxException {
         return simpleGson.fromJson(json, typeOfT);
     }
+
+    public static JsonArray toJsonObjectArray(Bson... objects) {
+        if (null == objects) {
+            return null;
+        }
+        JsonArray jsonArray = new JsonArray();
+        for (Bson obj : objects) {
+            jsonArray.add(fromJson(obj.toBsonDocument(BsonDocument.class, MongoClient.getDefaultCodecRegistry()).toJson(), JsonObject.class));
+        }
+        return jsonArray;
+    }
+
+    public static String toJsonObjectArrayString(Bson... objects) {
+        if (null == objects) {
+            return null;
+        }
+        return toJsonObjectArray(objects).toString();
+    }
+
 
 }

@@ -155,9 +155,9 @@
      这里使用了SpringMVC提供的<mvc:view-controller>标签,实现了首页隐藏的目的,详见applicationContext.xml
     -->
     <!--
-        <welcome-file-getAll>
+        <welcome-file-getAllDepartment>
             <welcome-file>login.jsp</welcome-file>
-        </welcome-file-getAll>
+        </welcome-file-getAllDepartment>
     -->
     <!--<error-page>-->
         <!--<error-code>405</error-code>-->

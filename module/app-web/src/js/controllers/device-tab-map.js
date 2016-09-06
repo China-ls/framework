@@ -1,8 +1,13 @@
 'use strict';
 
 // DeviceTabMapCtrl controller
-app.controller('DeviceTabMapCtrl', ['$scope', '$http', 'APPCONST', '$window', '$modal',
-    function ($scope, $http, APPCONST, $window, $modal) {
+app.controller('DeviceTabMapCtrl', ['$scope', '$http', '$localStorage', '$state', 'APPCONST', '$window', '$modal',
+    function ($scope, $http, $localStorage, $state, APPCONST, $window, $modal) {
+        $scope.stateParams = $localStorage[APPCONST.APP_LOCAL_STORAGE_SELECT_DEVICE];
+        if (!$scope.stateParams) {
+            $state.go('app.device');
+            return;
+        }
         $scope.offlineOpts = {retryInterval: 5000};
         $scope.mapOptions = {
             center: {
@@ -35,7 +40,7 @@ app.controller('DeviceTabMapCtrl', ['$scope', '$http', 'APPCONST', '$window', '$
             });
         };
 
-        $scope.loadDataPromise = $http.get(APPCONST.CTX + APPCONST.SENSOR_BY_ID + $scope.$stateParams.id)
+        $scope.loadDataPromise = $http.get(APPCONST.CTX + APPCONST.SENSOR_BY_ID + $scope.stateParams.id)
             .then(function (response) {
                 if (!response.data.data || !response.data.data.sensor) {
                     return;

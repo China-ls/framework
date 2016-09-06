@@ -17,9 +17,12 @@ var app =
                 EMP_DEPARTMENT_ADD: '/dpt/emp/add',
                 EMP_DEPARTMENT_UPDATE: '/dpt/emp/update',
                 EMP_DEPARTMENT_DELETE: '/dpt/emp/{id}',
+                EMP_DEPARTMENT_DELETE_EMP: '/dpt/emp/delemp/{id}',
                 SYSTEM_INFORMATION: '/sys/info',
+                EMP_DEPARTMENT_ADD_EMP: '/dpt/emp/addemp',
 
                 APP_LOCAL_STORAGE_MANAGE_EMPLOYEE : 'app_loc_storage_mg_emp',
+                APP_LOCAL_STORAGE_SELECT_DEVICE : 'app_loc_storage_slt_device',
             })
             .config(['$httpProvider', 'APPCONST', function ($httpProvider, APPCONST) {
                 // $httpProvider.defaults.headers.common['APPKEY'] = NETCONST.APPKEY;

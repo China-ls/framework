@@ -53,7 +53,6 @@ app.controller('ManageRouterCtrl', ['$scope', '$http', '$localStorage', '$modal'
                             if (path && typeof $scope.employeRootPathList[pid] === 'undefined') {
                                 $scope.employeRootPathList[pid] = 1;
                             }
-                            item.type = $scope.TYPEDEPARMENT;
                             item.visible = true;
                             $scope.employeList.push(item);
                         });
@@ -160,7 +159,7 @@ app.controller('ManageRouterCtrl', ['$scope', '$http', '$localStorage', '$modal'
             if ($scope.selectItem.type === $scope.TYPEDEPARMENT) {
                 content = '确定要删除 ' + $scope.selectItem.name + ' 节点么？';
             } else {
-                content = '';
+                content = '确定要删除人员 ' + $scope.selectItem.name + ' 么？';
             }
             var modalInstance = $modal.open({
                 templateUrl: 'confirmModalContent.html',
@@ -175,13 +174,24 @@ app.controller('ManageRouterCtrl', ['$scope', '$http', '$localStorage', '$modal'
                 }
             });
             modalInstance.result.then(function () {
-                $http.delete(APPCONST.CTX + APPCONST.EMP_DEPARTMENT_DELETE.replace(
-                        "{id}", $scope.selectItemId))
-                    .then(function (response) {
-                        $scope.Toast('success', '提示', '删除成功。');
-                        $scope.prepareVisableEmployee();
-                    }, function (response) {
-                    });
+                if ($scope.selectItem.type === $scope.TYPEDEPARMENT) {
+                    $http.delete(APPCONST.CTX + APPCONST.EMP_DEPARTMENT_DELETE.replace(
+                            "{id}", $scope.selectItemId))
+                        .then(function (response) {
+                            $scope.Toast('success', '提示', '删除成功。');
+                            $scope.prepareVisableEmployee();
+                        }, function (response) {
+                        });
+                } else {
+                    $http.delete(APPCONST.CTX + APPCONST.EMP_DEPARTMENT_DELETE_EMP.replace(
+                            "{id}", $scope.selectItem.employee_id))
+                        .then(function (response) {
+                            $scope.Toast('success', '提示', '删除成功。');
+                            $scope.prepareVisableEmployee();
+                        }, function (response) {
+                        });
+                }
+
             }, function () {
             });
         };

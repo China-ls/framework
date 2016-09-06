@@ -24,4 +24,8 @@ public class DeleteOne extends AbstractBulkModel {
     public WriteModel convertToWriteModel() {
         return new DeleteOneModel(filter);
     }
+
+    public AbstractBulkModel appendDocument(Document document) {
+        return this;
+    }
 }

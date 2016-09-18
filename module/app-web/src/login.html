@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-ng-app="login">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -12,19 +12,42 @@
 
     <link href="img/logo.png" mce_href="img/logo.png" rel="shortcut icon"/>
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="../bower_components/animate.css/animate.css" type="text/css"/>
     <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css" type="text/css"/>
     <link rel="stylesheet" href="../bower_components/simple-line-icons/css/simple-line-icons.css" type="text/css"/>
+    <link rel="stylesheet" href="../bower_components/nprogress/nprogress.css" type="text/css"/>
+    <link rel="stylesheet" href="../bower_components/angularjs-toaster/toaster.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/font.css" type="text/css"/>
     <link rel="stylesheet" href="css/app.css" type="text/css">
 
 </head>
-<body class="app-login-body">
+<body ng-controller="LoginCtrl">
 
-<div class="app-login">
+<!-- toaster directive -->
+<toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+<!-- / toaster directive -->
 
-    <div class="row">
 
-        <div class="container login-form">
-            <form class="col-sm-offset-3 col-sm-6 wrapper bg-light-gray1-only b b-gray">
+<div class="login" id="login">
+
+    <div class="login-header">
+        <img class="login-title" src="img/u40.png" width="500" height="48">
+    </div>
+
+    <!-- carousel -->
+    <div class="login-carousel" set-ng-animate="false" style="height: 100%;">
+        <carousel interval="imageListSlideInterval">
+            <slide ng-repeat="row in imageList">
+                <img ng-src="{{row}}" style="height:100%;margin: 0 auto;">
+            </slide>
+        </carousel>
+    </div>
+    <!-- / carousel -->
+
+    <div class="login-wrapper">
+
+        <div class=" ">
+            <form class="wrapper bg-light-gray1-only b b-gray">
                 <div class="m-b-xs">
                     <span class="m">
                         <img class="m-b-sm" src="img/login_logo.png" width="66" height="28"/>
@@ -64,11 +87,33 @@
         </div>
 
     </div>
+
 </div>
 
+</body>
 
 <!-- jQuery -->
 <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-</body>
 
+<!-- Angular -->
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+
+<script src="../bower_components/angularjs-toaster/toaster.min.js"></script>
+
+<script type="text/javascript">
+    angular.module('login', [
+        "toaster",
+        'ui.bootstrap'
+    ]).controller('LoginCtrl', ['$scope', function ($scope) {
+        $scope.imageListSlideInterval = 10000;
+        $scope.imageList = [
+            'img/u9.png',
+            'img/u7.png',
+            'img/u5.png'
+        ];
+    }])
+    ;
+</script>
 </html>

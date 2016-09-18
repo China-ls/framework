@@ -1,0 +1,113 @@
+<div class="wrapper">
+
+    <div class="row">
+
+        <div class="col-sm-6">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    操作系统
+                </div>
+                <div class="panel-body">
+                    <p>
+                        <span class="w-xsm inline">名字 : </span>
+                        <span>{{sysinfo.jvm_metrics.os_name}}</span>
+                    </p>
+                    <p>
+                        <span class="w-xsm inline">系统架构 : </span>
+                        <span>{{sysinfo.jvm_metrics.os_arch}}</span>
+                    </p>
+                    <p>
+                        <span class="w-xsm inline">内存容量 : </span>
+                        <span>{{sysinfo.jvm_metrics.os_memory_total}}</span>
+                    </p>
+                    <p>
+                        <span class="w-xsm inline">可用内存 : </span>
+                        <span>{{sysinfo.jvm_metrics.os_memory_free}}</span>
+                    </p>
+                    <p>
+                        <span class="w-xsm inline">打开文件数 : </span>
+                        <span>{{sysinfo.jvm_metrics.os_fd_open}}</span>
+                    </p>
+                    <p>
+                        <span class="w-xsm inline">可打开文件数 : </span>
+                        <span>{{sysinfo.jvm_metrics.os_fd_max}}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-6">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    Java 虚拟机
+                </div>
+                <div class="panel-body">
+                    <p>
+                        <span class="w-xsm inline">名字 : </span>
+                        <span>{{sysinfo.jvm_metrics.jvm_name}}</span>
+                    </p>
+                    <p>
+                        <span class="w-xsm inline">Runtime : </span>
+                        <span>{{sysinfo.jvm_metrics.runtime_name}}</span>
+                    </p>
+                    <p>
+                        <span class="w-xsm inline">启动时间 : </span>
+                        <span>{{sysinfo.jvm_metrics.start_time}}</span>
+                    </p>
+                    <p>
+                        <span class="w-xsm inline">运行时长 : </span>
+                        <span>{{sysinfo.jvm_metrics.uptime}}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-6">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    内存状态
+                </div>
+                <div class="panel-body">
+                    <p>
+                        <span class="w-xsm inline">已使用 : </span>
+                        <span>{{sysinfo.jvm_metrics.heap_memory.used}}</span>
+                    </p>
+                    <p>
+                        <span class="w-xsm inline">已申请 : </span>
+                        <span>{{sysinfo.jvm_metrics.heap_memory.alloc}}</span>
+                    </p>
+                    <p>
+                        <span class="w-xsm inline">最大内存 : </span>
+                        <span>{{sysinfo.jvm_metrics.heap_memory.max}}</span>
+                    </p>
+                    <p>
+                        <span class="w-xsm inline">非队内存申请 : </span>
+                        <span>{{sysinfo.jvm_metrics.non_heap_memory.alloc}}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    进程数量
+                </div>
+                <div class="panel-body">
+                    <p>
+                        <span class="w-xsm inline">当前线程 : </span>
+                        <span>{{sysinfo.jvm_metrics.threads_current}}</span>
+                    </p>
+                    <p>
+                        <span class="w-xsm inline">已终结线程数 : </span>
+                        <span>{{sysinfo.jvm_metrics.threads_peak}}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,203 @@
+{
+  "address": "浙江省嘉兴市嘉善县魏塘工业园区振华路58号",
+  "contact": "郭总",
+  "devices": null,
+  "icon": "red_flag.png",
+  "id": "1001",
+  "name": "浙江爱迪曼环保科技股份有限公司",
+  "sub_departments": [
+    {
+      "address": "",
+      "contact": "",
+      "devices": null,
+      "icon": "blue_flag.png",
+      "id": "2001",
+      "name": "杭州",
+      "sub_departments": null,
+      "telephone": "",
+      "uuid": "78948d42-3df6-4cfc-b3a9-988357eac48a"
+    },
+    {
+      "address": "",
+      "contact": "",
+      "devices": null,
+      "icon": "blue_flag.png",
+      "id": "2002",
+      "name": "宁波",
+      "sub_departments": null,
+      "telephone": "",
+      "uuid": "01c7d717-9374-4008-8654-1d636cc71d31"
+    },
+    {
+      "address": "",
+      "contact": "",
+      "devices": null,
+      "icon": "blue_flag.png",
+      "id": "2003",
+      "name": "温州",
+      "sub_departments": null,
+      "telephone": "",
+      "uuid": "b3c2943a-3a38-4004-82b9-80bd94fe9cd1"
+    },
+    {
+      "address": "",
+      "contact": "",
+      "devices": null,
+      "icon": "blue_flag.png",
+      "id": "2004",
+      "name": "绍兴",
+      "sub_departments": null,
+      "telephone": "",
+      "uuid": "f1198091-92cc-4496-9374-a3a267a97307"
+    },
+    {
+      "address": "",
+      "contact": "",
+      "devices": null,
+      "icon": "blue_flag.png",
+      "id": "2005",
+      "name": "湖州",
+      "sub_departments": null,
+      "telephone": "",
+      "uuid": "8a186528-62e9-4af8-aa90-7dc72433cbb4"
+    },
+    {
+      "address": "",
+      "contact": "",
+      "devices": null,
+      "icon": "blue_flag.png",
+      "id": "2006",
+      "name": "嘉兴",
+      "sub_departments": [
+        {
+          "address": "",
+          "contact": "",
+          "devices": null,
+          "icon": "green_flag.png",
+          "id": "3001",
+          "name": "南湖区",
+          "sub_departments": null,
+          "telephone": "",
+          "uuid": "b380f498-93fa-4a13-b774-7512935f317b"
+        },
+        {
+          "address": "",
+          "contact": "",
+          "devices": null,
+          "icon": "green_flag.png",
+          "id": "3002",
+          "name": "秀洲区",
+          "sub_departments": null,
+          "telephone": "",
+          "uuid": "596e2e81-740c-4945-a481-129dc7909995"
+        },
+        {
+          "address": "",
+          "contact": "",
+          "devices": null,
+          "icon": "green_flag.png",
+          "id": "3003",
+          "name": "嘉善县",
+          "sub_departments": null,
+          "telephone": "",
+          "uuid": "bec1a2eb-48aa-46aa-838b-e1e588c7e803"
+        },
+        {
+          "address": "",
+          "contact": "",
+          "devices": [
+            {
+              "name": "魏塘工业园1号",
+              "uuid": "23423da9-b682-4566-8794-9169f484be5e"
+            },
+            {
+              "name": "魏塘工业园",
+              "uuid": "e5f518e7-50f5-4761-896e-e1c1a7086000"
+            }
+          ],
+          "icon": "green_flag.png",
+          "id": "3004",
+          "name": "海盐县",
+          "telephone": "",
+          "uuid": "e517ff5d-a730-490f-bfc7-2d199ff228cb"
+        },
+        {
+          "address": "",
+          "contact": "",
+          "icon": "green_flag.png",
+          "id": "3005",
+          "name": "海宁市",
+          "telephone": "",
+          "uuid": "707155dd-f5ad-4591-aa81-5cc991c240fe"
+        },
+        {
+          "address": "",
+          "contact": "",
+          "icon": "green_flag.png",
+          "id": "3006",
+          "name": "平湖市",
+          "telephone": "",
+          "uuid": "def88b8f-369a-4405-9b72-f5cfe445085d"
+        },
+        {
+          "address": "",
+          "contact": "",
+          "icon": "green_flag.png",
+          "id": "3007",
+          "name": "桐乡市",
+          "telephone": "",
+          "uuid": "25bb8c31-cc67-4304-968e-bafd943eb2ba"
+        }
+      ],
+      "telephone": "",
+      "uuid": "43146f81-c38d-466e-99de-2b9a9159e88d"
+    },
+    {
+      "address": "",
+      "contact": "",
+      "icon": "blue_flag.png",
+      "id": "2007",
+      "name": "金华",
+      "telephone": "",
+      "uuid": "58d07b88-7ffa-4bf1-875c-733a7d94c4cf"
+    },
+    {
+      "address": "",
+      "contact": "",
+      "icon": "blue_flag.png",
+      "id": "2008",
+      "name": "衢州",
+      "telephone": "",
+      "uuid": "f30acc8c-c4fd-4249-bdd0-b9cb86bd82be"
+    },
+    {
+      "address": "",
+      "contact": "",
+      "icon": "blue_flag.png",
+      "id": "2009",
+      "name": "台州",
+      "telephone": "",
+      "uuid": "a55d4cd6-648b-499d-8f64-1a46e9239742"
+    },
+    {
+      "address": "",
+      "contact": "",
+      "icon": "blue_flag.png",
+      "id": "2011",
+      "name": "丽水",
+      "telephone": "",
+      "uuid": "f7ac66c8-ae39-4c1a-9320-611af7ea3886"
+    },
+    {
+      "address": "",
+      "contact": "",
+      "icon": "blue_flag.png",
+      "id": "2012",
+      "name": "舟山",
+      "telephone": "",
+      "uuid": "74b20f7d-d981-40d8-9cd9-84f181feba28"
+    }
+  ],
+  "telephone": "0573-84835555",
+  "uuid": "33a93599-695a-4e46-afef-720cd4cd9573"
+}

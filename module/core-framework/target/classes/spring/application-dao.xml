@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:lang="http://www.springframework.org/schema/lang"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+	   http://www.springframework.org/schema/context
+	   http://www.springframework.org/schema/context/spring-context.xsd
+	   http://www.springframework.org/schema/jee
+	   http://www.springframework.org/schema/jee/spring-jee.xsd
+	   http://www.springframework.org/schema/util
+	   http://www.springframework.org/schema/util/spring-util.xsd
+	   http://www.springframework.org/schema/lang
+	   http://www.springframework.org/schema/lang/spring-lang.xsd">
+
+    <context:property-placeholder location="classpath:/prop/mongo.properties" ignore-unresolvable="true"/>
+
+    <!-- mongoDB的配置对象 -->
+    <bean id="mongoOptionsDto" class="com.infinite.framework.core.persistent.MongoClientOptionsDto">
+    </bean>
+
+    <!-- 使用工厂创建mongo实例 -->
+    <bean id="mongo" class="com.infinite.framework.core.persistent.MongoClientFactoryBean">
+        <!-- mongoDB的配置对象 -->
+        <property name="mongoClientOptionsDto" ref="mongoOptionsDto"/>
+
+        <!-- 是否主从分离(读取从库)，默认为false，读写都在主库 -->
+        <property name="readSecondary" value="false"/>
+
+        <!-- 设定写策略，默认为WriteConcern.SAFE，优先级高于mongoOptions中的safe -->
+        <property name="writeConcern" value="SAFE"/>
+
+        <!-- 设定服务器列表，默认为localhost:27017 -->
+        <property name="serverStrings">
+            <array>
+                <value>${mongoDB.server}</value>
+            </array>
+        </property>
+    </bean>
+
+    <!-- 使用工厂创建morphia实例，同时完成类映射操作 -->
+    <bean id="morphia" class="com.infinite.framework.core.persistent.MorphiaFactoryBean">
+        <!-- 指定要扫描的POJO包路径 -->
+        <property name="mapPackages">
+            <array>
+                <value>com.infinite.framework.entity.Account</value>
+                <value>com.infinite.framework.entity.Action</value>
+                <value>com.infinite.framework.entity.Application</value>
+                <value>com.infinite.framework.entity.Component</value>
+                <value>com.infinite.framework.entity.VirtualSensor</value>
+            </array>
+        </property>
+    </bean>
+
+    <!-- 使用工厂创建datastore，同时完成index和caps的确认操作 -->
+    <bean id="systemDatastore" class="com.infinite.framework.core.persistent.DatastoreFactoryBean">
+        <property name="morphia" ref="morphia"/>
+        <property name="mongoClient" ref="mongo"/>
+        <!-- collection的名称 -->
+        <property name="dbName" value="framework"/>
+
+        <!-- 用户名和密码可以为空 -->
+        <!-- <property name="username" value="my_username"/>
+        <property name="password" value="my_password"/> -->
+
+        <!-- 是否进行index和caps的确认操作，默认为flase -->
+        <property name="toEnsureIndexes" value="true"/>
+        <property name="toEnsureCaps" value="true"/>
+    </bean>
+
+    <bean name="persistentObjectDAO" class="com.infinite.framework.persistent.impl.PersistentObjectDAOImpl">
+        <property name="mongo" ref="mongo"/>
+    </bean>
+
+    <!--<context:component-scan base-package="com.infinite.framework.persistent" />-->
+
+    <bean name="accountDAO" class="com.infinite.framework.persistent.impl.AccountDAOImpl">
+        <constructor-arg ref="systemDatastore"/>
+    </bean>
+
+    <bean name="applicationDAO" class="com.infinite.framework.persistent.impl.ApplicationDAOImpl">
+        <constructor-arg ref="systemDatastore"/>
+    </bean>
+
+    <bean name="virtualSensorDAO" class="com.infinite.framework.persistent.impl.VirtualSensorDAOImpl">
+        <constructor-arg ref="systemDatastore"/>
+    </bean>
+
+</beans>

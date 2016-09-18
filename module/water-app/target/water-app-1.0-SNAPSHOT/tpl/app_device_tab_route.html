@@ -1,0 +1,29 @@
+<!--考勤机-->
+<div class="padder-sm m-b-md">
+    <div class="panel panel-default">
+        <div class="panel-heading title">巡检数据表</div>
+        <!-- 网络请求动画 -->
+        <div cg-busy="{promise:loadDataPromise,message:'数据加载中...'}"></div>
+        <!-- 网络请求动画 -->
+        <table st-table="rowCollectionBasic" class="table table-bordered table-striped tb-border">
+            <thead>
+            <tr>
+                <th>巡检时间</th>
+                <th>巡检人</th>
+                <th>电话</th>
+                <th>巡检内容</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="success" ng-repeat="row in walk" st-select-row="row">
+                <td>{{row.time}}</td>
+                <td>{{row.name}}</td>
+                <td>{{row.tel}}</td>
+                <td>{{row.content}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="divider divider-md bg-white"></div>
+<!--考勤机-->

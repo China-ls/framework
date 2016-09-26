@@ -3,8 +3,10 @@
 // DeviceDetail controller
 app.controller('DeviceTabWqCtrl', ['$scope', '$http', '$localStorage', '$state', 'APPCONST',
     function ($scope, $http, $localStorage, $state, APPCONST) {
-        $scope.stateParams = $localStorage[APPCONST.APP_LOCAL_STORAGE_SELECT_DEVICE];
-        if (!$scope.stateParams) {
+        $scope.app.subHeader.goBackHide = false;
+        $scope.app.subHeader.goBackSref = 'app.device';
+
+        if (!$scope.$stateParams) {
             $state.go('app.device');
             return;
         }

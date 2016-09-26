@@ -173,6 +173,10 @@
   font-size: @font-size-md;
 }
 
+.text-mdl {
+  font-size: 17px;
+}
+
 .text-base {
   font-size: @font-size-base;
 }
@@ -268,6 +272,11 @@
   padding-right: 20px
 }
 
+.padder-md-v {
+  padding-top: 20px;
+  padding-bottom: 20px
+}
+
 .padder-sm {
   padding-left: 10px;
   padding-right: 10px
@@ -338,6 +347,10 @@
 
 .b-r {
   border-right: 1px solid @border-color
+}
+
+.b-r-2x {
+  border-right: 2px solid @border-color
 }
 
 .b-r-d {
@@ -1100,6 +1113,7 @@
   .no-border-sm {
     border-width: 0;
   }
+
   .no-padder-sm {
     padding: 0 !important;
   }
@@ -1107,9 +1121,11 @@
   .w-xs-sm {
     width: 90px;
   }
+
   .w-xsm-sm {
     width: 120px;
   }
+
   .w-sm-sm {
     width: 150px;
   }
@@ -1195,12 +1211,15 @@
   .no-padder-xs {
     padding: 0 !important;
   }
+
   .w-xs-xs {
     width: 90px;
   }
+
   .w-xsm-xs {
     width: 120px;
   }
+
   .w-sm-xs {
     width: 150px;
   }

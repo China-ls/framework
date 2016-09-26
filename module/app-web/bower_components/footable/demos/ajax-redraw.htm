@@ -81,9 +81,9 @@
                 url : '/some/api',
                 dataType : 'json',
                 success : function(result) {
-                    $.each(result, function(idx, obj) {
+                    $.each(result, function(idx, data) {
                         var row = '<tr>';
-                        $.each(obj, function(key, value) {
+                        $.each(data, function(key, value) {
                             if (key != 'sensor_id') {
                                 row += '<td>' + value + '</td>';
                             }

@@ -8,6 +8,16 @@
   filter: none;
 }
 
+.bg-gd-only {
+  #gradient > .vertical(rgba(255, 255, 255, 0), #dddddd, 0, 100%);
+  filter: none;
+}
+
+.bg-gd-dk-only {
+  background-color: rgb(40, 50, 60);
+  filter: none;
+}
+
 .bg-light {
   .color-variant(@brand-light, 2%, 3%, 3%, 5%);
   color: @text-color;
@@ -84,8 +94,16 @@
   background-color: #ccc;
 }
 
+.bg-info-only {
+  background-color: #D9EDF7;
+}
+
 .bg-light-gray1-only {
   background-color: #efefef;
+}
+
+.bg-light-gray2-only {
+  background-color: #e4e0e0;
 }
 
 .bg-light-gray-only {
@@ -104,6 +122,10 @@ a.bg-light {
   &:hover {
     color: @link-color;
   }
+}
+
+.bd-info-dk-only {
+  border-color: #99CCCC;
 }
 
 .text-wariant(@brand-primary, primary);

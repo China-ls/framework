@@ -22,41 +22,41 @@
             // main.js
             var app = angular.module('myApp', ['ngGrid']);
             app.controller('MyCtrl', function($scope) {
-                csvOpts = { columnOverrides: { obj: function(o) { return o.a + '|' +  o.b; } } }
+                csvOpts = { columnOverrides: { data: function(o) { return o.a + '|' +  o.b; } } }
                 hgtOpts = { minHeight: 200 }  ;
                 pdfOpts = {} ;
-                $scope.myDataSmall = [ {hasThing: false,  obj: {a:5, b:6}, name: "Moroni", age: 50, ln: 'sdf'}
-                                     , {hasThing:  true,  obj: {a:6, b:7}, ln: "Tiasdfsdfnd", age: 43}
+                $scope.myDataSmall = [ {hasThing: false,  data: {a:5, b:6}, name: "Moroni", age: 50, ln: 'sdf'}
+                                     , {hasThing:  true,  data: {a:6, b:7}, ln: "Tiasdfsdfnd", age: 43}
                                      ]
-                $scope.myDataBig = [ {hasThing: false,  obj: {a:5, b:6}, name: "Moroni", age: 50, ln: 'sdf'}
-                                   , {hasThing:  true,  obj: {a:6, b:7}, ln: "Tiasdfsdfnd", age: 43}
-                                   , {hasThing:  true,  obj: {a:6, b:7}, ln: "asdfsdfnd", age: 43}
-                                   , {hasThing:  true,  obj: {a:6, b:7}, ln: "Tiasdfsdfnd", age: 43}
-                                   , {hasThing:  true,  obj: {a:6, b:7}, ln: "iadfsdfnd", age: 43}
-                                   , {hasThing:  true,  obj: {a:6, b:7}, ln: "iafsdfnd", age: 43}
-                                   , {hasThing:  true,  obj: {a:6, b:7}, ln: "iafsdfnd", age: 43}
-                                   , {hasThing:  true,  obj: {a:6, b:7}, ln: "iafsdfnd", age: 43}
-                                   , {hasThing:  true,  obj: {a:6, b:7}, ln: "iadfsdfnd", age: 43}
-                                   , {hasThing:  true,  obj: {a:6, b:7}, ln: "iadfsdfnd", age: 43}
-                                   , {hasThing:  true,  obj: {a:6, b:7}, ln: "iadfsdfnd", age: 43}
-                                   , {hasThing:  true,  obj: {a:6, b:7}, ln: "Tisdfsdfnd", age: 43}
-                                   , {hasThing:  true,  obj: {a:6, b:7}, ln: "Tiasdfsdfnd", age: 43}
-                                   , {hasThing:  true,  obj: {a:6, b:7}, ln: "Tiasdfsdfnd", age: 43}
-                                   , {hasThing:  true,  obj: {a:6, b:7}, ln: "Tiasdfsdfnd", age: 43}
-                                   , {hasThing:  true,  obj: {a:6, b:7}, ln: "Tiasdfsdfnd", age: 43}
-                                   , {hasThing:  true,  obj: {a:6, b:7}, ln: "Tiasdfsdfnd", age: 43}
-                                   , {hasThing:  true,  obj: {a:6, b:7}, ln: "Tiasdfsdfnd", age: 43}
-                                   , {hasThing:  true,  obj: {a:6, b:7}, ln: "Tiasdfsdfnd", age: 43}
-                                   , {hasThing:  true,  obj: {a:6, b:7}, ln: "Tiasdfsdfnd", age: 43}
-                                   , {hasThing:  true,  obj: {a:6, b:7}, ln: "Tiasdfsdfnd", age: 43}
-                                   , {hasThing:  true,  obj: {a:6, b:7}, ln: "Tiasdfsdfnd", age: 43}
-                                   , {hasThing: false,  obj: {a:5, b:7}, name: "Jacob", age: 27}
-                                   , {hasThing:  true,  obj: {a:2, b:8}, ln: "Tiasdfsdfnd", age: 43}
-                                   , {hasThing:  true,  obj: {a:1, b:8}, ln: "Jacob", age: 27}
-                                   , {hasThing: false,  obj: {a:7, b:9}, name: "Tiasdfsdfnd", age: 43}
-                                   , {hasThing: false,  obj: {a:5, b:9}, name: "Jacob", age: 27}
-                                   , {hasThing:  true,  obj: {a:5, b:7}, name: "Nephi", age: 29}
-                                   , {hasThing: false,  obj: {a:5, b:7}, name: "Enos", age: 34}
+                $scope.myDataBig = [ {hasThing: false,  data: {a:5, b:6}, name: "Moroni", age: 50, ln: 'sdf'}
+                                   , {hasThing:  true,  data: {a:6, b:7}, ln: "Tiasdfsdfnd", age: 43}
+                                   , {hasThing:  true,  data: {a:6, b:7}, ln: "asdfsdfnd", age: 43}
+                                   , {hasThing:  true,  data: {a:6, b:7}, ln: "Tiasdfsdfnd", age: 43}
+                                   , {hasThing:  true,  data: {a:6, b:7}, ln: "iadfsdfnd", age: 43}
+                                   , {hasThing:  true,  data: {a:6, b:7}, ln: "iafsdfnd", age: 43}
+                                   , {hasThing:  true,  data: {a:6, b:7}, ln: "iafsdfnd", age: 43}
+                                   , {hasThing:  true,  data: {a:6, b:7}, ln: "iafsdfnd", age: 43}
+                                   , {hasThing:  true,  data: {a:6, b:7}, ln: "iadfsdfnd", age: 43}
+                                   , {hasThing:  true,  data: {a:6, b:7}, ln: "iadfsdfnd", age: 43}
+                                   , {hasThing:  true,  data: {a:6, b:7}, ln: "iadfsdfnd", age: 43}
+                                   , {hasThing:  true,  data: {a:6, b:7}, ln: "Tisdfsdfnd", age: 43}
+                                   , {hasThing:  true,  data: {a:6, b:7}, ln: "Tiasdfsdfnd", age: 43}
+                                   , {hasThing:  true,  data: {a:6, b:7}, ln: "Tiasdfsdfnd", age: 43}
+                                   , {hasThing:  true,  data: {a:6, b:7}, ln: "Tiasdfsdfnd", age: 43}
+                                   , {hasThing:  true,  data: {a:6, b:7}, ln: "Tiasdfsdfnd", age: 43}
+                                   , {hasThing:  true,  data: {a:6, b:7}, ln: "Tiasdfsdfnd", age: 43}
+                                   , {hasThing:  true,  data: {a:6, b:7}, ln: "Tiasdfsdfnd", age: 43}
+                                   , {hasThing:  true,  data: {a:6, b:7}, ln: "Tiasdfsdfnd", age: 43}
+                                   , {hasThing:  true,  data: {a:6, b:7}, ln: "Tiasdfsdfnd", age: 43}
+                                   , {hasThing:  true,  data: {a:6, b:7}, ln: "Tiasdfsdfnd", age: 43}
+                                   , {hasThing:  true,  data: {a:6, b:7}, ln: "Tiasdfsdfnd", age: 43}
+                                   , {hasThing: false,  data: {a:5, b:7}, name: "Jacob", age: 27}
+                                   , {hasThing:  true,  data: {a:2, b:8}, ln: "Tiasdfsdfnd", age: 43}
+                                   , {hasThing:  true,  data: {a:1, b:8}, ln: "Jacob", age: 27}
+                                   , {hasThing: false,  data: {a:7, b:9}, name: "Tiasdfsdfnd", age: 43}
+                                   , {hasThing: false,  data: {a:5, b:9}, name: "Jacob", age: 27}
+                                   , {hasThing:  true,  data: {a:5, b:7}, name: "Nephi", age: 29}
+                                   , {hasThing: false,  data: {a:5, b:7}, name: "Enos", age: 34}
                                    ];
                 $scope.gridOptionsBig = {
                     data: 'myDataBig',

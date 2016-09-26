@@ -24,6 +24,7 @@
         <processorPath useClasspath="true" />
         <module name="bson.filter" />
         <module name="core-framework" />
+        <module name="framework-app" />
         <module name="new-interface" />
         <module name="persistent.object.query" />
         <module name="water-app" />
@@ -33,6 +34,7 @@
       <module name="bson.filter" target="1.5" />
       <module name="core-framework" target="1.6" />
       <module name="framework" target="1.5" />
+      <module name="framework-app" target="1.6" />
       <module name="new-interface" target="1.6" />
       <module name="persistent.object.query" target="1.5" />
       <module name="water-app" target="1.6" />

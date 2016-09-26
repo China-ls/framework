@@ -11,6 +11,7 @@
         <module>module/bson.filter</module>
         <module>module/core-framework</module>
         <module>module/water-app</module>
+        <module>module/framework-app</module>
     </modules>
     <packaging>pom</packaging>
 

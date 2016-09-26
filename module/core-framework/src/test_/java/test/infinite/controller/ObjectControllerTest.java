@@ -1,7 +1,7 @@
 package test.infinite.controller;
 
-import com.infinite.framework.bson.filter.PersistentObjectFilters;
-import com.infinite.framework.bson.filter.PersistentObjectUpdates;
+import com.infinite.eoa.bson.filter.PersistentObjectFilters;
+import com.infinite.eoa.bson.filter.PersistentObjectUpdates;
 import org.bson.BsonArray;
 import org.bson.Document;
 import org.bson.types.ObjectId;

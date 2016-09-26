@@ -3,7 +3,7 @@ module.exports = {
         files: [
             {expand: true, src: "**", cwd: 'bower_components/bootstrap/fonts',         dest: "angular/fonts"},
             {expand: true, src: "**", cwd: 'bower_components/font-awesome/fonts',      dest: "angular/fonts"},
-            {expand: true, src: "**", cwd: 'bower_components/Simple-Line-Icons/fonts', dest: "angular/fonts"},
+            {expand: true, src: "**", cwd: 'bower_components/simple-line-icons/fonts', dest: "angular/fonts"},
             {expand: true, src: "**", cwd: 'src/fonts',   dest: "angular/fonts"},
             {expand: true, src: "**", cwd: 'src/api',     dest: "angular/api"},
             {expand: true, src: "**", cwd: 'src/l10n',    dest: "angular/l10n"},
@@ -16,7 +16,13 @@ module.exports = {
             {src: 'bower_components/screenfull/dist/screenfull.min.js', dest : 'angular/lib/screenfull/screenfull.min.js'},
             {src: 'bower_components/angular-busy/dist/angular-busy.min.js', dest : 'angular/lib/angular-busy/angular-busy.min.js'},
             {src: 'bower_components/angular-busy/dist/angular-busy.min.css', dest : 'angular/lib/angular-busy/angular-busy.min.css'},
-            {src: 'src/index.min.html', dest : 'angular/index.html'}
+            {src: 'bower_components/jquery/dist/jquery.min.js', dest : 'angular/lib/jquery/jquery.min.js'},
+            {src: 'bower_components/angular/angular.min.js', dest : 'angular/lib/angular/angular.min.js'},
+            {src: 'bower_components/angular-bootstrap/ui-bootstrap.min.js', dest : 'angular/lib/angular-bootstrap/ui-bootstrap.min.js'},
+            {src: 'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js', dest : 'angular/lib/angular-bootstrap/ui-bootstrap-tpls.min.js'},
+            {src: 'bower_components/angularjs-toaster/toaster.min.js', dest : 'angular/lib/angularjs-toaster/toaster.min.js'},
+            {src: 'src/index.min.html', dest : 'angular/index.html'},
+            {src: 'src/login.min.html', dest : 'angular/login.html'}
         ]
     },
     html: {

@@ -1,0 +1,78 @@
+<div ng-controller="DepartmentEditCtrl" class="wrapper-sm">
+    <div class="panel">
+        <!-- 人员表 -->
+        <div class="panel-body">
+
+            <!-- 网络请求动画 -->
+            <div cg-busy="{promise:loadDataPromise,message:'数据加载中...'}"></div>
+            <!-- 网络请求动画 -->
+
+            <form class="form-horizontal form-validation">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"><span class="padder-xs-v text-danger">*</span> 机构类型：</label>
+                    <div class="col-sm-10">
+                        <select class="form-control"
+                                ng-model="node.type"
+                                required>
+                            <option value="">请选择机构类型</option>
+                            <option ng-if="null == p_type || p_type == 0"
+                                    value="0" ng-selected="node.type == 0">
+                                普通机构
+                            </option>
+                            <option ng-if="null != p_type && (p_type == 0 || p_type == 1)"
+                                value="1" ng-selected="node.type == 1">
+                                巡查机构
+                            </option>
+                            <option ng-if="null != p_type && (p_type == 0 || p_type == 2)"
+                                    value="2" ng-selected="node.type == 2">
+                                工程机构
+                            </option>
+                            <option ng-if="null != p_type && (p_type == 0 || p_type == 3)"
+                                    value="2" ng-selected="node.type == 3">
+                                核查机构
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"><span class="padder-xs-v text-danger">*</span> 机构名字：</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control"
+                               placeholder="请输入机构名字"
+                               ng-model="node.name"
+                               required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"><span class="padder-xs-v text-danger">*</span> 负责人：</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control"
+                               placeholder="请输入负责人"
+                               ng-model="node.leading"
+                               ng-minlength="2"
+                               ng-maxlength="6"
+                               required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">地址：</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control"
+                               placeholder="请输入地址" ng-model="node.address">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="button" class="btn btn-success" ng-click="submit()">
+                            保存
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <!-- 人员表 -->
+
+    </div>
+</div>

@@ -3,15 +3,20 @@
 // DeviceDetail controller
 app.controller('DeviceTabInfoCtrl', ['$scope', '$http', '$localStorage', '$state', 'APPCONST',
     function ($scope, $http, $localStorage, $state, APPCONST) {
-        $scope.stateParams = $localStorage[APPCONST.APP_LOCAL_STORAGE_SELECT_DEVICE];
-        if (!$scope.stateParams) {
+        $scope.app.subHeader.goBackHide = false;
+        $scope.app.subHeader.goBackSref = 'app.device';
+
+        if (!$scope.$stateParams) {
             $state.go('app.device');
             return;
         }
-        $scope.loadDataPromise = $http.get(APPCONST.CTX + APPCONST.SENSOR_BY_ID + $scope.stateParams.id)
+        // console.warn($scope.$stateParams);
+        $scope.app.subHeader.contentTitle = $scope.$stateParams.device.name;
+
+        $scope.loadDataPromise = $http.get(APPCONST.CTX + APPCONST.SENSOR_BY_ID + $scope.$stateParams.id)
             .then(function (response) {
                 try {
-                    console.warn(response);
+                    // console.warn(response);
                     $scope.object = response.data.data;
                     $scope.sensor = $scope.object.sensor;
                     if ($scope.sensor && $scope.sensor.components) {

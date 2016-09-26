@@ -26,12 +26,12 @@
     <bean id="objectMapper" class="org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean">
         <property name="serializers">
             <list>
-                <bean class="com.infinite.framework.router.json.serializer.ObjectIdSerializer" />
+                <bean class="com.infinite.eoa.router.json.serializer.ObjectIdSerializer" />
             </list>
         </property>
         <property name="deserializers">
             <list>
-                <bean class="com.infinite.framework.router.json.deserializer.ObjectIdDeserializer" />
+                <bean class="com.infinite.eoa.router.json.deserializer.ObjectIdDeserializer" />
             </list>
         </property>
     </bean>
@@ -76,7 +76,7 @@
             <mvc:mapping path="/**"/>
             <!-- 需排除拦截的地址 -->
             <!-- 定义在mvc:interceptor下面的表示是对特定的请求才进行拦截的 -->
-            <bean class="com.infinite.framework.router.interceptor.MethodMonitorInterceptor"/>
+            <bean class="com.infinite.eoa.router.interceptor.MethodMonitorInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
 
@@ -98,6 +98,6 @@
     <!-- ******************************************************************** -->
     <!-- Scan for web layer annotated beans -->
     <!-- ******************************************************************** -->
-    <context:component-scan base-package="com.infinite.framework.router.controller" scoped-proxy="interfaces"/>
+    <context:component-scan base-package="com.infinite.eoa.router.controller" scoped-proxy="interfaces"/>
 
 </beans>

@@ -1445,7 +1445,7 @@ Zone Pacific/Galapagos	-5:58:24 -	LMT	1931 # Puerto Baquerizo Moreno
 #   The current Atlantic/Stanley entry under South America expects the
 #   clocks to go back to standard Falklands Time (FKT) on the 15th April.
 #   The database entry states that in 2011 Stanley was staying on fixed
-#   summer time on a trial basis only.  FIG need to contact IANA and/or
+#   summer time on a trial basis only.  FIG need to leading IANA and/or
 #   the maintainers of the database to inform them we're adopting
 #   the same policy this year and suggest recommendations for future years.
 #

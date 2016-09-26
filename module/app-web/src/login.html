@@ -21,7 +21,10 @@
     <link rel="stylesheet" href="css/app.css" type="text/css">
 
 </head>
-<body ng-controller="LoginCtrl">
+<body ng-controller="LoginCtrl" class="login-body">
+
+<!--<input type="hidden" id="__ctx" value="http://120.55.165.5:9998/app"/>-->
+<input type="hidden" id="__ctx" value="http://127.0.0.1:9998/app"/>
 
 <!-- toaster directive -->
 <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
@@ -31,14 +34,14 @@
 <div class="login" id="login">
 
     <div class="login-header">
-        <img class="login-title" src="img/u40.png" width="500" height="48">
+        <img class="login-title" src="img/u40.png" width="440" height="48">
     </div>
 
     <!-- carousel -->
-    <div class="login-carousel" set-ng-animate="false" style="height: 100%;">
+    <div class="login-carousel" set-ng-animate="false" style="height: 100%;background-color: #BCBCBC;display: block;">
         <carousel interval="imageListSlideInterval">
             <slide ng-repeat="row in imageList">
-                <img ng-src="{{row}}" style="height:100%;margin: 0 auto;">
+                <img ng-src="{{row}}" style="height: 100%;">
             </slide>
         </carousel>
     </div>
@@ -46,20 +49,23 @@
 
     <div class="login-wrapper">
 
-        <div class=" ">
-            <form class="wrapper bg-light-gray1-only b b-gray">
-                <div class="m-b-xs">
-                    <span class="m">
-                        <img class="m-b-sm" src="img/login_logo.png" width="66" height="28"/>
-                    </span>
-                    <span class="login-form-title">智能环保运营平台</span>
+        <div>
+            <form class="wrapper bg-light-gray1-only b b-gray form form-validation">
+                <div class="m-b-xs text-center wrapper-sm" ng-class="{'show-login-result': null != loginResult}">
+                    <!--<div class="m-b-xs text-center wrapper-sm">-->
+                    <span class="login-form-title"><b>用户登录</b></span>
+                    <alert class="login-result-alert m-b-none m-t-xs" type="danger" close="clearLoginResult()">
+                        登录失败: <span>{{loginResult.message}}</span>
+                    </alert>
                 </div>
+
                 <div class="form-group">
                     <div class="input-group m-b">
                         <span class="input-group-addon">
                             <i class="icon-envelope"></i>
                         </span>
-                        <input type="text" class="form-control" placeholder="Email/用户名/手机号">
+                        <input ng-model="user.username" type="text" class="form-control"
+                               placeholder="Email/用户名/手机号" value="admin" required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -67,11 +73,17 @@
                         <span class="input-group-addon">
                             <i class="icon-lock"></i>
                         </span>
-                        <input type="password" class="form-control" placeholder="密码">
+                        <input ng-model="user.password" type="password"
+                               class="form-control" placeholder="密码" value="password" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="img-full btn btn-info btn-lg">登录</button>
+                    <b>
+                        <button type="button" class="img-full btn btn-info"
+                                ng-click="submit()" ng-disabled="loginPromise">登录
+                            <i class="fa fa-spinner fa-spin hide" ng-class="{'hide': !loginPromise}"></i>
+                        </button>
+                    </b>
                 </div>
                 <div class="form-group">
                     <span class="powered-by">Powered by Infinite Tech</span>
@@ -90,6 +102,10 @@
 
 </div>
 
+<div class="login-copy-right text-center padder-md-v">
+    Copyright &copy; 2016 aidiman All Right Reserved
+</div>
+
 </body>
 
 <!-- jQuery -->
@@ -97,23 +113,106 @@
 
 <!-- Angular -->
 <script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-bootstrap/ui-bootstrap.js"></script>
 <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 
 
 <script src="../bower_components/angularjs-toaster/toaster.min.js"></script>
 
 <script type="text/javascript">
-    angular.module('login', [
-        "toaster",
-        'ui.bootstrap'
-    ]).controller('LoginCtrl', ['$scope', function ($scope) {
-        $scope.imageListSlideInterval = 10000;
-        $scope.imageList = [
-            'img/u9.png',
-            'img/u7.png',
-            'img/u5.png'
-        ];
-    }])
+    angular.module('login', ["toaster", 'ui.bootstrap'])
+            .config(['$httpProvider', function ($httpProvider) {
+                $httpProvider.defaults.headers.put['Content-Type'] = 'application/x-www-form-urlencoded';
+                $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+
+                // Override $http service's default transformRequest
+                $httpProvider.defaults.transformRequest = [function (data) {
+                    var param = function (data) {
+                        var query = '';
+                        var name, value, fullSubName, subName, subValue, innerObj, i;
+
+                        for (name in data) {
+                            value = data[name];
+
+                            if (value instanceof Array) {
+                                for (i = 0; i < value.length; ++i) {
+                                    subValue = value[i];
+                                    fullSubName = name + '[' + i + ']';
+                                    innerObj = {};
+                                    innerObj[fullSubName] = subValue;
+                                    query += param(innerObj) + '&';
+                                }
+                            } else if (value instanceof Object) {
+                                for (subName in value) {
+                                    subValue = value[subName];
+                                    fullSubName = name + '[' + subName + ']';
+                                    innerObj = {};
+                                    innerObj[fullSubName] = subValue;
+                                    query += param(innerObj) + '&';
+                                }
+                            } else if (value !== undefined && value !== null) {
+                                query += encodeURIComponent(name) + '=' + encodeURIComponent(value) + '&';
+                            }
+                        }
+                        return query.length ? query.substr(0, query.length - 1) : query;
+                    };
+
+                    return angular.isObject(data) && String(data) !== '[object File]'
+                            ? param(data)
+                            : data;
+                }];
+            }])
+            .controller('LoginCtrl', ['$scope', 'toaster', '$http', '$window',
+                function ($scope, toaster, $http, $window) {
+                    $scope.CTX = angular.element("#__ctx").val();
+                    $scope.imageListSlideInterval = 5000;
+                    $scope.imageList = [
+                        'img/u9.png',
+                        'img/u7.png',
+                        'img/u5.png'
+                    ];
+                    $scope.loginPromise = false;
+                    $scope.toastWarn = function (text) {
+                        toaster.pop('warning', '提示', text);
+                    };
+                    $scope.toastError = function (text) {
+                        toaster.pop('error', '警告', text);
+                    };
+                    if (!$scope.user) {
+                        $scope.user = {
+                            username: 'admin',
+                            password: 'admin'
+                        };
+                    }
+                    $scope.clearLoginResult = function () {
+                        $scope.loginResult = null;
+                    };
+                    $scope.submit = function () {
+                        if (!$scope.user.username) {
+                            $scope.toastWarn('请输入用户名');
+                            return;
+                        }
+                        if (!$scope.user.password) {
+                            $scope.toastWarn('请输入密码');
+                            return;
+                        }
+                        $scope.loginPromise = true;
+//                        console.warn($scope.user);
+                        $scope.loginResult = null;
+                        $http.post($scope.CTX + '/login', $scope.user).then(function (response) {
+                            if (response.data.code === '0') {
+                                $window.location.href = $scope.CTX + '/app';
+                            } else {
+                                $scope.loginResult = response.data;
+                            }
+//                            console.warn(response);
+                            $scope.loginPromise = false;
+                        }, function (response) {
+                            $scope.toastError('服务器响应异常，请联系管理员。');
+                            $scope.loginPromise = false;
+                        });
+                    };
+                }])
     ;
 </script>
 </html>

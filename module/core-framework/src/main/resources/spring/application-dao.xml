@@ -22,11 +22,11 @@
     <context:property-placeholder location="classpath:/prop/mongo.properties" ignore-unresolvable="true"/>
 
     <!-- mongoDB的配置对象 -->
-    <bean id="mongoOptionsDto" class="com.infinite.framework.core.persistent.MongoClientOptionsDto">
+    <bean id="mongoOptionsDto" class="com.infinite.eoa.core.persistent.MongoClientOptionsDto">
     </bean>
 
     <!-- 使用工厂创建mongo实例 -->
-    <bean id="mongo" class="com.infinite.framework.core.persistent.MongoClientFactoryBean">
+    <bean id="mongo" class="com.infinite.eoa.core.persistent.MongoClientFactoryBean">
         <!-- mongoDB的配置对象 -->
         <property name="mongoClientOptionsDto" ref="mongoOptionsDto"/>
 
@@ -45,21 +45,21 @@
     </bean>
 
     <!-- 使用工厂创建morphia实例，同时完成类映射操作 -->
-    <bean id="morphia" class="com.infinite.framework.core.persistent.MorphiaFactoryBean">
+    <bean id="morphia" class="com.infinite.eoa.core.persistent.MorphiaFactoryBean">
         <!-- 指定要扫描的POJO包路径 -->
         <property name="mapPackages">
             <array>
-                <value>com.infinite.framework.entity.Account</value>
-                <value>com.infinite.framework.entity.Action</value>
-                <value>com.infinite.framework.entity.Application</value>
-                <value>com.infinite.framework.entity.Component</value>
-                <value>com.infinite.framework.entity.VirtualSensor</value>
+                <value>com.infinite.eoa.entity.Account</value>
+                <value>com.infinite.eoa.entity.Action</value>
+                <value>com.infinite.eoa.entity.Application</value>
+                <value>com.infinite.eoa.entity.Component</value>
+                <value>com.infinite.eoa.entity.VirtualSensor</value>
             </array>
         </property>
     </bean>
 
     <!-- 使用工厂创建datastore，同时完成index和caps的确认操作 -->
-    <bean id="systemDatastore" class="com.infinite.framework.core.persistent.DatastoreFactoryBean">
+    <bean id="systemDatastore" class="com.infinite.eoa.core.persistent.DatastoreFactoryBean">
         <property name="morphia" ref="morphia"/>
         <property name="mongoClient" ref="mongo"/>
         <!-- collection的名称 -->
@@ -74,21 +74,21 @@
         <property name="toEnsureCaps" value="true"/>
     </bean>
 
-    <bean name="persistentObjectDAO" class="com.infinite.framework.persistent.impl.PersistentObjectDAOImpl">
+    <bean name="persistentObjectDAO" class="com.infinite.eoa.persistent.impl.PersistentObjectDAOImpl">
         <property name="mongo" ref="mongo"/>
     </bean>
 
     <!--<context:component-scan base-package="com.infinite.framework.persistent" />-->
 
-    <bean name="accountDAO" class="com.infinite.framework.persistent.impl.AccountDAOImpl">
+    <bean name="accountDAO" class="com.infinite.eoa.persistent.impl.AccountDAOImpl">
         <constructor-arg ref="systemDatastore"/>
     </bean>
 
-    <bean name="applicationDAO" class="com.infinite.framework.persistent.impl.ApplicationDAOImpl">
+    <bean name="applicationDAO" class="com.infinite.eoa.persistent.impl.ApplicationDAOImpl">
         <constructor-arg ref="systemDatastore"/>
     </bean>
 
-    <bean name="virtualSensorDAO" class="com.infinite.framework.persistent.impl.VirtualSensorDAOImpl">
+    <bean name="virtualSensorDAO" class="com.infinite.eoa.persistent.impl.VirtualSensorDAOImpl">
         <constructor-arg ref="systemDatastore"/>
     </bean>
 

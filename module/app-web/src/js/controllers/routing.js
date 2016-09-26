@@ -53,7 +53,7 @@ app.controller('AsideRouteCtrl', ['$scope', '$http', '$localStorage', '$state', 
             return data;
         };
 
-        $http.get(NETCONST.CTX + NETCONST.DEPARTMENT_ROUTE).then(function (response) {
+        $http.get(APPCONST.CTX + APPCONST.DEPARTMENT_ROUTE).then(function (response) {
             var data = $scope.analysDepartment(response.data.data, 0);
             $scope.treeData.push(data);
             try {

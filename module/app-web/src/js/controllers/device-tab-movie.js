@@ -3,8 +3,10 @@
 // DeviceTabMovieCtrl controller
 app.controller('DeviceTabMovieCtrl', ['$scope', '$http', '$localStorage', '$state', 'APPCONST',
     function ($scope, $http, $localStorage, $state, APPCONST) {
-        $scope.stateParams = $localStorage[APPCONST.APP_LOCAL_STORAGE_SELECT_DEVICE];
-        if (!$scope.stateParams) {
+        $scope.app.subHeader.goBackHide = false;
+        $scope.app.subHeader.goBackSref = 'app.device';
+
+        if (!$scope.$stateParams) {
             $state.go('app.device');
             return;
         }
@@ -12,7 +14,7 @@ app.controller('DeviceTabMovieCtrl', ['$scope', '$http', '$localStorage', '$stat
         $scope.imageUrl = APPCONST.CTX + APPCONST.SENSOR_DATA_IMAGE;
 
         $scope.loadDataPromise = $http.get(
-            APPCONST.CTX + APPCONST.SENSOR_DATA_IMAGE_LIST.replace("{id}", $scope.stateParams.id))
+            APPCONST.CTX + APPCONST.SENSOR_DATA_IMAGE_LIST.replace("{id}", $scope.$stateParams.id))
             .then(function (response) {
                 $scope.imageList = response.data.data;
                 if ($scope.imageList) {

@@ -635,24 +635,24 @@
 				"});"
 			]);
 
-			placeholder.bind("plothover", function(event, pos, obj) {
+			placeholder.bind("plothover", function(event, pos, data) {
 
-				if (!obj) {
+				if (!data) {
 					return;
 				}
 
-				var percent = parseFloat(obj.series.percent).toFixed(2);
-				$("#hover").html("<span style='font-weight:bold; color:" + obj.series.color + "'>" + obj.series.label + " (" + percent + "%)</span>");
+				var percent = parseFloat(data.series.percent).toFixed(2);
+				$("#hover").html("<span style='font-weight:bold; color:" + data.series.color + "'>" + data.series.label + " (" + percent + "%)</span>");
 			});
 
-			placeholder.bind("plotclick", function(event, pos, obj) {
+			placeholder.bind("plotclick", function(event, pos, data) {
 
-				if (!obj) {
+				if (!data) {
 					return;
 				}
 
-				percent = parseFloat(obj.series.percent).toFixed(2);
-				alert(""  + obj.series.label + ": " + percent + "%");
+				percent = parseFloat(data.series.percent).toFixed(2);
+				alert(""  + data.series.label + ": " + percent + "%");
 			});
 		});
 

@@ -60,6 +60,10 @@ angular.module('app')
                         },
                         parent: 'app.device',
                         views: {
+                            'subContentTitle@app': {
+                                templateUrl: 'tpl/blocks/common_sub_header.html',
+                                controller: 'DeviceTabCtrl'
+                            },
                             'contentView@app': {
                                 templateUrl: 'tpl/app_device_tab.html'/*,
                                  controller: 'DeviceTabCtrl'*/
@@ -124,31 +128,21 @@ angular.module('app')
                                 templateUrl: 'tpl/app_device_tab_control.html',
                                 controller: 'DeviceTabControlCtrl'
                             }
-                        }
-                    })
-                    .state('app.device.tab.water', {
-                        url: '/water',
-                        parent: 'app.device.tab',
-                        views: {
-                            'tab_contentView': {
-                                templateUrl: 'tpl/app_device_tab_water.html',
-                                controller: 'DeviceTabWaterCtrl'
-                            }
                         },
                         resolve: {
                             deps: ['$ocLazyLoad',
                                 function ($ocLazyLoad) {
-                                    return $ocLazyLoad.load(['highcharts-ng', 'cgBusy']);
+                                    return $ocLazyLoad.load(['frapontillo.bootstrap-switch', 'cgBusy']);
                                 }]
                         }
                     })
-                    .state('app.device.tab.positive', {
-                        url: '/positive',
+                    .state('app.device.tab.flow', {
+                        url: '/flow',
                         parent: 'app.device.tab',
                         views: {
                             'tab_contentView': {
-                                templateUrl: 'tpl/app_device_tab_positive.html',
-                                controller: 'DeviceTabPositiveCtrl'
+                                templateUrl: 'tpl/app_device_tab_flow.html',
+                                controller: 'DeviceTabFlowCtrl'
                             }
                         },
                         resolve: {
@@ -243,14 +237,14 @@ angular.module('app')
                                 }]
                         }
                     })
-                    .state('app.mr', {
-                        url: '/mr',
+                    .state('app.empduty', {
+                        url: '/empduty',
                         views: {
                             'subContentTitle': {
                                 templateUrl: 'tpl/blocks/common_sub_header.html',
-                                controller: 'ManageRouterCtrl'
+                                controller: 'EmployeeDutyTitleCtrl'
                             },
-                            'contentView': {templateUrl: 'tpl/app_mng_router.html', controller: 'ManageRouterCtrl'}
+                            'contentView': {templateUrl: 'tpl/app_employee_duty.html'}
                         }
                     })
                     .state('app.mr.emp', {
@@ -290,9 +284,28 @@ angular.module('app')
                             'contentView': {templateUrl: 'tpl/app_mng_device.html', controller: 'ManageDeviceCtrl'}
                         }
                     })
+                    .state('app.mngdpt', {
+                        url: '/mngdpt',
+                        views: {
+                            'subContentTitle': {
+                                templateUrl: 'tpl/blocks/common_sub_header.html',
+                                controller: 'ManageDepartmentTitleCtrl'
+                            },
+                            'contentView': {templateUrl: 'tpl/app_mng_department.html'}
+                        }
+                    })
+                    .state('app.mngdpt.edit', {
+                        url: '/edit',
+                        views: {
+                            'subContentTitle@app': {
+                                templateUrl: 'tpl/blocks/common_sub_header.html',
+                                controller: 'DepartmentEditTitleCtrl'
+                            },
+                            'contentView@app': {templateUrl: 'tpl/app_mng_department_add.html'}
+                        }
+                    })
                     .state('app.cencus', {
                         url: '/cencus',
-                        cache: false,
                         views: {
                             'subContentTitle': {
                                 templateUrl: 'tpl/blocks/common_sub_header.html',
@@ -318,6 +331,42 @@ angular.module('app')
                             'contentView': {
                                 templateUrl: 'tpl/app_system_information.html',
                                 controller: 'SystemInformationCtrl'
+                            }
+                        },
+                        resolve: {
+                            deps: ['$ocLazyLoad',
+                                function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load(['highcharts-ng']);
+                                }]
+                        }
+                    })
+                    .state('app.employee', {
+                        url: '/employee',
+                        views: {
+                            'subContentTitle': {
+                                templateUrl: 'tpl/blocks/common_sub_header.html',
+                                controller: 'EmployeeTitleCtrl'
+                            },
+                            'contentView': {
+                                templateUrl: 'tpl/app_employee.html'
+                            }
+                        },
+                        resolve: {
+                            deps: ['$ocLazyLoad',
+                                function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load(['highcharts-ng']);
+                                }]
+                        }
+                    })
+                    .state('app.employee.add', {
+                        url: '/add',
+                        views: {
+                            'subContentTitle@app': {
+                                templateUrl: 'tpl/blocks/common_sub_header.html',
+                                controller: 'EmployeeAddTitleCtrl'
+                            },
+                            'contentView@app': {
+                                templateUrl: 'tpl/app_employee_add.html'
                             }
                         },
                         resolve: {

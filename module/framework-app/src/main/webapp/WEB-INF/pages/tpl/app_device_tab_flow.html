@@ -1,0 +1,63 @@
+<!--最新数据-->
+<div class="padder-sm m-t-sm">
+    <div class="row">
+
+        <!-- 网络请求动画 -->
+        <div cg-busy="{promise:loadLatestDataPromise,message:'数据加载中...'}"></div>
+        <!-- 网络请求动画 -->
+
+        <div class="col-sm-4">
+            <div class="panel panel-info">
+                <div class="panel-heading">瞬时流量</div>
+                <div class="panel-body"><span class="inline w-sm wrapper-xs b b-gray">{{latestFlowmeter.instant}}</span>&nbsp;&nbsp;升/小时</div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="panel panel-info">
+                <div class="panel-heading">累计流量</div>
+                <div class="panel-body"><span class="inline w-sm wrapper-xs b b-gray">{{latestFlowmeter.positive_total}}</span>&nbsp;&nbsp;立方米</div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="panel panel-info">
+                <div class="panel-heading">更新时间</div>
+                <div class="panel-body"><span class="inline wrapper-xs b b-gray">{{latestFlowmeter.update_time}}</span></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="divider divider-md bg-white"></div>
+<!--最新数据-->
+
+<!--水量计-->
+<div class="padder-sm m-b-sm">
+    <div class="panel panel-default">
+        <div class="panel-heading font-bold title">瞬时流量</div>
+        <div class="panel-body">
+            <!-- 网络请求动画 -->
+            <div cg-busy="{promise:getWaterDataPromise,message:'数据加载中...'}"></div>
+            <!-- 网络请求动画 -->
+            <highchart config="chartHandlerWater"></highchart>
+        </div>
+    </div>
+</div>
+<div class="divider divider-md bg-white"></div>
+<!--水量计-->
+
+<!--日处理量-->
+<div class="padder-sm m-b-sm">
+    <div class="panel panel-default">
+        <div class="panel-heading font-bold title">日处理量</div>
+        <div class="panel-body">
+            <!-- 网络请求动画 -->
+            <div cg-busy="{promise:loadDayPositivePromise,message:'数据加载中...'}"></div>
+            <!-- 网络请求动画 -->
+            <highchart config="chartHandlerDayTotal"></highchart>
+        </div>
+    </div>
+</div>
+<div class="divider divider-md bg-white"></div>
+<!--日处理量-->

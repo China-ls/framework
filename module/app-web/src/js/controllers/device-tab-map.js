@@ -3,8 +3,10 @@
 // DeviceTabMapCtrl controller
 app.controller('DeviceTabMapCtrl', ['$scope', '$http', '$localStorage', '$state', 'APPCONST', '$window', '$modal',
     function ($scope, $http, $localStorage, $state, APPCONST, $window, $modal) {
-        $scope.stateParams = $localStorage[APPCONST.APP_LOCAL_STORAGE_SELECT_DEVICE];
-        if (!$scope.stateParams) {
+        $scope.app.subHeader.goBackHide = false;
+        $scope.app.subHeader.goBackSref = 'app.device';
+
+        if (!$scope.$stateParams) {
             $state.go('app.device');
             return;
         }
@@ -40,7 +42,7 @@ app.controller('DeviceTabMapCtrl', ['$scope', '$http', '$localStorage', '$state'
             });
         };
 
-        $scope.loadDataPromise = $http.get(APPCONST.CTX + APPCONST.SENSOR_BY_ID + $scope.stateParams.id)
+        $scope.loadDataPromise = $http.get(APPCONST.CTX + APPCONST.SENSOR_BY_ID + $scope.$stateParams.id)
             .then(function (response) {
                 if (!response.data.data || !response.data.data.sensor) {
                     return;

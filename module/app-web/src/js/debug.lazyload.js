@@ -132,6 +132,14 @@ angular.module('app')
                     ]
                 },
                 {
+                    name: 'frapontillo.bootstrap-switch',
+                    files: [
+                        '../bower_components/bootstrap-switch/dist/js/bootstrap-switch.min.js',
+                        '../bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css',
+                        '../bower_components/angular-bootstrap-switch/dist/angular-bootstrap-switch.min.js'
+                    ]
+                },
+                {
                     name: 'masonry',
                     files: [
                         '../bower_components/masonry/dist/masonry.pkgd.js'

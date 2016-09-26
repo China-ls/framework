@@ -1,17 +1,18 @@
-.login {
-  background-color: #FFFFFF;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  max-width: 100%;
-  max-height: 100%;
-  overflow: hidden;
+.login-body {
+  background-color: #363636;
+  overflow: auto;
 }
 .login .carousel-control {
   display: none;
   visibility: hidden;
+}
+.login .carousel-indicators li {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.login .carousel-indicators li.active {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .login-header {
   height: 80px;
@@ -19,13 +20,6 @@
 .login-title {
   margin-left: 50px;
   margin-top: 16px;
-}
-.login-carousel {
-  height: 100%;
-  padding-bottom: 80px;
-  position: relative;
-  top: 0;
-  bottom: 0;
 }
 .login-carousel .carousel {
   height: 100%;
@@ -36,11 +30,33 @@
 .login-carousel .carousel-inner * {
   height: 100%;
 }
+.login {
+  height: 100%;
+  padding-bottom: 100px;
+}
 .login-wrapper {
   position: fixed;
   right: 10%;
   top: 30%;
-  width: 30%;
-  min-width: 342px;
+  width: 342px;
   height: 290px;
+  z-index: 1000;
+}
+.login-copy-right {
+  color: #a9a994;
+  background-color: #363636;
+}
+.login-form-title {
+  color: #555;
+  font-size: 16px;
+}
+.login-result-wrap,
+.login-result-alert {
+  display: none;
+  visibility: hidden;
+}
+.show-login-result .login-result-wrap,
+.show-login-result .login-result-alert {
+  display: block;
+  visibility: visible;
 }

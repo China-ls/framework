@@ -6,29 +6,34 @@
         <div class="row">
 
             <!-- 排行榜 -->
-            <div class="col-lg-6 padder-sm-v pull-in m-l-sm no-m-sm no-m-xs">
+            <div class="col-lg-6 padder-sm-v pull-in m-l-sm no-m-sm no-m-xs"
+                 ng-class="{'hide' : app.settings.mapScaleMax}">
 
                 <div class="sub-title">
                     <div class="title-wrapper"
                          style="max-width: 200px;padding-bottom: 5px;border-bottom: 2px solid #00ee00;">
                         <span class="title"
                               style="font-family: '黑体 Oblique', '黑体 Regular', '黑体';font-weight: 400;font-style: oblique;margin-right: 20px;">污水处理排行榜</span>
-                        <div class="btn-group btn-group-xs">
+                        <div class="btn-group btn-group-xs" ng-init="radioModel = '周'">
                             <label class="btn btn-danger ng-pristine ng-untouched ng-valid"
                                    ng-model="radioModel"
                                    btn-radio="'周'">周</label>
-                            <label class="btn btn-danger ng-pristine ng-untouched ng-valid" ng-model="radioModel"
+                            <label class="btn btn-danger ng-pristine ng-untouched ng-valid"
+                                   ng-model="radioModel"
                                    btn-radio="'月'">月</label>
-                            <label class="btn btn-danger ng-pristine ng-untouched ng-valid active" ng-model="radioModel"
+                            <label class="btn btn-danger ng-pristine ng-untouched ng-valid active"
+                                   ng-model="radioModel"
                                    btn-radio="'年'">年</label>
                         </div>
                     </div>
                 </div>
 
-                <div class="row" style="padding: 5px 5px 10px 5px;margin: 5px 5px 10px 5px;border-bottom: 1px dashed #00A000;">
+                <div class="row"
+                     style="padding: 5px 5px 10px 5px;margin: 5px 5px 10px 5px;border-bottom: 1px dashed #00A000;">
                     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 no-padder-xs no-padder-sm">
                         <div class="center-block dirty-water-item" style="padding: 10px 10px 0;max-width: 120px;">
-                            <div class="text-center bg-light-gray-only b b-gray b-10-t" style="border-top-color: #00aa00">
+                            <div class="text-center bg-light-gray-only b b-gray b-10-t"
+                                 style="border-top-color: #00aa00">
                                 <div class="t-index-wrapper">
                                     <span class="index">1</span>
                                 </div>
@@ -86,7 +91,7 @@
                     <div class="bg-warning" style="padding: 5px;width: 70px;">
                         <span class=" text-danger">告警通知</span>
                     </div>
-                    <div class="bg-gd-dk" style="padding: 10px;">
+                    <div class="bg-gd-only wrapper-sm">
                         <div class="row">
                             <div class="col-xs-9 col-xs-9 col-sm-9 col-md-9 col-lg-9">2016.07.28 17:34泖港镇吴桥站视频中断。</div>
                             <div class="col-xs-3 col-xs-3 col-sm-3 col-md-3 col-lg-3 text-danger">待处理</div>
@@ -111,15 +116,21 @@
             </div>
             <!-- 排行榜 -->
 
-
             <!-- 地图信息 -->
             <div class="col-lg-6 map-wrapper">
                 <div id="map_canvas"
-                     class="wrapper-sm m-r b b-a b-gray no-m-sm no-m-xs"
-                     style="min-height:265px;margin-top: 17px; margin-bottom: 5px;"
+                     class="wrapper-sm m-l-sm m-r-sm b b-a b-r-2x b-gray no-m-sm no-m-xs"
+                     style="min-height:269px;margin-top: 13px; margin-bottom: 5px;"
                      ui-baidu-map="myMap"
                      ui-event="{'map-click': 'onMapClick($event, $params)', 'map-loaded': 'onMapLoaded($event, $params)'}"
                      ui-options="mapOptions">
+                </div>
+
+                <div class="map-scale-btn-wrapper"
+                     style="position: absolute;top: 13px;right: 25px;width: 30px;height: 30px;padding: 6px 6px; border:1px solid #ccc; box-shadow: #ddd;"
+                     ng-click="toggleMapScale()">
+                    <i style="font-size: 16px;"
+                       ng-class="{'icon-size-fullscreen': !app.settings.mapScaleMax, 'icon-size-actual': app.settings.mapScaleMax}"></i>
                 </div>
 
                 <!-- modal -->
@@ -134,25 +145,25 @@
 
     </div>
 
-    <div class="app-data-list">
-        <div class="data-header">
+    <div class="app-data-list" ng-class="{'hide' : app.settings.mapScaleMax}">
+        <div class="data-header m-l-sm m-r-sm" ng-init="dataListType = '类型'">
             <div class="hidden-xs btn-group">
-                <label class="btn btn-default ng-pristine ng-untouched ng-valid" ng-model="dataListType"
-                       btn-radio="'用电量'">用电量</label>
-                <label class="btn btn-default ng-pristine ng-untouched ng-valid" ng-model="dataListType"
-                       btn-radio="'处水量'">处水量</label>
-                <label class="btn btn-default ng-pristine ng-untouched ng-valid active" ng-model="dataListType"
-                       btn-radio="'行政区划'">行政区划</label>
+                <label class="btn btn-gray ng-pristine ng-untouched ng-valid"
+                       ng-model="dataListType"
+                       btn-radio="'类型'">类型</label>
+                <label class="btn btn-gray ng-pristine ng-untouched ng-valid"
+                       ng-model="dataListType"
+                       btn-radio="'状态'">状态</label>
             </div>
-            <div class="visable-xs hidden-sm hidden-md hidden-lg btn-group btn-group-xs" style="margin-top: 5px;">
-                <label class="btn btn-default ng-pristine ng-untouched ng-valid" ng-model="dataListType"
-                       btn-radio="'用电量'">用电量</label>
-                <label class="btn btn-default ng-pristine ng-untouched ng-valid" ng-model="dataListType"
-                       btn-radio="'处水量'">处水量</label>
-                <label class="btn btn-default ng-pristine ng-untouched ng-valid active" ng-model="dataListType"
-                       btn-radio="'行政区划'">行政区划</label>
+            <div class="visable-xs hidden-sm hidden-md hidden-lg btn-group btn-group-xs m-t-xs">
+                <label class="btn btn-gray ng-pristine ng-untouched ng-valid"
+                       ng-model="dataListType"
+                       btn-radio="'类型'">类型</label>
+                <label class="btn btn-gray ng-pristine ng-untouched ng-valid"
+                       ng-model="dataListType"
+                       btn-radio="'状态'">状态</label>
             </div>
-            <div class="data-filter">
+            <div class="hide data-filter">
                 <label class="radio-inline">
                     <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked> 周
                 </label>
@@ -165,55 +176,35 @@
             </div>
         </div>
 
-        <div class="data-content">
-            <!-- list item -->
-            <div ng-repeat="device in virtualSensors" class="data-item-wrapper">
+        <div class="data-content padder-sm">
+            <div ng-repeat="device in virtualSensors" class="data-item-wrapper bg-light-gray1-only"
+                 ng-class="{'bg-light-gray2-only': $index % 2 != 0}">
                 <div class="row">
-                    <div class="col-lg-6">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <img src="img/{{device.sensor.sensor_id}}.jpg" class="img-full">
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property"><span>设备名称：</span><span style="color: #f40;">{{device.sensor.name}}</span>
-                                </p>
-                                <p class="data-property">设备编号：<span class="cb">{{device.sensor.internal_id}}</span></p>
-                                <p class="data-property">站点类型：<span class="cb">{{device.sensor.station_type}}</span></p>
-                                <p class="data-property">设备描述：<span class="cb">{{device.sensor.desc}}</span></p>
-                            </div>
-                        </div>
+                    <div class="col-xs-4">
+                        <p class="data-property"><span>设备名称：</span>
+                            <span style="color: #f40;">{{device.sensor.name}}</span>
+                        </p>
                     </div>
-                    <div class=" col-lg-6">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property" style="margin-top: 40px;"></p>
-                                <p class="data-property">今日处水量： <span
-                                        class="text-primary">{{device.sensor.csl}} 吨</span></p>
-                                <p class="data-property">设备状态：<span class="cb">正常</span></p>
-                                <p class="data-property">经度：<span class="cb">{{device.sensor.latitude}}</span></p>
-                                <p class="data-property">纬度：<span class="cb">{{device.sensor.longitude}}</span></p>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <p class="data-property" style="margin-top: 40px;"></p>
-                                <p class="data-property">瞬时流量：<span class="cb">{{device.sensor.flowmeter_data.instant}} L/H</span>
-                                </p>
-                                <p class="data-property">累计流量：<span class="cb">{{device.sensor.flowmeter_data.positive_total}} 立方米</span>
-                                </p>
-                                <p class="data-property">更新时间：<span
-                                        class="cb">{{device.sensor.flowmeter_data.time}}</span></p>
-                            </div>
-                        </div>
+                    <div class="col-xs-4">
+                        <p class="data-property">设备编号：<span class="cb">{{device.sensor.internal_id}}</span></p>
+                    </div>
+                    <div class="col-xs-4">
+                        <p class="data-property">更新时间：<span class="cb">{{device.sensor.flowmeter_data.time}}</span></p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-offset-7 col-sm-offset-9">
-                        <a ui-sref=".tab.map({id:device.sensor.sensor_id})" class="btn btn-success btn-xs w-xs">&nbsp;&nbsp;详情&nbsp;&nbsp;</a>
-                        <button class="btn btn-success btn-xs w-xs" ng-click="showInMap(device.sensor.sensor_id)">地图定位
-                        </button>
+                    <div class="col-xs-4">
+                        <p class="data-property">设备状态：<span class="cb">正常</span></p>
+                    </div>
+                    <div class="col-xs-4">
+                        <p class="data-property">站点类型：<span class="cb">{{device.sensor.station_type}}</span></p>
+                    </div>
+                    <div class="col-xs-4">
+                        <a ui-sref="app.device.tab.info({id:device.sensor.sensor_id, device: device})"
+                           class="btn btn-success btn-xs w-xs">&nbsp;&nbsp;详&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;情&nbsp;&nbsp;</a>
                     </div>
                 </div>
             </div>
-            <!-- list item -->
 
         </div>
     </div>

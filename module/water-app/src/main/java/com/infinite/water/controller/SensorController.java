@@ -28,6 +28,23 @@ public class SensorController extends ResponseCodeController {
     @Autowired
     private VirtualSensorService virtualSensorService;
 
+    @RequestMapping(value = "/{id}/data/latest", method = RequestMethod.GET)
+    @ResponseBody
+    public RestResponse sensorData(@PathVariable("id") String id) {
+        RestResponse response = null;
+        try {
+            response = makeRestResponse(
+                    ResponseCode.SUCCESS, virtualSensorService.getVirtualSensorLatestData(id)
+            );
+        } catch (Throwable e) {
+            if (log.isDebugEnabled()) {
+                log.debug("read xdepartment.json error: {}", e.getCause());
+            }
+            response = makeRestResponse(ResponseCode.SYSTEM_ERROR);
+        }
+        return response;
+    }
+
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
     public RestResponse sensor(@PathVariable("id") String id) {

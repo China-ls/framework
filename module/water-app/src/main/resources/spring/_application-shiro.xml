@@ -16,7 +16,7 @@
     </bean>
 
     <!-- 凭证匹配器 -->
-    <bean id="credentialsMatcher" class="com.infinite.framework.auth.credentials.RetryLimitHashedCredentialsMatcher">
+    <bean id="credentialsMatcher" class="com.infinite.eoa.auth.credentials.RetryLimitHashedCredentialsMatcher">
         <constructor-arg ref="cacheManager"/>
         <!--<property name="hashAlgorithmName" value="md5"/>-->
         <!--<property name="hashIterations" value="2"/>-->
@@ -112,7 +112,7 @@
                     <!--<property name="authorizationCachingEnabled" value="true"/>-->
                     <!--<property name="authorizationCacheName" value="appAuthorizationCache"/>-->
                 <!--</bean>-->
-                <bean id="accountCacheRetryRealm" class="com.infinite.framework.auth.realm.AccountRealm">
+                <bean id="accountCacheRetryRealm" class="com.infinite.eoa.auth.realm.EmployeeRealm">
                     <property name="credentialsMatcher" ref="credentialsMatcher"/>
                     <property name="cachingEnabled" value="true"/>
                     <property name="authenticationCachingEnabled" value="true"/>

@@ -65,7 +65,7 @@
                             <input type="checkbox" ng-checked="employe.id == selectItemId" ng-click="toggleRowSelect(employe.id)"><i></i>
                         </label>
                     </th>
-                    <td class="level{{employe.level + 1}}">
+                    <td class="level{{employe.level}}">
                         <i ng-if="employeRootPathList[employe.id] == 1"
                            class="fa fa-caret-down cursor-pointer"
                            ng-click="toggleEmployee(employe.id)">
@@ -84,7 +84,7 @@
                         <span class="cursor-pointer" ng-click="toggleRowSelect(employe.id)">{{employe.name}}</span>
                     </td>
                     <td>
-                        <span ng-if="employe.type == 'department'">{{employe.level + 1}} 级节点</span>
+                        <span ng-if="employe.type == 'department'">{{employe.level}} 级节点</span>
                         <span ng-if="employe.type == 'employee_id'">人员</span>
                     </td>
                     <td>{{employe.deviceCount}}</td>
@@ -94,23 +94,23 @@
         </div>
         <!-- 人员表 -->
 
-        <!-- addDepartment node modal -->
+        <!-- add node modal -->
         <script type="text/ng-template" id="addNodeModalContent.html">
             <div ng-include="'tpl/modal/add_node_emp_modal.html'"></div>
         </script>
-        <!-- addDepartment node modal -->
+        <!-- add node modal -->
 
-        <!-- addDepartment employee_id modal -->
+        <!-- add employee_id modal -->
         <script type="text/ng-template" id="addEmployeeModalContent.html">
             <div ng-include="'tpl/modal/add_emp_modal.html'"></div>
         </script>
-        <!-- addDepartment employee_id modal -->
+        <!-- add employee_id modal -->
 
-        <!-- addDepartment employee_id modal -->
+        <!-- add employee_id modal -->
         <script type="text/ng-template" id="confirmModalContent.html">
             <div ng-include="'tpl/modal/confirm_modal.html'"></div>
         </script>
-        <!-- addDepartment employee_id modal -->
+        <!-- add employee_id modal -->
 
     </div>
 </div>

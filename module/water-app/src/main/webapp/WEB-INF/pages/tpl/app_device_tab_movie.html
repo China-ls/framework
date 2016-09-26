@@ -28,6 +28,7 @@
                 <div class="panel b-a" set-ng-animate="false">
                     <carousel interval="imageListSlideInterval">
                         <slide ng-repeat="row in imageList" active="row.active">
+                            <span>{{row.time}}</span>
                             <img ng-src="{{imageUrl + row._id}}" class="img-full">
                         </slide>
                     </carousel>

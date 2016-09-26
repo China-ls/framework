@@ -17,4 +17,6 @@ public interface VirtualSensorService {
     List<Document> getTop20Image(String id) throws IOException;
 
     byte[] getSensorImage(String imageid) throws IOException;
+
+    List<Document> getVirtualSensorLatestData(String id) throws IOException;
 }

@@ -96,4 +96,13 @@ public class VirtualSensorServiceImpl extends AbstractService implements Virtual
             return Base64.decodeBase64(jpegBase64.replace("data:image/jpeg;base64,",""));
         }
     }
+
+    @Override
+    public List<Document> getVirtualSensorLatestData(String id) throws IOException {
+        ListRequestResult requestResult = toJsonObject(
+                HttpUtils.get(serverConfig.getServerUrl() + "/sensor/" + id + "/data/latest"),
+                ListRequestResult.class
+        );
+        return getDocumentFromResponse(requestResult);
+    }
 }

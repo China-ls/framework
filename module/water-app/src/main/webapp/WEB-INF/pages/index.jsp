@@ -13,7 +13,10 @@
     <meta name="description" content=""/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-    <link rel="stylesheet" href="${ctx}/css/app.201609020845.css" type="text/css"/>
+    <link href="${ctx}/img/logo.png" rel="shortcut icon" />
+
+    <link rel="stylesheet" href="${ctx}/css/app.201609191258.css" type="text/css"/>
+
 </head>
 <body ng-controller="AppCtrl">
 <input type="hidden" id="__ctx" value="${ctx}"/>
@@ -26,7 +29,7 @@
      ui-view>
 </div>
 <!-- jQuery -->
-<script src="${ctx}/js/app.201609020845.js"></script>
+<script src="${ctx}/js/app_201609191450.js"></script>
 <!-- Lazy loading -->
 </body>
 </html>

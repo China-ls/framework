@@ -7,10 +7,10 @@
 
         <div>
             <div class="b-b b-success">
-                <span class="text-danger text-lg">流量监测</span>
+                <span class="text-danger text-lg">电量监测</span>
             </div>
 
-            <h5 style="color: #000099;">更新时间：{{waterData.update_time}}</h5>
+            <h5 style="color: #000099;">更新时间：{{elData.update_time}}</h5>
         </div>
 
         <div class="row">
@@ -18,23 +18,23 @@
             <div class="col-sm-4">
                 <table class="table table-bordered">
                     <tr>
-                        <td class="bg-info-only table-lebel">瞬时流量</td>
+                        <td class="bg-info-only table-lebel">总功率</td>
                         <td class="text-center">
                             <span class="table-value">
-                                {{waterData.latest.instant}}
-                                <span ng-if="!waterData.latest.instant">0</span>
+                                {{elData.latest.instant}}
+                                <span ng-if="!elData.latest.instant">0</span>
                             </span>
-                            <span class="table-valuefix"> 升/小时</span>
+                            <span class="table-valuefix"> 千瓦</span>
                         </td>
                     </tr>
                     <tr>
-                        <td class="bg-info-only table-lebel">流量计读数</td>
+                        <td class="bg-info-only table-lebel">电量计读数</td>
                         <td class="text-center">
                             <span class="table-value">
-                                {{waterData.latest.positive_total}}
-                                <span ng-if="!waterData.latest.positive_total">0</span>
+                                {{elData.latest.positive_total}}
+                                <span ng-if="!elData.latest.positive_total">0</span>
                             </span>
-                            <span class="table-valuefix"> 立方米</span>
+                            <span class="table-valuefix"> 千瓦时</span>
                         </td>
                     </tr>
                 </table>
@@ -43,17 +43,23 @@
             <div class="col-sm-4">
                 <table class="table table-bordered">
                     <tr>
-                        <td class="bg-info-only table-lebel">当日累计流量</td>
+                        <td class="bg-info-only table-lebel">当日用电量</td>
                         <td class="text-center">
-                            <span class="table-value">{{waterData.today}}</span>
-                            <span class="table-valuefix"> 立方米</span>
+                            <span class="table-value">
+                                {{elData.today}}
+                                <span ng-if="!elData.today">0</span>
+                            </span>
+                            <span class="table-valuefix"> 千瓦时</span>
                         </td>
                     </tr>
                     <tr>
-                        <td class="bg-info-only table-lebel">昨日累计流量</td>
+                        <td class="bg-info-only table-lebel">昨日用电量</td>
                         <td class="text-center">
-                            <span class="table-value">{{waterData.yestoday}}</span>
-                            <span class="table-valuefix"> 立方米</span>
+                            <span class="table-value">
+                                {{elData.yestoday}}
+                                <span ng-if="!elData.yestoday">0</span>
+                            </span>
+                            <span class="table-valuefix"> 千瓦时</span>
                         </td>
                     </tr>
                 </table>
@@ -62,17 +68,95 @@
             <div class="col-sm-4">
                 <table class="table table-bordered">
                     <tr>
-                        <td class="bg-info-only table-lebel">当月累计流量</td>
+                        <td class="bg-info-only table-lebel">当月用电量</td>
                         <td class="text-center">
-                            <span class="table-value">{{waterData.month}}</span>
-                            <span class="table-valuefix"> 立方米</span>
+                            <span class="table-value">
+                                {{elData.month}}
+                                <span ng-if="!elData.month">0</span>
+                            </span>
+                            <span class="table-valuefix"> 千瓦时</span>
                         </td>
                     </tr>
                     <tr>
-                        <td class="bg-info-only table-lebel">上月累计流量</td>
+                        <td class="bg-info-only table-lebel">上月用电量</td>
                         <td class="text-center">
-                            <span class="table-value">{{waterData.last_month}}</span>
-                            <span class="table-valuefix"> 立方米</span>
+                            <span class="table-value">
+                                {{elData.last_month}}
+                                <span ng-if="!elData.last_month">0</span>
+                            </span>
+                            <span class="table-valuefix"> 千瓦时</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="col-sm-4">
+                <table class="table table-bordered">
+                    <tr>
+                        <td class="bg-info-only table-lebel">A相电流</td>
+                        <td class="text-center">
+                            <span class="table-value">
+                                {{elData.currentA}}
+                                <span ng-if="!elData.currentA">0</span>
+                            </span>
+                            <span class="table-valuefix"> 安</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-info-only table-lebel">A相电压</td>
+                        <td class="text-center">
+                            <span class="table-value">
+                                {{elData.voltageA}}
+                                <span ng-if="!elData.voltageA">0</span>
+                            </span>
+                            <span class="table-valuefix"> 伏</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="col-sm-4">
+                <table class="table table-bordered">
+                    <tr>
+                        <td class="bg-info-only table-lebel">B相电流</td>
+                        <td class="text-center">
+                            <span class="table-value">
+                                {{elData.currentB}}
+                                <span ng-if="!elData.currentB">0</span>
+                            </span>
+                            <span class="table-valuefix"> 安</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-info-only table-lebel">B相电压</td>
+                        <td class="text-center">
+                            <span class="table-value">{{elData.voltageB}}</span>
+                            <span class="table-valuefix"> 伏</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="col-sm-4">
+                <table class="table table-bordered">
+                    <tr>
+                        <td class="bg-info-only table-lebel">C相电流</td>
+                        <td class="text-center">
+                            <span class="table-value">
+                                {{elData.currentC}}
+                                <span ng-if="!elData.currentC">0</span>
+                            </span>
+                            <span class="table-valuefix"> 安</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-info-only table-lebel">C相电压</td>
+                        <td class="text-center">
+                            <span class="table-value">
+                                {{elData.voltageC}}
+                                <span ng-if="!elData.voltageC">0</span>
+                            </span>
+                            <span class="table-valuefix"> 伏</span>
                         </td>
                     </tr>
                 </table>

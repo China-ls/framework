@@ -21,6 +21,9 @@ module.exports = {
             {src: 'bower_components/angular-bootstrap/ui-bootstrap.min.js', dest : 'angular/lib/angular-bootstrap/ui-bootstrap.min.js'},
             {src: 'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js', dest : 'angular/lib/angular-bootstrap/ui-bootstrap-tpls.min.js'},
             {src: 'bower_components/angularjs-toaster/toaster.min.js', dest : 'angular/lib/angularjs-toaster/toaster.min.js'},
+            {src: 'bower_components/bootstrap-switch/dist/js/bootstrap-switch.min.js', dest : 'angular/lib/bootstrap-switch/js/bootstrap-switch.min.js'},
+            {src: 'bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css', dest : 'angular/lib/bootstrap-switch/css/bootstrap-switch.min.css'},
+            {src: 'bower_components/angular-bootstrap-switch/dist/angular-bootstrap-switch.min.js', dest : 'angular/lib/angular-bootstrap-switch/angular-bootstrap-switch.min.js'},
             {src: 'src/index.min.html', dest : 'angular/index.html'},
             {src: 'src/login.min.html', dest : 'angular/login.html'}
         ]

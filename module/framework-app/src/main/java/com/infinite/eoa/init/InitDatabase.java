@@ -3,8 +3,10 @@ package com.infinite.eoa.init;
 import com.google.gson.reflect.TypeToken;
 import com.infinite.eoa.core.initializing.Initializing;
 import com.infinite.eoa.core.util.JsonUtil;
+import com.infinite.eoa.entity.Employee;
 import com.infinite.eoa.entity.VirtualSensor;
 import com.infinite.eoa.persistent.VirtualSensorDAO;
+import com.infinite.eoa.service.EmployeeService;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,12 +21,25 @@ public class InitDatabase implements Initializing {
     @Autowired
     private VirtualSensorDAO virtualSensorDAO;
 
+    @Autowired
+    private EmployeeService employeeService;
+
     @Override
     public void initializing() throws Exception {
         if (log.isDebugEnabled()) {
             log.debug("start init database");
         }
         long start = System.currentTimeMillis();
+
+        Employee employee = employeeService.getByUsername("admin");
+        if (null == employee) {
+            employee = new Employee();
+            employee.setUsername("admin");
+            employee.setPassword("admin");
+            employee.setSex(1);
+            employee.setEmail("414057419@qq.com");
+            employeeService.insert(employee);
+        }
 
         InputStream vsIs = getClass().getClassLoader().getResourceAsStream("xsensor.json");
         try {

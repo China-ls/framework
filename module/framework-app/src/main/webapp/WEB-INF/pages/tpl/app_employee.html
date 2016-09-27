@@ -1,0 +1,131 @@
+<div ng-controller="EmployeeCtrl" class="wrapper-sm">
+    <div class="panel">
+        <div class="panel-heading b-b b-success wrapper-xs">
+
+            <div class="row">
+                <div class="col-sm-2">
+                    <h5 class="m-xxs l-h-2x">
+                        <span class="text-primary">员工列表</span>
+                    </h5>
+                </div>
+                <div class="col-sm-10">
+                    <div class="pull-right">
+                        <button class="btn btn-info btn-sm btn-addon w-xs-xs"
+                                ng-click="addEmployee()">
+                            <i class="fa fa-plus hidden-xs"></i>
+                            增加员工
+                        </button>
+                        <button class="btn btn-success btn-sm btn-addon w-xs-xs"
+                                ng-click="editEmployee()"
+                                ng-class="{'disabled': null == selectUser}">
+                            <i class="fa fa-edit hidden-xs"></i>
+                            编辑
+                        </button>
+                        <button class="btn btn-danger btn-sm btn-addon w-xs-xs"
+                                ng-click="deleteEmployee()"
+                                ng-class="{'disabled': null == selectUser}">
+                            <i class="fa fa-trash-o hidden-xs"></i>
+                            删除
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 人员表 -->
+        <div class="clearfix panel-body">
+
+            <!-- 网络请求动画 -->
+            <div cg-busy="{promise:loadDataPromise,message:'数据加载中...'}"></div>
+            <!-- 网络请求动画 -->
+
+            <table st-table="rowCollectionBasic" class="table table-bordered table-striped tb-border">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>员工工号</th>
+                    <th>登录帐号</th>
+                    <th>员工姓名</th>
+                    <th>住址</th>
+                    <th>邮政编码</th>
+                    <th>性别</th>
+                    <th>生日</th>
+                    <th>电话</th>
+                    <th>手机</th>
+                    <th>电子邮箱</th>
+                    <th>排序号</th>
+                    <th>状态</th>
+                    <th>区域归属</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in users" class="success cursor-pointer"
+                    st-select-row="row" ng-click="toggleUserSelect(item)">
+                    <th>
+                        <label class="checkbox i-checks m-n">
+                            <input type="checkbox" ng-checked="item.id == selectUser.id">
+                            <i></i>
+                        </label>
+                    </th>
+                    <td>{{item.number}}</td>
+                    <td>{{item.username}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.address}}</td>
+                    <td>{{item.postalcode}}</td>
+                    <td>
+                        <span ng-if="item.sex === 1">男</span>
+                        <span ng-if="item.sex === 2">女</span>
+                    </td>
+                    <td>{{item.birthday | date}}</td>
+                    <td>{{item.tel}}</td>
+                    <td>{{item.phone}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.sort}}</td>
+                    <td>
+                        <span ng-if="item.status === 1">正常</span>
+                        <span ng-if="item.status === 2">禁用</span>
+                        <span ng-if="item.status === 9">删除</span>
+                    </td>
+                    <td>{{item.departmentName}}</td>
+                </tr>
+
+                <tr style="display: block;" ng-style="{'min-height': dividerHeight}"></tr>
+
+                <tr>
+                    <td colspan="5" class="text-center">
+                        <pagination boundary-links="true"
+                                    total-items="total"
+                                    ng-model="currentPage"
+                                    class="pagination-sm m-t-none m-b"
+                                    ng-change="pageChanged()"
+                                    previous-text="&lsaquo;" next-text="&rsaquo;"
+                                    first-text="&laquo;" last-text="&raquo;">
+                        </pagination>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <!-- 人员表 -->
+
+        <!-- add node modal -->
+        <script type="text/ng-template" id="addNodeModalContent.html">
+            <div ng-include="'tpl/modal/add_node_emp_modal.html'"></div>
+        </script>
+        <!-- add node modal -->
+
+        <!-- add employee_id modal -->
+        <script type="text/ng-template" id="addEmployeeModalContent.html">
+            <div ng-include="'tpl/modal/add_emp_modal.html'"></div>
+        </script>
+        <!-- add employee_id modal -->
+
+        <!-- add employee_id modal -->
+        <script type="text/ng-template" id="confirmModalContent.html">
+            <div ng-include="'tpl/modal/confirm_modal.html'"></div>
+        </script>
+        <!-- add employee_id modal -->
+
+    </div>
+</div>

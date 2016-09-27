@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <link href="${ctx}/img/logo.png" rel="shortcut icon" />
 
-    <link rel="stylesheet" href="${ctx}/css/app.201609191258.css" type="text/css"/>
+    <link rel="stylesheet" href="${ctx}/css/app.201609271150.css" type="text/css"/>
 
 </head>
 <body ng-controller="AppCtrl">
@@ -29,7 +29,7 @@
      ui-view>
 </div>
 <!-- jQuery -->
-<script src="${ctx}/js/app_201609191450.js"></script>
+<script src="${ctx}/js/app.201609271150.js"></script>
 <!-- Lazy loading -->
 </body>
 </html>

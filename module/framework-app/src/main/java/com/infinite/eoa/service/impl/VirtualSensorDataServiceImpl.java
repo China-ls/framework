@@ -31,6 +31,7 @@ import org.springframework.stereotype.Service;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -194,59 +195,86 @@ public class VirtualSensorDataServiceImpl implements VirtualSensorDataService {
     }
 
     @Override
-    public Document findFieldDegreeByDayInterval(
+    public Document findFieldDegreeByInterval(
             String appkey, String sensorid, String fieldname,
-            int interval, int count)
+            int type)
             throws ApplicationNotExsistException {
         applicationService.applicationExsist(appkey);
         ArrayList<String> keys = new ArrayList<String>();
-        ArrayList<Float> values = new ArrayList<Float>();
+        ArrayList<Double> values = new ArrayList<Double>();
 
-        if (count > 0) {
-            MongoCollection<Document> mongoCollection = mongoDAO.getCollection(dbname, collectionName);
-            DateTime dateTime = new DateTime();
-            String latestDay = null, day = null;
-            long latestTimeMax = 0, latestTimeMin = 0, timeMax = 0, timeMin = 0;
-            for (int i = 0; i <= count; i++) {
-                dateTime = dateTime.minusDays(i * interval);
-                timeMax = TimeUtils.getMaxMillsOfDay(dateTime);
-                timeMin = TimeUtils.getMinMillsOfDay(dateTime);
-                day = dateTime.toString("MM-dd", Locale.CHINESE);
-                if (i == 0) {
-                    latestDay = day;
-                    latestTimeMax = timeMax;
-                    latestTimeMin = timeMin;
-                    continue;
+        MongoCollection<Document> mongoCollection = mongoDAO.getCollection(dbname, collectionName);
+        DateTime dateTime = new DateTime();
+        switch (type) {
+            case 1://天
+                dateTime = dateTime.minusDays(30);
+                for (int i = 0; i < 30; i++) {
+                    dateTime = dateTime.plusDays(1);
+                    values.add(
+                            getDegreeByTime(mongoCollection, sensorid, fieldname,
+                                    TimeUtils.getMinMillsOfDay(dateTime), TimeUtils.getMaxMillsOfDay(dateTime)
+                            )
+                    );
+                    keys.add(
+                            dateTime.toString("MM-dd", Locale.CHINESE)
+                    );
                 }
-                String key = day + "/" + latestDay;
-
-                keys.add(key);
-
-                FindIterable<Document> iterable = mongoDAO.find(mongoCollection, Filters.and(
-                        Filters.eq("sensor_id", sensorid),
-                        Filters.exists(fieldname),
-                        Filters.gt("time", new BsonDateTime(latestTimeMin)),
-                        Filters.lt("time", new BsonDateTime(timeMax))
-                )).projection(Projections.include(fieldname)).limit(1);
-
-                Document minDocument = iterable.sort(Sorts.ascending("time")).first();
-                Document maxDocument = iterable.sort(Sorts.descending("time")).first();
-                if (null != maxDocument) {
-                    Object minObject = null == minDocument ? null : minDocument.get(fieldname);
-                    Object maxObject = maxDocument.get(fieldname);
-                    double min = null == minObject ? 0 : NumberUtils.toDouble(minObject.toString());
-                    double max = NumberUtils.toDouble(maxObject.toString());
-                    values.add(NumberUtils.toFloat(decimalFormat.format(Math.abs(max - min)).replace(",", "")));
-                } else {
-                    values.add(0F);
+                break;
+            case 2://年
+                int month = dateTime.getMonthOfYear();
+                //从1月开始
+                dateTime = dateTime.withMonthOfYear(1);
+                for (int i = 0; i < month; i++) {
+                    dateTime = dateTime.plusMonths(1);
+                    values.add(
+                            getDegreeByTime(mongoCollection, sensorid, fieldname,
+                                    TimeUtils.getMinMillsOfDay(dateTime.withDayOfMonth(1)),
+                                    TimeUtils.getMaxMillsOfDay(dateTime.plusMonths(1).withDayOfMonth(1).minusDays(1))
+                            )
+                    );
+                    keys.add(
+                            dateTime.toString("yyyy-MM", Locale.CHINESE)
+                    );
                 }
-                latestDay = day;
-                latestTimeMax = timeMax;
-                latestTimeMin = timeMin;
-            }
+                break;
+            case 0://小时
+            default:
+                int hour = dateTime.getHourOfDay();
+                dateTime = dateTime.withTime(0, 0, 0, 0);
+                long t1 = 0, t2 = 0;
+                for (int i = 0; i < hour; i++) {
+                    if (i == 0) {
+                        t1 = dateTime.getMillis();
+                    } else {
+                        t1 = t2;
+                    }
+                    dateTime = dateTime.plusHours(1);
+                    t2 = dateTime.getMillis();
+                    values.add(
+                            getDegreeByTime(mongoCollection, sensorid, fieldname, t1, t2)
+                    );
+                    keys.add(
+                            dateTime.toString("HH时", Locale.CHINESE)
+                    );
+                }
+                break;
         }
 
         return new Document("keys", keys).append("values", values);
+    }
+
+    private double getDegreeByTime(
+            MongoCollection collection, String sensorid,
+            String fieldname, long timemin, long timemax) {
+        FindIterable<Document> iterable = mongoDAO.find(collection, Filters.and(
+                Filters.eq("sensor_id", sensorid),
+                Filters.exists(fieldname),
+                Filters.gte("time", new BsonDateTime(timemin)),
+                Filters.lt("time", new BsonDateTime(timemax))
+        )).projection(Projections.include(fieldname));
+        Document dsc = iterable.sort(Sorts.descending("time")).first();
+        Document asc = iterable.sort(Sorts.ascending("time")).first();
+        return getDoubleMinus(fieldname, dsc, asc);
     }
 
     @Override
@@ -293,7 +321,7 @@ public class VirtualSensorDataServiceImpl implements VirtualSensorDataService {
         return findIterable.limit(1).first();
     }
 
-    @Override//electricmeter_sensor
+    @Override
     public Document findWaterDataBySensorId(String appkey, String sensorid) {
         applicationService.applicationExsist(appkey);
         Document document = new Document();
@@ -303,7 +331,7 @@ public class VirtualSensorDataServiceImpl implements VirtualSensorDataService {
         Document latestData = mongoDAO.find(collection, Filters.and(
                 Filters.eq("sensor_id", sensorid),
                 Filters.eq("comp_type", "flowmeter_sensor")
-        )).sort(Sorts.ascending("time")).first();
+        )).sort(Sorts.descending("time")).first();
         document.append("latest", latestData);
 
         DateTime dateTime = new DateTime();
@@ -356,6 +384,88 @@ public class VirtualSensorDataServiceImpl implements VirtualSensorDataService {
         return document;
     }
 
+    @Override
+    public Document findElectricDataBySensorId(String appkey, String sensorid) {
+        applicationService.applicationExsist(appkey);
+        Document document = new Document();
+        MongoCollection<Document> collection = mongoDAO.getCollection(dbname, collectionName);
+
+        //最新的一条数据
+        Document latestData = mongoDAO.find(collection, Filters.and(
+                Filters.eq("sensor_id", sensorid),
+                Filters.eq("comp_type", "electricmeter_sensor")
+        )).sort(Sorts.descending("time")).first();
+        document.append("latest", latestData);
+
+//        DateTime dateTime = new DateTime();
+//        BsonDateTime todayMaxBDT = new BsonDateTime(TimeUtils.getMaxMillsOfDay(dateTime));
+//        BsonDateTime todayMinBDT = new BsonDateTime(TimeUtils.getMinMillsOfDay(dateTime));
+//        FindIterable<Document> findToday = mongoDAO.find(collection, Filters.and(
+//                Filters.eq("sensor_id", sensorid),
+//                Filters.eq("comp_type", "electricmeter_sensor"),
+//                Filters.gte("time", new BsonDateTime(TimeUtils.getMinMillsOfDay(dateTime))),
+//                Filters.lt("time", todayMaxBDT)
+//        )).projection(Projections.include("positive_total")).limit(1);
+//        Document todayMax = findToday.sort(Sorts.descending("time")).first();
+//        Document todayMin = findToday.sort(Sorts.ascending("time")).first();
+//        document.append("today", getDoubleMinus("positive_total", todayMax, todayMin));
+//
+//        Document yestodayMin = mongoDAO.find(collection, Filters.and(
+//                Filters.eq("sensor_id", sensorid),
+//                Filters.eq("comp_type", "electricmeter_sensor"),
+//                Filters.gte("time", new BsonDateTime(TimeUtils.getMaxMillsOfDay(dateTime.minusDays(1)))),
+//                Filters.lt("time", todayMinBDT)
+//        )).projection(Projections.include("positive_total")).limit(1)
+//                .sort(Sorts.ascending("time")).first();
+//        document.append("yestoday", getDoubleMinus("positive_total", todayMin, yestodayMin));
+//
+//        dateTime = dateTime.withDayOfMonth(1);
+//        BsonDateTime monthMinBDT = new BsonDateTime(TimeUtils.getMinMillsOfDay(dateTime));
+//        FindIterable<Document> findMonth = mongoDAO.find(collection, Filters.and(
+//                Filters.eq("sensor_id", sensorid),
+//                Filters.eq("comp_type", "electricmeter_sensor"),
+//                Filters.gte("time", monthMinBDT),
+//                Filters.lt("time", todayMaxBDT)
+//        )).projection(Projections.include("positive_total")).limit(1);
+//        Document monthMax = findMonth.sort(Sorts.descending("time")).first();
+//        Document monthMin = findMonth.sort(Sorts.ascending("time")).first();
+//        document.append("month", getDoubleMinus("positive_total", monthMax, monthMin));
+//
+//        dateTime = dateTime.minusMonths(1);
+//        BsonDateTime lastMonthMinBDT = new BsonDateTime(TimeUtils.getMinMillsOfDay(dateTime));
+//        FindIterable<Document> findLastMonth = mongoDAO.find(collection, Filters.and(
+//                Filters.eq("sensor_id", sensorid),
+//                Filters.eq("comp_type", "electricmeter_sensor"),
+//                Filters.gte("time", lastMonthMinBDT),
+//                Filters.lt("time", monthMinBDT)
+//        )).projection(Projections.include("positive_total")).limit(1);
+//        Document lastMonthMax = findLastMonth.sort(Sorts.descending("time")).first();
+//        Document lastMonthMin = findLastMonth.sort(Sorts.ascending("time")).first();
+//        document.append("last_month", getDoubleMinus("positive_total", lastMonthMax, lastMonthMin));
+
+        return document;
+    }
+
+    @Override
+    public Document getImageData(
+            String appkey, String sensorid,
+            long start, long end) {
+        applicationService.applicationExsist(appkey);
+        Document document = new Document();
+        document.append("device", virtualSensorService.findById(sensorid));
+        ArrayList<Document> documents = new ArrayList<Document>();
+        MongoCollection<Document> collection = mongoDAO.getCollection(dbname, collectionName);
+         mongoDAO.find(collection, Filters.and(
+                Filters.eq("sensor_id", sensorid),
+                Filters.exists("image"),
+                Filters.gte("time", new BsonDateTime(start)),
+                Filters.lt("time", new BsonDateTime(end))
+        )).projection(Projections.exclude("image"))
+                .sort(Sorts.descending("time")).into(documents);
+        document.append("data", documents);
+        return document;
+    }
+
     private Double getDoubleMinus(String field, Document max, Document min) {
         if (null == max || null == min
                 || !max.containsKey(field)
@@ -363,10 +473,12 @@ public class VirtualSensorDataServiceImpl implements VirtualSensorDataService {
             return 0.0D;
         } else {
             double distance = max.getDouble(field) - min.getDouble(field);
-            if (distance > 0) {
-                distance = NumberUtils.toDouble(decimalFormat.format(distance).replace(",", ""));
-            }
-            return distance;
+            return NumberUtils.toDouble(decimalFormat.format(distance).replace(",", ""));
         }
     }
+
+    public static void main(String[] args) {
+        System.out.println(new Date(1474844432698L).toLocaleString());
+    }
+
 }

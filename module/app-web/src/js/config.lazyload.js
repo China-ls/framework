@@ -83,6 +83,14 @@ angular.module('app')
                         'lib/angular-busy/angular-busy.min.js',
                         'lib/angular-busy/angular-busy.min.css'
                     ]
+                },
+                {
+                    name: 'frapontillo.bootstrap-switch',
+                    files: [
+                        'lib/bootstrap-switch/js/bootstrap-switch.min.js',
+                        'lib/bootstrap-switch/css/bootstrap-switch.min.css',
+                        'lib/angular-bootstrap-switch/angular-bootstrap-switch.min.js'
+                    ]
                 }
             ]
         });

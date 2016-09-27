@@ -1,10 +1,69 @@
 <div class="wrapper">
     <!-- 网络请求动画 -->
     <div cg-busy="{promise:loadDataPromise,message:'数据加载中...'}"></div>
-    <!-- 网络请求动画 -->
-    <div class="row">
 
-        <!-- 控制模式 -->
+    <table st-table="rowCollectionBasic" class="table table-bordered table-striped tb-border">
+        <thead>
+        <tr>
+            <th>序号</th>
+            <th>设备名称</th>
+            <th>当前状态</th>
+            <th>当日运行时间</th>
+            <th>当月运行时间</th>
+            <th>远程控制</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="success" ng-repeat="row in sensor.components"
+            st-select-row="row" ng-if="row.isControl">
+            <td>{{row.comp_id}}</td>
+            <td>{{row.name}}</td>
+            <td>
+                <i class="sprite"
+                   ng-class="{
+                           'sprite-u709' : (row.type == 'camera_controller'),
+                           'sprite-u564' : (row.type == 'electricmeter_sensor' || row.type == 'flowmeter_sensor'),
+                           'sprite-u719' : (row.type == 'cardreader_sensor'),
+                           'sprite-u628' : (row.type == 'onboard_controller' || row.type == 'plc_controller')
+                           }"
+                   style="width: 32px;display: inline-block;"
+                ></i>
+                <span ng-if="row.status === 'NORMAL'">
+                    正常
+                </span>
+                <span ng-if="row.status != 'NORMAL'">
+                    异常
+                </span>
+            </td>
+            <td></td>
+            <td></td>
+            <td>
+                <input
+                        bs-switch
+                        ng-model="row.onoff"
+                        type="checkbox"
+                        switch-off-color="warning"
+                        switch-label="{{row.label}}"
+                        switch-readonly="{{ row.discontrol }}"
+                        switch-on-text="开"
+                        switch-off-text="关"
+                        switch-change="onControl(row)">
+
+                <!--<label class="i-switch">-->
+                    <!--<input type="checkbox" ng-checked="row.data.onoff">-->
+                    <!--<i>开管</i>-->
+                <!--</label>-->
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+
+    <!-- 网络请求动画 -->
+    <!--<div class="hide row">
+
+        &lt;!&ndash; 控制模式 &ndash;&gt;
         <div class="col-sm-3">
             <div class="panel panel-primary">
                 <div class="panel-heading title">
@@ -25,7 +84,7 @@
                 </div>
             </div>
         </div>
-        <!-- 控制模式 -->
+        &lt;!&ndash; 控制模式 &ndash;&gt;
 
         <div class="col-sm-3"
              ng-repeat="comp in sensor.components"
@@ -57,7 +116,7 @@
                                 class="img-full btn btn-success"
                                 ng-if="action.operation === 'take_photo'">拍照</button>
                     </span>
-                    <!--<button class="col-xs-6 btn btn-info btn-xs m-r-xs">操作记录</button>-->
+                    &lt;!&ndash;<button class="col-xs-6 btn btn-info btn-xs m-r-xs">操作记录</button>&ndash;&gt;
 
                     <div ng-if="comp.data.comp_type =='flowmeter_sensor'">
                         <p>
@@ -78,7 +137,7 @@
                         </p>
                     </div>
 
-                    <!-- 电压计 -->
+                    &lt;!&ndash; 电压计 &ndash;&gt;
                     <div ng-if="comp.data.comp_type =='electricmeter_sensor'">
                         <p>
                             <span>A相电流</span>
@@ -117,10 +176,10 @@
                             </span>
                         </p>
                     </div>
-                    <!-- 电压计 -->
+                    &lt;!&ndash; 电压计 &ndash;&gt;
 
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 </div>

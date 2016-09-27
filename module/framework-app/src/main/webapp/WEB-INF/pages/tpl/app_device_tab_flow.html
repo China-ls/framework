@@ -1,63 +1,146 @@
-<!--最新数据-->
-<div class="padder-sm m-t-sm">
-    <div class="row">
-
+<div class="dt-flow">
+    <!--最新数据-->
+    <div class="padder-sm m-t-sm">
         <!-- 网络请求动画 -->
         <div cg-busy="{promise:loadLatestDataPromise,message:'数据加载中...'}"></div>
         <!-- 网络请求动画 -->
 
-        <div class="col-sm-4">
-            <div class="panel panel-info">
-                <div class="panel-heading">瞬时流量</div>
-                <div class="panel-body"><span class="inline w-sm wrapper-xs b b-gray">{{latestFlowmeter.instant}}</span>&nbsp;&nbsp;升/小时</div>
+        <div>
+            <div class="b-b b-success">
+                <span class="text-danger text-lg">流量监测</span>
             </div>
+
+            <h5 style="color: #000099;">更新时间：{{waterData.update_time}}</h5>
         </div>
 
-        <div class="col-sm-4">
-            <div class="panel panel-info">
-                <div class="panel-heading">累计流量</div>
-                <div class="panel-body"><span class="inline w-sm wrapper-xs b b-gray">{{latestFlowmeter.positive_total}}</span>&nbsp;&nbsp;立方米</div>
+        <div class="row">
+
+            <div class="col-sm-4">
+                <table class="table table-bordered">
+                    <tr>
+                        <td class="bg-info-only table-lebel">瞬时流量</td>
+                        <td class="text-center">
+                            <span class="table-value">
+                                {{waterData.latest.instant}}
+                                <span ng-if="!waterData.latest.instant">0</span>
+                            </span>
+                            <span class="table-valuefix"> 升/小时</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-info-only table-lebel">流量计读数</td>
+                        <td class="text-center">
+                            <span class="table-value">
+                                {{waterData.latest.positive_total}}
+                                <span ng-if="!waterData.latest.positive_total">0</span>
+                            </span>
+                            <span class="table-valuefix"> 立方米</span>
+                        </td>
+                    </tr>
+                </table>
             </div>
+
+            <div class="col-sm-4">
+                <table class="table table-bordered">
+                    <tr>
+                        <td class="bg-info-only table-lebel">当日累计流量</td>
+                        <td class="text-center">
+                            <span class="table-value">{{waterData.today}}</span>
+                            <span class="table-valuefix"> 立方米</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-info-only table-lebel">昨日累计流量</td>
+                        <td class="text-center">
+                            <span class="table-value">{{waterData.yestoday}}</span>
+                            <span class="table-valuefix"> 立方米</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="col-sm-4">
+                <table class="table table-bordered">
+                    <tr>
+                        <td class="bg-info-only table-lebel">当月累计流量</td>
+                        <td class="text-center">
+                            <span class="table-value">{{waterData.month}}</span>
+                            <span class="table-valuefix"> 立方米</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-info-only table-lebel">上月累计流量</td>
+                        <td class="text-center">
+                            <span class="table-value">{{waterData.last_month}}</span>
+                            <span class="table-valuefix"> 立方米</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
         </div>
 
-        <div class="col-sm-4">
-            <div class="panel panel-info">
-                <div class="panel-heading">更新时间</div>
-                <div class="panel-body"><span class="inline wrapper-xs b b-gray">{{latestFlowmeter.update_time}}</span></div>
+    </div>
+    <div class="divider divider-md bg-white"></div>
+    <!--最新数据-->
+
+    <!--处水量走势图-->
+    <div class="padder-sm m-t-sm">
+
+        <div class="wrapper b-a b-dashed" style="border-color: #AEAEAE;">
+            <div class="panel panel-default">
+                <div class="panel-heading font-bold title">瞬时流量</div>
+                <div class="panel-body">
+                    <!-- 网络请求动画 -->
+                    <div cg-busy="{promise:getWaterDataPromise,message:'数据加载中...'}"></div>
+                    <!-- 网络请求动画 -->
+                    <highchart config="chartHandlerWater"></highchart>
+                </div>
+            </div>
+
+            <div class="panel panel-default m-b-none">
+                <div class="panel-heading font-bold title">
+                    <div class="btn-group btn-group-sm">
+                        <button type="button" class="btn btn-option-danger"
+                                ng-class="{'active': chartTypePositive === 0}"
+                                ng-click="setDayTotalDataType(0)">
+                            分时
+                        </button>
+                        <button type="button" class="btn btn-option-danger"
+                                ng-class="{'active': chartTypePositive === 1}"
+                                ng-click="setDayTotalDataType(1)">
+                            分日
+                        </button>
+                        <button type="button" class="btn btn-option-danger"
+                                ng-class="{'active': chartTypePositive === 2}"
+                                ng-click="setDayTotalDataType(2)">
+                            分月
+                        </button>
+                    </div>
+
+                    <div class="btn-group btn-group-sm m-l-sm">
+                        <button type="button" class="btn btn-option-info"
+                                ng-class="{'active': chartHandlerDayTotal.options.chart.type === 'line'}"
+                                ng-click="setDayTotalChartType('line')">
+                            曲线图
+                        </button>
+                        <button type="button" class="btn btn-option-info"
+                                ng-class="{'active': chartHandlerDayTotal.options.chart.type === 'column'}"
+                                ng-click="setDayTotalChartType('column')">
+                            柱状图
+                        </button>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <!-- 网络请求动画 -->
+                    <div cg-busy="{promise:getWaterDataPromise,message:'数据加载中...'}"></div>
+                    <!-- 网络请求动画 -->
+                    <highchart config="chartHandlerDayTotal"></highchart>
+                </div>
             </div>
         </div>
 
     </div>
-</div>
-<div class="divider divider-md bg-white"></div>
-<!--最新数据-->
+    <!--处水量走势图-->
 
-<!--水量计-->
-<div class="padder-sm m-b-sm">
-    <div class="panel panel-default">
-        <div class="panel-heading font-bold title">瞬时流量</div>
-        <div class="panel-body">
-            <!-- 网络请求动画 -->
-            <div cg-busy="{promise:getWaterDataPromise,message:'数据加载中...'}"></div>
-            <!-- 网络请求动画 -->
-            <highchart config="chartHandlerWater"></highchart>
-        </div>
-    </div>
 </div>
-<div class="divider divider-md bg-white"></div>
-<!--水量计-->
-
-<!--日处理量-->
-<div class="padder-sm m-b-sm">
-    <div class="panel panel-default">
-        <div class="panel-heading font-bold title">日处理量</div>
-        <div class="panel-body">
-            <!-- 网络请求动画 -->
-            <div cg-busy="{promise:loadDayPositivePromise,message:'数据加载中...'}"></div>
-            <!-- 网络请求动画 -->
-            <highchart config="chartHandlerDayTotal"></highchart>
-        </div>
-    </div>
-</div>
-<div class="divider divider-md bg-white"></div>
-<!--日处理量-->

@@ -2,6 +2,7 @@ package com.infinite.eoa.core.serivce;
 
 import com.infinite.eoa.core.entity.Pager;
 import com.infinite.eoa.core.persistent.IMorphiaDAO;
+import org.mongodb.morphia.Key;
 import org.mongodb.morphia.query.Query;
 import org.mongodb.morphia.query.QueryResults;
 
@@ -58,4 +59,8 @@ public abstract class AbstractPagerService<T> implements IPagerService<T> {
         return pager;
     }
 
+    @Override
+    public Key insert(T t) {
+        return getMorphiaDAO().save(t);
+    }
 }

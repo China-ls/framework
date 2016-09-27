@@ -1,8 +1,8 @@
 package com.infinite.eoa.service;
 
+import com.infinite.eoa.core.entity.Pager;
 import com.infinite.eoa.core.serivce.IPagerService;
 import com.infinite.eoa.entity.Department;
-import com.infinite.eoa.core.entity.Pager;
 import org.bson.Document;
 
 /**

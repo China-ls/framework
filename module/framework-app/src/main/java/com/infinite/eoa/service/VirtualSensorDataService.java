@@ -32,16 +32,24 @@ public interface VirtualSensorDataService {
      * @param appkey    APPKEY
      * @param sensorid  设备ID
      * @param fieldname 字段名字
-     * @param interval  间隔天数
-     * @param count     返回点数目
+     * @param type      0 小时 1 天 2 月
      * @return
      * @throws ApplicationNotExsistException
      */
-    Document findFieldDegreeByDayInterval(
+    Document findFieldDegreeByInterval(
             String appkey, String sensorid,
-            String fieldname, int interval, int count)
+            String fieldname, int type)
             throws ApplicationNotExsistException;
 
+    /**
+     * @param sensorid    设备ID
+     * @param skip        跳过数据量
+     * @param limit       返回总数
+     * @param exsistArray 存在的字段
+     * @param fieldArray  返回的字段
+     * @param ascSort     asc排序字段
+     * @param dscSort     dsc排序字段
+     */
     List<Document> findByFieldExsistAndProjection(
             String appkey, String sensorid, int skip,
             int limit, List<String> exsistArray, List<String> fieldArray,
@@ -51,4 +59,8 @@ public interface VirtualSensorDataService {
 
     Document findWaterDataBySensorId(
             String appkey, String sensorid);
+
+    Document findElectricDataBySensorId(String appkey, String sensorid);
+
+    Document getImageData(String appkey, String sensorid, long start, long end);
 }

@@ -17,9 +17,10 @@ app.controller('DeviceTabElCtrl', ['$scope', '$http', 'APPCONST', function ($sco
     // 最新 数据
     $scope.loadLatestDataPromise = $http.get(APPCONST.CTX + APPCONST.SENSOR_DATA_ELECTRIC.replace("{id}", $scope.$stateParams.id))
         .then(function (response) {
-            $scope.waterData = response.data.data;
+            $scope.elData = response.data.data;
+            console.warn($scope.elData);
             try {
-                $scope.waterData.update_time = $scope.formatDate(new Date($scope.waterData.latest.time), "yyyy年MM月dd日 HH时mm分ss秒")
+                $scope.elData.update_time = $scope.formatDate(new Date($scope.elData.latest.time), "yyyy年MM月dd日 HH时mm分ss秒")
             } catch (e){}
             // console.warn($scope.waterData);
         });

@@ -1,14 +1,221 @@
-<!--电量计-->
-<div class="padder-sm m-b-md">
-    <div class="panel panel-default">
-        <div class="panel-heading font-bold title cb">电量计</div>
-        <div class="panel-body">
-            <!-- 网络请求动画 -->
-            <div cg-busy="{promise:loadDataPromise,message:'数据加载中...'}"></div>
-            <!-- 网络请求动画 -->
-            <highchart config="chartElectric"></highchart>
+<div class="dt-flow">
+    <!--最新数据-->
+    <div class="padder-sm m-t-sm">
+        <!-- 网络请求动画 -->
+        <div cg-busy="{promise:loadLatestDataPromise,message:'数据加载中...'}"></div>
+        <!-- 网络请求动画 -->
+
+        <div>
+            <div class="b-b b-success">
+                <span class="text-danger text-lg">电量监测</span>
+            </div>
+
+            <h5 style="color: #000099;">更新时间：{{elData.update_time}}</h5>
         </div>
+
+        <div class="row">
+
+            <div class="col-sm-4">
+                <table class="table table-bordered">
+                    <tr>
+                        <td class="bg-info-only table-lebel">总功率</td>
+                        <td class="text-center">
+                            <span class="table-value">
+                                {{elData.latest.instant}}
+                                <span ng-if="!elData.latest.instant">0</span>
+                            </span>
+                            <span class="table-valuefix"> 千瓦</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-info-only table-lebel">电量计读数</td>
+                        <td class="text-center">
+                            <span class="table-value">
+                                {{elData.latest.positive_total}}
+                                <span ng-if="!elData.latest.positive_total">0</span>
+                            </span>
+                            <span class="table-valuefix"> 千瓦时</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="col-sm-4">
+                <table class="table table-bordered">
+                    <tr>
+                        <td class="bg-info-only table-lebel">当日用电量</td>
+                        <td class="text-center">
+                            <span class="table-value">
+                                {{elData.today}}
+                                <span ng-if="!elData.today">0</span>
+                            </span>
+                            <span class="table-valuefix"> 千瓦时</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-info-only table-lebel">昨日用电量</td>
+                        <td class="text-center">
+                            <span class="table-value">
+                                {{elData.yestoday}}
+                                <span ng-if="!elData.yestoday">0</span>
+                            </span>
+                            <span class="table-valuefix"> 千瓦时</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="col-sm-4">
+                <table class="table table-bordered">
+                    <tr>
+                        <td class="bg-info-only table-lebel">当月用电量</td>
+                        <td class="text-center">
+                            <span class="table-value">
+                                {{elData.month}}
+                                <span ng-if="!elData.month">0</span>
+                            </span>
+                            <span class="table-valuefix"> 千瓦时</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-info-only table-lebel">上月用电量</td>
+                        <td class="text-center">
+                            <span class="table-value">
+                                {{elData.last_month}}
+                                <span ng-if="!elData.last_month">0</span>
+                            </span>
+                            <span class="table-valuefix"> 千瓦时</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="col-sm-4">
+                <table class="table table-bordered">
+                    <tr>
+                        <td class="bg-info-only table-lebel">A相电流</td>
+                        <td class="text-center">
+                            <span class="table-value">
+                                {{elData.currentA}}
+                                <span ng-if="!elData.currentA">0</span>
+                            </span>
+                            <span class="table-valuefix"> 安</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-info-only table-lebel">A相电压</td>
+                        <td class="text-center">
+                            <span class="table-value">
+                                {{elData.voltageA}}
+                                <span ng-if="!elData.voltageA">0</span>
+                            </span>
+                            <span class="table-valuefix"> 伏</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="col-sm-4">
+                <table class="table table-bordered">
+                    <tr>
+                        <td class="bg-info-only table-lebel">B相电流</td>
+                        <td class="text-center">
+                            <span class="table-value">
+                                {{elData.currentB}}
+                                <span ng-if="!elData.currentB">0</span>
+                            </span>
+                            <span class="table-valuefix"> 安</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-info-only table-lebel">B相电压</td>
+                        <td class="text-center">
+                            <span class="table-value">{{elData.voltageB}}</span>
+                            <span class="table-valuefix"> 伏</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="col-sm-4">
+                <table class="table table-bordered">
+                    <tr>
+                        <td class="bg-info-only table-lebel">C相电流</td>
+                        <td class="text-center">
+                            <span class="table-value">
+                                {{elData.currentC}}
+                                <span ng-if="!elData.currentC">0</span>
+                            </span>
+                            <span class="table-valuefix"> 安</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-info-only table-lebel">C相电压</td>
+                        <td class="text-center">
+                            <span class="table-value">
+                                {{elData.voltageC}}
+                                <span ng-if="!elData.voltageC">0</span>
+                            </span>
+                            <span class="table-valuefix"> 伏</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
     </div>
+    <div class="divider divider-md bg-white"></div>
+    <!--最新数据-->
+
+    <!--处水量走势图-->
+    <div class="padder-sm m-t-sm">
+
+        <div class="wrapper b-a b-dashed" style="border-color: #AEAEAE;">
+
+            <div class="panel panel-default m-b-none">
+                <div class="panel-heading font-bold title">
+                    <div class="btn-group btn-group-sm">
+                        <button type="button" class="btn btn-option-danger"
+                                ng-class="{'active': chartElectricType === 0}"
+                                ng-click="setDataType(0)">
+                            分时
+                        </button>
+                        <button type="button" class="btn btn-option-danger"
+                                ng-class="{'active': chartElectricType === 1}"
+                                ng-click="setDataType(1)">
+                            分日
+                        </button>
+                        <button type="button" class="btn btn-option-danger"
+                                ng-class="{'active': chartElectricType === 2}"
+                                ng-click="setDataType(2)">
+                            分月
+                        </button>
+                    </div>
+
+                    <div class="btn-group btn-group-sm m-l-sm">
+                        <button type="button" class="btn btn-option-info"
+                                ng-class="{'active': chartElectric.options.chart.type === 'line'}"
+                                ng-click="setDataChartType('line')">
+                            曲线图
+                        </button>
+                        <button type="button" class="btn btn-option-info"
+                                ng-class="{'active': chartElectric.options.chart.type === 'column'}"
+                                ng-click="setDataChartType('column')">
+                            柱状图
+                        </button>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <!-- 网络请求动画 -->
+                    <div cg-busy="{promise:getElDataPromise,message:'数据加载中...'}"></div>
+                    <!-- 网络请求动画 -->
+                    <highchart config="chartElectric"></highchart>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--处水量走势图-->
+
 </div>
-<div class="divider divider-md bg-white"></div>
-<!--电量计-->

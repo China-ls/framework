@@ -17,7 +17,8 @@ app.controller('DeviceTabFlowCtrl', ['$scope', '$http', '$localStorage', '$state
                 $scope.waterData = response.data.data;
                 try {
                     $scope.waterData.update_time = $scope.formatDate(new Date($scope.waterData.latest.time), "yyyy年MM月dd日 HH时mm分ss秒")
-                } catch (e){}
+                } catch (e) {
+                }
                 // console.warn($scope.waterData);
             });
 
@@ -32,7 +33,7 @@ app.controller('DeviceTabFlowCtrl', ['$scope', '$http', '$localStorage', '$state
             yAxis: {title: {text: ' 升/小时'}, plotLines: [{value: 0, width: 1, color: '#808080'}]},
             useHighStocks: false, size: {height: 200}
         };
-        $scope.getWaterDataPromise = $http.get(APPCONST.CTX + APPCONST.SENSOR_DATA_WATER.replace("{id}", $scope.$stateParams.id))
+        $scope.getWaterDataPromise = $http.get(APPCONST.CTX + APPCONST.SENSOR_DATA_TODAY.replace("{id}", $scope.$stateParams.id))
             .then(function (response) {
                 try {
                     // console.warn(response);
@@ -61,7 +62,7 @@ app.controller('DeviceTabFlowCtrl', ['$scope', '$http', '$localStorage', '$state
             });
 
         $scope.chartHandlerDayTotal = {
-            options: {chart: {type: 'column'}, tooltip: {valueSuffix: '立方米', style: {padding: 10, fontWeight: 'bold'}}},
+            options: {chart: {type: 'line'}, tooltip: {valueSuffix: '立方米', style: {padding: 10, fontWeight: 'bold'}}},
             series: [],
             title: {text: ''}, loading: false,
             xAxis: {tickInterval: 1, labels: {step: 4}, categories: []},
@@ -81,7 +82,10 @@ app.controller('DeviceTabFlowCtrl', ['$scope', '$http', '$localStorage', '$state
                         var data = response.data.data;
                         // console.warn(data);
                         if (data) {
-                            var series = {name: '日处理量', data: data.values/*, dataLabels: {enabled: true}*/};
+                            var series = {
+                                name: $scope.chartSeriesName,
+                                data: data.values/*, dataLabels: {enabled: true}*/
+                            };
                             $scope.chartHandlerDayTotal.xAxis.categories = data.keys;
                         }
                         $scope.chartHandlerDayTotal.series.splice(0);
@@ -100,8 +104,13 @@ app.controller('DeviceTabFlowCtrl', ['$scope', '$http', '$localStorage', '$state
             $scope.chartTypePositive = type;
             if (type === 0) {
                 $scope.chartHandlerDayTotal.xAxis.labels.step = 4;
-            } else {
-                $scope.chartHandlerDayTotal.xAxis.labels.step = 1;
+                $scope.chartSeriesName = '时处理量';
+            } else if (type === 1) {
+                $scope.chartHandlerDayTotal.xAxis.labels.step = 4;
+                $scope.chartSeriesName = '日处理量';
+            } else if (type === 2) {
+                $scope.chartHandlerDayTotal.xAxis.labels.step = 2;
+                $scope.chartSeriesName = '月处理量';
             }
             $scope.loadDayTotalData();
         };

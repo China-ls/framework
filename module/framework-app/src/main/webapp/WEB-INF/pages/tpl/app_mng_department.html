@@ -1,0 +1,128 @@
+<div ng-controller="ManageDepartmentCtrl">
+    <div class="panel">
+        <div class="panel-heading b-b b-success wrapper-xs">
+
+            <div class="row">
+                <div class="col-sm-2">
+                    <h5 class="m-xxs l-h-2x">
+                        <span class="text-primary">机构列表</span>
+                    </h5>
+                </div>
+                <div class="col-sm-10">
+                    <div class="pull-right">
+                        <button class="btn btn-info btn-sm btn-addon w-xs-xs"
+                                ng-class="{'disabled': !buttonConfig.add}"
+                                ng-click="addNode()">
+                            <i class="fa fa-plus hidden-xs"></i>
+                            增加子节点
+                        </button>
+                        <button class="btn btn-success btn-sm btn-addon w-xs-xs"
+                                ng-click="editNode()"
+                                ng-class="{'disabled': !buttonConfig.edit}">
+                            <i class="fa fa-edit hidden-xs"></i>
+                            编辑
+                        </button>
+                        <button class="btn btn-danger btn-sm btn-addon w-xs-xs"
+                                ng-click="deleteNode()"
+                                ng-class="{'disabled': !buttonConfig.delete}">
+                            <i class="fa fa-trash-o hidden-xs"></i>
+                            删除
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 人员表 -->
+        <div class="clearfix panel-body">
+
+            <!-- 网络请求动画 -->
+            <div cg-busy="{promise:loadDataPromise,message:'机构加载中...'}"></div>
+            <!-- 网络请求动画 -->
+
+            <table st-table="rowCollectionBasic" class="table table-bordered table-striped tb-border">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>名称</th>
+                    <th>类型</th>
+                    <th>负责人</th>
+                    <th>地址</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in departments"
+                    class="success cursor-pointer"
+                    st-select-row="row"
+                    ng-click="toggleSelectDepartment(item)">
+                    <th>
+                        <label class="checkbox i-checks m-n">
+                            <input type="checkbox" ng-checked="item == selectDepartment">
+                            <i></i>
+                        </label>
+                    </th>
+                    <td class="level{{item.level}}">
+                        <i ng-class="{
+                               'fa fa-flag': item.type == '0',
+                               'fa fa-user': item.type == '1',
+                               'fa fa-briefcase': item.type == '2',
+                               'fa fa-check-square-o': item.type == '3',
+                               'text-danger': item.level == 0,
+                               'text-warning': item.level == 1,
+                               'text-info': item.level == 2,
+                               'text-success': item.level == 3,
+                               'text-info-dk': item.level == 4,
+                               'text-primary': item.level == 5
+                               }">
+                        </i>
+                        <span class="cursor-pointer" ng-click="toggleRowSelect(employe.id)">{{item.name}}</span>
+                    </td>
+                    <td>
+                        <span ng-if="item.type == '0'">普通机构</span>
+                        <span ng-if="item.type == '1'">巡查机构</span>
+                        <span ng-if="item.type == '2'">工程机构</span>
+                        <span ng-if="item.type == '3'">核查机构</span>
+                    </td>
+                    <td>{{item.leading}}</td>
+                    <td>{{item.address}}</td>
+                </tr>
+
+                <tr style="display: block;" ng-style="{'min-height': dividerHeight}"></tr>
+
+                <tr>
+                    <td colspan="5" class="text-center">
+                        <pagination boundary-links="true"
+                                    total-items="total"
+                                    ng-model="currentPage"
+                                    class="pagination-sm m-t-none m-b"
+                                    ng-change="pageChanged()"
+                                    previous-text="&lsaquo;" next-text="&rsaquo;"
+                                    first-text="&laquo;" last-text="&raquo;">
+                        </pagination>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- 人员表 -->
+
+        <!-- add node modal -->
+        <script type="text/ng-template" id="addNodeModalContent.html">
+            <div ng-include="'tpl/modal/add_node_emp_modal.html'"></div>
+        </script>
+        <!-- add node modal -->
+
+        <!-- add employee_id modal -->
+        <script type="text/ng-template" id="addEmployeeModalContent.html">
+            <div ng-include="'tpl/modal/add_emp_modal.html'"></div>
+        </script>
+        <!-- add employee_id modal -->
+
+        <!-- add employee_id modal -->
+        <script type="text/ng-template" id="confirmModalContent.html">
+            <div ng-include="'tpl/modal/confirm_modal.html'"></div>
+        </script>
+        <!-- add employee_id modal -->
+
+    </div>
+</div>

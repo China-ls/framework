@@ -52,16 +52,20 @@
                 <span class="text-white">资源管理</span> <span class="caret text-white"></span>
             </a>
             <ul class="dropdown-menu" role="menu">
+                <li><a ui-sref="app.mngdpt">机构管理</a></li>
                 <li><a ui-sref="app.mngdevice">站点管理</a></li>
-                <li><a ui-sref="app.mr">人员管理</a></li>
-                <!--<li><a ui-sref="app.mngrole">权限管理</a></li>-->
+                <li><a ui-sref="app.empduty">人员职能</a></li>
             </ul>
         </li>
-        <li class="dropdown" dropdown ui-sref-active="open">
-            <a ui-sref="app.system">
+        <li class="dropdown" dropdown>
+            <a href class="dropdown-toggle" dropdown-toggle>
                 <i class="fa fa-fw fa-plus visible-xs-inline-block"></i>
-                <span class="text-white">系统管理</span>
+                <span class="text-white">系统管理</span> <span class="caret text-white"></span>
             </a>
+            <ul class="dropdown-menu" role="menu">
+                <li><a ui-sref="app.system">系统信息</a></li>
+                <li><a ui-sref="app.employee">帐号管理</a></li>
+            </ul>
         </li>
     </ul>
     <!-- / link and dropdown -->

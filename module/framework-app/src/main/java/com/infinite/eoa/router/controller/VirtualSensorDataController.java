@@ -7,6 +7,7 @@ import com.infinite.eoa.router.entity.ResponseCode;
 import com.infinite.eoa.service.VirtualSensorDataService;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang.math.NumberUtils;
+import org.apache.commons.lang.time.DateUtils;
 import org.bson.Document;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,7 +21,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.OutputStream;
+import java.text.ParseException;
 import java.util.Arrays;
+import java.util.Date;
 
 @RequestMapping("/sensor/data")
 @RestController("VirtualSensorDataController")
@@ -79,6 +82,29 @@ public class VirtualSensorDataController extends BasicRestController {
         return response;
     }
 
+    @RequestMapping(value = "/{id}/electric", method = RequestMethod.GET)
+    @ResponseBody
+    public Response getElectricData(
+            @PathVariable("id") String id
+    ) {
+        Response response = null;
+        try {
+            response = makeResponse(
+                    ResponseCode.SUCCESS,
+                    virtualSensorDataService.findElectricDataBySensorId(APPKEY, id)
+            );
+        } catch (Throwable e) {
+            if (log.isErrorEnabled()) {
+                log.error("get water data [id : {}]", id, e);
+            }
+            response = makeResponse(ResponseCode.SYSTEM_ERROR);
+        }
+        if (log.isDebugEnabled()) {
+            log.debug("[id : {}, resp : {}]", id, response);
+        }
+        return response;
+    }
+
     @RequestMapping(value = "/{id}/degree", method = RequestMethod.GET)
     @ResponseBody
     public Response getDataDegree(
@@ -88,27 +114,10 @@ public class VirtualSensorDataController extends BasicRestController {
         Response response = null;
         try {
             int type = NumberUtils.toInt(typeText);
-            int interval = 0;
-            int count = 0;
-            switch (type) {
-                case 1:
-                    interval = 7;
-                    count = 4;
-                    break;
-                case 2:
-                    interval = 30;
-                    count = 12;
-                    break;
-                case 0:
-                default:
-                    interval = 1;
-                    count = 30;
-                    break;
-            }
             response = makeResponse(
                     ResponseCode.SUCCESS,
-                    virtualSensorDataService.findFieldDegreeByDayInterval(
-                            APPKEY, id, "positive_total", interval, count)
+                    virtualSensorDataService.findFieldDegreeByInterval(
+                            APPKEY, id, "positive_total", NumberUtils.toInt(typeText))
             );
         } catch (Throwable e) {
             if (log.isErrorEnabled()) {
@@ -144,28 +153,36 @@ public class VirtualSensorDataController extends BasicRestController {
         return response;
     }
 
-    @RequestMapping(value = "/{id}/image", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}/image", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
-    public Response getTop20Image(
-            @PathVariable("id") String id
+    public Response getImageData(
+            @PathVariable("id") String sensorid,
+            @ModelAttribute("start") String startText,
+            @ModelAttribute("end") String endText
     ) {
         Response response = null;
         try {
-            response = makeResponse(
-                    ResponseCode.SUCCESS,
-                    virtualSensorDataService.findByFieldExsistAndProjection(
-                            APPKEY, id, 0, 20, Arrays.asList("image"),
-                            Arrays.asList("time", "comp_type", "sensor_id", "comp_id", "app_id", "image_id"),
-                            null, Arrays.asList("time"))
+//            log.debug("[id:{}, t:{}, s:{}, e:{}]", sensorid, type, start, end);
+            String[] pattern = {"yyyy-MM-dd", "yyyy-MM-dd HH:mm:ss"};
+            Date start = DateUtils.parseDate(startText, pattern);
+            Date end = DateUtils.parseDate(endText, pattern);
+            response = makeResponse(ResponseCode.SUCCESS,
+                    virtualSensorDataService.getImageData(
+                            APPKEY, sensorid, start.getTime(), end.getTime())
             );
+        } catch (ParseException e) {
+            if (log.isErrorEnabled()) {
+                log.error("get image data error [id: {}, start:{}, end:{}}", sensorid, startText, endText, e);
+            }
+            response = makeResponse(ResponseCode.PARAM_EMPTY);
         } catch (Throwable e) {
             if (log.isErrorEnabled()) {
-                log.error("get top 20 image error [id: {}}", id, e);
+                log.error("get image data error [id: {}, start:{}, end:{}}", sensorid, startText, endText, e);
             }
             response = makeResponse(ResponseCode.SYSTEM_ERROR);
         }
         if (log.isDebugEnabled()) {
-            log.debug("[id: {}, resp: {}]", id, response);
+            log.debug("[id: {}, start:{}, end:{}, resp: {}]", sensorid, startText, endText, response);
         }
         return response;
     }

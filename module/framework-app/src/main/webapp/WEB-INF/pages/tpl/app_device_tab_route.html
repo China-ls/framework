@@ -1,28 +1,49 @@
 <!--考勤机-->
 <div class="padder-sm m-b-md">
     <div class="panel panel-default">
-        <div class="panel-heading title">巡检数据表</div>
+        <div class="panel-heading title">
+            <div class="b-b b-success">
+                <span class="text-success">巡检数据表</span>
+
+                <div class="btn-group btn-group-xs m-l-xs m-b-xs">
+                    <button type="button" class="btn btn-option-danger"
+                            ng-class="{'active': dataType === 0}"
+                            ng-click="selectDataType(0)">
+                        近一月
+                    </button>
+                    <button type="button" class="btn btn-option-danger"
+                            ng-class="{'active': dataType === 1}"
+                            ng-click="selectDataType(1)">
+                        近一年
+                    </button>
+                </div>
+            </div>
+        </div>
         <!-- 网络请求动画 -->
         <div cg-busy="{promise:loadDataPromise,message:'数据加载中...'}"></div>
         <!-- 网络请求动画 -->
-        <table st-table="rowCollectionBasic" class="table table-bordered table-striped tb-border">
-            <thead>
-            <tr>
-                <th>巡检时间</th>
-                <th>巡检人</th>
-                <th>电话</th>
-                <th>巡检内容</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr class="success" ng-repeat="row in walk" st-select-row="row">
-                <td>{{row.time}}</td>
-                <td>{{row.name}}</td>
-                <td>{{row.tel}}</td>
-                <td>{{row.content}}</td>
-            </tr>
-            </tbody>
-        </table>
+        <div class="panel-body">
+            <table st-table="rowCollectionBasic" class="table table-bordered table-striped tb-border">
+                <thead>
+                <tr>
+                    <th>巡检时间</th>
+                    <th>巡检人</th>
+                    <th>停留时长</th>
+                    <th>巡检内容</th>
+                    <th>考勤状态</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="success" ng-repeat="row in walk" st-select-row="row">
+                    <td>{{row.time}}</td>
+                    <td>{{row.name}}</td>
+                    <td>{{row.stay}}</td>
+                    <td>{{row.content}}</td>
+                    <td>{{row.status}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 <div class="divider divider-md bg-white"></div>

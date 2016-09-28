@@ -109,6 +109,7 @@ public class VirtualSensorDataController extends BasicRestController {
     @ResponseBody
     public Response getDataDegree(
             @PathVariable("id") String id,
+            @ModelAttribute("field") String field,
             @ModelAttribute("type") String typeText
     ) {
         Response response = null;
@@ -117,7 +118,7 @@ public class VirtualSensorDataController extends BasicRestController {
             response = makeResponse(
                     ResponseCode.SUCCESS,
                     virtualSensorDataService.findFieldDegreeByInterval(
-                            APPKEY, id, "positive_total", NumberUtils.toInt(typeText))
+                            APPKEY, id, field, NumberUtils.toInt(typeText))
             );
         } catch (Throwable e) {
             if (log.isErrorEnabled()) {
@@ -183,6 +184,34 @@ public class VirtualSensorDataController extends BasicRestController {
         }
         if (log.isDebugEnabled()) {
             log.debug("[id: {}, start:{}, end:{}, resp: {}]", sensorid, startText, endText, response);
+        }
+        return response;
+    }
+
+    @RequestMapping(value = "/{id}/image/top", method = {RequestMethod.GET, RequestMethod.POST})
+    @ResponseBody
+    public Response getImageDataTop20(
+            @PathVariable("id") String sensorid
+    ) {
+        Response response = null;
+        try {
+            response = makeResponse(ResponseCode.SUCCESS,
+                    virtualSensorDataService.getImageDataTop(APPKEY, sensorid)
+//                    virtualSensorDataService.findByFieldExsistAndProjection(
+//                            APPKEY, sensorid, 0, 20,
+//                            Arrays.asList("image"),
+//                            Arrays.asList("_id", "image_id", "time", "sensor_id", "comp_id", "capture_type"),
+//                            null, Arrays.asList("time")
+//                    )
+            );
+        } catch (Throwable e) {
+            if (log.isErrorEnabled()) {
+                log.error("get image data error [id: {}}", sensorid, e);
+            }
+            response = makeResponse(ResponseCode.SYSTEM_ERROR);
+        }
+        if (log.isDebugEnabled()) {
+            log.debug("[id: {}, resp: {}]", sensorid, response);
         }
         return response;
     }

@@ -63,4 +63,6 @@ public interface VirtualSensorDataService {
     Document findElectricDataBySensorId(String appkey, String sensorid);
 
     Document getImageData(String appkey, String sensorid, long start, long end);
+
+    Document getImageDataTop(String appkey, String sensorid);
 }

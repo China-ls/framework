@@ -102,6 +102,7 @@ app.controller('DashbordCtrl',
                 clientHeight: $scope.baidumapeight,
                 overlays: $scope.overlays
             };
+            $scope.mapLabelCache = {};
 
             $scope.map_canvas = angular.element("#map_canvas");
             $scope.app.settings.mapScaleMax = false;
@@ -148,6 +149,34 @@ app.controller('DashbordCtrl',
                 $state.go('app.device.tab.info', {id: event.target.device.sensor_id, device: event.target.device});
             };
 
+            $scope.onMarkerMouseOver = function (event) {
+                // console.warn(event);
+                // console.warn(event.target.device);
+                var device = event.target.device;
+
+                var infoWindow = $scope.mapLabelCache[device.sensor_id];
+                if (null == infoWindow) {
+                    var opts = {
+                        width: 200,     // 信息窗口宽度
+                        height: 100,     // 信息窗口高度
+                        title: device.name, // 信息窗口标题
+                        enableMessage: true,//设置允许信息窗发送短息
+                        message: device.address
+                    };
+                    infoWindow = new BMap.InfoWindow("地址：" + device.address, opts);  // 创建信息窗口对象
+                    $scope.mapLabelCache[device.sensor_id] = infoWindow;
+                }
+                $scope.myMap.openInfoWindow(infoWindow, event.point); //开启信息窗口
+            };
+
+            $scope.onMarkerMouseout = function (event) {
+                $scope.myMap.closeInfoWindow();
+                // var sid = event.target.device.sensor_id;
+                // if ($scope.mapLabelCache[sid]) {
+                //     $scope.mapLabelCache[sid].hide();
+                // }
+            };
+
             if ($scope.app.cache.selectParentBranch) {
                 $scope.app.subHeader.contentTitle = $scope.app.cache.selectParentBranch.label;
             }
@@ -184,6 +213,8 @@ app.controller('DashbordCtrl',
                         $scope.myMap.addOverlay(marker);
                         $scope.myMap.centerAndZoom(point, 13);
                         marker.addEventListener('click', $scope.onMarkerClick);
+                        marker.addEventListener('mouseover', $scope.onMarkerMouseOver);
+                        marker.addEventListener('mouseout', $scope.onMarkerMouseout);
                     }
                 }
                 $scope.shouldAddAllSensorsToMap = true;

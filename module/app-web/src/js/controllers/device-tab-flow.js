@@ -62,7 +62,7 @@ app.controller('DeviceTabFlowCtrl', ['$scope', '$http', '$localStorage', '$state
             });
 
         $scope.chartHandlerDayTotal = {
-            options: {chart: {type: 'line'}, tooltip: {valueSuffix: '立方米', style: {padding: 10, fontWeight: 'bold'}}},
+            options: {chart: {type: 'column'}, tooltip: {valueSuffix: '立方米', style: {padding: 10, fontWeight: 'bold'}}},
             series: [],
             title: {text: ''}, loading: false,
             xAxis: {tickInterval: 1, labels: {step: 4}, categories: []},
@@ -76,6 +76,7 @@ app.controller('DeviceTabFlowCtrl', ['$scope', '$http', '$localStorage', '$state
                 + APPCONST.SENSOR_DATA_DEGREE
                     .replace("{id}", $scope.$stateParams.id)
                     .replace("{type}", $scope.chartTypePositive)
+                    .replace("{field}", 'positive_total')
             )
                 .then(function (response) {
                     try {

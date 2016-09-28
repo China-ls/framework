@@ -20,7 +20,7 @@ app.controller('DeviceTabMovieCtrl', ['$scope', '$http', '$localStorage', '$stat
         $scope.imageactive = 1;
 
         $scope.loadDataPromise = $http.post(
-            APPCONST.CTX + APPCONST.SENSOR_DATA_IMAGE_LIST.replace("{id}", $scope.$stateParams.id),
+            APPCONST.CTX + APPCONST.SENSOR_DATA_IMAGE_LIST_TOP.replace("{id}", $scope.$stateParams.id),
             {start: $scope.start, end: $scope.end}
         )
             .then(function (response) {

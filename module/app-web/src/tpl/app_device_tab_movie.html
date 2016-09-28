@@ -5,12 +5,41 @@
             <!-- 网络请求动画 -->
             <div cg-busy="{promise:loadDataPromise,message:'数据加载中...'}"></div>
             <!-- 网络请求动画 -->
+            <div class="col-sm-5 col-lg-5">
 
-            <div class="col-sm-9 col-lg-9 wrapper-md">
+                <button ng-click="takepick()" class="img-full btn btn-success">拍照</button>
+
+                <table st-table="rowCollectionBasic" class="table table-bordered table-striped tb-border">
+                    <thead>
+                    <tr>
+                        <th>采集时间</th>
+                        <th>拍摄类型</th>
+                        <th>照片编号</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="success" ng-repeat="row in imageList"
+                        st-select-row="row"
+                        ng-click="imageListItemSelect($index)">
+                        <td><a href>{{row.time}}</a></td>
+                        <td>
+                            <a href>
+                                <span ng-if="row.capture_type === 0">远程抓拍</span>
+                                <span ng-if="row.capture_type === 1">定时抓拍</span>
+                                <span ng-if="row.capture_type === 2">触发抓拍</span>
+                                <span ng-if="!row.capture_type">定时抓拍</span>
+                            </a>
+                        </td>
+                        <td><a href>{{row.image_id}}</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-7 col-lg-7 wrapper-lg">
                 <!-- carousel -->
                 <div class="panel b-a" set-ng-animate="false">
                     <carousel interval="imageListSlideInterval">
-                        <slide ng-repeat="row in imageList" active="imageactive">
+                        <slide ng-repeat="row in imageList" active="row.active">
                             <span>{{row.time}}</span>
                             <img ng-src="{{imageUrl + row._id}}" class="img-full">
                         </slide>
@@ -18,34 +47,6 @@
                 </div>
                 <!-- / carousel -->
             </div>
-
-            <div class="col-sm-3 col-lg-3">
-
-                <p class="item dash-border-right b-b-dashed b-success m-md text-center">
-                    <span class="inline w-xs" style="font-weight: 700;font-style: normal;font-size: 15px;color: #009933;">
-                        照片信息
-                    </span>
-                </p>
-                <p class="item dash-border-right b-b-dashed b-success m-md">
-                    <span class="inline w-xs">拍摄时间：</span>
-                    <span class="cb">{{imageList[imageactive].time}}</span>
-                </p>
-                <p class="item dash-border-right b-b-dashed b-success m-md">
-                    <span class="inline w-xs">拍摄类型：</span>
-                    <span class="cb">
-                        <span ng-if="imageList[imageactive].capture_type === 0">远程抓拍</span>
-                        <span ng-if="imageList[imageactive].capture_type === 1">定时抓拍</span>
-                        <span ng-if="imageList[imageactive].capture_type === 2">触发抓拍</span>
-                    </span>
-                </p>
-                <p class="item dash-border-right b-b-dashed b-success m-md">
-                    <span class="inline w-xs">设备编号：</span>
-                    <span class="cb">{{imageList[imageactive].image_id}}</span>
-                </p>
-
-                <button ng-click="takepick()" class="img-full btn btn-success">拍照</button>
-            </div>
-
         </div>
     </div>
 </div>

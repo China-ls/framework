@@ -14,7 +14,7 @@ app.controller('DeviceTabWqCtrl', ['$scope', '$http', '$localStorage', '$state',
             options: {chart: {type: 'line'}, tooltip: {valueSuffix: '吨', style: {padding: 10, fontWeight: 'bold'}}},
             series: [{name: '处理量', data: [12, 12.1, 13, 13.1, 7.9, 11, 13]}],
             title: {text: ''}, loading: false,
-            xAxis: {categories: ['07-01', '07-02', '07-03', '07-04', '07-05', '07-06', '07-07']},
+            xAxis: {categories: ['09-23', '09-24', '09-25', '09-26', '09-27', '09-28', '09-29']},
             yAxis: {title: {text: '吨'}, plotLines: [{value: 0, width: 1, color: '#808080'}]},
             useHighStocks: false, size: {height: 400}
         };

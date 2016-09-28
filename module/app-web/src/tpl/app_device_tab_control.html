@@ -15,19 +15,23 @@
         </thead>
         <tbody>
         <tr class="success" ng-repeat="row in sensor.components"
-            st-select-row="row" ng-if="row.isControl">
+            st-select-row="row" ng-if="row.isControl && row.type != 'status_sensor' ">
             <td>{{row.comp_id}}</td>
             <td>{{row.name}}</td>
             <td>
-                <i class="sprite"
-                   ng-class="{
-                           'sprite-u709' : (row.type == 'camera_controller'),
-                           'sprite-u564' : (row.type == 'electricmeter_sensor' || row.type == 'flowmeter_sensor'),
-                           'sprite-u719' : (row.type == 'cardreader_sensor'),
-                           'sprite-u628' : (row.type == 'onboard_controller' || row.type == 'plc_controller')
-                           }"
-                   style="width: 32px;display: inline-block;"
-                ></i>
+                <img src="img/i_comp_7.png" width="22" ng-if="row.type == 'camera_controller'">
+                <img src="img/i_comp_4.png" width="22" ng-if="(row.type == 'electricmeter_sensor' || row.type == 'flowmeter_sensor')">
+                <img src="img/i_comp_6.png" width="22" ng-if="(row.type == 'cardreader_sensor')">
+                <img src="img/i_comp_2.png" width="22" ng-if="(row.type == 'onboard_controller' || row.type == 'plc_controller')">
+                <!--<i class="sprite"-->
+                   <!--ng-class="{-->
+                           <!--'sprite-u709' : (row.type == 'camera_controller'),-->
+                           <!--'sprite-u564' : (row.type == 'electricmeter_sensor' || row.type == 'flowmeter_sensor'),-->
+                           <!--'sprite-u719' : (row.type == 'cardreader_sensor'),-->
+                           <!--'sprite-u628' : (row.type == 'onboard_controller' || row.type == 'plc_controller')-->
+                           <!--}"-->
+                   <!--style="width: 32px;display: inline-block;"-->
+                <!--&gt;</i>-->
                 <span ng-if="row.status === 'NORMAL'">
                     正常
                 </span>

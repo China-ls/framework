@@ -19,6 +19,21 @@ app.controller('DeviceTabMovieCtrl', ['$scope', '$http', '$localStorage', '$stat
         $scope.imageUrl = APPCONST.CTX + APPCONST.SENSOR_DATA_IMAGE;
         $scope.imageactive = 1;
 
+        $scope.slider = {
+            index: 0,
+            timeArray: [],
+            options: {
+                floor: 0,
+                ceil: 1,
+                translate: function (value) {
+                    if (value >= $scope.slider.timeArray.length) {
+                        return '';
+                    }
+                    return $scope.slider.timeArray[value];
+                }
+            }
+        };
+
         $scope.loadDataPromise = $http.post(
             APPCONST.CTX + APPCONST.SENSOR_DATA_IMAGE_LIST_TOP.replace("{id}", $scope.$stateParams.id),
             {start: $scope.start, end: $scope.end}
@@ -30,8 +45,13 @@ app.controller('DeviceTabMovieCtrl', ['$scope', '$http', '$localStorage', '$stat
                 $scope.imageList = resp.data;
                 if ($scope.imageList) {
                     for (var i = 0; i < $scope.imageList.length; i++) {
-                        $scope.imageList[i].time = $scope.formatDate(new Date($scope.imageList[i].time), "yyyy年MM月dd日HH:mm:ss")
+                        var time = $scope.formatDate(new Date($scope.imageList[i].time), "yyyy年MM月dd日HH:mm:ss")
+                        $scope.imageList[i].time = time;
+                        $scope.slider.timeArray.push(time);
                     }
+                    $scope.slider.index = 0;
+                    $scope.slider.options.ceil = $scope.imageList.length + 1;
+
                     // $scope.imageListItemSelect(0);
                 }
             });

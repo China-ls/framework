@@ -11,61 +11,6 @@
       "contact": "",
       "devices": null,
       "icon": "blue_flag.png",
-      "id": "2001",
-      "name": "杭州",
-      "sub_departments": null,
-      "telephone": "",
-      "uuid": "78948d42-3df6-4cfc-b3a9-988357eac48a"
-    },
-    {
-      "address": "",
-      "contact": "",
-      "devices": null,
-      "icon": "blue_flag.png",
-      "id": "2002",
-      "name": "宁波",
-      "sub_departments": null,
-      "telephone": "",
-      "uuid": "01c7d717-9374-4008-8654-1d636cc71d31"
-    },
-    {
-      "address": "",
-      "contact": "",
-      "devices": null,
-      "icon": "blue_flag.png",
-      "id": "2003",
-      "name": "温州",
-      "sub_departments": null,
-      "telephone": "",
-      "uuid": "b3c2943a-3a38-4004-82b9-80bd94fe9cd1"
-    },
-    {
-      "address": "",
-      "contact": "",
-      "devices": null,
-      "icon": "blue_flag.png",
-      "id": "2004",
-      "name": "绍兴",
-      "sub_departments": null,
-      "telephone": "",
-      "uuid": "f1198091-92cc-4496-9374-a3a267a97307"
-    },
-    {
-      "address": "",
-      "contact": "",
-      "devices": null,
-      "icon": "blue_flag.png",
-      "id": "2005",
-      "name": "湖州",
-      "sub_departments": null,
-      "telephone": "",
-      "uuid": "8a186528-62e9-4af8-aa90-7dc72433cbb4"
-    },
-    {
-      "address": "",
-      "contact": "",
-      "devices": null,
-      "icon": "blue_flag.png",
       "id": "2006",
       "name": "嘉兴",
       "sub_departments": [
@@ -159,6 +104,114 @@
       ],
       "telephone": "",
       "uuid": "43146f81-c38d-466e-99de-2b9a9159e88d"
+    },
+    {
+      "address": "",
+      "contact": "",
+      "devices": null,
+      "icon": "blue_flag.png",
+      "id": "2001",
+      "name": "杭州",
+      "sub_departments": [
+        {
+          "address": "",
+          "contact": "",
+          "icon": "green_flag.png",
+          "id": "3001",
+          "name": "萧山区",
+          "sub_departments": null,
+          "devices": [
+            {
+              "name": "瓜沥镇渭水桥村污水试点站",
+              "uuid": null
+            },
+            {
+              "name": "党湾镇梅东村污水试点站",
+              "uuid": null
+            },
+            {
+              "name": "益农镇众力桥村污水试点站",
+              "uuid": null
+            },
+            {
+              "name": "义桥镇昇光桥村污水试点站",
+              "uuid": null
+            },
+            {
+              "name": "戴村镇枫桥村污水试点站",
+              "uuid": null
+            },
+            {
+              "name": "浦阳镇径游村污水试点站",
+              "uuid": null
+            },
+            {
+              "name": "楼塔镇大力村污水试点站",
+              "uuid": null
+            },
+            {
+              "name": "临浦镇三峰村污水试点站",
+              "uuid": null
+            },
+            {
+              "name": "进化镇天乐村污水试点站",
+              "uuid": null
+            },
+            {
+              "name": "所前镇污水试点站",
+              "uuid": null
+            }
+          ],
+          "telephone": "",
+          "uuid": "b380f498-93fa-4a13-b774-7512935f3171"
+        }
+      ],
+      "telephone": "",
+      "uuid": "78948d42-3df6-4cfc-b3a9-988357eac48a"
+    },
+    {
+      "address": "",
+      "contact": "",
+      "devices": null,
+      "icon": "blue_flag.png",
+      "id": "2002",
+      "name": "宁波",
+      "sub_departments": null,
+      "telephone": "",
+      "uuid": "01c7d717-9374-4008-8654-1d636cc71d31"
+    },
+    {
+      "address": "",
+      "contact": "",
+      "devices": null,
+      "icon": "blue_flag.png",
+      "id": "2003",
+      "name": "温州",
+      "sub_departments": null,
+      "telephone": "",
+      "uuid": "b3c2943a-3a38-4004-82b9-80bd94fe9cd1"
+    },
+    {
+      "address": "",
+      "contact": "",
+      "devices": null,
+      "icon": "blue_flag.png",
+      "id": "2004",
+      "name": "绍兴",
+      "sub_departments": null,
+      "telephone": "",
+      "uuid": "f1198091-92cc-4496-9374-a3a267a97307"
+    },
+    {
+      "address": "",
+      "contact": "",
+      "devices": null,
+      "icon": "blue_flag.png",
+      "id": "2005",
+      "name": "湖州",
+      "sub_departments": null,
+      "telephone": "",
+      "uuid": "8a186528-62e9-4af8-aa90-7dc72433cbb4"
     },
     {
       "address": "",

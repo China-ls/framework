@@ -91,6 +91,13 @@ angular.module('app')
                         'lib/bootstrap-switch/css/bootstrap-switch.min.css',
                         'lib/angular-bootstrap-switch/angular-bootstrap-switch.min.js'
                     ]
+                },
+                {
+                    name: 'rzModule',
+                    files: [
+                        'lib/angularjs-slider/rzslider.min.css',
+                        'lib/angularjs-slider/rzslider.min.js'
+                    ]
                 }
             ]
         });

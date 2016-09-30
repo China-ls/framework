@@ -160,6 +160,13 @@ angular.module('app')
                     ]
                 },
                 {
+                    name: 'rzModule',
+                    files: [
+                        '../bower_components/angularjs-slider/dist/rzslider.min.css',
+                        '../bower_components/angularjs-slider/dist/rzslider.min.js'
+                    ]
+                },
+                {
                     name: 'com.2fdevs.videogular',
                     files: [
                         '../bower_components/videogular/videogular.min.js'

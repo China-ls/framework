@@ -212,7 +212,7 @@ angular.module('app')
                         resolve: {
                             deps: ['$ocLazyLoad',
                                 function ($ocLazyLoad) {
-                                    return $ocLazyLoad.load(['cgBusy']);
+                                    return $ocLazyLoad.load(['cgBusy', 'rzModule']);
                                 }]
                         }
                     })

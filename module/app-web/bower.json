@@ -112,6 +112,8 @@
     "angular-cookie": "^4.1.0",
     "masonry": "^4.1.1",
     "angular-masonry": "^0.16.0",
-    "angular-bootstrap-switch": "^0.5.1"
+    "angular-bootstrap-switch": "^0.5.1",
+    "angularjs-slider": "^5.5.1",
+    "angular-material": "^1.1.1"
   }
 }

@@ -70,6 +70,25 @@ public class EmployeeController extends BasicRestController {
         return response;
     }
 
+    @RequestMapping(value = "/del", method = {RequestMethod.PUT, RequestMethod.POST})
+    public Response delEmployee(@ModelAttribute("id") String id) {
+        Response response = null;
+        try {
+            response = makeResponse(ResponseCode.SUCCESS,
+                    employeeService.removeEmployee(id));
+        } catch (Throwable e) {
+            if (log.isErrorEnabled()) {
+                log.error("remove employee error. [id: {}]", id, e);
+            }
+            response = makeResponse(ResponseCode.SYSTEM_ERROR);
+        }
+        if (log.isDebugEnabled()) {
+            log.debug("==[employee:{},resp:{}]==", id, response);
+        }
+        return response;
+    }
+
+
     @RequestMapping(value = "/{id}/duty/add", method = {RequestMethod.PUT, RequestMethod.POST})
     public Response addEmployeeDuty(@PathVariable("id") String id,
                                     @ModelAttribute EmployeeDuty employeeDuty) {

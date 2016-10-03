@@ -29,6 +29,7 @@ public class Department extends AbstractEntity {
     @Property private String parentName;
     @Property private int type;
     @Property private String path;
+    @Property private String name_path;
     @Property private int nodeType;
     @Property private int level;
 
@@ -117,6 +118,14 @@ public class Department extends AbstractEntity {
         this.nodeType = nodeType;
     }
 
+    public String getName_path() {
+        return name_path;
+    }
+
+    public void setName_path(String name_path) {
+        this.name_path = name_path;
+    }
+
     @Override
     public String toString() {
         return "Department{" +
@@ -128,8 +137,9 @@ public class Department extends AbstractEntity {
                 ", parentName='" + parentName + '\'' +
                 ", type=" + type +
                 ", path='" + path + '\'' +
+                ", name_path='" + name_path + '\'' +
                 ", nodeType=" + nodeType +
                 ", level=" + level +
-                "} " + super.toString();
+                '}';
     }
 }

@@ -78,4 +78,21 @@ public class DepartmentController extends BasicRestController {
         return response;
     }
 
+    @RequestMapping(value = "/del", method = {RequestMethod.PUT, RequestMethod.POST})
+    public Response delDepartment(@ModelAttribute("id") String id) {
+        Response response = null;
+        try {
+            response = makeResponse(ResponseCode.SUCCESS,
+                    departmentService.deleteById(id)
+            );
+        } catch (Throwable e) {
+            logger.debug("delete department [{}] error.", id, e);
+            response = makeResponse(ResponseCode.SYSTEM_ERROR);
+        }
+        if (logger.isDebugEnabled()) {
+            logger.debug("==[model:{},resp:{}]==", id, response);
+        }
+        return response;
+    }
+
 }

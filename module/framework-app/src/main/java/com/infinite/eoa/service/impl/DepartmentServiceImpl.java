@@ -8,6 +8,7 @@ import com.infinite.eoa.persistent.DepartmentDAO;
 import com.infinite.eoa.core.entity.Pager;
 import com.infinite.eoa.service.DepartmentService;
 import com.infinite.eoa.service.exception.InvalidDataException;
+import com.mongodb.WriteResult;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 import org.bson.Document;
@@ -35,6 +36,12 @@ public class DepartmentServiceImpl extends AbstractPagerService<Department> impl
     @Override
     public IMorphiaDAO getMorphiaDAO() {
         return departmentDAO;
+    }
+
+    @Override
+    public int deleteById(String id) {
+        WriteResult result = departmentDAO.deleteById(new ObjectId(id));
+        return result.getN();
     }
 
     @Override
@@ -76,7 +83,7 @@ public class DepartmentServiceImpl extends AbstractPagerService<Department> impl
     @Override
     public Pager<Department> listPagerByDepartmentType(int page, int size, int type, boolean withEntity) {
         Query query = departmentDAO.createQuery();
-        if (type > 0) {
+        if (type != -1) {
             query.filter("type =", type);
         }
 //        if (!withEntity) {

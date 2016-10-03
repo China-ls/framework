@@ -237,16 +237,6 @@ angular.module('app')
                                 }]
                         }
                     })
-                    .state('app.empduty', {
-                        url: '/empduty',
-                        views: {
-                            'subContentTitle': {
-                                templateUrl: 'tpl/blocks/common_sub_header.html',
-                                controller: 'EmployeeDutyTitleCtrl'
-                            },
-                            'contentView': {templateUrl: 'tpl/app_employee_duty.html'}
-                        }
-                    })
                     .state('app.mr.emp', {
                         url: '/emp',
                         parent: 'app.mr',
@@ -373,6 +363,42 @@ angular.module('app')
                             deps: ['$ocLazyLoad',
                                 function ($ocLazyLoad) {
                                     return $ocLazyLoad.load(['highcharts-ng']);
+                                }]
+                        }
+                    })
+                    .state('app.employee.duty', {
+                        url: '/duty',
+                        views: {
+                            'subContentTitle@app': {
+                                templateUrl: 'tpl/blocks/common_sub_header.html',
+                                controller: 'EmployeeDutyTitleCtrl'
+                            },
+                            'contentView@app': {templateUrl: 'tpl/app_employee_duty.html'}
+                        },
+                        resolve: {
+                            deps: ['$ocLazyLoad',
+                                function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load(['angularBootstrapNavTree', 'cgBusy']).then(
+                                        function () {
+                                            return loadBaiduMaps("7482d6d695c8d7d8dccca6d5de410704");
+                                        }
+                                    );
+                                }]
+                        }
+                    })
+                    .state('app.employee.auth', {
+                        url: '/auth',
+                        views: {
+                            'subContentTitle@app': {
+                                templateUrl: 'tpl/blocks/common_sub_header.html',
+                                controller: 'EmployeeAuthTitleCtrl'
+                            },
+                            'contentView@app': {templateUrl: 'tpl/app_employee_auth.html'}
+                        },
+                        resolve: {
+                            deps: ['$ocLazyLoad',
+                                function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load(['angularBootstrapNavTree', 'cgBusy']);
                                 }]
                         }
                     })

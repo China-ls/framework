@@ -4,7 +4,7 @@
 
 app.controller('EmployeeAddTitleCtrl', ['$scope', '$http', '$localStorage', '$modal', 'APPCONST',
     function ($scope, $http, $localStorage, $modal, APPCONST) {
-        $scope.app.subHeader.contentTitle = null == $localStorage.selectUser ? '添加员工' : '编辑员工信息';
+        $scope.app.subHeader.contentTitle = null == $localStorage.selectEmployee ? '添加员工' : '编辑员工信息';
         $scope.app.subHeader.goBackHide = false;
         $scope.app.subHeader.goBackSref = 'app.employee';
         $scope.app.settings.asideHide = true;
@@ -15,13 +15,15 @@ app.controller('EmployeeAddTitleCtrl', ['$scope', '$http', '$localStorage', '$mo
 app.controller('EmployeeAddCtrl', ['$scope', '$http', '$localStorage', '$state', 'APPCONST', 'toaster',
     function ($scope, $http, $localStorage, $state, APPCONST, toaster) {
         $scope.format = 'yyyy-MM-dd';
-        $scope.user = $localStorage.selectUser;
-        if (!$scope.user) {
-            $scope.user = {password: '111111'};
+        $scope.employee = $localStorage.selectEmployee;
+        if (!$scope.employee) {
+            $scope.employee = {password: '111111'};
         } else {
-            var date = new Date($scope.user.birthday);
-            $scope.user.birthday = $scope.formatDate(date, $scope.format);
-            console.warn($scope.user);
+            if ($scope.employee.birthday) {
+                var date = new Date($scope.employee.birthday);
+                $scope.employee.birthday = $scope.formatDate(date, $scope.format);
+            }
+            // console.warn($scope.employee);
         }
 
         $scope.open = function ($event) {
@@ -37,27 +39,27 @@ app.controller('EmployeeAddCtrl', ['$scope', '$http', '$localStorage', '$state',
 
         $scope.submit = function () {
             // console.warn('submit');
-            if (!$scope.user.number) {
+            if (!$scope.employee.number) {
                 $scope.Toast('warning', '提示', '请输入员工工号');
                 return;
             }
-            if (!$scope.user.username) {
+            if (!$scope.employee.username) {
                 $scope.Toast('warning', '提示', '请输入登录帐号');
                 return;
             }
-            if (!$scope.user.password) {
+            if (!$scope.employee.password) {
                 $scope.Toast('warning', '提示', '请输入员工密码');
                 return;
             }
-            if (!$scope.user.name) {
+            if (!$scope.employee.name) {
                 $scope.Toast('warning', '提示', '请输入员工姓名');
                 return;
             }
-            if (!$scope.user.sex) {
+            if (!$scope.employee.sex) {
                 $scope.Toast('warning', '提示', '请选择员工性别');
                 return;
             }
-            if (!$scope.user.status) {
+            if (!$scope.employee.status) {
                 $scope.Toast('warning', '提示', '请选择员工帐号状态');
                 return;
             }
@@ -67,16 +69,16 @@ app.controller('EmployeeAddCtrl', ['$scope', '$http', '$localStorage', '$state',
             //添加
             if (null == $localStorage.selectUser) {
                 url = APPCONST.CTX + APPCONST.EMPLOYEE_ADD;
-                data = $scope.user;
+                data = $scope.employee;
             } else {
                 //修改
-
             }
 
             $http.post(url, data).then(function (response) {
                 // console.warn(response);
                 if (response.data.code === '0') {
-                    $scope.Toast('success', '消息', '添加用户成功。');
+                    $scope.Toast('success', '消息', null == $localStorage.selectEmployee ?
+                        '添加用户成功。' : '修改用户成功');
                     $state.go('app.employee');
                 }
             }, function (response) {

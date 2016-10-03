@@ -25,4 +25,5 @@ public interface EmployeeService extends IPagerService<Employee> {
 
     int setEmployeeDuty(String id, EmployeeDuty duty);
 
+    int removeEmployee(String id);
 }

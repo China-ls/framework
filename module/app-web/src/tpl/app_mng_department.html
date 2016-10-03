@@ -11,20 +11,20 @@
                 <div class="col-sm-10">
                     <div class="pull-right">
                         <button class="btn btn-info btn-sm btn-addon w-xs-xs"
-                                ng-class="{'disabled': !buttonConfig.add}"
+                                ng-class="{'disabled': departments.length > 0 && null == selectDepartment}"
                                 ng-click="addNode()">
                             <i class="fa fa-plus hidden-xs"></i>
                             增加子节点
                         </button>
                         <button class="btn btn-success btn-sm btn-addon w-xs-xs"
                                 ng-click="editNode()"
-                                ng-class="{'disabled': !buttonConfig.edit}">
+                                ng-class="{'disabled': null == selectDepartment}">
                             <i class="fa fa-edit hidden-xs"></i>
                             编辑
                         </button>
                         <button class="btn btn-danger btn-sm btn-addon w-xs-xs"
                                 ng-click="deleteNode()"
-                                ng-class="{'disabled': !buttonConfig.delete}">
+                                ng-class="{'disabled': null == selectDepartment}">
                             <i class="fa fa-trash-o hidden-xs"></i>
                             删除
                         </button>
@@ -57,7 +57,8 @@
                     ng-click="toggleSelectDepartment(item)">
                     <th>
                         <label class="checkbox i-checks m-n">
-                            <input type="checkbox" ng-checked="item == selectDepartment">
+                            <input type="checkbox" ng-checked="item == selectDepartment"
+                                   ng-click="toggleSelectDepartment(item)">
                             <i></i>
                         </label>
                     </th>
@@ -89,21 +90,11 @@
 
                 <tr style="display: block;" ng-style="{'min-height': dividerHeight}"></tr>
 
-                <tr>
-                    <td colspan="5" class="text-center">
-                        <pagination boundary-links="true"
-                                    total-items="total"
-                                    ng-model="currentPage"
-                                    class="pagination-sm m-t-none m-b"
-                                    ng-change="pageChanged()"
-                                    previous-text="&lsaquo;" next-text="&rsaquo;"
-                                    first-text="&laquo;" last-text="&raquo;">
-                        </pagination>
-                    </td>
-                </tr>
                 </tbody>
             </table>
+
         </div>
+
         <!-- 人员表 -->
 
         <!-- add node modal -->

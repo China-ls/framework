@@ -10,6 +10,9 @@ import org.bson.Document;
  * @since 1.0
  */
 public interface DepartmentService extends IPagerService<Department> {
+
+    public int deleteById(String id);
+
     public Document listByType(String type);
 
     public Pager<Department> listPagerAll(int page, int size, boolean withEntity);

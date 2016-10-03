@@ -5,8 +5,9 @@ import org.apache.commons.lang.StringUtils;
 
 public class DepartmentModel extends Department {
     private String p_id;
-    private String p_name;
     private String p_path;
+    private String p_name;
+    private String p_name_path;
     private int p_level;
 
     public String getP_id() {
@@ -41,6 +42,14 @@ public class DepartmentModel extends Department {
         this.p_level = p_level;
     }
 
+    public String getP_name_path() {
+        return p_name_path;
+    }
+
+    public void setP_name_path(String p_name_path) {
+        this.p_name_path = p_name_path;
+    }
+
     public Department convertAdd() {
         Department department = new Department();
         department.setName(getName());
@@ -53,6 +62,11 @@ public class DepartmentModel extends Department {
             department.setParentId(p_id);
             p_path = StringUtils.isEmpty(p_path) ? "," : p_path;
             department.setPath(p_path + p_id + ",");
+        }
+        if (!StringUtils.isEmpty(p_name)) {
+            department.setParentName(p_name);
+            p_name_path = StringUtils.isEmpty(p_name_path) ? "," : p_name_path;
+            department.setName_path(p_name_path + p_name + ",");
         }
         return department;
     }

@@ -27,6 +27,7 @@ app.controller('DepartmentEditCtrl', ['$scope', '$http', '$localStorage', '$stat
                 $scope.node = {
                     p_id: $localStorage.selectDepartment.id,
                     p_name: $localStorage.selectDepartment.name,
+                    p_name_path: $localStorage.selectDepartment.name_path,
                     p_level: $localStorage.selectDepartment.level,
                     p_path: $localStorage.selectDepartment.path
                 };
@@ -53,10 +54,10 @@ app.controller('DepartmentEditCtrl', ['$scope', '$http', '$localStorage', '$stat
                 $scope.warnToast('请输入机构名字');
                 return;
             }
-            if (!$scope.node.leading) {
-                $scope.warnToast('请输入机构负责人');
-                return;
-            }
+            // if (!$scope.node.leading) {
+            //     $scope.warnToast('请输入机构负责人');
+            //     return;
+            // }
 
             $http.put(APPCONST.CTX + APPCONST.DEPARTMENT_ADD, $scope.node).then(function (response) {
                 // console.warn(response);

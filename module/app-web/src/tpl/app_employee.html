@@ -12,20 +12,32 @@
                     <div class="pull-right">
                         <button class="btn btn-info btn-sm btn-addon w-xs-xs"
                                 ng-click="addEmployee()">
-                            <i class="fa fa-plus hidden-xs"></i>
-                            增加员工
+                            <i class="fa fa-edit hidden-xs"></i>
+                            添加员工
                         </button>
                         <button class="btn btn-success btn-sm btn-addon w-xs-xs"
                                 ng-click="editEmployee()"
-                                ng-class="{'disabled': null == selectUser}">
+                                ng-class="{'disabled': null == selectEmployee}">
                             <i class="fa fa-edit hidden-xs"></i>
-                            编辑
+                            修改员工
                         </button>
                         <button class="btn btn-danger btn-sm btn-addon w-xs-xs"
-                                ng-click="deleteEmployee()"
-                                ng-class="{'disabled': null == selectUser}">
-                            <i class="fa fa-trash-o hidden-xs"></i>
-                            删除
+                                ng-click="delEmployeeOrDelDuty(true)"
+                                ng-class="{'disabled': null == selectEmployee}">
+                            <i class="fa fa-edit hidden-xs"></i>
+                            删除员工
+                        </button>
+                        <button class="btn btn-success btn-sm btn-addon w-xs-xs"
+                                ng-click="editDuty()"
+                                ng-class="{'disabled': null == selectEmployee}">
+                            <i class="fa fa-edit hidden-xs"></i>
+                            职能修改
+                        </button>
+                        <button class="btn btn-danger btn-sm btn-addon w-xs-xs"
+                                ng-click="delEmployeeOrDelDuty(false)"
+                                ng-class="{'disabled': null == selectEmployee}">
+                            <i class="fa fa-edit hidden-xs"></i>
+                            职能移除
                         </button>
                     </div>
                 </div>
@@ -33,7 +45,7 @@
         </div>
 
         <!-- 人员表 -->
-        <div class="clearfix panel-body">
+        <div class="clearfix panel-body" style="overflow-x: auto;">
 
             <!-- 网络请求动画 -->
             <div cg-busy="{promise:loadDataPromise,message:'数据加载中...'}"></div>
@@ -53,17 +65,19 @@
                     <th>电话</th>
                     <th>手机</th>
                     <th>电子邮箱</th>
-                    <th>排序号</th>
+                    <th>职能</th>
                     <th>状态</th>
                     <th>区域归属</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="item in users" class="success cursor-pointer"
-                    st-select-row="row" ng-click="toggleUserSelect(item)">
+                <tr ng-repeat="item in employees" class="success cursor-pointer"
+                    st-select-row="row" ng-click="toggleSelectEmployee(item)">
                     <th>
                         <label class="checkbox i-checks m-n">
-                            <input type="checkbox" ng-checked="item.id == selectUser.id">
+                            <input type="checkbox"
+                                   ng-checked="item.id == selectEmployee.id"
+                                   ng-click="toggleSelectEmployee(item)">
                             <i></i>
                         </label>
                     </th>
@@ -80,7 +94,7 @@
                     <td>{{item.tel}}</td>
                     <td>{{item.phone}}</td>
                     <td>{{item.email}}</td>
-                    <td>{{item.sort}}</td>
+                    <td></td>
                     <td>
                         <span ng-if="item.status === 1">正常</span>
                         <span ng-if="item.status === 2">禁用</span>
@@ -91,22 +105,21 @@
 
                 <tr style="display: block;" ng-style="{'min-height': dividerHeight}"></tr>
 
-                <tr>
-                    <td colspan="5" class="text-center">
-                        <pagination boundary-links="true"
-                                    total-items="total"
-                                    ng-model="currentPage"
-                                    class="pagination-sm m-t-none m-b"
-                                    ng-change="pageChanged()"
-                                    previous-text="&lsaquo;" next-text="&rsaquo;"
-                                    first-text="&laquo;" last-text="&raquo;">
-                        </pagination>
-                    </td>
-                </tr>
-
                 </tbody>
             </table>
         </div>
+
+        <div class="col-xs-12 text-center m-t-xs">
+            <pagination boundary-links="true"
+                        total-items="total"
+                        ng-model="currentPage"
+                        class="pagination-sm m-t-none m-b"
+                        ng-change="pageChanged()"
+                        previous-text="&lsaquo;" next-text="&rsaquo;"
+                        first-text="&laquo;" last-text="&raquo;">
+            </pagination>
+        </div>
+
         <!-- 人员表 -->
 
         <!-- add node modal -->

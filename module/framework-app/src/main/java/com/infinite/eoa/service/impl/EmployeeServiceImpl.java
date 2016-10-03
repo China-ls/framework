@@ -6,6 +6,7 @@ import com.infinite.eoa.entity.Employee;
 import com.infinite.eoa.entity.EmployeeDuty;
 import com.infinite.eoa.persistent.EmployeeDAO;
 import com.infinite.eoa.service.EmployeeService;
+import com.mongodb.WriteResult;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.Key;
 import org.mongodb.morphia.query.UpdateResults;
@@ -74,5 +75,11 @@ public class EmployeeServiceImpl extends AbstractPagerService<Employee> implemen
                 employeeDAO.createUpdateOperations().set("duties", duty)
         );
         return result.getUpdatedCount();
+    }
+
+    @Override
+    public int removeEmployee(String id) {
+        WriteResult result = employeeDAO.deleteById(new ObjectId(id));
+        return result.getN();
     }
 }

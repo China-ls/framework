@@ -11,22 +11,23 @@ app.controller('ManageDepartmentTitleCtrl', ['$scope', '$http', '$localStorage',
         $scope.app.subHeader.goBackHide = true;
     }]
 );
-app.controller('ManageDepartmentCtrl', ['$scope', '$http', '$localStorage', '$state', 'APPCONST', 'toaster',
-    function ($scope, $http, $localStorage, $state, APPCONST, toaster) {
+app.controller('ManageDepartmentCtrl', ['$scope', '$http', '$localStorage', '$state', 'APPCONST', 'toaster', '$modal',
+    function ($scope, $http, $localStorage, $state, APPCONST, toaster, $modal) {
         $scope.buttonConfig = {add: false, edit: false, delete: false};
         if (!$scope.page) {
             $scope.page = 1;
         }
         if (!$scope.size) {
-            $scope.size = 10;
+            $scope.size = 0;
         }
 
-        $scope.total = 0;
-        $scope.currentPage = 1;
         $scope.departments = [];
 
         $scope.resetDividerHeight = function () {
-            var len = 10 - $scope.departments.length;
+            var len = 10;
+            if ($scope.departments) {
+                len = 10 - $scope.departments.length;
+            }
             $scope.dividerHeight = len <= 0 ? 0 : len * 35;
         };
 
@@ -37,15 +38,11 @@ app.controller('ManageDepartmentCtrl', ['$scope', '$http', '$localStorage', '$st
         };
 
         $scope.toggleSelectDepartment = function (item) {
-            var isSelected = false;
             if ($scope.selectDepartment == item) {
                 $scope.selectDepartment = null;
             } else {
                 $scope.selectDepartment = item;
-                isSelected = true;
             }
-            $scope.buttonConfig.add = isSelected || $scope.departments === null || $scope.departments.length <= 0;
-            $scope.buttonConfig.edit = $scope.buttonConfig.delete = isSelected;
         };
 
         //底部页面点击，加载每页数据
@@ -60,18 +57,14 @@ app.controller('ManageDepartmentCtrl', ['$scope', '$http', '$localStorage', '$st
                     var code = response.data.code;
                     var data = response.data.data;
                     if (code === '0') {
-                        $scope.total = data.total;
-                        $scope.currentPage = data.page;
                         $scope.departments = data.data;
-                        console.warn($scope.departments);
+                        // console.warn($scope.departments);
                     }
                     //没有数据时候，可以添加
-                    $scope.buttonConfig.add = null == $scope.departments || $scope.departments.length <= 0;
                     // console.warn(response);
                     $scope.resetDividerHeight();
                 }, function (response) {
                     //没有数据时候，可以添加
-                    $scope.buttonConfig.add = $scope.buttonConfig.edit = $scope.buttonConfig.delete = false;
                     toaster.pop('error', '警告', '服务器响应异常，请联系管理员。')
                 });
         };
@@ -79,7 +72,7 @@ app.controller('ManageDepartmentCtrl', ['$scope', '$http', '$localStorage', '$st
         $scope.loadDepartmentData($scope.page, $scope.size);
 
         $scope.addNode = function () {
-            if (!$scope.buttonConfig.add) {
+            if ((null != $scope.departments && $scope.departments.length > 0 ) && null == selectDepartment) {
                 // toaster.pop('warning', '提示', '请先选择一个机构。');
                 return;
             }
@@ -88,7 +81,7 @@ app.controller('ManageDepartmentCtrl', ['$scope', '$http', '$localStorage', '$st
             $state.go('app.mngdpt.edit');
         };
         $scope.editNode = function () {
-            if (!$scope.buttonConfig.edit) {
+            if (null == selectDepartment) {
                 // toaster.pop('warning', '提示', '请选择需要修改的机构。');
                 return;
             }
@@ -104,12 +97,39 @@ app.controller('ManageDepartmentCtrl', ['$scope', '$http', '$localStorage', '$st
             $state.go('app.mngdpt.edit');
         };
         $scope.deleteNode = function () {
-            if (!$scope.buttonConfig.delete) {
+            if (null == selectDepartment) {
                 // toaster.pop('warning', '提示', '请选择需要删除的机构。');
                 return;
             }
             // console.warn('click delete');
-            $localStorage.selectDepartment = $scope.selectDepartment;
+            var modalInstance = $modal.open({
+                templateUrl: 'confirmModalContent.html',
+                controller: 'DepartmentModalInstanceCtrl'
+            });
+            modalInstance.result.then(function () {
+                $http.post(APPCONST.CTX + APPCONST.DEPARTMENT_DEL, {id: $scope.selectDepartment.id})
+                    .then(function (response) {
+                        toaster.pop('success', '提示', '节点删除成功。');
+                        $scope.loadDepartmentData($scope.page, $scope.size);
+                    }, function (response) {
+                        toaster.pop('error', '警告', '服务器响应异常，请联系管理员。');
+                    });
+            }, function () {
+            });
         };
     }]
 );
+
+
+app.controller('DepartmentModalInstanceCtrl', ['$scope', '$modalInstance',
+    function ($scope, $modalInstance) {
+        $scope.title = '警告';
+        $scope.content = '是否要删除所选节点？';
+        $scope.ok = function () {
+            $modalInstance.close();
+        };
+        $scope.cancel = function () {
+            $modalInstance.dismiss('cancel');
+        };
+    }])
+;

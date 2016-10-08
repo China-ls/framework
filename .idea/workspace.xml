@@ -2,35 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0fd8f5c7-a893-4232-b550-e52d73eb6f82" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/src/css/less/app.table.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_device_tab_movie_bak.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/lib/abnt/abntree.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/lib/angularjs-slider/rzslider.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/lib/angularjs-slider/rzslider.min.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/lib/angular-bootstrap-nav-tree/abn_tree_directive.js" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_employee_duty.html" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_employee.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/css/app.201609281630.css" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/css/app.201610081206.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/js/app.201609281630.js" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/js/app.201610081206.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/lib/angular-bootstrap-nav-tree/abn_tree.css" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/lib/abnt/abntree.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework.iml" afterPath="$PROJECT_DIR$/framework.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/bower_components/angular-bootstrap-nav-tree/dist/abn_tree_directive.js" afterPath="$PROJECT_DIR$/module/app-web/bower_components/angular-bootstrap-nav-tree/dist/abn_tree_directive.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/css/app.css" afterPath="$PROJECT_DIR$/module/app-web/src/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/css/less/app.less" afterPath="$PROJECT_DIR$/module/app-web/src/css/less/app.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/css/less/app.utilities.less" afterPath="$PROJECT_DIR$/module/app-web/src/css/less/app.utilities.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/index.html" afterPath="$PROJECT_DIR$/module/app-web/src/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/config.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/config.router.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/config.router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/employee-add.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/employee-add.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/employee-duty.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/employee-duty.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/config.lazyload.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/config.lazyload.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/employee.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/employee.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/mamage-department-add.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/mamage-department-add.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/mamage-department.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/mamage-department.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_employee.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_employee.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_employee_add.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_employee_add.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_employee_duty.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_employee_duty.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_mng_department.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_mng_department.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_mng_department_add.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_mng_department_add.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/blocks/header.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/blocks/header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Department.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Department.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/DepartmentDAO.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/DepartmentDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/impl/DepartmentDAOImpl.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/impl/DepartmentDAOImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/DepartmentController.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/DepartmentController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/EmployeeController.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/EmployeeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/entity/DepartmentModel.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/entity/DepartmentModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/DepartmentService.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/DepartmentService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/EmployeeService.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/EmployeeService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/DepartmentServiceImpl.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/DepartmentServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/EmployeeServiceImpl.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/EmployeeServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/core-framework/core-framework.iml" afterPath="$PROJECT_DIR$/module/core-framework/core-framework.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/framework-app.iml" afterPath="$PROJECT_DIR$/module/framework-app/framework-app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/index.jsp" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/login.jsp" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/login.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_device_tab_movie.html" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_device_tab_movie.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_employee_add.html" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_employee_add.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_employee_duty.html" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_employee_duty.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_mng_department.html" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_mng_department.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_mng_department_add.html" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_mng_department_add.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/blocks/header.html" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/blocks/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/water-app/water-app.iml" afterPath="$PROJECT_DIR$/module/water-app/water-app.iml" />
     </list>
     <ignored path="framework.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,21 +76,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DepartmentController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/DepartmentController.java">
+      <file leaf-file-name="EmployeeController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/EmployeeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="73" column="9" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DepartmentModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/entity/DepartmentModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="65" column="36" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
+            <state relative-caret-position="231">
+              <caret line="76" column="55" selection-start-line="76" selection-start-column="55" selection-end-line="76" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -114,8 +107,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/mq/MqttMessageHandler.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/resources/spring/application-websocket.xml" />
         <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/websocket/SystemWebSocketHandler.java" />
         <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/PersistentObjectService.java" />
         <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/PersistentObjectServiceImpl.java" />
@@ -151,8 +142,6 @@
         <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/VirtualSensorDataController.java" />
         <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/VirtualSensorDataServiceImpl.java" />
         <option value="$PROJECT_DIR$/module/framework-app/src/main/resources/logback.xml" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/index.jsp" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/login.jsp" />
         <option value="$PROJECT_DIR$/module/framework-app/src/main/resources/xdepartment.json" />
         <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/EmployeeController.java" />
         <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/EmployeeService.java" />
@@ -165,6 +154,10 @@
         <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/impl/DepartmentDAOImpl.java" />
         <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/DepartmentServiceImpl.java" />
         <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/DepartmentController.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/index.jsp" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/login.jsp" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/resources/spring/dispatcher-servlet.xml" />
       </list>
     </option>
   </component>
@@ -189,17 +182,14 @@
   <component name="MavenProjectNavigator">
     <treeState />
   </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/module/app-web/node_modules" />
-  </component>
   <component name="PhpServers">
     <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="838" />
+    <option name="y" value="26" />
+    <option name="width" value="1366" />
+    <option name="height" value="715" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -226,7 +216,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -235,10 +224,35 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -264,6 +278,13 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/module/framework-app/src/main/webapp/js" />
+      <recent name="$PROJECT_DIR$/module/framework-app/src/main/webapp" />
+      <recent name="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages" />
+      <recent name="$PROJECT_DIR$/module/framework-app/src/main/webapp/css" />
+      <recent name="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.infinite.eoa.core.propertyeditors" />
       <recent name="com.infinite.eoa.entity" />
@@ -273,13 +294,6 @@
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages" />
-      <recent name="$PROJECT_DIR$/module/framework-app/src/main/webapp/js" />
-      <recent name="$PROJECT_DIR$/module/framework-app/src/main/webapp" />
-      <recent name="$PROJECT_DIR$/module/framework-app/src/main/webapp/css" />
-      <recent name="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa" />
     </key>
   </component>
   <component name="RunManager" selected="Maven.framework-app jetty:run">
@@ -797,6 +811,36 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -892,6 +936,21 @@
       <method />
     </configuration>
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
+      <method />
+    </configuration>
+    <configuration default="true" type="uTestRunConfiguration" factoryName="utest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
       <method />
     </configuration>
     <configuration default="false" name="Jetty Local" type="JettyConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="Jetty 9.3.10.v20160621" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8">
@@ -1510,6 +1569,8 @@
       <workItem from="1475223693823" duration="1346000" />
       <workItem from="1475391961019" duration="3279000" />
       <workItem from="1475464942197" duration="3501000" />
+      <workItem from="1475890857709" duration="7841000" />
+      <workItem from="1475905358810" duration="1384000" />
     </task>
     <task id="LOCAL-00001" summary="app-web html small edit.">
       <created>1471254507746</created>
@@ -1588,7 +1649,21 @@
       <option name="project" value="LOCAL" />
       <updated>1475227476770</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="201610081750">
+      <created>1475920126710</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1475920126710</updated>
+    </task>
+    <task id="LOCAL-00013" summary="201610081750">
+      <created>1475920233227</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1475920233227</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1624,10 +1699,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="395076000" />
+    <option name="totallyTimeSpent" value="404301000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="838" extended-state="6" />
+    <frame x="0" y="26" width="1366" height="715" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1635,18 +1710,17 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48217317" sideWeight="0.5028612" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48135594" sideWeight="0.5028612" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5118243" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4839142" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40884718" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.49322033" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47627118" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49235994" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4915254" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28683835" sideWeight="0.48205128" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3024316" sideWeight="0.48205128" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30775076" sideWeight="0.51794875" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="CodotaView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1657,6 +1731,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="CodotaView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3786078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1737,7 +1812,8 @@
     <MESSAGE value="merge all to framework-app 1750" />
     <MESSAGE value="201609271702" />
     <MESSAGE value="201609281712" />
-    <option name="LAST_COMMIT_MESSAGE" value="201609281712" />
+    <MESSAGE value="201610081750" />
+    <option name="LAST_COMMIT_MESSAGE" value="201610081750" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1773,41 +1849,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/resources/xsensor.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="373" column="6" selection-start-line="373" selection-start-column="6" selection-end-line="373" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/DepartmentEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/core/util/TimeUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="50" column="60" selection-start-line="50" selection-start-column="60" selection-end-line="50" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$JAVA_HOME$/src.zip!/java/util/Date.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="163" column="5" selection-start-line="163" selection-start-column="5" selection-end-line="163" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.3.1.RELEASE/spring-core-4.3.1.RELEASE.jar!/org/springframework/util/NumberUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-66">
-          <caret line="117" column="39" selection-start-line="117" selection-start-column="39" selection-end-line="117" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/core/propertyeditors/NumberEditor.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.3.1.RELEASE/spring-beans-4.3.1.RELEASE.jar!/org/springframework/beans/propertyeditors/CustomNumberEditor.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -1883,47 +1924,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-630">
-          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/resources/spring/dispatcher-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="73" column="86" selection-start-line="73" selection-start-column="86" selection-end-line="73" selection-end-column="86" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/resources/logback.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="16" column="62" selection-start-line="16" selection-start-column="62" selection-end-line="16" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="17" column="60" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="16" column="60" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -1960,7 +1964,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="355">
           <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1989,10 +1992,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-          <folding>
-            <element signature="e#609#610#0" expanded="false" />
-            <element signature="e#643#644#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2000,9 +1999,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-          <folding>
-            <element signature="e#256#281#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2010,7 +2006,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="649">
           <caret line="66" column="28" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2018,7 +2013,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
           <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2046,19 +2040,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/EmployeeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1699">
-          <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/core/serivce/AbstractPagerService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2066,7 +2051,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="65" column="36" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2074,7 +2058,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2082,7 +2065,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="23" column="34" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2090,7 +2072,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2098,7 +2079,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="6" column="30" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2106,7 +2086,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2114,7 +2093,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="11" column="34" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2122,6 +2100,85 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
           <caret line="73" column="9" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/resources/prop/jms.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/webapp/lib/angular-bootstrap-nav-tree/abn_tree_directive.js" />
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="16" column="60" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="17" column="83" selection-start-line="17" selection-start-column="83" selection-end-line="17" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/core/util/HttpUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="128" column="31" selection-start-line="128" selection-start-column="31" selection-end-line="128" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.1.RELEASE/spring-webmvc-4.3.1.RELEASE.jar!/org/springframework/web/servlet/config/spring-mvc-4.3.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="657" column="33" selection-start-line="657" selection-start-column="33" selection-end-line="657" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/resources/spring/dispatcher-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="65" column="27" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="155" column="42" selection-start-line="155" selection-start-column="42" selection-end-line="155" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/EmployeeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="76" column="55" selection-start-line="76" selection-start-column="55" selection-end-line="76" selection-end-column="55" />
           <folding />
         </state>
       </provider>

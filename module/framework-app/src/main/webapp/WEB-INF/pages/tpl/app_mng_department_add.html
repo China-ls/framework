@@ -20,7 +20,7 @@
                                 普通机构
                             </option>
                             <option ng-if="null != p_type && (p_type == 0 || p_type == 1)"
-                                value="1" ng-selected="node.type == 1">
+                                    value="1" ng-selected="node.type == 1">
                                 巡查机构
                             </option>
                             <option ng-if="null != p_type && (p_type == 0 || p_type == 2)"
@@ -44,14 +44,16 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label"><span class="padder-xs-v text-danger">*</span> 负责人：</label>
+                    <label class="col-sm-2 control-label">
+                        <!--<span class="padder-xs-v text-danger">*</span>-->
+                        负责人：
+                    </label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control"
                                placeholder="请输入负责人"
                                ng-model="node.leading"
                                ng-minlength="2"
-                               ng-maxlength="6"
-                               required>
+                               ng-maxlength="6">
                     </div>
                 </div>
                 <div class="form-group">

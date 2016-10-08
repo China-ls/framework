@@ -66,8 +66,8 @@ angular.module('app')
                 {
                     name: 'angularBootstrapNavTree',
                     files: [
-                        'lib/angular-bootstrap-nav-tree/abn_tree_directive.js',
-                        'lib/angular-bootstrap-nav-tree/abn_tree.css'
+                        'lib/abnt/abntree.css',
+                        'lib/abnt/abntree.js'
                     ]
                 },
                 {

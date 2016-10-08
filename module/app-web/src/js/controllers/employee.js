@@ -107,6 +107,7 @@ app.controller('EmployeeCtrl', ['$scope', '$http', '$localStorage', '$modal', 'A
                     $http.post(APPCONST.CTX + APPCONST.EMPLOYEE_REMOVE.replace("{id}", $scope.selectEmployee.id))
                         .then(function (response) {
                             toaster.pop('success', '提示', '移除员工成功。');
+                            $scope.loadEmployees($scope.page, $scope.size);
                         }, function (response) {
                             toaster.pop('error', '警告', '服务器响应异常，请联系管理员。');
                         });

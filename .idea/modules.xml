@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/module/app-web/app-web.iml" filepath="$PROJECT_DIR$/module/app-web/app-web.iml" />
-      <module fileurl="file://$PROJECT_DIR$/module/bson.filter/bson.filter.iml" filepath="$PROJECT_DIR$/module/bson.filter/bson.filter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/module/core-framework/core-framework.iml" filepath="$PROJECT_DIR$/module/core-framework/core-framework.iml" />
       <module fileurl="file://$PROJECT_DIR$/framework.iml" filepath="$PROJECT_DIR$/framework.iml" />
       <module fileurl="file://$PROJECT_DIR$/module/framework-app/framework-app.iml" filepath="$PROJECT_DIR$/module/framework-app/framework-app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/module/water-app/water-app.iml" filepath="$PROJECT_DIR$/module/water-app/water-app.iml" />
     </modules>
   </component>
 </project>

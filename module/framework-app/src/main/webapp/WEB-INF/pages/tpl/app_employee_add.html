@@ -13,7 +13,7 @@
                     <div class="col-sm-10">
                         <input type="text" class="form-control"
                                placeholder="请输入员工工号"
-                               ng-model="user.number"
+                               ng-model="employee.number"
                                required>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
                     <div class="col-sm-10">
                         <input type="text" class="form-control"
                                placeholder="请输入登录帐号（4-20位）"
-                               ng-model="user.username"
+                               ng-model="employee.username"
                                ng-minlength="4"
                                ng-maxlength="20"
                                required>
@@ -32,39 +32,39 @@
                     <label class="col-sm-2 control-label"><span class="padder-xs-v text-danger">*</span> 登录密码：</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" placeholder="请输入登录密码（至少6位）"
-                               ng-model="user.password" required minlength="6">
+                               ng-model="employee.password" required minlength="6">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label"><span class="padder-xs-v text-danger">*</span> 姓名：</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" placeholder="请输入姓名"
-                               ng-model="user.name" required>
+                               ng-model="employee.name" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">住址：</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control"
-                               placeholder="请输入住址" ng-model="user.address">
+                               placeholder="请输入住址" ng-model="employee.address">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">邮政编码：</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control"
-                               placeholder="请输入邮政编码" ng-model="user.postalcode">
+                               placeholder="请输入邮政编码" ng-model="employee.postalcode">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label"><span class="padder-xs-v text-danger">*</span> 性别：</label>
                     <div class="col-sm-10">
                         <select class="form-control"
-                                ng-model="user.sex"
+                                ng-model="employee.sex"
                                 required>
                             <option value="">请选择性别</option>
-                            <option value="1" ng-selected="user.sex == 1">男</option>
-                            <option value="2" ng-selected="user.sex == 2">女</option>
+                            <option value="1" ng-selected="employee.sex == 1">男</option>
+                            <option value="2" ng-selected="employee.sex == 2">女</option>
                         </select>
                     </div>
                 </div>
@@ -73,42 +73,42 @@
                     <div class="col-sm-10">
                         <input type="text" class="form-control"
                                placeholder="请输入生日（格式为 2009-09-09 或者 2009-9-9）"
-                               ng-model="user.birthday" ng-pattern="/^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$/">
+                               ng-model="employee.birthday" ng-pattern="/^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$/">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">电话：</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" placeholder="请输入电话" ng-model="user.tel">
+                        <input type="text" class="form-control" placeholder="请输入电话" ng-model="employee.tel">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">手机：</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" placeholder="请输入手机" ng-model="user.phone">
+                        <input type="text" class="form-control" placeholder="请输入手机" ng-model="employee.phone">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">电子邮箱：</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" placeholder="请输入电子邮箱" ng-model="user.email">
+                        <input type="text" class="form-control" placeholder="请输入电子邮箱" ng-model="employee.email">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">排序号：</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" placeholder="请输入排序号" ng-model="user.sort">
+                        <input type="text" class="form-control" placeholder="请输入排序号" ng-model="employee.sort">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label"><span class="padder-xs-v text-danger">*</span> 状态：</label>
                     <div class="col-sm-10">
                         <select class="form-control"
-                                ng-model="user.status"
+                                ng-model="employee.status"
                                 ng-required="true">
                             <option value="">请选择帐号状态</option>
-                            <option value="1" ng-selected="user.status == 1">正常</option>
-                            <option value="2" ng-selected="user.status == 2">禁用</option>
+                            <option value="1" ng-selected="employee.status == 1">正常</option>
+                            <option value="2" ng-selected="employee.status == 2">禁用</option>
                         </select>
                     </div>
                 </div>
@@ -116,12 +116,12 @@
                     <label class="col-sm-2 control-label">区域归属：</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" placeholder="请输入区域归属"
-                               ng-model="user.departmentName">
+                               ng-model="employee.departmentName">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <div class="col-sm-offset-2">
+                    <div class="col-sm-offset-2 col-sm-10">
                         <button type="button" class="btn btn-success" ng-click="submit()">
                             保存
                         </button>

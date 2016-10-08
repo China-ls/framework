@@ -1,0 +1,53 @@
+<!--视频监控-->
+<div class="padder-sm m-b-md">
+    <div class="panel panel-default">
+        <div class="row pd5">
+            <!-- 网络请求动画 -->
+            <div cg-busy="{promise:loadDataPromise,message:'数据加载中...'}"></div>
+            <!-- 网络请求动画 -->
+            <div class="col-sm-5 col-lg-5">
+
+                <button ng-click="takepick()" class="img-full btn btn-success">拍照</button>
+
+                <table st-table="rowCollectionBasic" class="table table-bordered table-striped tb-border">
+                    <thead>
+                    <tr>
+                        <th>采集时间</th>
+                        <th>拍摄类型</th>
+                        <th>照片编号</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="success" ng-repeat="row in imageList"
+                        st-select-row="row"
+                        ng-click="imageListItemSelect($index)">
+                        <td><a href>{{row.time}}</a></td>
+                        <td>
+                            <a href>
+                                <span ng-if="row.capture_type === 0">远程抓拍</span>
+                                <span ng-if="row.capture_type === 1">定时抓拍</span>
+                                <span ng-if="row.capture_type === 2">触发抓拍</span>
+                                <span ng-if="!row.capture_type">定时抓拍</span>
+                            </a>
+                        </td>
+                        <td><a href>{{row.image_id}}</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-7 col-lg-7 wrapper-lg">
+                <!-- carousel -->
+                <div class="panel b-a" set-ng-animate="false">
+                    <carousel interval="imageListSlideInterval">
+                        <slide ng-repeat="row in imageList" active="row.active">
+                            <span>{{row.time}}</span>
+                            <img ng-src="{{imageUrl + row._id}}" class="img-full">
+                        </slide>
+                    </carousel>
+                </div>
+                <!-- / carousel -->
+            </div>
+        </div>
+    </div>
+</div>
+<!--视频监控-->

@@ -39,7 +39,7 @@ app.controller('AsideDeviceCtrl', ['$window', '$scope', '$http', '$localStorage'
                 data.devices.forEach(function (item) {
                     var child = $scope.analysDepartment(item, level);
                     child.type = 'device';
-                    child.icon = 'fa  fa-map-marker c-green';
+                    child.icon = 'fa fa-map-marker c-green';
                     children.push(child);
                 });
             }

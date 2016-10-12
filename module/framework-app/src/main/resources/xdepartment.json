@@ -17,17 +17,6 @@
         {
           "address": "",
           "contact": "",
-          "devices": null,
-          "icon": "green_flag.png",
-          "id": "3001",
-          "name": "南湖区",
-          "sub_departments": null,
-          "telephone": "",
-          "uuid": "b380f498-93fa-4a13-b774-7512935f317b"
-        },
-        {
-          "address": "",
-          "contact": "",
           "icon": "green_flag.png",
           "id": "3002",
           "name": "秀洲区",
@@ -60,46 +49,28 @@
           "icon": "green_flag.png",
           "id": "3003",
           "name": "嘉善县",
-          "sub_departments": null,
+          "sub_departments": [
+            {"name": "塔楼镇", "devices": [
+              {
+                "name": "大同村一号站",
+                "uuid": "2b9506aa-8284-407d-9bda-9d00390af73d"
+              }
+            ]},
+            {"name": "戴村镇", "devices": [
+              {
+                "name": "风桥村污水试点站",
+                "uuid": "02f864d4-2bfe-4f86-92b1-f96a03366cd6"
+              }
+            ]},
+            {"name": "义桥镇", "devices": [
+              {
+                "name": "昇光桥村污水试点站",
+                "uuid": "6eb5e442-0327-4dfd-9d32-d40f4d7a7615"
+              }
+            ]}
+          ],
           "telephone": "",
           "uuid": "bec1a2eb-48aa-46aa-838b-e1e588c7e803"
-        },
-        {
-          "address": "",
-          "contact": "",
-          "devices": null,
-          "icon": "green_flag.png",
-          "id": "3004",
-          "name": "海盐县",
-          "telephone": "",
-          "uuid": "e517ff5d-a730-490f-bfc7-2d199ff228cb"
-        },
-        {
-          "address": "",
-          "contact": "",
-          "icon": "green_flag.png",
-          "id": "3005",
-          "name": "海宁市",
-          "telephone": "",
-          "uuid": "707155dd-f5ad-4591-aa81-5cc991c240fe"
-        },
-        {
-          "address": "",
-          "contact": "",
-          "icon": "green_flag.png",
-          "id": "3006",
-          "name": "平湖市",
-          "telephone": "",
-          "uuid": "def88b8f-369a-4405-9b72-f5cfe445085d"
-        },
-        {
-          "address": "",
-          "contact": "",
-          "icon": "green_flag.png",
-          "id": "3007",
-          "name": "桐乡市",
-          "telephone": "",
-          "uuid": "25bb8c31-cc67-4304-968e-bafd943eb2ba"
         }
       ],
       "telephone": "",
@@ -119,51 +90,26 @@
           "icon": "green_flag.png",
           "id": "3001",
           "name": "萧山区",
-          "sub_departments": null,
-          "devices": [
-            {
-              "name": "瓜沥镇渭水桥村污水试点站",
-              "uuid": null
-            },
-            {
-              "name": "党湾镇梅东村污水试点站",
-              "uuid": null
-            },
-            {
-              "name": "益农镇众力桥村污水试点站",
-              "uuid": null
-            },
-            {
-              "name": "义桥镇昇光桥村污水试点站",
-              "uuid": null
-            },
-            {
-              "name": "戴村镇枫桥村污水试点站",
-              "uuid": null
-            },
-            {
-              "name": "浦阳镇径游村污水试点站",
-              "uuid": null
-            },
-            {
-              "name": "楼塔镇大力村污水试点站",
-              "uuid": null
-            },
-            {
-              "name": "临浦镇三峰村污水试点站",
-              "uuid": null
-            },
-            {
-              "name": "进化镇天乐村污水试点站",
-              "uuid": null
-            },
-            {
-              "name": "所前镇污水试点站",
-              "uuid": null
-            }
+          "sub_departments": [
+            {"name": "魏塘街道"},
+            {"name": "罗星街道"},
+            {"name": "惠民街道"},
+            {"name": "大云镇"}
           ],
+          "devices": null,
           "telephone": "",
           "uuid": "b380f498-93fa-4a13-b774-7512935f3171"
+        },
+        {
+          "address": "",
+          "contact": "",
+          "icon": "green_flag.png",
+          "id": "3001",
+          "name": "富阳市",
+          "sub_departments": null,
+          "devices": null,
+          "telephone": "",
+          "uuid": "b380f498-93fa-4a13-b774-7512935f3121"
         }
       ],
       "telephone": "",
@@ -172,22 +118,41 @@
     {
       "address": "",
       "contact": "",
-      "devices": null,
       "icon": "blue_flag.png",
-      "id": "2002",
-      "name": "宁波",
-      "sub_departments": null,
+      "id": "2012",
+      "name": "舟山",
+      "sub_departments": [
+        {
+          "address": "",
+          "contact": "",
+          "icon": "blue_flag.png",
+          "id": "2012",
+          "name": "岱山县",
+          "sub_departments": [
+            {"name": "岱东镇"},
+            {"name": "岱西镇"},
+            {"name": "东沙镇"},
+            {"name": "高亭镇"},
+            {"name": "衢山镇"},
+            {"name": "秀山镇"},
+            {"name": "长途镇"}
+          ]
+        }
+      ],
       "telephone": "",
-      "uuid": "01c7d717-9374-4008-8654-1d636cc71d31"
+      "uuid": "74b20f7d-d981-40d8-9cd9-84f181feba28"
     },
     {
+
       "address": "",
       "contact": "",
       "devices": null,
       "icon": "blue_flag.png",
       "id": "2003",
-      "name": "温州",
-      "sub_departments": null,
+      "name": "温州市",
+      "sub_departments": [
+        {"name": "永嘉县"}
+      ],
       "telephone": "",
       "uuid": "b3c2943a-3a38-4004-82b9-80bd94fe9cd1"
     },
@@ -197,8 +162,21 @@
       "devices": null,
       "icon": "blue_flag.png",
       "id": "2004",
-      "name": "绍兴",
+      "name": "文成市",
       "sub_departments": null,
+      "telephone": "",
+      "uuid": "f1198091-92cc-4496-9374-a3a262a97307"
+    },
+    {
+      "address": "",
+      "contact": "",
+      "devices": null,
+      "icon": "blue_flag.png",
+      "id": "2004",
+      "name": "绍兴市",
+      "sub_departments": [
+        {"name": "诸暨市"}
+      ],
       "telephone": "",
       "uuid": "f1198091-92cc-4496-9374-a3a267a97307"
     },
@@ -207,56 +185,13 @@
       "contact": "",
       "devices": null,
       "icon": "blue_flag.png",
-      "id": "2005",
-      "name": "湖州",
-      "sub_departments": null,
+      "id": "2004",
+      "name": "台州市",
+      "sub_departments": [
+        {"name": "玉环县"}
+      ],
       "telephone": "",
-      "uuid": "8a186528-62e9-4af8-aa90-7dc72433cbb4"
-    },
-    {
-      "address": "",
-      "contact": "",
-      "icon": "blue_flag.png",
-      "id": "2007",
-      "name": "金华",
-      "telephone": "",
-      "uuid": "58d07b88-7ffa-4bf1-875c-733a7d94c4cf"
-    },
-    {
-      "address": "",
-      "contact": "",
-      "icon": "blue_flag.png",
-      "id": "2008",
-      "name": "衢州",
-      "telephone": "",
-      "uuid": "f30acc8c-c4fd-4249-bdd0-b9cb86bd82be"
-    },
-    {
-      "address": "",
-      "contact": "",
-      "icon": "blue_flag.png",
-      "id": "2009",
-      "name": "台州",
-      "telephone": "",
-      "uuid": "a55d4cd6-648b-499d-8f64-1a46e9239742"
-    },
-    {
-      "address": "",
-      "contact": "",
-      "icon": "blue_flag.png",
-      "id": "2011",
-      "name": "丽水",
-      "telephone": "",
-      "uuid": "f7ac66c8-ae39-4c1a-9320-611af7ea3886"
-    },
-    {
-      "address": "",
-      "contact": "",
-      "icon": "blue_flag.png",
-      "id": "2012",
-      "name": "舟山",
-      "telephone": "",
-      "uuid": "74b20f7d-d981-40d8-9cd9-84f181feba28"
+      "uuid": "f1198091-92cc-4496-9374-a3a267a97307"
     }
   ],
   "telephone": "0573-84835555",

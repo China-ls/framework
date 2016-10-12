@@ -72,8 +72,7 @@ app.controller('ManageDepartmentCtrl', ['$scope', '$http', '$localStorage', '$st
         $scope.loadDepartmentData($scope.page, $scope.size);
 
         $scope.addNode = function () {
-            if ((null != $scope.departments && $scope.departments.length > 0 ) && null == selectDepartment) {
-                // toaster.pop('warning', '提示', '请先选择一个机构。');
+            if ((null != $scope.departments && $scope.departments.length > 0 ) && null == $scope.selectDepartment) {
                 return;
             }
             $localStorage.selectDepartment = $scope.selectDepartment;
@@ -81,8 +80,7 @@ app.controller('ManageDepartmentCtrl', ['$scope', '$http', '$localStorage', '$st
             $state.go('app.mngdpt.edit');
         };
         $scope.editNode = function () {
-            if (null == selectDepartment) {
-                // toaster.pop('warning', '提示', '请选择需要修改的机构。');
+            if (null == $scope.selectDepartment) {
                 return;
             }
             $localStorage.selectDepartment = $scope.selectDepartment;
@@ -97,8 +95,7 @@ app.controller('ManageDepartmentCtrl', ['$scope', '$http', '$localStorage', '$st
             $state.go('app.mngdpt.edit');
         };
         $scope.deleteNode = function () {
-            if (null == selectDepartment) {
-                // toaster.pop('warning', '提示', '请选择需要删除的机构。');
+            if (null == $scope.selectDepartment) {
                 return;
             }
             // console.warn('click delete');

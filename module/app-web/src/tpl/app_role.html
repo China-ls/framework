@@ -1,0 +1,102 @@
+<div ng-controller="RoleCtrl" class="wrapper-sm">
+    <div class="panel">
+        <div class="panel-heading b-b b-success wrapper-xs">
+
+            <div class="row">
+                <div class="col-sm-2">
+                    <h5 class="m-xxs l-h-2x">
+                        <span class="text-primary">角色列表</span>
+                    </h5>
+                </div>
+                <div class="col-sm-10">
+                    <div class="pull-right">
+                        <button class="btn btn-info btn-sm btn-addon w-xs-xs"
+                                ng-click="addRole()"
+                                ng-class="{'disabled': null == selectRole}">
+                            <i class="fa fa-edit hidden-xs"></i>
+                            添加角色
+                        </button>
+                        <button class="btn btn-success btn-sm btn-addon w-xs-xs"
+                                ng-click="editRole()"
+                                ng-class="{'disabled': null == selectRole}">
+                            <i class="fa fa-edit hidden-xs"></i>
+                            修改角色
+                        </button>
+                        <button class="btn btn-danger btn-sm btn-addon w-xs-xs"
+                                ng-click="delRole()"
+                                ng-class="{'disabled': null == selectRole}">
+                            <i class="fa fa-edit hidden-xs"></i>
+                            删除角色
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 人员表 -->
+        <div class="clearfix panel-body" style="overflow-x: auto;">
+
+            <!-- 网络请求动画 -->
+            <div cg-busy="{promise:loadDataPromise,message:'数据加载中...'}"></div>
+            <!-- 网络请求动画 -->
+
+            <table st-table="rowCollectionBasic" class="table table-bordered table-striped tb-border">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>角色名称</th>
+                    <th>角色描述</th>
+                    <th>状态</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in roles" class="success cursor-pointer"
+                    st-select-row="row" ng-click="toggleSelectRole(item)">
+                    <th>
+                        <label class="checkbox i-checks m-n">
+                            <input type="checkbox"
+                                   ng-checked="item.id == selectRole.id"
+                                   ng-click="toggleSelectRole(item)">
+                            <i></i>
+                        </label>
+                    </th>
+                    <td>
+                        <span class="inline" ng-style="{'margin-left': item.level * 15}"
+                              popover="{{item.popover}}" popover-trigger="mouseenter">
+                            <i class="fa fa-user"></i>
+                            {{item.name}}
+                        </span>
+                    </td>
+                    <td>{{item.description}}</td>
+                    <td>
+                        <span ng-if="item.status === 1">正常</span>
+                        <span ng-if="item.status === 2">禁用</span>
+                        <span ng-if="item.status === 9">删除</span>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <!-- 人员表 -->
+
+        <!-- add node modal -->
+        <script type="text/ng-template" id="addNodeModalContent.html">
+            <div ng-include="'tpl/modal/add_node_emp_modal.html'"></div>
+        </script>
+        <!-- add node modal -->
+
+        <!-- add employee_id modal -->
+        <script type="text/ng-template" id="addEmployeeModalContent.html">
+            <div ng-include="'tpl/modal/add_emp_modal.html'"></div>
+        </script>
+        <!-- add employee_id modal -->
+
+        <!-- add employee_id modal -->
+        <script type="text/ng-template" id="confirmModalContent.html">
+            <div ng-include="'tpl/modal/confirm_modal.html'"></div>
+        </script>
+        <!-- add employee_id modal -->
+
+    </div>
+</div>

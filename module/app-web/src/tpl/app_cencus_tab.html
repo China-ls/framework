@@ -1,0 +1,35 @@
+<div>
+
+    <!-- 上面二级菜单 -->
+    <div id="deviceSubMenuWrapper" class="no-padder-xs">
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="pull-in-xs"
+                ui-sref-active="active">
+                <a class="text-center w-xsm"
+                   ui-sref="app.cencus.devicetype">分类统计</a>
+            </li>
+            <li role="presentation" class="pull-in-xs"
+                ui-sref-active="active">
+                <a class="text-center w-xsm"
+                   ui-sref="app.cencus.flow">水电统计</a>
+            </li>
+            <li role="presentation" class="pull-in-xs"
+                ui-sref-active="active">
+                <a class="text-center w-xsm"
+                   ui-sref="app.cencus.routing">考勤统计</a>
+            </li>
+            <li role="presentation" class="pull-in-xs"
+                ui-sref-active="active">
+                <a class="text-center w-xsm"
+                   ui-sref="app.cencus.qos">Qos统计</a>
+            </li>
+        </ul>
+    </div>
+    <!-- 上面二级菜单 -->
+
+    <!-- 局部视图 -->
+    <div ui-view="tab_contentView" ></div>
+    <!-- 局部视图 -->
+
+</div>
+

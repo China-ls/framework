@@ -26,6 +26,10 @@ app.controller('EmployeeAddCtrl', ['$scope', '$http', '$localStorage', '$state',
             // console.warn($scope.employee);
         }
 
+        $http.get(APPCONST.CTX + APPCONST.DEPARTMENT_LIST_ALL).then(function (response) {
+            console.warn(response);
+        });
+
         $scope.open = function ($event) {
             $event.preventDefault();
             $event.stopPropagation();
@@ -77,7 +81,7 @@ app.controller('EmployeeAddCtrl', ['$scope', '$http', '$localStorage', '$state',
             $http.post(url, data).then(function (response) {
                 // console.warn(response);
                 if (response.data.code === '0') {
-                    $scope.Toast('success', '消息', null == $localStorage.selectEmployee ?
+                    $scope.Toast('success', '消息', null == $localStorage.selectRole ?
                         '添加用户成功。' : '修改用户成功');
                     $state.go('app.employee');
                 }

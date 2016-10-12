@@ -104,4 +104,12 @@
         <constructor-arg ref="systemDatastore"/>
     </bean>
 
+    <bean name="permissionDAO" class="com.infinite.eoa.persistent.impl.PermissionDAOImpl">
+        <constructor-arg ref="systemDatastore"/>
+    </bean>
+
+    <bean name="roleDAO" class="com.infinite.eoa.persistent.impl.RoleDAOImpl">
+        <constructor-arg ref="systemDatastore"/>
+    </bean>
+
 </beans>

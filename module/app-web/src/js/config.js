@@ -9,6 +9,7 @@ var app =
                 DEPARTMENT: '/department?type=device',
                 DEPARTMENT_ROUTE: '/department?type=route',
                 DEPARTMENT_LIST: '/department/list?page={page}&size={size}',
+                DEPARTMENT_LIST_ALL: '/department/list',
                 DEPARTMENT_ADD: '/department/add',
                 DEPARTMENT_DEL: '/department/del',
                 SENSOR_BY_ID: '/sensor/',
@@ -32,6 +33,12 @@ var app =
                 EMPLOYEE_LIST: '/employee/list?page={page}&size={size}',
                 EMPLOYEE_REMOVE: '/employee/del?id={id}',
                 EMPLOYEE_DUTY_REMOVE: '/employee/{id}/duty/remove',
+                ROLE_LIST: '/role/list',
+                ROLE_ADD: '/role/add',
+                ROLE_DEL: '/role/del',
+                ROLE_UPDATE: '/role/update',
+                ROLE_PERMISSION_LIST: '/role/permission',
+
 
                 APP_LOCAL_STORAGE_MANAGE_EMPLOYEE : 'app_loc_storage_mg_emp',
                 APP_LOCAL_STORAGE_SELECT_DEVICE : 'app_loc_storage_slt_device',

@@ -54,9 +54,13 @@ public class EmployeeController extends BasicRestController {
     }
 
     @RequestMapping(value = "/add", method = {RequestMethod.PUT, RequestMethod.POST})
-    public Response addEmployee(@ModelAttribute Employee employee) {
+    public Response addEmployee(
+            @ModelAttribute Employee employee,
+            @ModelAttribute("department") String departmentId
+    ) {
         Response response = null;
         try {
+            log.debug("{}", departmentId);
             response = makeResponse(ResponseCode.SUCCESS, employeeService.addEmployee(employee));
         } catch (Throwable e) {
             if (log.isErrorEnabled()) {

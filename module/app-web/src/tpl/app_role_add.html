@@ -1,0 +1,92 @@
+<div ng-controller="RoleAddCtrl" class="wrapper-sm">
+    <div class="panel">
+        <!-- 人员表 -->
+        <div class="panel-body">
+
+            <!-- 网络请求动画 -->
+            <div cg-busy="{promise:loadDataPromise,message:'数据加载中...'}"></div>
+            <!-- 网络请求动画 -->
+
+            <form class="form-horizontal form-validation">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"><span class="padder-xs-v text-danger">*</span> 父角色：</label>
+                    <div class="col-sm-10">
+                        <select class="form-control"
+                                ng-model="p_id"
+                                ng-required="true">
+                            <option ng-repeat="r in roles"
+                                    style="text-indent: each-line"
+                                    value="{{r.id}}"
+                                    ng-checked="role.p_id === r.id">
+                                {{r.name}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"><span class="padder-xs-v text-danger">*</span> 角色名称：</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control"
+                               placeholder="请输入角色名称"
+                               ng-model="role.name"
+                               required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"><span class="padder-xs-v text-danger">*</span> 角色描述：</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control"
+                               placeholder="请输入角色描述"
+                               ng-model="role.description"
+                               required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"><span class="padder-xs-v text-danger">*</span> 状态：</label>
+                    <div class="col-sm-10">
+                        <select class="form-control"
+                                ng-model="role.status"
+                                ng-required="true">
+                            <option value="">请选择角色状态</option>
+                            <option value="1" ng-selected="role.status == 1">正常</option>
+                            <option value="2" ng-selected="role.status == 2">禁用</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"><span class="padder-xs-v text-danger">*</span> 权限：</label>
+                    <div class="col-sm-10">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                {{keys}}
+                                <div ng-repeat="p in permissions">
+                                    <label class="checkbox i-checks m-n">
+                                        <input type="checkbox"
+                                               ng-checked="keys.indexOf(p.id) != -1"
+                                               ng-click="selectPermission(p.id)">
+                                        <i></i>
+                                        <span class="inline" ng-style="{'margin-left': p.level * 15}"></span>
+                                        {{p.name}} | {{p.id}}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="button" class="btn btn-success" ng-click="submit()">
+                            保存
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <!-- 人员表 -->
+
+    </div>
+</div>

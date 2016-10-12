@@ -19,25 +19,48 @@ import java.util.Map;
  */
 @Entity(EntityConst.CollectionName.VIRTUALSENSOR)
 public class VirtualSensor extends AbstractEntity {
-    @Id private String sensor_id;
-    @Property private String app_id;
-    @Property private String name;
-    @Property private String control;
-    @Property private String report;
-    @Property private String data;
-    @Property private String system;
-    @Property private String desc;
-    @Property private long idle_report;
-    @Property private long internal_id;
-    @Property private double latitude;
-    @Property private double longitude;
-    @Property private String contact;
-    @Property private String admin;
-    @Property private String address;
-    @Property private String station_type;
-    @Property private long offline_report;
-    @Property private EntityConst.EntityStatus status = EntityConst.EntityStatus.NORMAL;
-    @Embedded private ArrayList<Component> components = new ArrayList<Component>(0);
+    @Id
+    private String sensor_id;
+    @Property
+    private String app_id;
+    @Property
+    private String name;
+    @Property
+    private String control;
+    @Property
+    private String report;
+    @Property
+    private String data;
+    @Property
+    private String system;
+    @Property
+    private String desc;
+    @Property
+    private long idle_report;
+    @Property
+    private long internal_id;
+    @Property
+    private double latitude;
+    @Property
+    private double longitude;
+    @Property
+    private String contact;
+    @Property
+    private String admin;
+    @Property
+    private String address;
+    @Property
+    private int version;
+    @Property
+    private boolean online;
+    @Property
+    private String station_type;
+    @Property
+    private long offline_report;
+    @Property
+    private EntityConst.EntityStatus status = EntityConst.EntityStatus.NORMAL;
+    @Embedded
+    private ArrayList<Component> components = new ArrayList<Component>(0);
     private HashMap<String, Object> fields = new HashMap<String, Object>(0);
 
     public String getSensor_id() {
@@ -192,6 +215,22 @@ public class VirtualSensor extends AbstractEntity {
         this.components = components;
     }
 
+    public int getVersion() {
+        return version;
+    }
+
+    public void setVersion(int version) {
+        this.version = version;
+    }
+
+    public boolean isOnline() {
+        return online;
+    }
+
+    public void setOnline(boolean online) {
+        this.online = online;
+    }
+
     public void addComponents(Component... components) {
         if (null == components) {
             return;
@@ -230,29 +269,4 @@ public class VirtualSensor extends AbstractEntity {
         return this;
     }
 
-    @Override
-    public String toString() {
-        return "VirtualSensor{" +
-                "sensor_id='" + sensor_id + '\'' +
-                ", app_id='" + app_id + '\'' +
-                ", name='" + name + '\'' +
-                ", control='" + control + '\'' +
-                ", report='" + report + '\'' +
-                ", data='" + data + '\'' +
-                ", system='" + system + '\'' +
-                ", desc='" + desc + '\'' +
-                ", idle_report=" + idle_report +
-                ", internal_id=" + internal_id +
-                ", latitude=" + latitude +
-                ", longitude=" + longitude +
-                ", contact='" + contact + '\'' +
-                ", admin='" + admin + '\'' +
-                ", address='" + address + '\'' +
-                ", station_type='" + station_type + '\'' +
-                ", offline_report=" + offline_report +
-                ", status=" + status +
-                ", components=" + components +
-                ", fields=" + fields +
-                '}';
-    }
 }

@@ -1542,5 +1542,1153 @@
     "sensor_id" : "c81e39a5-359b-41c1-9cd4-6eaf6b6d5590",
     "setup_date" : "2016-8-24",
     "station_type" : "A类站"
+  },
+  {
+    "address": "萧山区塔楼镇大同村",
+    "admin": "马先全",
+    "app_id": "aidiman/xgsn/yinfantech",
+    "components": [
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "comp_id": "1:0",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "正常工作泵",
+        "type": "plc_controller"
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "comp_id": "1:1",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "应急工作泵",
+        "type": "plc_controller"
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "comp_id": "1:2",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "风机1",
+        "type": "plc_controller"
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "comp_id": "1:3",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "风机2",
+        "type": "plc_controller"
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "comp_id": "1:4",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "电解除磷",
+        "type": "plc_controller"
+      },
+      {
+        "actions": [],
+        "comp_id": "2",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "instant",
+            "type": "float",
+            "unit": "m3/s"
+          },
+          {
+            "name": "positive_total",
+            "type": "float",
+            "unit": "m3"
+          },
+          {
+            "name": "negtive_totoal",
+            "type": "float",
+            "unit": "m3"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "流量计",
+        "type": "flowmeter_sensor"
+      },
+      {
+        "actions": [],
+        "comp_id": "3",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "card_id",
+            "type": "int"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "读卡器",
+        "type": "cardreader_sensor"
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "take_photo",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "comp_id": "4",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "image",
+            "type": "image_data"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "摄像头",
+        "type": "camera_controller"
+      },
+      {
+        "actions": [],
+        "comp_id": "5",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "power",
+            "type": "float",
+            "unit": "kWH"
+          },
+          {
+            "name": "voltageA",
+            "type": "float",
+            "unit": "V"
+          },
+          {
+            "name": "voltageB",
+            "type": "float",
+            "unit": "V"
+          },
+          {
+            "name": "voltageC",
+            "type": "float",
+            "unit": "V"
+          },
+          {
+            "name": "currentA",
+            "type": "float",
+            "unit": "A"
+          },
+          {
+            "name": "currentB",
+            "type": "float",
+            "unit": "A"
+          },
+          {
+            "name": "currentC",
+            "type": "float",
+            "unit": "A"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          },
+          {
+            "name": "lostPowerA",
+            "type": "boolean"
+          },
+          {
+            "name": "lostPowerB",
+            "type": "boolean"
+          },
+          {
+            "name": "lostPowerC",
+            "type": "boolean"
+          },
+          {
+            "name": "errorVoltageOrder",
+            "type": "boolean"
+          },
+          {
+            "name": "errorCurrentOrder",
+            "type": "boolean"
+          },
+          {
+            "name": "temperature",
+            "type": "double",
+            "unit": "C"
+          }
+        ],
+        "name": "电量计",
+        "type": "electricmeter_sensor"
+      },
+      {
+        "actions": [],
+        "comp_id": "6",
+        "fieldDefinitions": [
+          {
+            "name": "value0",
+            "type": "double"
+          },
+          {
+            "name": "value1",
+            "type": "double"
+          },
+          {
+            "name": "value2",
+            "type": "double"
+          },
+          {
+            "name": "value3",
+            "type": "double"
+          },
+          {
+            "name": "value4",
+            "type": "double"
+          },
+          {
+            "name": "value5",
+            "type": "double"
+          },
+          {
+            "name": "value6",
+            "type": "double"
+          },
+          {
+            "name": "value7",
+            "type": "double"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "模拟量",
+        "type": "analog_sensor"
+      },
+      {
+        "actions": [],
+        "comp_id": "7",
+        "fieldDefinitions": [
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "数字量",
+        "type": "status_sensor"
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "comp_id": "8:0",
+        "fieldDefinitions": [
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "数字开关1",
+        "type": "onboard_controller"
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "comp_id": "8:1",
+        "fieldDefinitions": [
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "数字开关2",
+        "type": "onboard_controller"
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "comp_id": "8:2",
+        "fieldDefinitions": [
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "数字开关3",
+        "type": "onboard_controller"
+      }
+    ],
+    "contact": "84836661",
+    "control_mode": 0,
+    "desc": "萧山区塔楼镇大同村一号站",
+    "idle_report": 600,
+    "internal_id": 861694036308797,
+    "latitude": 30.8414,
+    "longitude": 120.797,
+    "name": "大同村一号站",
+    "offline_report": 300,
+    "sensor_id": "2b9506aa-8284-407d-9bda-9d00390af73d",
+    "setup_date": "2016-10-07",
+    "station_type": "A类站"
+  },
+  {
+    "address": "戴村镇风桥村",
+    "admin": "王",
+    "app_id": "aidiman/xgsn/yinfantech",
+    "components": [
+      {
+        "actions": [],
+        "comp_id": "3",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "card_id",
+            "type": "int"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "读卡器",
+        "type": "cardreader_sensor"
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "take_photo",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "comp_id": "4",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "image",
+            "type": "image_data"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "摄像头",
+        "type": "camera_controller"
+      },
+      {
+        "actions": [],
+        "comp_id": "5",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "power",
+            "type": "float",
+            "unit": "kWH"
+          },
+          {
+            "name": "voltageA",
+            "type": "float",
+            "unit": "V"
+          },
+          {
+            "name": "voltageB",
+            "type": "float",
+            "unit": "V"
+          },
+          {
+            "name": "voltageC",
+            "type": "float",
+            "unit": "V"
+          },
+          {
+            "name": "currentA",
+            "type": "float",
+            "unit": "A"
+          },
+          {
+            "name": "currentB",
+            "type": "float",
+            "unit": "A"
+          },
+          {
+            "name": "currentC",
+            "type": "float",
+            "unit": "A"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          },
+          {
+            "name": "lostPowerA",
+            "type": "boolean"
+          },
+          {
+            "name": "lostPowerB",
+            "type": "boolean"
+          },
+          {
+            "name": "lostPowerC",
+            "type": "boolean"
+          },
+          {
+            "name": "errorVoltageOrder",
+            "type": "boolean"
+          },
+          {
+            "name": "errorCurrentOrder",
+            "type": "boolean"
+          },
+          {
+            "name": "temperature",
+            "type": "double",
+            "unit": "C"
+          }
+        ],
+        "name": "电量计",
+        "type": "electricmeter_sensor"
+      },
+      {
+        "actions": [],
+        "comp_id": "6",
+        "fieldDefinitions": [
+          {
+            "name": "value0",
+            "type": "double"
+          },
+          {
+            "name": "value1",
+            "type": "double"
+          },
+          {
+            "name": "value2",
+            "type": "double"
+          },
+          {
+            "name": "value3",
+            "type": "double"
+          },
+          {
+            "name": "value4",
+            "type": "double"
+          },
+          {
+            "name": "value5",
+            "type": "double"
+          },
+          {
+            "name": "value6",
+            "type": "double"
+          },
+          {
+            "name": "value7",
+            "type": "double"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "模拟量",
+        "type": "analog_sensor"
+      },
+      {
+        "actions": [],
+        "comp_id": "7",
+        "fieldDefinitions": [
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "数字量",
+        "type": "status_sensor"
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "comp_id": "8:0",
+        "fieldDefinitions": [
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "总控",
+        "type": "onboard_controller"
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "comp_id": "8:1",
+        "fieldDefinitions": [
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "提升泵",
+        "type": "onboard_controller"
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "comp_id": "8:2",
+        "fieldDefinitions": [
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "淤泥回流泵",
+        "type": "onboard_controller"
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "comp_id": "8:3",
+        "fieldDefinitions": [
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "混合泵",
+        "type": "onboard_controller"
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "comp_id": "8:4",
+        "fieldDefinitions": [
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "风机1",
+        "type": "onboard_controller"
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "comp_id": "8:5",
+        "fieldDefinitions": [
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "风机2",
+        "type": "onboard_controller"
+      }
+    ],
+    "contact": "15001798106",
+    "control_mode": 1,
+    "desc": "戴村镇风桥村",
+    "idle_report": 600,
+    "internal_id": 866104025167753,
+    "latitude": 30.280000000000001,
+    "longitude": 120.12,
+    "name": "风桥村污水试点站",
+    "offline_report": 300,
+    "sensor_id": "02f864d4-2bfe-4f86-92b1-f96a03366cd6",
+    "setup_date": "2016-10-09",
+    "station_type": "A类站"
+  },
+  {
+    "address": "义桥镇昇光桥村",
+    "admin": "王1",
+    "app_id": "aidiman/xgsn/yinfantech",
+    "components": [
+      {
+        "actions": [],
+        "comp_id": "2",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "instant",
+            "type": "float",
+            "unit": "m3/s"
+          },
+          {
+            "name": "positive_total",
+            "type": "float",
+            "unit": "m3"
+          },
+          {
+            "name": "negtive_totoal",
+            "type": "float",
+            "unit": "m3"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "流量计",
+        "type": "flowmeter_sensor"
+      },
+      {
+        "actions": [],
+        "comp_id": "3",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "card_id",
+            "type": "int"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "读卡器",
+        "type": "cardreader_sensor"
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "take_photo",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "comp_id": "4",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "image",
+            "type": "image_data"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "摄像头",
+        "type": "camera_controller"
+      },
+      {
+        "actions": [],
+        "comp_id": "5",
+        "fieldDefinitions": [
+          {
+            "name": "status",
+            "type": "boolean"
+          },
+          {
+            "name": "power",
+            "type": "float",
+            "unit": "kWH"
+          },
+          {
+            "name": "voltageA",
+            "type": "float",
+            "unit": "V"
+          },
+          {
+            "name": "voltageB",
+            "type": "float",
+            "unit": "V"
+          },
+          {
+            "name": "voltageC",
+            "type": "float",
+            "unit": "V"
+          },
+          {
+            "name": "currentA",
+            "type": "float",
+            "unit": "A"
+          },
+          {
+            "name": "currentB",
+            "type": "float",
+            "unit": "A"
+          },
+          {
+            "name": "currentC",
+            "type": "float",
+            "unit": "A"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          },
+          {
+            "name": "lostPowerA",
+            "type": "boolean"
+          },
+          {
+            "name": "lostPowerB",
+            "type": "boolean"
+          },
+          {
+            "name": "lostPowerC",
+            "type": "boolean"
+          },
+          {
+            "name": "errorVoltageOrder",
+            "type": "boolean"
+          },
+          {
+            "name": "errorCurrentOrder",
+            "type": "boolean"
+          },
+          {
+            "name": "temperature",
+            "type": "double",
+            "unit": "C"
+          }
+        ],
+        "name": "电量计",
+        "type": "electricmeter_sensor"
+      },
+      {
+        "actions": [],
+        "comp_id": "6",
+        "fieldDefinitions": [
+          {
+            "name": "value0",
+            "type": "double"
+          },
+          {
+            "name": "value1",
+            "type": "double"
+          },
+          {
+            "name": "value2",
+            "type": "double"
+          },
+          {
+            "name": "value3",
+            "type": "double"
+          },
+          {
+            "name": "value4",
+            "type": "double"
+          },
+          {
+            "name": "value5",
+            "type": "double"
+          },
+          {
+            "name": "value6",
+            "type": "double"
+          },
+          {
+            "name": "value7",
+            "type": "double"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "模拟量",
+        "type": "analog_sensor"
+      },
+      {
+        "actions": [],
+        "comp_id": "7",
+        "fieldDefinitions": [
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "数字量",
+        "type": "status_sensor"
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "comp_id": "8:0",
+        "fieldDefinitions": [
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "总控",
+        "type": "onboard_controller"
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "comp_id": "8:1",
+        "fieldDefinitions": [
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "提升泵A",
+        "type": "onboard_controller"
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "comp_id": "8:2",
+        "fieldDefinitions": [
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "提升泵B",
+        "type": "onboard_controller"
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "comp_id": "8:3",
+        "fieldDefinitions": [
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "混合液回流泵",
+        "type": "onboard_controller"
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "comp_id": "8:4",
+        "fieldDefinitions": [
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "风机A",
+        "type": "onboard_controller"
+      },
+      {
+        "actions": [
+          {
+            "channel_id": "%2%",
+            "operation": "switch",
+            "param": "%3%",
+            "sensor_id": "%1%"
+          }
+        ],
+        "comp_id": "8:5",
+        "fieldDefinitions": [
+          {
+            "name": "onoff",
+            "type": "boolean"
+          },
+          {
+            "name": "time",
+            "type": "isodate"
+          }
+        ],
+        "name": "风机B",
+        "type": "onboard_controller"
+      }
+    ],
+    "contact": "15001798106",
+    "control_mode": 1,
+    "desc": "义桥镇昇光桥村",
+    "idle_report": 600,
+    "internal_id": 866104025289029,
+    "latitude": 30.280000000000001,
+    "longitude": 120.12,
+    "name": "昇光桥村污水试点站",
+    "offline_report": 300,
+    "sensor_id": "6eb5e442-0327-4dfd-9d32-d40f4d7a7615",
+    "setup_date": "2016-10-09",
+    "station_type": "A类站"
   }
 ]

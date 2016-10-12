@@ -297,16 +297,90 @@ angular.module('app')
                     .state('app.cencus', {
                         url: '/cencus',
                         views: {
-                            'subContentTitle': {
-                                templateUrl: 'tpl/blocks/common_sub_header.html',
-                                controller: 'CencusCtrl'
-                            },
-                            'contentView': {templateUrl: 'tpl/app_cencus.html', controller: 'CencusCtrl'}
+                            'contentView@app': {
+                                templateUrl: 'tpl/app_cencus_tab.html'
+                            }
                         },
                         resolve: {
                             deps: ['$ocLazyLoad',
                                 function ($ocLazyLoad) {
                                     return $ocLazyLoad.load(['highcharts-ng']);
+                                }]
+                        }
+                    })
+                    .state('app.cencus.devicetype', {
+                        url: '/devicetype',
+                        parent: 'app.cencus',
+                        views: {
+                            'subContentTitle@app': {
+                                templateUrl: 'tpl/blocks/common_sub_header.html',
+                                controller: 'CencusDeviceTypeTitleCtrl'
+                            },
+                            'tab_contentView': {
+                                templateUrl: 'tpl/app_cencus_device_type.html'
+                            }
+                        },
+                        resolve: {
+                            deps: ['$ocLazyLoad',
+                                function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load(['cgBusy', 'highcharts-ng']);
+                                }]
+                        }
+                    })
+                    .state('app.cencus.flow', {
+                        url: '/flow',
+                        parent: 'app.cencus',
+                        views: {
+                            'subContentTitle@app': {
+                                templateUrl: 'tpl/blocks/common_sub_header.html',
+                                controller: 'ManageRouterEmployeeTitleCtrl'
+                            },
+                            'tab_contentView': {
+                                templateUrl: 'tpl/app_cencus_flow.html'
+                            }
+                        },
+                        resolve: {
+                            deps: ['$ocLazyLoad',
+                                function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load(['cgBusy', 'highcharts-ng']);
+                                }]
+                        }
+                    })
+                    .state('app.cencus.routing', {
+                        url: '/routing',
+                        parent: 'app.cencus',
+                        views: {
+                            'subContentTitle@app': {
+                                templateUrl: 'tpl/blocks/common_sub_header.html',
+                                controller: 'ManageRouterEmployeeTitleCtrl'
+                            },
+                            'tab_contentView': {
+                                templateUrl: 'tpl/app_cencus_routing.html'
+                            }
+                        },
+                        resolve: {
+                            deps: ['$ocLazyLoad',
+                                function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load(['cgBusy', 'highcharts-ng']);
+                                }]
+                        }
+                    })
+                    .state('app.cencus.qos', {
+                        url: '/qos',
+                        parent: 'app.cencus',
+                        views: {
+                            'subContentTitle@app': {
+                                templateUrl: 'tpl/blocks/common_sub_header.html',
+                                controller: 'ManageRouterEmployeeTitleCtrl'
+                            },
+                            'tab_contentView': {
+                                templateUrl: 'tpl/app_cencus_qos.html'
+                            }
+                        },
+                        resolve: {
+                            deps: ['$ocLazyLoad',
+                                function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load(['cgBusy', 'highcharts-ng']);
                                 }]
                         }
                     })
@@ -386,14 +460,30 @@ angular.module('app')
                                 }]
                         }
                     })
-                    .state('app.employee.auth', {
-                        url: '/auth',
+                    .state('app.role', {
+                        url: '/role',
                         views: {
                             'subContentTitle@app': {
                                 templateUrl: 'tpl/blocks/common_sub_header.html',
-                                controller: 'EmployeeAuthTitleCtrl'
+                                controller: 'RoleTitleCtrl'
                             },
-                            'contentView@app': {templateUrl: 'tpl/app_employee_auth.html'}
+                            'contentView@app': {templateUrl: 'tpl/app_role.html'}
+                        },
+                        resolve: {
+                            deps: ['$ocLazyLoad',
+                                function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load(['angularBootstrapNavTree', 'cgBusy']);
+                                }]
+                        }
+                    })
+                    .state('app.role.modify', {
+                        url: '/modify',
+                        views: {
+                            'subContentTitle@app': {
+                                templateUrl: 'tpl/blocks/common_sub_header.html',
+                                controller: 'RoleAddTitleCtrl'
+                            },
+                            'contentView@app': {templateUrl: 'tpl/app_role_add.html'}
                         },
                         resolve: {
                             deps: ['$ocLazyLoad',

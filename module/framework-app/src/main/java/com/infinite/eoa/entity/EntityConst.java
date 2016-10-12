@@ -15,7 +15,12 @@ public class EntityConst {
      * Created by hx on 16-7-25.
      */
     public static enum EntityStatus {
-        NORMAL, DELETE, DISABLE;
+        NORMAL(1), DELETE(9), DISABLE(2);
+
+        public final int val;
+        EntityStatus(int v) {
+            this.val = v;
+        }
     }
 
     /**
@@ -53,6 +58,8 @@ public class EntityConst {
         public static final String DEPARTMENT = "department";
         public static final String DEPARTMENT_EMPLOYEE = "department_employee";
         public static final String EMPLOYEE = "employee";
+        public static final String ROLE = "role";
+        public static final String PERMISSION = "permission";
         public static final String EMPLOYEE_DUTY = "employee_duty";
         public static final String APPLICATION = "app";
         public static final String VIRTUALSENSOR = "sensor";

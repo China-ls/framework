@@ -8,8 +8,8 @@
     </button>
     <!-- brand -->
     <a href="#/" class="navbar-brand text-lt">
-        <img class="hidden-xs" src="img/logo.png" alt=".">
-        <img class="hidden-folded" src="img/title.png" alt=".">
+        <img class="hidden-xs" ng-src="img/logo.png" alt=".">
+        <img class="hidden-folded" ng-src="img/title.png" alt=".">
     </a>
     <!-- / brand -->
 </div>
@@ -41,7 +41,7 @@
             </ul>
         </li>
         <li class="dropdown" dropdown ui-sref-active="open">
-            <a ui-sref="app.cencus">
+            <a ui-sref="app.cencus.devicetype">
                 <i class="fa fa-fw fa-plus visible-xs-inline-block"></i>
                 <span class="text-white">统计分析</span>
             </a>
@@ -64,7 +64,7 @@
             </a>
             <ul class="dropdown-menu" role="menu">
                 <li><a ui-sref="app.system">系统信息</a></li>
-                <li><a ui-sref="app.employee.auth">权限管理</a></li>
+                <li><a ui-sref="app.role">权限管理</a></li>
             </ul>
         </li>
     </ul>

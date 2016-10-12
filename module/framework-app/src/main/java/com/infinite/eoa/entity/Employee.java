@@ -7,6 +7,7 @@ import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Property;
+import org.mongodb.morphia.annotations.Reference;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -57,6 +58,8 @@ public class Employee extends AbstractEntity {
     private int sort;
     @Embedded
     private ArrayList<EmployeeDuty> duties = new ArrayList<EmployeeDuty>(0);
+    @Reference
+    private Department department;
 
     public Employee() {
     }
@@ -212,6 +215,14 @@ public class Employee extends AbstractEntity {
 
     public void addDuty(EmployeeDuty duty) {
         this.duties.add(duty);
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 
     @Override

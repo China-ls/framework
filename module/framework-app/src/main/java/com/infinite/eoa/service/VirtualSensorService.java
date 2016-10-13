@@ -1,5 +1,6 @@
 package com.infinite.eoa.service;
 
+import com.infinite.eoa.core.serivce.IPagerService;
 import com.infinite.eoa.entity.VirtualSensor;
 import com.infinite.eoa.service.exception.ApplicationNotExsistException;
 
@@ -9,7 +10,7 @@ import java.util.List;
  * @author by hx on 16-7-25.
  * @since 1.0
  */
-public interface VirtualSensorService {
+public interface VirtualSensorService extends IPagerService<VirtualSensor> {
 
     public VirtualSensor createVirtualSensor(String appkey, VirtualSensor sensor);
 

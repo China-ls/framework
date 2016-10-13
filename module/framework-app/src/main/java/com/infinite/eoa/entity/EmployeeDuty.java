@@ -8,7 +8,7 @@ import org.mongodb.morphia.annotations.Property;
 //@Entity(EntityConst.CollectionName.EMPLOYEE_DUTY)
 public class EmployeeDuty extends AbstractEntity {
     /**
-     * 巡线
+     * 巡线员
      */
     public static final int TYPE_LINE_PATROL = 1;
     /**

@@ -27,7 +27,10 @@ app.controller('EmployeeAddCtrl', ['$scope', '$http', '$localStorage', '$state',
         }
 
         $http.get(APPCONST.CTX + APPCONST.DEPARTMENT_LIST_ALL).then(function (response) {
-            console.warn(response);
+            // console.warn(response);
+            $scope.departments = response.data.data.data;
+        }, function (response) {
+            $scope.Toast('error', '警告', '服务器响应异常，请联系管理员。');
         });
 
         $scope.open = function ($event) {
@@ -84,6 +87,8 @@ app.controller('EmployeeAddCtrl', ['$scope', '$http', '$localStorage', '$state',
                     $scope.Toast('success', '消息', null == $localStorage.selectRole ?
                         '添加用户成功。' : '修改用户成功');
                     $state.go('app.employee');
+                } else {
+                    $scope.Toast('error', '警告', '服务器响应异常，请联系管理员。' + response.data.message);
                 }
             }, function (response) {
                 // console.warn(response);

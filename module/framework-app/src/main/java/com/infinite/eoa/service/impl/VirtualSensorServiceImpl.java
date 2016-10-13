@@ -1,5 +1,7 @@
 package com.infinite.eoa.service.impl;
 
+import com.infinite.eoa.core.persistent.IMorphiaDAO;
+import com.infinite.eoa.core.serivce.AbstractPagerService;
 import com.infinite.eoa.entity.VirtualSensor;
 import com.infinite.eoa.persistent.VirtualSensorDAO;
 import com.infinite.eoa.service.ApplicationService;
@@ -17,13 +19,18 @@ import java.util.List;
  * @author by hx on 16-7-26.
  */
 @Service("VirtualSensorService")
-public class VirtualSensorServiceImpl implements VirtualSensorService {
+public class VirtualSensorServiceImpl extends AbstractPagerService<VirtualSensor> implements VirtualSensorService {
     private static Logger log = LoggerFactory.getLogger(VirtualSensorServiceImpl.class);
 
     @Autowired
     private ApplicationService applicationService;
     @Autowired
     private VirtualSensorDAO virtualSensorDAO;
+
+    @Override
+    public IMorphiaDAO getMorphiaDAO() {
+        return virtualSensorDAO;
+    }
 
     @Override
     public List<VirtualSensor> find() {
@@ -100,4 +107,5 @@ public class VirtualSensorServiceImpl implements VirtualSensorService {
         applicationService.applicationExsist(appkey);
         return null;
     }
+
 }

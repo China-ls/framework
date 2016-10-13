@@ -265,13 +265,32 @@ angular.module('app')
                     })
                     .state('app.mngdevice', {
                         url: '/mngdevice',
-                        cache: false,
                         views: {
                             'subContentTitle': {
                                 templateUrl: 'tpl/blocks/common_sub_header.html',
-                                controller: 'ManageDeviceCtrl'
+                                controller: 'ManageDeviceTitleCtrl'
                             },
-                            'contentView': {templateUrl: 'tpl/app_mng_device.html', controller: 'ManageDeviceCtrl'}
+                            'contentView': {templateUrl: 'tpl/app_mng_device.html'}
+                        }
+                    })
+                    .state('app.mngdevice.modify', {
+                        url: '/modify',
+                        views: {
+                            'subContentTitle@app': {
+                                templateUrl: 'tpl/blocks/common_sub_header.html',
+                                controller: 'ManageDeviceModifyTitleCtrl'
+                            },
+                            'contentView@app': {templateUrl: 'tpl/app_mng_device_modify.html'}
+                        },
+                        resolve: {
+                            deps: ['$ocLazyLoad',
+                                function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load(['cgBusy']).then(
+                                        function () {
+                                            return loadBaiduMaps("7482d6d695c8d7d8dccca6d5de410704");
+                                        }
+                                    );
+                                }]
                         }
                     })
                     .state('app.mngdpt', {
@@ -333,7 +352,7 @@ angular.module('app')
                         views: {
                             'subContentTitle@app': {
                                 templateUrl: 'tpl/blocks/common_sub_header.html',
-                                controller: 'ManageRouterEmployeeTitleCtrl'
+                                controller: 'CencusTabFlowTitleCtrl'
                             },
                             'tab_contentView': {
                                 templateUrl: 'tpl/app_cencus_flow.html'
@@ -352,7 +371,7 @@ angular.module('app')
                         views: {
                             'subContentTitle@app': {
                                 templateUrl: 'tpl/blocks/common_sub_header.html',
-                                controller: 'ManageRouterEmployeeTitleCtrl'
+                                controller: 'CencusTabRoutingTitleCtrl'
                             },
                             'tab_contentView': {
                                 templateUrl: 'tpl/app_cencus_routing.html'
@@ -371,7 +390,7 @@ angular.module('app')
                         views: {
                             'subContentTitle@app': {
                                 templateUrl: 'tpl/blocks/common_sub_header.html',
-                                controller: 'ManageRouterEmployeeTitleCtrl'
+                                controller: 'CencusTabQosTitleCtrl'
                             },
                             'tab_contentView': {
                                 templateUrl: 'tpl/app_cencus_qos.html'

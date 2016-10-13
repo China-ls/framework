@@ -5,11 +5,10 @@ import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Property;
+import org.mongodb.morphia.annotations.Reference;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * VituralSensor Entity Bean
@@ -58,10 +57,15 @@ public class VirtualSensor extends AbstractEntity {
     @Property
     private long offline_report;
     @Property
+    private String departmentName;
+    @Property
+    private String departmentId;
+    @Reference
+    private Department department;
+    @Property
     private EntityConst.EntityStatus status = EntityConst.EntityStatus.NORMAL;
     @Embedded
     private ArrayList<Component> components = new ArrayList<Component>(0);
-    private HashMap<String, Object> fields = new HashMap<String, Object>(0);
 
     public String getSensor_id() {
         return sensor_id;
@@ -247,26 +251,27 @@ public class VirtualSensor extends AbstractEntity {
         this.components.addAll(components);
     }
 
-    public HashMap<String, Object> getFields() {
-        return fields;
+    public String getDepartmentName() {
+        return departmentName;
     }
 
-    public void setFields(HashMap<String, Object> fields) {
-        this.fields = fields;
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
     }
 
-    public VirtualSensor put(String key, Object value) {
-        fields.put(key, value);
-        return this;
+    public String getDepartmentId() {
+        return departmentId;
     }
 
-    public <T> Object get(String key) {
-        return fields.get(key);
+    public void setDepartmentId(String departmentId) {
+        this.departmentId = departmentId;
     }
 
-    public VirtualSensor put(Map<String, Object> values) {
-        fields.putAll(values);
-        return this;
+    public Department getDepartment() {
+        return department;
     }
 
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
 }

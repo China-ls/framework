@@ -78,7 +78,7 @@ app.controller('EmployeeCtrl', ['$scope', '$http', '$localStorage', '$modal', 'A
                         $scope.total = data.total;
                         $scope.currentPage = data.page;
                         $scope.employees = data.data;
-                        // console.warn($scope.employees);
+                        console.warn($scope.employees);
                     }
                     // console.warn(response);
                     $scope.resetDividerHeight();

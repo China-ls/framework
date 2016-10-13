@@ -1,75 +1,82 @@
-<!--电量计-->
-<div class="padder-sm m-b-md">
-    <div class="b-b m-sm padder-5-b">
-        <span class="padder-md b-b b-success b-5x">站点分类统计</span>
-    </div>
-    <div class="row">
-        <div class="col-lg-6">
-            <div class="panel panel-default">
-                <div class="panel-heading font-bold">
-                    站点类型分部
-                </div>
-                <div class="panel-body text-center">
-                    <highchart style="min-width: 400px;" config="chartHandlerDeviceType"></highchart>
-                </div>
-                <div class="panel-footer">
-                    <div class="text-xs text-center">
-                        <i class="fa fa-circle text-info"></i> A类站点 26 个
-                        <i class="fa fa-circle text-black m-l"></i> B类站点 32 个
-                        <i class="fa fa-circle m-l" style="color: rgb(144, 237, 125);"></i> C类站点 30 个
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="panel panel-default">
-                <div class="panel-heading font-bold">
-                    站点状态分部
-                </div>
-                <div class="panel-body text-center">
-                    <highchart style="min-width: 400px;" config="chartHandlerDeviceStatus"></highchart>
-                </div>
-                <div class="panel-footer">
-                    <div class="text-xs text-center">
-                        <i class="fa fa-circle text-black"></i> 离线站点 2 个
-                        <i class="fa fa-circle m-l" style="color: rgb(124, 181, 236);"></i> 在线站点 2 个
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="divider divider-md bg-white"></div>
-<!--电量计-->
+<div class="wrapper" ng-controller="CencusTabRoutingCtrl">
+    <div class="panel panel-default">
 
-<div class="padder-sm m-b-md">
-    <div class="b-b m-sm padder-5-b">
-        <span class="padder-md b-b b-info b-5x">站点信息统计表</span>
+        <div class="panel-heading">
+
+            <form class="form-inline" role="form">
+                <div class="form-group">
+                    <label for="deviceType">站点类型：</label>
+                    <select id="deviceType" class="form-control">
+                        <option value="">全部</option>
+                        <option value="A">A类站点</option>
+                        <option value="B">B类站点</option>
+                        <option value="C">C类站点</option>
+                    </select>
+                </div>
+                <div class="form-group m-l no-m-xs">
+                    <label for="deviceStatus">在线/离线：</label>
+                    <select id="deviceStatus" class="form-control">
+                        <option value="">全部</option>
+                        <option value="1">在线</option>
+                        <option value="2">离线</option>
+                    </select>
+                </div>
+                <div class="form-group m-l no-m-xs">
+                    <label>统计内容：</label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="option1"> 处水量
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="option2"> 水质
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="option3"> 用电量
+                    </label>
+                </div>
+                <div class="form-group m-l no-m-xs">
+                    <label for="startTime">起止时间：</label>
+                    <input id="startTime" class="form-control" type="date">
+                </div>
+                <div class="form-group">
+                    <label for="endTime">&nbsp;&nbsp;--&nbsp;&nbsp;</label>
+                    <input id="endTime" class="form-control" type="date">
+                </div>
+                <button type="button" class="btn btn-info btn-sm w-xs m-l no-m-xs">查询</button>
+                <button type="button" class="btn btn-success btn-sm w-xs m-l no-m-xs">输出报表</button>
+            </form>
+
+        </div>
+
+        <div class="panel-body">
+            <table st-table="rowCollectionBasic" class="table table-bordered table-striped tb-border">
+                <thead>
+                <tr>
+                    <th>明细</th>
+                    <th>站点名称</th>
+                    <th>巡检次数</th>
+                    <th>站点管理员</th>
+                    <th>联系电话</th>
+                    <th>所属机构</th>
+                    <th>站点状态</th>
+                    <th>站点类型</th>
+                    <th>日处水能力(吨)</th>
+                    <th>投产时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="success" ng-repeat="row in device" st-select-row="row">
+                    <td>{{row.name}}</td>
+                    <td>{{row.type}}</td>
+                    <td>{{row.dayHandler}}</td>
+                    <td>{{row.content}}</td>
+                    <td>{{row.time}}</td>
+                    <td>{{row.leading}}</td>
+                    <td>{{row.phone}}</td>
+                    <td>{{row.twon}}</td>
+                    <td>{{row.city}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-    <table st-table="rowCollectionBasic" class="table table-bordered table-striped tb-border">
-        <thead>
-        <tr>
-            <th>站点名称</th>
-            <th>站点类型</th>
-            <th>日处水能力</th>
-            <th>投产时间</th>
-            <th>站点管理员</th>
-            <th>联系电话</th>
-            <th>所属乡镇</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr class="success" ng-repeat="row in device" st-select-row="row">
-            <td>{{row.name}}</td>
-            <td>{{row.type}}</td>
-            <td>{{row.dayHandler}}</td>
-            <td>{{row.content}}</td>
-            <td>{{row.time}}</td>
-            <td>{{row.leading}}</td>
-            <td>{{row.phone}}</td>
-            <td>{{row.twon}}</td>
-            <td>{{row.city}}</td>
-        </tr>
-        </tbody>
-    </table>
 </div>

@@ -11,9 +11,9 @@
         </layout>
     </appender>
 
-    <logger name="org.springframework.web" level="ERROR" />
+    <logger name="org.springframework.web" level="DEBUG" />
     <logger name="org.apache.shiro" level="ERROR" />
-    <logger name="com.infinite" level="ERROR" />
+    <logger name="com.infinite" level="DEBUG" />
     <logger name="com.infinite.eoa.websocket" level="ERROR" />
 
     <!-- 日志输出级别 -->

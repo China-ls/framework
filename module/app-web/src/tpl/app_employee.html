@@ -94,7 +94,14 @@
                     <td>{{item.tel}}</td>
                     <td>{{item.phone}}</td>
                     <td>{{item.email}}</td>
-                    <td></td>
+                    <td>
+                        <span ng-if="null == duties || duties.length <= 0">无</span>
+                        <span ng-repeat="duty in item.duties">
+                            <span ng-if="duty.type == 1">巡线员</span>
+                            <span ng-if="duty.type == 2">工程人员</span>
+                            <span ng-if="duty.type == 3">核查人员</span>
+                        </span>
+                    </td>
                     <td>
                         <span ng-if="item.status === 1">正常</span>
                         <span ng-if="item.status === 2">禁用</span>

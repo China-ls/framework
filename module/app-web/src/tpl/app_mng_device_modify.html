@@ -1,0 +1,221 @@
+<div ng-controller="ManageDeviceModifyCtrl" class="wrapper">
+
+    <div>
+        <div class="b-b b-success padder-4-b">
+            <span class="text-danger m-b b-b b-5x b-success padder text-lg">基本信息</span>
+        </div>
+
+        <div class="rol">
+
+            <!-- form -->
+            <div class="col-sm-6 padder-v">
+                <table class="dark-bd-table table table-bordered">
+                    <tr>
+                        <td class="bg-light-gray2-only w-sm text-right">站点名称</td>
+                        <td>
+                            <input class="form-control"
+                                   ng-model="device.name"
+                                   required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w-sm text-right">站点类型</td>
+                        <td>
+                            <select class="form-control"
+                                    ng-model="device.type"
+                                    required>
+                                <option value="">请选择站点类型</option>
+                                <option value="A类站点" ng-selected="device.type == 'A类站点'">A类站点</option>
+                                <option value="B类站点" ng-selected="device.type == 'B类站点'">B类站点</option>
+                                <option value="C类站点" ng-selected="device.type == 'C类站点'">C类站点</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-light-gray2-only w-sm text-right">日处水能力</td>
+                        <td>
+                            <select class="form-control"
+                                    ng-model="device.dayDealDirtyWaterAbility"
+                                    required>
+                                <option value="">请选择日处水能力</option>
+                                <option value="10吨" ng-selected="device.dayDealDirtyWaterAbility == '10吨'">10吨</option>
+                                <option value="15吨" ng-selected="device.dayDealDirtyWaterAbility == '15吨'">15吨</option>
+                                <option value="20吨" ng-selected="device.dayDealDirtyWaterAbility == '20吨'">20吨</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w-sm text-right">投产时间</td>
+                        <td>
+                            <input type="date" class="form-control" placeholder="请输入投产时间"
+                                   ng-model="device.setupDate" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-light-gray2-only w-sm text-right">站点管理员</td>
+                        <td>
+                            <input type="text" class="form-control" placeholder="请输入站点管理员"
+                                   ng-model="device.admin" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w-sm text-right">联系电话</td>
+                        <td>
+                            <input type="text" class="form-control" placeholder="请输入联系电话"
+                                   ng-model="device.contact" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-light-gray2-only w-sm text-right">地址</td>
+                        <td>
+                            <input type="text" class="form-control" placeholder="请输入地址"
+                                   ng-model="device.address" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w-sm text-right">描述</td>
+                        <td>
+                            <input type="text" class="form-control" placeholder="请输入描述"
+                                   ng-model="device.desc" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-light-gray2-only w-sm text-right">经度</td>
+                        <td>
+                            <input type="text" class="form-control" placeholder="请输入经度"
+                                   ng-model="device.longitude" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w-sm text-right">纬度</td>
+                        <td>
+                            <input type="text" class="form-control" placeholder="请输入纬度"
+                                   ng-model="device.latitude" required>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+            <!-- form -->
+
+            <!-- map -->
+            <div class="col-sm-6">
+                <div id="map_canvas"
+                     class="wrapper-sm m-l-sm m-r-sm b b-a b-r-2x b-gray no-m-sm no-m-xs"
+                     style="min-height:515px;margin-top: 13px; margin-bottom: 5px;"
+                     ui-baidu-map="myMap"
+                     ui-event="{'map-click': 'onMapClick($event, $params)', 'map-loaded': 'onMapLoaded($event, $params)'}"
+                     ui-options="mapOptions">
+                </div>
+            </div>
+            <!-- mao -->
+
+        </div>
+
+    </div>
+
+    <div class="divider divider-xl bg-white"></div>
+
+    <!--站内设备-->
+    <div>
+
+        <div class="b-b b-primary padder-4-b">
+            <span class="text-danger m-b b-b b-5x b-primary padder text-lg">站内设备</span>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-4 padder-v">
+
+                <div class="panel panel-default">
+                    <!--ng-repeat="item in device.conponents" >-->
+                    <div class="panel-heading">
+                        <table class="dark-bd-table table table-bordered">
+                            <tr>
+                                <td class="bg-light-gray2-only w-sm text-right">设备类型</td>
+                                <td>
+                                    <select class="form-control"
+                                            ng-model="item.type"
+                                            required>
+                                        <option value="">请选择设备类型</option>
+                                        <option value="A类站点" ng-selected="device.type == 'A类站点'">PLC</option>
+                                        <option value="B类站点" ng-selected="device.type == 'B类站点'">风机</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="w-sm text-right">设备型号</td>
+                                <td>
+                                    <select class="form-control"
+                                            ng-model="device.type"
+                                            required>
+                                        <option value="">请选择设备型号</option>
+                                        <option value="A类站点" ng-selected="device.type == 'A类站点'">A类站点</option>
+                                        <option value="B类站点" ng-selected="device.type == 'B类站点'">B类站点</option>
+                                        <option value="C类站点" ng-selected="device.type == 'C类站点'">C类站点</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bg-light-gray2-only w-sm text-right">通道号</td>
+                                <td>
+                                    <input type="date" class="form-control" placeholder="请输入通道号"
+                                           ng-model="item.channel" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="w-sm text-right">设备号</td>
+                                <td>
+                                    <input type="text" class="form-control" placeholder="请输入设备号"
+                                           ng-model="item.deviceid" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bg-light-gray2-only w-sm text-right">SIM卡</td>
+                                <td>
+                                    <input type="text" class="form-control" placeholder="请输入SIM卡"
+                                           ng-model="item.sim" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="w-sm text-right">安装日期</td>
+                                <td>
+                                    <input type="date" class="form-control" placeholder="请输入安装日期"
+                                           ng-model="item.setupDate" required>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <button type="button" class="btn btn-danger img-full">移除此设备</button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 padder-v">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <div class="panel-add-btn">
+                            <i class="fa fa-plus"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <!--站内设备-->
+
+    <div>
+        <div class="inline divider b-b-dashed b-success m-b-lg"></div>
+        <div class="row no-m-xs">
+            <div class="col-sm-offset-8 col-md-offset-9 pull-right-xs">
+                <button type="button" ng-click="cancel()" class="btn btn-info w-xsm">取消</button>
+                <button type="button" class="btn btn-info w-xsm">保存</button>
+            </div>
+        </div>
+    </div>
+
+</div>

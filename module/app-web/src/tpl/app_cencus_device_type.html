@@ -1,4 +1,4 @@
-<div ng-controller="CencusDeviceTypeCtrl">
+<div class="wrapper" ng-controller="CencusDeviceTypeCtrl">
     <!--电量计-->
     <div class="padder-sm m-b-md">
         <div class="b-b m-sm padder-5-b">
@@ -40,38 +40,81 @@
             </div>
         </div>
     </div>
-    <div class="divider divider-md bg-white"></div>
     <!--电量计-->
 
-    <div class="padder-sm m-b-md">
-        <div class="b-b m-sm padder-5-b">
-            <span class="padder-md b-b b-info b-5x">站点信息统计表</span>
+    <div class="b-b b-success line-dashed"></div>
+
+    <div class="divider divider-xl bg-white"></div>
+
+    <!-- table -->
+    <div class="padder-sm m-t">
+        <div class="panel panel-default">
+            <div class="panel-heading padder-v">
+
+                <form class="form-inline" role="form">
+                    <div class="form-group">
+                        <label for="deviceType">站点类型：</label>
+                        <select id="deviceType" class="form-control">
+                            <option value="">全部</option>
+                            <option value="A">A类站点</option>
+                            <option value="B">B类站点</option>
+                            <option value="C">C类站点</option>
+                        </select>
+                    </div>
+                    <div class="form-group m-l-lg no-m-xs">
+                        <label for="deviceStatus">在线/离线：</label>
+                        <select id="deviceStatus" class="form-control">
+                            <option value="">全部</option>
+                            <option value="1">在线</option>
+                            <option value="2">离线</option>
+                        </select>
+                    </div>
+                    <div class="form-group m-l-lg no-m-xs">
+                        <label for="deviceDW">吨位：</label>
+                        <select id="deviceDW" class="form-control">
+                            <option value="">全部</option>
+                            <option value="1">asdf</option>
+                            <option value="2">asdf</option>
+                            <option value="3">asdf</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-info btn-sm w-xsm m-l-lg no-m-xs">查询</button>
+                    <button type="button" class="btn btn-info btn-sm w-xsm m-l-lg pull-right">输出报表</button>
+                </form>
+
+            </div>
+            <div class="panel-body">
+                <table st-table="rowCollectionBasic" class="table table-bordered table-striped tb-border">
+                    <thead>
+                    <tr>
+                        <th>站点名称</th>
+                        <th>所属机构</th>
+                        <th>站点类型</th>
+                        <th>日处水能力(吨)</th>
+                        <th>投产时间</th>
+                        <th>站点状态</th>
+                        <th>站点管理员</th>
+                        <th>联系电话</th>
+                        <th>经度</th>
+                        <th>纬度</th>
+                        <th>地址</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="success" ng-repeat="row in routeList" st-select-row="row" ng-click="imageListItemSelect($index)">
+                        <td><a href>{{row.time}}</a></td>
+                        <td><a href>{{row._id}}</a></td>
+                        <td><a href>{{row._id}}</a></td>
+                        <td><a href>{{row._id}}</a></td>
+                        <td><a href>{{row._id}}</a></td>
+                        <td><a href>{{row._id}}</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <table st-table="rowCollectionBasic" class="table table-bordered table-striped tb-border">
-            <thead>
-            <tr>
-                <th>站点名称</th>
-                <th>站点类型</th>
-                <th>日处水能力</th>
-                <th>投产时间</th>
-                <th>站点管理员</th>
-                <th>联系电话</th>
-                <th>所属乡镇</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr class="success" ng-repeat="row in device" st-select-row="row">
-                <td>{{row.name}}</td>
-                <td>{{row.type}}</td>
-                <td>{{row.dayHandler}}</td>
-                <td>{{row.content}}</td>
-                <td>{{row.time}}</td>
-                <td>{{row.leading}}</td>
-                <td>{{row.phone}}</td>
-                <td>{{row.twon}}</td>
-                <td>{{row.city}}</td>
-            </tr>
-            </tbody>
-        </table>
+
     </div>
+    <!-- table -->
+
 </div>

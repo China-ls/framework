@@ -1,7 +1,14 @@
 'use strict';
 
 // DeviceDetail controller
-app.controller('DeviceTabFlowCtrl', ['$scope', '$http', '$localStorage', '$state', 'APPCONST',
+app.controller('CencusTabRoutingTitleCtrl', ['$scope', '$http', '$localStorage', '$state', 'APPCONST',
+    function ($scope, $http, $localStorage, $state, APPCONST) {
+        $scope.app.settings.asideHide = true;
+        $scope.app.subHeader.goBackHide = true;
+        $scope.app.subHeader.contentTitle = '考勤统计';
+    }]);
+
+app.controller('CencusTabRoutingCtrl', ['$scope', '$http', '$localStorage', '$state', 'APPCONST',
     function ($scope, $http, $localStorage, $state, APPCONST) {
         $scope.app.subHeader.goBackHide = false;
         $scope.app.subHeader.goBackSref = 'app.device';

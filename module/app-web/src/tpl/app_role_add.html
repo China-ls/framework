@@ -59,7 +59,6 @@
                     <div class="col-sm-10">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                {{keys}}
                                 <div ng-repeat="p in permissions">
                                     <label class="checkbox i-checks m-n">
                                         <input type="checkbox"
@@ -67,7 +66,7 @@
                                                ng-click="selectPermission(p.id)">
                                         <i></i>
                                         <span class="inline" ng-style="{'margin-left': p.level * 15}"></span>
-                                        {{p.name}} | {{p.id}}
+                                        {{p.name}}
                                     </label>
                                 </div>
                             </div>

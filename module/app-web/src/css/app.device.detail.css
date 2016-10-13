@@ -7,3 +7,17 @@
 #deviceSubMenuWrapper .nav-tabs > li.active > a {
   border-bottom-color: #00ee00 !important;
 }
+.panel-add-btn {
+  cursor: pointer;
+  height: 200px;
+  text-align: center;
+  line-height: 200px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  border: 1.1px solid #e7e7e7;
+  border-radius: 2px;
+  background: #fff;
+}
+.panel-add-btn:hover {
+  webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}

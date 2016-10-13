@@ -1,16 +1,15 @@
 'use strict';
 
 // DeviceDetail controller
-app.controller('DeviceTabFlowCtrl', ['$scope', '$http', '$localStorage', '$state', 'APPCONST',
+app.controller('CencusTabFlowTitleCtrl', ['$scope', '$http', '$localStorage', '$state', 'APPCONST',
     function ($scope, $http, $localStorage, $state, APPCONST) {
-        $scope.app.subHeader.goBackHide = false;
-        $scope.app.subHeader.goBackSref = 'app.device';
+        $scope.app.settings.asideHide = true;
+        $scope.app.subHeader.goBackHide = true;
+        $scope.app.subHeader.contentTitle = '水电统计';
+    }]);
 
-        if (!$scope.$stateParams) {
-            $state.go('app.device');
-            return;
-        }
-
+app.controller('CencusTabFlowCtrl', ['$scope', '$http', '$localStorage', '$state', 'APPCONST',
+    function ($scope, $http, $localStorage, $state, APPCONST) {
         // 最新 数据
         $scope.loadLatestDataPromise = $http.get(APPCONST.CTX + APPCONST.SENSOR_DATA_WATER.replace("{id}", $scope.$stateParams.id))
             .then(function (response) {

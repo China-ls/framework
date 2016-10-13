@@ -2,11 +2,14 @@ package com.infinite.eoa.service.impl;
 
 import com.infinite.eoa.core.persistent.IMorphiaDAO;
 import com.infinite.eoa.core.serivce.AbstractPagerService;
+import com.infinite.eoa.entity.Department;
 import com.infinite.eoa.entity.Employee;
 import com.infinite.eoa.entity.EmployeeDuty;
+import com.infinite.eoa.persistent.DepartmentDAO;
 import com.infinite.eoa.persistent.EmployeeDAO;
 import com.infinite.eoa.service.EmployeeService;
 import com.mongodb.WriteResult;
+import org.apache.commons.lang.StringUtils;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.Key;
 import org.mongodb.morphia.query.UpdateResults;
@@ -17,6 +20,8 @@ import org.springframework.stereotype.Service;
 public class EmployeeServiceImpl extends AbstractPagerService<Employee> implements EmployeeService {
     @Autowired
     private EmployeeDAO employeeDAO;
+    @Autowired
+    private DepartmentDAO departmentDAO;
 
     @Override
     public IMorphiaDAO getMorphiaDAO() {
@@ -45,6 +50,16 @@ public class EmployeeServiceImpl extends AbstractPagerService<Employee> implemen
 
     @Override
     public Employee addEmployee(Employee employee) {
+        if (null == employee) {
+            return null;
+        }
+        String departmentId = employee.getDepartmentId();
+        if (!StringUtils.isEmpty(departmentId)) {
+            Department department = departmentDAO.findById(departmentId);
+            employee.setDepartmentId(departmentId);
+            employee.setDepartment(department);
+            employee.setDepartmentName(department.getName());
+        }
         Key<Employee> key = employeeDAO.save(employee);
         employee.setId((ObjectId) key.getId());
         return employee;

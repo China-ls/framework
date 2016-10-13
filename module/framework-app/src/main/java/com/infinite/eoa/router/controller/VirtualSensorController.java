@@ -74,6 +74,31 @@ public class VirtualSensorController extends BasicRestController {
         return response;
     }
 
+    @RequestMapping(value = "/page", method = RequestMethod.GET)
+    @ResponseBody
+    public Response listPage(
+            @ModelAttribute("page") String page,
+            @ModelAttribute("size") String size
+    ) {
+        Response response = null;
+        try {
+            response = makeResponse(ResponseCode.SUCCESS,
+                    sensorService.listPager(NumberUtils.toInt(page), NumberUtils.toInt(size))
+            );
+        } catch (ApplicationNotExsistException e) {
+            response = makeResponse(ResponseCode.APPKEY_FORBIDON);
+        } catch (Throwable e) {
+            response = makeResponse(ResponseCode.SYSTEM_ERROR);
+            if (log.isErrorEnabled()) {
+                log.error(" [page:{}, size:{}]", page, size, e);
+            }
+        }
+        if (log.isDebugEnabled()) {
+            log.debug("[page:{}, size:{}, response:{}]", page, size, response);
+        }
+        return response;
+    }
+
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     @ResponseBody
     public Response getAll() {

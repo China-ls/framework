@@ -1,4 +1,4 @@
-<div ng-init="init()">
+<div ng-controller="ManageDeviceCtrl">
 
     <div class="panel">
         <div class="panel-heading b-b b-success wrapper-xs">
@@ -11,21 +11,21 @@
                 </div>
                 <div class="col-sm-10">
                     <div class="pull-right">
-                        <button class="btn btn-info btn-sm btn-addon w-xs-xs" ng-click="addNode()">
-                            <i class="fa fa-plus hidden-xs"></i>
-                            增加子节点
-                        </button>
-                        <button class="btn btn-info btn-sm btn-addon w-xs-xs" ng-click="addRouter()">
+                        <button class="btn btn-info btn-sm btn-addon w-xs-xs" ng-click="addDevice()">
                             <i class="fa fa-plus hidden-xs"></i>
                             增加站点
                         </button>
-                        <button class="btn btn-success btn-sm btn-addon w-xs-xs" ng-click="edit()">
+                        <button class="btn btn-success btn-sm btn-addon w-xs-xs"
+                                ng-class="{'disabled': null == selectDevice}"
+                                ng-click="editDevice()">
                             <i class="fa fa-edit hidden-xs"></i>
-                            编辑
+                            编辑站点
                         </button>
-                        <button class="btn btn-danger btn-sm btn-addon w-xs-xs" ng-click="delete()">
+                        <button class="btn btn-danger btn-sm btn-addon w-xs-xs"
+                                ng-class="{'disabled': null == selectDevice}"
+                                ng-click="delDevice()">
                             <i class="fa fa-trash-o hidden-xs"></i>
-                            删除
+                            删除站点
                         </button>
                     </div>
                 </div>
@@ -36,168 +36,50 @@
             <table st-table="rowCollectionBasic" class="table table-bordered table-striped tb-border">
                 <thead>
                 <tr>
-                    <th>名称</th>
-                    <th>类型</th>
-                    <th>所辖站点数</th>
+                    <th>#</th>
+                    <th>站点名称</th>
+                    <th>站点类型</th>
+                    <th>日处水能力</th>
+                    <th>投产时间</th>
+                    <th>管理员</th>
+                    <th>联系电话</th>
+                    <th>设备地址</th>
+                    <th>设备描述</th>
+                    <th>控制方式</th>
+                    <th>区域归属</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr class="success" st-select-row="row">
-                    <td>
-                        <i class="fa fa-caret-down"></i>
-                        <i class="fa fa-flag text-danger"></i>
-                        浙江爱迪曼环保科技有限公司
-                    </td>
-                    <td>根节点</td>
-                    <td>56</td>
+                <tr class="success cursor-pointer" st-select-row="row"
+                    ng-repeat="item in devices"
+                    ng-click="toggleSelectDevice(item)">
+                    <th>
+                        <label class="checkbox i-checks m-n">
+                            <input type="checkbox"
+                                   ng-checked="item.sensor_id === selectDevice.sensor_id"
+                                   ng-click="toggleSelectDevice(item)">
+                            <i></i>
+                        </label>
+                    </th>
+                    <td>{{item.name}}</td>
+                    <td>{{item.station_type}}</td>
+                    <td>{{item.station_type}}</td>
+                    <td>{{item.admin}}</td>
+                    <td>{{item.admin}}</td>
+                    <td>{{item.contact}}</td>
+                    <td>{{item.address}}</td>
+                    <td>{{item.desc}}</td>
+                    <td>{{''}}</td>
+                    <td>{{item.departmentName}}</td>
                 </tr>
-                <tr class="success" st-select-row="row">
-                    <td class="level1">
-                        <i class="fa fa-caret-down"></i>
-                        <i class="fa fa-flag text-warning"></i>
-                        嘉兴市
-                    </td>
-                    <td>一级节点</td>
-                    <td>23</td>
-                </tr>
-
-                <tr class="success" st-select-row="row">
-                    <td class="level2">
-                        <i class="fa fa-caret-down"></i>
-                        <i class="fa fa-flag text-info"></i>
-                        嘉善县
-                    </td>
-                    <td>二级节点</td>
-                    <td>23</td>
-                </tr>
-
-                <tr class="success" st-select-row="row">
-                    <td class="level3">
-                        <i class="fa fa-caret-down"></i>
-                        <i class="fa fa-flag text-success"></i>
-                        西塘镇
-                    </td>
-                    <td>三级节点</td>
-                    <td>4</td>
-                </tr>
-
-                <tr class="success" st-select-row="row">
-                    <td class="level4">
-                        <i class="fa fa-map-marker text-info-dk"></i>
-                        张家村站点
-                    </td>
-                    <td>站点</td>
-                    <td></td>
-                </tr>
-                <tr class="success" st-select-row="row">
-                    <td class="level4">
-                        <i class="fa fa-map-marker text-info-dk"></i>
-                        李庄站点
-                    </td>
-                    <td>站点</td>
-                    <td></td>
-                </tr>
-                <tr class="success" st-select-row="row">
-                    <td class="level4">
-                        <i class="fa fa-map-marker text-info-dk"></i>
-                        文庙站点
-                    </td>
-                    <td>站点</td>
-                    <td></td>
-                </tr>
-
-                <tr class="success" st-select-row="row">
-                    <td class="level3">
-                        <i class="fa fa-caret-down"></i>
-                        <i class="fa fa-flag text-success"></i>
-                        干窑镇
-                    </td>
-                    <td>三级节点</td>
-                    <td>4</td>
-                </tr>
-
-                <tr class="success" st-select-row="row">
-                    <td class="level3">
-                        <i class="fa fa-caret-down"></i>
-                        <i class="fa fa-flag text-success"></i>
-                        陶庄镇
-                    </td>
-                    <td>三级节点</td>
-                    <td>4</td>
-                </tr>
-
-                <tr class="success" st-select-row="row">
-                    <td class="level3">
-                        <i class="fa fa-caret-down"></i>
-                        <i class="fa fa-flag text-success"></i>
-                        天壬镇
-                    </td>
-                    <td>三级节点</td>
-                    <td>4</td>
-                </tr>
-
-                <tr class="success" st-select-row="row">
-                    <td class="level1">
-                        <i class="fa fa-caret-down"></i>
-                        <i class="fa fa-flag text-warning"></i>
-                        杭州市
-                    </td>
-                    <td>一级节点</td>
-                    <td>0</td>
-                </tr>
-                <tr class="success" st-select-row="row">
-                    <td class="level1">
-                        <i class="fa fa-caret-down"></i>
-                        <i class="fa fa-flag text-warning"></i>
-                        湖州市
-                    </td>
-                    <td>一级节点</td>
-                    <td>0</td>
-                </tr>
-                <tr class="success" st-select-row="row">
-                    <td class="level1">
-                        <i class="fa fa-caret-down"></i>
-                        <i class="fa fa-flag text-warning"></i>
-                        宁波市
-                    </td>
-                    <td>一级节点</td>
-                    <td>0</td>
-                </tr>
-                <tr class="success" st-select-row="row">
-                    <td class="level1">
-                        <i class="fa fa-caret-down"></i>
-                        <i class="fa fa-flag text-warning"></i>
-                        绍兴市
-                    </td>
-                    <td>一级节点</td>
-                    <td>0</td>
-                </tr>
-                <tr class="success" st-select-row="row">
-                    <td class="level1">
-                        <i class="fa fa-caret-down"></i>
-                        <i class="fa fa-flag text-warning"></i>
-                        台州市
-                    </td>
-                    <td>一级节点</td>
-                    <td>0</td>
-                </tr>
-                <tr class="success" st-select-row="row">
-                    <td class="level1">
-                        <i class="fa fa-caret-down"></i>
-                        <i class="fa fa-flag text-warning"></i>
-                        温州市
-                    </td>
-                    <td>一级节点</td>
-                    <td>0</td>
-                </tr>
-
-                <!--<tr class="success" ng-repeat="row in routeList" st-select-row="row">-->
-                <!--<td><a href>{{row._id}}</a></td>-->
-                <!--<td><a href>{{row._id}}</a></td>-->
-                <!--<td><a href>{{row._id}}</a></td>-->
-                <!--</tr>-->
                 </tbody>
             </table>
         </div>
     </div>
 </div>
+
+<!-- add employee_id modal -->
+<script type="text/ng-template" id="confirmModalContent.html">
+    <div ng-include="'tpl/modal/confirm_modal.html'"></div>
+</script>
+<!-- add employee_id modal -->

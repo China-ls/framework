@@ -13,7 +13,7 @@ public class DepartmentDAOImpl extends MorphiaDAO<Department, ObjectId> implemen
 
     @Override
     public Department findById(String id) {
-        return findOne("id", id);
+        return findOne("id", new ObjectId(id));
     }
 
 }

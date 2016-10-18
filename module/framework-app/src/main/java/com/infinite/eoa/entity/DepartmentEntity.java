@@ -6,7 +6,7 @@ import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Property;
 
-@Entity(EntityConst.CollectionName.DEPARTMENT_EMPLOYEE)
+@Entity(value = EntityConst.CollectionName.DEPARTMENT_EMPLOYEE, noClassnameStored = true)
 public class DepartmentEntity extends AbstractEntity {
     public static enum TYPE {
         DEVICE, EMPLOYEE

@@ -8,7 +8,7 @@ import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Property;
 
-@Entity(EntityConst.CollectionName.DEPARTMENT)
+@Entity(value = EntityConst.CollectionName.DEPARTMENT, noClassnameStored = true)
 public class Department extends AbstractEntity {
     /**
      * 节点是组织机构

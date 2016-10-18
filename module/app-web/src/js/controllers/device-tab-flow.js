@@ -1,7 +1,7 @@
 'use strict';
 
 // DeviceDetail controller
-app.controller('DeviceTabFlowCtrl', ['$scope', '$http', '$localStorage', '$state', 'APPCONST',
+app.controller('DeviceTabWaterCtrl', ['$scope', '$http', '$localStorage', '$state', 'APPCONST',
     function ($scope, $http, $localStorage, $state, APPCONST) {
         $scope.app.subHeader.goBackHide = false;
         $scope.app.subHeader.goBackSref = 'app.device';
@@ -85,7 +85,8 @@ app.controller('DeviceTabFlowCtrl', ['$scope', '$http', '$localStorage', '$state
                         if (data) {
                             var series = {
                                 name: $scope.chartSeriesName,
-                                data: data.values/*, dataLabels: {enabled: true}*/
+                                data: data.values/*, dataLabels: {enabled: true}*/,
+                                color: APPCONST.CHARTS_COLORS[Math.ceil(Math.random() * APPCONST.CHARTS_COLORS.length) % 15]
                             };
                             $scope.chartHandlerDayTotal.xAxis.categories = data.keys;
                         }
@@ -117,5 +118,8 @@ app.controller('DeviceTabFlowCtrl', ['$scope', '$http', '$localStorage', '$state
         };
 
         $scope.setDayTotalDataType(0);
+
+        $scope.ccc = APPCONST.CHARTS_COLORS;
+
     }])
 ;

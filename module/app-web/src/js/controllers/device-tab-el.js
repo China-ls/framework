@@ -18,10 +18,11 @@ app.controller('DeviceTabElCtrl', ['$scope', '$http', 'APPCONST', function ($sco
     $scope.loadLatestDataPromise = $http.get(APPCONST.CTX + APPCONST.SENSOR_DATA_ELECTRIC.replace("{id}", $scope.$stateParams.id))
         .then(function (response) {
             $scope.elData = response.data.data;
-            // console.warn($scope.elData);
+            console.warn($scope.elData);
             try {
                 $scope.elData.update_time = $scope.formatDate(new Date($scope.elData.latest.time), "yyyy年MM月dd日 HH时mm分ss秒")
-            } catch (e){}
+            } catch (e) {
+            }
             // console.warn($scope.waterData);
         });
 
@@ -37,7 +38,11 @@ app.controller('DeviceTabElCtrl', ['$scope', '$http', 'APPCONST', function ($sco
                     var data = response.data.data;
                     // console.warn(data);
                     if (data) {
-                        var series = {name: $scope.chartSeriesName, data: data.values/*, dataLabels: {enabled: true}*/};
+                        var series = {
+                            name: $scope.chartSeriesName,
+                            data: data.values/*, dataLabels: {enabled: true}*/,
+                            color: APPCONST.CHARTS_COLORS[Math.ceil(Math.random() * APPCONST.CHARTS_COLORS.length) % 15]
+                        };
                         $scope.chartElectric.xAxis.categories = data.keys;
                     }
                     $scope.chartElectric.series.splice(0);

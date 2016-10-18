@@ -59,7 +59,6 @@ public class EmployeeController extends BasicRestController {
     ) {
         Response response = null;
         try {
-            log.debug("{}", employee.getDepartmentId());
             response = makeResponse(ResponseCode.SUCCESS, employeeService.addEmployee(employee));
         } catch (Throwable e) {
             if (log.isErrorEnabled()) {

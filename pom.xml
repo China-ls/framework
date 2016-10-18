@@ -12,6 +12,8 @@
         <module>module/core-framework</module>
         <module>module/water-app</module>
         <module>module/framework-app</module>
+        <module>module/cdn</module>
+        <module>release/JavaTask</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -7,7 +7,7 @@
 
         <!-- 图片信息 -->
         <div class="col-md-6">
-            <img src="img/{{sensor.sensor_id}}.jpg" class="img-full">
+            <img ng-src="img/{{sensor.sensor_id}}.jpg" class="img-full">
         </div>
         <!-- 图片信息 -->
 
@@ -39,6 +39,10 @@
     <div class="row">
         <div class="col-md-6">
             <p class="item b-b-dashed b-success m-md">
+                <span class="inline w-xs">信号量：</span>
+                <span class="cb">{{sensor.signal}}</span>
+            </p>
+            <p class="item b-b-dashed b-success m-md">
                 <span class="inline w-xs">投产时间：</span>
                 <span class="cb">{{sensor.setup_date}}</span>
             </p>
@@ -49,6 +53,22 @@
             <p class="item b-b-dashed b-success m-md">
                 <span class="inline w-xs">设备描述：</span>
                 <span class="cb">{{sensor.desc}}</span>
+            </p>
+            <p class="item b-b-dashed b-success m-md">
+                <span class="inline w-xs">版本号：</span>
+                <span class="cb">
+                    <span ng-if="sensor.version <= 0">未知</span>
+                    <span ng-if="sensor.version > 0">{{sensor.version |number:1}}</span>
+                </span>
+            </p>
+            <p class="item b-b-dashed b-success m-md">
+                <span class="inline w-xs">在线状态：</span>
+                <span class="cb">
+                    <span ng-if="sensor.online == 0">未知</span>
+                    <span ng-if="sensor.online == 1">在线</span>
+                    <span ng-if="sensor.online == 2">离线</span>
+                    <span ng-if="sensor.online == 3">发呆</span>
+                </span>
             </p>
         </div>
 

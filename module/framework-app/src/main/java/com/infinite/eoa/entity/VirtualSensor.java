@@ -16,56 +16,38 @@ import java.util.Collection;
  * @author hx on 16-7-25.
  * @since 1.0
  */
-@Entity(EntityConst.CollectionName.VIRTUALSENSOR)
+@Entity(value = EntityConst.CollectionName.VIRTUALSENSOR, noClassnameStored = true)
 public class VirtualSensor extends AbstractEntity {
-    @Id
-    private String sensor_id;
-    @Property
-    private String app_id;
-    @Property
-    private String name;
-    @Property
-    private String control;
-    @Property
-    private String report;
-    @Property
-    private String data;
-    @Property
-    private String system;
-    @Property
-    private String desc;
-    @Property
-    private long idle_report;
-    @Property
-    private long internal_id;
-    @Property
-    private double latitude;
-    @Property
-    private double longitude;
-    @Property
-    private String contact;
-    @Property
-    private String admin;
-    @Property
-    private String address;
-    @Property
-    private int version;
-    @Property
-    private boolean online;
-    @Property
-    private String station_type;
-    @Property
-    private long offline_report;
-    @Property
-    private String departmentName;
-    @Property
-    private String departmentId;
-    @Reference
-    private Department department;
-    @Property
-    private EntityConst.EntityStatus status = EntityConst.EntityStatus.NORMAL;
-    @Embedded
-    private ArrayList<Component> components = new ArrayList<Component>(0);
+    @Id private String sensor_id;
+
+    @Property private String app_id;
+    @Property private String control;
+    @Property private String report;
+    @Property private String data;
+    @Property private String system;
+
+    @Property private String name;
+    @Property private String station_type;
+    @Property private String day_deal_water_ability;
+    @Property private String setup_date;
+    @Property private String admin;
+    @Property private String contact;
+    @Property private String address;
+    @Property private String desc;
+    @Property private double latitude;
+    @Property private double longitude;
+    @Property private long idle_report;
+    @Property private long internal_id;
+    @Property private long offline_report;
+    @Property private int signal;
+    @Property private int version;
+    @Property private int online;// 1在线 , 2离线, 3 在线但是无数据
+
+    @Property private String departmentName;
+    @Property private String departmentId;
+    @Reference private Department department;
+    @Property private int status = EntityConst.EntityStatus.NORMAL.val;
+    @Embedded private ArrayList<Component> components = new ArrayList<Component>(0);
 
     public String getSensor_id() {
         return sensor_id;
@@ -83,20 +65,20 @@ public class VirtualSensor extends AbstractEntity {
         this.app_id = app_id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getControl() {
         return control;
     }
 
     public void setControl(String control) {
         this.control = control;
+    }
+
+    public String getReport() {
+        return report;
+    }
+
+    public void setReport(String report) {
+        this.report = report;
     }
 
     public String getData() {
@@ -115,20 +97,60 @@ public class VirtualSensor extends AbstractEntity {
         this.system = system;
     }
 
-    public EntityConst.EntityStatus getStatus() {
-        return status;
+    public String getName() {
+        return name;
     }
 
-    public void setStatus(EntityConst.EntityStatus status) {
-        this.status = status;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getReport() {
-        return report;
+    public String getStation_type() {
+        return station_type;
     }
 
-    public void setReport(String report) {
-        this.report = report;
+    public void setStation_type(String station_type) {
+        this.station_type = station_type;
+    }
+
+    public String getDay_deal_water_ability() {
+        return day_deal_water_ability;
+    }
+
+    public void setDay_deal_water_ability(String day_deal_water_ability) {
+        this.day_deal_water_ability = day_deal_water_ability;
+    }
+
+    public String getSetup_date() {
+        return setup_date;
+    }
+
+    public void setSetup_date(String setup_date) {
+        this.setup_date = setup_date;
+    }
+
+    public String getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(String admin) {
+        this.admin = admin;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getDesc() {
@@ -137,22 +159,6 @@ public class VirtualSensor extends AbstractEntity {
 
     public void setDesc(String desc) {
         this.desc = desc;
-    }
-
-    public long getIdle_report() {
-        return idle_report;
-    }
-
-    public void setIdle_report(long idle_report) {
-        this.idle_report = idle_report;
-    }
-
-    public long getInternal_id() {
-        return internal_id;
-    }
-
-    public void setInternal_id(long internal_id) {
-        this.internal_id = internal_id;
     }
 
     public double getLatitude() {
@@ -171,36 +177,20 @@ public class VirtualSensor extends AbstractEntity {
         this.longitude = longitude;
     }
 
-    public String getContact() {
-        return contact;
+    public long getIdle_report() {
+        return idle_report;
     }
 
-    public void setContact(String contact) {
-        this.contact = contact;
+    public void setIdle_report(long idle_report) {
+        this.idle_report = idle_report;
     }
 
-    public String getAdmin() {
-        return admin;
+    public long getInternal_id() {
+        return internal_id;
     }
 
-    public void setAdmin(String admin) {
-        this.admin = admin;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getStation_type() {
-        return station_type;
-    }
-
-    public void setStation_type(String station_type) {
-        this.station_type = station_type;
+    public void setInternal_id(long internal_id) {
+        this.internal_id = internal_id;
     }
 
     public long getOffline_report() {
@@ -211,14 +201,6 @@ public class VirtualSensor extends AbstractEntity {
         this.offline_report = offline_report;
     }
 
-    public ArrayList<Component> getComponents() {
-        return components;
-    }
-
-    public void setComponents(ArrayList<Component> components) {
-        this.components = components;
-    }
-
     public int getVersion() {
         return version;
     }
@@ -227,28 +209,8 @@ public class VirtualSensor extends AbstractEntity {
         this.version = version;
     }
 
-    public boolean isOnline() {
-        return online;
-    }
-
-    public void setOnline(boolean online) {
+    public void setOnline(int online) {
         this.online = online;
-    }
-
-    public void addComponents(Component... components) {
-        if (null == components) {
-            return;
-        }
-        for (Component comp : components) {
-            this.components.add(comp);
-        }
-    }
-
-    public void addComponents(Collection<Component> components) {
-        if (null == components) {
-            return;
-        }
-        this.components.addAll(components);
     }
 
     public String getDepartmentName() {
@@ -273,5 +235,72 @@ public class VirtualSensor extends AbstractEntity {
 
     public void setDepartment(Department department) {
         this.department = department;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(EntityConst.EntityStatus status) {
+        this.status = status.val;
+    }
+
+    public int getSignal() {
+        return signal;
+    }
+
+    public void setSignal(int signal) {
+        this.signal = signal;
+    }
+
+    public int getOnline() {
+        return online;
+    }
+
+    public ArrayList<Component> getComponents() {
+        return components;
+    }
+
+    public void setComponents(ArrayList<Component> components) {
+        this.components = components;
+    }
+
+    public void addComponents(Collection<Component> components) {
+        if (null == components) {
+            return;
+        }
+        this.components.addAll(components);
+    }
+
+    @Override
+    public String toString() {
+        return "VirtualSensor{" +
+                "sensor_id='" + sensor_id + '\'' +
+                ", app_id='" + app_id + '\'' +
+                ", control='" + control + '\'' +
+                ", report='" + report + '\'' +
+                ", data='" + data + '\'' +
+                ", system='" + system + '\'' +
+                ", name='" + name + '\'' +
+                ", station_type='" + station_type + '\'' +
+                ", day_deal_water_ability='" + day_deal_water_ability + '\'' +
+                ", setup_date='" + setup_date + '\'' +
+                ", admin='" + admin + '\'' +
+                ", contact='" + contact + '\'' +
+                ", address='" + address + '\'' +
+                ", desc='" + desc + '\'' +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", idle_report=" + idle_report +
+                ", internal_id=" + internal_id +
+                ", offline_report=" + offline_report +
+                ", version=" + version +
+                ", online=" + online +
+                ", departmentName='" + departmentName + '\'' +
+                ", departmentId='" + departmentId + '\'' +
+                ", department=" + department +
+                ", status=" + status +
+                ", components=" + components +
+                '}';
     }
 }

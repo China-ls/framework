@@ -1,5 +1,6 @@
 package com.infinite.eoa.service;
 
+import com.infinite.eoa.entity.VirtualSensorData;
 import com.infinite.eoa.service.exception.ApplicationNotExsistException;
 import org.bson.Document;
 
@@ -13,9 +14,9 @@ import java.util.List;
  */
 public interface VirtualSensorDataService {
 
-    public List<Document> save(String data);
+    public List<VirtualSensorData> save(String data);
 
-    List<Document> findLatestBySensorId(String appkey, String sensorid);
+    ArrayList<VirtualSensorData> findLatestBySensorId(String appkey, String sensorid);
 
     ArrayList<Document> findBySensorIdAndTimeDistance(
             String appkey, String sensorid, String comp_type, long start, long end);

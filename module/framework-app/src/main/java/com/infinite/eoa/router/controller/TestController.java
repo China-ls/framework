@@ -80,6 +80,25 @@ public class TestController extends BasicRestController {
         return "success";
     }
 
+    @RequestMapping("/jms/send/login")
+    @ResponseBody
+    public String sendLogin(
+            @ModelAttribute("destination") String destination) {
+        destination = StringUtils.isEmpty(destination) ? "yinfantech/xgsn/jiaxing/report" : destination;
+        String message = "{\n" +
+                "\"app_id\" : \"aidiman/xgsn/yinfantech\",\n" +
+                "\"event\" : 0,\n" +
+                "\"event_name\" : \"network::login\",\n" +
+                "\"remote_endpoint\" : \"[::ffff:112.17.245.84]:55748\",\n" +
+                "\"sensor_id\" : \"2b9506aa-8284-407d-9bda-9d00390af73d\",\n" +
+                "\"signal\" : 31,\n" +
+                "\"time\" : 1476435798,\n" +
+                "\"version\" : 10\n" +
+                "}";
+        mqttService.sendTextMessage(destination, message);
+        return "success";
+    }
+
     @RequestMapping("/roles")
     @ResponseBody
     public String roles() {

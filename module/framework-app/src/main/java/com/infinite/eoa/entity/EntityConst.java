@@ -35,6 +35,11 @@ public class EntityConst {
         public static final int MALE = 1;
     }
 
+    public static final class SensorOnline {
+        public static final int YES = 1;
+        public static final int NO = 2;
+        public static final int IDLE = 3;
+    }
 
     public static final class EmployeeType {
         /**
@@ -63,6 +68,8 @@ public class EntityConst {
         public static final String EMPLOYEE_DUTY = "employee_duty";
         public static final String APPLICATION = "app";
         public static final String VIRTUALSENSOR = "sensor";
+        public static final String VIRTUALSENSOR_DATA = "sensor_data";
+        public static final String VIRTUALSENSOR_EVENT = "sensor_event";
 //        public static final String COMPONENT = "component";
 //        public static final String ACTION = "action";
     }

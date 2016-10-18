@@ -2,43 +2,419 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0fd8f5c7-a893-4232-b550-e52d73eb6f82" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/manage-device-modify.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_mng_device_modify.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/mamage-department-add.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/mamage-department.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/mamage-router-employee.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/mamagedevice.js" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/fonts/FontAwesome.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/fonts/Simple-Line-Icons.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/fonts/Simple-Line-Icons.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/fonts/Simple-Line-Icons.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/fonts/fontawesome-webfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/fonts/fontawesome-webfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/fonts/fontawesome-webfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/fonts/glyphicons-halflings-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/fonts/glyphicons-halflings-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/fonts/sourcesanspro/sourcesanspro-bold.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/fonts/sourcesanspro/sourcesanspro-light.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/fonts/sourcesanspro/sourcesanspro.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/77299f56-a820-4735-92f2-e7476e70217d.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/841188c2-b170-4e91-9234-5df4b255dc1c.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/988b743c-3a73-4485-931e-379653f0593f.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/a0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/b0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/b1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/b2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/c1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/c81e39a5-359b-41c1-9cd4-6eaf6b6d5590.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/i_comp_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/i_comp_1_gray.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/i_comp_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/i_comp_2_gray.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/i_comp_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/i_comp_3_gray.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/i_comp_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/i_comp_4_gray.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/i_comp_5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/i_comp_5_gray.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/i_comp_6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/i_comp_6_gray.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/i_comp_7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/i_comp_7_gray.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/i_user.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/item_icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/login_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/map.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/marker_blue.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/p0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/title.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/u40.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/u424.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/u426.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/u5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/u7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/u9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/img/water_pump.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/img/marker_blue.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/ant.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/cdn_war.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/cdn_war_exploded.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_3_15.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/src/css/less/app.baidumap.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/cdn.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/WEB-INF/web.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/fonts/Simple-Line-Icons.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/fonts/fontawesome-webfont.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/fonts/glyphicons-halflings-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/js/app.201610141019.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/l10n/de_DE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/l10n/en.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/l10n/it_IT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/l10n/zh_CN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/lib/Highcharts-4.2.5/highcharts.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/lib/abnt/abntree.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/lib/abnt/abntree.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/lib/angular-bootstrap-switch/angular-bootstrap-switch.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/lib/angular-bootstrap/ui-bootstrap-tpls.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/lib/angular-bootstrap/ui-bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/lib/angular-busy/angular-busy.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/lib/angular-busy/angular-busy.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/lib/angular/angular.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/lib/angularjs-slider/rzslider.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/lib/angularjs-slider/rzslider.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/lib/angularjs-toaster/toaster.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/lib/bootstrap-switch/css/bootstrap-switch.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/lib/bootstrap-switch/js/bootstrap-switch.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/lib/highcharts-ng/highcharts-ng.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/lib/jquery/jquery.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/lib/screenfull/screenfull.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/core/gson/seri/SecondDateAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/core/util/ExcelUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/SensorEvent.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/VirtualSensorData.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/aggregation/VsDeviceHandlerWaterAggregation.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/aggregation/VsDeviceStatusAggregation.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/aggregation/VsDeviceTypeAggregation.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/aggregation/VsFieldMinMaxAggregation.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/mq/DataMessageHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/mq/ReportMessageHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/SensorEventDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/impl/SensorEventDAOImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/CencusController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/CencusService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/SensorEventService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/CencusServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/SensorEventServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_mng_device_modify.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/css/app.201610151455.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/test_/java/test/infinite/dao/MorphiaAggregation.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/test_/java/test/infinite/dao/Users.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/test_/java/test/infinite/dao/UsersGroup.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/release/JavaTask/JavaTask.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/release/JavaTask/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/release/JavaTask/src/main/java/com/ls/jsp/AddJspPrefix.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/release/ant/renam_html_to_jsp.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_thetransactioncompany_cors_filter_1_7.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_thetransactioncompany_java_property_utils_1_9.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_activemq_activemq_client_5_13_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_activemq_activemq_openwire_legacy_5_13_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_geronimo_specs_geronimo_j2ee_management_1_1_spec_1_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_geronimo_specs_geronimo_jms_1_1_spec_1_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_continuation_9_1_0_v20131115.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_http_9_1_0_v20131115.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_io_9_1_0_v20131115.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_servlets_9_1_0_v20131115.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_util_9_1_0_v20131115.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_fusesource_hawtbuf_hawtbuf_1_11.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_12.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/app/calendar/calendar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/app/contact/contact.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/app/contact/contacts.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/app/mail/mail-service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/app/mail/mail.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/app/mail/mails.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/app/map/load-google-maps.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/app/map/map.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/app/map/ui-map.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/app/music/ctrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/app/music/theme.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/app/music/videogular.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/app/note/note.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/app/note/notes.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/app/todo/todo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/app/weather/angular-skycons.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/app/weather/ctrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/app/weather/skycons.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/chart.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/editor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/file-upload.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/form.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/grid.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/largeLoad.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/routing.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/scroll.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/select.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/signin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/signup.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/slider.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/system.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/tab.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/table.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/toaster.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/tree.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/uigrid.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/upload.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/vectormap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/xeditable.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/directives/masonry.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/js/moview.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_dashboard.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_device_tab_flow.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/apps_contact.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/apps_note.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/apps_todo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/apps_weather.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/blank.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/blocks/aside.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/blocks/aside.music.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/blocks/aside.right.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/blocks/header.music.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/blocks/header_bak.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/blocks/nav.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/blocks/page_footer.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/blocks/settings.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/docs.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/form_editor.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/form_elements.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/form_fileupload.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/form_imagecrop.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/form_select.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/form_slider.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/form_validation.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/form_wizard.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/form_xeditable.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/layout.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/layout_app.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/layout_footer_fullwidth.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/layout_footer_mobile.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/layout_fullwidth.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/layout_mobile.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/mail.detail.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/mail.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/mail.list.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/mail.new.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/modal.form.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/modal.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/music.detail.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/music.genres.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/music.home.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/music.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/music.mtv.detail.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/music.mtv.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/music.player.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/music.playlist.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/page_404.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/page_forgotpwd.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/page_invoice.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/page_lockme.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/page_post.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/page_price.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/page_profile.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/page_search.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/page_signin.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/page_signup.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/table_datatable.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/table_editable.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/table_footable.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/table_grid.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/table_smart.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/table_static.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/table_uigrid.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/tpl_ui_tree_table.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/ui_bootstrap.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/ui_buttons.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/ui_chart.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/ui_googlemap.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/ui_grid.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/ui_icons.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/ui_jvectormap.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/ui_portlet.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/ui_scroll.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/ui_sortable.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/ui_timeline.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/ui_toaster.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/ui_tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/ui_widgets.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/window/win_add_employee.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/login.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/login.jsp_bak" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/apps_contact.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/apps_note.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/apps_todo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/apps_weather.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/blank.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/blocks/aside.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/blocks/aside.music.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/blocks/aside.right.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/blocks/header.music.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/blocks/header_bak.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/blocks/nav.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/blocks/page_footer.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/blocks/settings.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/docs.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/form_editor.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/form_elements.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/form_fileupload.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/form_imagecrop.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/form_select.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/form_slider.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/form_validation.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/form_wizard.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/form_xeditable.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/layout.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/layout_app.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/layout_footer_fullwidth.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/layout_footer_mobile.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/layout_fullwidth.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/layout_mobile.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/mail.detail.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/mail.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/mail.list.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/mail.new.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/modal.form.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/modal.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/music.detail.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/music.genres.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/music.home.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/music.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/music.mtv.detail.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/music.mtv.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/music.player.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/music.playlist.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/page_404.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/page_forgotpwd.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/page_invoice.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/page_lockme.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/page_post.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/page_price.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/page_profile.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/page_search.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/page_signin.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/page_signup.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/table_datatable.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/table_editable.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/table_footable.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/table_grid.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/table_smart.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/table_static.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/table_uigrid.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/tpl_ui_tree_table.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/ui_bootstrap.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/ui_buttons.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/ui_chart.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/ui_googlemap.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/ui_grid.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/ui_icons.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/ui_jvectormap.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/ui_portlet.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/ui_scroll.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/ui_sortable.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/ui_timeline.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/ui_toaster.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/ui_tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/ui_widgets.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/window/win_add_employee.html" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_dashboard.html" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_device.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_device_tab_flow.html" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_device_tab_water.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/css/app.201610121735.css" afterPath="$PROJECT_DIR$/module/cdn/src/main/webapp/css/app.201610141019.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/js/app.201610121735.js" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/js/app.201610151455.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/framework_app_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/framework_app_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/css/app.css" afterPath="$PROJECT_DIR$/module/app-web/src/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/css/app.device.detail.css" afterPath="$PROJECT_DIR$/module/app-web/src/css/app.device.detail.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/css/less/app.device.detail.less" afterPath="$PROJECT_DIR$/module/app-web/src/css/less/app.device.detail.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/css/less/app.less" afterPath="$PROJECT_DIR$/module/app-web/src/css/less/app.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/index.html" afterPath="$PROJECT_DIR$/module/app-web/src/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/config.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/config.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/config.router.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/config.router.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/cencus-tab-device-type.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/cencus-tab-device-type.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/cencus-tab-flow.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/cencus-tab-flow.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/cencus-tab-qos.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/cencus-tab-qos.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/cencus-tab-routing.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/cencus-tab-routing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/employee-add.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/employee-add.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/employee.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/employee.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/dashbord.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/dashbord.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-control.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-control.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-el.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-el.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-flow.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-flow.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-info.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-info.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-movie.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-movie.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_cencus_device_type.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_cencus_device_type.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_cencus_flow.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_cencus_flow.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_cencus_qos.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_cencus_qos.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_cencus_routing.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_cencus_routing.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_cencus_tab.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_cencus_tab.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_employee.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_employee.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_employee_add.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_employee_add.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_device_tab.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_device_tab.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_device_tab_control.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_device_tab_control.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_device_tab_el.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_device_tab_el.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_device_tab_information.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_device_tab_information.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_employee_duty.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_employee_duty.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_mng_device.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_mng_device.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_role_add.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_role_add.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/EmployeeDuty.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/EmployeeDuty.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/map_modal.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/map_modal.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/framework-app.iml" afterPath="$PROJECT_DIR$/module/framework-app/framework-app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/pom.xml" afterPath="$PROJECT_DIR$/module/framework-app/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/core/jms/spring/mqtt/JmsRouterListener.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/core/jms/spring/mqtt/JmsRouterListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/core/web/BasicRestController.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/core/web/BasicRestController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Account.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Account.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Application.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Application.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Department.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Department.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/DepartmentEntity.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/DepartmentEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Employee.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Employee.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/EntityConst.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/EntityConst.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Permission.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Permission.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Role.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Role.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/VirtualSensor.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/VirtualSensor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/impl/DepartmentDAOImpl.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/impl/DepartmentDAOImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/init/InitDatabase.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/init/InitDatabase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/init/TempInitVirtualSensorMQTT.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/init/TempInitVirtualSensorMQTT.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/mq/MqttMessageHandler.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/mq/MqttMessageHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/VirtualSensorDataDAO.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/VirtualSensorDataDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/impl/VirtualSensorDAOImpl.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/impl/VirtualSensorDAOImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/impl/VirtualSensorDataDAOImpl.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/impl/VirtualSensorDataDAOImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/EmployeeController.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/EmployeeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/VirtualSensorController.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/VirtualSensorController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/RouterController.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/RouterController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/TestController.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/TestController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/entity/SensorResponse.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/entity/SensorResponse.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/VirtualSensorDataService.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/VirtualSensorDataService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/VirtualSensorService.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/VirtualSensorService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/EmployeeServiceImpl.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/EmployeeServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/VirtualSensorDataServiceImpl.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/VirtualSensorDataServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/VirtualSensorServiceImpl.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/VirtualSensorServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/websocket/SystemWebSocketHandler.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/websocket/SystemWebSocketHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/resources/logback.xml" afterPath="$PROJECT_DIR$/module/framework-app/src/main/resources/logback.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/resources/prop/mongo.properties" afterPath="$PROJECT_DIR$/module/framework-app/src/main/resources/prop/mongo.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/resources/spring/application-core-component.xml" afterPath="$PROJECT_DIR$/module/framework-app/src/main/resources/spring/application-core-component.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/resources/spring/application-dao.xml" afterPath="$PROJECT_DIR$/module/framework-app/src/main/resources/spring/application-dao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/resources/spring/dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/module/framework-app/src/main/resources/spring/dispatcher-servlet.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/resources/xsensor.json" afterPath="$PROJECT_DIR$/module/framework-app/src/main/resources/xsensor.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/index.jsp" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/login.jsp" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/login.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_cencus_device_type.html" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_cencus_device_type.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_cencus_flow.html" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_cencus_flow.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_cencus_qos.html" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_cencus_qos.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_cencus_routing.html" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_cencus_routing.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_cencus_tab.html" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_cencus_tab.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_device_tab.html" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_device_tab.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_device_tab_control.html" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_device_tab_control.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_device_tab_el.html" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_device_tab_el.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_device_tab_information.html" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_device_tab_information.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_employee.html" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_employee.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_employee_add.html" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_employee_add.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_employee_duty.html" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_employee_duty.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_mng_device.html" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_mng_device.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_role_add.html" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_role_add.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/map_modal.html" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/map_modal.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="framework.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,6 +427,8 @@
     <ignored path="$PROJECT_DIR$/module/core-framework/target/" />
     <ignored path="$PROJECT_DIR$/module/bson.filter/target/" />
     <ignored path="$PROJECT_DIR$/module/framework-app/target/" />
+    <ignored path="$PROJECT_DIR$/module/cdn/target/" />
+    <ignored path="$PROJECT_DIR$/release/JavaTask/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,52 +459,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="VirtualSensorController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/VirtualSensorController.java">
+      <file leaf-file-name="RouterController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/RouterController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EmployeeController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/EmployeeController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="97" column="13" selection-start-line="97" selection-start-column="13" selection-end-line="97" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="xsensor.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/resources/xsensor.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="177">
-              <caret line="79" column="48" selection-start-line="79" selection-start-column="48" selection-end-line="79" selection-end-column="48" />
-              <folding>
-                <element signature="docComment;class#VirtualSensorController#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VirtualSensorServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/VirtualSensorServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="21" column="74" selection-start-line="21" selection-start-column="74" selection-end-line="21" selection-end-column="74" />
-              <folding>
-                <element signature="e#1105#1106#0" expanded="true" />
-                <element signature="e#1144#1145#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VirtualSensor.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/VirtualSensor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
-              <folding>
-                <element signature="method#addComponents#0;class#VirtualSensor#0" expanded="false" />
-                <element signature="method#addComponents#1;class#VirtualSensor#0" expanded="false" />
-                <element signature="e#5355#5356#0" expanded="true" />
-                <element signature="e#5392#5393#0" expanded="true" />
-                <element signature="e#5452#5453#0" expanded="true" />
-                <element signature="e#5504#5505#0" expanded="true" />
-                <element signature="e#5543#5544#0" expanded="true" />
-                <element signature="e#5578#5579#0" expanded="true" />
-                <element signature="e#5634#5635#0" expanded="true" />
-                <element signature="e#5682#5683#0" expanded="true" />
-                <element signature="e#5723#5724#0" expanded="true" />
-                <element signature="e#5756#5757#0" expanded="true" />
-                <element signature="e#5812#5813#0" expanded="true" />
-                <element signature="e#5856#5857#0" expanded="true" />
-              </folding>
+              <caret line="759" column="6" selection-start-line="759" selection-start-column="6" selection-end-line="759" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -152,57 +510,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/core/util/TimeUtils.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/core/propertyeditors/NumberEditor.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/core/serivce/IPagerService.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/VirtualSensorDataService.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/VirtualSensorDataController.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/VirtualSensorDataServiceImpl.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/core/serivce/AbstractPagerService.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Department.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/entity/DepartmentModel.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/DepartmentService.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/DepartmentDAO.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/DepartmentServiceImpl.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/DepartmentController.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/resources/spring/dispatcher-servlet.xml" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Permission.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/resources/permission.txt" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/resources/spring/application-dao.xml" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/PermissionService.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/PermissionController.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/resources/spring/application-properties.xml" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/EntityConst.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/PermissionServiceImpl.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/resources/prop/mongo.properties" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/init/InitDatabase.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/RoleDAO.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/impl/RoleDAOImpl.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/test_/java/test/infinite/TubanMifReader.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/entity/RoleModel.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/PermissionDAO.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/impl/PermissionDAOImpl.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Role.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/RoleService.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/RoleServiceImpl.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/RoleController.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Employee.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/resources/prop/xsensor.json" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/SensorEventServiceImpl.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/impl/SensorEventDAOImpl.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/aggregation/VsDeviceStatusAggregation.java" />
         <option value="$PROJECT_DIR$/module/framework-app/src/main/resources/xsensor.json" />
+        <option value="$PROJECT_DIR$/module/framework-app/pom.xml" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/core/web/BasicRestController.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/core/util/ExcelUtil.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/EntityConst.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/aggregation/VsDeviceFlowAggregation.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/VirtualSensorServiceImpl.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/VirtualSensorService.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/core/initializing/LineInitializingBean.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/resources/spring/application-core-component.xml" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/impl/VirtualSensorDAOImpl.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/CencusService.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/aggregation/VsFieldMinMaxAggregation.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/CencusServiceImpl.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/VirtualSensorController.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/RouterController.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/CencusController.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_cencus_qos.html" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_cencus_flow.html" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_cencus_routing.html" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/core/jms/spring/mqtt/JmsRouterListener.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/mq/ReportMessageHandler.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/resources/logback.xml" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/websocket/SystemWebSocketHandler.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/init/TempInitVirtualSensorMQTT.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/VirtualSensorDataDAO.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/impl/VirtualSensorDataDAOImpl.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/resources/spring/application-dao.xml" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/entity/SensorResponse.java" />
         <option value="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/login.jsp" />
         <option value="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/index.jsp" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/resources/xdepartment.json" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/resources/logback.xml" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/EmployeeController.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/EmployeeService.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/EmployeeServiceImpl.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/impl/DepartmentDAOImpl.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/EmployeeDuty.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/VirtualSensorService.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/VirtualSensorServiceImpl.java" />
-        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/VirtualSensorController.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/VirtualSensorDataServiceImpl.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Account.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Application.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Department.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/DepartmentEntity.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Employee.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Permission.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Role.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/SensorEvent.java" />
         <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/VirtualSensor.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/mq/MqttMessageHandler.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/VirtualSensorData.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/core/gson/seri/SecondDateAdapter.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/resources/prop/jms.properties" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/EmployeeController.java" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/resources/prop/mongo.properties" />
+        <option value="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/init/InitDatabase.java" />
       </list>
     </option>
   </component>
@@ -234,7 +592,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="26" />
     <option name="width" value="1366" />
-    <option name="height" value="715" />
+    <option name="height" value="713" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -261,6 +619,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -279,17 +639,231 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="prop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eoa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eoa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="init" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../shop/jeeshop" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../web_android/iosched" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -309,22 +883,22 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.infinite.eoa.persistent.impl" />
+      <recent name="com.infinite.eoa.entity" />
+      <recent name="com.infinite.eoa.entity.aggregation" />
+      <recent name="com.infinite.eoa.service.impl" />
+      <recent name="com.infinite.eoa.service" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.infinite.eoa.router.entity" />
-      <recent name="com.infinite.eoa.service.impl" />
-      <recent name="com.infinite.eoa.service" />
-      <recent name="com.infinite.eoa.router.controller" />
-      <recent name="com.infinite.eoa.persistent.impl" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages" />
-      <recent name="$PROJECT_DIR$/module/framework-app/src/main/webapp" />
       <recent name="$PROJECT_DIR$/module/framework-app/src/main/webapp/js" />
       <recent name="$PROJECT_DIR$/module/framework-app/src/main/webapp/css" />
-      <recent name="$PROJECT_DIR$/module/framework-app/target/classes" />
+      <recent name="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl" />
+      <recent name="$PROJECT_DIR$/module/cdn/src/main/webapp" />
     </key>
   </component>
   <component name="RunManager" selected="Maven.framework-app jetty:run">
@@ -336,6 +910,86 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="test.infinite.TubanMifReader" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="framework-app" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="AddJspPrefix" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.ls.jsp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.ls.jsp.AddJspPrefix" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="JavaTask" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="CencusController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.infinite.eoa.router.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.infinite.eoa.router.controller.CencusController" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="framework-app" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="TempInitVirtualSensorMQTT" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.infinite.eoa.init.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.infinite.eoa.init.TempInitVirtualSensorMQTT" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="framework-app" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="VirtualSensorDataServiceImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.infinite.eoa.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.infinite.eoa.service.impl.VirtualSensorDataServiceImpl" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -836,6 +1490,27 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="WebSphereRunConfigurationType" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="PORT" value="9080" />
+      <deployment />
+      <server-settings>
+        <option name="PROFILE_PATH" value="" />
+        <option name="SOAP_PORT" value="8880" />
+        <option name="CELL_NAME" value="" />
+        <option name="NODE_NAME" value="" />
+        <option name="SERVER_NAME" value="" />
+        <option name="SECURED" value="false" />
+        <option name="CLIENT_TRUST_FILE_PATH" value="" />
+        <option name="CLIENT_TRUST_PASSWORD" value="WebAS" />
+        <option name="CLIENT_KEY_FILE_PATH" value="" />
+        <option name="CLIENT_KEY_PASSWORD" value="WebAS" />
+        <option name="USERNAME" value="" />
+        <option name="PASSWORD" value="" />
+      </server-settings>
+      <predefined_log_file id="WebSphere" enabled="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
     <configuration default="true" type="executeSpecs" factoryName="Gauge Execution">
       <setting name="environment" value="" />
       <setting name="specsToExecute" value="" />
@@ -886,7 +1561,7 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="Jetty Local" type="JettyConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="Jetty 9.3.10.v20160621" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8">
+    <configuration default="false" name="Jetty Local" type="JettyConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="Jetty 9.3.12.v20160915" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8">
       <option name="OPEN_IN_BROWSER_URL" value="http://127.0.0.1:9998/app/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -902,6 +1577,9 @@
           <option name="configFiles">
             <list>
               <JettyConfigFile>
+                <option name="path" value="modules/gcloud-session-idmgr.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
                 <option name="path" value="modules/infinispan.mod" />
               </JettyConfigFile>
               <JettyConfigFile>
@@ -955,6 +1633,9 @@
               </JettyConfigFile>
               <JettyConfigFile>
                 <option name="path" value="modules/stats.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/gcloud-memcached-sessions.mod" />
               </JettyConfigFile>
               <JettyConfigFile>
                 <option name="path" value="modules/security.mod" />
@@ -1080,19 +1761,16 @@
                 <option name="path" value="modules/plus.mod" />
               </JettyConfigFile>
               <JettyConfigFile>
-                <option name="path" value="modules/protonego.mod" />
-              </JettyConfigFile>
-              <JettyConfigFile>
-                <option name="path" value="modules/spdy.mod" />
-              </JettyConfigFile>
-              <JettyConfigFile>
-                <option name="path" value="modules/xinetd.mod" />
+                <option name="path" value="modules/threadlimit.mod" />
               </JettyConfigFile>
             </list>
           </option>
           <option name="myConfigFiles">
             <list>
               <JettyConfigFile>
+                <option name="path" value="modules/gcloud-session-idmgr.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
                 <option name="path" value="modules/infinispan.mod" />
               </JettyConfigFile>
               <JettyConfigFile>
@@ -1146,6 +1824,9 @@
               </JettyConfigFile>
               <JettyConfigFile>
                 <option name="path" value="modules/stats.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/gcloud-memcached-sessions.mod" />
               </JettyConfigFile>
               <JettyConfigFile>
                 <option name="path" value="modules/security.mod" />
@@ -1271,13 +1952,7 @@
                 <option name="path" value="modules/plus.mod" />
               </JettyConfigFile>
               <JettyConfigFile>
-                <option name="path" value="modules/protonego.mod" />
-              </JettyConfigFile>
-              <JettyConfigFile>
-                <option name="path" value="modules/spdy.mod" />
-              </JettyConfigFile>
-              <JettyConfigFile>
-                <option name="path" value="modules/xinetd.mod" />
+                <option name="path" value="modules/threadlimit.mod" />
               </JettyConfigFile>
             </list>
           </option>
@@ -1396,16 +2071,24 @@
       </MavenSettings>
       <method />
     </configuration>
-    <list size="5">
+    <list size="9">
       <item index="0" class="java.lang.String" itemvalue="Jetty Server.Jetty Local" />
       <item index="1" class="java.lang.String" itemvalue="Maven.Core jetty:run" />
       <item index="2" class="java.lang.String" itemvalue="Maven.framework-app jetty:run" />
       <item index="3" class="java.lang.String" itemvalue="Maven.app jetty:run" />
       <item index="4" class="java.lang.String" itemvalue="Application.TubanMifReader" />
+      <item index="5" class="java.lang.String" itemvalue="Application.AddJspPrefix" />
+      <item index="6" class="java.lang.String" itemvalue="Application.CencusController" />
+      <item index="7" class="java.lang.String" itemvalue="Application.TempInitVirtualSensorMQTT" />
+      <item index="8" class="java.lang.String" itemvalue="Application.VirtualSensorDataServiceImpl" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Application.TubanMifReader" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Application.VirtualSensorDataServiceImpl" />
+        <item index="1" class="java.lang.String" itemvalue="Application.TempInitVirtualSensorMQTT" />
+        <item index="2" class="java.lang.String" itemvalue="Application.CencusController" />
+        <item index="3" class="java.lang.String" itemvalue="Application.AddJspPrefix" />
+        <item index="4" class="java.lang.String" itemvalue="Application.TubanMifReader" />
       </list>
     </recent_temporary>
   </component>
@@ -1500,7 +2183,19 @@
       <workItem from="1476062419029" duration="8337000" />
       <workItem from="1476148078454" duration="11111000" />
       <workItem from="1476232694258" duration="15384000" />
-      <workItem from="1476321194828" duration="8283000" />
+      <workItem from="1476321194828" duration="11704000" />
+      <workItem from="1476406629349" duration="26035000" />
+      <workItem from="1476437899791" duration="19000" />
+      <workItem from="1476441664718" duration="24526000" />
+      <workItem from="1476507991318" duration="7332000" />
+      <workItem from="1476667136688" duration="2938000" />
+      <workItem from="1476674241604" duration="3257000" />
+      <workItem from="1476681053311" duration="4577000" />
+      <workItem from="1476689765726" duration="719000" />
+      <workItem from="1476693030268" duration="2759000" />
+      <workItem from="1476751787058" duration="4600000" />
+      <workItem from="1476759349426" duration="3965000" />
+      <workItem from="1476783493660" duration="459000" />
     </task>
     <task id="LOCAL-00001" summary="app-web html small edit.">
       <created>1471254507746</created>
@@ -1614,7 +2309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1476266306817</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="201610131712">
+      <created>1476349978097</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1476349978097</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1650,77 +2352,53 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="463650000" />
+    <option name="totallyTimeSpent" value="548257000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="26" width="1366" height="715" extended-state="0" />
+    <frame x="0" y="26" width="1366" height="713" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993197" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48135594" sideWeight="0.5028612" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5118243" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47288135" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.49322033" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4915254" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5102041" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32927758" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4727891" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4931973" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4914966" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28419453" sideWeight="0.48205128" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30775076" sideWeight="0.51794875" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30167174" sideWeight="0.48205128" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30775076" sideWeight="0.51794875" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52881354" sideWeight="0.49713877" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28951368" sideWeight="0.521875" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5272109" sideWeight="0.49713877" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28951368" sideWeight="0.521875" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="CodotaView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3779661" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37755102" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39491525" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48392555" sideWeight="0.5028612" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881355" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="CodotaView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48392555" sideWeight="0.49713877" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3248731" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40947548" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46023688" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282572" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28723404" sideWeight="0.4895288" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40101522" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2918455" sideWeight="0.5104712" order="6" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -1766,7 +2444,8 @@
     <MESSAGE value="201610081750" />
     <MESSAGE value="201610121738" />
     <MESSAGE value="201610121758" />
-    <option name="LAST_COMMIT_MESSAGE" value="201610121758" />
+    <MESSAGE value="201610131712" />
+    <option name="LAST_COMMIT_MESSAGE" value="201610131712" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1789,454 +2468,394 @@
           <properties />
           <option name="timeStamp" value="57" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/websocket/SystemWebSocketHandler.java</url>
+          <line>37</line>
+          <properties />
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="66" />
+      <option name="time" value="70" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
+    <buildFile url="file://$PROJECT_DIR$/release/ant/renam_html_to_jsp.xml">
+      <targetFilters>
+        <filter targetName="templateHtml2Jsp" isVisible="false" />
+        <filter targetName="templateJspPrefix" isVisible="false" />
+      </targetFilters>
+      <expanded value="true" />
+    </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$JAVA_HOME$/src.zip!/java/io/DataInputStream.java">
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/VirtualSensorDataDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1641">
-          <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$JAVA_HOME$/src.zip!/java/io/BufferedReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-189">
-          <caret line="92" column="46" selection-start-line="92" selection-start-column="46" selection-end-line="92" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/test_/java/test/infinite/TubanMifReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="987">
-          <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="37" column="43" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/DepartmentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
-          <caret line="52" column="14" selection-start-line="52" selection-start-column="14" selection-end-line="52" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/EntityConst.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-          <folding>
-            <element signature="e#405#406#0" expanded="false" />
-            <element signature="e#441#442#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/morphia/morphia/1.2.1/morphia-1.2.1-sources.jar!/org/mongodb/morphia/query/FieldEnd.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6345">
-          <caret line="31" column="68" selection-start-line="31" selection-start-column="68" selection-end-line="31" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/morphia/morphia/1.2.1/morphia-1.2.1-sources.jar!/org/mongodb/morphia/query/Criteria.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/DepartmentServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="125" column="13" selection-start-line="100" selection-start-column="12" selection-end-line="125" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/morphia/morphia/1.2.1/morphia-1.2.1-sources.jar!/org/mongodb/morphia/query/Query.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="265" column="7" selection-start-line="265" selection-start-column="7" selection-end-line="265" selection-end-column="7" />
+        <state relative-caret-position="84">
+          <caret line="6" column="89" selection-start-line="6" selection-start-column="89" selection-end-line="6" selection-end-column="89" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/morphia/morphia/1.2.1/morphia-1.2.1-sources.jar!/org/mongodb/morphia/dao/DAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="129" column="28" selection-start-line="129" selection-start-column="28" selection-end-line="129" selection-end-column="28" />
-          <folding />
+        <state relative-caret-position="1278">
+          <caret line="238" column="43" selection-start-line="238" selection-start-column="43" selection-end-line="238" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/core/persistent/IMorphiaDAO.java">
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/entity/SensorResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/RoleDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/impl/RoleDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/entity/ResponseCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/entity/RoleModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/PermissionDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/impl/PermissionDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
-          <folding>
-            <element signature="e#795#805#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Permission.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/RoleServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="52" column="44" selection-start-line="52" selection-start-column="44" selection-end-line="52" selection-end-column="44" />
-          <folding>
-            <element signature="e#3279#3287#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Role.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="36" column="29" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#978#979#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/RoleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/DepartmentEntityServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/DepartmentEntityDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/DepartmentEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/pom.xml">
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/RoleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
-          <folding>
-            <element signature="docComment;class#RoleController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/resources/xsensor.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="1544" column="4" selection-start-line="1544" selection-start-column="4" selection-end-line="1544" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/resources/prop/xsensor.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="1611" column="6" selection-start-line="1611" selection-start-column="6" selection-end-line="1611" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/impl/VirtualSensorDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#472#473#0" expanded="false" />
-            <element signature="e#519#520#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="83" selection-start-line="16" selection-start-column="83" selection-end-line="16" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="31" column="53" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/resources/xdepartment.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="80" column="15" selection-start-line="80" selection-start-column="15" selection-end-line="80" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/webapp/lib/abnt/abntree.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_device_tab_flow.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_calendar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/resources/logback.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Department.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-21">
-          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/EmployeeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="19" column="24" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/EmployeeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
-          <caret line="62" column="82" selection-start-line="62" selection-start-column="82" selection-end-line="62" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/persistent/impl/DepartmentDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
-          <folding>
-            <element signature="e#485#486#0" expanded="false" />
-            <element signature="e#539#540#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/EmployeeServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="22" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/EmployeeDutyVerification.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Employee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="59" column="27" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/EmployeeDutyLinePatrol.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/EmployeeDuty.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="10" column="10" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/core/serivce/AbstractPagerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="280">
+          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/VirtualSensorService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
-          <caret line="12" column="76" selection-start-line="12" selection-start-column="76" selection-end-line="12" selection-end-column="76" />
-          <folding />
+          <caret line="13" column="37" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/VirtualSensorController.java">
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="79" column="48" selection-start-line="79" selection-start-column="48" selection-end-line="79" selection-end-column="48" />
-          <folding>
-            <element signature="docComment;class#VirtualSensorController#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="21">
+          <caret line="16" column="60" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/VirtualSensorServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="17" column="60" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/resources/logback.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="62" selection-start-line="16" selection-start-column="62" selection-end-line="16" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/morphia/morphia/1.2.1/morphia-1.2.1-sources.jar!/org/mongodb/morphia/annotations/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-175">
+          <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="19" column="54" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Action.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/CallbackType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Component.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/DataFilterDefinetion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Department.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/DepartmentEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Device.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Employee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/EmployeeDuty.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/EmployeeDutyVerification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/EmployeeDutyLinePatrol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/EntityConst.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/FieldDefinition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Permission.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/PersistentObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/PersistentRole.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/PersistentRoleOperation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="21" column="74" selection-start-line="21" selection-start-column="74" selection-end-line="21" selection-end-column="74" />
-          <folding>
-            <element signature="e#1105#1106#0" expanded="true" />
-            <element signature="e#1144#1145#0" expanded="true" />
-          </folding>
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/RoutingInspectionCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/RoutingInspectionDevice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/RoutingInspectionMobile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/SensorEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/VirtualSensor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+        <state relative-caret-position="165">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/VirtualSensorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="59" column="84" selection-start-line="59" selection-start-column="64" selection-end-line="59" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/VirtualSensorDataController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/VirtualSensorServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-231">
+          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/init/TempInitVirtualSensorMQTT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.6.2/gson-2.6.2-sources.jar!/com/google/gson/internal/bind/DateTypeAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/mq/MqttMessageHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="40" column="84" selection-start-line="40" selection-start-column="80" selection-end-line="40" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/VirtualSensorDataServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="65" column="23" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.6.2/gson-2.6.2-sources.jar!/com/google/gson/TypeAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="115" column="76" selection-start-line="115" selection-start-column="76" selection-end-line="115" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.6.2/gson-2.6.2-sources.jar!/com/google/gson/annotations/JsonAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="79" column="10" selection-start-line="79" selection-start-column="10" selection-end-line="79" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/VirtualSensorData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/core/gson/seri/SecondDateAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/resources/prop/jms.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/RouterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/resources/prop/mongo.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/init/InitDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="93" column="50" selection-start-line="93" selection-start-column="50" selection-end-line="93" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/EmployeeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="97" column="13" selection-start-line="97" selection-start-column="13" selection-end-line="97" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/resources/xsensor_r.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="526" column="9" selection-start-line="3" selection-start-column="8" selection-end-line="526" selection-end-column="9" />
           <folding>
-            <element signature="method#addComponents#0;class#VirtualSensor#0" expanded="false" />
-            <element signature="method#addComponents#1;class#VirtualSensor#0" expanded="false" />
-            <element signature="e#5355#5356#0" expanded="true" />
-            <element signature="e#5392#5393#0" expanded="true" />
-            <element signature="e#5452#5453#0" expanded="true" />
-            <element signature="e#5504#5505#0" expanded="true" />
-            <element signature="e#5543#5544#0" expanded="true" />
-            <element signature="e#5578#5579#0" expanded="true" />
-            <element signature="e#5634#5635#0" expanded="true" />
-            <element signature="e#5682#5683#0" expanded="true" />
-            <element signature="e#5723#5724#0" expanded="true" />
-            <element signature="e#5756#5757#0" expanded="true" />
-            <element signature="e#5812#5813#0" expanded="true" />
-            <element signature="e#5856#5857#0" expanded="true" />
+            <element signature="e#22#9661#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/resources/xsensor.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="759" column="6" selection-start-line="759" selection-start-column="6" selection-end-line="759" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2246,7 +2865,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>new-interface:war</last-edited>
+          <last-edited>framework-app:war</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -2294,7 +2913,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Spring|framework-app</last-edited>
+          <last-edited>cdn</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

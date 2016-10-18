@@ -17,7 +17,7 @@ public class JmsRouterListener extends JmsMessageHandlerAdapter {
 
     private static HashMap<String, MessageHandler> handlerMap = new HashMap<String, MessageHandler>(0);
 
-    private boolean enableDebug = true;
+    private boolean enableDebug = false;
 
     public static HashMap<String, MessageHandler> getHandlerMap() {
         return handlerMap;

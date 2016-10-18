@@ -16,7 +16,9 @@
     <!-- ******************************************************************** -->
     <mvc:annotation-driven>
         <mvc:message-converters>
-            <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter" >
+                <property name="supportedMediaTypes" value="text/plain;charset=UTF-8" />
+            </bean>
             <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
                 <property name="objectMapper" ref="objectMapper"/>
             </bean>
@@ -56,7 +58,7 @@
     <bean id="beanNameViewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver"/>
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="viewClass" value="org.springframework.web.servlet.view.InternalResourceView"/>
         <property name="prefix" value="/WEB-INF/pages/"/>
     </bean>
 

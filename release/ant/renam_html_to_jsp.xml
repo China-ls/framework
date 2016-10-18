@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="renameHtml" basedir=".">
+
+    <!--<depend srcdir=""-->
+
+    <property name="goalProjectDir"
+              value="${basedir}/../../module/framework-app"/>
+
+    <property name="templateDir"
+              value="${goalProjectDir}/src/main/webapp/WEB-INF/pages/tpl"/>
+
+    <target name="templateHtml2Jsp">
+        <renameext srcDir="${templateDir}"
+                   includes="**"
+                   fromExtension=".html"
+                   toExtension=".jsp"
+                   replace="true"/>
+        <echo message="rename template dir from html to jsp finished."/>
+    </target>
+
+    <target name="templateJspPrefix">
+        <java classname="com.ls.jsp.AddJspPrefix">
+            <arg value="${goalProjectDir}"/>
+            <classpath>
+                <pathelement location="${basedir}/../JavaTask/target/release-1.0-SNAPSHOT.jar"/>
+                <pathelement path="${java.class.path}"/>
+            </classpath>
+        </java>
+    </target>
+
+</project>

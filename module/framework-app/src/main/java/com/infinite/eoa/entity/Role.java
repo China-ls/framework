@@ -10,7 +10,7 @@ import org.mongodb.morphia.annotations.Reference;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity(EntityConst.CollectionName.ROLE)
+@Entity(value = EntityConst.CollectionName.ROLE, noClassnameStored = true)
 public class Role extends AbstractEntity {
     @Id
     @Property

@@ -4990,3 +4990,8 @@ a.text-black:hover {
   border-color: #aeb2b3;
   color: #000;
 }
+.BMapLabel {
+  line-height: 16px;
+  max-width: none;
+  margin-bottom: 0;
+}

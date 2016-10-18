@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/release/JavaTask/JavaTask.iml" filepath="$PROJECT_DIR$/release/JavaTask/JavaTask.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module/cdn/cdn.iml" filepath="$PROJECT_DIR$/module/cdn/cdn.iml" />
       <module fileurl="file://$PROJECT_DIR$/framework.iml" filepath="$PROJECT_DIR$/framework.iml" />
       <module fileurl="file://$PROJECT_DIR$/module/framework-app/framework-app.iml" filepath="$PROJECT_DIR$/module/framework-app/framework-app.iml" />
     </modules>

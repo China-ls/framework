@@ -53,8 +53,13 @@
 
     <repositories>
         <repository>
+            <id>central</id>
+            <name>central</name>
+            <url>http://central.maven.org/maven2/</url>
+        </repository>
+        <repository>
             <id>Eclipse Paho Repo</id>
-            <url>https://repo.eclipse.org/content/repositories/paho-releases/</url>
+            <url>https://repo.4eclipse.org/content/repositories/paho-releases/</url>
         </repository>
         <repository>
             <id>spring-releases</id>
@@ -303,6 +308,12 @@
             <groupId>joda-time</groupId>
             <artifactId>joda-time</artifactId>
             <version>2.9.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.15</version>
         </dependency>
 
     </dependencies>

@@ -16,13 +16,15 @@
         <tbody>
         <tr class="success" ng-repeat="row in sensor.components"
             st-select-row="row" ng-if="row.isControl && row.type != 'status_sensor' ">
+            <!--<td>{{row}}</td>-->
             <td>{{row.comp_id}}</td>
             <td>{{row.name}}</td>
             <td>
-                <img src="img/i_comp_7.png" width="22" ng-if="row.type == 'camera_controller'">
-                <img src="img/i_comp_4.png" width="22" ng-if="(row.type == 'electricmeter_sensor' || row.type == 'flowmeter_sensor')">
-                <img src="img/i_comp_6.png" width="22" ng-if="(row.type == 'cardreader_sensor')">
-                <img src="img/i_comp_2.png" width="22" ng-if="(row.type == 'onboard_controller' || row.type == 'plc_controller')">
+                <i class="fa fa-power-off" ng-class="{'text-success': row.status === 'NORMAL', 'text-danger' :row.status != 'NORMAL'}"></i>
+                <!--<img ng-src="img/i_comp_7.png" width="22" ng-if="row.type == 'camera_controller'">-->
+                <!--<img ng-src="img/i_comp_4.png" width="22" ng-if="(row.type == 'electricmeter_sensor' || row.type == 'flowmeter_sensor')">-->
+                <!--<img ng-src="img/i_comp_6.png" width="22" ng-if="(row.type == 'cardreader_sensor')">-->
+                <!--<img ng-src="img/i_comp_2.png" width="22" ng-if="(row.type == 'onboard_controller' || row.type == 'plc_controller')">-->
                 <!--<i class="sprite"-->
                    <!--ng-class="{-->
                            <!--'sprite-u709' : (row.type == 'camera_controller'),-->

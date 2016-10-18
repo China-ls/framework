@@ -52,7 +52,7 @@ app.controller('SystemInformationCtrl', ['$scope', '$http', '$localStorage', '$m
         $http.get(APPCONST.CTX + APPCONST.SYSTEM_INFORMATION)
             .then(function (response) {
                 $scope.sysinfo = response.data;
-                if ($scope.sysinfo) {
+                if ($scope.sysinfo && $scope.sysinfo.jvm_metrics) {
                     $scope.sysinfo.jvm_metrics.os_swap_free = formatStorage($scope.sysinfo.jvm_metrics.os_swap_free);
                     $scope.sysinfo.jvm_metrics.heap_memory.alloc = formatStorage($scope.sysinfo.jvm_metrics.heap_memory.alloc);
                     $scope.sysinfo.jvm_metrics.heap_memory.max = formatStorage($scope.sysinfo.jvm_metrics.heap_memory.max);

@@ -166,6 +166,21 @@
                 </table>
             </div>
 
+            <div class="col-sm-4">
+                <table class="table table-bordered">
+                    <tr>
+                        <td class="bg-info-only table-lebel" style="min-width: 100px;">温度</td>
+                        <td class="text-center">
+                            <span class="table-value">
+                                {{elData.latest.temperature | number:2}}
+                                <span ng-if="null == elData.latest.temperature">0</span>
+                            </span>
+                            <span class="table-valuefix"> 摄氏度</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
         </div>
 
     </div>

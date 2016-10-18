@@ -2,9 +2,10 @@ package com.infinite.eoa.mq;
 
 import com.infinite.eoa.core.jms.spring.mqtt.JmsMessageHandlerAdapter;
 import com.infinite.eoa.core.util.JsonUtil;
+import com.infinite.eoa.entity.VirtualSensorData;
 import com.infinite.eoa.service.VirtualSensorDataService;
 import com.infinite.eoa.service.VirtualSensorService;
-import org.bson.Document;
+import com.infinite.eoa.websocket.WebSocketMessageHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.messaging.Message;
@@ -20,41 +21,35 @@ public class MqttMessageHandler extends JmsMessageHandlerAdapter {
 
     private VirtualSensorDataService virtualSensorDataService;
     private VirtualSensorService virtualSensorService;
-
+    private WebSocketMessageHandler webSocketMessageHandler;
     private String callbackUrl = "http://127.0.0.1:9998/app/callback/jms";
 
-    public MqttMessageHandler(VirtualSensorDataService virtualSensorDataService) {
+    public MqttMessageHandler(VirtualSensorDataService virtualSensorDataService, WebSocketMessageHandler webSocketMessageHandler) {
         this.virtualSensorDataService = virtualSensorDataService;
+        this.webSocketMessageHandler = webSocketMessageHandler;
     }
 
     @Override
     public void handleMessage(Message<?> message) throws MessagingException {
         Object payload = message.getPayload();
-//        if (log.isDebugEnabled()) {
-//            log.debug("handler payload: {}", payload);
-//        }
+        if (log.isDebugEnabled()) {
+            log.debug("handler payload: {}", payload);
+        }
         if (payload instanceof String) {
             String text = (String) payload;
-            List<Document> documentList = virtualSensorDataService.save(text);
-            //TODO 根据 VirtualSensor 里面配置的callback来回调
-//            VirtualSensor sensor = (null == documentList || documentList.size() <= 0)
-//                    ? null : virtualSensorService.findById(documentList.get(0).getString("sensor_id"));
-//            if (null != sensor) {
-            text = JsonUtil.toJson(documentList);
-//            try {
-                //TODO 修改成本APP内的广播通信
-//                HttpUtils.post(callbackUrl,
-//                        new BasicNameValuePair("message", text)
-//                );
+            try {
+                List<VirtualSensorData> documentList = virtualSensorDataService.save(text);
+                //TODO 根据 VirtualSensor 里面配置的callback来回调
+                text = JsonUtil.toJson(documentList);
                 if (log.isDebugEnabled()) {
-                    log.debug("success call back [url:{}, data:{}].", callbackUrl, text);
+                    log.debug("data [data:{}].", text);
                 }
-//            } catch (IOException e) {
-//                if (log.isErrorEnabled()) {
-//                    log.error("error call back [message:{}, data:{}]", e.getMessage(), text);
-//                }
-//            }
-//            }
+                webSocketMessageHandler.broadcaseMessage(text);
+            } catch (Exception e) {
+                if (log.isErrorEnabled()) {
+                    log.error("error [data:{}]", text, e);
+                }
+            }
         }
     }
 }

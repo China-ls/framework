@@ -1,4 +1,4 @@
-<div ng-controller="CencusDeviceTypeCtrl">
+<div class="wrapper" ng-controller="CencusDeviceTypeCtrl">
     <!--电量计-->
     <div class="padder-sm m-b-md">
         <div class="b-b m-sm padder-5-b">
@@ -8,16 +8,19 @@
             <div class="col-lg-6">
                 <div class="panel panel-default">
                     <div class="panel-heading font-bold">
-                        站点类型分部
+                        站点类型分布
                     </div>
                     <div class="panel-body text-center">
+                        <!-- 网络请求动画 -->
+                        <div cg-busy="{promise:promiseLoadDeviceType,message:'数据加载中...'}"></div>
+                        <!-- 网络请求动画 -->
                         <highchart style="min-width: 400px;" config="chartHandlerDeviceType"></highchart>
                     </div>
                     <div class="panel-footer">
                         <div class="text-xs text-center">
-                            <i class="fa fa-circle text-info"></i> A类站点 26 个
-                            <i class="fa fa-circle text-black m-l"></i> B类站点 32 个
-                            <i class="fa fa-circle m-l" style="color: rgb(144, 237, 125);"></i> C类站点 30 个
+                            <span ng-repeat="item in cencusDeviceType">
+                                <i class="fa fa-circle" ng-style="{'color': item.color}"></i> {{item.name}} {{item.count}} 个
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -25,53 +28,122 @@
             <div class="col-lg-6">
                 <div class="panel panel-default">
                     <div class="panel-heading font-bold">
-                        站点状态分部
+                        站点状态分布
                     </div>
                     <div class="panel-body text-center">
+                        <!-- 网络请求动画 -->
+                        <div cg-busy="{promise:promiseLoadDeviceStatus,message:'数据加载中...'}"></div>
+                        <!-- 网络请求动画 -->
                         <highchart style="min-width: 400px;" config="chartHandlerDeviceStatus"></highchart>
                     </div>
                     <div class="panel-footer">
                         <div class="text-xs text-center">
-                            <i class="fa fa-circle text-black"></i> 离线站点 2 个
-                            <i class="fa fa-circle m-l" style="color: rgb(124, 181, 236);"></i> 在线站点 2 个
+                            <span ng-repeat="item in cencusDeviceStatus">
+                                <i class="fa fa-circle" ng-style="{'color': item.color}"></i> {{item.name}} {{item.count}} 个
+                            </span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="divider divider-md bg-white"></div>
     <!--电量计-->
 
-    <div class="padder-sm m-b-md">
-        <div class="b-b m-sm padder-5-b">
-            <span class="padder-md b-b b-info b-5x">站点信息统计表</span>
+    <div class="b-b b-success line-dashed"></div>
+
+    <div class="divider divider-xl bg-white"></div>
+
+    <!-- table -->
+    <div class="padder-sm m-t">
+        <div class="panel panel-default">
+            <div class="panel-heading padder-v">
+
+                <form class="form-inline" role="form">
+                    <div class="form-group">
+                        <label for="deviceType">站点类型：</label>
+                        <select id="deviceType" class="form-control" ng-model="filter.station_type">
+                            <option value="">全部</option>
+                            <option value="A类站点">A类站点</option>
+                            <option value="B类站点">B类站点</option>
+                            <option value="C类站点">C类站点</option>
+                        </select>
+                    </div>
+                    <div class="form-group m-l-lg no-m-xs">
+                        <label for="deviceStatus">在线/离线：</label>
+                        <select id="deviceStatus" class="form-control" ng-model="filter.online">
+                            <option value="">全部</option>
+                            <option value="1">在线</option>
+                            <option value="2">离线</option>
+                        </select>
+                    </div>
+                    <div class="form-group m-l-lg no-m-xs">
+                        <label for="deviceDW">吨位：</label>
+                        <select id="deviceDW" class="form-control" ng-model="filter.ability">
+                            <option value="">全部</option>
+                            <option value="10吨">10吨</option>
+                            <option value="15吨">15吨</option>
+                            <option value="20吨">20吨</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-info btn-sm w-xsm m-l-lg no-m-xs"
+                            ng-click="filterDeviceType()">
+                        查询
+                    </button>
+                    <a class="btn btn-info btn-sm w-xsm m-l-lg pull-right"
+                       target="_blank"
+                       ng-href="/app/cencus/device/filter/export?station_type={{filter.station_type}}&online={{filter.online}}&ability={{filter.ability}}">
+                        输出报表
+                    </a>
+                </form>
+
+            </div>
+            <div class="panel-body">
+                <table st-table="rowCollectionBasic" class="table table-bordered table-striped tb-border">
+                    <thead>
+                    <tr>
+                        <th>站点名称</th>
+                        <th>所属机构</th>
+                        <th>站点类型</th>
+                        <th>日处水能力(吨)</th>
+                        <th>投产时间</th>
+                        <th>站点状态</th>
+                        <th>站点管理员</th>
+                        <th>联系电话</th>
+                        <th>经度</th>
+                        <th>纬度</th>
+                        <th>地址</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="success" ng-repeat="item in filterResults" st-select-row="row">
+                        <td>{{item.name}}</td>
+                        <td>{{item.departmentName}}</td>
+                        <td>{{item.station_type}}</td>
+                        <td>{{item.day_deal_water_ability}}</td>
+                        <td>{{item.setup_date}}</td>
+                        <td>
+                            <span ng-if="item.online === 1">
+                                <i class="fa fa-lightbulb-o text-success"></i>
+                                在线
+                            </span>
+                            <span ng-if="item.online === 2">
+                                <i class="fa fa-lightbulb-o"></i>
+                                离线
+                            </span>
+                            <span ng-if="item.online != 1 && item.online != 2 && item.online != 3">未知</span>
+                        </td>
+                        <td>{{item.admin}}</td>
+                        <td>{{item.contact}}</td>
+                        <td>{{item.longitude}}</td>
+                        <td>{{item.latitude}}</td>
+                        <td>{{item.address}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <table st-table="rowCollectionBasic" class="table table-bordered table-striped tb-border">
-            <thead>
-            <tr>
-                <th>站点名称</th>
-                <th>站点类型</th>
-                <th>日处水能力</th>
-                <th>投产时间</th>
-                <th>站点管理员</th>
-                <th>联系电话</th>
-                <th>所属乡镇</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr class="success" ng-repeat="row in device" st-select-row="row">
-                <td>{{row.name}}</td>
-                <td>{{row.type}}</td>
-                <td>{{row.dayHandler}}</td>
-                <td>{{row.content}}</td>
-                <td>{{row.time}}</td>
-                <td>{{row.leading}}</td>
-                <td>{{row.phone}}</td>
-                <td>{{row.twon}}</td>
-                <td>{{row.city}}</td>
-            </tr>
-            </tbody>
-        </table>
+
     </div>
+    <!-- table -->
+
 </div>

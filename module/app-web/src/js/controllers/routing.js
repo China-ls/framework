@@ -8,17 +8,11 @@ app.controller('RouteHeaderCtrl', ['$scope', '$http', '$localStorage',
         $scope.app.subHeader.subAsideTitle = '巡检员列表';
         $scope.app.subHeader.contentTitle = '巡检数据';
         $scope.app.subHeader.goBackHide = true;
-
-        console.warn('header route debug');
-
     }]
 );
 
 app.controller('AsideRouteCtrl', ['$scope', '$http', '$localStorage', '$state', 'APPCONST',
     function ($scope, $http, $localStorage, $state, APPCONST) {
-        console.warn('aside route debug');
-
-
         $scope.treeData = [];
         $scope.tree = {};
 
@@ -61,7 +55,7 @@ app.controller('AsideRouteCtrl', ['$scope', '$http', '$localStorage', '$state', 
                 $scope.tree.select_first_branch();
             } catch (e) {
             }
-            console.warn('get asid route');
+            // console.warn('get asid route');
         }, function (response) {
 
         });
@@ -92,9 +86,6 @@ app.controller('MapModalInstanceCtrl', ['$scope', '$modalInstance', 'device', fu
 
 app.controller('RouteCtrl', ['$scope', '$http', '$localStorage', 'APPCONST', '$modal', '$log', '$anchorScroll',
     function ($scope, $http, $localStorage, APPCONST, $modal, $log, $anchorScroll) {
-        console.warn('route debug');
-
-
         $scope.app.settings.asideHide = false;
         $scope.app.subHeader.goBackHide = true;
         $scope.routeStarRadio = 'd';

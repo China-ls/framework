@@ -36,7 +36,7 @@ public class SystemWebSocketHandler implements WebSocketHandler, WebSocketMessag
     @Override
     public void handleMessage(WebSocketSession session, WebSocketMessage<?> message) throws Exception {
         if (log.isDebugEnabled()) {
-            log.debug("ws handleMessage" + message.toString());
+            log.debug("ws handleMessage : {}", message.toString());
         }
         String text = ((TextMessage) message).getPayload();
         if (!StringUtils.equals(text, "heartbeat")) {
@@ -74,6 +74,7 @@ public class SystemWebSocketHandler implements WebSocketHandler, WebSocketMessag
 
     /**
      * 给所有在线用户发送消息
+     *
      * @param message
      */
     public void broadcastMessageToUsers(TextMessage message) {

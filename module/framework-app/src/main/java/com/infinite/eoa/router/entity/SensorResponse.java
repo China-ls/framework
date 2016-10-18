@@ -2,16 +2,16 @@ package com.infinite.eoa.router.entity;
 
 import com.infinite.eoa.core.entity.AbstractEntity;
 import com.infinite.eoa.entity.VirtualSensor;
-import org.bson.Document;
+import com.infinite.eoa.entity.VirtualSensorData;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * @author by hx on 16-7-6.
  */
 public class SensorResponse extends AbstractEntity {
     private VirtualSensor sensor;
-    private List<Document> data;
+    private ArrayList<VirtualSensorData> data;
 
     public VirtualSensor getSensor() {
         return sensor;
@@ -21,11 +21,12 @@ public class SensorResponse extends AbstractEntity {
         this.sensor = sensor;
     }
 
-    public List<Document> getData() {
+    public ArrayList<VirtualSensorData> getData() {
         return data;
     }
 
-    public void setData(List<Document> data) {
+    public void setData(ArrayList<VirtualSensorData> data) {
         this.data = data;
     }
+
 }

@@ -39,7 +39,7 @@ app.controller('DeviceTabMovieCtrl', ['$scope', '$http', '$localStorage', '$stat
             {start: $scope.start, end: $scope.end}
         )
             .then(function (response) {
-                console.warn(response);
+                // console.warn(response);
                 var resp = response.data.data;
                 $scope.device = resp.device;
                 $scope.imageList = resp.data;

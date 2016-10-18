@@ -6,6 +6,8 @@ import com.infinite.eoa.core.util.JsonUtil;
 import com.infinite.eoa.core.util.TimeUtils;
 import com.infinite.eoa.entity.Component;
 import com.infinite.eoa.entity.VirtualSensor;
+import com.infinite.eoa.entity.VirtualSensorData;
+import com.infinite.eoa.persistent.VirtualSensorDataDAO;
 import com.infinite.eoa.service.ApplicationService;
 import com.infinite.eoa.service.VirtualSensorDataService;
 import com.infinite.eoa.service.VirtualSensorService;
@@ -40,7 +42,7 @@ import java.util.Locale;
  */
 @Service("VirtualSensorDataService")
 public class VirtualSensorDataServiceImpl implements VirtualSensorDataService {
-    private static Logger log = LoggerFactory.getLogger(VirtualSensorDataServiceImpl.class);
+    private static Logger LOG = LoggerFactory.getLogger(VirtualSensorDataServiceImpl.class);
 
     private DecimalFormat decimalFormat = new DecimalFormat("#.00");
 
@@ -56,25 +58,28 @@ public class VirtualSensorDataServiceImpl implements VirtualSensorDataService {
     private ApplicationService applicationService;
     @Autowired
     private VirtualSensorService virtualSensorService;
+    @Autowired
+    private VirtualSensorDataDAO virtualSensorDataDAO;
 
     @Override
-    public List<Document> save(String data) {
+    public List<VirtualSensorData> save(String data) {
+        List<VirtualSensorData> sensorDatas = JsonUtil.fromJson(data, new TypeToken<List<VirtualSensorData>>() {}.getType());
+        for (VirtualSensorData vsd : sensorDatas) {
+            virtualSensorDataDAO.save(vsd);
+        }
+        return sensorDatas;
+    }
+
+    /*public List<Document> save(String data) {
         Document[] documents = null;
         if (data.startsWith("[")) {
-            documents = JsonUtil.fromJson(data, new TypeToken<Document[]>() {
-            }.getType());
+            documents = JsonUtil.fromJson(data, new TypeToken<Document[]>(){}.getType());
         } else {
             documents = new Document[1];
             documents[0] = JsonUtil.fromJson(data, Document.class);
         }
 
         ArrayList<Document> documentList = new ArrayList<Document>();
-
-//        VirtualSensor sensor = virtualSensorService.findById(documents[0].getString("sensor_id"));
-//        HashMap<String, String> typeMap = new HashMap<String, String>();
-//        for (Component component : sensor.getComponents()) {
-//            typeMap.put(component.getComp_id(), component.getType());
-//        }
 
         for (Document document : documents) {
             Object timeObject = document.remove("time");
@@ -86,19 +91,37 @@ public class VirtualSensorDataServiceImpl implements VirtualSensorDataService {
                 time = System.currentTimeMillis();
             }
             document.append("time", new BsonDateTime(time));
-//            String compid = document.getString("comp_id");
-//            document.append("_id",
-//                    DecriptUtil.SHA1(document.getString("sensor_id") + compid + time)
-//            );
-//            document.append("comp_type", typeMap.get(compid));
             documentList.add(document);
         }
         mongoDAO.insertMany(dbname, collectionName, documentList);
+        if (LOG.isDebugEnabled()) {
+            LOG.debug("save sensor data : {}", documentList);
+        }
         return documentList;
-    }
+    }*/
 
     @Override
-    public List<Document> findLatestBySensorId(String appkey, String sensorid) {
+    public ArrayList<VirtualSensorData> findLatestBySensorId(String appkey, String sensorid) {
+        applicationService.applicationExsist(appkey);
+        ArrayList<VirtualSensorData> virtualSensorDatas = new ArrayList<VirtualSensorData>();
+        VirtualSensor sensor = virtualSensorService.findById(sensorid);
+        //TODO 修改为 Aggregates 方式取数据
+        if (null != sensor) {
+            for (Component component : sensor.getComponents()) {
+                VirtualSensorData vsd = virtualSensorDataDAO.find(
+                        virtualSensorDataDAO.createQuery()
+                                .filter("sensor_id", sensorid)
+                                .filter("comp_id", component.getComp_id())
+                                .order("-time")
+                ).get();
+                if (null != vsd) {
+                    virtualSensorDatas.add(vsd);
+                }
+            }
+        }
+        return virtualSensorDatas;
+    }
+    /*public List<Document> findLatestBySensorId(String appkey, String sensorid) {
         applicationService.applicationExsist(appkey);
         ArrayList<Document> documentList = new ArrayList<Document>();
         VirtualSensor sensor = virtualSensorService.findById(sensorid);
@@ -109,14 +132,14 @@ public class VirtualSensorDataServiceImpl implements VirtualSensorDataService {
                 Document document = mongoDAO.find(mongoCollection, Filters.and(
                         Filters.eq("sensor_id", sensorid),
                         Filters.eq("comp_id", component.getComp_id())
-                )).sort(Sorts.ascending("time")).first();
+                )).sort(Sorts.descending("time")).first();
                 if (null != document) {
                     documentList.add(document);
                 }
             }
         }
         return documentList;
-    }
+    }*/
 
     @Override
     public ArrayList<Document> findBySensorIdAndTimeDistance(String appkey, String sensorid, String comp_type, long start, long end) {
@@ -203,7 +226,7 @@ public class VirtualSensorDataServiceImpl implements VirtualSensorDataService {
         ArrayList<String> keys = new ArrayList<String>();
         ArrayList<Double> values = new ArrayList<Double>();
 
-        if (!StringUtils.isEmpty(fieldname)){
+        if (!StringUtils.isEmpty(fieldname)) {
             MongoCollection<Document> mongoCollection = mongoDAO.getCollection(dbname, collectionName);
             DateTime dateTime = new DateTime();
             switch (type) {
@@ -457,7 +480,7 @@ public class VirtualSensorDataServiceImpl implements VirtualSensorDataService {
         document.append("device", virtualSensorService.findById(sensorid));
         ArrayList<Document> documents = new ArrayList<Document>();
         MongoCollection<Document> collection = mongoDAO.getCollection(dbname, collectionName);
-         mongoDAO.find(collection, Filters.and(
+        mongoDAO.find(collection, Filters.and(
                 Filters.eq("sensor_id", sensorid),
                 Filters.exists("image"),
                 Filters.gte("time", new BsonDateTime(start)),
@@ -497,7 +520,7 @@ public class VirtualSensorDataServiceImpl implements VirtualSensorDataService {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Date(1474844432698L).toLocaleString());
+        System.out.println(new Date(1475565071337L).toLocaleString());
     }
 
 }

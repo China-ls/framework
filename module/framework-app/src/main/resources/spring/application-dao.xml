@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:aop="http://www.springframework.org/schema/aop"
-       xmlns:jee="http://www.springframework.org/schema/jee"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:lang="http://www.springframework.org/schema/lang"
-       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://www.springframework.org/schema/aop
-       http://www.springframework.org/schema/aop/spring-aop.xsd
+
+
 	   http://www.springframework.org/schema/context
-	   http://www.springframework.org/schema/context/spring-context.xsd
-	   http://www.springframework.org/schema/jee
-	   http://www.springframework.org/schema/jee/spring-jee.xsd
-	   http://www.springframework.org/schema/util
-	   http://www.springframework.org/schema/util/spring-util.xsd
-	   http://www.springframework.org/schema/lang
-	   http://www.springframework.org/schema/lang/spring-lang.xsd">
+	   http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:property-placeholder location="classpath:/prop/mongo.properties" ignore-unresolvable="true"/>
 
@@ -109,6 +99,14 @@
     </bean>
 
     <bean name="roleDAO" class="com.infinite.eoa.persistent.impl.RoleDAOImpl">
+        <constructor-arg ref="systemDatastore"/>
+    </bean>
+
+    <bean name="sensorEventDAO" class="com.infinite.eoa.persistent.impl.SensorEventDAOImpl">
+        <constructor-arg ref="systemDatastore"/>
+    </bean>
+
+    <bean name="virtualSensorDataDAO" class="com.infinite.eoa.persistent.impl.VirtualSensorDataDAOImpl">
         <constructor-arg ref="systemDatastore"/>
     </bean>
 

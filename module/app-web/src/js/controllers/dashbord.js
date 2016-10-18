@@ -108,8 +108,11 @@ app.controller('DashbordCtrl',
             $scope.app.settings.mapScaleMax = false;
 
             $scope.toggleMapScale = function () {
+                if (!$scope.isMapInited) {
+                    return;
+                }
                 $scope.app.settings.mapScaleMax = !$scope.app.settings.mapScaleMax;
-                $scope.mapCenter = $scope.myMap.getCenter();
+                // $scope.mapCenter = $scope.myMap.getCenter();
                 if ($scope.app.settings.mapScaleMax) {
                     $scope.resizeMapScale();
                     angular.element(".map-scale-btn-wrapper").css('right', 30);
@@ -119,7 +122,7 @@ app.controller('DashbordCtrl',
                     $scope.map_canvas.css('height', '');
                     angular.element(".map-scale-btn-wrapper").css('right', 25);
                 }
-                $scope.myMap.setCenter($scope.mapCenter);
+                // $scope.myMap.setCenter($scope.mapCenter);
             };
             $scope.resizeMapScale = function () {
                 $scope.map_canvas.parent().css('width', '100%');
@@ -143,39 +146,40 @@ app.controller('DashbordCtrl',
             };
             $scope.onMapLoaded = function ($event, $params) {
                 $scope.addMarkers();
+                $scope.isMapInited = true;
             };
 
             $scope.onMarkerClick = function (event) {
                 $state.go('app.device.tab.info', {id: event.target.device.sensor_id, device: event.target.device});
             };
 
-            $scope.onMarkerMouseOver = function (event) {
-                // console.warn(event);
-                // console.warn(event.target.device);
-                var device = event.target.device;
+            /*$scope.onMarkerMouseOver = function (event) {
+             // console.warn(event);
+             // console.warn(event.target.device);
+             var device = event.target.device;
 
-                var infoWindow = $scope.mapLabelCache[device.sensor_id];
-                if (null == infoWindow) {
-                    var opts = {
-                        width: 200,     // 信息窗口宽度
-                        height: 100,     // 信息窗口高度
-                        title: device.name, // 信息窗口标题
-                        enableMessage: true,//设置允许信息窗发送短息
-                        message: device.address
-                    };
-                    infoWindow = new BMap.InfoWindow("地址：" + device.address, opts);  // 创建信息窗口对象
-                    $scope.mapLabelCache[device.sensor_id] = infoWindow;
-                }
-                $scope.myMap.openInfoWindow(infoWindow, event.point); //开启信息窗口
-            };
+             var infoWindow = $scope.mapLabelCache[device.sensor_id];
+             if (null == infoWindow) {
+             var opts = {
+             width: 200,     // 信息窗口宽度
+             height: 100,     // 信息窗口高度
+             title: device.name, // 信息窗口标题
+             enableMessage: true,//设置允许信息窗发送短息
+             message: device.address
+             };
+             infoWindow = new BMap.InfoWindow("地址：" + device.address, opts);  // 创建信息窗口对象
+             $scope.mapLabelCache[device.sensor_id] = infoWindow;
+             }
+             $scope.myMap.openInfoWindow(infoWindow, event.point); //开启信息窗口
+             };*/
 
-            $scope.onMarkerMouseout = function (event) {
-                $scope.myMap.closeInfoWindow();
-                // var sid = event.target.device.sensor_id;
-                // if ($scope.mapLabelCache[sid]) {
-                //     $scope.mapLabelCache[sid].hide();
-                // }
-            };
+            /*$scope.onMarkerMouseout = function (event) {
+             $scope.myMap.closeInfoWindow();
+             // var sid = event.target.device.sensor_id;
+             // if ($scope.mapLabelCache[sid]) {
+             //     $scope.mapLabelCache[sid].hide();
+             // }
+             };*/
 
             if ($scope.app.cache.selectParentBranch) {
                 $scope.app.subHeader.contentTitle = $scope.app.cache.selectParentBranch.label;
@@ -209,12 +213,15 @@ app.controller('DashbordCtrl',
                         var item = $scope.virtualSensors[i].sensor;
                         var point = new BMap.Point(item.longitude, item.latitude);
                         var marker = new BMap.Marker(point);
+                        var label = new BMap.Label(item.name, {position: point, offset: new BMap.Size(-30, -25)});
+                        label.setStyle({borderColor: '#ccc'});
+                        marker.setLabel(label);
                         marker.device = item;
                         $scope.myMap.addOverlay(marker);
                         $scope.myMap.centerAndZoom(point, 13);
                         marker.addEventListener('click', $scope.onMarkerClick);
-                        marker.addEventListener('mouseover', $scope.onMarkerMouseOver);
-                        marker.addEventListener('mouseout', $scope.onMarkerMouseout);
+                        // marker.addEventListener('mouseover', $scope.onMarkerMouseOver);
+                        // marker.addEventListener('mouseout', $scope.onMarkerMouseout);
                     }
                 }
                 $scope.shouldAddAllSensorsToMap = true;

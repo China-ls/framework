@@ -6,43 +6,49 @@
             <form class="form-inline" role="form">
                 <div class="form-group">
                     <label for="deviceType">站点类型：</label>
-                    <select id="deviceType" class="form-control">
+                    <select id="deviceType" class="form-control" ng-model="filter.station_type">
                         <option value="">全部</option>
-                        <option value="A">A类站点</option>
-                        <option value="B">B类站点</option>
-                        <option value="C">C类站点</option>
+                        <option value="A类站点">A类站点</option>
+                        <option value="B类站点">B类站点</option>
+                        <option value="C类站点">C类站点</option>
                     </select>
                 </div>
-                <div class="form-group m-l no-m-xs">
-                    <label for="deviceStatus">在线/离线：</label>
-                    <select id="deviceStatus" class="form-control">
-                        <option value="">全部</option>
-                        <option value="1">在线</option>
-                        <option value="2">离线</option>
-                    </select>
-                </div>
-                <div class="form-group m-l no-m-xs">
-                    <label>统计内容：</label>
-                    <label class="checkbox-inline">
-                        <input type="checkbox" value="option1"> 处水量
-                    </label>
-                    <label class="checkbox-inline">
-                        <input type="checkbox" value="option2"> 水质
-                    </label>
-                    <label class="checkbox-inline">
-                        <input type="checkbox" value="option3"> 用电量
-                    </label>
-                </div>
+                <!--<div class="form-group m-l no-m-xs">-->
+                    <!--<label for="deviceStatus">在线/离线：</label>-->
+                    <!--<select id="deviceStatus" class="form-control">-->
+                        <!--<option value="">全部</option>-->
+                        <!--<option value="1">在线</option>-->
+                        <!--<option value="2">离线</option>-->
+                    <!--</select>-->
+                <!--</div>-->
+                <!--<div class="form-group m-l no-m-xs">-->
+                    <!--<label>统计内容：</label>-->
+                    <!--<label class="checkbox-inline">-->
+                        <!--<input type="checkbox" value="option1"> 处水量-->
+                    <!--</label>-->
+                    <!--<label class="checkbox-inline">-->
+                        <!--<input type="checkbox" value="option2"> 水质-->
+                    <!--</label>-->
+                    <!--<label class="checkbox-inline">-->
+                        <!--<input type="checkbox" value="option3"> 用电量-->
+                    <!--</label>-->
+                <!--</div>-->
                 <div class="form-group m-l no-m-xs">
                     <label for="startTime">起止时间：</label>
-                    <input id="startTime" class="form-control" type="date">
+                    <input id="startTime" class="form-control" type="date" ng-model="filter.startDate">
                 </div>
                 <div class="form-group">
                     <label for="endTime">&nbsp;&nbsp;--&nbsp;&nbsp;</label>
-                    <input id="endTime" class="form-control" type="date">
+                    <input id="endTime" class="form-control" type="date" ng-model="filter.endDate">
                 </div>
-                <button type="button" class="btn btn-info btn-sm w-xs m-l no-m-xs">查询</button>
-                <button type="button" class="btn btn-success btn-sm w-xs m-l no-m-xs">输出报表</button>
+                <button type="button" class="btn btn-info btn-sm w-xs m-l no-m-xs" ng-click="filterQuery()">
+                    查询
+                </button>
+                <a class="btn btn-success btn-sm w-xs m-l no-m-xs"
+                   target="_blank"
+                   ng-href="/app/cencus/routing/filter/export?station_type={{filter.station_type}}&start={{filter.startDate.getTime()}}&end={{filter.endDate.getTime()}}">
+                    输出报表
+                </a>
             </form>
 
         </div>
@@ -51,12 +57,11 @@
             <table st-table="rowCollectionBasic" class="table table-bordered table-striped tb-border">
                 <thead>
                 <tr>
-                    <th>明细</th>
+                    <!--<th>明细</th>-->
                     <th>站点名称</th>
                     <th>巡检次数</th>
                     <th>站点管理员</th>
                     <th>联系电话</th>
-                    <th>所属机构</th>
                     <th>站点状态</th>
                     <th>站点类型</th>
                     <th>日处水能力(吨)</th>
@@ -64,16 +69,25 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr class="success" ng-repeat="row in device" st-select-row="row">
-                    <td>{{row.name}}</td>
-                    <td>{{row.type}}</td>
-                    <td>{{row.dayHandler}}</td>
-                    <td>{{row.content}}</td>
-                    <td>{{row.time}}</td>
-                    <td>{{row.leading}}</td>
-                    <td>{{row.phone}}</td>
-                    <td>{{row.twon}}</td>
-                    <td>{{row.city}}</td>
+                <tr class="success" ng-repeat="item in filterResults" st-select-row="row">
+                    <td>{{item.device.name}}</td>
+                    <td>{{item.count}}</td>
+                    <td>{{item.device.admin}}</td>
+                    <td>{{item.device.contact}}</td>
+                    <td>
+                        <span ng-if="item.device.online === 1">
+                            <i class="fa fa-lightbulb-o text-success"></i>
+                            在线
+                        </span>
+                        <span ng-if="item.device.online === 2">
+                                <i class="fa fa-lightbulb-o"></i>
+                                离线
+                            </span>
+                        <span ng-if="item.device.online != 1 && item.device.online != 2 && item.device.online != 3">未知</span>
+                    </td>
+                    <td>{{item.device.station_type}}</td>
+                    <td>{{item.device.day_deal_water_ability}}</td>
+                    <td>{{item.device.setup_date}}</td>
                 </tr>
                 </tbody>
             </table>

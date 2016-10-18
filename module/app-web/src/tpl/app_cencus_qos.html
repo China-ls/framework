@@ -6,23 +6,29 @@
             <form class="form-inline" role="form">
                 <div class="form-group">
                     <label for="deviceType">站点类型：</label>
-                    <select id="deviceType" class="form-control">
+                    <select id="deviceType" class="form-control" ng-model="filter.station_type">
                         <option value="">全部</option>
-                        <option value="A">A类站点</option>
-                        <option value="B">B类站点</option>
-                        <option value="C">C类站点</option>
+                        <option value="A类站点">A类站点</option>
+                        <option value="B类站点">B类站点</option>
+                        <option value="C类站点">C类站点</option>
                     </select>
                 </div>
-                <div class="form-group m-l no-m-xs">
+                <div class="form-group m-l-lg no-m-xs">
                     <label for="deviceStatus">在线/离线：</label>
-                    <select id="deviceStatus" class="form-control">
+                    <select id="deviceStatus" class="form-control" ng-model="filter.online">
                         <option value="">全部</option>
                         <option value="1">在线</option>
                         <option value="2">离线</option>
                     </select>
                 </div>
-                <button type="button" class="btn btn-info btn-sm w-xs m-l no-m-xs">查询</button>
-                <button type="button" class="btn btn-success btn-sm w-xs m-l no-m-xs">输出报表</button>
+                <button type="button" class="btn btn-info btn-sm w-xs m-l no-m-xs" ng-click="filterQuery()">
+                    查询
+                </button>
+                <a class="btn btn-success btn-sm w-xs m-l no-m-xs"
+                   target="_blank"
+                   ng-href="/app/cencus/qos/filter/export?station_type={{filter.station_type}}&online={{filter.online}}">
+                    输出报表
+                </a>
             </form>
 
         </div>
@@ -33,7 +39,6 @@
                 <tr>
                     <th>站点名称</th>
                     <th>站点状态</th>
-                    <th>在线/离线</th>
                     <th>通信信号强度dBm</th>
                     <th>近30天联网率</th>
                     <th>网关最后在线时间</th>
@@ -43,23 +48,35 @@
                     <th>最近一次巡检时间</th>
                     <th>电控箱温度(度)</th>
                     <th>电控箱湿度(RH)</th>
-                    <th>所属机构</th>
                     <th>站点类型</th>
-                    <th>日处水能力(吨)</th>
                     <th>投产时间</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr class="success" ng-repeat="row in device" st-select-row="row">
-                    <td>{{row.name}}</td>
-                    <td>{{row.type}}</td>
-                    <td>{{row.dayHandler}}</td>
-                    <td>{{row.content}}</td>
-                    <td>{{row.time}}</td>
-                    <td>{{row.leading}}</td>
-                    <td>{{row.phone}}</td>
-                    <td>{{row.twon}}</td>
-                    <td>{{row.city}}</td>
+                <tr class="success" ng-repeat="item in filterResults" st-select-row="row">
+                    <td>{{item.sensor.name}}</td>
+                    <td>
+                        <span ng-if="item.sensor.online === 1">
+                            <i class="fa fa-lightbulb-o text-success"></i>
+                            在线
+                        </span>
+                        <span ng-if="item.sensor.online === 2">
+                                <i class="fa fa-lightbulb-o"></i>
+                                离线
+                            </span>
+                        <span ng-if="item.sensor.online != 1 && item.sensor.online != 2 && item.sensor.online != 3">未知</span>
+                    </td>
+                    <td>{{item.sensor.signal}}</td>
+                    <td></td>
+                    <td>{{item.net_time}}</td>
+                    <td>{{item.flow_time}}</td>
+                    <td>{{item.flow_time}}</td>
+                    <td>{{item.image_time}}</td>
+                    <td>{{item.routing_time}}</td>
+                    <td>{{item.temperature}}</td>
+                    <td></td>
+                    <td>{{item.sensor.station_type}}</td>
+                    <td>{{item.sensor.setup_date}}</td>
                 </tr>
                 </tbody>
             </table>

@@ -39,7 +39,7 @@ angular.module('app')
                                 controller: 'DeviceHeaderCtrl'
                             },
                             'aside': {templateUrl: 'tpl/blocks/aside_device.html', controller: 'AsideDeviceCtrl'},
-                            'contentView': {templateUrl: 'tpl/app_dashboard.html', controller: 'DashbordCtrl'}
+                            'contentView': {templateUrl: 'tpl/app_device.html', controller: 'DashbordCtrl'}
                         },
                         resolve: {
                             deps: ['$ocLazyLoad',
@@ -136,13 +136,13 @@ angular.module('app')
                                 }]
                         }
                     })
-                    .state('app.device.tab.flow', {
-                        url: '/flow',
+                    .state('app.device.tab.water', {
+                        url: '/water',
                         parent: 'app.device.tab',
                         views: {
                             'tab_contentView': {
-                                templateUrl: 'tpl/app_device_tab_flow.html',
-                                controller: 'DeviceTabFlowCtrl'
+                                templateUrl: 'tpl/app_device_tab_water.html',
+                                controller: 'DeviceTabWaterCtrl'
                             }
                         },
                         resolve: {

@@ -1,6 +1,8 @@
 package com.infinite.eoa.entity;
 
 import com.infinite.eoa.core.entity.AbstractEntity;
+import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang.builder.ToStringStyle;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Property;
@@ -8,17 +10,14 @@ import org.mongodb.morphia.annotations.Reference;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
- *
  * AccountFN Entity Bean
  *
  * @author hx on 16-7-25.
  * @since 1.0
  */
-@Entity(EntityConst.CollectionName.ACCOUNT)
+@Entity(value = EntityConst.CollectionName.ACCOUNT, noClassnameStored = true)
 public class Account extends AbstractEntity {
     @Id
     @Property
@@ -43,8 +42,6 @@ public class Account extends AbstractEntity {
     private EntityConst.AccountType type = EntityConst.AccountType.CLIENT;
     @Reference(lazy = true, ignoreMissing = true)
     private ArrayList<Application> applications = new ArrayList<Application>(0);
-    @Property
-    private HashMap<String, Object> fields = new HashMap<String, Object>(0);
 
     public String getId() {
         return id;
@@ -118,14 +115,6 @@ public class Account extends AbstractEntity {
         this.type = type;
     }
 
-    public HashMap<String, Object> getFields() {
-        return fields;
-    }
-
-    public void setFields(HashMap<String, Object> fields) {
-        this.fields = fields;
-    }
-
     public EntityConst.EntityStatus getStatus() {
         return status;
     }
@@ -146,52 +135,8 @@ public class Account extends AbstractEntity {
         this.applications.add(application);
     }
 
-    public Account put(String key, Object value) {
-        if (null == key || null == value) {
-            return this;
-        }
-        if (!key.startsWith(EntityConst.FieldName.AccountFN.PREFIX)) {
-            key = EntityConst.FieldName.AccountFN.PREFIX + key;
-        }
-        fields.put(key, value);
-        return this;
-    }
-
-    public <T> Object get(String key) {
-        if (null == key) {
-            return null;
-        }
-        if (!key.startsWith(EntityConst.FieldName.AccountFN.PREFIX)) {
-            key = EntityConst.FieldName.AccountFN.PREFIX + key;
-        }
-        return fields.get(key);
-    }
-
-    public Account put(Map<String, Object> values) {
-        if (null == values) {
-            return this;
-        }
-        for (Map.Entry<String, Object> entry : values.entrySet()) {
-            put(entry.getKey(), entry.getValue());
-        }
-        return this;
-    }
-
     @Override
     public String toString() {
-        return "Account{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", passwordErrorCount=" + passwordErrorCount +
-                ", passwordErrorCountExpireTime=" + passwordErrorCountExpireTime +
-                ", token='" + token + '\'' +
-                ", tokenExpireTime=" + tokenExpireTime +
-                ", status=" + status +
-                ", type=" + type +
-                ", applications=" + applications +
-                ", fields=" + fields +
-                '}';
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
     }
 }

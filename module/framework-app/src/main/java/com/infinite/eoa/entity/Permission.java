@@ -6,7 +6,7 @@ import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Property;
 
-@Entity(EntityConst.CollectionName.PERMISSION)
+@Entity(value = EntityConst.CollectionName.PERMISSION, noClassnameStored = true)
 public class Permission extends AbstractEntity {
     @Id
     private ObjectId id;

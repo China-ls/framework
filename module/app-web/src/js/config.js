@@ -39,10 +39,23 @@ var app =
                 ROLE_DEL: '/role/del',
                 ROLE_UPDATE: '/role/update',
                 ROLE_PERMISSION_LIST: '/role/permission',
+                CENCUS_DEVICE_TYPE: '/cencus/device/type',
+                CENCUS_DEVICE_ONLINE: '/cencus/device/online',
+                CENCUS_DEVICE_FILTER: '/cencus/device/filter',
+                CENCUS_DEVICE_EXPORT: '/cencus/device/filter/export',
+                CENCUS_FLOW: '/cencus/flow/filter',
+                CENCUS_ROUTER: '/cencus/routing/filter',
+                CENCUS_QOS: '/cencus/qos/filter',
 
 
-                APP_LOCAL_STORAGE_MANAGE_EMPLOYEE : 'app_loc_storage_mg_emp',
-                APP_LOCAL_STORAGE_SELECT_DEVICE : 'app_loc_storage_slt_device',
+                APP_LOCAL_STORAGE_MANAGE_EMPLOYEE: 'app_loc_storage_mg_emp',
+                APP_LOCAL_STORAGE_SELECT_DEVICE: 'app_loc_storage_slt_device',
+
+                CHARTS_COLORS: [
+                    '#C1232B', '#B5C334', '#FCCE10', '#E87C25', '#27727B',
+                    '#FE8463', '#9BCA63', '#FAD860', '#F3A43B', '#60C0DD',
+                    '#D7504B', '#C6E579', '#F4E001', '#F0805A', '#26C0C0'
+                ]
             })
             .config(['$httpProvider', 'APPCONST', function ($httpProvider, APPCONST) {
                 // $httpProvider.defaults.headers.common['APPKEY'] = NETCONST.APPKEY;

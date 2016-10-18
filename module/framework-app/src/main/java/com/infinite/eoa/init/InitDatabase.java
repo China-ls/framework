@@ -18,6 +18,7 @@ import org.mongodb.morphia.Key;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -40,6 +41,8 @@ public class InitDatabase implements Initializing {
     private RoleService roleService;
 
     private String roleAdminName = "超级管理员";
+    @Value("#{dbConfig.releace_db_sensor}")
+    private boolean releace_db_sensor;
 
     @Override
     public void initializing() throws Exception {
@@ -82,7 +85,15 @@ public class InitDatabase implements Initializing {
             VirtualSensor[] sensors = JsonUtil.fromJson(vsString, new TypeToken<VirtualSensor[]>() {
             }.getType());
             for (VirtualSensor sensor : sensors) {
-                virtualSensorDAO.save(sensor);
+                sensor.setOnline(EntityConst.SensorOnline.NO);
+
+                VirtualSensor storedSensor = virtualSensorDAO.findById(sensor.getSensor_id());
+                if (releace_db_sensor) {
+                    virtualSensorDAO.delete(storedSensor);
+                    virtualSensorDAO.save(sensor);
+                } else if (null == storedSensor) {
+                    virtualSensorDAO.save(sensor);
+                }
             }
         } catch (IOException e) {
             if (log.isErrorEnabled()) {

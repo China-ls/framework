@@ -12,9 +12,8 @@ import org.mongodb.morphia.annotations.Reference;
 import java.util.ArrayList;
 import java.util.Date;
 
-@Entity(EntityConst.CollectionName.EMPLOYEE)
+@Entity(value = EntityConst.CollectionName.EMPLOYEE, noClassnameStored = true)
 public class Employee extends AbstractEntity {
-
 
     @SerializedName("_id")
     @Id

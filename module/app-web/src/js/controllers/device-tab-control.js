@@ -22,25 +22,10 @@ app.controller('DeviceTabControlCtrl',
                         // console.warn(response);
                         $scope.object = response.data.data;
                         $scope.sensor = $scope.object.sensor;
+                        $scope.mc = $scope.object.mc;
+                        $scope.cc = $scope.object.cc;
+                        $scope.sc = $scope.object.sc;
                         $scope.classifyData($scope.object.data);
-                        // var data = $scope.object.data;
-                        // var dm = {};
-                        // if (data) {
-                        //     angular.forEach(data, function (item) {
-                        //         if (item.time) {
-                        //             item.time = $scope.formatDate(new Date(item.time), "yyyy年MM月dd日HH:mm:ss");
-                        //         }
-                        //         dm[item.comp_id] = item;
-                        //     });
-                        // }
-                        // if ($scope.sensor && $scope.sensor.components) {
-                        //     for (var i = 0; i < $scope.sensor.components.length; i++) {
-                        //         $scope.sensor.components[i].data = dm[$scope.sensor.components[i].comp_id];
-                        //         $scope.sensor.components[i].isControl = typeof $scope.sensor.components[i].data.onoff != 'undefined';
-                        //         $scope.sensor.components[i].onoff = $scope.sensor.components[i].data.onoff;
-                        //         $scope.sensor.components[i].discontrol = $scope.sensor.components[i].status != 'NORMAL';
-                        //     }
-                        // }
                     } catch (e) {
                         console.warn(e);
                     }
@@ -50,7 +35,6 @@ app.controller('DeviceTabControlCtrl',
                 if (!data) {
                     return;
                 }
-                var data = $scope.object.data;
                 var dm = {};
                 if (data) {
                     angular.forEach(data, function (item) {
@@ -61,15 +45,15 @@ app.controller('DeviceTabControlCtrl',
                     });
                 }
 
-                if ($scope.object.mc) {
+                if ($scope.mc) {
                     $scope.classifyDataByItem($scope.object.mc, dm[$scope.object.mc.comp_id]);
                 }
-                if ($scope.object.cc) {
+                if ($scope.cc) {
                     angular.forEach($scope.object.cc, function (item) {
                         $scope.classifyDataByItem(item, dm[item.comp_id]);
                     });
                 }
-                if ($scope.object.sc) {
+                if ($scope.sc) {
                     angular.forEach($scope.object.sc, function (item) {
                         $scope.classifyDataByItem(item, dm[item.comp_id]);
                     });
@@ -80,7 +64,7 @@ app.controller('DeviceTabControlCtrl',
                 item.data = data;
                 item.label = '';
                 item.onoff = !data ? false : data.onoff;
-                item.discontrol = sensor.online !== 1;
+                item.discontrol = !data || $scope.sensor.online !== 1;
             };
 
             $scope.onControl = function (comp) {

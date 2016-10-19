@@ -1,37 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0fd8f5c7-a893-4232-b550-e52d73eb6f82" name="Default" comment="201610181750">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/build.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/src/微信认证需要资料.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/resources/xsensor_bak.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/release/ant/deploy.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/css/app.201610151455.css" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/css/app.201610190959.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/js/app.201610151455.js" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/js/app.201610190959.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/module/framework-app/src/test_/java/test/infinite/dao/EmployeeDAOTest.java" afterPath="$PROJECT_DIR$/module/framework-app/src/test_/java/test/infinite/dao/SensorDAOTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ant.xml" afterPath="$PROJECT_DIR$/.idea/ant.xml" />
+    <list default="true" id="0fd8f5c7-a893-4232-b550-e52d73eb6f82" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/bower.json" afterPath="$PROJECT_DIR$/module/app-web/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/css/app.css" afterPath="$PROJECT_DIR$/module/app-web/src/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/css/app.device.tab.css" afterPath="$PROJECT_DIR$/module/app-web/src/css/app.device.tab.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/css/less/app.device.tab.less" afterPath="$PROJECT_DIR$/module/app-web/src/css/less/app.device.tab.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/index.html" afterPath="$PROJECT_DIR$/module/app-web/src/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/config.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/cencus-tab-device-type.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/cencus-tab-device-type.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-control.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-control.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_device_tab_control.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_device_tab_control.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_device_tab_water.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_device_tab_water.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Component.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/Component.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/VirtualSensor.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/entity/VirtualSensor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/init/InitDatabase.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/init/InitDatabase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/VirtualSensorController.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/controller/VirtualSensorController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/entity/SensorResponse.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/entity/SensorResponse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/VirtualSensorServiceImpl.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/service/impl/VirtualSensorServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/resources/xdepartment.json" afterPath="$PROJECT_DIR$/module/framework-app/src/main/resources/xdepartment.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/resources/xsensor.json" afterPath="$PROJECT_DIR$/module/framework-app/src/main/resources/xsensor.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/index.jsp" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/login.jsp" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_device.html" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/WEB-INF/pages/tpl/app_device.html" />
     </list>
     <ignored path="framework.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -147,10 +120,12 @@
       <file leaf-file-name="SensorResponse.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/entity/SensorResponse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="252">
+              <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
               <folding>
                 <element signature="docComment;class#SensorResponse#0" expanded="false" />
+                <element signature="e#741#742#0" expanded="true" />
+                <element signature="e#770#771#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1803,7 +1778,7 @@
       <workItem from="1476751787058" duration="4600000" />
       <workItem from="1476759349426" duration="3965000" />
       <workItem from="1476783493660" duration="554000" />
-      <workItem from="1476838298286" duration="16186000" />
+      <workItem from="1476838298286" duration="16549000" />
     </task>
     <task id="LOCAL-00001" summary="app-web html small edit.">
       <created>1471254507746</created>
@@ -1938,7 +1913,14 @@
       <option name="project" value="LOCAL" />
       <updated>1476784054340</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="201610191812">
+      <created>1476871939864</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1476871939864</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1974,7 +1956,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="564538000" />
+    <option name="totallyTimeSpent" value="564901000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2069,7 +2051,8 @@
     <MESSAGE value="201610131712" />
     <MESSAGE value="201610181746" />
     <MESSAGE value="201610181750" />
-    <option name="LAST_COMMIT_MESSAGE" value="201610181750" />
+    <MESSAGE value="201610191812" />
+    <option name="LAST_COMMIT_MESSAGE" value="201610191812" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2513,10 +2496,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/router/entity/SensorResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="252">
+          <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
           <folding>
             <element signature="docComment;class#SensorResponse#0" expanded="false" />
+            <element signature="e#741#742#0" expanded="true" />
+            <element signature="e#770#771#0" expanded="true" />
           </folding>
         </state>
       </provider>

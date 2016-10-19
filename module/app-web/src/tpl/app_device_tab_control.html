@@ -102,28 +102,28 @@
             <tbody>
             <tr class="row-count-1">
                 <td>1</td>
-                <td>{{object.mc.name}}</td>
+                <td>{{mc.name}}</td>
                 <td>
                     <i class="fa fa-power-off"
-                       ng-class="{'text-success': object.mc.status === 'NORMAL', 'text-danger' :object.mc.status != 'NORMAL'}"></i>
-                    <span ng-if="object.mc.status === 'NORMAL'">正常</span>
-                    <span ng-if="object.mc.status != 'NORMAL'">异常</span>
+                       ng-class="{'text-success': mc.status === 'NORMAL', 'text-danger' :mc.status != 'NORMAL'}"></i>
+                    <span ng-if="mc.status === 'NORMAL'">正常</span>
+                    <span ng-if="mc.status != 'NORMAL'">异常</span>
                 </td>
                 <td></td>
                 <td></td>
                 <td>
                     <input bs-switch
-                           ng-model="object.mc.onoff"
+                           ng-model="mc.onoff"
                            type="checkbox"
                            switch-off-color="warning"
-                           switch-label="{{object.mc.label}}"
-                           switch-readonly="{{object.mc.discontrol}}"
+                           switch-label="{{mc.label}}"
+                           switch-readonly="{{mc.discontrol}}"
                            switch-on-text="远程控制"
                            switch-off-text="本地控制"
-                           switch-change="onControl(object.mc)">
+                           switch-change="onControl(mc)">
                 </td>
             </tr>
-            <tr ng-repeat="row in object.cc"
+            <tr ng-repeat="row in cc"
                 ng-class="{'row-count-2': $index %2 == 0, 'row-count-1': $index %2 != 0}">
                 <td>{{$index + 2}}</td>
                 <td>{{row.name}}</td>

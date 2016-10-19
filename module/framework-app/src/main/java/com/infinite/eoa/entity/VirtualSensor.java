@@ -1,5 +1,6 @@
 package com.infinite.eoa.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.infinite.eoa.core.entity.AbstractEntity;
 import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Entity;
@@ -257,6 +258,7 @@ public class VirtualSensor extends AbstractEntity {
         return online;
     }
 
+    @JsonIgnore
     public ArrayList<Component> getComponents() {
         return components;
     }
@@ -272,35 +274,4 @@ public class VirtualSensor extends AbstractEntity {
         this.components.addAll(components);
     }
 
-    @Override
-    public String toString() {
-        return "VirtualSensor{" +
-                "sensor_id='" + sensor_id + '\'' +
-                ", app_id='" + app_id + '\'' +
-                ", control='" + control + '\'' +
-                ", report='" + report + '\'' +
-                ", data='" + data + '\'' +
-                ", system='" + system + '\'' +
-                ", name='" + name + '\'' +
-                ", station_type='" + station_type + '\'' +
-                ", day_deal_water_ability='" + day_deal_water_ability + '\'' +
-                ", setup_date='" + setup_date + '\'' +
-                ", admin='" + admin + '\'' +
-                ", contact='" + contact + '\'' +
-                ", address='" + address + '\'' +
-                ", desc='" + desc + '\'' +
-                ", latitude=" + latitude +
-                ", longitude=" + longitude +
-                ", idle_report=" + idle_report +
-                ", internal_id=" + internal_id +
-                ", offline_report=" + offline_report +
-                ", version=" + version +
-                ", online=" + online +
-                ", departmentName='" + departmentName + '\'' +
-                ", departmentId='" + departmentId + '\'' +
-                ", department=" + department +
-                ", status=" + status +
-                ", components=" + components +
-                '}';
-    }
 }

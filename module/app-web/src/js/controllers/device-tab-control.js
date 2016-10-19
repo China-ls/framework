@@ -11,42 +11,86 @@ app.controller('DeviceTabControlCtrl',
                 $state.go('app.device');
                 return;
             }
+
+            if (!$scope.sensor) {
+                $scope.sensor = {online: 2};
+            }
+
             $scope.loadDataPromise = $http.get(APPCONST.CTX + APPCONST.SENSOR_BY_ID + $scope.$stateParams.id)
                 .then(function (response) {
                     try {
-                        console.warn(response);
+                        // console.warn(response);
                         $scope.object = response.data.data;
                         $scope.sensor = $scope.object.sensor;
-                        var data = $scope.object.data;
-                        var dm = {};
-                        if (data) {
-                            angular.forEach(data, function (item) {
-                                if (item.time) {
-                                    item.time = $scope.formatDate(new Date(item.time), "yyyy年MM月dd日HH:mm:ss");
-                                }
-                                dm[item.comp_id] = item;
-                            });
-                        }
-                        if ($scope.sensor && $scope.sensor.components) {
-                            for (var i = 0; i < $scope.sensor.components.length; i++) {
-                                $scope.sensor.components[i].data = dm[$scope.sensor.components[i].comp_id];
-                                $scope.sensor.components[i].isControl = typeof $scope.sensor.components[i].data.onoff != 'undefined';
-                                $scope.sensor.components[i].onoff = $scope.sensor.components[i].data.onoff;
-                                $scope.sensor.components[i].discontrol = $scope.sensor.components[i].status != 'NORMAL';
-                            }
-                        }
+                        $scope.classifyData($scope.object.data);
+                        // var data = $scope.object.data;
+                        // var dm = {};
+                        // if (data) {
+                        //     angular.forEach(data, function (item) {
+                        //         if (item.time) {
+                        //             item.time = $scope.formatDate(new Date(item.time), "yyyy年MM月dd日HH:mm:ss");
+                        //         }
+                        //         dm[item.comp_id] = item;
+                        //     });
+                        // }
+                        // if ($scope.sensor && $scope.sensor.components) {
+                        //     for (var i = 0; i < $scope.sensor.components.length; i++) {
+                        //         $scope.sensor.components[i].data = dm[$scope.sensor.components[i].comp_id];
+                        //         $scope.sensor.components[i].isControl = typeof $scope.sensor.components[i].data.onoff != 'undefined';
+                        //         $scope.sensor.components[i].onoff = $scope.sensor.components[i].data.onoff;
+                        //         $scope.sensor.components[i].discontrol = $scope.sensor.components[i].status != 'NORMAL';
+                        //     }
+                        // }
                     } catch (e) {
                         console.warn(e);
                     }
                 });
 
+            $scope.classifyData = function (data) {
+                if (!data) {
+                    return;
+                }
+                var data = $scope.object.data;
+                var dm = {};
+                if (data) {
+                    angular.forEach(data, function (item) {
+                        if (item.time) {
+                            item.time = $scope.formatDate(new Date(item.time), "yyyy年MM月dd日HH:mm:ss");
+                        }
+                        dm[item.comp_id] = item;
+                    });
+                }
+
+                if ($scope.object.mc) {
+                    $scope.classifyDataByItem($scope.object.mc, dm[$scope.object.mc.comp_id]);
+                }
+                if ($scope.object.cc) {
+                    angular.forEach($scope.object.cc, function (item) {
+                        $scope.classifyDataByItem(item, dm[item.comp_id]);
+                    });
+                }
+                if ($scope.object.sc) {
+                    angular.forEach($scope.object.sc, function (item) {
+                        $scope.classifyDataByItem(item, dm[item.comp_id]);
+                    });
+                }
+            };
+
+            $scope.classifyDataByItem = function (item, data) {
+                item.data = data;
+                item.label = '';
+                item.onoff = !data ? false : data.onoff;
+                item.discontrol = sensor.online !== 1;
+            };
+
             $scope.onControl = function (comp) {
-                if (comp.data && comp.onoff === comp.data.onoff) {
+                if ($scope.sensor.online != 1 || comp.data && comp.onoff === comp.data.onoff) {
                     return;
                 }
                 comp.label = '<i class="fa fa-spinner fa-spin"></i>';
                 comp.discontrol = true;
-                $scope.wsSend('{"channel_id" : "' + comp.comp_id + '","operation" : "switch","param" : ' + comp.onoff + ',"sensor_id" : "' + $scope.sensor.sensor_id + '"}');
+                var val = comp.onoff ? 1 : 0;
+                $scope.wsSend('{"channel_id" : "' + comp.comp_id + '","operation" : "switch","param" : ' + val + ',"sensor_id" : "' + $scope.sensor.sensor_id + '"}');
             };
 
             $scope.$on("WS_MESSAGE", function (event, data) {

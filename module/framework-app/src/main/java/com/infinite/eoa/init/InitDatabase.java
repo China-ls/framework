@@ -89,7 +89,9 @@ public class InitDatabase implements Initializing {
 
                 VirtualSensor storedSensor = virtualSensorDAO.findById(sensor.getSensor_id());
                 if (releace_db_sensor) {
-                    virtualSensorDAO.delete(storedSensor);
+                    if (null != storedSensor) {
+                        virtualSensorDAO.delete(storedSensor);
+                    }
                     virtualSensorDAO.save(sensor);
                 } else if (null == storedSensor) {
                     virtualSensorDAO.save(sensor);

@@ -114,6 +114,7 @@
     "angular-masonry": "^0.16.0",
     "angular-bootstrap-switch": "^0.5.1",
     "angularjs-slider": "^5.5.1",
-    "angular-material": "^1.1.1"
+    "angular-material": "^1.1.1",
+    "angular-carousel": "^1.0.1"
   }
 }

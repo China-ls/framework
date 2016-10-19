@@ -37,8 +37,8 @@ app.controller('CencusDeviceTypeCtrl', ['$scope', '$http', '$localStorage', '$st
                     // console.warn(data);
                     if ($scope.cencusDeviceType) {
                         var array = [];
-                        angular.forEach($scope.cencusDeviceType, function (item) {
-                            item.color = APPCONST.CHARTS_COLORS[Math.ceil(Math.random() * APPCONST.CHARTS_COLORS.length) % 15];
+                        angular.forEach($scope.cencusDeviceType, function (item, index) {
+                            item.color = APPCONST.CHARTS_COLORS_DEVICE_TYPE[index % 8];
                             array.push({name: item.name, y: item.count, color: item.color});
                         });
                         var series = {name: '设备个数', data: array};
@@ -61,11 +61,12 @@ app.controller('CencusDeviceTypeCtrl', ['$scope', '$http', '$localStorage', '$st
                                 item.name = '未知';
                             } else if (item.online == 1) {
                                 item.name = '在线';
+                                item.color = '#68D533';
                             } else if (item.online == 2) {
                                 item.name = '离线';
+                                item.color = '#808080';
                             } else if (item.online == 3) {
                             }
-                            item.color = APPCONST.CHARTS_COLORS[Math.ceil(Math.random() * APPCONST.CHARTS_COLORS.length) % 15];
                             array.push({name: item.name, y: item.count, color: item.color});
                         });
                         var series = {name: '设备个数', data: array};
@@ -81,7 +82,7 @@ app.controller('CencusDeviceTypeCtrl', ['$scope', '$http', '$localStorage', '$st
                 .then(function (response) {
                     // console.warn(response);
                     $scope.filterResults = response.data.data;
-            });
+                });
         };
     }])
 ;

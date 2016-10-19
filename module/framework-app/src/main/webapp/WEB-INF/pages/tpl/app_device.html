@@ -54,8 +54,7 @@
                                           style="height: 30px;line-height: 30px;display: block;font-size: 16px;color: #FFF;">2</span>
                                 </div>
                                 <div class="card-block" style="padding-bottom: 5px;">
-                                    <div class="card-text" style="font-size: 23px;color: #f40;margin-top: -7px;">43.4吨
-                                    </div>
+                                    <div class="card-text" style="font-size: 23px;color: #f40;margin-top: -7px;">43.4吨</div>
                                     <div class="card-text" style="font-size: 14px;margin-top: -3px;color: #3c510c;">
                                         麦加四号站
                                     </div>
@@ -125,6 +124,7 @@
                 </div>
 
                 <div class="map-scale-btn-wrapper"
+                     ng-show="isMapInited"
                      style="position: absolute;top: 13px;right: 25px;width: 30px;height: 30px;padding: 6px 6px; border:1px solid #ccc; box-shadow: #ddd;"
                      ng-click="toggleMapScale()">
                     <i style="font-size: 16px;"

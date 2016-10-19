@@ -4865,16 +4865,16 @@ a.text-black:hover {
   webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
-.dt-flow .table-bordered td {
+.device-detail-wrap .table-bordered td {
   border-color: #99CCCC;
 }
-.dt-flow .table-lebel {
+.device-detail-wrap .table-lebel {
   color: #990000;
 }
-.dt-flow .table-value {
+.device-detail-wrap .table-value {
   color: #003399;
 }
-.dt-flow .table-valuefix {
+.device-detail-wrap .table-valuefix {
   color: #949494;
 }
 .btn-option-danger {
@@ -4890,6 +4890,24 @@ a.text-black:hover {
 .btn-option-info:hover,
 .btn-option-info.active {
   background-color: #169BD5;
+}
+.table-device-component thead tr {
+  background-color: #D7D7D7;
+  border: 1px solid #A1A1A1;
+}
+.table-device-component thead tr th {
+  border: 1px solid #A1A1A1;
+  color: #003399;
+}
+.table-device-component td {
+  border: 1px solid #D7D7D7;
+  color: #333333;
+}
+.table-device-component .row-count-1 {
+  background-color: #E4E4E4;
+}
+.table-device-component .row-count-2 {
+  background-color: #F2F2F2;
 }
 .table > tbody > tr .level1 {
   padding-left: 30px;

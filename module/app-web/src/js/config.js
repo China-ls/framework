@@ -51,6 +51,7 @@ var app =
                 APP_LOCAL_STORAGE_MANAGE_EMPLOYEE: 'app_loc_storage_mg_emp',
                 APP_LOCAL_STORAGE_SELECT_DEVICE: 'app_loc_storage_slt_device',
 
+                CHARTS_COLORS_DEVICE_TYPE: ['#E44646', '#49D840', '#46B0E4', '#FF9900', '#CC6699', '#006699', '#9999CC', '#999933'],
                 CHARTS_COLORS: [
                     '#C1232B', '#B5C334', '#FCCE10', '#E87C25', '#27727B',
                     '#FE8463', '#9BCA63', '#FAD860', '#F3A43B', '#60C0DD',

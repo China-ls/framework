@@ -1,5 +1,6 @@
 package com.infinite.eoa.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.infinite.eoa.core.entity.AbstractEntity;
 import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Property;
@@ -13,12 +14,17 @@ import java.util.Collection;
  * @author hx on 16-7-25.
  * @since 1.0
  */
-//@Entity(EntityConst.CollectionName.COMPONENT)
 @Embedded
 public class Component extends AbstractEntity {
+    public static final int INSTANCE_TYPE_MASTER_CONTROL = 4096;
+
     @Property private String comp_id;
     @Property private String name;
     @Property private String type;
+    @Property private int instance_type;
+    @Property private int product_model;
+    @Property private int category;
+    @Property private int[] category_options;
     @Property private EntityConst.EntityStatus status = EntityConst.EntityStatus.NORMAL;
     @Embedded private ArrayList<Action> actions = new ArrayList<Action>(0);
     @Embedded private ArrayList<FieldDefinition> fieldDefinitions = new ArrayList<FieldDefinition>(0);
@@ -56,6 +62,7 @@ public class Component extends AbstractEntity {
         this.status = status;
     }
 
+    @JsonIgnore
     public ArrayList<FieldDefinition> getFieldDefinitions() {
         return fieldDefinitions;
     }
@@ -72,6 +79,7 @@ public class Component extends AbstractEntity {
         this.actions = actions;
     }
 
+    @JsonIgnore
     public ArrayList<DataFilterDefinetion> getDataFilterDefinetions() {
         return dataFilterDefinetions;
     }
@@ -98,15 +106,37 @@ public class Component extends AbstractEntity {
         return this;
     }
 
-    @Override
-    public String toString() {
-        return "Component{" +
-                "comp_id='" + comp_id + '\'' +
-                ", name='" + name + '\'' +
-                ", type='" + type + '\'' +
-                ", status=" + status +
-                ", actions=" + actions +
-                ", fieldDefinitions=" + fieldDefinitions +
-                '}';
+    public int getCategory() {
+        return category;
     }
+
+    public void setCategory(int category) {
+        this.category = category;
+    }
+
+    @JsonIgnore
+    public int[] getCategory_options() {
+        return category_options;
+    }
+
+    public void setCategory_options(int[] category_options) {
+        this.category_options = category_options;
+    }
+
+    public int getInstance_type() {
+        return instance_type;
+    }
+
+    public void setInstance_type(int instance_type) {
+        this.instance_type = instance_type;
+    }
+
+    public int getProduct_model() {
+        return product_model;
+    }
+
+    public void setProduct_model(int product_model) {
+        this.product_model = product_model;
+    }
+
 }

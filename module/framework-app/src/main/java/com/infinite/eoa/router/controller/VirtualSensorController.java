@@ -56,7 +56,9 @@ public class VirtualSensorController extends BasicRestController {
                 response = makeResponse(ResponseCode.APPKEY_EMPTY);
             } else {
                 SensorResponse sensorResponse = new SensorResponse();
-                sensorResponse.setSensor(sensorService.findById(APPKEY, id));
+                VirtualSensor sensor = sensorService.findById(APPKEY, id);
+                sensorResponse.setSensor(sensor);
+                sensorResponse.classifyComponents();
                 sensorResponse.setData(virtualSensorDataService.findLatestBySensorId(APPKEY, id));
                 response = makeResponse(ResponseCode.SUCCESS, sensorResponse);
             }

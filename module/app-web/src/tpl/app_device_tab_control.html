@@ -1,191 +1,156 @@
-<div class="wrapper">
-    <!-- 网络请求动画 -->
-    <div cg-busy="{promise:loadDataPromise,message:'数据加载中...'}"></div>
+<div class="device-detail-wrap">
 
-    <table st-table="rowCollectionBasic" class="table table-bordered table-striped tb-border">
-        <thead>
-        <tr>
-            <th>序号</th>
-            <th>设备名称</th>
-            <th>当前状态</th>
-            <th>当日运行时间</th>
-            <th>当月运行时间</th>
-            <th>远程控制</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr class="success" ng-repeat="row in sensor.components"
-            st-select-row="row" ng-if="row.isControl && row.type != 'status_sensor' ">
-            <!--<td>{{row}}</td>-->
-            <td>{{row.comp_id}}</td>
-            <td>{{row.name}}</td>
-            <td>
-                <i class="fa fa-power-off" ng-class="{'text-success': row.status === 'NORMAL', 'text-danger' :row.status != 'NORMAL'}"></i>
-                <!--<img ng-src="img/i_comp_7.png" width="22" ng-if="row.type == 'camera_controller'">-->
-                <!--<img ng-src="img/i_comp_4.png" width="22" ng-if="(row.type == 'electricmeter_sensor' || row.type == 'flowmeter_sensor')">-->
-                <!--<img ng-src="img/i_comp_6.png" width="22" ng-if="(row.type == 'cardreader_sensor')">-->
-                <!--<img ng-src="img/i_comp_2.png" width="22" ng-if="(row.type == 'onboard_controller' || row.type == 'plc_controller')">-->
-                <!--<i class="sprite"-->
-                   <!--ng-class="{-->
-                           <!--'sprite-u709' : (row.type == 'camera_controller'),-->
-                           <!--'sprite-u564' : (row.type == 'electricmeter_sensor' || row.type == 'flowmeter_sensor'),-->
-                           <!--'sprite-u719' : (row.type == 'cardreader_sensor'),-->
-                           <!--'sprite-u628' : (row.type == 'onboard_controller' || row.type == 'plc_controller')-->
-                           <!--}"-->
-                   <!--style="width: 32px;display: inline-block;"-->
-                <!--&gt;</i>-->
-                <span ng-if="row.status === 'NORMAL'">
-                    正常
-                </span>
-                <span ng-if="row.status != 'NORMAL'">
-                    异常
-                </span>
-            </td>
-            <td></td>
-            <td></td>
-            <td>
-                <input
-                        bs-switch
-                        ng-model="row.onoff"
-                        type="checkbox"
-                        switch-off-color="warning"
-                        switch-label="{{row.label}}"
-                        switch-readonly="{{ row.discontrol }}"
-                        switch-on-text="开"
-                        switch-off-text="关"
-                        switch-change="onControl(row)">
+    <div class="b-b b-success padder-xs-v padder m-t-sm">
+        <span class="text-danger">站点状态：</span>
+        <span ng-if="sensor.online == 1" class="label label-success">在线，可以进行远程操作</span>
+        <span ng-if="sensor.online == 2" class="label label-danger">离线，不能进行远程操作</span>
+    </div>
 
-                <!--<label class="i-switch">-->
-                    <!--<input type="checkbox" ng-checked="row.data.onoff">-->
-                    <!--<i>开管</i>-->
-                <!--</label>-->
-            </td>
-        </tr>
-        </tbody>
-    </table>
+    <div class="wrapper">
 
+        <!-- 网络请求动画 -->
+        <div cg-busy="{promise:loadDataPromise,message:'数据加载中...'}"></div>
 
+        <div>
 
-    <!-- 网络请求动画 -->
-    <!--<div class="hide row">
-
-        &lt;!&ndash; 控制模式 &ndash;&gt;
-        <div class="col-sm-3">
-            <div class="panel panel-primary">
-                <div class="panel-heading title">
-                    控制模式
-                </div>
-                <div class="panel-body">
-                    <div class="btn-group img-full row" style="margin-left: 0;"
-                         ng-init="contrlModel = 'Local'">
-                        <label class="col-xs-6 btn btn-sm btn-info ng-untouched ng-valid ng-dirty"
-                               ng-model="contrlModel" btn-radio="'Local'">
-                            <i class="fa fa-check text-active"></i> 本地控制
-                        </label>
-                        <label class="col-xs-6 btn btn-sm btn-success ng-untouched ng-valid ng-dirty active ng-valid-parse"
-                               ng-model="contrlModel" btn-radio="'Remote'">
-                            <i class="fa fa-check text-active"></i> 远程控制
-                        </label>
-                    </div>
-                </div>
+            <div class="m-b-sm">
+                更新时间：2016年09月20日11:14
             </div>
-        </div>
-        &lt;!&ndash; 控制模式 &ndash;&gt;
 
-        <div class="col-sm-3"
-             ng-repeat="comp in sensor.components"
-             ng-if="comp.type != 'status_sensor' && comp.type != 'analog_sensor' && comp.type != 'onboard_controller' ">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <span class="pos-rlt t5">
-                        <i class="sprite"
-                           ng-class="{
-                           'sprite-u709' : (comp.type == 'camera_controller'),
-                           'sprite-u564' : (comp.type == 'electricmeter_sensor' || comp.type == 'flowmeter_sensor'),
-                           'sprite-u719' : (comp.type == 'cardreader_sensor'),
-                           'sprite-u628' : (comp.type == 'onboard_controller' || comp.type == 'plc_controller')
-                           }"
-                           style="width: 32px;display: inline-block;"
-                        ></i>
-                    </span>
-                    <span class="m-l-xs">{{comp.name}}</span>
+            <div class="row">
 
+                <!--市电供电-->
+                <div class="col-sm-4">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td class="bg-info-only table-lebel">市电供电</td>
+                            <td class="text-center"><span class="table-value inline w-xxs">正常</span></td>
+                        </tr>
+                    </table>
                 </div>
-                <div class="panel-body">
-                    <input type="hidden" value="{{comp.data}}">
-                    <span ng-repeat="action in comp.actions">
-                        <label class="i-switch t5" ng-if="action.operation === 'switch'">
-                            <input type="checkbox" checked>
-                            <i></i>
-                        </label>
-                        <button ng-click="takepick(comp.comp_id)"
-                                class="img-full btn btn-success"
-                                ng-if="action.operation === 'take_photo'">拍照</button>
-                    </span>
-                    &lt;!&ndash;<button class="col-xs-6 btn btn-info btn-xs m-r-xs">操作记录</button>&ndash;&gt;
+                <!--市电供电-->
 
-                    <div ng-if="comp.data.comp_type =='flowmeter_sensor'">
-                        <p>
-                            <span>
-                                瞬时流量
-                            </span>
-                                <span class="w-xsm m-l-xs wrapper-xs padder-sm b-a bg-white-only inline">
-                                {{comp.data.instant}} <span class="pull-right">H/L</span>
-                            </span>
-                        </p>
-                        <p>
-                            <span>
-                                累计流量
-                            </span>
-                            <span class="w-xsm m-l-xs wrapper-xs padder-sm b-a bg-white-only inline">
-                                {{comp.data.positive_total}} <span class="pull-right">吨</span>
-                            </span>
-                        </p>
-                    </div>
-
-                    &lt;!&ndash; 电压计 &ndash;&gt;
-                    <div ng-if="comp.data.comp_type =='electricmeter_sensor'">
-                        <p>
-                            <span>A相电流</span>
-                            <span class="w-xsm m-l-xs wrapper-xs padder-sm b-a bg-white-only inline">{{comp.data.currentA}}
-                                <span class="pull-right">A</span>
-                            </span>
-                        </p>
-                        <p>
-                            <span>B相电流</span>
-                            <span class="w-xsm m-l-xs wrapper-xs padder-sm b-a bg-white-only inline">{{comp.data.currentB}}
-                                <span class="pull-right">A</span>
-                            </span>
-                        </p>
-                        <p>
-                            <span>C相电流</span>
-                            <span class="w-xsm m-l-xs wrapper-xs padder-sm b-a bg-white-only inline">{{comp.data.currentC}}
-                                <span class="pull-right">A</span>
-                            </span>
-                        </p>
-                        <p>
-                            <span>A相电压</span>
-                            <span class="w-xsm m-l-xs wrapper-xs padder-sm b-a bg-white-only inline">{{comp.data.voltageA}}
-                                <span class="pull-right">V</span>
-                            </span>
-                        </p>
-                        <p>
-                            <span>B相电压</span>
-                            <span class="w-xsm m-l-xs wrapper-xs padder-sm b-a bg-white-only inline">{{comp.data.voltageB}}
-                                <span class="pull-right">V</span>
-                            </span>
-                        </p>
-                        <p>
-                            <span>C相电压</span>
-                            <span class="w-xsm m-l-xs wrapper-xs padder-sm b-a bg-white-only inline">{{comp.data.voltageC}}
-                                <span class="pull-right">V</span>
-                            </span>
-                        </p>
-                    </div>
-                    &lt;!&ndash; 电压计 &ndash;&gt;
-
+                <!--正常液位-->
+                <div class="col-sm-4">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td class="bg-info-only table-lebel">正常液位</td>
+                            <td class="text-center"><span class="table-value inline w-xxs">高</span></td>
+                        </tr>
+                    </table>
                 </div>
+                <!--正常液位-->
+
+                <!--应急液位-->
+                <div class="col-sm-4">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td class="bg-info-only table-lebel">应急液位</td>
+                            <td class="text-center"><span class="table-value inline w-xxs">低</span></td>
+                        </tr>
+                    </table>
+                </div>
+                <!--应急液位-->
+
+                <!--门禁开关-->
+                <div class="col-sm-4">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td class="bg-info-only table-lebel">门禁开关</td>
+                            <td class="text-center"><span class="table-value inline w-xxs">开启</span></td>
+                        </tr>
+                    </table>
+                </div>
+                <!--门禁开关-->
+
+                <!--红外报警-->
+                <div class="col-sm-4">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td class="bg-info-only table-lebel">红外报警</td>
+                            <td class="text-center"><span class="table-value inline w-xxs">非法闯入</span></td>
+                        </tr>
+                    </table>
+                </div>
+                <!--红外报警-->
+
             </div>
+
         </div>
-    </div>-->
+
+        <!--动力设备控制-->
+        <div>
+
+            <div class="m-b-sm">
+                动力设备控制
+            </div>
+
+        </div>
+        <!--动力设备控制-->
+
+        <table class="text-center table table-device-component">
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>设备名称</th>
+                <th>当前状态</th>
+                <th>当日运行时间</th>
+                <th>当月运行时间</th>
+                <th>远程控制</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="row-count-1">
+                <td>1</td>
+                <td>{{object.mc.name}}</td>
+                <td>
+                    <i class="fa fa-power-off"
+                       ng-class="{'text-success': object.mc.status === 'NORMAL', 'text-danger' :object.mc.status != 'NORMAL'}"></i>
+                    <span ng-if="object.mc.status === 'NORMAL'">正常</span>
+                    <span ng-if="object.mc.status != 'NORMAL'">异常</span>
+                </td>
+                <td></td>
+                <td></td>
+                <td>
+                    <input bs-switch
+                           ng-model="object.mc.onoff"
+                           type="checkbox"
+                           switch-off-color="warning"
+                           switch-label="{{object.mc.label}}"
+                           switch-readonly="{{object.mc.discontrol}}"
+                           switch-on-text="远程控制"
+                           switch-off-text="本地控制"
+                           switch-change="onControl(object.mc)">
+                </td>
+            </tr>
+            <tr ng-repeat="row in object.cc"
+                ng-class="{'row-count-2': $index %2 == 0, 'row-count-1': $index %2 != 0}">
+                <td>{{$index + 2}}</td>
+                <td>{{row.name}}</td>
+                <td>
+                    <i class="fa fa-power-off"
+                       ng-class="{'text-success': row.status === 'NORMAL', 'text-danger' :row.status != 'NORMAL'}"></i>
+                    <span ng-if="row.status === 'NORMAL'">正常</span>
+                    <span ng-if="row.status != 'NORMAL'">异常</span>
+                </td>
+                <td></td>
+                <td></td>
+                <td>
+                    <input
+                            bs-switch
+                            ng-model="row.onoff"
+                            type="checkbox"
+                            switch-off-color="warning"
+                            switch-label="{{row.label}}"
+                            switch-readonly="{{ sensor.online != 1 || row.discontrol }}"
+                            switch-on-text="开"
+                            switch-off-text="关"
+                            switch-change="onControl(row)">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
 </div>

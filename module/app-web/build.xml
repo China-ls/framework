@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="renameHtml" basedir=".">
+
+    <target name="removeLatestBuild">
+        <exec executable="rm">
+            <arg line="-rf angular"/>
+        </exec>
+        <echo message="remove latest build directory angular/ finished."/>
+    </target>
+
+    <target name="compile" depends="removeLatestBuild">
+        <exec executable="grunt">
+            <arg line="build:angular"/>
+        </exec>
+        <echo message="compile finished."/>
+    </target>
+
+</project>

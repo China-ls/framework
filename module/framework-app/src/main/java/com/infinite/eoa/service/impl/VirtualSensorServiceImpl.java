@@ -26,18 +26,10 @@ import java.util.List;
 public class VirtualSensorServiceImpl extends AbstractPagerService<VirtualSensor> implements VirtualSensorService {
 //    private static Logger log = LoggerFactory.getLogger(VirtualSensorServiceImpl.class);
 
+    @Autowired
     private ApplicationService applicationService;
+    @Autowired
     private VirtualSensorDAO virtualSensorDAO;
-
-    @Autowired
-    public void setApplicationService(ApplicationService applicationService) {
-        this.applicationService = applicationService;
-    }
-
-    @Autowired
-    public void setVirtualSensorDAO(VirtualSensorDAO virtualSensorDAO) {
-        this.virtualSensorDAO = virtualSensorDAO;
-    }
 
     @Override
     public IMorphiaDAO getMorphiaDAO() {

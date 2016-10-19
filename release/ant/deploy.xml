@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="deploy" basedir=".">
+
+    <property name="goalProjectDir"
+              value="${basedir}/../../module/framework-app"/>
+
+    <property name="templateDir"
+              value="${goalProjectDir}/src/main/webapp/WEB-INF/pages/tpl"/>
+
+    <property name="server_host" value="120.55.165.5"/>
+    <property name="server_port" value="22"/>
+    <property name="server_user" value="root"/>
+    <property name="server_pass" value="AIDIman2006"/>
+    <property name="server_path" value="/home/ivansun"/>
+    <property name="mvn_home" value="/usr/local/apache-maven-3.3.9/"/>
+    <property name="mvn_compiledFile"
+              value="/home/hx/.m2/repository/com/infinite/framework-app/1.0-SNAPSHOT/framework-app-1.0-SNAPSHOT.war"/>
+
+    <target name="removeLatestBuild">
+        <exec executable="rm">
+            <arg line="-rf ${goalProjectDir}/app.war"/>
+        </exec>
+        <echo message="remove ${goalProjectDir}/app.war finished."/>
+    </target>
+
+    <target name="mvnCompileInstall" depends="removeLatestBuild">
+        <exec executable="${mvn_home}/bin/mvn" dir="${goalProjectDir}">
+            <env key="JAVA_HOME" path="/usr/local/jdk1.7.0_80"/>
+            <arg line="clean compile install"/>
+        </exec>
+        <echo message="mvn clean compile install finished."/>
+    </target>
+
+    <target name="copyCompiledFile" depends="mvnCompileInstall">
+        <exec executable="mv">
+            <arg line="${mvn_compiledFile} ${goalProjectDir}/app.war"/>
+        </exec>
+        <echo message="copy compiled file finished."/>
+    </target>
+
+    <target name="upload" depends="copyCompiledFile">
+        <exec executable="scp" inputstring="${server_pass}">
+            <arg line="${goalProjectDir}/app.war ${server_user}@${server_host}:${server_path}"/>
+            <arg value="${server_pass}"/>
+        </exec>
+        <echo message="${goalProjectDir}/app.war ${server_user}@${server_host}:${server_path}"/>
+        <echo message="upload finish"/>
+    </target>
+
+</project>

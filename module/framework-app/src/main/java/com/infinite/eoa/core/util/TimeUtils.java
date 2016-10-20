@@ -4,6 +4,7 @@ import org.joda.time.DateTime;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -42,6 +43,26 @@ public abstract class TimeUtils {
             default:
                 return 1;
         }
+    }
+
+    public static long getMinMillsOfThisMonth() {
+        return getMinMillsOfMonth(new DateTime());
+    }
+
+    public static long getMinMillsOfMonth(DateTime dateTime) {
+        return dateTime.withDayOfMonth(1).withHourOfDay(0).withMinuteOfHour(0).withSecondOfMinute(0).withMillisOfSecond(0).getMillis();
+    }
+
+    public static Date getMinUtilDateOfThisMonth() {
+        return getMinUtilDateOfMonth(new DateTime());
+    }
+
+    public static Date getMinUtilDateOfMonth(DateTime dateTime) {
+        return dateTime.withDayOfMonth(1).withHourOfDay(0).withMinuteOfHour(0).withSecondOfMinute(0).withMillisOfSecond(0).toDate();
+    }
+
+    public static Date getMinUtilDateOfDay(DateTime dateTime) {
+        return dateTime.withHourOfDay(0).withMinuteOfHour(0).withSecondOfMinute(0).withMillisOfSecond(0).toDate();
     }
 
     public static long getMinMillsOfDay(DateTime dateTime) {

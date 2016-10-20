@@ -364,7 +364,7 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4105,
+        "instance_type" : 4107,
         "name" : "红外报警",
         "product_model" : 0,
         "type" : "status_sensor"
@@ -926,7 +926,7 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4105,
+        "instance_type" : 4107,
         "name" : "红外报警",
         "product_model" : 0,
         "type" : "status_sensor"
@@ -1488,7 +1488,7 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4105,
+        "instance_type" : 4107,
         "name" : "红外报警",
         "product_model" : 0,
         "type" : "status_sensor"
@@ -2050,7 +2050,7 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4105,
+        "instance_type" : 4107,
         "name" : "红外报警",
         "product_model" : 0,
         "type" : "status_sensor"
@@ -2612,7 +2612,7 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4105,
+        "instance_type" : 4107,
         "name" : "红外报警",
         "product_model" : 0,
         "type" : "status_sensor"
@@ -3174,7 +3174,7 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4105,
+        "instance_type" : 4107,
         "name" : "红外报警",
         "product_model" : 0,
         "type" : "status_sensor"
@@ -3736,7 +3736,7 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4105,
+        "instance_type" : 4107,
         "name" : "红外报警",
         "product_model" : 0,
         "type" : "status_sensor"
@@ -4298,7 +4298,7 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4105,
+        "instance_type" : 4107,
         "name" : "红外报警",
         "product_model" : 0,
         "type" : "status_sensor"

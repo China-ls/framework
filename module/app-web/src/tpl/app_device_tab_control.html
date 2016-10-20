@@ -3,7 +3,7 @@
     <div class="b-b b-success padder-xs-v padder m-t-sm">
         <span class="text-danger">站点状态：</span>
         <span ng-if="sensor.online == 1" class="label label-success">在线，可以进行远程操作</span>
-        <span ng-if="sensor.online == 2" class="label label-danger">离线，不能进行远程操作</span>
+        <span ng-if="sensor && sensor.online == 2" class="label label-danger">离线，不能进行远程操作</span>
     </div>
 
     <div class="wrapper">
@@ -14,65 +14,28 @@
         <div>
 
             <div class="m-b-sm">
-                更新时间：2016年09月20日11:14
+                更新时间：{{sensor.update_time}}
             </div>
 
             <div class="row">
 
-                <!--市电供电-->
-                <div class="col-sm-4">
+                <div class="col-sm-4" ng-repeat="item in sc">
                     <table class="table table-bordered">
                         <tr>
-                            <td class="bg-info-only table-lebel">市电供电</td>
-                            <td class="text-center"><span class="table-value inline w-xxs">正常</span></td>
+                            <td class="bg-info-only table-lebel">
+                                <span class="inline w-xs">{{item.name}}</span>
+                            </td>
+                            <td class="text-center">
+                                <span class="table-value inline w-xxs">
+                                    <span ng-if="item.instance_type == 4104">{{item.onoff ? '故障' : '正常'}}</span>
+                                    <span ng-if="item.instance_type == 4105">{{item.onoff ? '低' : '高'}}</span>
+                                    <span ng-if="item.instance_type == 4106">{{item.onoff ? '开启' : '关闭'}}</span>
+                                    <span ng-if="item.instance_type == 4107">{{item.onoff ? '没有报警' : '有报警'}}</span>
+                                </span>
+                            </td>
                         </tr>
                     </table>
                 </div>
-                <!--市电供电-->
-
-                <!--正常液位-->
-                <div class="col-sm-4">
-                    <table class="table table-bordered">
-                        <tr>
-                            <td class="bg-info-only table-lebel">正常液位</td>
-                            <td class="text-center"><span class="table-value inline w-xxs">高</span></td>
-                        </tr>
-                    </table>
-                </div>
-                <!--正常液位-->
-
-                <!--应急液位-->
-                <div class="col-sm-4">
-                    <table class="table table-bordered">
-                        <tr>
-                            <td class="bg-info-only table-lebel">应急液位</td>
-                            <td class="text-center"><span class="table-value inline w-xxs">低</span></td>
-                        </tr>
-                    </table>
-                </div>
-                <!--应急液位-->
-
-                <!--门禁开关-->
-                <div class="col-sm-4">
-                    <table class="table table-bordered">
-                        <tr>
-                            <td class="bg-info-only table-lebel">门禁开关</td>
-                            <td class="text-center"><span class="table-value inline w-xxs">开启</span></td>
-                        </tr>
-                    </table>
-                </div>
-                <!--门禁开关-->
-
-                <!--红外报警-->
-                <div class="col-sm-4">
-                    <table class="table table-bordered">
-                        <tr>
-                            <td class="bg-info-only table-lebel">红外报警</td>
-                            <td class="text-center"><span class="table-value inline w-xxs">非法闯入</span></td>
-                        </tr>
-                    </table>
-                </div>
-                <!--红外报警-->
 
             </div>
 
@@ -94,21 +57,22 @@
                 <th>序号</th>
                 <th>设备名称</th>
                 <th>当前状态</th>
+                <th>电流值</th>
                 <th>当日运行时间</th>
                 <th>当月运行时间</th>
                 <th>远程控制</th>
             </tr>
             </thead>
             <tbody>
-            <tr class="row-count-1">
+            <tr class="row-count-1" ng-if="mc">
                 <td>1</td>
                 <td>{{mc.name}}</td>
                 <td>
-                    <i class="fa fa-power-off"
-                       ng-class="{'text-success': mc.status === 'NORMAL', 'text-danger' :mc.status != 'NORMAL'}"></i>
-                    <span ng-if="mc.status === 'NORMAL'">正常</span>
-                    <span ng-if="mc.status != 'NORMAL'">异常</span>
+                    <i class="fa fa-power-off" ng-style="{'color': mc.onoff ? '#428bca' : '#f0ad4e'}"></i>
+                    <span ng-if="mc.onoff">远程控制</span>
+                    <span ng-if="!mc.onoff">本地控制</span>
                 </td>
+                <td>{{mc.data.ref_status.value |number:4}}</td>
                 <td></td>
                 <td></td>
                 <td>
@@ -125,14 +89,14 @@
             </tr>
             <tr ng-repeat="row in cc"
                 ng-class="{'row-count-2': $index %2 == 0, 'row-count-1': $index %2 != 0}">
-                <td>{{$index + 2}}</td>
+                <td>{{$index + (mc ? 1 : 2)}}</td>
                 <td>{{row.name}}</td>
                 <td>
-                    <i class="fa fa-power-off"
-                       ng-class="{'text-success': row.status === 'NORMAL', 'text-danger' :row.status != 'NORMAL'}"></i>
-                    <span ng-if="row.status === 'NORMAL'">正常</span>
-                    <span ng-if="row.status != 'NORMAL'">异常</span>
+                    <i class="fa fa-power-off" ng-style="{'color': row.onoff ? '#428bca' : '#f0ad4e'}"></i>
+                    <span ng-if="row.onoff">开</span>
+                    <span ng-if="!row.onoff">关</span>
                 </td>
+                <td>{{row.data.ref_status.value |number:4}}</td>
                 <td></td>
                 <td></td>
                 <td>
@@ -142,7 +106,7 @@
                             type="checkbox"
                             switch-off-color="warning"
                             switch-label="{{row.label}}"
-                            switch-readonly="{{ sensor.online != 1 || row.discontrol }}"
+                            switch-readonly="{{ sensor.online != 1 || mc.discontrol || !mc.onoff || row.discontrol }}"
                             switch-on-text="开"
                             switch-off-text="关"
                             switch-change="onControl(row)">

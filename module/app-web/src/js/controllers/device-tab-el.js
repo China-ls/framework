@@ -6,7 +6,7 @@ app.controller('DeviceTabElCtrl', ['$scope', '$http', 'APPCONST', function ($sco
     $scope.app.subHeader.goBackSref = 'app.device';
 
     $scope.chartElectric = {
-        options: {chart: {type: 'column'}, tooltip: {valueSuffix: '度', style: {padding: 10, fontWeight: 'bold'}}},
+        options: {chart: {type: 'line'}, tooltip: {valueSuffix: '度', style: {padding: 10, fontWeight: 'bold'}}},
         series: [{name: '用电量', data: [10, 15, 12, 8, 7]}],
         title: {text: ''}, loading: false,
         xAxis: {tickInterval: 1, labels: {step: 4}, categories: []},
@@ -18,7 +18,7 @@ app.controller('DeviceTabElCtrl', ['$scope', '$http', 'APPCONST', function ($sco
     $scope.loadLatestDataPromise = $http.get(APPCONST.CTX + APPCONST.SENSOR_DATA_ELECTRIC.replace("{id}", $scope.$stateParams.id))
         .then(function (response) {
             $scope.elData = response.data.data;
-            console.warn($scope.elData);
+            // console.warn($scope.elData);
             try {
                 $scope.elData.update_time = $scope.formatDate(new Date($scope.elData.latest.time), "yyyy年MM月dd日 HH时mm分ss秒")
             } catch (e) {
@@ -41,7 +41,7 @@ app.controller('DeviceTabElCtrl', ['$scope', '$http', 'APPCONST', function ($sco
                         var series = {
                             name: $scope.chartSeriesName,
                             data: data.values/*, dataLabels: {enabled: true}*/,
-                            color: APPCONST.CHARTS_COLORS[Math.ceil(Math.random() * APPCONST.CHARTS_COLORS.length) % 15]
+                            color: 'rgb(124, 181, 236)'
                         };
                         $scope.chartElectric.xAxis.categories = data.keys;
                     }
@@ -72,7 +72,7 @@ app.controller('DeviceTabElCtrl', ['$scope', '$http', 'APPCONST', function ($sco
         $scope.loadData();
     };
 
-    $scope.setDataType(0);
+    $scope.setDataType(1);
 
 }])
 ;

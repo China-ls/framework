@@ -19,7 +19,7 @@ app.controller('DeviceTabWaterCtrl', ['$scope', '$http', '$localStorage', '$stat
                     $scope.waterData.update_time = $scope.formatDate(new Date($scope.waterData.latest.time), "yyyy年MM月dd日 HH时mm分ss秒")
                 } catch (e) {
                 }
-                // console.warn($scope.waterData);
+                console.warn($scope.waterData);
             });
 
         $scope.chartHandlerWater = {
@@ -62,7 +62,7 @@ app.controller('DeviceTabWaterCtrl', ['$scope', '$http', '$localStorage', '$stat
             });
 
         $scope.chartHandlerDayTotal = {
-            options: {chart: {type: 'column'}, tooltip: {valueSuffix: '立方米', style: {padding: 10, fontWeight: 'bold'}}},
+            options: {chart: {type: 'line'}, tooltip: {valueSuffix: '立方米', style: {padding: 10, fontWeight: 'bold'}}},
             series: [],
             title: {text: ''}, loading: false,
             xAxis: {tickInterval: 1, labels: {step: 4}, categories: []},
@@ -86,7 +86,7 @@ app.controller('DeviceTabWaterCtrl', ['$scope', '$http', '$localStorage', '$stat
                             var series = {
                                 name: $scope.chartSeriesName,
                                 data: data.values/*, dataLabels: {enabled: true}*/,
-                                color: APPCONST.CHARTS_COLORS[Math.ceil(Math.random() * APPCONST.CHARTS_COLORS.length) % 15]
+                                color: 'rgb(124, 181, 236)'
                             };
                             $scope.chartHandlerDayTotal.xAxis.categories = data.keys;
                         }
@@ -117,7 +117,7 @@ app.controller('DeviceTabWaterCtrl', ['$scope', '$http', '$localStorage', '$stat
             $scope.loadDayTotalData();
         };
 
-        $scope.setDayTotalDataType(0);
+        $scope.setDayTotalDataType(1);
 
         $scope.ccc = APPCONST.CHARTS_COLORS;
 

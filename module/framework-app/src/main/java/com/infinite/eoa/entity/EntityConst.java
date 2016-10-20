@@ -70,6 +70,7 @@ public class EntityConst {
         public static final String VIRTUALSENSOR = "sensor";
         public static final String VIRTUALSENSOR_DATA = "sensor_data";
         public static final String VIRTUALSENSOR_EVENT = "sensor_event";
+        public static final String CENCUS_COMPONENT_DAY_WORK = "cencus_comp_day_work";
 //        public static final String COMPONENT = "component";
 //        public static final String ACTION = "action";
     }

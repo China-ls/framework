@@ -39,10 +39,11 @@ app.controller('DeviceTabControlCtrl',
                 if (data) {
                     angular.forEach(data, function (item) {
                         if (item.time) {
-                            item.time = $scope.formatDate(new Date(item.time), "yyyy年MM月dd日HH:mm:ss");
+                            item.display_time = $scope.formatDate(new Date(item.time), "yyyy年MM月dd日HH:mm:ss");
                         }
                         dm[item.comp_id] = item;
                     });
+                    $scope.sensor.update_time = data[0].display_time;
                 }
 
                 if ($scope.mc) {
@@ -79,29 +80,10 @@ app.controller('DeviceTabControlCtrl',
 
             $scope.$on("WS_MESSAGE", function (event, data) {
                 try {
-                    if (data) {
-                        var dm = {};
-                        angular.forEach(data, function (item) {
-                            if (item.sensor_id != $scope.sensor.sensor_id) {
-                                return;
-                            }
-                            if (item.time) {
-                                item.time = $scope.formatDate(new Date(item.time), "yyyy年MM月dd日HH:mm:ss");
-                            }
-                            dm[item.comp_id] = item;
-                        });
-                        for (var i = 0; i < $scope.sensor.components.length; i++) {
-                            $scope.sensor.components[i].data = dm[$scope.sensor.components[i].comp_id];
-                            if ($scope.sensor.components[i].data) {
-                                $scope.sensor.components[i].isControl = typeof $scope.sensor.components[i].data.onoff != 'undefined';
-                                $scope.sensor.components[i].onoff = $scope.sensor.components[i].data.onoff;
-                                $scope.sensor.components[i].discontrol = $scope.sensor.components[i].status != 'NORMAL';
-                                $scope.sensor.components[i].label = '';
-                                // } else {
-                                // console.warn(comp);
-                            }
-                        }
+                    if (!data || data[0].sensor_id !== $scope.sensor.sensor_id) {
+                        return;
                     }
+                    $scope.classifyData(data);
                 } catch (e) {
                     console.error(e);
                 }

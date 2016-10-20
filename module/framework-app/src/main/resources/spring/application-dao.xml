@@ -110,4 +110,8 @@
         <constructor-arg ref="systemDatastore"/>
     </bean>
 
+    <bean name="componentDayWorkCencusDAO" class="com.infinite.eoa.persistent.impl.ComponentDayWorkCencusDAOImpl">
+        <constructor-arg ref="systemDatastore"/>
+    </bean>
+
 </beans>

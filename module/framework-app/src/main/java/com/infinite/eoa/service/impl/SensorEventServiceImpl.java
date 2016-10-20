@@ -3,6 +3,7 @@ package com.infinite.eoa.service.impl;
 import com.infinite.eoa.entity.SensorEvent;
 import com.infinite.eoa.persistent.SensorEventDAO;
 import com.infinite.eoa.service.SensorEventService;
+import org.bson.Document;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.Key;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,11 @@ public class SensorEventServiceImpl implements SensorEventService {
     @Override
     public SensorEvent findLatestBySensorId(String appkey, String sensor_id) {
         return sensorEventDAO.findFirstByTimeDescAndSensorId(sensor_id);
+    }
+
+    @Override
+    public Document cencusTodayAndMonthOnlineTimeBySensorId(String appkey, String id) {
+//        sensorEventDAO.
+        return null;
     }
 }

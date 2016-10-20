@@ -15,6 +15,7 @@
     <logger name="org.apache.shiro" level="ERROR" />
     <logger name="com.infinite" level="DEBUG" />
     <logger name="com.infinite.eoa.websocket" level="DEBUG" />
+    <logger name="com.infinite.eoa.persistent" level="ERROR" />
 
     <!-- 日志输出级别 -->
     <root level="ERROR">

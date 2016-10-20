@@ -60,6 +60,7 @@ public class VirtualSensorController extends BasicRestController {
                 sensorResponse.setSensor(sensor);
                 sensorResponse.classifyComponents();
                 sensorResponse.setData(virtualSensorDataService.findLatestBySensorId(APPKEY, id));
+                virtualSensorDataService.cencusTodayAndMonthWorkTimeBySensorId(APPKEY, id);
                 response = makeResponse(ResponseCode.SUCCESS, sensorResponse);
             }
         } catch (ApplicationNotExsistException e) {

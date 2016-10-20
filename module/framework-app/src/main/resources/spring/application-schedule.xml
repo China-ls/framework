@@ -12,9 +12,9 @@
 		http://www.springframework.org/schema/task
 		http://www.springframework.org/schema/task/spring-task.xsd">
 
-    <context:component-scan base-package="com.infinite.iot.schedule" />
+    <context:component-scan base-package="com.infinite.eoa.schedule" />
 
     <task:annotation-driven scheduler="threadPoolTaskScheduler"  />
-    <task:scheduler id="threadPoolTaskScheduler" pool-size="10" />
+    <task:scheduler id="threadPoolTaskScheduler" pool-size="3" />
 
 </beans>

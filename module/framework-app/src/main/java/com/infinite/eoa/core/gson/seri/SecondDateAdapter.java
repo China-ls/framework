@@ -23,7 +23,6 @@ public class SecondDateAdapter extends TypeAdapter<Date> {
             writer.nullValue();
             return;
         }
-        String xy = value.getTime() + "";
-        writer.value(xy);
+        writer.value(value.getTime());
     }
 }

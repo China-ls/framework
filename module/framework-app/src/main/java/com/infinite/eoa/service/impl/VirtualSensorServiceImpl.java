@@ -5,6 +5,7 @@ import com.infinite.eoa.core.serivce.AbstractPagerService;
 import com.infinite.eoa.entity.EntityConst;
 import com.infinite.eoa.entity.SensorEvent;
 import com.infinite.eoa.entity.VirtualSensor;
+import com.infinite.eoa.entity.VirtualSensorData;
 import com.infinite.eoa.persistent.VirtualSensorDAO;
 import com.infinite.eoa.service.ApplicationService;
 import com.infinite.eoa.service.VirtualSensorService;
@@ -18,6 +19,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
+
+import static javax.swing.UIManager.get;
 
 /**
  * @author by hx on 16-7-26.
@@ -127,5 +130,20 @@ public class VirtualSensorServiceImpl extends AbstractPagerService<VirtualSensor
             query.filter("day_deal_water_ability", day_deal_water_ability);
         }
         return virtualSensorDAO.find(query).asList();
+    }
+
+    @Override
+    public int onSensorDataCome(List<VirtualSensorData> sensorDatas) {
+        if (null == sensorDatas || sensorDatas.size() <= 0) {
+            return 0;
+        }
+        String sensor_id = sensorDatas.get(0).getSensor_id();
+        UpdateOperations<VirtualSensor> updateOperations = virtualSensorDAO.createUpdateOperations();
+        updateOperations.set("online", EntityConst.SensorOnline.YES);
+        UpdateResults updateResults = virtualSensorDAO.update(
+                virtualSensorDAO.createQuery().filter("sensor_id", sensor_id),
+                updateOperations
+        );
+        return updateResults.getUpdatedCount();
     }
 }

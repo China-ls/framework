@@ -32,9 +32,9 @@ public class MqttMessageHandler extends JmsMessageHandlerAdapter {
     @Override
     public void handleMessage(Message<?> message) throws MessagingException {
         Object payload = message.getPayload();
-        if (log.isDebugEnabled()) {
-            log.debug("handler payload: {}", payload);
-        }
+//        if (log.isDebugEnabled()) {
+//            log.debug("handler payload: {}", payload);
+//        }
         if (payload instanceof String) {
             String text = (String) payload;
             try {

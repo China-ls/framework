@@ -39,9 +39,8 @@
     </target>
 
     <target name="upload" depends="copyCompiledFile">
-        <exec executable="scp" inputstring="${server_pass}">
+        <exec executable="scp">
             <arg line="${goalProjectDir}/app.war ${server_user}@${server_host}:${server_path}"/>
-            <arg value="${server_pass}"/>
         </exec>
         <echo message="${goalProjectDir}/app.war ${server_user}@${server_host}:${server_path}"/>
         <echo message="upload finish"/>

@@ -34,6 +34,8 @@ import org.springframework.stereotype.Service;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
@@ -63,10 +65,12 @@ public class VirtualSensorDataServiceImpl implements VirtualSensorDataService {
 
     @Override
     public List<VirtualSensorData> save(String data) {
-        List<VirtualSensorData> sensorDatas = JsonUtil.fromJson(data, new TypeToken<List<VirtualSensorData>>() {}.getType());
+        List<VirtualSensorData> sensorDatas = JsonUtil.fromJson(data, new TypeToken<List<VirtualSensorData>>() {
+        }.getType());
         for (VirtualSensorData vsd : sensorDatas) {
             virtualSensorDataDAO.save(vsd);
         }
+        virtualSensorService.onSensorDataCome(sensorDatas);
         return sensorDatas;
     }
 
@@ -514,13 +518,43 @@ public class VirtualSensorDataServiceImpl implements VirtualSensorDataService {
                 || !min.containsKey(field)) {
             return 0.0D;
         } else {
-            double distance = max.getDouble(field) - min.getDouble(field);
+            double distance = Math.abs(max.getDouble(field) - min.getDouble(field));
             return NumberUtils.toDouble(decimalFormat.format(distance).replace(",", ""));
         }
     }
 
-    public static void main(String[] args) {
-        System.out.println(new Date(1475565071337L).toLocaleString());
-    }
+    @Override
+    public Document cencusTodayAndMonthWorkTimeBySensorId(String appkey, String sensor_id) {
+        DateTime dateTime = new DateTime();
+        long endTime = TimeUtils.getMinMillsOfDay(dateTime);
+        long startTime = TimeUtils.getMinMillsOfDay(dateTime.minusDays(1));
 
+        HashMap<String, Date> latestCencus = new HashMap<String, Date>();
+        HashMap<String, Long> dayCencus = new HashMap<String, Long>();
+        Iterator<VirtualSensorData> sdIt = virtualSensorDataDAO.find(
+                virtualSensorDataDAO.createQuery()
+                        .filter("sensor_id", sensor_id)
+                        .field("time").greaterThanOrEq(new Date(startTime))
+                        .field("time").lessThan(new Date(endTime))
+                        .order("comp_type,time")
+        ).iterator();
+        while (sdIt.hasNext()) {
+            VirtualSensorData sensorData = sdIt.next();
+            String cid = sensorData.getComp_id();
+            Date time = sensorData.getTime();
+            long ct = time.getTime();
+            Date lateast = latestCencus.get(cid);
+            if (sensorData.isOnoff()) {//开启的
+                if (null == lateast) {
+                    latestCencus.put(cid, time);
+                }
+            } else if (!sensorData.isOnoff() && null != lateast) {//关闭的
+                long distance = ct - lateast.getTime();
+                Long def = dayCencus.get(cid);
+                def = def == null ? 0 : def;
+                dayCencus.put(cid, def + distance);
+            }
+        }
+        return null;
+    }
 }

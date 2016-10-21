@@ -14,7 +14,7 @@ import java.util.List;
  */
 public interface VirtualSensorDataService {
 
-    public List<VirtualSensorData> save(String data);
+    public List<Document> save(String data);
 
     ArrayList<VirtualSensorData> findLatestBySensorId(String appkey, String sensorid);
 

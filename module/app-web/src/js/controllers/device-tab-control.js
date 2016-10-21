@@ -43,7 +43,9 @@ app.controller('DeviceTabControlCtrl',
                         }
                         dm[item.comp_id] = item;
                     });
-                    $scope.sensor.update_time = data[0].display_time;
+                    if (data[0]) {
+                        $scope.sensor.update_time = data[0].display_time;
+                    }
                 }
 
                 if ($scope.mc) {
@@ -66,6 +68,12 @@ app.controller('DeviceTabControlCtrl',
                 item.label = '';
                 item.onoff = !data ? false : data.onoff;
                 item.discontrol = !data || $scope.sensor.online !== 1;
+                if ($scope.object.cwtc) {
+                    item.cwtc = {
+                        month: $scope.object.cwtc.month[item.comp_id],
+                        day: $scope.object.cwtc.day[item.comp_id]
+                    };
+                }
             };
 
             $scope.onControl = function (comp) {

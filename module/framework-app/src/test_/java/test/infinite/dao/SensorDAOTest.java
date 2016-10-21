@@ -3,9 +3,9 @@ package test.infinite.dao;
 import com.infinite.eoa.entity.VirtualSensor;
 import com.infinite.eoa.persistent.VirtualSensorDAO;
 import com.infinite.eoa.persistent.VirtualSensorDataDAO;
-import com.infinite.eoa.schedule.CencusSchedule;
+import com.infinite.eoa.schedule.CencusComponentWorkTimeSchedule;
+import com.infinite.eoa.service.ComponentWorkTimeCencusService;
 import com.infinite.eoa.service.impl.VirtualSensorDataServiceImpl;
-import org.bson.Document;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +16,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration({
         "classpath:/spring/application-context.xml",
         "classpath:/spring/application-schedule.xml",
+        "classpath:/spring/application-service.xml",
+        "classpath:/spring/application-jms.xml",
+        "classpath:/spring/application-thread-pool.xml",
         "classpath:/spring/application-dao.xml"
 })
 public class SensorDAOTest {
@@ -26,7 +29,9 @@ public class SensorDAOTest {
     private VirtualSensorDataDAO sensorDataDAO;
     private VirtualSensorDataServiceImpl sensorDataService;
     @Autowired
-    private CencusSchedule cencusSchedule;
+    private ComponentWorkTimeCencusService cencusService;
+    @Autowired
+    private CencusComponentWorkTimeSchedule cencusSchedule;
 
 
     @Test
@@ -38,7 +43,10 @@ public class SensorDAOTest {
 
     @Test
     public void test() {
-        cencusSchedule.cencus();
+//        cencusSchedule.cencus();
+        System.out.println(
+                cencusService.getDayAndMonthBySensorId("988b743c-3a73-4485-931e-379653f0593f")
+        );
     }
 
 }

@@ -5,6 +5,7 @@ import com.infinite.eoa.core.web.entity.Response;
 import com.infinite.eoa.entity.VirtualSensor;
 import com.infinite.eoa.router.entity.ResponseCode;
 import com.infinite.eoa.router.entity.SensorResponse;
+import com.infinite.eoa.service.ComponentWorkTimeCencusService;
 import com.infinite.eoa.service.VirtualSensorDataService;
 import com.infinite.eoa.service.VirtualSensorService;
 import com.infinite.eoa.service.exception.ApplicationNotExsistException;
@@ -40,6 +41,8 @@ public class VirtualSensorController extends BasicRestController {
 
     @Autowired
     private VirtualSensorDataService virtualSensorDataService;
+    @Autowired
+    private ComponentWorkTimeCencusService componentWorkTimeCencusService;
 
     @RequestMapping(value = "/", method = RequestMethod.PUT)
     @ResponseBody
@@ -60,7 +63,7 @@ public class VirtualSensorController extends BasicRestController {
                 sensorResponse.setSensor(sensor);
                 sensorResponse.classifyComponents();
                 sensorResponse.setData(virtualSensorDataService.findLatestBySensorId(APPKEY, id));
-                virtualSensorDataService.cencusTodayAndMonthWorkTimeBySensorId(APPKEY, id);
+                sensorResponse.setCompWorkTimeCencus(componentWorkTimeCencusService.getDayAndMonthBySensorId(id));
                 response = makeResponse(ResponseCode.SUCCESS, sensorResponse);
             }
         } catch (ApplicationNotExsistException e) {

@@ -98,6 +98,13 @@ angular.module('app')
                         'lib/angularjs-slider/rzslider.min.css',
                         'lib/angularjs-slider/rzslider.min.js'
                     ]
+                },
+                {
+                    name: 'angular-carousel',
+                    files: [
+                        'lib/angular-carousel/dist/angular-carousel.min.css',
+                        'lib/angular-carousel/dist/angular-carousel.min.js'
+                    ]
                 }
             ]
         });

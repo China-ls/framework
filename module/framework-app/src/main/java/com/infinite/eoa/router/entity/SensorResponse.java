@@ -5,6 +5,7 @@ import com.infinite.eoa.core.entity.AbstractEntity;
 import com.infinite.eoa.entity.Component;
 import com.infinite.eoa.entity.VirtualSensor;
 import com.infinite.eoa.entity.VirtualSensorData;
+import org.bson.Document;
 
 import java.util.ArrayList;
 
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 public class SensorResponse extends AbstractEntity {
     private VirtualSensor sensor;
     private Component masterControl;
+    private Document compWorkTimeCencus;
     private ArrayList<Component> freeComp;
     private ArrayList<Component> controlComp;
     private ArrayList<Component> statusComp;
@@ -135,4 +137,12 @@ public class SensorResponse extends AbstractEntity {
         }
     }
 
+    public void setCompWorkTimeCencus(Document compWorkTimeCencus) {
+        this.compWorkTimeCencus = compWorkTimeCencus;
+    }
+
+    @JsonProperty("cwtc")
+    public Document getCompWorkTimeCencus() {
+        return compWorkTimeCencus;
+    }
 }

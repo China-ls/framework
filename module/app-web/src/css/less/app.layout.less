@@ -270,6 +270,15 @@ body {
   border-right: 1px solid #b9b9b9;
 }
 
+.aside-search-wrap {
+  position: fixed;
+  z-index:1;
+}
+
+.nav-aside-content-wrap {
+  margin-top: 45px;
+}
+
 @media (min-width: 768px) {
   .app-aside,
   .navbar-header,
@@ -289,6 +298,7 @@ body {
   .content-header {
     margin-left: @app-aside-width;
   }
+
   .app-aside-hide .content-header {
     margin-left: @app-aside-hide-width;
   }

@@ -30,6 +30,27 @@ public abstract class TimeUtils {
         return System.currentTimeMillis() + increment * count;
     }
 
+    public static String formatToDays(long timePeirod) {
+        if (timePeirod > DAY) {
+            long day = timePeirod / DAY;
+            long mod = timePeirod % DAY;
+            return day + "天" + formatToDays(mod);
+        } else if (timePeirod > HOUR) {
+            long hour = timePeirod / HOUR;
+            long mod = timePeirod % HOUR;
+            return hour + "小时" + formatToDays(mod);
+        } else if (timePeirod > MINUTE) {
+            long min = timePeirod / MINUTE;
+            long mod = timePeirod % MINUTE;
+            return min + "分钟" + formatToDays(mod);
+        } else if (timePeirod > SECOND) {
+            long sec = timePeirod / SECOND;
+            long mod = timePeirod % SECOND;
+            return sec + "秒" + formatToDays(mod);
+        }
+        return "";
+    }
+
     private static long getIncreament(TimeUnit unit) {
         switch (unit) {
             case SECONDS:

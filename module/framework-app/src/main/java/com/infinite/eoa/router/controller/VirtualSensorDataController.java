@@ -114,7 +114,7 @@ public class VirtualSensorDataController extends BasicRestController {
     ) {
         Response response = null;
         try {
-            int type = NumberUtils.toInt(typeText);
+//            int type = NumberUtils.toInt(typeText);
             response = makeResponse(
                     ResponseCode.SUCCESS,
                     virtualSensorDataService.findFieldDegreeByInterval(

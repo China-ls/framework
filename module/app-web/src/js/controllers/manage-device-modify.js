@@ -13,8 +13,8 @@ app.controller('ManageDeviceModifyTitleCtrl', ['$scope', '$http', '$localStorage
 );
 
 // ManageRouterCtrl controller
-app.controller('ManageDeviceModifyCtrl', ['$scope', '$http', '$localStorage', '$state',
-    function ($scope, $http, $localStorage, $state) {
+app.controller('ManageDeviceModifyCtrl', ['$scope', '$http', '$localStorage', '$state', 'toaster',
+    function ($scope, $http, $localStorage, $state, toaster) {
         $scope.device = {
             longitude: 120.95281,
             latitude: 30.883874
@@ -30,6 +30,7 @@ app.controller('ManageDeviceModifyCtrl', ['$scope', '$http', '$localStorage', '$
             clientHeight: $scope.baidumapeight,
             overlays: $scope.overlays
         };
+        $scope.components = [];
 
         $scope.onMapClick = function ($event, $params) {
             if (!$params || !$params[0] || !$params[0].point) {
@@ -51,6 +52,35 @@ app.controller('ManageDeviceModifyCtrl', ['$scope', '$http', '$localStorage', '$
         };
         $scope.cancel = function () {
             $state.go('app.mngdevice');
+        };
+
+        $scope.onAddComponent = function () {
+            $scope.components.push({});
+        };
+        $scope.onRemoveComponent = function (index) {
+            $scope.components.splice(index, 1);
+        };
+
+        $scope.checkFormAndToast = function (data, field, isSelect) {
+            isSelect = isSelect || false;
+            if (!data) {
+                toaster.pop('warning', '提示', isSelect ? '请选择' : '请输入' + field);
+                return false;
+            }
+            return true;
+        };
+
+        $scope.onSubmit = function () {
+            if (!$scope.checkFormAndToast($scope.device.name, '姓名')) {
+                return;
+            }
+            if (!$scope.checkFormAndToast($scope.device.type, '站点类型', true)) {
+                return;
+            }
+            if (!$scope.checkFormAndToast($scope.device.dayDealDirtyWaterAbility, '日处水能力', true)) {
+                return;
+            }
+            console.warn($scope.device);
         };
     }]
 );

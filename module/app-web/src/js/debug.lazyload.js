@@ -167,6 +167,13 @@ angular.module('app')
                     ]
                 },
                 {
+                    name: 'angular-carousel',
+                    files: [
+                        '../bower_components/angular-carousel/dist/angular-carousel.min.css',
+                        '../bower_components/angular-carousel/dist/angular-carousel.min.js'
+                    ]
+                },
+                {
                     name: 'com.2fdevs.videogular',
                     files: [
                         '../bower_components/videogular/videogular.min.js'

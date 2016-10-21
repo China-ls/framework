@@ -2,10 +2,10 @@ package com.infinite.eoa.mq;
 
 import com.infinite.eoa.core.jms.spring.mqtt.JmsMessageHandlerAdapter;
 import com.infinite.eoa.core.util.JsonUtil;
-import com.infinite.eoa.entity.VirtualSensorData;
 import com.infinite.eoa.service.VirtualSensorDataService;
 import com.infinite.eoa.service.VirtualSensorService;
 import com.infinite.eoa.websocket.WebSocketMessageHandler;
+import org.bson.Document;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.messaging.Message;
@@ -38,7 +38,7 @@ public class MqttMessageHandler extends JmsMessageHandlerAdapter {
         if (payload instanceof String) {
             String text = (String) payload;
             try {
-                List<VirtualSensorData> documentList = virtualSensorDataService.save(text);
+                List<Document> documentList = virtualSensorDataService.save(text);
                 //TODO 根据 VirtualSensor 里面配置的callback来回调
                 text = JsonUtil.toJson(documentList);
                 if (log.isDebugEnabled()) {

@@ -37,10 +37,6 @@ app.controller('DepartmentEditCtrl', ['$scope', '$http', '$localStorage', '$stat
             }
         }
 
-        // $scope.node = {name: '测试节点', leading: '洪鑫', address: '上海市'};
-        // console.warn($scope.isUpdate);
-        // console.warn($scope.node);
-
         $scope.warnToast = function (text) {
             toaster.pop('warning', '提示', text);
         };
@@ -54,10 +50,6 @@ app.controller('DepartmentEditCtrl', ['$scope', '$http', '$localStorage', '$stat
                 $scope.warnToast('请输入机构名字');
                 return;
             }
-            // if (!$scope.node.leading) {
-            //     $scope.warnToast('请输入机构负责人');
-            //     return;
-            // }
 
             $http.put(APPCONST.CTX + APPCONST.DEPARTMENT_ADD, $scope.node).then(function (response) {
                 // console.warn(response);

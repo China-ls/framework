@@ -19,7 +19,7 @@ app.controller('DeviceTabWaterCtrl', ['$scope', '$http', '$localStorage', '$stat
                     $scope.waterData.update_time = $scope.formatDate(new Date($scope.waterData.latest.time), "yyyy年MM月dd日 HH时mm分ss秒")
                 } catch (e) {
                 }
-                console.warn($scope.waterData);
+                // console.warn($scope.waterData);
             });
 
         $scope.chartHandlerWater = {

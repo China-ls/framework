@@ -63,8 +63,7 @@ public class VirtualSensorDataServiceImpl implements VirtualSensorDataService {
     @Autowired
     private VirtualSensorDataDAO virtualSensorDataDAO;
 
-    @Override
-    public List<VirtualSensorData> save(String data) {
+    /*public List<VirtualSensorData> save(String data) {
         List<VirtualSensorData> sensorDatas = JsonUtil.fromJson(data, new TypeToken<List<VirtualSensorData>>() {
         }.getType());
         for (VirtualSensorData vsd : sensorDatas) {
@@ -72,9 +71,10 @@ public class VirtualSensorDataServiceImpl implements VirtualSensorDataService {
         }
         virtualSensorService.onSensorDataCome(sensorDatas);
         return sensorDatas;
-    }
+    }*/
 
-    /*public List<Document> save(String data) {
+    @Override
+    public List<Document> save(String data) {
         Document[] documents = null;
         if (data.startsWith("[")) {
             documents = JsonUtil.fromJson(data, new TypeToken<Document[]>(){}.getType());
@@ -101,8 +101,9 @@ public class VirtualSensorDataServiceImpl implements VirtualSensorDataService {
         if (LOG.isDebugEnabled()) {
             LOG.debug("save sensor data : {}", documentList);
         }
+        virtualSensorService.onSensorDataCome(documentList);
         return documentList;
-    }*/
+    }
 
     @Override
     public ArrayList<VirtualSensorData> findLatestBySensorId(String appkey, String sensorid) {
@@ -298,6 +299,7 @@ public class VirtualSensorDataServiceImpl implements VirtualSensorDataService {
         FindIterable<Document> iterable = mongoDAO.find(collection, Filters.and(
                 Filters.eq("sensor_id", sensorid),
                 Filters.exists(fieldname),
+                Filters.gte(fieldname, 0),
                 Filters.gte("time", new BsonDateTime(timemin)),
                 Filters.lt("time", new BsonDateTime(timemax))
         )).projection(Projections.include(fieldname));

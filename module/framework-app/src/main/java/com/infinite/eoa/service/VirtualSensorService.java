@@ -3,9 +3,10 @@ package com.infinite.eoa.service;
 import com.infinite.eoa.core.serivce.IPagerService;
 import com.infinite.eoa.entity.SensorEvent;
 import com.infinite.eoa.entity.VirtualSensor;
-import com.infinite.eoa.entity.VirtualSensorData;
 import com.infinite.eoa.service.exception.ApplicationNotExsistException;
+import org.bson.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -36,5 +37,5 @@ public interface VirtualSensorService extends IPagerService<VirtualSensor> {
 
     List<VirtualSensor> findByStation_typeAndOnlineAndAbility(String station_type, int online, String day_deal_water_ability);
 
-    int onSensorDataCome(List<VirtualSensorData> sensorDatas);
+    int onSensorDataCome(ArrayList<Document> sensorDatas);
 }

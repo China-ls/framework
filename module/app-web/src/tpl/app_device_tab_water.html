@@ -93,7 +93,7 @@
                 <div class="panel-heading font-bold title">瞬时流量</div>
                 <div class="panel-body">
                     <!-- 网络请求动画 -->
-                    <div cg-busy="{promise:getWaterDataPromise,message:'数据加载中...'}"></div>
+                    <div cg-busy="{promise:loadDayPositivePromise,message:'数据加载中...'}"></div>
                     <!-- 网络请求动画 -->
                     <highchart config="chartHandlerWater"></highchart>
                 </div>

@@ -2,9 +2,23 @@
     <!-- if you want to use a custom scroll when aside fixed, use the slimScroll
       <div class="navi-wrap" ui-jq="slimScroll" ui-options="{height:'100%', size:'8px'}">
     -->
+
     <div class="navi-wrap">
+        <div class="aside-search-wrap">
+            <div class="panel panel-default padder-xs-v">
+                <div class="panel-heading no-padder-v">
+                    <div class="input-group">
+                        <input class="form-control" type="text" placeholder="请输入关键字">
+                        <div class="input-group-addon cursor-pointer">
+                            <i class="fa fa-times-circle"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- nav -->
-        <div>
+        <div class="nav-aside-content-wrap">
             <abn-tree
                     tree-data="treeData"
                     tree-control="tree"

@@ -9,6 +9,7 @@ import com.infinite.eoa.persistent.VirtualSensorDAO;
 import com.infinite.eoa.persistent.VirtualSensorDataDAO;
 import com.infinite.eoa.service.ComponentWorkTimeCencusService;
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.math.NumberUtils;
 import org.bson.Document;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,7 +42,7 @@ public class ComponentWorkTimeCencusServiceImpl implements ComponentWorkTimeCenc
         ).asList();
         if (null != list) {
             for (ComponentDayWorkCencus cencus : list) {
-                long total = month.containsKey(cencus.getComp_id()) ? month.getLong(cencus.getComp_id()) : 0;
+                long total = month.containsKey(cencus.getComp_id()) ? NumberUtils.toLong(month.get(cencus.getComp_id()).toString()) : 0;
                 month.put(cencus.getComp_id(), total + cencus.getWork());
             }
         }
@@ -52,9 +53,9 @@ public class ComponentWorkTimeCencusServiceImpl implements ComponentWorkTimeCenc
 
         Collection<ComponentDayWorkCencus> cencusCollection = cencusSensorComponent(startTime, endTime, date, sensor);
         for (ComponentDayWorkCencus cencus : cencusCollection) {
-            long total = month.containsKey(cencus.getComp_id()) ? month.getLong(cencus.getComp_id()) : 0;
+            long total = month.containsKey(cencus.getComp_id()) ? NumberUtils.toLong(month.get(cencus.getComp_id()).toString()) : 0;
             day.put(cencus.getComp_id(), TimeUtils.formatToDays(cencus.getWork()));
-            Long def = month.containsKey(cencus.getComp_id()) ? (Long) month.remove(cencus.getComp_id()) : 0;
+            Long def = month.containsKey(cencus.getComp_id()) ? NumberUtils.toLong(month.get(cencus.getComp_id()).toString()) : 0;
             month.put(cencus.getComp_id(), TimeUtils.formatToDays(total + def));
         }
         document.put("month", month);

@@ -43,10 +43,51 @@ public class SystemWebSocketHandler implements WebSocketHandler, WebSocketMessag
             mqttService.sendTextMessage("yinfantech/xgsn/jiaxing/control", text);
             if (log.isDebugEnabled()) {
                 log.debug("send to mqtt [dest: {}, message: {}]",
-                        "yinfantech/xgsn/jiaxing/control", message);
+                        "yinfantech/xgsn/jiaxing/control", text);
             }
+
+//            try {
+//                Thread.sleep(1000);
+//                tempSendChnagedStatus(text);
+//            } catch (Exception e) {
+//                log.error("-----------------=================error send changed status", e);
+//            }
         }
     }
+
+//    private ArrayList<Document> dataList = null;
+//    private void tempSendChnagedStatus(String json) {
+//        if (null == dataList) {
+//            InputStream is = getClass().getClassLoader().getResourceAsStream("ddd.json");
+//            try {
+//                String dataJson = IOUtils.toString(is);
+//                dataList = JsonUtil.fromJson(dataJson, new TypeToken<ArrayList<Document>>(){}.getType());
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            } finally {
+//                IOUtils.closeQuietly(is);
+//            }
+//        }
+//        Document command = JsonUtil.fromJson(json, Document.class);
+//        String compid = command.getString("channel_id");
+//        Double type = command.getDouble("param");
+//        if (null != dataList) {
+//            boolean isAll = StringUtils.equals("8:5", compid);
+//            for (Document data : dataList) {
+//                String temp = data.getString("comp_id");
+//                if ( isAll || StringUtils.equals(temp, compid)) {
+////                    log.debug("----------->[temp:{}, compid:{}]", temp, compid);
+//                    data.remove("onoff");
+//                    if (StringUtils.equals(compid, temp)) {
+//                        data.put("onoff", type == 1);
+//                    } else if (isAll && type == 0) {
+//                        data.put("onoff", false);
+//                    }
+//                }
+//            }
+//            broadcaseMessage(JsonUtil.toJson(dataList));
+//        }
+//    }
 
     @Override
     public void handleTransportError(WebSocketSession session, Throwable exception) throws Exception {

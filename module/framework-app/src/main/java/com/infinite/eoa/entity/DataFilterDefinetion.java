@@ -13,14 +13,10 @@ import org.mongodb.morphia.annotations.Property;
  */
 @Embedded
 public class DataFilterDefinetion extends AbstractEntity {
-    @Property
-    private String id;
-    @Property
-    private CallbackType callbackType;
-    @Property
-    private String callbackDestination;
-    @Property
-    private Document filterConfig;
+    @Property private String id;
+    @Property private CallbackType callbackType;
+    @Property private String callbackDestination;
+    @Property private Document filterConfig;
 
     public String getId() {
         return id;

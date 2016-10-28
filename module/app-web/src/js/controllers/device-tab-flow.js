@@ -33,7 +33,7 @@ app.controller('DeviceTabWaterCtrl', ['$scope', '$http', '$localStorage', '$stat
             yAxis: {title: {text: ' 升/小时'}, plotLines: [{value: 0, width: 1, color: '#808080'}]},
             useHighStocks: false, size: {height: 200}
         };
-        $scope.getWaterDataPromise = $http.get(APPCONST.CTX + APPCONST.SENSOR_DATA_TODAY.replace("{id}", $scope.$stateParams.id))
+        $scope.loadDayPositivePromise = $http.get(APPCONST.CTX + APPCONST.SENSOR_DATA_TODAY.replace("{id}", $scope.$stateParams.id))
             .then(function (response) {
                 try {
                     // console.warn(response);
@@ -72,7 +72,7 @@ app.controller('DeviceTabWaterCtrl', ['$scope', '$http', '$localStorage', '$stat
         };
 
         $scope.loadDayTotalData = function () {
-            $scope.loadDayPositivePromise = $http.get(APPCONST.CTX
+            $scope.getWaterDataPromise = $http.get(APPCONST.CTX
                 + APPCONST.SENSOR_DATA_DEGREE
                     .replace("{id}", $scope.$stateParams.id)
                     .replace("{type}", $scope.chartTypePositive)

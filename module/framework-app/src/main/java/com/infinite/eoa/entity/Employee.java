@@ -1,5 +1,6 @@
 package com.infinite.eoa.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.gson.annotations.SerializedName;
 import com.infinite.eoa.core.entity.AbstractEntity;
 import org.bson.types.ObjectId;
@@ -92,6 +93,7 @@ public class Employee extends AbstractEntity {
         this.username = username;
     }
 
+    @JsonIgnore
     public String getPassword() {
         return password;
     }

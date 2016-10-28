@@ -12,12 +12,9 @@ import org.mongodb.morphia.annotations.Property;
  */
 @Embedded
 public class FieldDefinition extends AbstractEntity {
-    @Property
-    private String name;
-    @Property
-    private String type;
-    @Property
-    private String unit;
+    @Property private String name;
+    @Property private String type;
+    @Property private String unit;
 
     public String getName() {
         return name;

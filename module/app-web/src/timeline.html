@@ -19,131 +19,38 @@
     <link rel="stylesheet" href="../bower_components/angularjs-toaster/toaster.min.css" type="text/css"/>
     <link rel="stylesheet" type="text/css" href="../bower_components/angularjs-slider/dist/rzslider.css"/>
     <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css"/>
     <link rel="stylesheet" href="css/font.css" type="text/css"/>
     <link rel="stylesheet" href="css/app.css" type="text/css">
 
 </head>
 <body ng-controller="AppCtrl">
 
-<div class="wrapper">
-    <h3>TimeLine</h3>
 
-    <div>
-        <rzslider rz-slider-model="slider.value"
-                  rz-slider-options="slider.options">
-        </rzslider>
+<div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate"
+     style="width: 78px;"
+     ng-class="{'bootstrap-switch-on' : onoff, 'bootstrap-switch-off': !onoff, 'bootstrap-switch-readonly' : disable}"
+     ng-click="changeOnoff(disable)">
+    <div class="bootstrap-switch-container" style="width: 114px;"
+         ng-style="{'margin-left' : onoff ? 0: -38 }">
+        <span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 38px;">开</span><span class="bootstrap-switch-label" style="width: 38px;"><i class="fa fa-spinner fa-spin"></i></span><span class="bootstrap-switch-handle-off bootstrap-switch-warning" style="width: 38px;">关</span>
     </div>
-
-    <md-content style="margin: 16px; padding:16px">
-
-        <h3>
-            RGB <span
-                ng-attr-style="border: 1px solid #333; background: rgb({{color.red}},{{color.green}},{{color.blue}})">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        </h3>
-
-        <md-slider-container>
-            <span>R</span>
-            <md-slider flex min="0" max="255" ng-model="color.red" aria-label="red" id="red-slider">
-            </md-slider>
-            <md-input-container>
-                <input flex type="number" ng-model="color.red" aria-label="red" aria-controls="red-slider">
-            </md-input-container>
-        </md-slider-container>
-
-        <md-slider-container>
-            <span>G</span>
-            <md-slider flex ng-model="color.green" min="0" max="255" aria-label="green" id="green-slider"
-                       class="md-accent">
-            </md-slider>
-            <md-input-container>
-                <input flex type="number" ng-model="color.green" aria-label="green" aria-controls="green-slider">
-            </md-input-container>
-        </md-slider-container>
-
-        <md-slider-container>
-            <span class="md-body-1">B</span>
-            <md-slider flex ng-model="color.blue" min="0" max="255" aria-label="blue" id="blue-slider"
-                       class="md-primary">
-            </md-slider>
-            <md-input-container>
-                <input flex type="number" ng-model="color.blue" aria-label="blue" aria-controls="blue-slider">
-            </md-input-container>
-        </md-slider-container>
-
-        <div style="margin-top: 50px;"></div>
-
-        <h3>Rating: {{rating}}/5 - demo of theming classes</h3>
-        <div layout>
-            <div flex="10" layout layout-align="center center">
-                <span class="md-body-1">default</span>
-            </div>
-            <md-slider flex md-discrete ng-model="rating1" step="1" min="1" max="5" aria-label="rating">
-            </md-slider>
-        </div>
-        <div layout>
-            <div flex="10" layout layout-align="center center">
-                <span class="md-body-1">md-warn</span>
-            </div>
-            <md-slider flex class="md-warn" md-discrete ng-model="rating2" step="1" min="1" max="5" aria-label="rating">
-            </md-slider>
-        </div>
-        <div layout>
-            <div flex="10" layout layout-align="center center">
-                <span class="md-body-1">md-primary</span>
-            </div>
-            <md-slider flex class="md-primary" md-discrete ng-model="rating3" step="1" min="1" max="5"
-                       aria-label="rating">
-            </md-slider>
-        </div>
-
-        <div style="margin-top: 50px;"></div>
-
-        <h3>Disabled</h3>
-        <md-slider-container ng-disabled="isDisabled">
-            <md-icon md-svg-icon="device:brightness-low"></md-icon>
-            <md-slider ng-model="disabled1" aria-label="Disabled 1" flex md-discrete ng-readonly="readonly"></md-slider>
-
-            <md-input-container>
-                <input flex type="number" ng-model="disabled1" aria-label="green" aria-controls="green-slider">
-            </md-input-container>
-        </md-slider-container>
-        <md-checkbox ng-model="isDisabled">Is disabled</md-checkbox>
-        <md-slider ng-model="disabled2" ng-disabled="true" aria-label="Disabled 2"></md-slider>
-
-        <div style="margin-top: 50px;"></div>
-
-        <h3>Disabled, Discrete, Read Only</h3>
-        <md-slider ng-model="disabled2" ng-disabled="true" step="3" md-discrete min="0" max="10"
-                   aria-label="Disabled discrete 2"></md-slider>
-        <md-slider ng-model="disabled3" ng-disabled="true" step="10" md-discrete aria-label="Disabled discrete 3"
-                   ng-readonly="readonly"></md-slider>
-        <md-checkbox ng-model="readonly">Read only</md-checkbox>
-
-        <div style="margin-top: 50px;"></div>
-        <h3>Invert</h3>
-        <md-slider-container>
-            <div flex="10" layout layout-align="center center">
-                <span class="md-body-1">Regular</span>
-            </div>
-            <md-slider ng-model="invert" min="0" max="100" aria-label="regular slider"></md-slider>
-
-            <md-input-container>
-                <input flex type="number" ng-model="invert" aria-label="regular-slider">
-            </md-input-container>
-        </md-slider-container>
-        <md-slider-container>
-            <div flex="10" layout layout-align="center center">
-                <span class="md-body-1">Invert</span>
-            </div>
-            <md-slider md-invert ng-model="invert" min="0" max="100" aria-label="invertd slider"></md-slider>
-
-            <md-input-container>
-                <input flex type="number" ng-model="invert" aria-label="invert-slider">
-            </md-input-container>
-        </md-slider-container>
-
-    </md-content>
 </div>
+
+<br>
+<br>
+<br>
+<br>
+
+<div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-off bootstrap-switch-animate" style="width: 78px;">
+    <div class="bootstrap-switch-container" style="width: 114px; margin-left: -38px;">
+        <span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 38px;">开</span><span class="bootstrap-switch-label" style="width: 38px;"><i class="fa fa-spinner fa-spin"></i></span><span class="bootstrap-switch-handle-off bootstrap-switch-warning" style="width: 38px;">关</span>
+    </div>
+</div>
+
+
+
+
 
 </body>
 
@@ -169,19 +76,78 @@
         $mdAriaProvider.disableWarnings();
     }]);
     app.controller('AppCtrl', ['$scope', function ($scope) {
-        $scope.priceSlider = 150;
-
-        $scope.timeArray = ['2016-09-12', '2016-09-13', '2016-09-14', '2016-09-15', '2016-09-16'];
-
-        $scope.slider = {
-            value: 0,
-            options: {
-                floor: 0,
-                ceil: 3,
-                translate: function (value) {
-                    return $scope.timeArray[value];
-                }
+        $scope.onoff = true;
+        $scope.disable = false;
+        $scope.changeOnoff = function (disable) {
+            if (disable) {
+                return;
             }
+            $scope.onoff = !$scope.onoff;
+            $scope.disable = !$scope.disable;
+            console.warn($scope.onoff);
+        };
+
+        $scope.compTypeName = [
+            {name: 'analog_sensor', dn: '数字输入量'},
+            {name: 'camera_controller', dn: '摄像机'},
+            {name: 'cardreader_sensor', dn: '考勤机'},
+            {name: 'electricmeter_sensor', dn: '电表'},
+            {name: 'flowmeter_sensor', dn: '流量计'},
+            {name: 'onboard_controller', dn: '继电器开关'},
+            {name: 'status_sensor', dn: '状态输入量'},
+            {name: 'plc_controller', dn: 'PLC'}
+        ];
+        $scope.instance_options = {
+            analog_sensor: [4101, 4102, 4103],
+            camera_controller: [3],
+            cardreader_sensor: [4100],
+            electricmeter_sensor: [4099],
+            flowmeter_sensor: [4098],
+            onboard_controller: [4101, 4102, 4103],
+            status_sensor: [4104, 4105, 4106, 4107],
+            plc_controller:[]
+        };
+        $scope.category_options = {
+            analog_sensor: [0, 2, 3],
+            camera_controller: [0],
+            cardreader_sensor: [0],
+            electricmeter_sensor: [0],
+            flowmeter_sensor: [0],
+            onboard_controller: [1],
+            status_sensor: [0, 2, 3],
+            plc_controller:[1]
+        };
+        $scope.componentType = [
+            {
+                name: 'analog_sensor',
+                dn: '数字输入量',
+                instance_options: [4101, 4102, 4103],
+                categroy: 2,
+                categroy_options: [0, 2, 3]
+            },
+            {name: 'camera_controller', dn: '摄像机', instance_options: [3], categroy: 0, categroy_options: [0]},
+            {name: 'cardreader_sensor', dn: '考勤机', instance_options: [4100], categroy: 0, categroy_options: [0]},
+            {name: 'electricmeter_sensor', dn: '电表', instance_options: [4099], categroy: 0, categroy_options: [0]},
+            {name: 'flowmeter_sensor', dn: '流量计', instance_options: [4098], categroy: 0, categroy_options: [0]},
+            {
+                name: 'onboard_controller',
+                dn: '继电器开关',
+                instance_options: [4101, 4102, 4103],
+                categroy: 1,
+                categroy_options: [1]
+            },
+            {
+                name: 'status_sensor',
+                dn: '状态输入量',
+                instance_options: [4104, 4105, 4106, 4107],
+                categroy: 2,
+                categroy_options: [0, 2, 3]
+            },
+            {name: 'plc_controller', dn: 'PLC', instance_options: [], categroy: 1, categroy_options: [1]}
+        ];
+        $scope.onTypeChanage = function (comp) {
+            comp.instance_type = $scope.instance_options[comp.type][0];
+            comp.categroy = $scope.category_options[comp.type][0];
         };
     }]);
 </script>

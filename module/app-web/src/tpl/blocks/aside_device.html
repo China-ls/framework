@@ -1,16 +1,24 @@
-<div class="aside-wrap">
+<div class="aside-wrap" ng-controller="AsideDeviceCtrl">
     <!-- if you want to use a custom scroll when aside fixed, use the slimScroll
       <div class="navi-wrap" ui-jq="slimScroll" ui-options="{height:'100%', size:'8px'}">
     -->
 
     <div class="navi-wrap">
         <div class="aside-search-wrap">
-            <div class="panel panel-default padder-xs-v">
+            <div class="panel panel-default padder-xs-v m-b-none">
                 <div class="panel-heading no-padder-v">
                     <div class="input-group">
-                        <input class="form-control" type="text" placeholder="请输入关键字">
-                        <div class="input-group-addon cursor-pointer">
+                        <input class="form-control" ng-model="asideQuery"
+                               ng-change="onQueryTextChange()"
+                               type="text" placeholder="请输入关键字">
+                        <div class="input-group-addon cursor-pointer"
+                             ng-click="clearAsideQuery()">
                             <i class="fa fa-times-circle"></i>
+                        </div>
+                        <div class="input-group-addon cursor-pointer"
+                             ng-click="goNextFilterResult()"
+                             ng-if="asideQueryBranches.length > 0">
+                            <i class="fa fa-arrow-down"></i>
                         </div>
                     </div>
                 </div>

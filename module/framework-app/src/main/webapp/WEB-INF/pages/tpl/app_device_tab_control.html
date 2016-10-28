@@ -1,4 +1,4 @@
-<div class="device-detail-wrap">
+<div class="device-detail-wrap" ng-controller="DeviceTabControlCtrl">
 
     <div class="b-b b-success padder-xs-v padder m-t-sm">
         <span class="text-danger">站点状态：</span>
@@ -45,12 +45,34 @@
         <div>
 
             <div class="m-b-sm">
-                动力设备控制
+                动力设备控制&nbsp;&nbsp;
+
+                <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-mini bootstrap-switch-animate m-l-sm"
+                     style="width: 118px;"
+                     ng-class="{'bootstrap-switch-on' : mc.onoff, 'bootstrap-switch-off': !mc.onoff, 'bootstrap-switch-readonly' : (sensor.online != 1 || mc.discontrol) }"
+                     ng-click="onControl(mc)">
+                    <div class="bootstrap-switch-container" style="width: 174px;"
+                         ng-style="{'margin-left' : mc.onoff ? 0: -58 }">
+                        <span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 58px;">远程控制</span><span class="bootstrap-switch-label" style="width: 58px;"><i class="fa fa-spinner" ng-class="{'fa-spin' : mc.label}" ng-show="mc.label"></i></span><span class="bootstrap-switch-handle-off bootstrap-switch-warning" style="width: 58px;">本地控制</span>
+                    </div>
+                </div>
+
+                <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-mini bootstrap-switch-animate m-l-sm"
+                     style="width: 118px;"
+                     ng-class="{'bootstrap-switch-on' : isShowingOnBoard, 'bootstrap-switch-off': !isShowingOnBoard, 'bootstrap-switch-readonly' : (!mc || mc.discontrol || !mc.onoff) }"
+                     ng-click="onChangeShow()">
+                    <div class="bootstrap-switch-container" style="width: 174px;"
+                         ng-style="{'margin-left' : isShowingOnBoard ? 0: -58 }">
+                        <span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 58px;">继电器</span><span class="bootstrap-switch-label" style="width: 58px;">&nbsp;</span><span class="bootstrap-switch-handle-off bootstrap-switch-warning" style="width: 58px;">PLC</span>
+                    </div>
+                </div>
+
             </div>
 
         </div>
         <!--动力设备控制-->
 
+        <!--plc-->
         <table class="text-center table table-device-component">
             <thead>
             <tr>
@@ -64,56 +86,59 @@
             </tr>
             </thead>
             <tbody>
-            <tr class="row-count-1" ng-if="mc">
-                <td>1</td>
-                <td>{{mc.name}}</td>
-                <td>
-                    <i class="fa fa-power-off" ng-style="{'color': mc.onoff ? '#428bca' : '#f0ad4e'}"></i>
-                    <span ng-if="mc.onoff">远程控制</span>
-                    <span ng-if="!mc.onoff">本地控制</span>
-                </td>
-                <td>{{mc.data.ref_status.value |number:4}}</td>
-                <td></td>
-                <td></td>
-                <td>
-                    <input bs-switch
-                           ng-model="mc.onoff"
-                           type="checkbox"
-                           switch-off-color="warning"
-                           switch-label="{{mc.label}}"
-                           switch-readonly="{{mc.discontrol}}"
-                           switch-on-text="远程控制"
-                           switch-off-text="本地控制"
-                           switch-change="onControl(mc)">
-                </td>
-            </tr>
-            <tr ng-repeat="row in cc"
+            <tr ng-if="!isShowingOnBoard" ng-repeat="row in cc"
                 ng-class="{'row-count-2': $index %2 == 0, 'row-count-1': $index %2 != 0}">
-                <td>{{$index + (mc ? 1 : 2)}}</td>
+                <td><i class="fa fa-calendar"></i> {{$index + 1}}</td>
                 <td>{{row.name}}</td>
                 <td>
-                    <i class="fa fa-power-off" ng-style="{'color': row.onoff ? '#428bca' : '#f0ad4e'}"></i>
+                    <i class="fa fa-circle" ng-style="{'color': row.onoff ? '#03ff0b' : '#adabab'}"></i>
                     <span ng-if="row.onoff">开</span>
                     <span ng-if="!row.onoff">关</span>
                 </td>
-                <td>{{row.data.ref_status.value |number:4}}</td>
+                <td>{{row.data.ref_status.value}}</td>
                 <td>{{row.cwtc.day}}</td>
                 <td>{{row.cwtc.month}}</td>
                 <td>
-                    <input
-                            bs-switch
-                            ng-model="row.onoff"
-                            type="checkbox"
-                            switch-off-color="warning"
-                            switch-label="{{row.label}}"
-                            switch-readonly="{{ sensor.online != 1 || mc.discontrol || !mc.onoff || row.discontrol }}"
-                            switch-on-text="开"
-                            switch-off-text="关"
-                            switch-change="onControl(row)">
+                    <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate"
+                         style="width: 78px;"
+                         ng-class="{'bootstrap-switch-on' : row.onoff, 'bootstrap-switch-off': !row.onoff, 'bootstrap-switch-readonly' : (sensor.online != 1 || mc.discontrol || !mc.onoff || row.discontrol) }"
+                         ng-click="onControl(row, sensor.online != 1 || mc.discontrol || !mc.onoff || row.discontrol)">
+                        <div class="bootstrap-switch-container" style="width: 114px;"
+                             ng-style="{'margin-left' : row.onoff ? 0: -38 }">
+                            <span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 38px;">开</span><span class="bootstrap-switch-label" style="width: 38px;"><i class="fa fa-spinner" ng-class="{'fa-spin': row.label}" ng-show="row.label"></i></span><span class="bootstrap-switch-handle-off bootstrap-switch-warning" style="width: 38px;">关</span>
+                        </div>
+                    </div>
                 </td>
             </tr>
+
+            <tr ng-if="isShowingOnBoard" ng-repeat="or in oc"
+                ng-class="{'row-count-2': $index %2 == 0, 'row-count-1': $index %2 != 0}">
+                <td><i class="fa fa-tachometer"></i> {{$index + 1}}</td>
+                <td>{{or.name}}</td>
+                <td>
+                    <i class="fa fa-circle" ng-style="{'color': or.onoff ? '#03ff0b' : '#adabab'}"></i>
+                    <span ng-if="or.onoff">开</span>
+                    <span ng-if="!or.onoff">关</span>
+                </td>
+                <td>{{or.data.ref_status.value}}</td>
+                <td>{{or.cwtc.day}}</td>
+                <td>{{or.cwtc.month}}</td>
+                <td>
+                    <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate"
+                         style="width: 78px;"
+                         ng-class="{'bootstrap-switch-on' : or.onoff, 'bootstrap-switch-off': !or.onoff, 'bootstrap-switch-readonly' : (sensor.online != 1 || mc.discontrol || !mc.onoff || or.discontrol) }"
+                         ng-click="onControl(or, sensor.online != 1 || mc.discontrol || !mc.onoff || or.discontrol)">
+                        <div class="bootstrap-switch-container" style="width: 114px;"
+                             ng-style="{'margin-left' : or.onoff ? 0: -38 }">
+                            <span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 38px;">开</span><span class="bootstrap-switch-label" style="width: 38px;"><i class="fa fa-spinner" ng-class="{'fa-spin': or.label}" ng-show="or.label"></i></span><span class="bootstrap-switch-handle-off bootstrap-switch-warning" style="width: 38px;">关</span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
             </tbody>
         </table>
+        <!--plc-->
 
     </div>
 

@@ -97,7 +97,7 @@
                         <td class="bg-info-only table-lebel">A相电流</td>
                         <td class="text-center">
                             <span class="table-value">
-                                {{elData.latest.currentA | number:4}}
+                                {{elData.latest.currentA}}
                                 <span ng-if="null == elData.latest.currentA">0</span>
                             </span>
                             <span class="table-valuefix"> 安</span>
@@ -107,7 +107,7 @@
                         <td class="bg-info-only table-lebel">A相电压</td>
                         <td class="text-center">
                             <span class="table-value">
-                                {{elData.latest.voltageA | number:4}}
+                                {{elData.latest.voltageA}}
                                 <span ng-if="null == elData.latest.voltageA">0</span>
                             </span>
                             <span class="table-valuefix"> 伏</span>
@@ -122,7 +122,7 @@
                         <td class="bg-info-only table-lebel">B相电流</td>
                         <td class="text-center">
                             <span class="table-value">
-                                {{elData.latest.currentB | number:4}}
+                                {{elData.latest.currentB}}
                                 <span ng-if="null == elData.latest.currentB">0</span>
                             </span>
                             <span class="table-valuefix"> 安</span>
@@ -132,7 +132,7 @@
                         <td class="bg-info-only table-lebel">B相电压</td>
                         <td class="text-center">
                             <span class="table-value">
-                                {{elData.latest.voltageB | number:4}}
+                                {{elData.latest.voltageB}}
                                 <span ng-if="null == elData.latest.voltageB">0</span>
                             </span>
                             <span class="table-valuefix"> 伏</span>
@@ -147,7 +147,7 @@
                         <td class="bg-info-only table-lebel">C相电流</td>
                         <td class="text-center">
                             <span class="table-value">
-                                {{elData.latest.currentC | number:4}}
+                                {{elData.latest.currentC}}
                                 <span ng-if="null == elData.latest.currentC">0</span>
                             </span>
                             <span class="table-valuefix"> 安</span>
@@ -157,7 +157,7 @@
                         <td class="bg-info-only table-lebel">C相电压</td>
                         <td class="text-center">
                             <span class="table-value">
-                                {{elData.latest.voltageC | number:4 }}
+                                {{elData.latest.voltageC }}
                                 <span ng-if="null == elData.latest.voltageC">0</span>
                             </span>
                             <span class="table-valuefix"> 伏</span>
@@ -172,7 +172,7 @@
                         <td class="bg-info-only table-lebel" style="min-width: 100px;">设备环境</td>
                         <td class="text-center">
                             <span class="table-value">
-                                {{elData.latest.temperature | number:2}}
+                                {{elData.latest.temperature}}
                                 <span ng-if="null == elData.latest.temperature">0</span>
                             </span>
                             <span class="table-valuefix"> 摄氏度</span>

@@ -17,6 +17,68 @@ app.controller('AsideDeviceCtrl', ['$window', '$scope', '$http', '$localStorage'
         $scope.tree = {};
         $scope.dataListType = '用电量';
 
+        $scope.asideQueryBranches = [];
+        $scope.asideQueryBranchesIndex = -1;
+
+        $scope.clearAsideQuery = function () {
+            $scope.asideQueryBranches.splice(0);
+            $scope.asideQueryBranchesIndex = -1;
+            $scope.asideQuery = '';
+        };
+        $scope.onQueryTextChange = function () {
+            $scope.asideQueryBranches.splice(0);
+            $scope.asideQueryBranchesIndex = -1;
+
+            if ($scope.asideQuery.length <= 0) {
+                return;
+            }
+            angular.forEach($scope.treeData, function (item) {
+                $scope.filterByAsideQuery(item);
+            });
+            $scope.goPreFilterResult();
+        };
+        $scope.onAsideQuery = function () {
+            $scope.asideQueryBranches.splice(0);
+            $scope.asideQueryBranchesIndex = -1;
+            angular.forEach($scope.treeData, function (item) {
+                $scope.filterByAsideQuery(item);
+            });
+            $scope.goPreFilterResult();
+            // console.warn($scope.asideQueryBranches);
+        };
+        $scope.filterByAsideQuery = function (rootBranch) {
+            if (rootBranch.label && rootBranch.label.indexOf($scope.asideQuery) != -1) {
+                $scope.asideQueryBranches.push(rootBranch);
+            }
+            if (!rootBranch.children) {
+                return;
+            }
+            for (var i = 0; i < rootBranch.children.length; i++) {
+                $scope.filterByAsideQuery(rootBranch.children[i]);
+            }
+        };
+        $scope.goPreFilterResult = function () {
+            if ($scope.asideQueryBranches.length <= 0) {
+                return;
+            }
+            $scope.asideQueryBranchesIndex--;
+            if ($scope.asideQueryBranchesIndex < 0) {
+                $scope.asideQueryBranchesIndex = 0;
+            }
+            $scope.tree.select_branch($scope.asideQueryBranches[$scope.asideQueryBranchesIndex]);
+        };
+        $scope.goNextFilterResult = function () {
+            var len = $scope.asideQueryBranches.length;
+            if (len <= 0) {
+                return;
+            }
+            $scope.asideQueryBranchesIndex++;
+            if ($scope.asideQueryBranchesIndex >= len) {
+                $scope.asideQueryBranchesIndex = 0;
+            }
+            $scope.tree.select_branch($scope.asideQueryBranches[$scope.asideQueryBranchesIndex]);
+        };
+
         $scope.analysDepartment = function (data, level) {
             var children = [];
             data.type = 'dpt';

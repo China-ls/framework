@@ -196,7 +196,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4101,
         "name" : "正常工作泵电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -217,7 +216,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4101,
         "name" : "应急工作泵电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -238,7 +236,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4102,
         "name" : "风机1电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -259,7 +256,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4102,
         "name" : "风机2电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -379,8 +375,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 5,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:5",
         "fieldDefinitions" :
         [
@@ -408,8 +404,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:0",
         "fieldDefinitions" :
         [
@@ -438,8 +434,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:1",
         "fieldDefinitions" :
         [
@@ -468,8 +464,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:2",
         "fieldDefinitions" :
         [
@@ -498,8 +494,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:3",
         "fieldDefinitions" :
         [
@@ -528,8 +524,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:4",
         "fieldDefinitions" :
         [
@@ -546,13 +542,182 @@
         "name" : "电解除磷",
         "product_model" : 0,
         "type" : "onboard_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:0",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4101,
+        "name" : "正常工作泵",
+        "product_model" : 0,
+        "ref_channel" : "6:0",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:1",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4101,
+        "name" : "应急工作泵",
+        "product_model" : 0,
+        "ref_channel" : "6:1",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:2",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4102,
+        "name" : "风机1",
+        "product_model" : 0,
+        "ref_channel" : "6:2",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:3",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4102,
+        "name" : "风机2",
+        "product_model" : 0,
+        "ref_channel" : "6:3",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:4",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4103,
+        "name" : "电解除磷",
+        "product_model" : 0,
+        "type" : "plc_controller"
       }
     ],
     "contact" : "84836661",
     "control_mode" : 0,
     "desc" : "秀洲区油车港镇麦家村一号站点",
     "idle_report" : 600,
-    "internal_id" : 866104025289045,
+    "internal_id" : 861694036308789,
     "latitude" : 30.847899999999999,
     "longitude" : 120.794,
     "name" : "麦家一号站",
@@ -758,7 +923,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4101,
         "name" : "正常工作泵电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -779,7 +943,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4101,
         "name" : "应急工作泵电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -800,7 +963,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4102,
         "name" : "风机1电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -821,7 +983,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4102,
         "name" : "风机2电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -941,8 +1102,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 5,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:5",
         "fieldDefinitions" :
         [
@@ -970,8 +1131,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:0",
         "fieldDefinitions" :
         [
@@ -1000,8 +1161,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:1",
         "fieldDefinitions" :
         [
@@ -1030,8 +1191,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:2",
         "fieldDefinitions" :
         [
@@ -1060,8 +1221,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:3",
         "fieldDefinitions" :
         [
@@ -1090,8 +1251,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:4",
         "fieldDefinitions" :
         [
@@ -1108,6 +1269,175 @@
         "name" : "电解除磷",
         "product_model" : 0,
         "type" : "onboard_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:0",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4101,
+        "name" : "正常工作泵",
+        "product_model" : 0,
+        "ref_channel" : "6:0",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:1",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4101,
+        "name" : "应急工作泵",
+        "product_model" : 0,
+        "ref_channel" : "6:1",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:2",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4102,
+        "name" : "风机1",
+        "product_model" : 0,
+        "ref_channel" : "6:2",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:3",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4102,
+        "name" : "风机2",
+        "product_model" : 0,
+        "ref_channel" : "6:3",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:4",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4103,
+        "name" : "电解除磷",
+        "product_model" : 0,
+        "type" : "plc_controller"
       }
     ],
     "contact" : "84836661",
@@ -1320,7 +1650,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4101,
         "name" : "正常工作泵电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -1341,7 +1670,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4101,
         "name" : "应急工作泵电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -1362,7 +1690,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4102,
         "name" : "风机1电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -1383,7 +1710,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4102,
         "name" : "风机2电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -1503,8 +1829,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 5,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:5",
         "fieldDefinitions" :
         [
@@ -1532,8 +1858,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:0",
         "fieldDefinitions" :
         [
@@ -1562,8 +1888,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:1",
         "fieldDefinitions" :
         [
@@ -1592,8 +1918,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:2",
         "fieldDefinitions" :
         [
@@ -1622,8 +1948,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:3",
         "fieldDefinitions" :
         [
@@ -1652,8 +1978,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:4",
         "fieldDefinitions" :
         [
@@ -1670,6 +1996,175 @@
         "name" : "电解除磷",
         "product_model" : 0,
         "type" : "onboard_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:0",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4101,
+        "name" : "正常工作泵",
+        "product_model" : 0,
+        "ref_channel" : "6:0",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:1",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4101,
+        "name" : "应急工作泵",
+        "product_model" : 0,
+        "ref_channel" : "6:1",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:2",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4102,
+        "name" : "风机1",
+        "product_model" : 0,
+        "ref_channel" : "6:2",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:3",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4102,
+        "name" : "风机2",
+        "product_model" : 0,
+        "ref_channel" : "6:3",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:4",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4103,
+        "name" : "电解除磷",
+        "product_model" : 0,
+        "type" : "plc_controller"
       }
     ],
     "contact" : "84836661",
@@ -1882,7 +2377,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4101,
         "name" : "正常工作泵电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -1903,7 +2397,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4101,
         "name" : "应急工作泵电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -1924,7 +2417,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4102,
         "name" : "风机1电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -1945,7 +2437,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4102,
         "name" : "风机2电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -2065,8 +2556,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 5,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:5",
         "fieldDefinitions" :
         [
@@ -2094,8 +2585,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:0",
         "fieldDefinitions" :
         [
@@ -2124,8 +2615,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:1",
         "fieldDefinitions" :
         [
@@ -2154,8 +2645,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:2",
         "fieldDefinitions" :
         [
@@ -2184,8 +2675,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:3",
         "fieldDefinitions" :
         [
@@ -2214,8 +2705,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:4",
         "fieldDefinitions" :
         [
@@ -2232,13 +2723,182 @@
         "name" : "电解除磷",
         "product_model" : 0,
         "type" : "onboard_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:0",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4101,
+        "name" : "正常工作泵",
+        "product_model" : 0,
+        "ref_channel" : "6:0",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:1",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4101,
+        "name" : "应急工作泵",
+        "product_model" : 0,
+        "ref_channel" : "6:1",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:2",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4102,
+        "name" : "风机1",
+        "product_model" : 0,
+        "ref_channel" : "6:2",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:3",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4102,
+        "name" : "风机2",
+        "product_model" : 0,
+        "ref_channel" : "6:3",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:4",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4103,
+        "name" : "电解除磷",
+        "product_model" : 0,
+        "type" : "plc_controller"
       }
     ],
     "contact" : "84836661",
     "control_mode" : 0,
     "desc" : "秀洲区油车港镇麦家村一号站点",
     "idle_report" : 600,
-    "internal_id" : 866104025159735,
+    "internal_id" : 866104025289045,
     "latitude" : 30.8414,
     "longitude" : 120.797,
     "name" : "麦家四号站",
@@ -2444,7 +3104,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4101,
         "name" : "正常工作泵电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -2465,7 +3124,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4101,
         "name" : "应急工作泵电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -2486,7 +3144,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4102,
         "name" : "风机1电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -2507,7 +3164,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4102,
         "name" : "风机2电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -2627,8 +3283,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 5,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:5",
         "fieldDefinitions" :
         [
@@ -2656,8 +3312,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:0",
         "fieldDefinitions" :
         [
@@ -2686,8 +3342,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:1",
         "fieldDefinitions" :
         [
@@ -2716,8 +3372,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:2",
         "fieldDefinitions" :
         [
@@ -2746,8 +3402,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:3",
         "fieldDefinitions" :
         [
@@ -2776,8 +3432,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:4",
         "fieldDefinitions" :
         [
@@ -2794,6 +3450,175 @@
         "name" : "电解除磷",
         "product_model" : 0,
         "type" : "onboard_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:0",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4101,
+        "name" : "正常工作泵",
+        "product_model" : 0,
+        "ref_channel" : "6:0",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:1",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4101,
+        "name" : "应急工作泵",
+        "product_model" : 0,
+        "ref_channel" : "6:1",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:2",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4102,
+        "name" : "风机1",
+        "product_model" : 0,
+        "ref_channel" : "6:2",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:3",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4102,
+        "name" : "风机2",
+        "product_model" : 0,
+        "ref_channel" : "6:3",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:4",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4103,
+        "name" : "电解除磷",
+        "product_model" : 0,
+        "type" : "plc_controller"
       }
     ],
     "contact" : "84836661",
@@ -3006,7 +3831,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4101,
         "name" : "正常工作泵电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -3027,7 +3851,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4101,
         "name" : "应急工作泵电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -3048,7 +3871,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4102,
         "name" : "风机1电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -3069,7 +3891,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4102,
         "name" : "风机2电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -3189,8 +4010,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 5,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:5",
         "fieldDefinitions" :
         [
@@ -3218,8 +4039,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:0",
         "fieldDefinitions" :
         [
@@ -3248,8 +4069,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:1",
         "fieldDefinitions" :
         [
@@ -3278,8 +4099,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:2",
         "fieldDefinitions" :
         [
@@ -3308,8 +4129,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:3",
         "fieldDefinitions" :
         [
@@ -3338,8 +4159,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:4",
         "fieldDefinitions" :
         [
@@ -3356,6 +4177,175 @@
         "name" : "电解除磷",
         "product_model" : 0,
         "type" : "onboard_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:0",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4101,
+        "name" : "正常工作泵",
+        "product_model" : 0,
+        "ref_channel" : "6:0",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:1",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4101,
+        "name" : "应急工作泵",
+        "product_model" : 0,
+        "ref_channel" : "6:1",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:2",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4102,
+        "name" : "风机1",
+        "product_model" : 0,
+        "ref_channel" : "6:2",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:3",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4102,
+        "name" : "风机2",
+        "product_model" : 0,
+        "ref_channel" : "6:3",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:4",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4103,
+        "name" : "电解除磷",
+        "product_model" : 0,
+        "type" : "plc_controller"
       }
     ],
     "contact" : "15001798106",
@@ -3568,7 +4558,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4101,
         "name" : "正常工作泵电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -3589,7 +4578,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4101,
         "name" : "应急工作泵电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -3610,7 +4598,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4102,
         "name" : "风机1电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -3631,7 +4618,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4102,
         "name" : "风机2电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -3751,8 +4737,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 5,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:5",
         "fieldDefinitions" :
         [
@@ -3780,8 +4766,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:0",
         "fieldDefinitions" :
         [
@@ -3810,8 +4796,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:1",
         "fieldDefinitions" :
         [
@@ -3840,8 +4826,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:2",
         "fieldDefinitions" :
         [
@@ -3870,8 +4856,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:3",
         "fieldDefinitions" :
         [
@@ -3900,8 +4886,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:4",
         "fieldDefinitions" :
         [
@@ -3918,6 +4904,175 @@
         "name" : "电解除磷",
         "product_model" : 0,
         "type" : "onboard_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:0",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4101,
+        "name" : "正常工作泵",
+        "product_model" : 0,
+        "ref_channel" : "6:0",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:1",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4101,
+        "name" : "应急工作泵",
+        "product_model" : 0,
+        "ref_channel" : "6:1",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:2",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4102,
+        "name" : "风机1",
+        "product_model" : 0,
+        "ref_channel" : "6:2",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:3",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4102,
+        "name" : "风机2",
+        "product_model" : 0,
+        "ref_channel" : "6:3",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:4",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4103,
+        "name" : "电解除磷",
+        "product_model" : 0,
+        "type" : "plc_controller"
       }
     ],
     "contact" : "15001798106",
@@ -4130,7 +5285,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4101,
         "name" : "正常工作泵电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -4151,7 +5305,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4101,
         "name" : "应急工作泵电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -4172,7 +5325,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4102,
         "name" : "风机1电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -4193,7 +5345,6 @@
             "type" : "isodate"
           }
         ],
-        "instance_type" : 4102,
         "name" : "风机2电流",
         "product_model" : 0,
         "type" : "analog_sensor"
@@ -4313,8 +5464,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 5,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:5",
         "fieldDefinitions" :
         [
@@ -4342,8 +5493,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:0",
         "fieldDefinitions" :
         [
@@ -4372,8 +5523,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:1",
         "fieldDefinitions" :
         [
@@ -4402,8 +5553,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:2",
         "fieldDefinitions" :
         [
@@ -4432,8 +5583,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:3",
         "fieldDefinitions" :
         [
@@ -4462,8 +5613,8 @@
             "sensor_id" : "%1%"
           }
         ],
-        "category" : 1,
-        "category_options" : [ 1 ],
+        "category" : 4,
+        "category_options" : [ 4, 5 ],
         "comp_id" : "8:4",
         "fieldDefinitions" :
         [
@@ -4480,6 +5631,175 @@
         "name" : "电解除磷",
         "product_model" : 0,
         "type" : "onboard_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:0",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4101,
+        "name" : "正常工作泵",
+        "product_model" : 0,
+        "ref_channel" : "6:0",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:1",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4101,
+        "name" : "应急工作泵",
+        "product_model" : 0,
+        "ref_channel" : "6:1",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:2",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4102,
+        "name" : "风机1",
+        "product_model" : 0,
+        "ref_channel" : "6:2",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:3",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4102,
+        "name" : "风机2",
+        "product_model" : 0,
+        "ref_channel" : "6:3",
+        "type" : "plc_controller"
+      },
+      {
+        "actions" :
+        [
+          {
+            "channel_id" : "%2%",
+            "operation" : "switch",
+            "param" : "%3%",
+            "sensor_id" : "%1%"
+          }
+        ],
+        "category" : 1,
+        "category_options" : [ 1 ],
+        "comp_id" : "1:4",
+        "fieldDefinitions" :
+        [
+          {
+            "name" : "status",
+            "type" : "boolean"
+          },
+          {
+            "name" : "onoff",
+            "type" : "boolean"
+          },
+          {
+            "name" : "time",
+            "type" : "isodate"
+          }
+        ],
+        "instance_type" : 4103,
+        "name" : "电解除磷",
+        "product_model" : 0,
+        "type" : "plc_controller"
       }
     ],
     "contact" : "15001798106",

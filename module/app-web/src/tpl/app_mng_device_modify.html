@@ -45,34 +45,6 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="w-sm text-right">投产时间</td>
-                        <td>
-                            <input type="date" class="form-control" placeholder="请输入投产时间"
-                                   ng-model="device.setupDate" required>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="bg-light-gray2-only w-sm text-right">站点管理员</td>
-                        <td>
-                            <input type="text" class="form-control" placeholder="请输入站点管理员"
-                                   ng-model="device.admin" required>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="w-sm text-right">联系电话</td>
-                        <td>
-                            <input type="text" class="form-control" placeholder="请输入联系电话"
-                                   ng-model="device.contact" required>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="bg-light-gray2-only w-sm text-right">地址</td>
-                        <td>
-                            <input type="text" class="form-control" placeholder="请输入地址"
-                                   ng-model="device.address" required>
-                        </td>
-                    </tr>
-                    <tr>
                         <td class="w-sm text-right">SIM卡</td>
                         <td>
                             <input type="text" class="form-control" placeholder="请输入SIM卡"
@@ -80,21 +52,56 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="bg-light-gray2-only w-sm text-right">描述</td>
+                        <td class="bg-light-gray2-only w-sm text-right">设备号</td>
+                        <td>
+                            <input type="number" class="form-control" placeholder="请输入设备号"
+                                   ng-model="device.internal_id" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w-sm text-right">站点管理员</td>
+                        <td>
+                            <input type="text" class="form-control" placeholder="请输入站点管理员"
+                                   ng-model="device.admin" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-light-gray2-only w-sm text-right">联系电话</td>
+                        <td>
+                            <input type="text" class="form-control" placeholder="请输入联系电话"
+                                   ng-model="device.contact" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w-sm text-right">地址</td>
+                        <td>
+                            <input type="text" class="form-control" placeholder="请输入地址"
+                                   ng-model="device.address" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-light-gray2-only w-sm text-right">投产时间</td>
+                        <td>
+                            <input type="date" class="form-control" placeholder="请输入投产时间"
+                                   ng-model="device.setupDate" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w-sm text-right">描述</td>
                         <td>
                             <input type="text" class="form-control" placeholder="请输入描述"
                                    ng-model="device.desc" required>
                         </td>
                     </tr>
                     <tr>
-                        <td class="w-sm text-right">经度</td>
+                        <td class="bg-light-gray2-only w-sm text-right">经度</td>
                         <td>
                             <input type="text" class="form-control" placeholder="请输入经度"
                                    ng-model="device.longitude" required>
                         </td>
                     </tr>
                     <tr>
-                        <td class="bg-light-gray2-only w-sm text-right">纬度</td>
+                        <td class="w-sm text-right">纬度</td>
                         <td>
                             <input type="text" class="form-control" placeholder="请输入纬度"
                                    ng-model="device.latitude" required>
@@ -109,7 +116,7 @@
             <div class="col-sm-6">
                 <div id="map_canvas"
                      class="wrapper-sm m-l-sm m-r-sm b b-a b-r-2x b-gray no-m-sm no-m-xs"
-                     style="min-height:515px;margin-top: 13px; margin-bottom: 5px;"
+                     style="min-height:615px;margin-top: 13px; margin-bottom: 5px;"
                      ui-baidu-map="myMap"
                      ui-event="{'map-click': 'onMapClick($event, $params)', 'map-loaded': 'onMapLoaded($event, $params)'}"
                      ui-options="mapOptions">
@@ -132,7 +139,7 @@
 
         <div class="row">
 
-            <div class="col-md-4 padder-v" ng-repeat="item in components">
+            <!--<div class="col-md-4 padder-v" ng-repeat="item in components">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <table class="dark-bd-table table table-bordered">
@@ -141,49 +148,56 @@
                                 <td>
                                     <select class="form-control"
                                             ng-model="item.type"
+                                            ng-change="compTypeChange(item)"
                                             required>
                                         <option value="">请选择设备类型</option>
-                                        <option value="A类站点" ng-selected="device.type == 'A类站点'">PLC</option>
-                                        <option value="B类站点" ng-selected="device.type == 'B类站点'">风机</option>
+                                        <option ng-repeat="key in componentType" value="{{key.name}}">{{key.dn}}</option>
                                     </select>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="w-sm text-right">设备型号</td>
+                                <td class="w-sm text-right">设备名称</td>
+                                <td>
+                                    <input type="text" class="form-control" placeholder="请输入设备名称"
+                                           ng-model="item.name" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bg-light-gray2-only w-sm text-right">实例类型</td>
                                 <td>
                                     <select class="form-control"
-                                            ng-model="item.type"
+                                            ng-model="item.instance_type"
                                             required>
-                                        <option value="">请选择设备型号</option>
-                                        <option value="A类站点" ng-selected="device.type == 'A类站点'">A类站点</option>
-                                        <option value="B类站点" ng-selected="device.type == 'B类站点'">B类站点</option>
-                                        <option value="C类站点" ng-selected="device.type == 'C类站点'">C类站点</option>
+                                        <option value="">请选择实例类型</option>
+                                        <option ng-repeat="it in item.instance_options"
+                                                value="{{it.v}}"
+                                                ng-selected="item.instance_type == it.v">
+                                            {{it.n}}
+                                        </option>
                                     </select>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="bg-light-gray2-only w-sm text-right">通道号</td>
+                                <td class="bg-light-gray2-only w-sm text-right">设备属性</td>
                                 <td>
-                                    <input type="date" class="form-control" placeholder="请输入通道号"
+                                    <select class="form-control" ng-model="item.category" required>
+                                        <option value="">请选择设备属性</option>
+                                        <option ng-repeat="cp in item.category_options"
+                                                value="{{cp}}" ng-selected="cp === item.category">
+                                            {{categoriesName[cp]}}
+                                        </option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="w-sm text-right">通道号</td>
+                                <td>
+                                    <input type="text" class="form-control" placeholder="请输入通道号"
                                            ng-model="item.channel" required>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="w-sm text-right">设备号</td>
-                                <td>
-                                    <input type="text" class="form-control" placeholder="请输入设备号"
-                                           ng-model="item.deviceid" required>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="bg-light-gray2-only w-sm text-right">SIM卡</td>
-                                <td>
-                                    <input type="text" class="form-control" placeholder="请输入SIM卡"
-                                           ng-model="item.sim" required>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="w-sm text-right">安装日期</td>
+                                <td class="bg-light-gray2-only w-sm text-right">安装日期</td>
                                 <td>
                                     <input type="date" class="form-control" placeholder="请输入安装日期"
                                            ng-model="item.setupDate" required>
@@ -197,12 +211,150 @@
 
                     </div>
                 </div>
+            </div>-->
+
+            <div class="col-md-4 padder-v" ng-repeat="item in components">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <table class="dark-bd-table table table-bordered">
+                            <tr>
+                                <td class="bg-light-gray2-only w-sm text-right">设备类型</td>
+                                <td>
+                                    <select class="form-control"
+                                            ng-change="compTypeChange(item)"
+                                            ng-model="item.type"
+                                            required>
+                                        <option value="">请选择设备类型</option>
+                                        <option ng-repeat="key in compTypeMap" value="{{key.name}}">{{key.dn}}</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="w-sm text-right">设备名称</td>
+                                <td>
+                                    <input type="text" class="form-control" placeholder="请输入设备名称"
+                                           ng-model="item.name" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bg-light-gray2-only w-sm text-right">实例类型</td>
+                                <td>
+                                    <select class="form-control"
+                                            ng-model="item.instance_type"
+                                            required>
+                                        <option value="">请选择实例类型</option>
+                                        <option ng-show="item.type === 'camera_controller'" value="3"
+                                                ng-selected="item.instance_type == 3">摄像机
+                                        </option>
+                                        <option ng-show="item.type === 'flowmeter_sensor'" value="4098"
+                                                ng-selected="item.instance_type == 4098">流量计
+                                        </option>
+                                        <option ng-show="item.type === 'electricmeter_sensor'" value="4099"
+                                                ng-selected="item.instance_type == 4099">电表
+                                        </option>
+                                        <option ng-show="item.type === 'cardreader_sensor'" value="4100"
+                                                ng-selected="item.instance_type == 4100">考勤机
+                                        </option>
+
+                                        <option ng-show="item.type === 'onboard_controller'"
+                                                value="4101" ng-selected="item.instance_type == 4096">总控
+                                        </option>
+                                        <option ng-show="item.type === 'plc_controller' || item.type === 'onboard_controller'"
+                                                value="4101" ng-selected="item.instance_type == 4101">水泵
+                                        </option>
+                                        <option ng-show="item.type === 'plc_controller' || item.type === 'onboard_controller'"
+                                                value="4102" ng-selected="item.instance_type == 4102">风机
+                                        </option>
+                                        <option ng-show="item.type === 'plc_controller' || item.type === 'onboard_controller'"
+                                                value="4103" ng-selected="item.instance_type == 4103">除磷 设备
+                                        </option>
+
+                                        <option ng-show="item.type === 'status_sensor'" value="4104"
+                                                ng-selected="item.instance_type == 4104">供电状态
+                                        </option>
+                                        <option ng-show="item.type === 'status_sensor'" value="4105"
+                                                ng-selected="item.instance_type == 4105">液位状态
+                                        </option>
+                                        <option ng-show="item.type === 'status_sensor'" value="4106"
+                                                ng-selected="item.instance_type == 4106">门禁
+                                        </option>
+                                        <option ng-show="item.type === 'status_sensor'" value="4107"
+                                                ng-selected="item.instance_type == 4107">红外警报
+                                        </option>
+
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="w-sm text-right">设备属性</td>
+                                <td>
+                                    <select class="form-control" ng-model="item.category" ng-change="compCategoryChange(item)" required>
+                                        <option value="">请选择设备属性</option>
+                                        <option ng-show="item.type === 'analog_sensor' || item.type === 'camera_controller' || item.type === 'cardreader_sensor' || item.type === 'electricmeter_sensor' || item.type === 'flowmeter_sensor' || item.type === 'status_sensor'"
+                                                ng-selected="item.category == 0"
+                                                value="0">自由类型
+                                        </option>
+                                        <option ng-show="item.type === 'plc_controller' || item.type === 'onboard_controller'"
+                                                ng-selected="item.category == 1" value="1">动力控制类型
+                                        </option>
+                                        <option ng-show="item.type === 'analog_sensor' || item.type === 'status_sensor'"
+                                                ng-selected="item.category == 2"
+                                                value="2">状态类型
+                                        </option>
+                                        <option ng-show="item.type === 'analog_sensor' || item.type === 'status_sensor'"
+                                                ng-selected="item.category == 3"
+                                                value="3">参考状态类型
+                                        </option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bg-light-gray2-only w-sm text-right">通道号</td>
+                                <td>
+                                    <input type="number" class="form-control" placeholder="请输入通道号"
+                                           ng-model="item.channel" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="w-sm text-right">二级通道号</td>
+                                <td>
+                                    <input type="number" class="form-control" placeholder="请输入二级通道号"
+                                           ng-model="item.sub_channel" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bg-light-gray2-only w-sm text-right">安装日期</td>
+                                <td>
+                                    <input type="date" class="form-control" placeholder="请输入安装日期"
+                                           ng-model="item.setupDate" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="w-sm text-right">状态参考</td>
+                                <td>
+                                    <select class="form-control" ng-model="item.ref_channel" required>
+                                        <option value="">请选择状态参考设备</option>
+                                        <option ng-repeat="cc in components"
+                                                ng-if="cc.category == 3 && cc.channel != item.channel "
+                                                value="{{cc.channel}}">{{ ($index + 1) + ' ' + cc.name + ' ' + cc.channel}}
+                                        </option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <button type="button" class="btn btn-danger img-full" ng-click="onRemoveComponent($index)">
+                            移除此设备
+                        </button>
+
+                    </div>
+                </div>
             </div>
 
-            <div class="col-md-2 padder-v" ng-click="onAddComponent()">
+            <div class="col-md-2 padder-v">
                 <div class="panel panel-success">
                     <div class="panel-heading">
-                        <div class="panel-add-btn">
+                        <div class="panel-add-btn" ng-click="onAddComponent()">
                             <i class="fa fa-plus"></i>
                         </div>
                     </div>

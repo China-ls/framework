@@ -8,6 +8,20 @@
 
             <div class="col-sm-9 col-lg-9 wrapper-md">
                 <div>
+                    <form class="form-inline" role="form">
+                        <div class="form-group m-l no-m-xs">
+                            <label for="startTime">起止时间：</label>
+                            <input id="startTime" class="form-control" type="date" ng-model="startDate">
+                        </div>
+                        <div class="form-group">
+                            <label for="endTime">&nbsp;&nbsp;--&nbsp;&nbsp;</label>
+                            <input id="endTime" class="form-control" type="date" ng-model="endDate">
+                        </div>
+                        <button type="button" class="btn btn-info btn-sm w-xs m-l no-m-xs" ng-click="loadImageData()">
+                            查询
+                        </button>
+                    </form>
+
                     <rzslider rz-slider-model="slider.index"
                               rz-slider-options="slider.options">
                     </rzslider>
@@ -16,7 +30,8 @@
                 <!-- carousel -->
                 <div class="panel b-a" set-ng-animate="false">
                     <carousel interval="imageListSlideInterval">
-                        <slide ng-repeat="slide in imageList" active="imageactive">
+                        <slide ng-repeat="slide in imageList" active="slide.active">
+                            <span>{{slide.time}}</span>
                             <img ng-src="{{imageUrl + slide._id}}" class="img-full">
                         </slide>
                     </carousel>
@@ -49,7 +64,10 @@
                     <span class="cb">{{imageList[imageactive].image_id}}</span>
                 </p>
 
-                <button ng-click="takepick()" class="img-full btn btn-success">拍照</button>
+                <button ng-click="takepick()" class="img-full btn btn-success btn-addon">
+                    <i class="fa fa-spinner fa-spin"></i>
+                    拍照
+                </button>
             </div>
 
         </div>

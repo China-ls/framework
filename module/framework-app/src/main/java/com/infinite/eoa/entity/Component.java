@@ -6,6 +6,7 @@ import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Property;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 
 /**
@@ -21,6 +22,7 @@ public class Component extends AbstractEntity {
     @Property private String comp_id;
     @Property private String name;
     @Property private String type;
+    @Property private String ref_channel;
     @Property private int instance_type;
     @Property private int product_model;
     @Property private int category;
@@ -139,4 +141,20 @@ public class Component extends AbstractEntity {
         this.product_model = product_model;
     }
 
+    @Override
+    public String toString() {
+        return "Component{" +
+                "comp_id='" + comp_id + '\'' +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", instance_type=" + instance_type +
+                ", product_model=" + product_model +
+                ", category=" + category +
+                ", category_options=" + Arrays.toString(category_options) +
+                ", status=" + status +
+                ", actions=" + actions +
+                ", fieldDefinitions=" + fieldDefinitions +
+                ", dataFilterDefinetions=" + dataFilterDefinetions +
+                '}';
+    }
 }

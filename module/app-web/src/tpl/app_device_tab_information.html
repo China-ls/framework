@@ -39,13 +39,19 @@
     <div class="row">
         <div class="col-md-6">
             <p class="item b-b-dashed b-success m-md">
-                <span class="inline w-xs">信号量：</span>
-                <span class="cb">
-                    <rating ng-model="sensor.signal" max="32"
-                            readonly="true"
-                            state-on="'fa fa-star text-success'"
-                            state-off="'fa fa-star-o'">
-                    </rating>
+                <span class="inline w-xs">信号强度：</span>
+                <span class="inline cb">
+
+                    <span class="inline progress m-b-none" style="width: 150px;">
+                        <span class="inline progress-bar progress-bar-success"
+                              style="background-color: #cccccc;transition: none;width: 100%;">
+                            <span class="inline progress-bar-success"
+                                  style="background-color: #27c24c;background: #27c24c;transition: none;min-width: 0;"
+                                  ng-style="{'width': sensor.signal / 31.0 * 100 +'%', 'border': sensor.signal <= 0 ? 0 : 1}">
+                            </span>
+                            <b style="position: absolute;top: 0;left: 40%;">{{sensor.signal}}</b>
+                        </span>
+                    </span>
                 </span>
             </p>
             <p class="item b-b-dashed b-success m-md">
@@ -64,7 +70,7 @@
                 <span class="inline w-xs">版本号：</span>
                 <span class="cb">
                     <span ng-if="sensor.version <= 0">未知</span>
-                    <span ng-if="sensor.version > 0">{{sensor.version |number:1}}</span>
+                    <span ng-if="sensor.version > 0">{{sensor.version / 10 |number:1}}</span>
                 </span>
             </p>
             <p class="item b-b-dashed b-success m-md">

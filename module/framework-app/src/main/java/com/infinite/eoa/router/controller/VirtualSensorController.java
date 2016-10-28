@@ -4,6 +4,7 @@ import com.infinite.eoa.core.web.BasicRestController;
 import com.infinite.eoa.core.web.entity.Response;
 import com.infinite.eoa.entity.VirtualSensor;
 import com.infinite.eoa.router.entity.ResponseCode;
+import com.infinite.eoa.router.entity.SensorModel;
 import com.infinite.eoa.router.entity.SensorResponse;
 import com.infinite.eoa.service.ComponentWorkTimeCencusService;
 import com.infinite.eoa.service.VirtualSensorDataService;
@@ -44,10 +45,32 @@ public class VirtualSensorController extends BasicRestController {
     @Autowired
     private ComponentWorkTimeCencusService componentWorkTimeCencusService;
 
-    @RequestMapping(value = "/", method = RequestMethod.PUT)
+    @RequestMapping(value = "/add", method = {RequestMethod.PUT, RequestMethod.POST})
     @ResponseBody
-    public VirtualSensor create(@ModelAttribute VirtualSensor sensor) {
-        return sensorService.createVirtualSensor(APPKEY, sensor);
+    public Response create(@ModelAttribute SensorModel sensorModel) {
+        Response response = null;
+        try {
+            if (StringUtils.isEmpty(APPKEY)) {
+                response = makeResponse(ResponseCode.APPKEY_EMPTY);
+            } else {
+                VirtualSensor sensor = sensorModel.convert();
+                log.debug("{}", sensor);
+                response = makeResponse(ResponseCode.SUCCESS,
+                        sensorService.createVirtualSensor(APPKEY, sensor)
+                );
+            }
+        } catch (ApplicationNotExsistException e) {
+            response = makeResponse(ResponseCode.APPKEY_FORBIDON);
+        } catch (Throwable e) {
+            response = makeResponse(ResponseCode.SYSTEM_ERROR);
+            if (log.isErrorEnabled()) {
+                log.error("error add [{}]", sensorModel, e);
+            }
+        }
+        if (log.isDebugEnabled()) {
+            log.debug("[sensor:{}, response:{}]", sensorModel, response);
+        }
+        return response;
     }
 
     @RequestMapping(value = "/{id}", method = {RequestMethod.GET, RequestMethod.POST})

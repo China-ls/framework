@@ -116,7 +116,7 @@ angular.module('app')
                         resolve: {
                             deps: ['$ocLazyLoad',
                                 function ($ocLazyLoad) {
-                                    return $ocLazyLoad.load(['highcharts-ng']);
+                                    return $ocLazyLoad.load(['highcharts-ng', 'cgBusy']);
                                 }]
                         }
                     })
@@ -125,8 +125,7 @@ angular.module('app')
                         parent: 'app.device.tab',
                         views: {
                             'tab_contentView': {
-                                templateUrl: 'tpl/app_device_tab_control.html',
-                                controller: 'DeviceTabControlCtrl'
+                                templateUrl: 'tpl/app_device_tab_control.html'
                             }
                         },
                         resolve: {

@@ -85,7 +85,7 @@ public class InitDatabase implements Initializing {
             VirtualSensor[] sensors = JsonUtil.fromJson(vsString, new TypeToken<VirtualSensor[]>() {
             }.getType());
             for (VirtualSensor sensor : sensors) {
-                sensor.setOnline(EntityConst.SensorOnline.NO);
+                sensor.setOnline(EntityConst.SensorOnline.YES);
 
                 VirtualSensor storedSensor = virtualSensorDAO.findById(sensor.getSensor_id());
                 if (releace_db_sensor) {

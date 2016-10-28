@@ -20,6 +20,7 @@ public class SensorResponse extends AbstractEntity {
     private ArrayList<Component> controlComp;
     private ArrayList<Component> statusComp;
     private ArrayList<Component> refrenceComp;
+    private ArrayList<Component> onboardComp;
     private ArrayList<VirtualSensorData> data;
 
     public VirtualSensor getSensor() {
@@ -111,6 +112,22 @@ public class SensorResponse extends AbstractEntity {
         this.refrenceComp.add(comp);
     }
 
+    @JsonProperty("oc")
+    public ArrayList<Component> getOnboardComp() {
+        return onboardComp;
+    }
+
+    public void setOnboardComp(ArrayList<Component> onboardComp) {
+        this.onboardComp = onboardComp;
+    }
+
+    public void addOnboardComp(Component comp) {
+        if (null == this.onboardComp) {
+            this.onboardComp = new ArrayList<Component>();
+        }
+        this.onboardComp.add(comp);
+    }
+
     public void classifyComponents() {
         if (null != sensor) {
             ArrayList<Component> comps = sensor.getComponents();
@@ -120,17 +137,19 @@ public class SensorResponse extends AbstractEntity {
                         addFreeComp(component);
                         break;
                     case 1://动力控制类型
-                        if (component.getInstance_type() == Component.INSTANCE_TYPE_MASTER_CONTROL) {
-                            this.masterControl = component;
-                        } else {
-                            addControlComp(component);
-                        }
+                        addControlComp(component);
                         break;
                     case 2://状态类型
                         addStatusComp(component);
                         break;
                     case 3://参考状态类型
                         addRefrenceComp(component);
+                        break;
+                    case 4://继电器类型
+                        addOnboardComp(component);
+                        break;
+                    case 5: //总控
+                        this.masterControl = component;
                         break;
                 }
             }

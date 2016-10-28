@@ -14,6 +14,7 @@ var app =
                 DEPARTMENT_DEL: '/department/del',
                 SENSOR_BY_ID: '/sensor/',
                 SENSORS: '/sensor/all',
+                SENSOR_ADD: '/sensor/add',
                 SENSOR_LIST_PAGE: '/sensor/page?page={page}&size={size}',
                 SENSOR_DATA_LATEST: '/sensor/{id}/data/latest',
                 SENSOR_DATA_TODAY: '/sensor/data/{id}/today?comp_type=flowmeter_sensor',

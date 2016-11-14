@@ -1,5 +1,6 @@
 package com.infinite.eoa.auth.realm;
 
+import com.infinite.eoa.auth.authtoken.StatelessToken;
 import com.infinite.eoa.entity.Employee;
 import com.infinite.eoa.service.EmployeeAuthService;
 import org.apache.commons.lang.StringUtils;
@@ -8,7 +9,6 @@ import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
-import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
@@ -38,7 +38,7 @@ public class EmployeeRealm extends AuthorizingRealm {
 
     @Override
     public boolean supports(AuthenticationToken token) {
-        return super.supports(token);
+        return super.supports(token) && !(token instanceof StatelessToken);
     }
 
     //用于认证
@@ -49,7 +49,7 @@ public class EmployeeRealm extends AuthorizingRealm {
         String username = (String) token.getPrincipal();
         Employee account = employeeAuthService.getByUsername(username);
         if (null == account) {
-            throw new UnknownAccountException();
+            return null;
         }
         if (!StringUtils.equals(account.getPassword(), new String(token.getPassword()))) {
             throw new IncorrectCredentialsException();

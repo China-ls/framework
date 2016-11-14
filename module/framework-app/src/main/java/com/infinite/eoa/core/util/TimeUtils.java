@@ -1,7 +1,10 @@
 package com.infinite.eoa.core.util;
 
+import org.apache.commons.lang.math.NumberUtils;
 import org.joda.time.DateTime;
+import org.joda.time.Duration;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -16,6 +19,18 @@ public abstract class TimeUtils {
     public static final long MINUTE = 60 * SECOND;
     public static final long HOUR = 60 * MINUTE;
     public static final long DAY = 24 * HOUR;
+    public static String Pattern_Time = "yyyy-MM-dd HH:mm:ss";
+    public static String Pattern_Date = "yyyy-MM-dd";
+    private static SimpleDateFormat dateFormat = new SimpleDateFormat(Pattern_Time);
+
+    public static String formatToDate(Date time) {
+        return formatToDate(time, Pattern_Date);
+    }
+
+    public static String formatToDate(Date time, String pattern) {
+        dateFormat.applyPattern(pattern);
+        return dateFormat.format(time);
+    }
 
     public static boolean isAfterCurrentTime(long time) {
         return System.currentTimeMillis() - time < 0;
@@ -94,6 +109,10 @@ public abstract class TimeUtils {
         return dateTime.withHourOfDay(23).withMinuteOfHour(59).withSecondOfMinute(59).withMillisOfSecond(59).getMillis();
     }
 
+    public static Date getMaxUtilDateOfDay(DateTime dateTime) {
+        return dateTime.withHourOfDay(23).withMinuteOfHour(59).withSecondOfMinute(59).withMillisOfSecond(59).toDate();
+    }
+
     public static long getMinMillsOfDay(String day) {
         return new DateTime(day).withHourOfDay(0).withMinuteOfHour(0).withSecondOfMinute(0).withMillisOfSecond(0).getMillis();
     }
@@ -139,5 +158,56 @@ public abstract class TimeUtils {
 
     public static void main(String[] args) {
         System.out.println(getMonthDaysText());
+    }
+
+    public static String millsToDuration(long d) {
+        if (d <= 0) {
+            return "0秒";
+        }
+        Duration duration = new Duration(d);
+        long day = duration.getStandardDays();
+        long hour = duration.withMillis(d - day * DAY).getStandardHours();
+        long min = duration.withMillis(d - day * DAY - hour * HOUR).getStandardMinutes();
+        long sec = duration.withMillis(d - day * DAY - hour * HOUR - min * MINUTE).getStandardSeconds();
+        return (day > 0 ? (day + "天") : "")
+                + (hour > 0 ? (hour + "时") : "")
+                + (min > 0 ? (min + "分") : "")
+                + (sec > 0 ? (sec + "秒") : "");
+    }
+
+    public static long durationToMills(String s) {
+        if (null == s || s.length() <= 0) {
+            return 0;
+        }
+        long mills = 0;
+        if (s.contains("天")) {
+            String[] arr = s.split("天");
+            mills += NumberUtils.toInt(arr[0]) * DAY;
+            s = arr[1];
+        }
+        if (null == s) {
+            return mills;
+        }
+        if (s.contains("时")) {
+            String[] arr = s.split("时");
+            mills += NumberUtils.toInt(arr[0]) * HOUR;
+            s = arr[1];
+        }
+        if (null == s) {
+            return mills;
+        }
+        if (s.contains("分")) {
+            String[] arr = s.split("分");
+            mills += NumberUtils.toInt(arr[0]) * MINUTE;
+            s = arr[1];
+        }
+        if (null == s) {
+            return mills;
+        }
+        if (s.contains("秒")) {
+            String[] arr = s.split("秒");
+            mills += NumberUtils.toInt(arr[0]) * SECOND;
+        }
+        return mills;
     }
 }

@@ -1,7 +1,6 @@
 package com.infinite.eoa.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.google.gson.annotations.SerializedName;
 import com.infinite.eoa.core.entity.AbstractEntity;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Embedded;
@@ -10,56 +9,52 @@ import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Property;
 import org.mongodb.morphia.annotations.Reference;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 @Entity(value = EntityConst.CollectionName.EMPLOYEE, noClassnameStored = true)
 public class Employee extends AbstractEntity {
+    /**
+     * 巡线员
+     */
+    public static final int TYPE_LINE_PATROL = 1;
+    /**
+     * 工程人员
+     */
+    public static final int TYPE_ENGINEERING = 2;
+    /**
+     * 核查人员
+     */
+    public static final int TYPE_VERIFICATION = 3;
 
-    @SerializedName("_id")
-    @Id
-    @Property
-    private ObjectId id;
+    public static final int TYPE_NORMAL = 5;
+
+
+    @Id @Property private ObjectId id;
     //员工工号
-    @Property
-    private String number;
-    @Property
-    private String username;
-    @Property
-    private String password;
-    @Property
-    private String name;
+    @Property private String number;
+    @Property private String username;
+    @Property private String password;
+    @Property private String name;
     //邮政编码
-    @Property
-    private String postalcode;
-    @Property
-    private int type;
-    @Property
-    private int sex;
+    @Property private String postalcode;
+    @Property private int type;
+    @Property private int visable_type;
+    @Property private int sex;
     //状态 1:正常 2:禁用 9:删除
-    private int status;
-    @Property
-    private String tel;
-    @Property
-    private String email;
+    @Property private int status;
+    @Property private String tel;
+    @Property private String email;
     //区域归属 ID
-    @Property
-    private String departmentId;
+    @Property private String departmentId;
     //区域归属 名字
-    @Property
-    private String departmentName;
-    @Property
-    private Date birthday;
-    @Property
-    private String phone;
-    @Property
-    private String address;
-    @Property
-    private int sort;
-    @Embedded
-    private ArrayList<EmployeeDuty> duties = new ArrayList<EmployeeDuty>(0);
-    @Reference
-    private Department department;
+    @Property private String departmentName;
+    @Property private Date birthday;
+    @Property private String phone;
+    @Property private String address;
+    @Property private int sort;
+    @Embedded private EmployeeDuty duty;
+    @Reference private Department department;
+    @Embedded private EmployeeResourcesLevel resourcesLevel;
 
     public Employee() {
     }
@@ -134,6 +129,14 @@ public class Employee extends AbstractEntity {
         this.sex = sex;
     }
 
+    public void setVisable_type(int visable_type) {
+        this.visable_type = visable_type;
+    }
+
+    public int getVisable_type() {
+        return visable_type;
+    }
+
     public int getStatus() {
         return status;
     }
@@ -206,16 +209,12 @@ public class Employee extends AbstractEntity {
         this.sort = sort;
     }
 
-    public ArrayList<EmployeeDuty> getDuties() {
-        return duties;
+    public EmployeeDuty getDuty() {
+        return duty;
     }
 
-    public void setDuties(ArrayList<EmployeeDuty> duties) {
-        this.duties = duties;
-    }
-
-    public void addDuty(EmployeeDuty duty) {
-        this.duties.add(duty);
+    public void setDuty(EmployeeDuty duty) {
+        this.duty = duty;
     }
 
     public Department getDepartment() {
@@ -224,6 +223,14 @@ public class Employee extends AbstractEntity {
 
     public void setDepartment(Department department) {
         this.department = department;
+    }
+
+    public EmployeeResourcesLevel getResourcesLevel() {
+        return resourcesLevel;
+    }
+
+    public void setResourcesLevel(EmployeeResourcesLevel resourcesLevel) {
+        this.resourcesLevel = resourcesLevel;
     }
 
     @Override
@@ -236,6 +243,7 @@ public class Employee extends AbstractEntity {
                 ", name='" + name + '\'' +
                 ", postalcode='" + postalcode + '\'' +
                 ", type=" + type +
+                ", visable_type=" + visable_type +
                 ", sex=" + sex +
                 ", status=" + status +
                 ", tel='" + tel + '\'' +
@@ -246,7 +254,9 @@ public class Employee extends AbstractEntity {
                 ", phone='" + phone + '\'' +
                 ", address='" + address + '\'' +
                 ", sort=" + sort +
-                ", duties=" + duties +
-                "} ";
+                ", duty=" + duty +
+                ", department=" + department +
+                ", resourcesLevel=" + resourcesLevel +
+                '}';
     }
 }

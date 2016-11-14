@@ -9,6 +9,11 @@ import com.infinite.eoa.entity.EmployeeDuty;
  * @since 1.0
  */
 public interface EmployeeService extends IPagerService<Employee> {
+
+    public Employee getEmployeeByUsername(String username);
+
+    public String getEmployeeDepartmentIdByEmployeeId(String id);
+
     public boolean isUsernameExsist(String username);
 
     public boolean isPhoneExsist(String phone);
@@ -26,4 +31,8 @@ public interface EmployeeService extends IPagerService<Employee> {
     int setEmployeeDuty(String id, EmployeeDuty duty);
 
     int removeEmployee(String id);
+
+    String getEmployeeDepartmentIdByEmployeeUsername(String username);
+
+    int setEmployeeResourceDepartment(String id, String[] resDepartments);
 }

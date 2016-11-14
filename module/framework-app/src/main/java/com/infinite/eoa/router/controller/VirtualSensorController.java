@@ -54,7 +54,6 @@ public class VirtualSensorController extends BasicRestController {
                 response = makeResponse(ResponseCode.APPKEY_EMPTY);
             } else {
                 VirtualSensor sensor = sensorModel.convert();
-                log.debug("{}", sensor);
                 response = makeResponse(ResponseCode.SUCCESS,
                         sensorService.createVirtualSensor(APPKEY, sensor)
                 );
@@ -69,6 +68,53 @@ public class VirtualSensorController extends BasicRestController {
         }
         if (log.isDebugEnabled()) {
             log.debug("[sensor:{}, response:{}]", sensorModel, response);
+        }
+        return response;
+    }
+
+    @RequestMapping(value = "/update", method = {RequestMethod.PUT, RequestMethod.POST})
+    @ResponseBody
+    public Response update(@ModelAttribute SensorModel sensorModel) {
+        Response response = null;
+        try {
+            if (StringUtils.isEmpty(APPKEY)) {
+                response = makeResponse(ResponseCode.APPKEY_EMPTY);
+            } else {
+                VirtualSensor sensor = sensorModel.convert();
+                response = makeResponse(ResponseCode.SUCCESS,
+                        sensorService.updateVirtualSensor(sensor)
+                );
+            }
+        } catch (ApplicationNotExsistException e) {
+            response = makeResponse(ResponseCode.APPKEY_FORBIDON);
+        } catch (Throwable e) {
+            response = makeResponse(ResponseCode.SYSTEM_ERROR);
+            if (log.isErrorEnabled()) {
+                log.error("error update [{}]", sensorModel, e);
+            }
+        }
+        if (log.isDebugEnabled()) {
+            log.debug("[sensor:{}, response:{}]", sensorModel, response);
+        }
+        return response;
+    }
+
+    @RequestMapping(value = "/del", method = {RequestMethod.PUT, RequestMethod.POST})
+    @ResponseBody
+    public Response remove(@ModelAttribute("id") String id) {
+        Response response = null;
+        try {
+            response = makeResponse(ResponseCode.SUCCESS, sensorService.removeVirtualSensor(id));
+        } catch (ApplicationNotExsistException e) {
+            response = makeResponse(ResponseCode.APPKEY_FORBIDON);
+        } catch (Throwable e) {
+            response = makeResponse(ResponseCode.SYSTEM_ERROR);
+            if (log.isErrorEnabled()) {
+                log.error("remove error [{}]", id, e);
+            }
+        }
+        if (log.isDebugEnabled()) {
+            log.debug("[id:{}, response:{}]", id, response);
         }
         return response;
     }
@@ -128,6 +174,29 @@ public class VirtualSensorController extends BasicRestController {
         return response;
     }
 
+    @RequestMapping(value = "/dpt", method = {RequestMethod.GET, RequestMethod.POST})
+    @ResponseBody
+    public Response listDepartmentSensors(
+            @ModelAttribute("id") String id
+    ) {
+        Response response = null;
+        try {
+            List<VirtualSensor> sensors = sensorService.findByDepartmentIdAndEmployee(getSubjectEmployee(), id);
+            response = makeResponse(ResponseCode.SUCCESS, makeupSensorResponse(sensors));
+        } catch (ApplicationNotExsistException e) {
+            response = makeResponse(ResponseCode.APPKEY_FORBIDON);
+        } catch (Throwable e) {
+            response = makeResponse(ResponseCode.SYSTEM_ERROR);
+            if (log.isErrorEnabled()) {
+                log.error("error list department sensors [id:{}]", id, e);
+            }
+        }
+        if (log.isDebugEnabled()) {
+            log.debug("[id:{}, response:{}]", id, response);
+        }
+        return response;
+    }
+
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     @ResponseBody
     public Response getAll() {
@@ -136,15 +205,8 @@ public class VirtualSensorController extends BasicRestController {
             if (StringUtils.isEmpty(APPKEY)) {
                 response = makeResponse(ResponseCode.APPKEY_EMPTY);
             } else {
-                ArrayList<SensorResponse> sensorResponseList = new ArrayList<SensorResponse>();
                 List<VirtualSensor> sensors = sensorService.find();
-                for (VirtualSensor sensor : sensors) {
-                    SensorResponse sensorResponse = new SensorResponse();
-                    sensorResponse.setSensor(sensorService.findById(APPKEY, sensor.getSensor_id()));
-                    sensorResponse.setData(virtualSensorDataService.findLatestBySensorId(APPKEY, sensor.getSensor_id()));
-                    sensorResponseList.add(sensorResponse);
-                }
-                response = makeResponse(ResponseCode.SUCCESS, sensorResponseList);
+                response = makeResponse(ResponseCode.SUCCESS, makeupSensorResponse(sensors));
             }
         } catch (ApplicationNotExsistException e) {
             response = makeResponse(ResponseCode.APPKEY_FORBIDON);
@@ -158,6 +220,20 @@ public class VirtualSensorController extends BasicRestController {
             log.debug("[appkey:{}, response:{}]", APPKEY, response);
         }
         return response;
+    }
+
+    private List<SensorResponse> makeupSensorResponse(List<VirtualSensor> sensors) {
+        if (null == sensors) {
+            return null;
+        }
+        ArrayList<SensorResponse> sensorResponseList = new ArrayList<SensorResponse>();
+        for (VirtualSensor sensor : sensors) {
+            SensorResponse sensorResponse = new SensorResponse();
+            sensorResponse.setSensor(sensorService.findById(APPKEY, sensor.getSensor_id()));
+            sensorResponse.setData(virtualSensorDataService.findLatestBySensorId(APPKEY, sensor.getSensor_id()));
+            sensorResponseList.add(sensorResponse);
+        }
+        return sensorResponseList;
     }
 
     @RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.POST})

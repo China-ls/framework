@@ -68,4 +68,7 @@ public interface VirtualSensorDataService {
     Document getImageDataTop(String appkey, String sensorid);
 
     Document cencusTodayAndMonthWorkTimeBySensorId(String appkey, String sensor_id);
+
+
+    List<Document> getEmployeeTodayPoints(String id);
 }

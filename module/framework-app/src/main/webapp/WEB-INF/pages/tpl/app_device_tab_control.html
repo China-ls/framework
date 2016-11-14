@@ -91,8 +91,11 @@
                 <td><i class="fa fa-calendar"></i> {{$index + 1}}</td>
                 <td>{{row.name}}</td>
                 <td>
-                    <i class="fa fa-circle" ng-style="{'color': row.onoff ? '#03ff0b' : '#adabab'}"></i>
-                    <span ng-if="row.onoff">开</span>
+                    <i class="fa fa-circle" ng-style="{'color': row.onoff ? (row.data.ref_status && row.data.ref_status.value < 0.1) ? '#FFE851' : '#03ff0b' : '#adabab'}"></i>
+                    <span ng-if="row.onoff">
+                        <span ng-if="!row.data.ref_status || row.data.ref_status.value >= 0.1" >开</span>
+                        <span ng-if="row.data.ref_status && row.data.ref_status.value < 0.1" >异常</span>
+                    </span>
                     <span ng-if="!row.onoff">关</span>
                 </td>
                 <td>{{row.data.ref_status.value}}</td>
@@ -139,6 +142,68 @@
             </tbody>
         </table>
         <!--plc-->
+
+    </div>
+
+    <div class="wrapper">
+
+        <div class="panel panel-default">
+
+            <div class="panel-heading">
+
+                <form class="form-inline" role="form">
+                    <div class="form-group">
+                        <label>设备运行统计</label>
+                    </div>
+                    <div class="form-group m-l no-m-xs">
+                        <label for="startTime">起止时间：</label>
+                        <input id="startTime" class="form-control" type="date" ng-model="filter.startDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="endTime">&nbsp;&nbsp;--&nbsp;&nbsp;</label>
+                        <input id="endTime" class="form-control" type="date" ng-model="filter.endDate">
+                    </div>
+                    <button type="button" class="btn btn-info btn-sm w-xs m-l no-m-xs" ng-click="filterQuery()">
+                        查询
+                    </button>
+                    <a class="btn btn-success btn-sm w-xs m-l no-m-xs"
+                       target="_blank"
+                       ng-href="/app/cencus/component/work/export?id={{$stateParams.id}}&start={{filter.startDate.getTime()}}&end={{filter.endDate.getTime()}}">
+                        输出报表
+                    </a>
+                </form>
+
+            </div>
+
+            <div class="panel-body scroll-x">
+                <!-- 网络请求动画 -->
+                <div cg-busy="{promise:cencusDataPromise,message:'数据加载中...'}"></div>
+                <!-- 网络请求动画 -->
+
+                <table st-table="rowCollectionBasic" class="table table-bordered table-striped tb-border">
+                    <thead>
+                    <tr>
+                        <th>日期</th>
+                        <th>市电供电故障次数</th>
+                        <th>日用电量</th>
+                        <th>日处水量</th>
+                        <th ng-repeat="h in filter.data.titles.hwl">高液位次数({{h}})</th>
+                        <th ng-repeat="w in filter.data.titles.wt">{{w}}运行时间</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="success" ng-repeat="key in filter.data.keys" st-select-row="row">
+                        <td>{{key}}</td>
+                        <td>{{filter.data.values[key].mol}}</td>
+                        <td>{{filter.data.values[key].el}}</td>
+                        <td>{{filter.data.values[key].hwt}}</td>
+                        <th ng-repeat="h in filter.data.titles.hwl">{{filter.data.values[key].hwl[h]}}</th>
+                        <th ng-repeat="w in filter.data.titles.wt">{{filter.data.values[key].wt[w]}}</th>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
     </div>
 

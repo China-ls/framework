@@ -88,7 +88,7 @@
         </mvc:interceptor>
     </mvc:interceptors>
 
-    <!--<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">-->
+    <!--<bean class="org.springframework.web.servlet.value.SimpleMappingExceptionResolver">-->
         <!--&lt;!&ndash; 定义默认的异常处理页面，当该异常类型的注册时使用 &ndash;&gt;-->
         <!--&lt;!&ndash;<property name="defaultErrorView" value="error"></property>&ndash;&gt;-->
         <!--&lt;!&ndash; 定义异常处理页面用来获取异常信息的变量名，默认名为exception &ndash;&gt;-->

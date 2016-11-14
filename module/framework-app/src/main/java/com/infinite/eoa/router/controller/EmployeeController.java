@@ -1,11 +1,14 @@
 package com.infinite.eoa.router.controller;
 
+import com.infinite.eoa.core.util.JsonUtil;
 import com.infinite.eoa.core.web.BasicRestController;
 import com.infinite.eoa.core.web.entity.Response;
 import com.infinite.eoa.entity.Employee;
 import com.infinite.eoa.entity.EmployeeDuty;
 import com.infinite.eoa.router.entity.ResponseCode;
 import com.infinite.eoa.service.EmployeeService;
+import com.infinite.eoa.service.exception.EntityExsistException;
+import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.math.NumberUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -55,11 +58,20 @@ public class EmployeeController extends BasicRestController {
 
     @RequestMapping(value = "/add", method = {RequestMethod.PUT, RequestMethod.POST})
     public Response addEmployee(
-            @ModelAttribute Employee employee
+            @ModelAttribute Employee employee,
+            @ModelAttribute("dt") String dt
     ) {
         Response response = null;
         try {
+            if (!StringUtils.isEmpty(dt)) {
+                employee.setDuty(JsonUtil.fromJson(dt, EmployeeDuty.class));
+            }
             response = makeResponse(ResponseCode.SUCCESS, employeeService.addEmployee(employee));
+        } catch (EntityExsistException e) {
+            if (log.isErrorEnabled()) {
+                log.error("username exsist [{}]", e.getMessage());
+            }
+            response = makeResponse(ResponseCode.USERNAME_EXSIST);
         } catch (Throwable e) {
             if (log.isErrorEnabled()) {
                 log.error("add employee error. [employee: {}]", employee, e);
@@ -86,6 +98,26 @@ public class EmployeeController extends BasicRestController {
         }
         if (log.isDebugEnabled()) {
             log.debug("==[employee:{},resp:{}]==", id, response);
+        }
+        return response;
+    }
+
+    @RequestMapping(value = "/{id}/res", method = {RequestMethod.PUT, RequestMethod.POST})
+    public Response modifyEmployeeResources(
+            @PathVariable("id") String id,
+            @ModelAttribute("res") String res) {
+        Response response = null;
+        try {
+            response = makeResponse(ResponseCode.SUCCESS,
+                    employeeService.setEmployeeResourceDepartment(id, res.split(",")));
+        } catch (Throwable e) {
+            if (log.isErrorEnabled()) {
+                log.error("add employee error. [id: {}, res: {}]", id, res, e);
+            }
+            response = makeResponse(ResponseCode.SYSTEM_ERROR);
+        }
+        if (log.isDebugEnabled()) {
+            log.debug("[id: {}, res:{},resp:{}]", id, res, response);
         }
         return response;
     }

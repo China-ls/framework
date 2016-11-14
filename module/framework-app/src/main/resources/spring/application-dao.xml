@@ -114,4 +114,29 @@
         <constructor-arg ref="systemDatastore"/>
     </bean>
 
+    <bean name="virtualSensorWaterQualityDAO" class="com.infinite.eoa.persistent.impl.VirtualSensorWaterQualityDAOImpl">
+        <constructor-arg ref="systemDatastore"/>
+    </bean>
+
+    <bean name="sensorDayElectricUseageCencusDAO"
+          class="com.infinite.eoa.persistent.impl.SensorDayElectricUseageCencusDAOImpl">
+        <constructor-arg ref="systemDatastore"/>
+    </bean>
+
+    <bean name="sensorDayHandlerWaterCencusDAO"
+          class="com.infinite.eoa.persistent.impl.SensorDayHandlerWaterCencusDAOImpl">
+        <constructor-arg ref="systemDatastore"/>
+    </bean>
+
+    <bean name="sensorDayMolErrorCountCencusDAO"
+          class="com.infinite.eoa.persistent.impl.SensorDayMolErrorCountCencusDAOImpl">
+        <constructor-arg ref="systemDatastore"/>
+    </bean>
+
+    <bean name="sensorDayHighWaterLevelCountCencusDAO"
+          class="com.infinite.eoa.persistent.impl.SensorDayHighWaterLevelCountCencusDAOImpl">
+        <constructor-arg ref="systemDatastore"/>
+    </bean>
+
+
 </beans>

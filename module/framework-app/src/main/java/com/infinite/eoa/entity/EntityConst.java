@@ -4,6 +4,7 @@ package com.infinite.eoa.entity;
  * Created by hx on 16-7-27.
  */
 public class EntityConst {
+
     /**
      * Created by hx on 16-7-25.
      */
@@ -69,8 +70,13 @@ public class EntityConst {
         public static final String APPLICATION = "app";
         public static final String VIRTUALSENSOR = "sensor";
         public static final String VIRTUALSENSOR_DATA = "sensor_data";
+        public static final String VIRTUALSENSOR_DATA_QUALITY = "sensor_data_quality";
         public static final String VIRTUALSENSOR_EVENT = "sensor_event";
         public static final String CENCUS_COMPONENT_DAY_WORK = "cencus_comp_day_work";
+        public static final String CENCUS_COMPONENT_DAY_WATER_HANDLER = "cencus_comp_day_water_handler";
+        public static final String CENCUS_COMPONENT_DAY_ELECTRIC_USEAGE = "cencus_comp_day_electric_useage";
+        public static final String CENCUS_COMPONENT_DAY_MOL_ERROR_COUNT = "cencus_comp_day_mol_error_count";
+        public static final String CENCUS_COMPONENT_DAY_HIGH_WATER_LEVEL_COUNT = "cencus_comp_day_high_water_level_count";
         public static final String CENCUS_POSITIVE_TOTAL = "cencus_positive_total";
         public static final String CENCUS_POWER = "cencus_power";
 //        public static final String COMPONENT = "component";
@@ -109,5 +115,8 @@ public class EntityConst {
         }
     }
 
-
+    public static final class Auth {
+        public static final String PARAM_DIGEST = "digest";
+        public static final String PARAM_USERNAME = "username";
+    }
 }

@@ -14,14 +14,14 @@ public class SensorEvent extends AbstractEntity {
     public static final int EVENT_LOGOUT = 3;
 
     @Id private ObjectId id;
-    @Property String app_id;
-    @Property int event;
-    @Property String event_name;
-    @Property String remote_endpoint;
-    @Property String sensor_id;
-    @Property int signal;//最大32 最小0
-    @Property long time;
-    @Property int version;
+    @Property private String app_id;
+    @Property private int event;
+    @Property private String event_name;
+    @Property private String remote_endpoint;
+    @Property private String sensor_id;
+    @Property private int signal;//最大32 最小0
+    @Property private long time;
+    @Property private int version;
 
     public ObjectId getId() {
         return id;

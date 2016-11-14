@@ -6,8 +6,8 @@ import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Property;
 
 public class CencusEntity extends AbstractEntity {
-    @Id private ObjectId id;
-    @Property private String sensor_id;
+    @Id protected ObjectId id;
+    @Property protected String sensor_id;
 
     public ObjectId getId() {
         return id;

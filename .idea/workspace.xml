@@ -4,20 +4,6 @@
     <list default="true" id="0fd8f5c7-a893-4232-b550-e52d73eb6f82" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/img/marker_red.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/img/progress.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/signin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/signup.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/src/js/factory/HttpUnauthorizedInterceptor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/modal/department_selection_modal.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/page_404.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/page_forgotpwd.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/page_invoice.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/page_lockme.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/page_post.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/page_price.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/page_profile.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/page_search.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/page_signin.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/page_signup.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/auth/authtoken/StatelessToken.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/auth/filter/StatelessAuthcFilter.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/auth/realm/StatelessRealm.java" />
@@ -62,56 +48,7 @@
       <change type="MOVED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/schedule/CencusPositiveTotalSchedule.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/schedule/BasicYestodyCencusSchedule.java" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/css/app.201610281236.css" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/css/app.201611140938.css" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/module/framework-app/src/main/webapp/js/app.201610281236.js" afterPath="$PROJECT_DIR$/module/framework-app/src/main/webapp/js/app.201611140938.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/framework_app_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/framework_app_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework.iml" afterPath="$PROJECT_DIR$/framework.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/grunt/concat.js" afterPath="$PROJECT_DIR$/module/app-web/grunt/concat.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/grunt/copy.js" afterPath="$PROJECT_DIR$/module/app-web/grunt/copy.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/css/app.css" afterPath="$PROJECT_DIR$/module/app-web/src/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/css/less/app.table.less" afterPath="$PROJECT_DIR$/module/app-web/src/css/less/app.table.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/index.html" afterPath="$PROJECT_DIR$/module/app-web/src/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/index.min.html" afterPath="$PROJECT_DIR$/module/app-web/src/index.min.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/config.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/config.lazyload.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/config.lazyload.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/config.router.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/config.router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/cencus-tab-device-type.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/cencus-tab-device-type.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/cencus-tab-flow.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/cencus-tab-flow.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/cencus-tab-qos.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/cencus-tab-qos.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/cencus-tab-routing.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/cencus-tab-routing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/dashbord.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/dashbord.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-detail.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-detail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-control.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-control.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-el.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-el.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-flow.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-flow.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-info.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-info.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-map.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-map.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-movie.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-movie.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-positive.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-positive.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-route.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-route.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-wq.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab-wq.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/device-tab.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/employee-add.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/employee-add.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/employee.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/employee.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/manage-device-modify.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/manage-device-modify.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/manage-device.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/manage-device.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/controllers/routing.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/controllers/routing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/js/main.js" afterPath="$PROJECT_DIR$/module/app-web/src/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_cencus_device_type.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_cencus_device_type.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_cencus_flow.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_cencus_flow.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_cencus_qos.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_cencus_qos.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_cencus_routing.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_cencus_routing.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_device.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_device.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_device_tab_control.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_device_tab_control.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_device_tab_information.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_device_tab_information.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_device_tab_movie.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_device_tab_movie.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_device_tab_water_q.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_device_tab_water_q.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_employee.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_employee.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_employee_add.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_employee_add.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_mng_department.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_mng_department.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_mng_device.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_mng_device.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/app_mng_device_modify.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/app_mng_device_modify.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/blocks/aside_device.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/blocks/aside_device.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/app-web/src/tpl/blocks/header.html" afterPath="$PROJECT_DIR$/module/app-web/src/tpl/blocks/header.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/framework-app.iml" afterPath="$PROJECT_DIR$/module/framework-app/framework-app.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/pom.xml" afterPath="$PROJECT_DIR$/module/framework-app/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/auth/realm/EmployeeRealm.java" afterPath="$PROJECT_DIR$/module/framework-app/src/main/java/com/infinite/eoa/auth/realm/EmployeeRealm.java" />
@@ -2099,7 +2036,7 @@
       <workItem from="1478741969169" duration="1013000" />
       <workItem from="1478744036738" duration="14220000" />
       <workItem from="1478826933924" duration="13934000" />
-      <workItem from="1479085725012" duration="10636000" />
+      <workItem from="1479085725012" duration="10727000" />
     </task>
     <task id="LOCAL-00001" summary="app-web html small edit.">
       <created>1471254507746</created>
@@ -2269,7 +2206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1477647456723</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="201611141349&#10;add authc with shiro">
+      <created>1479102575557</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1479102575557</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -2305,7 +2249,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="848875000" />
+    <option name="totallyTimeSpent" value="848966000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2449,7 +2393,8 @@
     <MESSAGE value="201610201722" />
     <MESSAGE value="201610211646" />
     <MESSAGE value="201610281737" />
-    <option name="LAST_COMMIT_MESSAGE" value="201610281737" />
+    <MESSAGE value="201611141349&#10;add authc with shiro" />
+    <option name="LAST_COMMIT_MESSAGE" value="201611141349&#10;add authc with shiro" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

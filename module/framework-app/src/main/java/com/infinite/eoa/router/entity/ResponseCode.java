@@ -13,6 +13,7 @@ public enum ResponseCode {
     AUTH_ACCOUNT_ERROR("102", "认证失败，用户信息有误。"),
     AUTH_ACCOUNT_RETRY_LIMIT("103", "认证失败，错误次数过多，请10分钟后重新尝试。"),
     AUTH_PERMISION_NO("103", "没有权限操作。"),
+    USERNAME_EXSIST("201", "用户名已存在。"),
     ;
     public String code;
     public String message;

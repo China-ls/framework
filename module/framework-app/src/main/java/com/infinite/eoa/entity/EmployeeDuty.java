@@ -1,37 +1,47 @@
 package com.infinite.eoa.entity;
 
 import com.infinite.eoa.core.entity.AbstractEntity;
-import org.bson.types.ObjectId;
-import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Property;
 
-//@Entity(EntityConst.CollectionName.EMPLOYEE_DUTY)
+import java.util.Date;
+
 public class EmployeeDuty extends AbstractEntity {
-    /**
-     * 巡线员
-     */
-    public static final int TYPE_LINE_PATROL = 1;
-    /**
-     * 工程人员
-     */
-    public static final int TYPE_ENGINEERING = 2;
-    /**
-     * 核查人员
-     */
-    public static final int TYPE_VERIFICATION = 3;
+    @Property private int type;
+    @Property private String deviceid;
+    @Property private String sim;
+    @Property private Date createTime;
+    @Property private Date modifyTime;
 
-    @Id
-    @Property
-    private ObjectId id;
-    @Property
-    private int type;
-
-    public ObjectId getId() {
-        return id;
+    public String getDeviceid() {
+        return deviceid;
     }
 
-    public void setId(ObjectId id) {
-        this.id = id;
+    public void setDeviceid(String deviceid) {
+        this.deviceid = deviceid;
+    }
+
+    public String getSim() {
+        return sim;
+    }
+
+    public void setSim(String sim) {
+        this.sim = sim;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
     }
 
     public int getType() {
@@ -45,8 +55,11 @@ public class EmployeeDuty extends AbstractEntity {
     @Override
     public String toString() {
         return "EmployeeDuty{" +
-                "id=" + id +
-                ", type=" + type +
-                "} " + super.toString();
+                "type=" + type +
+                ", deviceid='" + deviceid + '\'' +
+                ", sim='" + sim + '\'' +
+                ", createTime=" + createTime +
+                ", modifyTime=" + modifyTime +
+                '}';
     }
 }

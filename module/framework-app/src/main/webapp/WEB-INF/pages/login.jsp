@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <link href="${ctx}/img/logo.png" rel="shortcut icon"/>
 
-    <link rel="stylesheet" href="${ctx}/css/app.201610281236.css" type="text/css"/>
+    <link rel="stylesheet" href="${ctx}/css/app.201611140938.css?_t=<%=System.currentTimeMillis()%>" type="text/css"/>
 </head>
 <body ng-controller="LoginCtrl" class="login-body">
 

@@ -1,11 +1,13 @@
 package com.infinite.eoa.service.impl;
 
+import com.infinite.eoa.core.entity.Pager;
 import com.infinite.eoa.core.persistent.IMorphiaDAO;
 import com.infinite.eoa.core.serivce.AbstractPagerService;
 import com.infinite.eoa.core.util.JsonUtil;
 import com.infinite.eoa.entity.Department;
+import com.infinite.eoa.entity.Employee;
+import com.infinite.eoa.entity.EmployeeResourcesLevel;
 import com.infinite.eoa.persistent.DepartmentDAO;
-import com.infinite.eoa.core.entity.Pager;
 import com.infinite.eoa.service.DepartmentService;
 import com.infinite.eoa.service.exception.InvalidDataException;
 import com.mongodb.WriteResult;
@@ -14,6 +16,8 @@ import org.apache.commons.lang.StringUtils;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.Key;
+import org.mongodb.morphia.query.Criteria;
+import org.mongodb.morphia.query.CriteriaContainer;
 import org.mongodb.morphia.query.Query;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,10 +28,12 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service("DepartmentService")
 public class DepartmentServiceImpl extends AbstractPagerService<Department> implements DepartmentService {
+    private static final boolean ISDEBUG = false;
     private static Logger log = LoggerFactory.getLogger(DepartmentService.class);
 
     @Autowired
@@ -36,6 +42,42 @@ public class DepartmentServiceImpl extends AbstractPagerService<Department> impl
     @Override
     public IMorphiaDAO getMorphiaDAO() {
         return departmentDAO;
+    }
+
+    @Override
+    public Department findById(String departmentId) {
+        return departmentDAO.findById(departmentId);
+    }
+
+    @Override
+    public int deleteByEntityId(String sensorId) {
+        return departmentDAO.deleteByEntityId(sensorId);
+    }
+
+    @Override
+    public Department findByEntity_id(String entity_id) {
+        return departmentDAO.findByEntity_id(entity_id);
+    }
+
+    @Override
+    public int delete(Department dptEntity) {
+        WriteResult result = departmentDAO.delete(dptEntity);
+        return result.getN();
+    }
+
+    @Override
+    public List<Department> findEntityIdsByTypeAndDepartmentId(List<Integer> type, String departmentId) {
+        Query<Department> query = departmentDAO.createQuery();
+        query.filter("nodeType", Department.NODE_TYPE_ENTITY);
+        if (null != type && type.size() > 0) {
+            if (type.size() == 1) {
+                query.filter("type", type.get(0));
+            } else {
+                query.field("type").in(type);
+            }
+        }
+        query.field("path").contains(departmentId);
+        return departmentDAO.find(query).asList();
     }
 
     @Override
@@ -66,6 +108,11 @@ public class DepartmentServiceImpl extends AbstractPagerService<Department> impl
     }
 
     @Override
+    public Department listByDepartentType(int type) {
+        return null;
+    }
+
+    @Override
     public Department save(Department department) {
         if (null == department) {
             throw new InvalidDataException("department is empty");
@@ -76,20 +123,41 @@ public class DepartmentServiceImpl extends AbstractPagerService<Department> impl
     }
 
     @Override
-    public Pager<Department> listPagerAll(int page, int size, boolean withEntity) {
-        return listPagerByDepartmentType(page, size, -1, withEntity);
+    public Pager<Department> listPagerAll(int page, int size, int withEntity) {
+        return listPagerByDepartmentType(null, page, size, null, withEntity);
     }
 
+    @SuppressWarnings("unchecked")
     @Override
-    public Pager<Department> listPagerByDepartmentType(int page, int size, int type, boolean withEntity) {
-        Query query = departmentDAO.createQuery();
-        if (type != -1) {
-            query.filter("type =", type);
+    public Pager<Department> listPagerByDepartmentType(Employee employee, int page, int size, Iterable<Integer> type, int withEntity) {
+        if (!ISDEBUG && null == employee) {
+            return null;
         }
-//        if (!withEntity) {
-//            query.filter("nodeType =", type);
-//        }
-        query.order("path");
+        Query query = departmentDAO.createQuery();
+        if (!ISDEBUG) {
+            EmployeeResourcesLevel resourceLeve = employee.getResourcesLevel();
+            if (null == resourceLeve) {
+                return null;
+            }
+            if (!resourceLeve.isAdmin()) {
+                ArrayList<String> resDepartments = resourceLeve.getDepartments();
+                ArrayList<Criteria> criteriaList = new ArrayList<Criteria>();
+                for (String resDptId : resDepartments) {
+                    criteriaList.add((CriteriaContainer) query.criteria("id").equal(new ObjectId(resDptId)));
+                    criteriaList.add((CriteriaContainer) query.criteria("path").contains(resDptId));
+                }
+                Criteria[] criteriaArray = new Criteria[criteriaList.size()];
+                criteriaList.toArray(criteriaArray);
+                query.or(criteriaArray);
+            }
+        }
+        if (type != null) {
+            query.field("type").in(type);
+        }
+        if (withEntity != 1) {
+            query.filter("nodeType", Department.NODE_TYPE_DEFAULT);
+        }
+        query.order("path,nodeType");
 
         Pager<Department> pager = listPager(page, size, query);
         pager.setData(sortDepartmentTree(pager.getData()));

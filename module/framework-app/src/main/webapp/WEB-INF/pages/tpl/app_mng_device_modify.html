@@ -22,86 +22,99 @@
                         <td class="w-sm text-right">站点类型</td>
                         <td>
                             <select class="form-control"
-                                    ng-model="device.type"
+                                    ng-model="device.station_type"
                                     required>
                                 <option value="">请选择站点类型</option>
-                                <option value="A类站点" ng-selected="device.type == 'A类站点'">A类站点</option>
-                                <option value="B类站点" ng-selected="device.type == 'B类站点'">B类站点</option>
-                                <option value="C类站点" ng-selected="device.type == 'C类站点'">C类站点</option>
+                                <option value="A类站点" ng-selected="device.station_type == 'A类站点'">A类站点</option>
+                                <option value="B类站点" ng-selected="device.station_type == 'B类站点'">B类站点</option>
+                                <option value="C类站点" ng-selected="device.station_type == 'C类站点'">C类站点</option>
                             </select>
                         </td>
                     </tr>
                     <tr>
-                        <td class="bg-light-gray2-only w-sm text-right">日处水能力</td>
+                        <td class="bg-light-gray2-only w-sm text-right">机构归属：</td>
                         <td>
                             <select class="form-control"
-                                    ng-model="device.dayDealDirtyWaterAbility"
-                                    required>
-                                <option value="">请选择日处水能力</option>
-                                <option value="10吨" ng-selected="device.dayDealDirtyWaterAbility == '10吨'">10吨</option>
-                                <option value="15吨" ng-selected="device.dayDealDirtyWaterAbility == '15吨'">15吨</option>
-                                <option value="20吨" ng-selected="device.dayDealDirtyWaterAbility == '20吨'">20吨</option>
+                                    ng-model="device.departmentId"
+                                    ng-required="true">
+                                <option value="">请选择机构归属</option>
+                                <option ng-repeat="d in departments" value="{{d.id}}" ng-selected="device.departmentId == d.id">
+                                    {{d.name}}
+                                </option>
                             </select>
                         </td>
                     </tr>
                     <tr>
-                        <td class="w-sm text-right">SIM卡</td>
+                        <td class=" w-sm text-right">日处水能力</td>
+                        <td>
+                            <select class="form-control"
+                                    ng-model="device.day_deal_water_ability"
+                                    required>
+                                <option value="">请选择日处水能力</option>
+                                <option value="10吨" ng-selected="device.day_deal_water_ability == '10吨'">10吨</option>
+                                <option value="15吨" ng-selected="device.day_deal_water_ability == '15吨'">15吨</option>
+                                <option value="20吨" ng-selected="device.day_deal_water_ability == '20吨'">20吨</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-light-gray2-only w-sm text-right">SIM卡</td>
                         <td>
                             <input type="text" class="form-control" placeholder="请输入SIM卡"
                                    ng-model="device.sim" required>
                         </td>
                     </tr>
                     <tr>
-                        <td class="bg-light-gray2-only w-sm text-right">设备号</td>
+                        <td class=" w-sm text-right">设备号</td>
                         <td>
                             <input type="number" class="form-control" placeholder="请输入设备号"
                                    ng-model="device.internal_id" required>
                         </td>
                     </tr>
                     <tr>
-                        <td class="w-sm text-right">站点管理员</td>
+                        <td class="bg-light-gray2-only w-sm text-right">站点管理员</td>
                         <td>
                             <input type="text" class="form-control" placeholder="请输入站点管理员"
                                    ng-model="device.admin" required>
                         </td>
                     </tr>
                     <tr>
-                        <td class="bg-light-gray2-only w-sm text-right">联系电话</td>
+                        <td class=" w-sm text-right">联系电话</td>
                         <td>
                             <input type="text" class="form-control" placeholder="请输入联系电话"
                                    ng-model="device.contact" required>
                         </td>
                     </tr>
                     <tr>
-                        <td class="w-sm text-right">地址</td>
+                        <td class="bg-light-gray2-only w-sm text-right">地址</td>
                         <td>
                             <input type="text" class="form-control" placeholder="请输入地址"
                                    ng-model="device.address" required>
                         </td>
                     </tr>
                     <tr>
-                        <td class="bg-light-gray2-only w-sm text-right">投产时间</td>
+                        <td class=" w-sm text-right">投产时间</td>
                         <td>
                             <input type="date" class="form-control" placeholder="请输入投产时间"
                                    ng-model="device.setupDate" required>
                         </td>
                     </tr>
                     <tr>
-                        <td class="w-sm text-right">描述</td>
+                        <td class="bg-light-gray2-only w-sm text-right">描述</td>
                         <td>
                             <input type="text" class="form-control" placeholder="请输入描述"
                                    ng-model="device.desc" required>
                         </td>
                     </tr>
                     <tr>
-                        <td class="bg-light-gray2-only w-sm text-right">经度</td>
+                        <td class=" w-sm text-right">经度</td>
                         <td>
                             <input type="text" class="form-control" placeholder="请输入经度"
                                    ng-model="device.longitude" required>
                         </td>
                     </tr>
                     <tr>
-                        <td class="w-sm text-right">纬度</td>
+                        <td class="bg-light-gray2-only w-sm text-right">纬度</td>
                         <td>
                             <input type="text" class="form-control" placeholder="请输入纬度"
                                    ng-model="device.latitude" required>
@@ -114,9 +127,39 @@
 
             <!-- map -->
             <div class="col-sm-6">
+                <div class="m-b-sm" style="margin-top: 13px;">
+                    <!--<input type="file" id="fileInput"/>-->
+                    <span class="btn btn-success fileinput-button">
+                    <i class="glyphicon glyphicon-plus"></i>
+                    <span>添加图片</span>
+                    <input type="file" id="fileInput" style="position: absolute;top: 13px;left: 15px;height: 35px;width: 100px;margin: 0;opacity: 0;-ms-filter: 'alpha(opacity=0)';direction: ltr;cursor: pointer;">
+                </span>
+                </div>
+                <div class="hbox hbox-auto-xs">
+                    <div class="col">
+                        <div class="wrapper-sm b-a bg-white m-r-xs m-b-xs">
+                            <div class="bg-light" style="height:220px">
+                                <img-crop
+                                        image="myImage"
+                                        result-image="myCroppedImage"
+                                        result-image-size="160"
+                                        area-type="square"
+                                ></img-crop>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="inline bg-white wrapper-sm b-a">
+                            <div class="bg-light">
+                                <img ng-src="{{myCroppedImage}}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div id="map_canvas"
                      class="wrapper-sm m-l-sm m-r-sm b b-a b-r-2x b-gray no-m-sm no-m-xs"
-                     style="min-height:615px;margin-top: 13px; margin-bottom: 5px;"
+                     style="min-height:375px; margin-bottom: 5px;"
                      ui-baidu-map="myMap"
                      ui-event="{'map-click': 'onMapClick($event, $params)', 'map-loaded': 'onMapLoaded($event, $params)'}"
                      ui-options="mapOptions">
@@ -322,21 +365,21 @@
                                            ng-model="item.sub_channel" required>
                                 </td>
                             </tr>
+                            <!--<tr>-->
+                                <!--<td class="bg-light-gray2-only w-sm text-right">安装日期</td>-->
+                                <!--<td>-->
+                                    <!--<input type="date" class="form-control" placeholder="请输入安装日期"-->
+                                           <!--ng-model="item.setupDate" required>-->
+                                <!--</td>-->
+                            <!--</tr>-->
                             <tr>
-                                <td class="bg-light-gray2-only w-sm text-right">安装日期</td>
-                                <td>
-                                    <input type="date" class="form-control" placeholder="请输入安装日期"
-                                           ng-model="item.setupDate" required>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="w-sm text-right">状态参考</td>
+                                <td class="bg-light-gray2-only w-sm text-right">状态参考</td>
                                 <td>
                                     <select class="form-control" ng-model="item.ref_channel" required>
                                         <option value="">请选择状态参考设备</option>
                                         <option ng-repeat="cc in components"
                                                 ng-if="cc.category == 3 && cc.channel != item.channel "
-                                                value="{{cc.channel}}">{{ ($index + 1) + ' ' + cc.name + ' ' + cc.channel}}
+                                                value="{{cc.channel + ':'+ cc.sub_channel}}">{{cc.channel + ':'+ cc.sub_channel}}
                                         </option>
                                     </select>
                                 </td>

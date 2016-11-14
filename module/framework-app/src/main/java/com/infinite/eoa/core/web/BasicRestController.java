@@ -2,8 +2,11 @@ package com.infinite.eoa.core.web;
 
 import com.infinite.eoa.core.util.ExcelUtil;
 import com.infinite.eoa.core.web.entity.Response;
+import com.infinite.eoa.entity.Employee;
 import com.infinite.eoa.router.entity.ResponseCode;
+import com.infinite.eoa.service.EmployeeService;
 import org.apache.commons.io.IOUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
@@ -17,6 +20,9 @@ import java.util.List;
 import java.util.Map;
 
 public class BasicRestController extends BasicController implements IRestController {
+    @Autowired
+    private EmployeeService employeeService;
+
     public Response makeResponse(ResponseCode code) {
         return new Response(code.code, code.message);
     }
@@ -53,6 +59,14 @@ public class BasicRestController extends BasicController implements IRestControl
             IOUtils.closeQuietly(bis);
             IOUtils.closeQuietly(bos);
         }
+    }
+
+    protected Employee getSubjectEmployee() {
+        Object username = getSubject().getPrincipal();
+        if (null == username) {
+            return null;
+        }
+        return employeeService.getEmployeeByUsername(username.toString());
     }
 
 }

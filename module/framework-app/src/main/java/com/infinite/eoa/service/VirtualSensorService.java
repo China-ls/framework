@@ -1,6 +1,7 @@
 package com.infinite.eoa.service;
 
 import com.infinite.eoa.core.serivce.IPagerService;
+import com.infinite.eoa.entity.Employee;
 import com.infinite.eoa.entity.SensorEvent;
 import com.infinite.eoa.entity.VirtualSensor;
 import com.infinite.eoa.service.exception.ApplicationNotExsistException;
@@ -19,7 +20,9 @@ public interface VirtualSensorService extends IPagerService<VirtualSensor> {
 
     public VirtualSensor updateVirtualSensor(VirtualSensor sensor);
 
-    public VirtualSensor remveVirtualSensor(String sensorId);
+    public int removeVirtualSensor(String sensorId);
+
+    List<VirtualSensor> findByDepartmentIdAndEmployee(Employee employee, String departmentId);
 
     List<VirtualSensor> find();
 
@@ -27,7 +30,7 @@ public interface VirtualSensorService extends IPagerService<VirtualSensor> {
 
     VirtualSensor findById(String appkey, String id) throws ApplicationNotExsistException;
 
-    List<VirtualSensor> findByIdArray(String appkey, String ... idArray) throws ApplicationNotExsistException;
+    List<VirtualSensor> findByIdArray(String appkey, String... idArray) throws ApplicationNotExsistException;
 
     VirtualSensor findByIdAndNotComponentDefinetionEmpty(String id);
 

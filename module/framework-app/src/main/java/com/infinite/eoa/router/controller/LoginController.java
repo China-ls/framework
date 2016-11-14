@@ -40,7 +40,7 @@ public class LoginController extends BasicRestController {
                 login(new UsernamePasswordToken(username, password));
                 LoginResponse loginResponse = new LoginResponse();
                 loginResponse.setUsername(username);
-                loginResponse.setPassword(password);
+//                loginResponse.setPassword(password);
                 response = makeResponse(ResponseCode.SUCCESS, loginResponse);
             }
         } catch (ExcessiveAttemptsException e) {

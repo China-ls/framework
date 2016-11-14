@@ -1,7 +1,6 @@
 package com.infinite.eoa.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.google.gson.annotations.SerializedName;
 import com.infinite.eoa.core.entity.AbstractEntity;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Entity;
@@ -19,8 +18,6 @@ public class Department extends AbstractEntity {
      */
     public static final int NODE_TYPE_ENTITY = 1;
 
-
-    @SerializedName("_id")
     @Id @Property private ObjectId id;
     @Property private String name;
     @Property private String address;
@@ -30,6 +27,7 @@ public class Department extends AbstractEntity {
     @Property private int type;
     @Property private String path;
     @Property private String name_path;
+    @Property private String entity_id;
     @Property private int nodeType;
     @Property private int level;
 
@@ -126,6 +124,14 @@ public class Department extends AbstractEntity {
         this.name_path = name_path;
     }
 
+    public String getEntity_id() {
+        return entity_id;
+    }
+
+    public void setEntity_id(String entity_id) {
+        this.entity_id = entity_id;
+    }
+
     @Override
     public String toString() {
         return "Department{" +
@@ -138,6 +144,7 @@ public class Department extends AbstractEntity {
                 ", type=" + type +
                 ", path='" + path + '\'' +
                 ", name_path='" + name_path + '\'' +
+                ", entity_id='" + entity_id + '\'' +
                 ", nodeType=" + nodeType +
                 ", level=" + level +
                 '}';

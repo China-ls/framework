@@ -37,8 +37,8 @@ public class ReportMessageHandler extends JmsMessageHandlerAdapter {
                 sensorEvent.setTime(sensorEvent.getTime() * 1000);
                 sensorEvent = sensorEventService.save(sensorEvent);
                 int updateCount = virtualSensorService.onSensorEventCome(sensorEvent);
-                if (LOG.isDebugEnabled()) {
-                    LOG.debug("report -- [id:{}, updateCount:{}]", sensorEvent.getSensor_id(), updateCount);
+                if (LOG.isTraceEnabled()) {
+                    LOG.trace("report -- [id:{}, updateCount:{}]", sensorEvent.getSensor_id(), updateCount);
                 }
             } catch (Exception e) {
                 if (LOG.isErrorEnabled()) {

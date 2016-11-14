@@ -1,0 +1,74 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="cancel()"><span>&times;</span></button>
+    <h3 class="modal-title">修改员工资源权限</h3>
+</div>
+<div class="modal-body">
+
+    <!-- 网络请求动画 -->
+    <div cg-busy="{promise:submitPromise,message:'数据保存中...'}"></div>
+    <!-- 网络请求动画 -->
+
+    <!-- 网络请求动画 -->
+    <div cg-busy="{promise:loadDataPromise,message:'机构加载中...'}"></div>
+    <!-- 网络请求动画 -->
+
+    <form class="bs-example form-horizontal">
+
+        <div class="scroll-x scroll-y m-b-sm" ng-style="{'max-height' :  boxHeight}">
+            <table st-table="rowCollectionBasic" class="table table-bordered table-striped tb-border">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>名称</th>
+                    <th>类型</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in departments"
+                    class="success cursor-pointer"
+                    st-select-row="row"
+                    ng-click="toggleSelectResDepartment(item.id)">
+                    <th>
+                        <label class="checkbox i-checks m-n">
+                            <input type="checkbox" ng-checked="selections.indexOf(item.id) != -1"
+                                   ng-click="toggleSelectResDepartment(item.id)">
+                            <i></i>
+                        </label>
+                    </th>
+                    <td class="level{{item.level}}">
+                        <i ng-class="{
+                               'fa fa-flag': item.type == '0',
+                               'fa fa-user': item.type == '1',
+                               'fa fa-briefcase': item.type == '2',
+                               'fa fa-check-square-o': item.type == '3',
+                               'text-danger': item.level == 0,
+                               'text-warning': item.level == 1,
+                               'text-info': item.level == 2,
+                               'text-success': item.level == 3,
+                               'text-info-dk': item.level == 4,
+                               'text-primary': item.level == 5
+                               }">
+                        </i>
+                        <span class="cursor-pointer">{{item.name}}</span>
+                    </td>
+                    <td>
+                        <span ng-if="item.type == '0'">普通机构</span>
+                        <span ng-if="item.type == '1'">巡查机构</span>
+                        <span ng-if="item.type == '2'">工程机构</span>
+                        <span ng-if="item.type == '3'">核查机构</span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="form-group">
+            <div class="col-lg-12">
+                <button type="button" class="btn btn-success img-full" ng-click="submit()">
+                    保存
+                </button>
+            </div>
+        </div>
+    </form>
+
+</div>

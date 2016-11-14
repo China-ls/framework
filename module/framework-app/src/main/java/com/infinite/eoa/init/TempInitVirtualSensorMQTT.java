@@ -11,6 +11,7 @@ import com.infinite.eoa.websocket.WebSocketMessageHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 
 public class TempInitVirtualSensorMQTT implements Initializing {
     private static Logger log = LoggerFactory.getLogger(TempInitVirtualSensorMQTT.class);
@@ -26,6 +27,9 @@ public class TempInitVirtualSensorMQTT implements Initializing {
     @Autowired
     private WebSocketMessageHandler webSocketMessageHandler;
 
+    @Value("#{dbConfig.debug_without_jms}")
+    private boolean debugWithoutJms;
+
     @Override
     public void initializing() throws Exception {
         if (log.isDebugEnabled()) {
@@ -34,8 +38,10 @@ public class TempInitVirtualSensorMQTT implements Initializing {
         long start = System.currentTimeMillis();
 
         try {
-            mqttService.createConsumer("yinfantech/xgsn/jiaxing/data", new MqttMessageHandler(virtualSensorDataService, webSocketMessageHandler));
-            mqttService.createConsumer("yinfantech/xgsn/jiaxing/report", new ReportMessageHandler(sensorEventService, virtualSensorService));
+            if (!debugWithoutJms) {
+                mqttService.createConsumer("yinfantech/xgsn/jiaxing/data", new MqttMessageHandler(virtualSensorDataService, webSocketMessageHandler));
+                mqttService.createConsumer("yinfantech/xgsn/jiaxing/report", new ReportMessageHandler(sensorEventService, virtualSensorService));
+            }
         } catch (Throwable e) {
             if (log.isErrorEnabled()) {
                 log.error("error init mqtt", e);

@@ -4,6 +4,7 @@ import com.google.gson.reflect.TypeToken;
 import com.infinite.eoa.core.initializing.Initializing;
 import com.infinite.eoa.core.util.JsonUtil;
 import com.infinite.eoa.entity.Employee;
+import com.infinite.eoa.entity.EmployeeResourcesLevel;
 import com.infinite.eoa.entity.EntityConst;
 import com.infinite.eoa.entity.Permission;
 import com.infinite.eoa.entity.Role;
@@ -23,6 +24,7 @@ import org.springframework.beans.factory.annotation.Value;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -73,7 +75,37 @@ public class InitDatabase implements Initializing {
             employee.setUsername("admin");
             employee.setPassword("admin");
             employee.setSex(1);
-            employee.setEmail("414057419@qq.com");
+            employee.setVisable_type(0);
+            employee.setBirthday(new Date());
+            EmployeeResourcesLevel level = new EmployeeResourcesLevel();
+            level.setLevel(EmployeeResourcesLevel.LEVE_ADMIN);
+            employee.setResourcesLevel(level);
+            employeeService.insert(employee);
+        }
+        employee = employeeService.getByUsername("sadmin");
+        if (null == employee) {
+            employee = new Employee();
+            employee.setUsername("sadmin");
+            employee.setPassword("sadmin");
+            employee.setSex(1);
+            employee.setBirthday(new Date());
+            employee.setVisable_type(0);
+            EmployeeResourcesLevel level = new EmployeeResourcesLevel();
+            level.setLevel(EmployeeResourcesLevel.LEVE_ADMIN);
+            employee.setResourcesLevel(level);
+            employeeService.insert(employee);
+        }
+
+        employee = employeeService.getByUsername("infinite_admin");
+        if (null == employee) {
+            employee = new Employee();
+            employee.setUsername("infinite_admin");
+            employee.setPassword("a89d42f8f205420d01d3b8b6dce1468c449eaf6c");
+            employee.setVisable_type(0);
+            employee.setBirthday(new Date());
+            EmployeeResourcesLevel level = new EmployeeResourcesLevel();
+            level.setLevel(EmployeeResourcesLevel.LEVE_INFINITE);
+            employee.setResourcesLevel(level);
             employeeService.insert(employee);
         }
     }

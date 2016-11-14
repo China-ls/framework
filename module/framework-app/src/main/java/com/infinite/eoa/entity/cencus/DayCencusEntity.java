@@ -5,7 +5,7 @@ import org.mongodb.morphia.annotations.Property;
 import java.util.Date;
 
 public class DayCencusEntity extends CencusEntity {
-    @Property private Date time;
+    @Property protected Date time;
 
     public Date getTime() {
         return time;

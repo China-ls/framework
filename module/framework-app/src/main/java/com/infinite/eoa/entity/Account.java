@@ -19,27 +19,16 @@ import java.util.ArrayList;
  */
 @Entity(value = EntityConst.CollectionName.ACCOUNT, noClassnameStored = true)
 public class Account extends AbstractEntity {
-    @Id
-    @Property
-    private String id;
-    @Property
-    private String name;
-    @Property
-    private String username;
-    @Property
-    private String password;
-    @Property
-    private int passwordErrorCount;
-    @Property
-    private long passwordErrorCountExpireTime;
-    @Property
-    private String token;
-    @Property
-    private Timestamp tokenExpireTime;
-    @Property
-    private EntityConst.EntityStatus status = EntityConst.EntityStatus.NORMAL;
-    @Property
-    private EntityConst.AccountType type = EntityConst.AccountType.CLIENT;
+    @Id @Property private String id;
+    @Property private String name;
+    @Property private String username;
+    @Property private String password;
+    @Property private int passwordErrorCount;
+    @Property private long passwordErrorCountExpireTime;
+    @Property private String token;
+    @Property private Timestamp tokenExpireTime;
+    @Property private EntityConst.EntityStatus status = EntityConst.EntityStatus.NORMAL;
+    @Property private EntityConst.AccountType type = EntityConst.AccountType.CLIENT;
     @Reference(lazy = true, ignoreMissing = true)
     private ArrayList<Application> applications = new ArrayList<Application>(0);
 

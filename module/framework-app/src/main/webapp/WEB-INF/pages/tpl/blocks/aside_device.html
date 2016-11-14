@@ -27,6 +27,10 @@
 
         <!-- nav -->
         <div class="nav-aside-content-wrap">
+            <!-- 网络请求动画 -->
+            <div cg-busy="{promise:loadDepartmentPromise,message:'数据加载中...'}"></div>
+            <!-- 网络请求动画 -->
+
             <abn-tree
                     tree-data="treeData"
                     tree-control="tree"

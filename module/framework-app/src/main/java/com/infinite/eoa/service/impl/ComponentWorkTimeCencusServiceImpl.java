@@ -43,7 +43,7 @@ public class ComponentWorkTimeCencusServiceImpl implements ComponentWorkTimeCenc
         if (null != list) {
             for (ComponentDayWorkCencus cencus : list) {
                 long total = month.containsKey(cencus.getComp_id()) ? NumberUtils.toLong(month.get(cencus.getComp_id()).toString()) : 0;
-                month.put(cencus.getComp_id(), total + cencus.getWork());
+                month.put(cencus.getComp_id(), total + cencus.getValue());
             }
         }
         DateTime dateTime = new DateTime();
@@ -54,7 +54,7 @@ public class ComponentWorkTimeCencusServiceImpl implements ComponentWorkTimeCenc
         Collection<ComponentDayWorkCencus> cencusCollection = cencusSensorComponent(startTime, endTime, date, sensor);
         for (ComponentDayWorkCencus cencus : cencusCollection) {
             long total = month.containsKey(cencus.getComp_id()) ? NumberUtils.toLong(month.get(cencus.getComp_id()).toString()) : 0;
-            day.put(cencus.getComp_id(), TimeUtils.formatToDays(cencus.getWork()));
+            day.put(cencus.getComp_id(), TimeUtils.formatToDays(cencus.getValue()));
             Long def = month.containsKey(cencus.getComp_id()) ? NumberUtils.toLong(month.get(cencus.getComp_id()).toString()) : 0;
             month.put(cencus.getComp_id(), TimeUtils.formatToDays(total + def));
         }
@@ -112,7 +112,7 @@ public class ComponentWorkTimeCencusServiceImpl implements ComponentWorkTimeCenc
             cencus.setComp_id(comp.getComp_id());
             cencus.setSensor_id(sensor.getSensor_id());
             cencus.setTime(date);
-            cencus.setWork(distance);
+            cencus.setValue(distance);
 
             cencusList.add(cencus);
         }

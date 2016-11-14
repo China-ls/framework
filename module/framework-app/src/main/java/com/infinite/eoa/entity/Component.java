@@ -73,6 +73,7 @@ public class Component extends AbstractEntity {
         this.fieldDefinitions = fieldDefinitions;
     }
 
+    @JsonIgnore
     public ArrayList<Action> getActions() {
         return actions;
     }
@@ -141,12 +142,21 @@ public class Component extends AbstractEntity {
         this.product_model = product_model;
     }
 
+    public void setRef_channel(String ref_channel) {
+        this.ref_channel = ref_channel;
+    }
+
+    public String getRef_channel() {
+        return ref_channel;
+    }
+
     @Override
     public String toString() {
         return "Component{" +
                 "comp_id='" + comp_id + '\'' +
                 ", name='" + name + '\'' +
                 ", type='" + type + '\'' +
+                ", ref_channel='" + ref_channel + '\'' +
                 ", instance_type=" + instance_type +
                 ", product_model=" + product_model +
                 ", category=" + category +

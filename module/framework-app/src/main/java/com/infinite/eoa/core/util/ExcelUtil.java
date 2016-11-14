@@ -77,12 +77,12 @@ public class ExcelUtil {
         }
         if (null != dataList) {
             //设置每行每列的值
-            for (short i = 1; i < dataList.size(); i++) {
+            for (short i = 0; i < dataList.size(); i++) {
                 // Row 行,Cell 方格 , Row 和 Cell 都是从0开始计数的
                 // 创建一行，在页sheet上
-                Row row = sheet.createRow((short) i);
+                Row row = sheet.createRow((short) (i + 1));
                 // 在row行上创建一个方格
-                Map<String,Object> map = dataList.get(i);
+                Map<String, Object> map = dataList.get(i);
                 for (short j = 0; j < keys.length; j++) {
                     Cell cell = row.createCell(j);
                     Object item = map.get(keys[j]);

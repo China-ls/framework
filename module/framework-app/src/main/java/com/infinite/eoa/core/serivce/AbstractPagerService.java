@@ -28,6 +28,8 @@ public abstract class AbstractPagerService<T> implements IPagerService<T> {
         }
         Pager<T> pager = new Pager<T>();
         long total = 0;
+        pager.setPage(page);
+        pager.setSize(size);
         IMorphiaDAO morphiaDAO = getMorphiaDAO();
         if (null == query) {
             total = morphiaDAO.count();

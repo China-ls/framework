@@ -22,7 +22,7 @@ public class MqttMessageHandler extends JmsMessageHandlerAdapter {
     private VirtualSensorDataService virtualSensorDataService;
     private VirtualSensorService virtualSensorService;
     private WebSocketMessageHandler webSocketMessageHandler;
-    private String callbackUrl = "http://127.0.0.1:9998/app/callback/jms";
+//    private String callbackUrl = "http://127.0.0.1:9998/app/callback/jms";
 
     public MqttMessageHandler(VirtualSensorDataService virtualSensorDataService, WebSocketMessageHandler webSocketMessageHandler) {
         this.virtualSensorDataService = virtualSensorDataService;
@@ -41,8 +41,8 @@ public class MqttMessageHandler extends JmsMessageHandlerAdapter {
                 List<Document> documentList = virtualSensorDataService.save(text);
                 //TODO 根据 VirtualSensor 里面配置的callback来回调
                 text = JsonUtil.toJson(documentList);
-                if (log.isDebugEnabled()) {
-                    log.debug("data [data:{}].", text);
+                if (log.isTraceEnabled()) {
+                    log.trace("data [data:{}].", text);
                 }
                 webSocketMessageHandler.broadcaseMessage(text);
             } catch (Exception e) {

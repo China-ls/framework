@@ -8,4 +8,7 @@ public interface DepartmentDAO extends IMorphiaDAO<Department, ObjectId> {
 
     public Department findById(String id);
 
+    public Department findByEntity_id(String id);
+
+    int deleteByEntityId(String id);
 }

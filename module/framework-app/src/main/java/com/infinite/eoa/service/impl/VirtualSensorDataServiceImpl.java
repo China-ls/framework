@@ -5,10 +5,13 @@ import com.infinite.eoa.core.persistent.IMongoDAO;
 import com.infinite.eoa.core.util.JsonUtil;
 import com.infinite.eoa.core.util.TimeUtils;
 import com.infinite.eoa.entity.Component;
+import com.infinite.eoa.entity.Employee;
 import com.infinite.eoa.entity.VirtualSensor;
 import com.infinite.eoa.entity.VirtualSensorData;
+import com.infinite.eoa.persistent.EmployeeDAO;
 import com.infinite.eoa.persistent.VirtualSensorDataDAO;
 import com.infinite.eoa.service.ApplicationService;
+import com.infinite.eoa.service.CencusService;
 import com.infinite.eoa.service.VirtualSensorDataService;
 import com.infinite.eoa.service.VirtualSensorService;
 import com.infinite.eoa.service.exception.ApplicationNotExsistException;
@@ -61,23 +64,18 @@ public class VirtualSensorDataServiceImpl implements VirtualSensorDataService {
     @Autowired
     private VirtualSensorService virtualSensorService;
     @Autowired
+    private CencusService cencusService;
+    @Autowired
     private VirtualSensorDataDAO virtualSensorDataDAO;
-
-    /*public List<VirtualSensorData> save(String data) {
-        List<VirtualSensorData> sensorDatas = JsonUtil.fromJson(data, new TypeToken<List<VirtualSensorData>>() {
-        }.getType());
-        for (VirtualSensorData vsd : sensorDatas) {
-            virtualSensorDataDAO.save(vsd);
-        }
-        virtualSensorService.onSensorDataCome(sensorDatas);
-        return sensorDatas;
-    }*/
+    @Autowired
+    private EmployeeDAO employeeDAO;
 
     @Override
     public List<Document> save(String data) {
         Document[] documents = null;
         if (data.startsWith("[")) {
-            documents = JsonUtil.fromJson(data, new TypeToken<Document[]>(){}.getType());
+            documents = JsonUtil.fromJson(data, new TypeToken<Document[]>() {
+            }.getType());
         } else {
             documents = new Document[1];
             documents[0] = JsonUtil.fromJson(data, Document.class);
@@ -98,8 +96,8 @@ public class VirtualSensorDataServiceImpl implements VirtualSensorDataService {
             documentList.add(document);
         }
         mongoDAO.insertMany(dbname, collectionName, documentList);
-        if (LOG.isDebugEnabled()) {
-            LOG.debug("save sensor data : {}", documentList);
+        if (LOG.isTraceEnabled()) {
+            LOG.trace("save sensor data : {}", documentList);
         }
         virtualSensorService.onSensorDataCome(documentList);
         return documentList;
@@ -126,25 +124,6 @@ public class VirtualSensorDataServiceImpl implements VirtualSensorDataService {
         }
         return virtualSensorDatas;
     }
-    /*public List<Document> findLatestBySensorId(String appkey, String sensorid) {
-        applicationService.applicationExsist(appkey);
-        ArrayList<Document> documentList = new ArrayList<Document>();
-        VirtualSensor sensor = virtualSensorService.findById(sensorid);
-        //TODO 修改为 Aggregates 方式取数据
-        if (null != sensor) {
-            MongoCollection<Document> mongoCollection = mongoDAO.getCollection(dbname, collectionName);
-            for (Component component : sensor.getComponents()) {
-                Document document = mongoDAO.find(mongoCollection, Filters.and(
-                        Filters.eq("sensor_id", sensorid),
-                        Filters.eq("comp_id", component.getComp_id())
-                )).sort(Sorts.descending("time")).first();
-                if (null != document) {
-                    documentList.add(document);
-                }
-            }
-        }
-        return documentList;
-    }*/
 
     @Override
     public ArrayList<Document> findBySensorIdAndTimeDistance(String appkey, String sensorid, String comp_type, long start, long end) {
@@ -366,9 +345,13 @@ public class VirtualSensorDataServiceImpl implements VirtualSensorDataService {
         document.append("latest", latestData);
 
         DateTime dateTime = new DateTime();
+        /*Date todayMin = TimeUtils.getMinUtilDateOfDay(dateTime);
+        Date todayMax = TimeUtils.getMaxUtilDateOfDay(dateTime);
+        SensorMaxMinAggregation cencus = cencusService.cencusSensorWaterHandlerBySensorAndTimeRange(sensorid, todayMin, todayMax );*/
 
         BsonDateTime todayMaxBDT = new BsonDateTime(TimeUtils.getMaxMillsOfDay(dateTime));
         BsonDateTime todayMinBDT = new BsonDateTime(TimeUtils.getMinMillsOfDay(dateTime));
+
         FindIterable<Document> findToday = mongoDAO.find(collection, Filters.and(
                 Filters.eq("sensor_id", sensorid),
                 Filters.eq("comp_type", "flowmeter_sensor"),
@@ -558,5 +541,22 @@ public class VirtualSensorDataServiceImpl implements VirtualSensorDataService {
             }
         }
         return null;
+    }
+
+    @Override
+    public List<Document> getEmployeeTodayPoints(String id) {
+        Employee employee = employeeDAO.findById(id);
+        if (null == employee || employee.getType() != Employee.TYPE_LINE_PATROL || null == employee.getDuty()) {
+            return null;
+        }
+        String deviceid = employee.getDuty().getDeviceid();
+        ArrayList<Document> documents = new ArrayList<Document>();
+        long start = new DateTime().withTime(0, 0, 0, 0).getMillis();
+        mongoDAO.find(dbname, collectionName,
+                Filters.and(Filters.eq("instance_type", 4108),
+                        Filters.eq("imei", deviceid),
+                        Filters.gte("time", new BsonDateTime(start)))
+        ).into(documents);
+        return documents;
     }
 }

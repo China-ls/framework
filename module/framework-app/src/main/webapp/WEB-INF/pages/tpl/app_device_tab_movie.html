@@ -32,7 +32,8 @@
                     <carousel interval="imageListSlideInterval">
                         <slide ng-repeat="slide in imageList" active="slide.active">
                             <span>{{slide.time}}</span>
-                            <img ng-src="{{imageUrl + slide._id}}" class="img-full">
+                            <img ng-if="slide.dataType == 0" ng-src="{{imageUrl + slide._id}}" class="img-full">
+                            <img ng-if="slide.dataType == 1" ng-src="{{slide.image}}" class="img-full">
                         </slide>
                     </carousel>
                 </div>
@@ -54,9 +55,9 @@
                 <p class="item dash-border-right b-b-dashed b-success m-md">
                     <span class="inline w-xs">拍摄类型：</span>
                     <span class="cb">
-                        <span ng-if="imageList[imageactive].capture_type === 0">远程抓拍</span>
-                        <span ng-if="imageList[imageactive].capture_type === 1">定时抓拍</span>
-                        <span ng-if="imageList[imageactive].capture_type === 2">触发抓拍</span>
+                        <span ng-if="imageList[imageactive].trigger_type === 0">定时抓拍</span>
+                        <span ng-if="imageList[imageactive].trigger_type === 1">远程抓拍</span>
+                        <span ng-if="imageList[imageactive].trigger_type === 2">触发抓拍</span>
                     </span>
                 </p>
                 <p class="item dash-border-right b-b-dashed b-success m-md">
@@ -64,7 +65,10 @@
                     <span class="cb">{{imageList[imageactive].image_id}}</span>
                 </p>
 
-                <button ng-click="takepick()" class="img-full btn btn-success">拍照</button>
+                <button ng-click="takepick()" class="img-full btn btn-success btn-addon">
+                    <i ng-show="isTakingPick" class="fa fa-spinner fa-spin" style="background-color: transparent;"></i>
+                    拍照
+                </button>
             </div>
 
         </div>

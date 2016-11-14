@@ -1,6 +1,5 @@
 package com.infinite.eoa.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.infinite.eoa.core.entity.AbstractEntity;
 import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Entity;
@@ -19,36 +18,67 @@ import java.util.Collection;
  */
 @Entity(value = EntityConst.CollectionName.VIRTUALSENSOR, noClassnameStored = true)
 public class VirtualSensor extends AbstractEntity {
-    @Id private String sensor_id;
+    public static final int TYPE_STATION = 100;
 
-    @Property private String app_id;
-    @Property private String control;
-    @Property private String report;
-    @Property private String data;
-    @Property private String system;
+    @Id
+    private String sensor_id;
 
-    @Property private String name;
-    @Property private String station_type;
-    @Property private String day_deal_water_ability;
-    @Property private String setup_date;
-    @Property private String admin;
-    @Property private String contact;
-    @Property private String address;
-    @Property private String desc;
-    @Property private double latitude;
-    @Property private double longitude;
-    @Property private long idle_report;
-    @Property private long internal_id;
-    @Property private long offline_report;
-    @Property private int signal;
-    @Property private int version;
-    @Property private int online;// 1在线 , 2离线, 3 在线但是无数据
+    @Property
+    private String app_id;
+    @Property
+    private String icon;
+    @Property
+    private String control;
+    @Property
+    private String report;
+    @Property
+    private String data;
+    @Property
+    private String system;
 
-    @Property private String departmentName;
-    @Property private String departmentId;
-    @Reference private Department department;
-    @Property private int status = EntityConst.EntityStatus.NORMAL.val;
-    @Embedded private ArrayList<Component> components = new ArrayList<Component>(0);
+    @Property
+    private String name;
+    @Property
+    private String station_type;
+    @Property
+    private String day_deal_water_ability;
+    @Property
+    private String setup_date;
+    @Property
+    private String admin;
+    @Property
+    private String contact;
+    @Property
+    private String address;
+    @Property
+    private String desc;
+    @Property
+    private double latitude;
+    @Property
+    private double longitude;
+    @Property
+    private long idle_report;
+    @Property
+    private long internal_id;
+    @Property
+    private long offline_report;
+    @Property
+    private int signal;
+    @Property
+    private int version;
+    @Property
+    private int online;// 1在线 , 2离线, 3 在线但是无数据
+
+    @Property
+    private String departmentName;
+    @Property
+    private String departmentId;
+    @Reference
+    private Department department;
+    @Property
+    private int status = EntityConst.EntityStatus.NORMAL.val;
+    @Embedded
+    private ArrayList<Component> components = new ArrayList<Component>(0);
 
     public String getSensor_id() {
         return sensor_id;
@@ -56,6 +86,14 @@ public class VirtualSensor extends AbstractEntity {
 
     public void setSensor_id(String sensor_id) {
         this.sensor_id = sensor_id;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
+    public String getIcon() {
+        return icon;
     }
 
     public String getApp_id() {
@@ -246,6 +284,10 @@ public class VirtualSensor extends AbstractEntity {
         this.status = status.val;
     }
 
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
     public int getSignal() {
         return signal;
     }
@@ -258,7 +300,6 @@ public class VirtualSensor extends AbstractEntity {
         return online;
     }
 
-    @JsonIgnore
     public ArrayList<Component> getComponents() {
         return components;
     }

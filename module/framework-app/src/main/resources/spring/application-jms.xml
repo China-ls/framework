@@ -33,7 +33,7 @@
         <constructor-arg index="3" value="" type="java.lang.String[]"/>
         <property name="errorChannel" ref="errorChannel" />
         <property name="outputChannel" ref="jmsChannel" />
-        <property name="autoStartup" value="true" />
+        <property name="autoStartup" value="${jms.autoStartup}" />
         <property name="recoveryInterval" value="${jms.recovery.interval}" />
         <property name="qos" value="${jms.qos}" />
     </bean>

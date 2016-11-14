@@ -27,7 +27,7 @@ app.controller('CencusTabFlowCtrl', ['$scope', '$http', '$localStorage', '$state
         $scope.filterQuery = function () {
             $scope.filter.start = $scope.filter.startDate.getTime();
             $scope.filter.end = $scope.filter.endDate.getTime();
-            $http.post(APPCONST.CTX + APPCONST.CENCUS_FLOW, $scope.filter)
+            $scope.loadDataPromise = $http.post(APPCONST.CTX + APPCONST.CENCUS_FLOW, $scope.filter)
                 .then(function (response) {
                     // console.warn(response);
                     $scope.filterResults = response.data.data;

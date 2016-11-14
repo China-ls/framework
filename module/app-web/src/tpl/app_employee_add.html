@@ -9,6 +9,33 @@
 
             <form class="form-horizontal form-validation">
                 <div class="form-group">
+                    <label class="col-sm-2 control-label">机构归属：</label>
+                    <div class="col-sm-10">
+                        <select class="form-control"
+                                ng-model="employee.departmentId"
+                                ng-required="true">
+                            <option value="">请选择机构归属</option>
+                            <option ng-repeat="d in departments" value="{{d.id}}" ng-selected="employee.departmentId == d.id">
+                                {{d.name}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"><span class="padder-xs-v text-danger">*</span> 员工类型：</label>
+                    <div class="col-sm-10">
+                        <select class="form-control"
+                                ng-model="employee.type"
+                                required>
+                            <option value="">请选择员工类型</option>
+                            <option value="5" ng-selected="employee.type == 5">普通员工</option>
+                            <option value="1" ng-selected="employee.type == 1">巡检员</option>
+                            <option value="2" ng-selected="employee.type == 2">核查人员</option>
+                            <option value="3" ng-selected="employee.type == 3">工程人员</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label class="col-sm-2 control-label"><span class="padder-xs-v text-danger">*</span> 员工工号：</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control"
@@ -21,9 +48,9 @@
                     <label class="col-sm-2 control-label"><span class="padder-xs-v text-danger">*</span> 登录帐号：</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control"
-                               placeholder="请输入登录帐号（4-20位）"
+                               placeholder="请输入登录帐号（2-20位）"
                                ng-model="employee.username"
-                               ng-minlength="4"
+                               ng-minlength="2"
                                ng-maxlength="20"
                                required>
                     </div>
@@ -31,7 +58,7 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label"><span class="padder-xs-v text-danger">*</span> 登录密码：</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" placeholder="请输入登录密码（至少6位）"
+                        <input type="text" class="form-control" placeholder="{{isUpdate ? '本项不填写则不修改密码' : '请输入登录密码（至少6位）'}}"
                                ng-model="employee.password" required minlength="6">
                     </div>
                 </div>
@@ -112,17 +139,38 @@
                         </select>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">机构归属：</label>
+
+                <div class="form-group"  ng-if="employee.type == 1">
+                    <label class="col-sm-2 control-label">巡检设备类型：</label>
                     <div class="col-sm-10">
                         <select class="form-control"
-                                ng-model="employee.departmentId"
-                                ng-required="true">
-                            <option value="">请选择机构归属</option>
-                            <option ng-repeat="d in departments" value="{{d.id}}" ng-selected="employee.department == d.id">
-                                {{d.name}}
-                            </option>
+                                ng-model="duty.device.type"
+                                required>
+                            <option value="">请选择巡检设备类型</option>
+                            <option value="1" ng-selected="employee.duty.type == 1">巡检手机</option>
+                            <option value="2" ng-selected="employee.duty.type == 2">巡检卡</option>
                         </select>
+                    </div>
+                </div>
+                <div class="form-group"  ng-if="employee.type == 1">
+                    <label class="col-sm-2 control-label">设备号</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" placeholder="请输入设备号"
+                               ng-model="employee.duty.deviceid" required>
+                    </div>
+                </div>
+                <div class="form-group"  ng-if="employee.type == 1">
+                    <label class="col-sm-2 control-label">SIM卡</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" placeholder="请输入SIM卡"
+                               ng-model="employee.duty.sim" required>
+                    </div>
+                </div>
+                <div class="form-group"  ng-if="employee.type == 1">
+                    <label class="col-sm-2 control-label">发放日期</label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" placeholder="请输入发放日期"
+                               ng-model="employee.duty.time" required>
                     </div>
                 </div>
 

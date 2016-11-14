@@ -27,17 +27,17 @@
                             <i class="fa fa-edit hidden-xs"></i>
                             删除员工
                         </button>
-                        <button class="btn btn-success btn-sm btn-addon w-xs-xs"
-                                ng-click="editDuty()"
-                                ng-class="{'disabled': null == selectEmployee}">
-                            <i class="fa fa-edit hidden-xs"></i>
-                            职能修改
-                        </button>
+                        <!--<button class="btn btn-success btn-sm btn-addon w-xs-xs"-->
+                                <!--ng-click="editDuty()"-->
+                                <!--ng-class="{'disabled': null == selectEmployee}">-->
+                            <!--<i class="fa fa-edit hidden-xs"></i>-->
+                            <!--职能修改-->
+                        <!--</button>-->
                         <button class="btn btn-danger btn-sm btn-addon w-xs-xs"
-                                ng-click="delEmployeeOrDelDuty(false)"
+                                ng-click="modifyEmployeeResourcesDepartment()"
                                 ng-class="{'disabled': null == selectEmployee}">
                             <i class="fa fa-edit hidden-xs"></i>
-                            职能移除
+                            资源权限管理
                         </button>
                     </div>
                 </div>
@@ -90,17 +90,15 @@
                         <span ng-if="item.sex === 1">男</span>
                         <span ng-if="item.sex === 2">女</span>
                     </td>
-                    <td>{{item.birthday | date}}</td>
+                    <td>{{item.birthday_display}}</td>
                     <td>{{item.tel}}</td>
                     <td>{{item.phone}}</td>
                     <td>{{item.email}}</td>
                     <td>
-                        <span ng-if="null == duties || duties.length <= 0">无</span>
-                        <span ng-repeat="duty in item.duties">
-                            <span ng-if="duty.type == 1">巡线员</span>
-                            <span ng-if="duty.type == 2">工程人员</span>
-                            <span ng-if="duty.type == 3">核查人员</span>
-                        </span>
+                        <span ng-if="item.type == 5">普通员工</span>
+                        <span ng-if="item.type == 1">巡线员</span>
+                        <span ng-if="item.type == 2">工程人员</span>
+                        <span ng-if="item.type == 3">核查人员</span>
                     </td>
                     <td>
                         <span ng-if="item.status === 1">正常</span>
@@ -129,15 +127,9 @@
 
         <!-- 人员表 -->
 
-        <!-- add node modal -->
-        <script type="text/ng-template" id="addNodeModalContent.html">
-            <div ng-include="'tpl/modal/add_node_emp_modal.html'"></div>
-        </script>
-        <!-- add node modal -->
-
         <!-- add employee_id modal -->
-        <script type="text/ng-template" id="addEmployeeModalContent.html">
-            <div ng-include="'tpl/modal/add_emp_modal.html'"></div>
+        <script type="text/ng-template" id="modifyEmployeeResourcesDepartmentModal.html">
+            <div ng-include="'tpl/modal/department_selection_modal.html'"></div>
         </script>
         <!-- add employee_id modal -->
 

@@ -1,9 +1,16 @@
 'use strict';
 
 // DeviceDetail controller
-app.controller('DeviceTabElCtrl', ['$scope', '$http', 'APPCONST', function ($scope, $http, APPCONST) {
+app.controller('DeviceTabElCtrl', ['$scope', '$http', 'APPCONST', '$localStorage', function ($scope, $http, APPCONST, $localStorage) {
     $scope.app.subHeader.goBackHide = false;
     $scope.app.subHeader.goBackSref = 'app.device';
+
+    $scope.sensor_id = $localStorage.selectDeviceId;
+    if (!$scope.sensor_id) {
+        $state.go('app.device');
+        return;
+    }
+    $scope.app.subHeader.contentTitle = $localStorage.selectDeviceName;
 
     $scope.chartElectric = {
         options: {chart: {type: 'line'}, tooltip: {valueSuffix: '度', style: {padding: 10, fontWeight: 'bold'}}},
@@ -15,7 +22,7 @@ app.controller('DeviceTabElCtrl', ['$scope', '$http', 'APPCONST', function ($sco
     };
 
     // 最新 数据
-    $scope.loadLatestDataPromise = $http.get(APPCONST.CTX + APPCONST.SENSOR_DATA_ELECTRIC.replace("{id}", $scope.$stateParams.id))
+    $scope.loadLatestDataPromise = $http.get(APPCONST.CTX + APPCONST.SENSOR_DATA_ELECTRIC.replace("{id}", $scope.sensor_id))
         .then(function (response) {
             $scope.elData = response.data.data;
             // console.warn($scope.elData);
@@ -29,7 +36,7 @@ app.controller('DeviceTabElCtrl', ['$scope', '$http', 'APPCONST', function ($sco
     $scope.loadData = function () {
         $scope.loadDayPositivePromise = $http.get(APPCONST.CTX
             + APPCONST.SENSOR_DATA_DEGREE
-                .replace("{id}", $scope.$stateParams.id)
+                .replace("{id}", $scope.sensor_id)
                 .replace("{type}", $scope.chartElectricType)
                 .replace("{field}", 'power')
         )

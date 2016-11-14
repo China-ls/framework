@@ -50,7 +50,11 @@
 
         </div>
 
-        <div class="panel-body">
+        <div class="panel-body scroll-x">
+            <!-- 网络请求动画 -->
+            <div cg-busy="{promise:loadDataPromise,message:'数据加载中...'}"></div>
+            <!-- 网络请求动画 -->
+
             <table st-table="rowCollectionBasic" class="table table-bordered table-striped tb-border">
                 <thead>
                 <tr>
@@ -69,18 +73,8 @@
                 <tr class="success" ng-repeat="item in filterResults" st-select-row="row">
                     <td>{{item.device.name}}</td>
                     <td>{{item.device.station_type}}</td>
+                    <td>{{item.device.day_deal_water_ability}}</td>
                     <td>{{item.device.setup_date}}</td>
-                    <td>
-                        <span ng-if="item.device.online === 1">
-                            <i class="fa fa-lightbulb-o text-success"></i>
-                            在线
-                        </span>
-                        <span ng-if="item.device.online === 2">
-                                <i class="fa fa-lightbulb-o"></i>
-                                离线
-                            </span>
-                        <span ng-if="item.device.online != 1 && item.device.online != 2 && item.device.online != 3">未知</span>
-                    </td>
                     <td>{{item.device.admin}}</td>
                     <td>{{item.device.contact}}</td>
                     <td>{{item.device.address}}</td>

@@ -51,16 +51,16 @@ app.controller('ManageDeviceCtrl', ['$scope', '$http', '$localStorage', '$state'
                 controller: 'DeviceDeleteModalInstanceCtrl'
             });
             modalInstance.result.then(function () {
-                toaster.pop('success', '提示', '移除设备成功。');
-                // $http.post(APPCONST.CTX + APPCONST.EMPLOYEE_DUTY_REMOVE.replace("{id}", $scope.selectEmployee.id))
-                //     .then(function (response) {
-                //         toaster.pop('success', '提示', '移除员工职能成功。');
-                //     }, function (response) {
-                //         toaster.pop('error', '警告', '服务器响应异常，请联系管理员。');
-                //     });
-            }, function () {
-                toaster.pop('success', '提示', '取消移除设备。');
-            });
+                    $http.post(APPCONST.CTX + APPCONST.SENSOR_REMOVE, {id: $scope.selectDevice.sensor_id}).then(function (response) {
+                        toaster.pop('success', '提示', '移除设备成功。');
+                        $scope.loadDevices($scope.page, $scope.size);
+                    }, function (response) {
+                        toaster.pop('error', '警告', '服务器响应异常，请联系管理员。');
+                    });
+                }, function () {
+                    toaster.pop('success', '提示', '取消移除设备。');
+                }
+            );
         };
 
         $scope.loadDevices = function (page, size) {
@@ -78,7 +78,8 @@ app.controller('ManageDeviceCtrl', ['$scope', '$http', '$localStorage', '$state'
         };
         $scope.loadDevices($scope.page, $scope.size);
     }]
-);
+)
+;
 
 
 app.controller('DeviceDeleteModalInstanceCtrl', ['$scope', '$modalInstance',

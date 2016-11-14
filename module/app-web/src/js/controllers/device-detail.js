@@ -1,7 +1,7 @@
 'use strict';
 
 /* Controllers */
-app.controller('CarouselDemoCtrl', ['$scope', function ($scope) {
+/*app.controller('CarouselDemoCtrl', ['$scope', function ($scope) {
     $scope.myInterval = 5000;
     var slides = $scope.slides = [];
     $scope.addSlide = function () {
@@ -14,8 +14,9 @@ app.controller('CarouselDemoCtrl', ['$scope', function ($scope) {
         $scope.addSlide();
     }
 }])
-;
+;*/
 // DeviceDetail controller
+/*
 app.controller('DeviceDetailCtrl', ['$scope', '$stateParams', '$state', '$http', 'APPCONST', '$log',
     function ($scope, $stateParams, $state, $http, APPCONST, $log) {
         $scope.app.subHeader.subAsideTitle = '设备详情';
@@ -97,7 +98,7 @@ app.controller('DeviceDetailCtrl', ['$scope', '$stateParams', '$state', '$http',
             try {
                 angular.forEach(data, function (item) {
                     if (item.comp_type === 'flowmeter_sensor') {
-                        item.time = $scope.formatDate(new Date(/*item.time*/), "yyyy年MM月dd日HH:mm:ss");
+                        item.time = $scope.formatDate(new Date(/!*item.time*!/), "yyyy年MM月dd日HH:mm:ss");
                         if (!item.instant) {
                             item.instant = "0";
                         }
@@ -166,4 +167,4 @@ app.controller('DeviceDetailCtrl', ['$scope', '$stateParams', '$state', '$http',
 
     }]
 )
-;
+;*/

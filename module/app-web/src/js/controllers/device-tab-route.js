@@ -6,10 +6,12 @@ app.controller('DeviceTabRouteCtrl', ['$scope', '$http', '$localStorage', '$stat
         $scope.app.subHeader.goBackHide = false;
         $scope.app.subHeader.goBackSref = 'app.device';
 
-        if (!$scope.$stateParams) {
+        $scope.sensor_id = $localStorage.selectDeviceId;
+        if (!$scope.sensor_id) {
             $state.go('app.device');
             return;
         }
+        $scope.app.subHeader.contentTitle = $localStorage.selectDeviceName;
 
         $scope.dataType = 1;
         $scope.selectDataType = function (type) {

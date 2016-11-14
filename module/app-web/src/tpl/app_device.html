@@ -175,6 +175,11 @@
         </div>
 
         <div class="data-content padder-sm">
+
+            <!-- 网络请求动画 -->
+            <div cg-busy="{promise:loadDevicesPromise,message:'数据加载中...'}"></div>
+            <!-- 网络请求动画 -->
+
             <div ng-repeat="device in virtualSensors" class="data-item-wrapper bg-light-gray1-only"
                  ng-class="{'bg-light-gray2-only': $index % 2 != 0}">
                 <div class="row">
@@ -198,7 +203,7 @@
                         <p class="data-property">站点类型：<span class="cb">{{device.sensor.station_type}}</span></p>
                     </div>
                     <div class="col-xs-4">
-                        <a ui-sref="app.device.tab.info({id:device.sensor.sensor_id, device: device.sensor})"
+                        <a ng-click="onShowDeviceDetail(device.sensor)"
                            class="btn btn-success btn-xs w-xs">&nbsp;&nbsp;详&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;情&nbsp;&nbsp;</a>
                     </div>
                 </div>

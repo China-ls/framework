@@ -44,7 +44,7 @@ angular.module('app')
                         resolve: {
                             deps: ['$ocLazyLoad',
                                 function ($ocLazyLoad) {
-                                    return $ocLazyLoad.load(['angularBootstrapNavTree']).then(
+                                    return $ocLazyLoad.load(['cgBusy','angularBootstrapNavTree']).then(
                                         function () {
                                             return loadBaiduMaps("7482d6d695c8d7d8dccca6d5de410704");
                                         }
@@ -172,8 +172,7 @@ angular.module('app')
                         parent: 'app.device.tab',
                         views: {
                             'tab_contentView': {
-                                templateUrl: 'tpl/app_device_tab_water_q.html',
-                                controller: 'DeviceTabWqCtrl'
+                                templateUrl: 'tpl/app_device_tab_water_q.html'
                             }
                         },
                         resolve: {
@@ -270,6 +269,12 @@ angular.module('app')
                                 controller: 'ManageDeviceTitleCtrl'
                             },
                             'contentView': {templateUrl: 'tpl/app_mng_device.html'}
+                        },
+                        resolve: {
+                            deps: ['$ocLazyLoad',
+                                function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load('ngImgCrop');
+                                }]
                         }
                     })
                     .state('app.mngdevice.modify', {
@@ -509,6 +514,39 @@ angular.module('app')
                                     return $ocLazyLoad.load(['angularBootstrapNavTree', 'cgBusy']);
                                 }]
                         }
+                    })
+
+                    .state('access', {
+                        url: '/access',
+                        template: '<div ui-view class="fade-in-right-big smooth"></div>'
+                    })
+                    .state('access.signin', {
+                        url: '/signin',
+                        templateUrl: 'tpl/page_signin.html',
+                        resolve: {
+                            deps: ['uiLoad',
+                                function (uiLoad) {
+                                    return uiLoad.load(['js/controllers/signin.js']);
+                                }]
+                        }
+                    })
+                    .state('access.signup', {
+                        url: '/signup',
+                        templateUrl: 'tpl/page_signup.html',
+                        resolve: {
+                            deps: ['uiLoad',
+                                function (uiLoad) {
+                                    return uiLoad.load(['js/controllers/signup.js']);
+                                }]
+                        }
+                    })
+                    .state('access.forgotpwd', {
+                        url: '/forgotpwd',
+                        templateUrl: 'tpl/page_forgotpwd.html'
+                    })
+                    .state('access.404', {
+                        url: '/404',
+                        templateUrl: 'tpl/page_404.html'
                     })
             }
         ]

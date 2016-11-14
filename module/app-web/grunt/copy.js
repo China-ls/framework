@@ -27,6 +27,8 @@ module.exports = {
             {src: 'bower_components/angular-bootstrap-switch/dist/angular-bootstrap-switch.min.js', dest : 'angular/lib/angular-bootstrap-switch/angular-bootstrap-switch.min.js'},
             {src: 'bower_components/angularjs-slider/dist/rzslider.min.css', dest : 'angular/lib/angularjs-slider/rzslider.min.css'},
             {src: 'bower_components/angularjs-slider/dist/rzslider.min.js', dest : 'angular/lib/angularjs-slider/rzslider.min.js'},
+            {src: 'bower_components/ngImgCrop/compile/minified/ng-img-crop.js', dest : 'angular/lib/ngImgCrop/compile/minified/ng-img-crop.js'},
+            {src: 'bower_components/ngImgCrop/compile/minified/ng-img-crop.css', dest : 'angular/lib/ngImgCrop/compile/minified/ng-img-crop.css'},
             {src: 'src/index.min.html', dest : 'angular/index.html'},
             {src: 'src/login.min.html', dest : 'angular/login.html'}
         ]

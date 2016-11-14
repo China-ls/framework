@@ -78,7 +78,7 @@ app.controller('CencusDeviceTypeCtrl', ['$scope', '$http', '$localStorage', '$st
             });
 
         $scope.filterDeviceType = function () {
-            $http.post(APPCONST.CTX + APPCONST.CENCUS_DEVICE_FILTER, $scope.filter)
+            $scope.loadDataPromise = $http.post(APPCONST.CTX + APPCONST.CENCUS_DEVICE_FILTER, $scope.filter)
                 .then(function (response) {
                     // console.warn(response);
                     $scope.filterResults = response.data.data;

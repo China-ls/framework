@@ -32,7 +32,7 @@
             </div>
         </div>
 
-        <div class="clearfix panel-body">
+        <div class="clearfix panel-body scroll-x">
             <table st-table="rowCollectionBasic" class="table table-bordered table-striped tb-border">
                 <thead>
                 <tr>
@@ -45,7 +45,6 @@
                     <th>联系电话</th>
                     <th>设备地址</th>
                     <th>设备描述</th>
-                    <th>控制方式</th>
                     <th>区域归属</th>
                 </tr>
                 </thead>
@@ -63,13 +62,12 @@
                     </th>
                     <td>{{item.name}}</td>
                     <td>{{item.station_type}}</td>
-                    <td>{{item.station_type}}</td>
-                    <td>{{item.admin}}</td>
+                    <td>{{item.day_deal_water_ability}}</td>
+                    <td>{{item.setup_date}}</td>
                     <td>{{item.admin}}</td>
                     <td>{{item.contact}}</td>
                     <td>{{item.address}}</td>
                     <td>{{item.desc}}</td>
-                    <td>{{''}}</td>
                     <td>{{item.departmentName}}</td>
                 </tr>
                 </tbody>

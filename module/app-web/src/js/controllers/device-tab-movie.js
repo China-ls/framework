@@ -1,16 +1,17 @@
 'use strict';
 
 // DeviceTabMovieCtrl controller
-app.controller('DeviceTabMovieCtrl', ['$scope', '$http', '$localStorage', '$state', 'APPCONST',
-    function ($scope, $http, $localStorage, $state, APPCONST) {
+app.controller('DeviceTabMovieCtrl', ['$scope', '$http', '$localStorage', '$state', 'APPCONST', '$timeout',
+    function ($scope, $http, $localStorage, $state, APPCONST, $timeout) {
         $scope.app.subHeader.goBackHide = false;
         $scope.app.subHeader.goBackSref = 'app.device';
 
-        // console.warn($scope.$stateParams);
-        if (!$scope.$stateParams) {
+        $scope.sensor_id = $localStorage.selectDeviceId;
+        if (!$scope.sensor_id) {
             $state.go('app.device');
             return;
         }
+        $scope.app.subHeader.contentTitle = $localStorage.selectDeviceName;
 
         $scope.startDate = new Date();
         $scope.start = $scope.formatDate($scope.startDate, 'yyyy-MM-dd');
@@ -56,7 +57,7 @@ app.controller('DeviceTabMovieCtrl', ['$scope', '$http', '$localStorage', '$stat
             $scope.start = $scope.formatDate($scope.startDate, 'yyyy-MM-dd');
             $scope.end = $scope.formatDate($scope.endDate, 'yyyy-MM-dd');
             $scope.loadDataPromise = $http.post(
-                APPCONST.CTX + APPCONST.SENSOR_DATA_IMAGE_LIST.replace("{id}", $scope.$stateParams.id),
+                APPCONST.CTX + APPCONST.SENSOR_DATA_IMAGE_LIST.replace("{id}", $scope.sensor_id),
                 {start: $scope.start, end: $scope.end}
             )
                 .then(function (response) {
@@ -68,6 +69,7 @@ app.controller('DeviceTabMovieCtrl', ['$scope', '$http', '$localStorage', '$stat
                         for (var i = 0; i < $scope.imageList.length; i++) {
                             var time = $scope.formatDate(new Date($scope.imageList[i].time), "yyyy年MM月dd日HH:mm:ss");
                             $scope.imageList[i].time = time;
+                            $scope.imageList[i].dataType = 0;
                             $scope.slider.timeArray.push(time);
                         }
                         $scope.slider.index = 0;
@@ -87,7 +89,15 @@ app.controller('DeviceTabMovieCtrl', ['$scope', '$http', '$localStorage', '$stat
             $scope.imageListSelectItem.active = true;
         };
 
+        $scope.takepicTimer = null;
+        $scope.isTakingPick = false;
+
         $scope.takepick = function () {
+            if ($scope.isTakingPick) {
+                return;
+            }
+            $scope.isTakingPick = true;
+            $timeout.cancel($scope.takepicTimer);
             var id = null;
             angular.forEach($scope.device.components, function (comp) {
                 if (comp.type === 'camera_controller') {
@@ -95,10 +105,64 @@ app.controller('DeviceTabMovieCtrl', ['$scope', '$http', '$localStorage', '$stat
                 }
             });
             $scope.wsSend('{"channel_id" : "' + id + '","operation" : "take_photo","param" : 1,"sensor_id" : "' + $scope.device.sensor_id + '"}');
-            $scope.Toast('success', '提示', '拍照成功!');
+            $scope.takepicTimer = $timeout(function () {
+                $scope.isTakingPick = false;
+                $scope.Toast('warning', '提示', '拍照失败，拍照指令数据未返回!');
+            }, 80000);
         };
 
         $scope.loadImageData();
+
+        $scope.$on("WS_MESSAGE", function (event, data) {
+            // console.warn(data);
+            try {
+                var isMinePic = false, isNowPic = false;
+                angular.forEach(data, function (item) {
+                    if (item.sensor_id != $scope.device.sensor_id
+                        || item.comp_type != 'camera_controller') {
+                        return;
+                    }
+                    if (!item.image) {
+                        return;
+                    }
+                    isMinePic = true;
+                    // if ($scope.start > item.time || $scope.end < item.time) {
+                    //     return;
+                    // }
+                    // isNowPic = true;
+                    item.time = $scope.formatDate(new Date(item.time), "yyyy年MM月dd日HH:mm:ss");
+                    item.dataType = 1;
+                    $scope.imageList.splice(0, 0, item);
+                });
+                //不是本设备的图片
+                if (!isMinePic) {
+                    return;
+                }
+                if ($scope.isTakingPick) {
+                    $timeout.cancel($scope.takepicTimer);
+                    $scope.Toast('success', '提示', '拍照成功!');
+                    $scope.isTakingPick = false;
+                }
+                //不需要添加到界面上，因为不是当前查询间隔的位置
+                // if (!isNowPic) {
+                //     return;
+                // }
+                for (var i = 0; i < $scope.imageList.length; i++) {
+                    $scope.slider.timeArray.push($scope.imageList[i].time);
+                }
+                $scope.slider.timeArray.splice(0);
+                $scope.slider.index = 0;
+                $scope.slider.options.ceil = $scope.imageList.length - 1;
+                angular.forEach($scope.imageList, function (item, index) {
+                    if (item.active) {
+                        $scope.imageactive = index;
+                        $scope.slider.index = index;
+                    }
+                });
+            } catch (e) {
+                console.error(e);
+            }
+        });
 
     }])
 ;

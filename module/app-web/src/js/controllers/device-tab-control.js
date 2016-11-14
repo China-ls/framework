@@ -7,14 +7,27 @@ app.controller('DeviceTabControlCtrl',
             $scope.app.subHeader.goBackHide = false;
             $scope.app.subHeader.goBackSref = 'app.device';
 
-            if (!$scope.$stateParams) {
+            $scope.sensor_id = $localStorage.selectDeviceId;
+            if (!$scope.sensor_id) {
                 $state.go('app.device');
                 return;
             }
+            $scope.app.subHeader.contentTitle = $localStorage.selectDeviceName;
 
             if (!$scope.sensor) {
                 $scope.sensor = {online: 2};
             }
+
+            var start = new Date();
+            var end = new Date();
+            var month = end.getMonth();
+            if (month > 2) {
+                start.setMonth(month - 1);
+            } else {
+                start.setMonth(12);
+                start.setYear(end.getFullYear() - 1);
+            }
+            $scope.filter = {startDate: start, endDate: end};
 
             $scope.isShowingOnBoard = false;
 
@@ -24,10 +37,10 @@ app.controller('DeviceTabControlCtrl',
                 }
                 $scope.isShowingOnBoard = !$scope.isShowingOnBoard;
                 var val = $scope.isShowingOnBoard ? 2 : 1;
-                $scope.wsSend('{"operation" : "set_control_mode","param" : ' + val + ',"sensor_id" : "' + $scope.sensor.sensor_id + '"}');
+                $scope.wsSend('{"operation" : "set_control_mode","param" : ' + val + ',"sensor_id" : "' + $scope.sensor_id + '"}');
             };
 
-            $scope.loadDataPromise = $http.get(APPCONST.CTX + APPCONST.SENSOR_BY_ID + $scope.$stateParams.id)
+            $scope.loadDataPromise = $http.get(APPCONST.CTX + APPCONST.SENSOR_BY_ID + $scope.sensor_id)
                 .then(function (response) {
                     try {
                         // console.warn(response);
@@ -112,7 +125,7 @@ app.controller('DeviceTabControlCtrl',
                 comp.onoff = !comp.onoff;
                 comp.label = true;
                 var val = comp.onoff ? 1 : 0;
-                var text = '{"channel_id" : "' + comp.comp_id + '","operation" : "switch","param" : ' + val + ',"sensor_id" : "' + $scope.sensor.sensor_id + '"}';
+                var text = '{"channel_id" : "' + comp.comp_id + '","operation" : "switch","param" : ' + val + ',"sensor_id" : "' + $scope.sensor_id + '"}';
                 // console.error(text);
                 $scope.wsSend(text);
             };
@@ -120,7 +133,7 @@ app.controller('DeviceTabControlCtrl',
             $scope.$on("WS_MESSAGE", function (event, data) {
                 // console.warn(data);
                 try {
-                    if (!data || data[0].sensor_id !== $scope.sensor.sensor_id) {
+                    if (!data || data[0].sensor_id !== $scope.sensor_id) {
                         return;
                     }
                     $scope.classifyData(data);
@@ -128,5 +141,26 @@ app.controller('DeviceTabControlCtrl',
                     console.error(e);
                 }
             });
+
+            $scope.filterQuery = function () {
+                $scope.cencusDataPromise = $http.post(APPCONST.CTX + APPCONST.CENCUS_COMP_WORK, {
+                    id: $scope.sensor_id,
+                    start: $scope.filter.startDate.getTime(),
+                    end: $scope.filter.endDate.getTime()
+                }).then(function (response) {
+                    // console.warn(response);
+                    $scope.filter.data = response.data.data;
+                    if ($scope.filter.data) {
+                        $scope.filter.data.keys = [];
+                        for (var key in $scope.filter.data.values) {
+                            // console.warn(key);
+                            $scope.filter.data.keys.push(key);
+                        }
+                        // angular.forEach($scope.filter.data.values, function (key) {
+                        //     console.warn(key);
+                        // });
+                    }
+                });
+            };
         }])
 ;

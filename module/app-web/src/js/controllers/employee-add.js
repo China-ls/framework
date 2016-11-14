@@ -14,21 +14,22 @@ app.controller('EmployeeAddTitleCtrl', ['$scope', '$http', '$localStorage', '$mo
 // CencusCtrl controller
 app.controller('EmployeeAddCtrl', ['$scope', '$http', '$localStorage', '$state', 'APPCONST', 'toaster',
     function ($scope, $http, $localStorage, $state, APPCONST, toaster) {
+        $scope.isUpdate = $localStorage.isUpdate;
         $scope.format = 'yyyy-MM-dd';
         $scope.employee = $localStorage.selectEmployee;
-        if (!$scope.employee) {
-            $scope.employee = {password: '111111'};
+        if (!$scope.isUpdate) {
+            $scope.employee = {password: '111111', status: 1, type: 5, birthday: new Date(), sex: 1};
         } else {
             if ($scope.employee.birthday) {
-                var date = new Date($scope.employee.birthday);
-                $scope.employee.birthday = $scope.formatDate(date, $scope.format);
+                $scope.employee.birthday = new Date($scope.employee.birthday);
             }
-            // console.warn($scope.employee);
         }
 
         $http.get(APPCONST.CTX + APPCONST.DEPARTMENT_LIST_ALL).then(function (response) {
-            // console.warn(response);
-            $scope.departments = response.data.data.data;
+            if (response.data.data) {
+                $scope.departments = response.data.data.data;
+            }
+            // console.warn($scope.departments);
         }, function (response) {
             $scope.Toast('error', '警告', '服务器响应异常，请联系管理员。');
         });
@@ -72,21 +73,28 @@ app.controller('EmployeeAddCtrl', ['$scope', '$http', '$localStorage', '$state',
             }
 
             var url = "";
-            var data = null;
+            var data = data = angular.extend({}, $scope.employee);
             //添加
-            if (null == $localStorage.selectUser) {
-                url = APPCONST.CTX + APPCONST.EMPLOYEE_ADD;
-                data = $scope.employee;
+            if ($scope.isUpdate) {
+                url = APPCONST.CTX + APPCONST.EMPLOYEE_UPDATE;
             } else {
                 //修改
+                url = APPCONST.CTX + APPCONST.EMPLOYEE_ADD;
             }
+            if (data.type == 1) {
+                data.dt = JSON.stringify(data.duty);
+            }
+            delete data.duty;
+            data.birthday = $scope.formatDate(data.birthday, "yyyy-MM-dd");
+            // console.warn(data);
 
             $http.post(url, data).then(function (response) {
                 // console.warn(response);
                 if (response.data.code === '0') {
-                    $scope.Toast('success', '消息', null == $localStorage.selectRole ?
-                        '添加用户成功。' : '修改用户成功');
+                    $scope.Toast('success', '消息', $scope.isUpdate ? '修改用户成功' : '添加用户成功。');
                     $state.go('app.employee');
+                } else if (response.data.code === '201') {
+                    $scope.Toast('error', response.data.message);
                 } else {
                     $scope.Toast('error', '警告', '服务器响应异常，请联系管理员。' + response.data.message);
                 }

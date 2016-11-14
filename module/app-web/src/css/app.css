@@ -6108,6 +6108,15 @@ a.text-#000000:hover {
   visibility: visible;
 }
 
+.table {
+  word-break: keep-all;
+  /* for ie */
+
+  white-space: nowrap;
+  /* for chrome */
+
+}
+
 .dark-bd-table.table-bordered tr td {
   color: #000;
   border-color: #aeb2b3;

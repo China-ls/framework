@@ -6,10 +6,13 @@ app.controller('DeviceTabPositiveCtrl', ['$scope', '$http', '$localStorage', '$s
         $scope.app.subHeader.goBackHide = false;
         $scope.app.subHeader.goBackSref = 'app.device';
 
-        if (!$scope.$stateParams) {
+        $scope.sensor_id = $localStorage.selectDeviceId;
+        if (!$scope.sensor_id) {
             $state.go('app.device');
             return;
         }
+        $scope.app.subHeader.contentTitle = $localStorage.selectDeviceName;
+
         $scope.chartHandlerDayTotal = {
             options: {chart: {type: 'column'}, tooltip: {valueSuffix: '立方米', style: {padding: 10, fontWeight: 'bold'}}},
             series: [],
@@ -19,7 +22,7 @@ app.controller('DeviceTabPositiveCtrl', ['$scope', '$http', '$localStorage', '$s
             plotOptions: {bar: {dataLabels: {enabled: true}, enableMouseTracking: false}},
             useHighStocks: false, size: {height: 400}
         };
-        $scope.loadDataPromise = $http.get(APPCONST.CTX + APPCONST.SENSOR_DATA_TOTAL_MONTH.replace("{id}", $scope.$stateParams.id))
+        $scope.loadDataPromise = $http.get(APPCONST.CTX + APPCONST.SENSOR_DATA_TOTAL_MONTH.replace("{id}", $scope.sensor_id))
             .then(function (response) {
                 try {
                     var data = response.data.data;

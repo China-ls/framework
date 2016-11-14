@@ -6,12 +6,14 @@ app.controller('DeviceTabInfoCtrl', ['$scope', '$http', '$localStorage', '$state
         $scope.app.subHeader.goBackHide = false;
         $scope.app.subHeader.goBackSref = 'app.device';
 
-        if (!$scope.$stateParams) {
+        $scope.sensor_id = $localStorage.selectDeviceId;
+        if (!$scope.sensor_id) {
             $state.go('app.device');
             return;
         }
+        $scope.app.subHeader.contentTitle = $localStorage.selectDeviceName;
 
-        $scope.loadDataPromise = $http.get(APPCONST.CTX + APPCONST.SENSOR_BY_ID + $scope.$stateParams.id)
+        $scope.loadDataPromise = $http.get(APPCONST.CTX + APPCONST.SENSOR_BY_ID + $scope.sensor_id)
             .then(function (response) {
                 try {
                     // console.warn(response);
@@ -19,7 +21,6 @@ app.controller('DeviceTabInfoCtrl', ['$scope', '$http', '$localStorage', '$state
                     $scope.sensor = $scope.object.sensor;
                     if ($scope.sensor && $scope.sensor.components) {
                         // console.warn($scope.$stateParams);
-                        $scope.app.subHeader.contentTitle = $scope.sensor.name;
                         if ($scope.object.data) {
                             angular.forEach($scope.object.data, function (item) {
                                 if (item.comp_type === 'flowmeter_sensor') {
@@ -32,8 +33,7 @@ app.controller('DeviceTabInfoCtrl', ['$scope', '$http', '$localStorage', '$state
                             });
                         }
                         $scope.sensor.version = $scope.sensor.version / 10.0;
-                        $scope.sensor.dsplay_status =
-                            ($scope.sensor.status === 'NORMAL') ? "正常" : "异常";
+                        $scope.sensor.dsplay_status = ($scope.sensor.status === 'NORMAL') ? "正常" : "异常";
                     }
                 } catch (e) {
                     console.warn(e);

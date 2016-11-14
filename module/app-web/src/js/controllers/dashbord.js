@@ -15,7 +15,6 @@ app.controller('AsideDeviceCtrl', ['$window', '$scope', '$http', '$localStorage'
     function ($window, $scope, $http, $localStorage, $state, APPCONST) {
         $scope.treeData = [];
         $scope.tree = {};
-        $scope.dataListType = '用电量';
 
         $scope.asideQueryBranches = [];
         $scope.asideQueryBranchesIndex = -1;
@@ -79,58 +78,77 @@ app.controller('AsideDeviceCtrl', ['$window', '$scope', '$http', '$localStorage'
             $scope.tree.select_branch($scope.asideQueryBranches[$scope.asideQueryBranchesIndex]);
         };
 
-        $scope.analysDepartment = function (data, level) {
-            var children = [];
-            data.type = 'dpt';
-            var color = 'c-red';
-            if (level === 1) {
-                color = 'c-yellow';
-            } else if (level === 2) {
-                color = 'c-green';
-            } else if (level >= 3) {
-                color = 'c-blue';
+        $scope.setupTreeItem = function (item) {
+            item.label = item.name;
+            if (item.nodeType == 1) {
+                item.icon = 'fa fa-map-marker c-green';
+            } else {
+                var color = 'c-red';
+                if (item.level === 1) {
+                    color = 'c-yellow';
+                } else if (item.level === 2) {
+                    color = 'c-green';
+                } else if (item.level >= 3) {
+                    color = 'c-blue';
+                }
+                item.icon = 'fa fa-flag ' + color;
             }
-            level++;
-            data.icon = 'fa fa-flag ' + color;
-            if (data.sub_departments) {
-                data.sub_departments.forEach(function (item) {
-                    children.push($scope.analysDepartment(item, level));
+        };
+        $scope.addToChildren = function (treeItem, item) {
+            if (treeItem.id == item.parentId) {
+                if (!treeItem.children) {
+                    treeItem.children = [];
+                }
+                $scope.setupTreeItem(item);
+                treeItem.children.push(item);
+            } else if (treeItem.children) {
+                angular.forEach(treeItem.children, function (node) {
+                    $scope.addToChildren(node, item);
                 });
             }
-            if (data.devices) {
-                data.devices.forEach(function (item) {
-                    var child = $scope.analysDepartment(item, level);
-                    child.type = 'device';
-                    child.icon = 'fa fa-map-marker c-green';
-                    children.push(child);
-                });
-            }
-            data.children = children;
-            data.label = data.name;
-            return data;
         };
 
         $http.get(APPCONST.CTX + APPCONST.DEPARTMENT).then(function (response) {
-            var data = $scope.analysDepartment(response.data.data, 0);
-            $scope.treeData.push(data);
+            if (!response.data.data) {
+                return;
+            }
+            var data = response.data.data.data;
+            angular.forEach(data, function (item) {
+                if ($scope.treeData.length <= 0) {
+                    $scope.setupTreeItem(item);
+                    $scope.treeData.push(item);
+                } else {
+                    angular.forEach($scope.treeData, function (treeItem) {
+                        $scope.addToChildren(treeItem, item);
+                    });
+                }
+            });
             try {
                 $scope.tree.expand_all();
+            } catch (e) {
+            }
+            try {
                 $scope.tree.select_first_branch();
             } catch (e) {
             }
-        }, function (response) {
         });
 
         $scope.treeItemClick = function (branch) {
-            if (branch.type === 'dpt') {
-                $state.go("app.device", {id: branch.uuid}, {inherit: false});
-                $scope.$emit("EMIT_DEVICE_TREE_CLICK", branch);
-                $scope.app.subHeader.contentTitle = branch.name;
-                $scope.app.cache.selectParentBranch = null;
-            } else if (branch.type === 'device') {
+            // console.warn(branch);
+            $scope.app.subHeader.contentTitle = branch.name;
+            // console.warn(branch.name);
+            if (branch.nodeType == 1) {
                 $scope.app.cache.selectParentBranch = $scope.tree.get_parent_branch(branch);
                 // console.warn($scope.tree.get_parent_branch(branch));
-                $state.go("app.device.tab.info", {id: branch.uuid, device: branch});
+                $localStorage.selectDeviceId = branch.entity_id;
+                $localStorage.selectDeviceName = branch.name;
+                $state.go("app.device.tab.info", {id: branch.entity_id, device: branch});
+            } else {
+                $localStorage.selectDeviceId = null;
+                $scope.app.cache.selectParentBranch = null;
+                $state.go("app.device", {id: branch.id}, {inherit: false}).then(function (response) {
+                    $scope.$emit("EMIT_DEVICE_TREE_CLICK", branch);
+                });
             }
         };
     }]
@@ -212,51 +230,28 @@ app.controller('DashbordCtrl',
             };
 
             $scope.onMarkerClick = function (event) {
+                $localStorage.selectDeviceId = event.target.device.sensor_id;
+                $localStorage.selectDeviceName = event.target.device.name;
                 $state.go('app.device.tab.info', {id: event.target.device.sensor_id, device: event.target.device});
             };
 
-            /*$scope.onMarkerMouseOver = function (event) {
-             // console.warn(event);
-             // console.warn(event.target.device);
-             var device = event.target.device;
-
-             var infoWindow = $scope.mapLabelCache[device.sensor_id];
-             if (null == infoWindow) {
-             var opts = {
-             width: 200,     // 信息窗口宽度
-             height: 100,     // 信息窗口高度
-             title: device.name, // 信息窗口标题
-             enableMessage: true,//设置允许信息窗发送短息
-             message: device.address
-             };
-             infoWindow = new BMap.InfoWindow("地址：" + device.address, opts);  // 创建信息窗口对象
-             $scope.mapLabelCache[device.sensor_id] = infoWindow;
-             }
-             $scope.myMap.openInfoWindow(infoWindow, event.point); //开启信息窗口
-             };*/
-
-            /*$scope.onMarkerMouseout = function (event) {
-             $scope.myMap.closeInfoWindow();
-             // var sid = event.target.device.sensor_id;
-             // if ($scope.mapLabelCache[sid]) {
-             //     $scope.mapLabelCache[sid].hide();
-             // }
-             };*/
+            $scope.onShowDeviceDetail = function (item) {
+                $localStorage.selectDeviceId = item.sensor_id;
+                $localStorage.selectDeviceName = item.name;
+                $state.go('app.device.tab.info', {id: item.sensor_id, device: item});
+            };
 
             if ($scope.app.cache.selectParentBranch) {
                 $scope.app.subHeader.contentTitle = $scope.app.cache.selectParentBranch.label;
             }
 
             $scope.$on("BROADCAST_DEVICE_TREE_CLICK", function (event, data) {
-                $scope.addMarkers();
+                $scope.app.subHeader.contentTitle = data.name;
+                $scope.loadDevices(data.id);
             });
 
             $scope.init = function () {
                 $scope.shouldAddAllSensorsToMap = true;
-                // if(!$scope.myMap) {
-                //     $scope.myMap = $scope.app.cache.dashboardMap;
-                // }
-                // $scope.addMarkers();
             };
 
             $scope.addMarkers = function () {
@@ -289,24 +284,27 @@ app.controller('DashbordCtrl',
                 $scope.shouldAddAllSensorsToMap = true;
             };
 
-            $http.get(APPCONST.CTX + APPCONST.SENSORS).then(function (response) {
-                $scope.virtualSensors = response.data.data;
-                if (!$scope.virtualSensors) {
-                    return;
-                }
-                for (var i = 0; i < $scope.virtualSensors.length; i++) {
-                    $scope.virtualSensors[i].sensor.csl = 12 + parseInt(Math.random() * 100) / 100.0;
-                    $scope.virtualSensors[i].data.forEach(function (dateItem) {
-                        if (dateItem.comp_type === 'flowmeter_sensor') {
-                            dateItem.time = $scope.formatDate(new Date(dateItem.time), "yyyy年MM月dd日HH:mm:ss");
-                            $scope.virtualSensors[i].sensor.flowmeter_data = dateItem;
+            $scope.loadDevices = function (dpt) {
+                $scope.loadDevicesPromise = $http.get(APPCONST.CTX + APPCONST.SENSORS_BY_DEPARTMENT + dpt)
+                    .then(function (response) {
+                        $scope.virtualSensors = response.data.data;
+                        if (!$scope.virtualSensors) {
+                            return;
                         }
+                        for (var i = 0; i < $scope.virtualSensors.length; i++) {
+                            $scope.virtualSensors[i].sensor.csl = 12 + parseInt(Math.random() * 100) / 100.0;
+                            $scope.virtualSensors[i].data.forEach(function (dateItem) {
+                                if (dateItem.comp_type === 'flowmeter_sensor') {
+                                    dateItem.time = $scope.formatDate(new Date(dateItem.time), "yyyy年MM月dd日HH:mm:ss");
+                                    $scope.virtualSensors[i].sensor.flowmeter_data = dateItem;
+                                }
+                            });
+                        }
+                        $scope.app.cache.virtualSensors = $scope.virtualSensors;
+                        $scope.addMarkers();
+                        // console.warn($scope.virtualSensors);
                     });
-                }
-                $scope.app.cache.virtualSensors = $scope.virtualSensors;
-                $scope.addMarkers();
-                // console.warn($scope.virtualSensors);
-            });
+            };
 
             $scope.showInMap = function (id) {
                 var item = null;
@@ -366,5 +364,6 @@ app.controller('DashbordCtrl',
                     $scope.resizeMapScale();
                 }
             });
+
         }])
 ;

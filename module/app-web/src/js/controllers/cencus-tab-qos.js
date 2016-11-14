@@ -12,9 +12,9 @@ app.controller('CencusTabQosTitleCtrl', ['$scope', '$http', '$localStorage', '$s
 app.controller('CencusTabQosCtrl', ['$scope', '$http', '$localStorage', '$state', 'APPCONST',
     function ($scope, $http, $localStorage, $state, APPCONST) {
         $scope.filterQuery = function () {
-            $http.post(APPCONST.CTX + APPCONST.CENCUS_QOS, $scope.filter)
+            $scope.loadDataPromise = $http.post(APPCONST.CTX + APPCONST.CENCUS_QOS, $scope.filter)
                 .then(function (response) {
-                    console.warn(response);
+                    // console.warn(response);
                     $scope.filterResults = response.data.data;
                     if ($scope.filterResults) {
                         angular.forEach($scope.filterResults, function (item) {
@@ -38,7 +38,7 @@ app.controller('CencusTabQosCtrl', ['$scope', '$http', '$localStorage', '$state'
                                     } catch (e){}
                                 }
                             });
-                            var dataArray = item.data;
+                            // var dataArray = item.data;
                         });
                     }
                 });

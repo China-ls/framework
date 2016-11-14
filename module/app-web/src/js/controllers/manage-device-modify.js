@@ -15,18 +15,30 @@ app.controller('ManageDeviceModifyTitleCtrl', ['$scope', '$http', '$localStorage
 // ManageRouterCtrl controller
 app.controller('ManageDeviceModifyCtrl', ['$scope', '$http', '$localStorage', '$state', 'toaster', 'APPCONST',
     function ($scope, $http, $localStorage, $state, toaster, APPCONST) {
-        $scope.device = {longitude: 120.95281, latitude: 30.883874, setupDate: new Date()};
-        $scope.device = angular.extend($scope.device, {
-            name: '上海测试设备',
-            type: 'B类站点',
-            dayDealDirtyWaterAbility: '15吨',
-            sim: 'sim',
-            internal_id: 123456,
-            admin: 'hx',
-            contact: 'contact',
-            address: 'address',
-            desc: 'desc'
-        });
+        $scope.components = [];
+        $scope.device = $localStorage.selectDevice;
+        if (!$scope.device) {
+            $scope.device = {longitude: 120.95281, latitude: 30.883874, setupDate: new Date()};
+            // $scope.device = angular.extend($scope.device, {
+            //     name: '上海测试设备',
+            //     station_type: 'B类站点',
+            //     day_deal_water_ability: '15吨',
+            //     sim: 'sim',
+            //     internal_id: 123456,
+            //     admin: 'hx',
+            //     contact: 'contact',
+            //     address: 'address',
+            //     desc: 'desc'
+            // });
+        } else if ($scope.device.components) {
+            console.warn($scope.device);
+            angular.forEach($scope.device.components, function (item) {
+                var arr = item.comp_id.split(":");
+                item.channel = parseInt(arr[0]);
+                item.sub_channel = parseInt(arr[1]);
+                $scope.components.push(item);
+            });
+        }
         $scope.mapOptions = {
             center: {longitude: 120.95281, latitude: 30.883874},
             zoom: 17,
@@ -56,7 +68,27 @@ app.controller('ManageDeviceModifyCtrl', ['$scope', '$http', '$localStorage', '$
             status_sensor: [4104, 4105, 4106, 4107]
         };
 
-        $scope.components = [];
+        $http.get(APPCONST.CTX + APPCONST.DEPARTMENT_LIST_BY_TYPE + '0').then(function (response) {
+            $scope.departments = response.data.data.data;
+            // console.warn($scope.departments);
+        }, function (response) {
+            $scope.Toast('error', '警告', '服务器响应异常，请联系管理员。');
+        });
+
+        $scope.myImage = $scope.device.icon;
+        $scope.myCroppedImage = '';
+
+        var handleFileSelect = function (evt) {
+            var file = evt.currentTarget.files[0];
+            var reader = new FileReader();
+            reader.onload = function (evt) {
+                $scope.$apply(function ($scope) {
+                    $scope.myImage = evt.target.result;
+                });
+            };
+            reader.readAsDataURL(file);
+        };
+        angular.element(document.querySelector('#fileInput')).on('change', handleFileSelect);
 
         $scope.compTypeChange = function (comp) {
             if (comp.type === 'analog_sensor') {
@@ -115,6 +147,11 @@ app.controller('ManageDeviceModifyCtrl', ['$scope', '$http', '$localStorage', '$
                 new BMap.Point($scope.device.longitude, $scope.device.latitude),
                 {icon: new BMap.Icon("img/marker_blue.png", new BMap.Size(32, 32))}
             );
+            $scope.marker.enableDragging();
+            $scope.marker.addEventListener('dragend', function (obj) {
+                $scope.device.longitude = obj.point.lng;
+                $scope.device.latitude = obj.point.lat;
+            });
             $scope.myMap.addOverlay($scope.marker);
         };
         $scope.cancel = function () {
@@ -131,33 +168,55 @@ app.controller('ManageDeviceModifyCtrl', ['$scope', '$http', '$localStorage', '$
         $scope.checkFormAndToast = function (data, field, isSelect) {
             isSelect = isSelect || false;
             if (!data) {
-                toaster.pop('warning', '提示', isSelect ? '请选择' : '请输入' + field);
+                toaster.pop('warning', '提示', (isSelect ? '请选择' : '请输入') + field);
                 return false;
             }
             return true;
         };
 
         $scope.onSubmit = function () {
+            // console.warn($scope.device);
             if (!$scope.checkFormAndToast($scope.device.name, '姓名')) {
                 return;
             }
-            if (!$scope.checkFormAndToast($scope.device.type, '站点类型', true)) {
+            if (!$scope.checkFormAndToast($scope.device.station_type, '站点类型', true)) {
                 return;
             }
-            if (!$scope.checkFormAndToast($scope.device.dayDealDirtyWaterAbility, '日处水能力', true)) {
+            if (!$scope.checkFormAndToast($scope.device.day_deal_water_ability, '日处水能力', true)) {
                 return;
             }
-            // console.warn($scope.device);
-            var requestData = angular.copy($scope.device, {});
+
+            var requestData = angular.extend({}, $scope.device);
+            if ($localStorage.selectDevice == null && requestData.setupDate) {
+                requestData.setupDate = $scope.formatDate(requestData.setupDate, 'yyyy-MM-dd');
+            }
             if ($scope.components) {
-                requestData.components = JSON.stringify($scope.components);
+                var components = angular.extend([], $scope.components);
+                angular.forEach(components, function (item) {
+                    item.comp_id = item.channel + ':' + item.sub_channel;
+                });
+                requestData.components = JSON.stringify(components);
             }
+            requestData.icon = $scope.myCroppedImage;
             console.warn(requestData);
-            $http.post(APPCONST.CTX + APPCONST.SENSOR_ADD, requestData).then(function (response) {
-                console.warn(response);
+
+            var url = null;
+
+            if ($localStorage.isUpdate) {
+                url = APPCONST.CTX + APPCONST.SENSOR_UPDATE;
+            } else {
+                url = APPCONST.CTX + APPCONST.SENSOR_ADD;
+            }
+
+            $http.post(url, requestData).then(function (response) {
+                // console.warn(response);
+                toaster.pop('success', '提示', $localStorage.isUpdate ? '更新成功' : '添加成功');
+                $state.go('app.mngdevice');
             }, function (response) {
-                console.error(response);
+                $scope.Toast('error', '警告', '服务器响应异常，请联系管理员。');
+                // console.error(response);
             });
+
         };
     }]
 );

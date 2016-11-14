@@ -16,60 +16,60 @@ app.controller('AsideRouteCtrl', ['$scope', '$http', '$localStorage', '$state', 
         $scope.treeData = [];
         $scope.tree = {};
 
-        $scope.analysDepartment = function (data, level) {
-            var children = [];
-            data.type = 'dpt';
-            var color = 'c-red';
-            if (level === 1) {
-                color = 'c-yellow';
-            } else if (level === 2) {
-                color = 'c-green';
-            } else if (level >= 3) {
-                color = 'c-blue';
+        $scope.setupTreeItem = function (item) {
+            item.label = item.name;
+            if (item.nodeType == 1) {
+                item.icon = 'fa fa-male c-red';
+            } else {
+                var color = 'c-red';
+                if (item.level === 1) {
+                    color = 'c-yellow';
+                } else if (item.level === 2) {
+                    color = 'c-green';
+                } else if (item.level >= 3) {
+                    color = 'c-blue';
+                }
+                item.icon = 'fa fa-flag ' + color;
             }
-            level++;
-            data.icon = 'fa fa-flag ' + color;
-            if (data.sub_departments) {
-                data.sub_departments.forEach(function (item) {
-                    children.push($scope.analysDepartment(item, level));
+        };
+        $scope.addToChildren = function (treeItem, item) {
+            if (treeItem.id == item.parentId) {
+                if (!treeItem.children) {
+                    treeItem.children = [];
+                }
+                $scope.setupTreeItem(item);
+                treeItem.children.push(item);
+            } else if (treeItem.children) {
+                angular.forEach(treeItem.children, function (node) {
+                    $scope.addToChildren(node, item);
                 });
             }
-            if (data.devices) {
-                data.devices.forEach(function (item) {
-                    var child = $scope.analysDepartment(item, level);
-                    child.type = 'device';
-                    child.icon = 'fa fa-male c-red';
-                    children.push(child);
-                });
-            }
-            data.children = children;
-            data.label = data.name;
-            return data;
         };
 
         $http.get(APPCONST.CTX + APPCONST.DEPARTMENT_ROUTE).then(function (response) {
-            var data = $scope.analysDepartment(response.data.data, 0);
-            $scope.treeData.push(data);
-            try {
-                $scope.tree.expand_all();
-                $scope.tree.select_first_branch();
-            } catch (e) {
+            if (!response.data.data) {
+                return;
             }
-            // console.warn('get asid route');
-        }, function (response) {
-
+            var data = response.data.data.data;
+            angular.forEach(data, function (item) {
+                if ($scope.treeData.length <= 0) {
+                    $scope.setupTreeItem(item);
+                    $scope.treeData.push(item);
+                } else {
+                    angular.forEach($scope.treeData, function (treeItem) {
+                        $scope.addToChildren(treeItem, item);
+                    });
+                }
+            });
+            $scope.tree.expand_all();
         });
 
         $scope.treeItemClick = function (branch) {
-            // if (branch.type === 'dpt') {
-            //     $state.go("app.device", {id: branch.uuid}, {inherit: false});
-            //     $scope.$emit("EMIT_DEVICE_TREE_CLICK", branch);
-            //     $scope.app.cache.selectParentBranch = null;
-            // } else if (branch.type === 'device') {
-            //     $scope.app.cache.selectParentBranch = $scope.tree.get_parent_branch(branch);
-            //     // console.warn($scope.tree.get_parent_branch(branch));
-            //     $state.go("app.device.detail", {id: branch.uuid});
-            // }
+            if (branch.nodeType == 1) {
+                $scope.$emit("EMIT_ROUTE_TREE_ITEM_CLICK", branch);
+            } else {
+                $scope.$emit("EMIT_ROUTE_TREE_CLICK", branch);
+            }
         };
     }]
 );
@@ -105,8 +105,6 @@ app.controller('RouteCtrl', ['$scope', '$http', '$localStorage', 'APPCONST', '$m
             overlays: $scope.overlays
         };
 
-        $scope.onMapClick = function ($event, $params) {
-        };
         $scope.onMapLoaded = function ($event, $params) {
             $scope.addMarkers();
         };
@@ -127,20 +125,48 @@ app.controller('RouteCtrl', ['$scope', '$http', '$localStorage', 'APPCONST', '$m
             });
         };
 
-        if ($scope.app.cache.selectParentBranch) {
-            $scope.app.subHeader.contentTitle = $scope.app.cache.selectParentBranch.label;
-        }
+        $scope.$on("BROADCAST_ROUTE_TREE_CLICK", function (event, data) {
+            // console.warn(data);
+            $scope.myMap.clearOverlays();
+        });
+        $scope.$on("BROADCAST_ROUTE_TREE_ITEM_CLICK", function (event, data) {
+            // console.error(data);
+            $http.get(APPCONST.CTX + APPCONST.ROUTE_POINTS.replace("{id}", data.entity_id)).then(function (response) {
+                console.warn(response);
 
-        $scope.$on("BROADCAST_DEVICE_TREE_CLICK", function (event, data) {
-            $scope.addMarkers();
+                $scope.myMap.clearOverlays();
+                if (response.data.data && response.data.data.length > 0) {
+                    var points = [];
+                    angular.forEach(response.data.data, function (item) {
+                        points.push(new BMap.Point(item.longitude, item.latitude));
+                    });
+                    var polyline = new BMap.Polyline(points, {
+                        strokeColor: "blue",
+                        strokeWeight: 2,
+                        strokeOpacity: 0.5
+                    });
+                    $scope.myMap.addOverlay(polyline);
+
+                    var marker = new BMap.Marker(
+                        points[0], {icon: new BMap.Icon("img/marker_blue.png", new BMap.Size(32, 32))}
+                    );
+                    $scope.myMap.addOverlay(marker);
+                    if (response.data.data.length > 1) {
+                        var markerStart = new BMap.Marker(
+                            points[response.data.data.length - 1], {icon: new BMap.Icon("img/marker_red.png", new BMap.Size(32, 32))}
+                        );
+                        $scope.myMap.addOverlay(markerStart);
+                    }
+                    $scope.myMap.centerAndZoom(points[0], 13);
+                }
+            }, function (response) {
+                toaster.pop('error', '提示', '加载巡检轨迹出错，服务器响应异常');
+            });
+
         });
 
         $scope.init = function () {
             $scope.shouldAddAllSensorsToMap = true;
-            // if(!$scope.myMap) {
-            //     $scope.myMap = $scope.app.cache.dashboardMap;
-            // }
-            // $scope.addMarkers();
         };
 
         $scope.addMarkers = function () {
@@ -188,8 +214,5 @@ app.controller('RouteCtrl', ['$scope', '$http', '$localStorage', 'APPCONST', '$m
             $scope.Toast("success", "提示", "地图定位成功.");
         };
 
-        $scope.$on("WS_MESSAGE", function (event, data) {
-
-        });
     }])
 ;

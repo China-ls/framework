@@ -3,75 +3,139 @@
 // DeviceDetail controller
 app.controller('DeviceTabWqCtrl', ['$scope', '$http', '$localStorage', '$state', 'APPCONST',
     function ($scope, $http, $localStorage, $state, APPCONST) {
-        /*$scope.app.subHeader.goBackHide = false;
-         $scope.app.subHeader.goBackSref = 'app.device';
+        $scope.sensor_id = $localStorage.selectDeviceId;
+        if (!$scope.sensor_id) {
+            $state.go('app.device');
+            return;
+        }
+        $scope.app.subHeader.contentTitle = $localStorage.selectDeviceName;
 
-         if (!$scope.$stateParams) {
-         $state.go('app.device');
-         return;
-         }
-         $scope.chartWaterQ = {
-         options: {chart: {type: 'line'}, tooltip: {valueSuffix: '吨', style: {padding: 10, fontWeight: 'bold'}}},
-         series: [{name: '处理量', data: [12, 12.1, 13, 13.1, 7.9, 11, 13]}],
-         title: {text: ''}, loading: false,
-         xAxis: {categories: ['09-23', '09-24', '09-25', '09-26', '09-27', '09-28', '09-29']},
-         yAxis: {title: {text: '吨'}, plotLines: [{value: 0, width: 1, color: '#808080'}]},
-         useHighStocks: false, size: {height: 400}
-         };*/
+        $http.get(APPCONST.CTX + APPCONST.SENSOR_DATA_WATER_QUALITY_LIST.replace("{id}", $scope.sensor_id))
+            .then(function (response) {
+                $scope.clearChartData();
+                $scope.data = response.data.data.data;
+                if (!$scope.data) {
+                    return;
+                }
+                var len = $scope.data.length;
+                if (len > 0) {
+                    for (var i = len - 1; i >= 0; i--) {
+                        $scope.addPointToChart($scope.data[i]);
+                    }
+                    $scope.latest = $scope.data[0];
+                }
+            }, function (fail) {
+                $scope.isSubmiting = false;
+                $scope.Toast('warning', '提示', '读取水质数据失败，服务器响应异常。');
+            });
 
-        $scope.data = {
-            "N_data": {"water_in": "3.2", "water_out": "11"},
-            "P_data": {"water_in": "50", "water_out": "12.23"},
-            "C_data": {"water_in": "18", "water_out": "7"},
-            "PH_data": {"water_in": "6", "water_out": "10"}
+        $scope.clearChartData = function () {
+            $scope.chartNH3N.series[0].data.splice(0);
+            $scope.chartNH3N.series[1].data.splice(0);
+
+            $scope.chartZL.series[0].data.splice(0);
+            $scope.chartZL.series[1].data.splice(0);
+
+            $scope.chartCOD.series[0].data.splice(0);
+            $scope.chartCOD.series[1].data.splice(0);
+
+            $scope.chartPH.series[0].data.splice(0);
+            $scope.chartPH.series[1].data.splice(0);
+        };
+
+        $scope.addPointToChart = function (item) {
+            item.time = $scope.formatDate(new Date(item.time), 'yyyy-MM-dd HH:mm:ss');
+
+            $scope.chartNH3N.series[0].data.push(item.nh3n_in);
+            $scope.chartNH3N.series[1].data.push(item.nh3n_out);
+            $scope.chartNH3N.xAxis.categories.push(item.time);
+
+            $scope.chartZL.series[0].data.push(item.total_phosphorus_in);
+            $scope.chartZL.series[1].data.push(item.total_phosphorus_out);
+            $scope.chartZL.xAxis.categories.push(item.time);
+
+            $scope.chartCOD.series[0].data.push(item.cod_in);
+            $scope.chartCOD.series[1].data.push(item.cod_out);
+            $scope.chartCOD.xAxis.categories.push(item.time);
+
+            $scope.chartPH.series[0].data.push(item.ph_in);
+            $scope.chartPH.series[1].data.push(item.ph_out);
+            $scope.chartPH.xAxis.categories.push(item.time);
         };
 
         $scope.chartNH3N = {
             options: {chart: {type: 'line'}, tooltip: {valueSuffix: 'mg/l', style: {padding: 10, fontWeight: 'bold'}}},
             series: [
-                {name: '进水口', data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]},
-                {name: '出水口', data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]}
+                {name: '进水口', data: []},
+                {name: '出水口', data: []}
             ],
             title: {text: '　', x: -50}, loading: false,
-            xAxis: {categories: ['06:00', '08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00', '00:00', '02:00', '04:00']},
+            xAxis: {categories: []},
             yAxis: {title: {text: '(mg/l)'}, plotLines: [{value: 0, width: 1, color: '#808080'}]},
-            useHighStocks: false, size: {height: 250}
+            useHighStocks: false, size: {height: 300}
         };
 
         $scope.chartZL = {
             options: {chart: {type: 'line'}, tooltip: {valueSuffix: 'mg/l', style: {padding: 10, fontWeight: 'bold'}}},
             series: [
-                {name: '进水口', data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]},
-                {name: '出水口', data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]}
+                {name: '进水口', data: []},
+                {name: '出水口', data: []}
             ],
             title: {text: '　', x: -50}, loading: false,
-            xAxis: {categories: ['06:00', '08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00', '00:00', '02:00', '04:00']},
+            xAxis: {categories: []},
             yAxis: {title: {text: '(mg/l)'}, plotLines: [{value: 0, width: 1, color: '#808080'}]},
-            useHighStocks: false, size: {height: 250}
+            useHighStocks: false, size: {height: 300}
         };
 
         $scope.chartCOD = {
             options: {chart: {type: 'line'}, tooltip: {valueSuffix: 'mg/l', style: {padding: 10, fontWeight: 'bold'}}},
             series: [
-                {name: '进水口', data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]},
-                {name: '出水口', data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]}
+                {name: '进水口', data: []},
+                {name: '出水口', data: []}
             ],
             title: {text: '　', x: -50}, loading: false,
-            xAxis: {categories: ['06:00', '08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00', '00:00', '02:00', '04:00']},
+            xAxis: {categories: []},
             yAxis: {title: {text: '(mg/l)'}, plotLines: [{value: 0, width: 1, color: '#808080'}]},
-            useHighStocks: false, size: {height: 250}
+            useHighStocks: false, size: {height: 300}
         };
 
         $scope.chartPH = {
             options: {chart: {type: 'line'}, tooltip: {valueSuffix: 'mg/l', style: {padding: 10, fontWeight: 'bold'}}},
             series: [
-                {name: '进水口', data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]},
-                {name: '出水口', data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]}
+                {name: '进水口', data: []},
+                {name: '出水口', data: []}
             ],
             title: {text: '　', x: -50}, loading: false,
-            xAxis: {categories: ['06:00', '08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00', '00:00', '02:00', '04:00']},
+            xAxis: {categories: []},
             yAxis: {title: {text: '(mg/l)'}, plotLines: [{value: 0, width: 1, color: '#808080'}]},
-            useHighStocks: false, size: {height: 250}
+            useHighStocks: false, size: {height: 300}
         };
+
+        $scope.wq = {};
+        $scope.isInputMode = false;
+        $scope.isSubmiting = false;
+        $scope.toggleInput = function () {
+            $scope.isInputMode = !$scope.isInputMode;
+        };
+
+        $scope.submit = function () {
+            if ($scope.isSubmiting) {
+                return;
+            }
+            $scope.isSubmiting = true;
+            // console.warn($scope.wq);
+            $http.post(APPCONST.CTX + APPCONST.SENSOR_DATA_WATER_QUALITY_INSERT, angular.extend({}, $scope.wq, {sensor_id: $scope.sensor_id}))
+                .then(function (response) {
+                    $scope.addPointToChart(response.data.data);
+                    $scope.latest = response.data.data;
+                    $scope.isSubmiting = false;
+                    $scope.wq = {};
+                    $scope.Toast('success', '提示', '录入成功。');
+                }, function (fail) {
+                    $scope.isSubmiting = false;
+                    $scope.Toast('warning', '提示', '录入失败，服务器响应异常。');
+                });
+        };
+
     }])
 ;

@@ -6,10 +6,13 @@ app.controller('DeviceTabMapCtrl', ['$scope', '$http', '$localStorage', '$state'
         $scope.app.subHeader.goBackHide = false;
         $scope.app.subHeader.goBackSref = 'app.device';
 
-        if (!$scope.$stateParams) {
+        $scope.sensor_id = $localStorage.selectDeviceId;
+        if (!$scope.sensor_id) {
             $state.go('app.device');
             return;
         }
+        $scope.app.subHeader.contentTitle = $localStorage.selectDeviceName;
+
         $scope.offlineOpts = {retryInterval: 5000};
         $scope.mapOptions = {
             center: {
@@ -42,7 +45,7 @@ app.controller('DeviceTabMapCtrl', ['$scope', '$http', '$localStorage', '$state'
             });
         };
 
-        $scope.loadDataPromise = $http.get(APPCONST.CTX + APPCONST.SENSOR_BY_ID + $scope.$stateParams.id)
+        $scope.loadDataPromise = $http.get(APPCONST.CTX + APPCONST.SENSOR_BY_ID + $scope.sensor_id)
             .then(function (response) {
                 if (!response.data.data || !response.data.data.sensor) {
                     return;

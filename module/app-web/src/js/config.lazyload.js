@@ -93,6 +93,13 @@ angular.module('app')
                     ]
                 },
                 {
+                    name: 'ngImgCrop',
+                    files: [
+                        'lib/ngImgCrop/compile/minified/ng-img-crop.js',
+                        'lib/ngImgCrop/compile/minified/ng-img-crop.css'
+                    ]
+                },
+                {
                     name: 'rzModule',
                     files: [
                         'lib/angularjs-slider/rzslider.min.css',

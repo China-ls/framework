@@ -7,9 +7,9 @@
           <element id="module-output" name="framework-app" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.5" />
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
           <element id="library" level="project" name="Maven: org.springframework:spring-test:4.3.1.RELEASE" />
+          <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.5" />
           <element id="library" level="project" name="Maven: org.glassfish:javax.servlet.jsp.jstl:3.0.1" />
           <element id="library" level="project" name="Maven: org.glassfish:javax.servlet.jsp:3.0.1" />
           <element id="library" level="project" name="Maven: org.mongodb.morphia:morphia:1.2.1" />

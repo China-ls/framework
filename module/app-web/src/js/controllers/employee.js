@@ -26,7 +26,10 @@ app.controller('EmployeeCtrl', ['$scope', '$http', '$localStorage', '$modal', 'A
         $scope.employees = [];
 
         $scope.resetDividerHeight = function () {
-            var len = 10 - $scope.employees.length;
+            var len = 10;
+            if ($scope.employees) {
+                len = len - $scope.employees.length;
+            }
             $scope.dividerHeight = len <= 0 ? 0 : len * 35;
         };
 
@@ -50,6 +53,7 @@ app.controller('EmployeeCtrl', ['$scope', '$http', '$localStorage', '$modal', 'A
         };
 
         $scope.addEmployee = function () {
+            $localStorage.isUpdate = false;
             $localStorage.selectEmployee = null;
             $state.go('app.employee.add');
         };
@@ -57,6 +61,7 @@ app.controller('EmployeeCtrl', ['$scope', '$http', '$localStorage', '$modal', 'A
             if (!$scope.selectEmployee) {
                 return;
             }
+            $localStorage.isUpdate = true;
             $localStorage.selectEmployee = $scope.selectEmployee;
             $state.go('app.employee.add');
         };
@@ -78,7 +83,12 @@ app.controller('EmployeeCtrl', ['$scope', '$http', '$localStorage', '$modal', 'A
                         $scope.total = data.total;
                         $scope.currentPage = data.page;
                         $scope.employees = data.data;
-                        console.warn($scope.employees);
+                        if ($scope.employees) {
+                            angular.forEach($scope.employees, function (item) {
+                                item.birthday_display = $scope.formatDate(new Date(item.birthday), 'yyyy年MM月dd日');
+                            });
+                        }
+                        // console.warn($scope.employees);
                     }
                     // console.warn(response);
                     $scope.resetDividerHeight();
@@ -123,6 +133,32 @@ app.controller('EmployeeCtrl', ['$scope', '$http', '$localStorage', '$modal', 'A
             });
         };
 
+        $scope.modifyEmployeeResourcesDepartment = function () {
+            if (!$scope.selectEmployee) {
+                return;
+            }
+            var modalInstance = $modal.open({
+                templateUrl: 'modifyEmployeeResourcesDepartmentModal.html',
+                controller: 'ModifyEmployeeResDptModalInstanceCtrl',
+                resolve: {
+                    res: function () {
+                        return !$scope.selectEmployee.resourcesLevel ? [] : $scope.selectEmployee.resourcesLevel.departments;
+                    }
+                }
+            });
+            modalInstance.result.then(function (resDpt) {
+                $http.post(APPCONST.CTX + APPCONST.EMPLOYEE_RESOURCE_MODIFY.replace("{id}", $scope.selectEmployee.id),
+                    {res: resDpt.join(',')}
+                )
+                    .then(function (response) {
+                        toaster.pop('success', '提示', '修改员工资源权限成功。');
+                        $scope.loadEmployees($scope.page, $scope.size);
+                    }, function (response) {
+                        toaster.pop('error', '警告', '服务器响应异常，请联系管理员。');
+                    });
+            });
+        };
+
     }]
 );
 
@@ -132,6 +168,56 @@ app.controller('EmployeeModalInstanceCtrl', ['$scope', '$modalInstance', 'conten
         $scope.content = content;
         $scope.ok = function () {
             $modalInstance.close();
+        };
+        $scope.cancel = function () {
+            $modalInstance.dismiss('cancel');
+        };
+    }])
+;
+
+app.controller('ModifyEmployeeResDptModalInstanceCtrl', ['$scope', '$modalInstance', 'res', '$http', 'APPCONST', '$window',
+    function ($scope, $modalInstance, res, $http, APPCONST, $window) {
+        $scope.boxHeight = $window.innerHeight - 240;
+        $scope.selections = res;
+        $scope.departments = [];
+
+        $scope.toggleSelectResDepartment = function (id) {
+            var children = [];
+            angular.forEach($scope.departments, function (item) {
+                if (item.id == id || (item.path && item.path.indexOf(id) != -1)) {
+                    children.push(item.id);
+                }
+            });
+            // console.warn(children);
+            var index = $scope.selections.indexOf(id);
+            if (index != -1) {
+                for (var i = 0; i < $scope.selections.length;) {
+                    if (children.indexOf($scope.selections[i]) >= 0) {
+                        $scope.selections.splice(i, 1);
+                    } else {
+                        i++;
+                    }
+                }
+            } else {
+                angular.forEach(children, function (item) {
+                    $scope.selections.push(item);
+                });
+            }
+        };
+        $scope.loadDataPromise = $http.get(APPCONST.CTX + APPCONST.DEPARTMENT_LIST_ALL)
+            .then(function (response) {
+                var code = response.data.code;
+                var data = response.data.data;
+                if (code === '0') {
+                    $scope.departments = data.data;
+                }
+            }, function (response) {
+                //没有数据时候，可以添加
+                toaster.pop('error', '警告', '服务器响应异常，请联系管理员。')
+            });
+
+        $scope.submit = function () {
+            $modalInstance.close($scope.selections);
         };
         $scope.cancel = function () {
             $modalInstance.dismiss('cancel');

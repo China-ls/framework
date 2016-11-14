@@ -23,8 +23,8 @@
 </head>
 <body ng-controller="AppCtrl">
 
-<input type="hidden" id="__ctx" value="http://120.55.165.5:9998/app"/>
-<!--<input type="hidden" id="__ctx" value="http://127.0.0.1:9998/app"/>-->
+<!--<input type="hidden" id="__ctx" value="http://120.55.165.5:9998/app"/>-->
+<input type="hidden" id="__ctx" value="http://127.0.0.1:9998/app"/>
 
 <!-- toaster directive -->
 <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
@@ -76,6 +76,7 @@
 <script src="js/debug.lazyload.js"></script>
 <script src="js/config.router.js"></script>
 <script src="js/main.js"></script>
+<script src="js/factory/HttpUnauthorizedInterceptor.js"></script>
 <script src="js/services/ui-load.js"></script>
 <script src="js/directives/setnganimate.js"></script>
 <script src="js/directives/broadcast-window-event.js"></script>

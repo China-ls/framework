@@ -25,17 +25,13 @@
                 <tr>
                     <td class="bg-info-only table-lebel">进水口</td>
                     <td class="text-center">
-                        <span class="table-value">
-                            {{data.N_data.water_in | number:4}}
-                        </span>
+                        <span class="table-value">{{latest.nh3n_in}}</span>
                     </td>
                 </tr>
                 <tr>
                     <td class="bg-info-only table-lebel">出水口</td>
                     <td class="text-center">
-                        <span class="table-value">
-                            {{data.N_data.water_out | number:4}}
-                        </span>
+                        <span class="table-value">{{latest.nh3n_out}}</span>
                     </td>
                 </tr>
             </table>
@@ -47,17 +43,13 @@
                 <tr>
                     <td class="bg-info-only table-lebel">进水口</td>
                     <td>
-                        <span class="table-value">
-                            {{data.P_data.water_in | number:4}}
-                        </span>
+                        <span class="table-value">{{latest.total_phosphorus_in}}</span>
                     </td>
                 </tr>
                 <tr>
                     <td class="bg-info-only table-lebel">出水口</td>
                     <td>
-                        <span class="table-value">
-                            {{data.P_data.water_out | number:4}}
-                        </span>
+                        <span class="table-value">{{latest.total_phosphorus_out}}</span>
                     </td>
                 </tr>
             </table>
@@ -69,13 +61,13 @@
                 <tr>
                     <td class="bg-info-only table-lebel">进水口</td>
                     <td>
-                        <span class="table-value">{{data.C_data.water_in | number:4}}</span>
+                        <span class="table-value">{{latest.cod_in}}</span>
                     </td>
                 </tr>
                 <tr>
                     <td class="bg-info-only table-lebel">出水口</td>
                     <td>
-                        <span class="table-value">{{data.C_data.water_out | number:4}}</span>
+                        <span class="table-value">{{latest.cod_out}}</span>
                     </td>
                 </tr>
             </table>
@@ -87,13 +79,13 @@
                 <tr>
                     <td class="bg-info-only table-lebel">进水口</td>
                     <td>
-                        <span class="table-value">{{data.PH_data.water_in | number:4}}</span>
+                        <span class="table-value">{{latest.ph_in}}</span>
                     </td>
                 </tr>
                 <tr>
-                    <td class="bg-info-only col-sm-6">出水口</td>
+                    <td class="bg-info-only table-lebel">出水口</td>
                     <td class="col-sm-6">
-                        <span class="table-value">{{data.PH_data.water_out | number:4}}</span>
+                        <span class="table-value">{{latest.ph_out}}</span>
                     </td>
                 </tr>
             </table>
@@ -150,4 +142,87 @@
         </div>
 
     </div>
+
+    <div class="wrapper">
+        <div ng-show="isInputMode" class="row wrapper">
+            <div class="col-sm-3">
+                <table class="table text-center light-bd-table table-bordered">
+                    <caption class="text-center text-primary">NH3-N</caption>
+                    <tr>
+                        <td class="bg-info-only v-middle">进水口</td>
+                        <td class="w-half">
+                            <input class="form-control" type="text" ng-model="wq.nh3n_in">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-info-only v-middle">出水口</td>
+                        <td class="w-half">
+                            <input class="form-control" type="text" ng-model="wq.nh3n_out">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-3">
+                <table class=" table text-center table-bordered light-bd-table">
+                    <caption class="text-center text-primary">总磷</caption>
+                    <tr>
+                        <td class="bg-info-only v-middle">进水口</td>
+                        <td class="w-half">
+                            <input class="form-control" type="text" ng-model="wq.total_phosphorus_in">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-info-only v-middle">出水口</td>
+                        <td class="w-half">
+                            <input class="form-control" type="text" ng-model="wq.total_phosphorus_out">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-3">
+                <table class="table table-bordered light-bd-table text-center">
+                    <caption class="text-center text-primary">COD(mg/l)</caption>
+                    <tr>
+                        <td class="bg-info-only v-middle">进水口</td>
+                        <td class="w-half">
+                            <input class="form-control" type="text" ng-model="wq.cod_in">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-info-only v-middle">出水口</td>
+                        <td class="w-half">
+                            <input class="form-control" type="text" ng-model="wq.cod_out">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-3">
+                <table class="table  table-bordered light-bd-table text-center">
+                    <caption class="text-center text-primary">PH</caption>
+                    <tr>
+                        <td class="bg-info-only v-middle">进水口</td>
+                        <td class="w-half">
+                            <input class="form-control" type="text" ng-model="wq.ph_in">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-info-only v-middle">出水口</td>
+                        <td class="w-half">
+                            <input class="form-control" type="text" ng-model="wq.ph_out">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <span class="text-primary">采集时间：{{latest.time}}</span>
+        <button type="button" ng-click="submit()" class="btn btn-info btn-addon pull-right m-l">
+            <i ng-show="isSubmiting" class="fa fa-spinner" ng-class="{'fa-spin': isSubmiting}" style="background-color: transparent;"></i>
+            保存
+        </button>
+        <button type="button" ng-click="toggleInput()" class="btn btn-info pull-right m-l">
+            <span ng-if="!isInputMode">录入</span>
+            <span ng-if="isInputMode">完成</span>
+        </button>
+    </div>
+
 </div>

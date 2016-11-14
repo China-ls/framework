@@ -38,6 +38,7 @@ module.exports = {
             'src/js/app/map/baidu/load-baidu-maps.js',
             'src/js/app/map/baidu/ui-baidu-map.js',
             'src/js/directives/*.js',
+            'src/js/factory/HttpUnauthorizedInterceptor.js',
             'src/js/services/*.js',
             'src/js/filters/*.js',
             'src/js/controllers/*.js'

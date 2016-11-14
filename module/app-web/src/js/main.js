@@ -86,6 +86,12 @@ angular.module('app')
             $scope.$on("EMIT_DEVICE_TREE_CLICK", function (event, data) {
                 $scope.$broadcast("BROADCAST_DEVICE_TREE_CLICK", data);
             });
+            $scope.$on("EMIT_ROUTE_TREE_CLICK", function (event, data) {
+                $scope.$broadcast("BROADCAST_ROUTE_TREE_CLICK", data);
+            });
+            $scope.$on("EMIT_ROUTE_TREE_ITEM_CLICK", function (event, data) {
+                $scope.$broadcast("BROADCAST_ROUTE_TREE_ITEM_CLICK", data);
+            });
 
             try {
                 var wsUrl = APPCONST.CTX.replace("http://", "ws://") + "/ws";
